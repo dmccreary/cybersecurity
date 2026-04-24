@@ -1,0 +1,94 @@
+site_name: 'Cybersecurity: Foundations, Practice, and Professional Responsibility'
+site_description: 'An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.'
+site_author: 'Dan McCreary'
+site_url: 'https://dmccreary.github.io/cybersecurity/'
+
+# Repository
+repo_name: 'GitHub Repo'
+repo_url: 'https://github.com/dmccreary/cybersecurity'
+edit_uri: 'blob/main/docs'
+
+# Copyright
+copyright: 'Copyright &copy; 2026 Dan McCreary'
+
+# Theme configuration
+theme:
+  name: material
+  logo: img/logo.png
+  favicon: img/favicon.ico
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.action.edit
+    - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+
+# Plugins
+plugins:
+  - search
+
+# Markdown extensions
+markdown_extensions:
+  - md_in_html
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+# Custom CSS
+extra_css:
+  - css/extra.css
+
+# Extra
+extra:
+  schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/dmccreary/cybersecurity
+
+# Navigation
+nav:
+  - Home: index.md
+  - About: about.md
+  - Course Description: course-description.md
+  - Chapters:
+      - Introduction: chapters/index.md
+  - Learning Graph: learning-graph/index.md
+  - Glossary: glossary.md
+  - References: references.md
+  - License: license.md
+  - Contact: contact.md
