@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Builds the cryptographic foundation: plaintext, ciphertext, symmetric ciphers, block-cipher modes, key exchange, hashing, MACs, and HMAC.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>3. Crypto Fundamentals - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Cryptography Fundamentals: Symmetric Ciphers and Hashing - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Crypto Fundamentals
+              Cryptography Fundamentals: Symmetric Ciphers and Hashing
             
           </span>
         </div>
@@ -554,6 +554,231 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-cryptography-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What Cryptography Is For
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-core-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Core Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Core Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-encryption-and-decryption-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Encryption and Decryption Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-symmetric-cryptography-one-shared-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Symmetric Cryptography — One Shared Key
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Symmetric Cryptography — One Shared Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-block-ciphers-aes-des-and-3des" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Block Ciphers — AES, DES, and 3DES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-stream-ciphers" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Stream Ciphers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-block-cipher-modes-where-most-crypto-bugs-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Block Cipher Modes — Where Most Crypto Bugs Live
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Block Cipher Modes — Where Most Crypto Bugs Live">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-ecb-the-mode-that-looks-like-encryption-but-isnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 ECB — The Mode That Looks Like Encryption But Isn't
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cbc-chained-but-fragile" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 CBC — Chained, But Fragile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ctr-turning-a-block-cipher-into-a-stream-cipher" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-gcm-authenticated-encryption-done-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 GCM — Authenticated Encryption Done Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 GCM — Authenticated Encryption Done Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-block-cipher-modes-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Block Cipher Modes Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-symmetric-to-asymmetric-why-we-need-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. From Symmetric to Asymmetric — Why We Need Both
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. From Symmetric to Asymmetric — Why We Need Both">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-rsa-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 RSA — The Original
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-elliptic-curve-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Elliptic Curve Cryptography
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-diffie-hellman-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Diffie-Hellman Key Exchange
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Diffie-Hellman Key Exchange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-diffie-hellman-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Diffie-Hellman Key Exchange
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hash-functions-fingerprints-for-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Hash Functions — Fingerprints For Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-message-authentication-codes-keyed-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Message Authentication Codes — Keyed Integrity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-putting-the-primitives-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Putting The Primitives Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
     </span>
   </a>
   
@@ -1083,6 +1308,231 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-what-cryptography-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What Cryptography Is For
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-core-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Core Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Core Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-encryption-and-decryption-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Encryption and Decryption Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-symmetric-cryptography-one-shared-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Symmetric Cryptography — One Shared Key
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Symmetric Cryptography — One Shared Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-block-ciphers-aes-des-and-3des" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Block Ciphers — AES, DES, and 3DES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-stream-ciphers" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Stream Ciphers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-block-cipher-modes-where-most-crypto-bugs-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Block Cipher Modes — Where Most Crypto Bugs Live
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Block Cipher Modes — Where Most Crypto Bugs Live">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-ecb-the-mode-that-looks-like-encryption-but-isnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 ECB — The Mode That Looks Like Encryption But Isn't
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cbc-chained-but-fragile" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 CBC — Chained, But Fragile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ctr-turning-a-block-cipher-into-a-stream-cipher" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-gcm-authenticated-encryption-done-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 GCM — Authenticated Encryption Done Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 GCM — Authenticated Encryption Done Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-block-cipher-modes-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Block Cipher Modes Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-symmetric-to-asymmetric-why-we-need-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. From Symmetric to Asymmetric — Why We Need Both
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. From Symmetric to Asymmetric — Why We Need Both">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-rsa-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 RSA — The Original
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-elliptic-curve-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Elliptic Curve Cryptography
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-diffie-hellman-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Diffie-Hellman Key Exchange
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Diffie-Hellman Key Exchange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-diffie-hellman-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Diffie-Hellman Key Exchange
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hash-functions-fingerprints-for-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Hash Functions — Fingerprints For Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-message-authentication-codes-keyed-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Message Authentication Codes — Keyed Integrity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-putting-the-primitives-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Putting The Primitives Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1153,13 +1603,343 @@
 <li><a href="../01-security-foundations/">Chapter 1: Security Foundations: Properties, Mindset, and Risk</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Primitives</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. Cryptography is the toolbox that the rest of the technical security stack composes from — TLS, signatures, password hashing, secure messaging, the lot. This chapter is the densest in the book, and it is the one that pays back the most. We will move from the simplest idea (turning a message into ciphertext) up through the mathematical primitives that protect the modern internet. Trust, but verify.</p>
+</div>
+<h2 id="1-what-cryptography-is-for">1. What Cryptography Is For<a class="headerlink" href="#1-what-cryptography-is-for" title="Permanent link">&para;</a></h2>
+<p><strong>Cryptography</strong> is the mathematical study and engineering practice of techniques for secure communication and storage in the presence of adversaries. The discipline is much older than computing — it dates to antiquity, with substitution ciphers used by Caesar, mechanical rotor machines used in the World Wars, and the modern transition to mathematical hardness assumptions in the 1970s. What computing changed was the <em>scale</em>: cryptography now protects every web request, every payment, every messaging app, and almost every other digital interaction in your life.</p>
+<p>Cryptography supports several of the security properties from Chapter 1, but it is not a magic solution to all of them. Used correctly, cryptography provides:</p>
+<ul>
+<li><strong>Confidentiality</strong> — encryption hides the content of messages from those without the key.</li>
+<li><strong>Integrity</strong> — keyed hashes (MACs) and digital signatures detect tampering.</li>
+<li><strong>Authentication</strong> — signatures and key-exchange protocols prove identity.</li>
+<li><strong>Non-repudiation</strong> — digital signatures bind an action to a specific key holder.</li>
+</ul>
+<p>Cryptography does <em>not</em>, by itself, provide <strong>availability</strong> — encrypted services can still be denial-of-service attacked. It also does not protect data while it is being processed inside the application: once the application decrypts the data into memory to operate on it, the data is in plaintext for as long as the application has it. The most subtle failures of real-world cryptosystems usually happen at these joints — where ciphertext meets cleartext, where keys are stored, where protocols compose.</p>
+<p>The chapter develops the primitives in two layers. The first layer is the <em>symmetric</em> world: one shared key encrypts and decrypts. The second layer is the <em>asymmetric</em> world: a key pair, with one half public and one half private, enables both encryption and signatures. Modern protocols compose both layers.</p>
+<h2 id="2-the-core-vocabulary">2. The Core Vocabulary<a class="headerlink" href="#2-the-core-vocabulary" title="Permanent link">&para;</a></h2>
+<p>Every cryptographic discussion uses the same five words. <strong>Plaintext</strong> is the original, readable message — the data you are trying to protect. <strong>Ciphertext</strong> is the scrambled output of encryption; without the key, ciphertext should be indistinguishable from random data. <strong>Encryption</strong> is the process of transforming plaintext into ciphertext using a key, and <strong>decryption</strong> is the inverse operation that recovers the plaintext given the correct key. The <strong>cryptographic key</strong> is the secret parameter that controls both transformations. Anyone with the key can encrypt or decrypt; anyone without the key cannot — at least, not in any time scale that matters.</p>
+<p>A core principle, articulated by Auguste Kerckhoffs in 1883 and now universally accepted, is that <strong>the security of a cryptosystem must depend only on the secrecy of the key, not on the secrecy of the algorithm</strong>. This is the <em>open design</em> principle from Chapter 1, applied to cryptography. Modern cryptographic algorithms are public, peer-reviewed, and standardized exactly so that thousands of cryptographers can attempt to break them; the keys are what stay secret. Any vendor who tells you they have a "proprietary encryption algorithm" is selling something nobody serious has reviewed.</p>
+<h4 id="diagram-encryption-and-decryption-flow">Diagram: Encryption and Decryption Flow<a class="headerlink" href="#diagram-encryption-and-decryption-flow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Block diagram showing plaintext, encryption, ciphertext, and decryption with shared key</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> encryption-decryption-flow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal flow:</p>
+<ol>
+<li><strong>Plaintext</strong> (input box, white) — "The original message: 'Attack at dawn.'"</li>
+<li>→ arrow into <strong>Encryption</strong> (process box, cybersecurity blue #1565c0) — "Algorithm + Key"</li>
+<li>→ arrow into <strong>Ciphertext</strong> (intermediate box, slate steel #455a64) — "8a4f...d12b (looks random)"</li>
+<li>→ arrow into <strong>Decryption</strong> (process box, cybersecurity blue) — "Algorithm + same Key"</li>
+<li>→ arrow into <strong>Plaintext</strong> (output box, white) — "Recovered: 'Attack at dawn.'"</li>
+</ol>
+<p>Above the encryption and decryption boxes, a small key icon connects both, labeled "Shared cryptographic key (kept secret)". The diagram emphasizes that the same key must be used in both directions for symmetric crypto.</p>
+<p>A small inset to the right shows the Kerckhoffs principle: "Algorithm: PUBLIC. Key: SECRET."</p>
+<p>Color: cybersecurity blue, white, slate steel. Responsive: stacks vertically below 700px viewport.</p>
+<p>Implementation: Mermaid graph LR with custom node styling.</p>
+</details>
+<h2 id="3-symmetric-cryptography-one-shared-key">3. Symmetric Cryptography — One Shared Key<a class="headerlink" href="#3-symmetric-cryptography-one-shared-key" title="Permanent link">&para;</a></h2>
+<p><strong>Symmetric cryptography</strong> uses the same key for encryption and decryption. Both parties to a conversation share the secret key in advance, and they use it to scramble and unscramble messages. Symmetric algorithms are fast — modern AES on commodity hardware encrypts gigabytes per second per CPU core — and they are the workhorse of bulk data protection.</p>
+<p>The fundamental challenge of symmetric cryptography is <em>key distribution</em>: how do two parties agree on a shared secret over an untrusted network without an adversary intercepting it? For decades this was a hard logistical problem (couriers, code books). The breakthroughs that solved it in the 1970s — public-key cryptography and Diffie-Hellman key exchange — are covered later in this chapter.</p>
+<p>Symmetric algorithms come in two structural families: <strong>block ciphers</strong>, which operate on fixed-size chunks of plaintext (typically 128 bits at a time), and <strong>stream ciphers</strong>, which produce a continuous stream of pseudo-random bits that is XORed against the plaintext one bit (or one byte) at a time. Block ciphers are more common in modern practice because they can be built into authenticated-encryption modes, but stream ciphers (like ChaCha20) remain important on hardware that lacks AES instructions or where extreme throughput is required.</p>
+<h3 id="31-block-ciphers-aes-des-and-3des">3.1 Block Ciphers — AES, DES, and 3DES<a class="headerlink" href="#31-block-ciphers-aes-des-and-3des" title="Permanent link">&para;</a></h3>
+<p>The reigning block cipher of the modern era is the <strong>Advanced Encryption Standard (AES)</strong>, standardized by the U.S. National Institute of Standards and Technology in 2001 after a public, multi-year competition. AES has a 128-bit block size and supports three key sizes: 128 bits (AES-128), 192 bits (AES-192), and 256 bits (AES-256). For symmetric encryption today, AES is essentially the default — it is fast, well-studied, and has hardware acceleration on almost every modern CPU (Intel/AMD AES-NI, ARM crypto extensions).</p>
+<p>AES did not arrive in a vacuum. Its predecessor, the <strong>Data Encryption Standard (DES)</strong>, was the U.S. federal standard from 1977 to 2002. DES has a 56-bit key, which was already controversial in the 1970s because of its small size and is now trivially brute-forceable — a modern GPU breaks DES in hours. <strong>3DES</strong> (Triple-DES) was a stop-gap that applies DES three times with different keys to extend the effective key length, but it is slow and has been deprecated by NIST as of 2023. You will still encounter DES and 3DES in legacy financial systems and in older protocols, but neither belongs in any new design.</p>
+<table>
+<thead>
+<tr>
+<th>Cipher</th>
+<th style="text-align: right;">Block size</th>
+<th style="text-align: right;">Key size</th>
+<th>Status (2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DES</td>
+<td style="text-align: right;">64 bits</td>
+<td style="text-align: right;">56 bits</td>
+<td>Broken; do not use</td>
+</tr>
+<tr>
+<td>3DES</td>
+<td style="text-align: right;">64 bits</td>
+<td style="text-align: right;">112 / 168 bits effective</td>
+<td>Deprecated; phase out</td>
+</tr>
+<tr>
+<td>AES-128</td>
+<td style="text-align: right;">128 bits</td>
+<td style="text-align: right;">128 bits</td>
+<td>Current standard</td>
+</tr>
+<tr>
+<td>AES-192</td>
+<td style="text-align: right;">128 bits</td>
+<td style="text-align: right;">192 bits</td>
+<td>Current standard</td>
+</tr>
+<tr>
+<td>AES-256</td>
+<td style="text-align: right;">128 bits</td>
+<td style="text-align: right;">256 bits</td>
+<td>Preferred for long-lived data</td>
+</tr>
+</tbody>
+</table>
+<p>The choice between AES-128 and AES-256 is sometimes contentious. AES-128 is sufficient against any classical attacker for the foreseeable future. AES-256 has a larger margin against future attacks (including quantum-era Grover's-algorithm attacks, which we will revisit in the Emerging Topics chapter), at modest performance cost. Most modern guidance recommends AES-256 for new designs and long-lived data.</p>
+<h3 id="32-stream-ciphers">3.2 Stream Ciphers<a class="headerlink" href="#32-stream-ciphers" title="Permanent link">&para;</a></h3>
+<p>A <strong>stream cipher</strong> generates a long pseudo-random keystream from the key (and a nonce — see below) and XORs that keystream against the plaintext. ChaCha20 is the modern stream cipher of choice; the older RC4 was widely deployed but has known biases that disqualify it from new use. A subtle and dangerous property of stream ciphers is that <em>reusing the same keystream against two different messages reveals the XOR of the two plaintexts</em>, which is often enough for an attacker to recover both. This is the same failure mode that broke the Soviet VENONA traffic in the 1940s — a reused one-time-pad key. Modern stream ciphers require a <em>nonce</em> (number used once) for every encryption, and reuse of the nonce-key pair is catastrophic.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Symmetric-Cipher Default</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+For symmetric encryption in any new system, the default should be AES-GCM with 256-bit keys, or ChaCha20-Poly1305 if you need software-only performance on hardware without AES instructions. Both are <em>authenticated</em> encryption — they protect both confidentiality and integrity in a single primitive. We will see why that matters in the next section.</p>
+</div>
+<h2 id="4-block-cipher-modes-where-most-crypto-bugs-live">4. Block Cipher Modes — Where Most Crypto Bugs Live<a class="headerlink" href="#4-block-cipher-modes-where-most-crypto-bugs-live" title="Permanent link">&para;</a></h2>
+<p>A block cipher by itself only encrypts a single 128-bit block. To encrypt a message longer than one block — i.e., almost every real message — you need a <em>mode of operation</em>: a scheme for chaining the cipher's individual block encryptions together. <strong>Block cipher modes</strong> are where most cryptographic mistakes in real-world systems occur, because the choice of mode dramatically affects security even when the underlying cipher is correct.</p>
+<p>Three modes appear constantly in security writing — ECB, CBC, and CTR — plus one authenticated-encryption mode that absorbs and surpasses them: GCM. We will examine all four.</p>
+<p>A second concept used by every mode except ECB is the <strong>initialization vector</strong> (IV) — a per-message starting value that randomizes the encryption so that encrypting the same plaintext twice produces different ciphertexts. The IV is not secret (it is typically transmitted alongside the ciphertext), but its <em>uniqueness or randomness properties</em> depend on the mode and are critical to security. We will see in each mode below what the IV requirement is.</p>
+<p>A third concept used by block ciphers operating on messages whose length is not a multiple of the block size is a <strong>padding scheme</strong> — a deterministic way to extend the final block. The most common is PKCS#7 padding, which appends bytes whose value equals the number of padding bytes added. Padding sounds boring, but mishandling padding (specifically, distinguishing valid from invalid padding in error messages) created the famous <em>padding oracle</em> attacks against CBC mode in the 2010s.</p>
+<h3 id="41-ecb-the-mode-that-looks-like-encryption-but-isnt">4.1 ECB — The Mode That Looks Like Encryption But Isn't<a class="headerlink" href="#41-ecb-the-mode-that-looks-like-encryption-but-isnt" title="Permanent link">&para;</a></h3>
+<p><strong>ECB (Electronic Codebook) mode</strong> encrypts each plaintext block independently with the same key. ECB has no IV and no chaining. It is conceptually the simplest mode, and it is <em>almost always wrong</em>. The reason: identical plaintext blocks produce identical ciphertext blocks. If your plaintext has any repeating structure — a database row with a common header, a bitmap image with large solid-color regions, an HTTP response with predictable framing — that structure leaks straight through into the ciphertext. The famous "ECB penguin" image, where a cartoon penguin remains visible after ECB encryption, is the canonical demonstration.</p>
+<p>ECB mode has essentially no legitimate use in modern systems. The only places it appears correctly are encrypting a single block of data smaller than the block size, where chaining cannot help. If you see ECB in a code review, treat it as a defect.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">ECB Is The Most Common Crypto Footgun</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+ECB looks like encryption, accepts the same arguments as encryption, and decrypts back to the original plaintext — and it leaks the structure of the message anyway. It is the single most common cryptographic misuse in real-world codebases. Whenever you see "AES" in a code review, your next question must be "in what mode?" If the answer is "ECB" or "the default," dig in.</p>
+</div>
+<h3 id="42-cbc-chained-but-fragile">4.2 CBC — Chained, But Fragile<a class="headerlink" href="#42-cbc-chained-but-fragile" title="Permanent link">&para;</a></h3>
+<p><strong>CBC (Cipher Block Chaining) mode</strong> XORs each plaintext block with the <em>previous</em> ciphertext block before encryption, creating a chain. The first block is XORed with the IV, which must be unpredictable (typically random) for each message. CBC was the dominant mode for decades and is still found in many protocols (older TLS versions, IPsec, and most disk encryption schemes).</p>
+<p>CBC's weaknesses are well-documented. Encryption is sequential and cannot be parallelized (decryption can be). CBC is malleable in the sense that an attacker who can flip bits in the ciphertext can predictably flip bits in the plaintext of the <em>next</em> block — useless for reading the message, but useful for tampering if no integrity check is layered on top. And CBC is vulnerable to <em>padding oracle attacks</em> whenever the receiver leaks information about whether padding decoded correctly. CBC is acceptable when paired with an explicit MAC (encrypt-then-MAC), but the discipline required to compose CBC + MAC correctly has been the source of so many bugs that the security community has largely moved on to authenticated-encryption modes like GCM.</p>
+<h3 id="43-ctr-turning-a-block-cipher-into-a-stream-cipher">4.3 CTR — Turning A Block Cipher Into A Stream Cipher<a class="headerlink" href="#43-ctr-turning-a-block-cipher-into-a-stream-cipher" title="Permanent link">&para;</a></h3>
+<p><strong>CTR (Counter) mode</strong> turns a block cipher into a stream cipher: encrypt a sequence of counter values (IV, IV+1, IV+2, …) under the key, and XOR the resulting keystream against the plaintext. CTR is parallelizable in both directions, requires no padding, and is conceptually clean. Its IV requirement is <em>uniqueness</em> — every (key, IV) pair must be unique across all encryptions; reusing a counter with the same key reveals the XOR of the messages, just like a stream cipher with a reused nonce. CTR is the foundation of GCM.</p>
+<h3 id="44-gcm-authenticated-encryption-done-right">4.4 GCM — Authenticated Encryption Done Right<a class="headerlink" href="#44-gcm-authenticated-encryption-done-right" title="Permanent link">&para;</a></h3>
+<p><strong>GCM (Galois/Counter Mode)</strong> combines CTR-mode encryption with an integrity check (a Galois-field MAC) in a single primitive. GCM produces ciphertext <em>and</em> an authentication tag; on decryption, the tag is verified before the plaintext is returned. If an attacker tampers with even one bit of the ciphertext, the tag verification fails and the decryption operation refuses to return any plaintext at all. This property — <em>authenticated encryption with associated data</em>, AEAD — is what modern cryptographic engineering has converged on. It eliminates the entire class of malleability and padding-oracle attacks.</p>
+<p>GCM has one nasty footgun: nonce reuse is catastrophic. If the same key is used with the same nonce (12-byte IV) for two different messages, an attacker can recover the authentication key and forge messages at will. In practice, nonces are either random (with low collision probability if generated with a good RNG) or counter-based with strict bookkeeping. Many libraries handle this for you; some do not.</p>
+<h4 id="diagram-block-cipher-modes-comparison">Diagram: Block Cipher Modes Comparison<a class="headerlink" href="#diagram-block-cipher-modes-comparison" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Side-by-side visual showing ECB, CBC, CTR, and GCM mode behavior</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> block-cipher-modes-compare<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A 2×2 grid of small mode diagrams:</p>
+<p><strong>Top-left: ECB</strong>
+- 4 plaintext blocks (with two identical blocks shown in red to highlight pattern leakage)
+- Each block fed independently into a "AES Encrypt" box with the same key
+- 4 ciphertext blocks output, with the two corresponding ciphertext blocks ALSO identical (red)
+- Caption: "Identical plaintext → identical ciphertext. Pattern leaks. AVOID."</p>
+<p><strong>Top-right: CBC</strong>
+- 4 plaintext blocks
+- An IV box at the start, XOR with first block before AES Encrypt
+- Each ciphertext block is XOR'd into the next plaintext before encryption
+- Caption: "Chained. IV must be unpredictable. Sequential."</p>
+<p><strong>Bottom-left: CTR</strong>
+- IV / counter sequence (nonce, nonce+1, nonce+2, …)
+- Each counter encrypted with AES under key, producing keystream blocks
+- Plaintext XOR keystream → ciphertext
+- Caption: "Parallelizable. Nonce must be unique. No padding needed."</p>
+<p><strong>Bottom-right: GCM</strong>
+- Same CTR-mode structure as bottom-left
+- Plus a parallel "GHASH" computation over ciphertext blocks
+- Output: ciphertext + 128-bit authentication tag
+- Caption: "AEAD: encrypts AND authenticates. Modern default."</p>
+<p>Color: amber (#ffa000) outline on the ECB tile (warning), green (#4caf50) outline on the GCM tile (recommended), neutral slate on CBC and CTR.</p>
+<p>Responsive: 2x2 grid collapses to vertical stack below 800px.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltips per mode.</p>
+</details>
+<p>The hierarchy of modes for new designs is straightforward: prefer GCM (or its sibling ChaCha20-Poly1305) for almost everything, accept CBC + HMAC only when you must, accept CTR only when you have a separate integrity check, and treat ECB as a defect.</p>
+<h2 id="5-from-symmetric-to-asymmetric-why-we-need-both">5. From Symmetric to Asymmetric — Why We Need Both<a class="headerlink" href="#5-from-symmetric-to-asymmetric-why-we-need-both" title="Permanent link">&para;</a></h2>
+<p>Symmetric cryptography is fast and well-understood, but it has the <em>key distribution problem</em>: the two parties must already share a secret before they can communicate securely. For two people who can meet in person, that is solvable; for two computers on the internet that have never communicated before, it is not. <strong>Asymmetric cryptography</strong> (also called <em>public-key cryptography</em>) was invented in the 1970s exactly to solve this.</p>
+<p>Asymmetric cryptography uses a <em>key pair</em>: two mathematically related keys with a special property. The <strong>public key</strong> can be freely published — printed on a business card, posted on a website, embedded in a certificate — and used by anyone who wants to send you an encrypted message or verify your signature. The corresponding <strong>private key</strong> is kept secret by the owner and is used to decrypt messages encrypted to the public key, or to produce signatures that the public key can verify.</p>
+<p>The mathematical magic is that the two keys are linked, but extracting the private key from the public key is computationally infeasible for large enough key sizes. Asymmetric algorithms are based on hardness assumptions like <em>integer factorization</em> (RSA) or the <em>elliptic curve discrete logarithm problem</em> (ECC). Breaking them either requires solving the underlying math problem, which we have no efficient classical algorithm for, or building a sufficiently large quantum computer, which would render them all broken at once (the Emerging Topics chapter returns to this).</p>
+<p>Asymmetric crypto is much <em>slower</em> than symmetric — typically thousands of times slower for the same data — so in practice, asymmetric crypto is used to set up <em>symmetric</em> keys that then carry the actual conversation. This pattern is called <em>hybrid encryption</em>, and it is the structure of TLS, SSH, S/MIME, age, and almost every other modern secure-channel protocol.</p>
+<h3 id="51-rsa-the-original">5.1 RSA — The Original<a class="headerlink" href="#51-rsa-the-original" title="Permanent link">&para;</a></h3>
+<p><strong>RSA</strong>, named for its inventors Rivest, Shamir, and Adleman in 1977, is the oldest and most widely deployed asymmetric algorithm. RSA security rests on the difficulty of factoring the product of two large primes. Common RSA key sizes are 2048 bits (current minimum acceptable) and 3072 or 4096 bits (preferred for new designs). RSA can both encrypt and produce signatures, with different padding schemes for each use (RSA-OAEP for encryption, RSA-PSS for signatures).</p>
+<p>RSA is showing its age. Its keys and signatures are large (a 2048-bit RSA signature is 256 bytes), it is slow compared to elliptic-curve alternatives, and it requires careful padding to avoid attacks. Modern designs prefer ECC where compatibility allows.</p>
+<h3 id="52-elliptic-curve-cryptography">5.2 Elliptic Curve Cryptography<a class="headerlink" href="#52-elliptic-curve-cryptography" title="Permanent link">&para;</a></h3>
+<p><strong>Elliptic Curve Cryptography (ECC)</strong> uses the algebraic structure of elliptic curves over finite fields to achieve the same asymmetric capabilities as RSA at much smaller key sizes. A 256-bit ECC key (specifically Curve25519 or P-256) provides security roughly equivalent to a 3072-bit RSA key. The smaller key and signature sizes matter for constrained environments — embedded devices, mobile, smart cards — and for performance.</p>
+<p>ECC has its own footgun history (early curves with weak parameters, side-channel implementations) but the modern curves (Curve25519 for key exchange, Ed25519 for signatures, P-256/P-384 for FIPS-compliant systems) are well-understood and widely deployed.</p>
+<h3 id="53-diffie-hellman-key-exchange">5.3 Diffie-Hellman Key Exchange<a class="headerlink" href="#53-diffie-hellman-key-exchange" title="Permanent link">&para;</a></h3>
+<p><strong>Diffie-Hellman (DH)</strong>, published by Whitfield Diffie and Martin Hellman in 1976, was the first widely known public-key construction and remains foundational. DH is a <strong>key exchange</strong> protocol: two parties, each generating a private value, can produce a shared secret by exchanging public values, and an eavesdropper who sees both public values cannot derive the shared secret. The shared secret then becomes the symmetric key for the rest of the session.</p>
+<p>The math, briefly: both parties agree on public parameters (a large prime <em>p</em> and a generator <em>g</em>). Alice picks a private value <em>a</em> and sends ( g^a \mod p ); Bob picks a private value <em>b</em> and sends ( g^b \mod p ). Each computes the shared secret ( g^{ab} \mod p ) using their own private value and the other party's public value. The eavesdropper has ( g^a ) and ( g^b ) but, without knowing <em>a</em> or <em>b</em>, cannot compute ( g^{ab} ) — this is the <em>Diffie-Hellman problem</em>, which is at least as hard as the discrete logarithm problem.</p>
+<p>Modern DH is almost always implemented in the elliptic-curve variant, ECDHE (Elliptic Curve Diffie-Hellman Ephemeral), with fresh values for every session — that "ephemeral" property is what gives modern TLS its <em>forward secrecy</em> (Chapter 4 will revisit forward secrecy in detail).</p>
+<h4 id="diagram-diffie-hellman-key-exchange">Diagram: Diffie-Hellman Key Exchange<a class="headerlink" href="#diagram-diffie-hellman-key-exchange" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Sequence diagram showing Alice and Bob deriving a shared secret over an untrusted channel</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> diffie-hellman-exchange<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A sequence diagram with three actors: Alice (left), Network/Eve (center), Bob (right).</p>
+<p>Steps from top to bottom:</p>
+<ol>
+<li>Both Alice and Bob: agree on public parameters (large prime p, generator g) — shown above the diagram in a box: "Public: p, g"</li>
+<li>Alice generates secret <code>a</code> (locally, in a side note: "kept secret")</li>
+<li>Bob generates secret <code>b</code> (locally, side note: "kept secret")</li>
+<li>Alice → Bob: sends <code>A = g^a mod p</code></li>
+<li>Bob → Alice: sends <code>B = g^b mod p</code></li>
+<li>Alice computes <code>s = B^a mod p</code></li>
+<li>Bob computes <code>s = A^b mod p</code></li>
+<li>Both arrive at the same shared secret <code>s = g^(ab) mod p</code></li>
+</ol>
+<p>Eve (center, sees the wire) observes A and B but cannot derive <code>s</code> without solving the discrete log problem. Show Eve with a "?" thought bubble at the bottom.</p>
+<p>Color: cybersecurity blue for Alice/Bob private states (kept secret), slate steel for the wire transmissions, red for Eve's "cannot recover" annotation. Responsive: simplifies to a vertical sequence below 600px viewport.</p>
+<p>Implementation: Mermaid sequenceDiagram.</p>
+</details>
+<p>DH does not, by itself, authenticate either party — Alice does not know whether the <em>B</em> she received came from the real Bob or from an active man-in-the-middle. That is what digital signatures and certificate authorities are for, and Chapter 4 will tie those pieces together.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why The Internet Has Two Crypto Layers</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Asymmetric cryptography is slow but solves key distribution. Symmetric cryptography is fast but cannot bootstrap. Real protocols — TLS, SSH, Signal — use asymmetric crypto for <em>one quick handshake</em> that establishes a symmetric session key, then switch to symmetric crypto for the bulk of the conversation. Two different tools, each used where it shines.</p>
+</div>
+<h2 id="6-hash-functions-fingerprints-for-data">6. Hash Functions — Fingerprints For Data<a class="headerlink" href="#6-hash-functions-fingerprints-for-data" title="Permanent link">&para;</a></h2>
+<p>A <strong>hash function</strong> maps an input of arbitrary size to a fixed-size output called a <em>digest</em> or <em>hash</em>. The hash function we care about for cryptography is a <em>cryptographic</em> hash function, which is required to satisfy three properties:</p>
+<ul>
+<li><strong>Preimage resistance</strong> — given a hash value <em>h</em>, it is computationally infeasible to find any input <em>x</em> such that hash(<em>x</em>) = <em>h</em>. (You cannot reverse the hash.)</li>
+<li><strong>Second-preimage resistance</strong> — given a specific input <em>x</em>, it is infeasible to find a <em>different</em> input <em>y</em> such that hash(<em>x</em>) = hash(<em>y</em>).</li>
+<li><strong>Collision resistance</strong> — it is infeasible to find <em>any</em> two inputs <em>x</em> and <em>y</em> (where <em>x</em> ≠ <em>y</em>) such that hash(<em>x</em>) = hash(<em>y</em>).</li>
+</ul>
+<p>Collision resistance is the strongest of the three and is the property that breaks first when a hash function is found to be weak.</p>
+<p>The currently recommended cryptographic hash functions are the <strong>SHA-2</strong> family (SHA-256, SHA-384, SHA-512) and the <strong>SHA-3</strong> family (Keccak, standardized in 2015). Both are believed secure against all known attacks. SHA-256 is the most widely deployed and is the default choice for new systems.</p>
+<p>The historical hash function <strong>MD5</strong>, designed in 1992, is broken in the strongest sense: practical collision attacks exist that can produce two different inputs with the same MD5 hash in minutes on a laptop. MD5 must not be used for any security-relevant purpose. It survives in some non-security contexts (file checksums where adversarial collisions are not a concern), but every modern security guideline forbids it for signatures, certificates, integrity checks, or password storage. SHA-1 is in a similar state — practical collisions were demonstrated in 2017 (the SHAttered attack), and it is being phased out everywhere.</p>
+<table>
+<thead>
+<tr>
+<th>Hash function</th>
+<th style="text-align: right;">Output size</th>
+<th>Status (2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD5</td>
+<td style="text-align: right;">128 bits</td>
+<td>Broken; do not use for security</td>
+</tr>
+<tr>
+<td>SHA-1</td>
+<td style="text-align: right;">160 bits</td>
+<td>Deprecated; collisions demonstrated</td>
+</tr>
+<tr>
+<td>SHA-256 (SHA-2)</td>
+<td style="text-align: right;">256 bits</td>
+<td>Recommended</td>
+</tr>
+<tr>
+<td>SHA-512 (SHA-2)</td>
+<td style="text-align: right;">512 bits</td>
+<td>Recommended</td>
+</tr>
+<tr>
+<td>SHA3-256 (SHA-3)</td>
+<td style="text-align: right;">256 bits</td>
+<td>Recommended (different design from SHA-2)</td>
+</tr>
+<tr>
+<td>SHA3-512 (SHA-3)</td>
+<td style="text-align: right;">512 bits</td>
+<td>Recommended</td>
+</tr>
+</tbody>
+</table>
+<p>Hash functions are everywhere in security: file integrity verification, password storage (with a password-specific KDF, see Chapter 4), blockchain, code signing, content-addressable storage, deduplication, and as the building block for keyed integrity (MACs). The two-line summary is <em>use SHA-256 or SHA-512, never MD5 or SHA-1</em>.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Why The Math Is Less Scary Than It Looks</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering encouragement">
+Cryptography has a reputation for being math-heavy and forbidding. The truth is that as a practitioner you will rarely implement a primitive — you will <em>call</em> a primitive in a well-vetted library. What you actually need is a clear mental model of <em>what each primitive guarantees</em> and <em>how to compose them safely</em>. That is what this chapter is teaching, and it is well within reach.</p>
+</div>
+<h2 id="7-message-authentication-codes-keyed-integrity">7. Message Authentication Codes — Keyed Integrity<a class="headerlink" href="#7-message-authentication-codes-keyed-integrity" title="Permanent link">&para;</a></h2>
+<p>A hash function alone gives you integrity <em>checking</em> but not integrity <em>protection</em>: anyone who can modify the data can also recompute the hash. To detect deliberate tampering, you need a keyed function that only the sender and receiver can produce or verify. That function is called a <strong>Message Authentication Code (MAC)</strong>.</p>
+<p>A MAC takes a key and a message and produces a short tag. The receiver, knowing the same key, can re-derive the tag from the received message and compare. If the tags match, the message is intact and was produced by someone who knew the key. If the tags do not match, the message has been tampered with or someone is forging.</p>
+<p>The dominant MAC construction is <strong>HMAC</strong> (Hash-based MAC), standardized in RFC 2104. HMAC takes a hash function (typically SHA-256 today, written HMAC-SHA-256) and uses it twice with the key in a specific way that resists known attacks against simpler "hash the key with the message" constructions. HMAC is fast, well-understood, and ubiquitous — it underlies AWS request signing, JWT signing, IPsec, TLS (in older versions), and many other protocols.</p>
+<p>The relationship between hashing, MACs, and authenticated encryption can be summarized as follows. Hashing detects accidental corruption. MACs detect deliberate tampering by an adversary who does not have the key. AEAD modes (like GCM) combine encryption with a MAC into a single primitive, so you get confidentiality and integrity together with one library call.</p>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th style="text-align: center;">Confidentiality</th>
+<th style="text-align: center;">Integrity</th>
+<th style="text-align: center;">Key needed?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash (SHA-256)</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Detects accidents only</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>HMAC</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Detects tampering</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Symmetric encryption alone (e.g., CBC)</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No (must add MAC)</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Authenticated encryption (GCM, ChaCha20-Poly1305)</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>The "must add MAC" line for raw symmetric encryption is exactly where many older systems get this wrong — they encrypt without authenticating, and an attacker who can flip bits in the ciphertext can produce predictable, undetected changes to the plaintext. For new designs, <em>prefer authenticated encryption</em>. If you must use unauthenticated encryption, <em>always</em> layer a MAC over the ciphertext (encrypt-then-MAC).</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Encrypt-Then-MAC, Never The Other Way</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+Three orderings are possible: MAC-then-encrypt, encrypt-and-MAC (in parallel), and encrypt-then-MAC. Only encrypt-then-MAC is provably secure as a generic composition — the other two have known failure modes. If you are not using AEAD and you find yourself composing a cipher with a MAC, the order matters more than most engineers realize. (This is one reason the field switched to AEAD.)</p>
+</div>
+<h2 id="8-putting-the-primitives-together">8. Putting The Primitives Together<a class="headerlink" href="#8-putting-the-primitives-together" title="Permanent link">&para;</a></h2>
+<p>To anchor the chapter, consider how the primitives compose in the simplest secure-channel protocol you can imagine. Two parties want to exchange messages with confidentiality and integrity, over an untrusted network, when they have no prior shared secret.</p>
+<ol>
+<li><strong>Establish a shared secret</strong> using ECDHE (elliptic-curve Diffie-Hellman ephemeral). Each party generates a fresh key pair, exchanges the public halves, and derives the same shared secret. The "ephemeral" part means new key pairs every session — this gives forward secrecy.</li>
+<li><strong>Derive symmetric keys</strong> from the shared secret using a Key Derivation Function (the KDF concept will be explored in Chapter 4). The KDF turns one shared secret into the multiple keys needed for encryption, MAC, and other purposes.</li>
+<li><strong>Encrypt and authenticate messages</strong> using AES-256-GCM (or ChaCha20-Poly1305), with a unique nonce for each message. Each message arrives at the receiver as ciphertext + tag; the receiver verifies the tag before processing.</li>
+<li><strong>Authenticate identities</strong> (still missing from the above!) using digital signatures over the ECDHE public values. Without this, an active man-in-the-middle can pretend to be the other party. Chapter 4 will add this layer with PKI.</li>
+</ol>
+<p>What you have just read, with the missing identity layer added, is essentially a TLS 1.3 handshake. Every primitive in this chapter — symmetric cipher, block-cipher mode, IV, MAC, hash, public-key key exchange — is present, doing exactly the job we have just defined for it. The protocol is not magic; it is a careful composition of primitives, each chosen for a specific guarantee.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Real Skill Is Composition</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Implementing a primitive correctly is hard but rare — most of us will use a library. Composing primitives correctly is the daily job of secure systems work, and most failures in the wild come from composition mistakes (CBC without a MAC, GCM with a reused nonce, RSA without proper padding). The next chapter is largely about safe composition.</p>
+</div>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read a security-protocol description and recognize every primitive it uses. You know the difference between symmetric and asymmetric crypto, when each is appropriate, and how they compose in hybrid schemes. You know which block-cipher modes are safe and which are footguns, what an IV does, what a MAC adds, and why authenticated encryption is the modern default. Chapter 4 builds the next layer on top of this — signatures, PKI, TLS, and the data-protection patterns that turn primitives into real-world security.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Cryptography provides confidentiality, integrity, authentication, and non-repudiation</strong> — but not availability, and not protection of data while in use.</li>
+<li><strong>Symmetric crypto</strong> (AES, ChaCha20) is fast and bulk-data-friendly; <strong>asymmetric crypto</strong> (RSA, ECC) solves key distribution at much higher cost. Real protocols use both.</li>
+<li><strong>Block-cipher modes matter at least as much as the cipher.</strong> Use AEAD (GCM, ChaCha20-Poly1305) by default. Avoid ECB. Be cautious with CBC.</li>
+<li><strong>Initialization vectors and nonces</strong> carry strict requirements — uniqueness for CTR/GCM, unpredictability for CBC. Reuse breaks the security promise.</li>
+<li><strong>Diffie-Hellman key exchange</strong> lets two parties derive a shared secret over an untrusted network; the elliptic-curve variant ECDHE is the modern default.</li>
+<li><strong>Hash functions</strong> (SHA-256, SHA-512, SHA-3) provide integrity fingerprints; collision and preimage resistance are the security properties to remember. MD5 and SHA-1 are broken — do not use them.</li>
+<li><strong>HMAC</strong> turns a hash function into a keyed integrity check; <strong>AEAD</strong> combines encryption and integrity in one primitive.</li>
+</ul>
+<p>Next chapter: putting these primitives to work — digital signatures, PKI, TLS, key management, password hashing, and the data-protection patterns of real-world systems.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
