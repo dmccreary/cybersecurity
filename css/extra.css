@@ -1,0 +1,83 @@
+/* ============================================
+   Custom primary color: cybersecurity blue (#1565c0)
+   Matches Sentinel the Fox's shield emblem.
+   Activated by `primary: 'custom'` in mkdocs.yml.
+   ============================================ */
+:root {
+  --md-primary-fg-color:        #1565c0;
+  --md-primary-fg-color--light: #1976d2;
+  --md-primary-fg-color--dark:  #0d47a1;
+  --md-accent-fg-color:         #ffa000;
+}
+
+.md-header__button.md-logo {
+  margin: 0;
+  padding: 0;
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 50px;
+  width: 30px;
+}
+
+/* Container to control the iframe size and scaling */
+.iframe-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Iframe styles — used for embedded MicroSims */
+iframe {
+  width: 100%;
+  border: solid 2px #1565c0;
+}
+
+/* Wrap a list with <div class="upper-alpha"> to number A.B.C.D etc.
+   Requires md_in_html in mkdocs.yml. */
+.upper-alpha ol {
+  list-style-type: upper-alpha;
+}
+
+/* ============================================
+   Prompt Admonition — copy-to-clipboard button
+   ============================================ */
+.admonition.prompt {
+  position: relative;
+}
+
+.admonition.prompt .copy-button {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background-color: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.3rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.admonition.prompt .copy-button:hover {
+  background-color: #0d47a1;
+}
+
+/* ============================================
+   Document Status Icons (colored circles in nav)
+   ============================================ */
+
+/* Red — specification complete */
+.md-status--spec-complete::after {
+  background-color: #e53935;
+}
+
+/* Orange — initial prototype complete */
+.md-status--prototype::after {
+  background-color: #fb8c00;
+}
+
+/* Green — ready for testing */
+.md-status--ready-for-testing::after {
+  background-color: #43a047;
+}
