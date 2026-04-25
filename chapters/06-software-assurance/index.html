@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Introduces the defensive toolchain: input validation, output encoding, parameterized queries, static and dynamic analysis, fuzzing, software composition analysis, the supply chain, SBOMs, code signing, and secure code review.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>6. Software Assurance - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Software Assurance and Supply Chain Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Software Assurance
+              Software Assurance and Supply Chain Security
             
           </span>
         </div>
@@ -622,6 +622,192 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-from-dont-write-bugs-to-make-bugs-hard-to-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From "Don't Write Bugs" to "Make Bugs Hard to Write"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. From "Don't Write Bugs" to "Make Bugs Hard to Write"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-three-layers-of-software-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Three Layers of Software Assurance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-first-line-of-defense-input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The First Line of Defense: Input Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-output-encoding-the-second-half-of-injection-defense" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Output Encoding — The Second Half of Injection Defense
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parameterized-queries-killing-sql-injection-as-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Parameterized Queries — Killing SQL Injection As A Class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-static-analysis-reading-code-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Static Analysis — Reading Code At Scale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dynamic-analysis-watching-the-code-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Dynamic Analysis — Watching The Code Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-fuzzing-letting-the-machine-try-inputs-you-did-not-imagine" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Fuzzing — Letting The Machine Try Inputs You Did Not Imagine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Fuzzing — Letting The Machine Try Inputs You Did Not Imagine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coverage-guided-fuzzer-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coverage-Guided Fuzzer Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-software-composition-analysis-and-dependency-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Software Composition Analysis and Dependency Scanning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-software-supply-chain-trust-beyond-your-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. The Software Supply Chain — Trust Beyond Your Repo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. The Software Supply Chain — Trust Beyond Your Repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-modern-software-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A Modern Software Supply Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-sboms-a-bill-of-materials-for-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. SBOMs — A Bill of Materials For Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. SBOMs — A Bill of Materials For Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sbom-as-a-dependency-tree-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: SBOM as a Dependency Tree Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-code-signing-verifying-what-you-are-about-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Code Signing — Verifying What You Are About To Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-secure-code-review-humans-in-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Secure Code Review — Humans In The Loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-putting-it-all-together-the-assurance-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Putting It All Together — The Assurance Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1269,192 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-from-dont-write-bugs-to-make-bugs-hard-to-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From "Don't Write Bugs" to "Make Bugs Hard to Write"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. From "Don't Write Bugs" to "Make Bugs Hard to Write"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-three-layers-of-software-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Three Layers of Software Assurance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-first-line-of-defense-input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The First Line of Defense: Input Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-output-encoding-the-second-half-of-injection-defense" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Output Encoding — The Second Half of Injection Defense
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parameterized-queries-killing-sql-injection-as-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Parameterized Queries — Killing SQL Injection As A Class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-static-analysis-reading-code-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Static Analysis — Reading Code At Scale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dynamic-analysis-watching-the-code-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Dynamic Analysis — Watching The Code Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-fuzzing-letting-the-machine-try-inputs-you-did-not-imagine" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Fuzzing — Letting The Machine Try Inputs You Did Not Imagine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Fuzzing — Letting The Machine Try Inputs You Did Not Imagine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-coverage-guided-fuzzer-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Coverage-Guided Fuzzer Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-software-composition-analysis-and-dependency-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Software Composition Analysis and Dependency Scanning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-software-supply-chain-trust-beyond-your-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. The Software Supply Chain — Trust Beyond Your Repo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. The Software Supply Chain — Trust Beyond Your Repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-modern-software-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A Modern Software Supply Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-sboms-a-bill-of-materials-for-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. SBOMs — A Bill of Materials For Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. SBOMs — A Bill of Materials For Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sbom-as-a-dependency-tree-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: SBOM as a Dependency Tree Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-code-signing-verifying-what-you-are-about-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Code Signing — Verifying What You Are About To Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-secure-code-review-humans-in-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Secure Code Review — Humans In The Loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-putting-it-all-together-the-assurance-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Putting It All Together — The Assurance Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1132,13 +1504,471 @@
 <li><a href="../05-software-vulnerabilities/">Chapter 5: Software Vulnerabilities and Secure Coding</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Defensive Toolchain</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. Chapter 5 named the bugs; this chapter equips you to find, prevent, and contain them at scale. We will move from in-code defenses (validating input, encoding output, parameterizing queries) through the automated tooling that finds bugs you missed (static analysis, dynamic analysis, fuzzing) out to the supply-chain layer where most modern code is <em>not yours</em>. Trust, but verify — including the libraries you imported this morning.</p>
+</div>
+<h2 id="1-from-dont-write-bugs-to-make-bugs-hard-to-write">1. From "Don't Write Bugs" to "Make Bugs Hard to Write"<a class="headerlink" href="#1-from-dont-write-bugs-to-make-bugs-hard-to-write" title="Permanent link">&para;</a></h2>
+<p>A working secure-coding standard is necessary but not sufficient. Even teams that have read the OWASP Top Ten and the CWE Top 25 ship vulnerabilities, because most software is now assembled from hundreds of dependencies, written under deadline, and modified by dozens of engineers across years. The goal of <strong>software assurance</strong> is to add automated, repeatable defenses to the development pipeline so that whole <em>classes</em> of bug become hard to introduce, and the ones that slip through are caught before users encounter them.</p>
+<p>This chapter organizes those defenses into three concentric layers. The innermost layer is the code itself: defensive patterns at the boundaries of an application — validating input, encoding output, parameterizing database queries — that eliminate entire vulnerability classes if used consistently. The middle layer is the analysis tooling that runs over the code: static analysis, dynamic analysis, and fuzzing find bugs the developer did not. The outermost layer is the supply chain: the libraries, base images, build systems, and signing infrastructure your code depends on, all of which an attacker can target instead of your code. A modern security program needs all three layers, and they reinforce one another rather than substituting for one another.</p>
+<p>The "defense in depth" principle from Chapter 1 shows up here in operational form. Input validation alone is not enough — a single missed validation point exposes the application. Static analysis alone is not enough — it has false positives and misses runtime-only bugs. SBOMs alone do not stop an attacker — they only tell you what was in the box. The strength of the program is in the <em>composition</em> of layers, each catching what the others miss.</p>
+<h4 id="diagram-the-three-layers-of-software-assurance">Diagram: The Three Layers of Software Assurance<a class="headerlink" href="#diagram-the-three-layers-of-software-assurance" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Concentric circles showing in-code defenses, analysis tooling, and supply chain layers</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> software-assurance-layers<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>Three concentric circles on a 720x480 responsive canvas (resizes to container width).</p>
+<ul>
+<li><strong>Inner circle</strong> (cybersecurity blue #1565c0, label "In-Code Defenses"): contains three rotating chips: "Input Validation", "Output Encoding", "Parameterized Queries"</li>
+<li><strong>Middle ring</strong> (slate steel #455a64, label "Analysis Tooling"): contains three chips: "Static Analysis (SAST)", "Dynamic Analysis (DAST)", "Fuzzing"</li>
+<li><strong>Outer ring</strong> (amber alert accent #ffa000, label "Supply Chain"): contains four chips: "SCA / Dependency Scanning", "SBOM", "Code Signing", "Secure Build"</li>
+</ul>
+<p>Hovering on any chip shows a 1-line tooltip with the definition (matching the glossary). A small "What this layer protects against" caption updates as the user hovers a ring (e.g., "In-code defenses prevent injection at the trust boundary.").</p>
+<p>Learning objective (Bloom — Understand): explain how the three layers compose to defend a software system, and articulate which layer fails when a particular incident occurs.</p>
+<p>Responsive: collapses to vertical stack of three labeled bands below 600px viewport.</p>
+<p>Implementation: p5.js sketch with <code>updateCanvasSize()</code> first in setup(), <code>canvas.parent(document.querySelector('main'))</code>, mouse-hover tooltips drawn on top.</p>
+</details>
+<h2 id="2-the-first-line-of-defense-input-validation">2. The First Line of Defense: Input Validation<a class="headerlink" href="#2-the-first-line-of-defense-input-validation" title="Permanent link">&para;</a></h2>
+<p><strong>Input validation</strong> is the practice of checking that data crossing a trust boundary into an application matches an expected, well-defined shape <em>before</em> the application acts on it. Every place an application receives data from a less-trusted source — an HTTP request, a file upload, a command-line argument, a message from another service, a row from a database it did not write — is a trust boundary, and every trust boundary needs validation.</p>
+<p>Validation policies fall into two broad families. <strong>Allow-listing</strong> (also called whitelist validation) defines what <em>is</em> permitted and rejects everything else: e.g., "this field must match the regex <code>^[A-Za-z0-9_-]{1,32}$</code>." <strong>Deny-listing</strong> (blacklist validation) defines what is not permitted and allows everything else: e.g., "reject inputs containing <code>&lt;script&gt;</code>." Allow-listing is strictly more secure because the defender enumerates the small set of acceptable inputs rather than trying to enumerate the unbounded set of malicious ones. Deny-listing is the path of least resistance and the path of most bypasses — attackers spend their careers finding inputs that the deny-list author did not think of.</p>
+<p>A useful mental model is to validate inputs along four dimensions, in order:</p>
+<ol>
+<li><strong>Type</strong> — is this an integer, a string, a date? Reject anything that fails to parse.</li>
+<li><strong>Length / range</strong> — is the integer in <code>[0, 1_000_000]</code>? Is the string <code>&lt;= 256</code> characters?</li>
+<li><strong>Format / structure</strong> — does it match the expected pattern (regex, schema, JSON shape)?</li>
+<li><strong>Semantic / business rule</strong> — does the user have permission to act on the resource named in this input?</li>
+</ol>
+<p>Validation should happen <em>as close to the input source as possible</em>, ideally at a single chokepoint per trust boundary, and it should <em>reject</em> (not silently sanitize) malformed input. Auto-fixing malformed input is a footgun: the auto-fixer's idea of "what the user meant" can differ from the application's idea of "what is safe," and the gap is where bypasses live.</p>
+<table>
+<thead>
+<tr>
+<th>Validation aspect</th>
+<th>Bad pattern</th>
+<th>Good pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where</td>
+<td>Scattered across handlers</td>
+<td>One layer at the trust boundary</td>
+</tr>
+<tr>
+<td>Strategy</td>
+<td>Deny-list ("block dangerous chars")</td>
+<td>Allow-list ("must match this schema")</td>
+</tr>
+<tr>
+<td>On failure</td>
+<td>Try to "fix" the input</td>
+<td>Reject with a clear error</td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Validate after decoding once</td>
+<td>Validate canonical form (decode fully first)</td>
+</tr>
+<tr>
+<td>Trust</td>
+<td>Trust client-side validation</td>
+<td>Re-validate server-side; client is advisory</td>
+</tr>
+</tbody>
+</table>
+<p>Client-side validation (the JavaScript that turns a form red) is a <em>usability</em> feature, not a security feature. Anyone can disable it, send the request directly with <code>curl</code>, or replay the request from a proxy. <strong>Server-side validation is mandatory; client-side validation is a courtesy.</strong> Treating client-side validation as a security control is one of the most common mistakes new web developers make.</p>
+<h2 id="3-output-encoding-the-second-half-of-injection-defense">3. Output Encoding — The Second Half of Injection Defense<a class="headerlink" href="#3-output-encoding-the-second-half-of-injection-defense" title="Permanent link">&para;</a></h2>
+<p>Where input validation defends the <em>entry</em> of data into the application, <strong>output encoding</strong> defends the <em>exit</em> of data into another system: a web page, a shell command, a SQL statement, an LDAP filter, an XML document. Output encoding transforms data so that whatever it contains — even hostile-looking characters — is interpreted as data, not as control instructions, by the downstream parser.</p>
+<p>The core idea is that every output context has a different syntax. A <code>&lt;</code> in HTML starts a tag. A <code>;</code> in a shell starts a new command. A <code>'</code> in SQL ends a string literal. A <code>$</code> in a JavaScript template literal begins an interpolation. The same byte means different things in different contexts, so the encoder must match the <em>destination</em> context. Encoding for the wrong context is a common bug: HTML-encoding a value that is then placed inside a JavaScript string in an HTML page can leave the JavaScript-context attack vector wide open.</p>
+<p>The contexts you will most often need to encode for, in web work specifically, are summarized below:</p>
+<table>
+<thead>
+<tr>
+<th>Output context</th>
+<th>Dangerous characters</th>
+<th>Encoder</th>
+<th>Common bug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML body</td>
+<td><code>&lt; &gt; &amp; " '</code></td>
+<td>HTML entity encode</td>
+<td>XSS via untrusted text in templates</td>
+</tr>
+<tr>
+<td>HTML attribute</td>
+<td><code>&lt; &gt; &amp; " ' space</code></td>
+<td>HTML attribute encode</td>
+<td>Breaking out of an attribute</td>
+</tr>
+<tr>
+<td>JavaScript string</td>
+<td><code>&lt; &gt; &amp; " ' \ /</code> and Unicode line terminators</td>
+<td><code>\xHH</code> or <code>\uHHHH</code> escapes</td>
+<td>Breaking out of a <code>&lt;script&gt;</code> block</td>
+</tr>
+<tr>
+<td>URL parameter</td>
+<td>reserved characters per RFC 3986</td>
+<td>percent-encoding</td>
+<td>Path traversal, parameter pollution</td>
+</tr>
+<tr>
+<td>CSS value</td>
+<td><code>&lt; &gt; &amp; " '</code> and Unicode controls</td>
+<td>CSS escape</td>
+<td>XSS via <code>expression()</code> or <code>url()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Most modern web frameworks (React, Angular, Vue, Django, Rails) encode by default in HTML body and HTML attribute contexts, which is why <strong>cross-site scripting</strong> has become rarer in framework-using code than it was in raw-template code. The bugs that remain tend to live in the <em>non-default</em> contexts: a developer renders a value into a <code>&lt;script&gt;</code> block, or assigns it to an <code>innerHTML</code>, or builds a URL by string concatenation, and the framework's default encoding does not apply.</p>
+<p>The pairing of input validation with output encoding is the textbook injection defense. Input validation rejects ill-formed data at the entrance; output encoding ensures any data that does pass through is treated as data wherever it is used. <strong>Neither one is sufficient alone</strong>, because validation cannot anticipate every downstream syntax, and encoding cannot fix data that was already malformed enough to break business logic.</p>
+<h2 id="4-parameterized-queries-killing-sql-injection-as-a-class">4. Parameterized Queries — Killing SQL Injection As A Class<a class="headerlink" href="#4-parameterized-queries-killing-sql-injection-as-a-class" title="Permanent link">&para;</a></h2>
+<p>Of all the injection-class defenses, the one that demonstrates the structural-fix principle most clearly is the <strong>parameterized query</strong> (also called a <em>prepared statement</em>). A parameterized query separates the SQL <em>code</em> (a fixed template with placeholder markers) from the SQL <em>data</em> (user-supplied values that fill those markers). Because the values are bound through a typed API after the SQL syntax is already parsed, no value, no matter what characters it contains, can change the structure of the query.</p>
+<p>Compare two ways of asking the database for a user:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Vulnerable: string concatenation builds the SQL</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users WHERE name = &#39;&quot;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># username = &quot;admin&#39; OR &#39;1&#39;=&#39;1&quot; turns this into a query that returns all rows.</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Safe: parameterized query — the ? is a placeholder</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users WHERE name = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">username</span><span class="p">,))</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># username = &quot;admin&#39; OR &#39;1&#39;=&#39;1&quot; is treated as a literal string value;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># the SQL structure is fixed before any user data is bound.</span>
+</span></code></pre></div>
+<p>In the safe version, the database driver hands the query template and the parameter to the database as separate elements. The database parses the SQL once, then plugs the parameter into the parsed plan as data. There is no string-concatenation step to attack. The parameter could be the entire works of Shakespeare — it would be looked up as a username string and not found, and that is the entire failure mode.</p>
+<p>The same pattern generalizes beyond SQL. <strong>Parameterized commands</strong> (with shell APIs that accept arrays of arguments rather than a single command string) prevent command injection. <strong>DOM APIs</strong> (<code>textContent</code>, <code>setAttribute</code>) prevent DOM-based XSS where their template-string equivalents (<code>innerHTML</code>) do not. The unifying idea is <em>separating code from data at an API boundary that is enforced by the runtime, not by the developer's discipline</em>.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">String Concatenation Into A Query Is Always Wrong</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+If you ever find yourself building a SQL string with <code>+</code> or <code>f"...{value}..."</code>, stop. The fix is not "escape the value harder" — it is to use the parameterized API your database driver already provides. Escaping is a deny-list (Section 2); parameterization is a structural fix. One of these is on every list of "common SQL injection bypasses." The other is not.</p>
+</div>
+<p>The parameterized query is the canonical example of a defense that <strong>makes the bad outcome impossible</strong>, not just unlikely. That is the bar to aim for in security engineering. When you can find it, take it.</p>
+<h2 id="5-static-analysis-reading-code-at-scale">5. Static Analysis — Reading Code At Scale<a class="headerlink" href="#5-static-analysis-reading-code-at-scale" title="Permanent link">&para;</a></h2>
+<p>Even with disciplined developers and a good framework, no human team reviews every line of every commit on every branch. <strong>Static application security testing (SAST)</strong>, often shortened to <strong>static analysis</strong>, runs an automated tool over source code (or compiled artifacts) to find bug patterns <em>without executing the program</em>. Static analyzers know about classes of bug — null dereferences, untrusted-data sinks, hardcoded secrets, unsafe deserialization, taint flowing from an HTTP parameter into a SQL string — and they flag suspicious patterns for human review.</p>
+<p>Static analyzers range from simple linters (<code>eslint</code>, <code>pyflakes</code>) that catch style and obvious mistakes, through security-focused tools (Semgrep, CodeQL, SonarQube, Checkmarx, Fortify) that ship with rules for known vulnerability classes. The deeper tools perform <strong>taint analysis</strong>: they trace where data enters the program (sources — HTTP parameters, file reads, environment variables) through the call graph until it reaches a <em>sink</em> (a SQL execute, a <code>system()</code> call, an HTML render). If untainted-by-validation data reaches a sink, the tool reports a finding.</p>
+<p>The strengths and weaknesses of static analysis are mirror images of each other. The strengths: it runs early (in the IDE, on every commit, in CI), it scales to millions of lines of code, it finds bugs without test inputs, and it documents a repeatable security baseline. The weaknesses: it is <strong>noisy</strong> (false positives are common, especially for complex frameworks), it cannot reason about runtime configuration or dynamic behavior, and it has trouble with reflection, dynamic dispatch, and code-loading patterns common in modern languages.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Static analysis (SAST)</th>
+<th>Dynamic analysis (DAST)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runs on</td>
+<td>Source code or bytecode</td>
+<td>Running application</td>
+</tr>
+<tr>
+<td>Needs build artifact</td>
+<td>No (source-level) or compiled</td>
+<td>Yes — must be deployable</td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td>Sees all paths in code</td>
+<td>Sees only paths exercised by tests</td>
+</tr>
+<tr>
+<td>False positive rate</td>
+<td>Higher (sees infeasible paths)</td>
+<td>Lower (only flags reproduced bugs)</td>
+</tr>
+<tr>
+<td>False negative rate</td>
+<td>Misses runtime-config bugs</td>
+<td>Misses paths not exercised</td>
+</tr>
+<tr>
+<td>Where in SDLC</td>
+<td>Early — IDE, pre-commit, CI</td>
+<td>Later — staging, pre-prod</td>
+</tr>
+</tbody>
+</table>
+<p>The practical workflow that emerges is: run a fast linter on every save, run a deeper SAST tool on every pull request, and triage findings into "must fix before merge," "fix in this sprint," and "false positive — suppress with comment." The triage discipline matters: a static analyzer that nobody reads is worse than no analyzer, because it gives the team false confidence while burying real findings in noise.</p>
+<h2 id="6-dynamic-analysis-watching-the-code-run">6. Dynamic Analysis — Watching The Code Run<a class="headerlink" href="#6-dynamic-analysis-watching-the-code-run" title="Permanent link">&para;</a></h2>
+<p><strong>Dynamic application security testing (DAST)</strong> runs the application and probes it from the outside, the same way an attacker would. A DAST tool sends crafted HTTP requests, fuzzes form inputs, walks the application looking for endpoints, and records how the application responds. It is the security analog of an integration test: it does not care about the source code, only about how the running system behaves.</p>
+<p>DAST is good at finding bugs that arise from the <em>interaction</em> between components — a misconfigured TLS setting, an open admin endpoint, a missing authentication check on a side route, a verbose error page that leaks stack traces, a CSRF protection that is silently disabled in this environment. These are bugs static analysis tends to miss because they live in configuration, in deployment, or in the gap between two services.</p>
+<p>The price is coverage. A DAST tool sees only the code paths that its test inputs reach. If a vulnerability lives behind an authentication wall the tool cannot pass, behind a feature flag the tool does not flip, or in a state the tool does not know how to reach, the tool will not see it. For this reason, DAST is usually combined with <strong>interactive application security testing (IAST)</strong> — agents that instrument the running application and report on what code actually executed during a DAST run, giving better coverage data and lower false positive rates.</p>
+<p>A pragmatic SAST + DAST + IAST pipeline looks like this:</p>
+<ol>
+<li><strong>Pre-commit:</strong> linter and a fast SAST rule set in the IDE.</li>
+<li><strong>Pull request:</strong> full SAST scan, results posted to the PR with severity threshold gating merge.</li>
+<li><strong>Nightly / on staging deploy:</strong> DAST scan of the deployed staging environment, with IAST instrumentation collecting code-execution telemetry.</li>
+<li><strong>Release gate:</strong> dependency scan (Section 8) and security review sign-off (Section 12).</li>
+</ol>
+<p>Many organizations omit one of these stages and pay for it later. The most commonly omitted stage is DAST against staging, because it requires a fully deployed environment and produces findings that nobody owns. Closing that gap — assigning a person, not just a tool — is one of the highest-leverage moves a security program can make.</p>
+<h2 id="7-fuzzing-letting-the-machine-try-inputs-you-did-not-imagine">7. Fuzzing — Letting The Machine Try Inputs You Did Not Imagine<a class="headerlink" href="#7-fuzzing-letting-the-machine-try-inputs-you-did-not-imagine" title="Permanent link">&para;</a></h2>
+<p><strong>Fuzzing</strong> is a class of dynamic testing in which a tool generates large quantities of malformed, random, or mutated inputs and feeds them to a target program, looking for inputs that cause crashes, hangs, or other observable misbehavior. Fuzzing is one of the most productive security-testing techniques ever invented: it has found tens of thousands of bugs in widely deployed software, including security-critical bugs in OpenSSL, the Linux kernel, browsers, and image-parsing libraries.</p>
+<p>The classical fuzzer feeds random bytes to a program and watches for crashes. Modern fuzzers — AFL++, libFuzzer, Honggfuzz, Jazzer — are dramatically more effective because they are <strong>coverage-guided</strong>: they instrument the target binary, observe which code paths each input exercises, and prioritize inputs that reach new code. Over hours or days, this evolutionary loop drives the fuzzer toward inputs that exercise rarely-traversed paths, where bugs hide.</p>
+<h4 id="diagram-coverage-guided-fuzzer-loop">Diagram: Coverage-Guided Fuzzer Loop<a class="headerlink" href="#diagram-coverage-guided-fuzzer-loop" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive p5.js MicroSim of a coverage-guided fuzzer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> fuzzer-coverage-loop<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>A p5.js MicroSim that visualizes how a coverage-guided fuzzer explores a target program's code paths over time.</p>
+<p>Layout (responsive canvas, default 720x520, resizes via <code>updateCanvasSize()</code>):</p>
+<ul>
+<li><strong>Left panel (40%)</strong> — a stylized control-flow graph of a target function: ~25 basic blocks arranged in a tree with a few rare-path branches. Blocks start gray (uncovered). As inputs reach them, they fade to cybersecurity blue #1565c0. A handful of "deep" blocks are colored amber #ffa000 and represent rare paths where the bug lives.</li>
+<li><strong>Right panel (40%)</strong> — a vertical "input corpus" stack. New inputs added by the fuzzer appear as small bars, with bar length representing input size. Bars that increased coverage are highlighted (cybersecurity blue); bars that did not are dim (gray).</li>
+<li><strong>Top bar</strong> — a coverage gauge: percentage of basic blocks reached. Updates in real time.</li>
+<li><strong>Bottom controls</strong> (p5.js builtins — <code>createSlider</code>, <code>createButton</code>, <code>createCheckbox</code>):</li>
+<li>Slider: "Mutation aggressiveness" (1–10)</li>
+<li>Slider: "Inputs per second" (1–50)</li>
+<li>Checkbox: "Coverage-guided" — when off, the fuzzer reverts to pure random fuzzing for comparison</li>
+<li>Button: "Reset"</li>
+</ul>
+<p>Behavior:</p>
+<ul>
+<li>Each tick, the fuzzer picks a parent input from its corpus and mutates it.</li>
+<li>The mutated input "executes" through the graph (animation of a token traversing blocks).</li>
+<li>If the input reaches a previously uncovered block, it is added to the corpus and that block lights up.</li>
+<li>After ~30s in coverage-guided mode, the fuzzer should reach the amber block and a small "CRASH" animation plays.</li>
+<li>In pure-random mode, the amber block almost never gets reached — illustrating why coverage guidance matters.</li>
+</ul>
+<p>Learning objective (Bloom — Analyze): compare the exploration behavior of coverage-guided versus random fuzzing and explain why coverage guidance dramatically reduces time-to-bug for deep code paths.</p>
+<p>Responsive: panels stack vertically below 700px viewport.</p>
+<p>Implementation: p5.js sketch, <code>canvas.parent(document.querySelector('main'))</code>, no external libraries. Use builtin p5 controls only.</p>
+</details>
+<p>Fuzzing is most effective on programs that parse complex inputs: file formats, network protocols, serialized data, regex engines, scripting interpreters. It is least effective on programs whose interesting bugs are in business logic — a fuzzer can find that your XML parser crashes on a particular malformed nesting, but it will not find that your authorization check uses <code>==</code> where it should use a constant-time comparison.</p>
+<p>A practical fuzzing program looks like: identify the parsing entry points in your codebase, write a small <strong>harness</strong> for each that takes a byte buffer and feeds it to the parser, integrate the harness into a continuous fuzzing service (Google's OSS-Fuzz is the canonical example for open-source projects), and triage the crashes the fuzzer discovers. The cost is mostly upfront (writing the harnesses); after that, the fuzzer keeps finding bugs as long as you keep feeding it CPU.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Fuzzing Inverts The Tester's Burden</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Notice the asymmetry. A unit test asks "does the code work for the inputs <em>I</em> thought of?" A fuzzer asks "does the code survive all the inputs <em>I did not think of</em>?" The defender must cover every path; the attacker only needs one. Fuzzing is the cheapest way to make a machine think like the attacker.</p>
+</div>
+<h2 id="8-software-composition-analysis-and-dependency-scanning">8. Software Composition Analysis and Dependency Scanning<a class="headerlink" href="#8-software-composition-analysis-and-dependency-scanning" title="Permanent link">&para;</a></h2>
+<p>A modern application is mostly <em>not its own code</em>. A typical Node.js service has 1,000+ transitive dependencies. A typical Python application has 100+. Each of those dependencies has its own dependencies, its own maintainers, its own update cadence, and its own vulnerabilities. The discipline that addresses this reality is <strong>software composition analysis (SCA)</strong>: identifying every third-party component used by an application, mapping each to known vulnerabilities, and tracking license obligations.</p>
+<p>The narrower term <strong>dependency scanning</strong> usually refers to the security half of SCA — checking your dependency manifest (<code>package-lock.json</code>, <code>requirements.txt</code>, <code>pom.xml</code>, <code>go.sum</code>, etc.) against vulnerability databases such as the National Vulnerability Database (NVD), the GitHub Advisory Database, and language-specific databases (npm advisories, RustSec, PyPI). When a dependency you use has a published CVE, the scanner reports the vulnerable package, the introduced version, the fixed version, and the severity.</p>
+<p>Dependency scanning matters because most public-facing breaches in the last decade have routed through dependencies, not through hand-written code. The 2021 Log4Shell vulnerability in Apache Log4j sat in a logging library used by an enormous fraction of Java applications; an attacker who controlled any string that ended up in a log entry could trigger remote code execution. The vulnerability was a single line of unsafe deserialization in a transitive dependency that almost no one had directly imported. Without an inventory of dependencies — an SBOM, see Section 10 — most affected organizations spent days just figuring out <em>whether</em> they were exposed.</p>
+<p>A dependency scanner produces output that is only useful if someone acts on it. Treat the scanner as a generator of <em>work items</em>, not as a solved problem:</p>
+<ul>
+<li><strong>Direct dependencies</strong>: usually upgradable in a single pull request. Schedule.</li>
+<li><strong>Transitive dependencies</strong>: may require lifting the version of a parent library. Track and prioritize.</li>
+<li><strong>No fix available</strong>: requires either pinning to a forked version, removing the dependency, or compensating controls (WAF rule, network isolation). Rare but expensive.</li>
+<li><strong>False positive (vulnerability does not affect this code path)</strong>: suppress with a comment that explains <em>why</em>, not just <em>that</em>, the suppression is safe.</li>
+</ul>
+<p>The footgun in this area is treating the scanner output as fire-and-forget noise. A red dashboard that nobody reads is one breach away from a regulatory finding. Tying scanner findings to a SLA — "all critical CVEs in production dependencies must be patched within 14 days" — is what turns a tool into a program.</p>
+<h2 id="9-the-software-supply-chain-trust-beyond-your-repo">9. The Software Supply Chain — Trust Beyond Your Repo<a class="headerlink" href="#9-the-software-supply-chain-trust-beyond-your-repo" title="Permanent link">&para;</a></h2>
+<p>The <strong>software supply chain</strong> is the chain of people, processes, and infrastructure that sits between <em>the code on a developer's screen</em> and <em>the binary running on a user's machine</em>. It includes source repositories, build servers, package registries, container registries, deployment pipelines, signing keys, and the maintainer accounts that hold privileges over each. Every link in this chain is a target.</p>
+<p>Supply-chain attacks succeed because they exploit <em>transitive trust</em>. You trust your developers; your developers trust the build server; the build server trusts the package registry; the package registry trusts the maintainers of every package on it. An attacker who compromises any link earlier in the chain inherits the trust of every link downstream — often without any direct interaction with the target organization.</p>
+<h4 id="diagram-a-modern-software-supply-chain">Diagram: A Modern Software Supply Chain<a class="headerlink" href="#diagram-a-modern-software-supply-chain" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Workflow diagram of the supply chain from developer keyboard to production user, with attack injection points</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> software-supply-chain-flow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal flow from left to right with nine nodes; attack-injection points marked with a red lightning bolt icon and labeled with a known incident.</p>
+<ol>
+<li><strong>Developer Workstation</strong> — local source code (lightning bolt: "compromised IDE plugin")</li>
+<li>→ <strong>Source Repository (Git)</strong> — version control (lightning bolt: "stolen credentials, malicious PR")</li>
+<li>→ <strong>Dependency Registry (npm, PyPI, Maven)</strong> — third-party libraries pulled in (lightning bolt: "typosquatting; event-stream 2018")</li>
+<li>→ <strong>Build Server (CI/CD)</strong> — turns source + deps into artifact (lightning bolt: "SolarWinds 2020")</li>
+<li>→ <strong>Artifact Repository</strong> — stores binaries / container images (lightning bolt: "registry account takeover")</li>
+<li>→ <strong>Code Signing</strong> — signature applied (lightning bolt: "stolen signing key")</li>
+<li>→ <strong>Distribution</strong> — package registry, app store, CDN (lightning bolt: "in-transit replacement")</li>
+<li>→ <strong>Deploy / Update</strong> — running on user infrastructure (lightning bolt: "malicious update; NotPetya 2017")</li>
+<li>→ <strong>End User</strong> — finally executes the code</li>
+</ol>
+<p>Each node uses cybersecurity blue #1565c0. The lightning-bolt annotations use amber #ffa000. Hovering an annotation shows a 1-line incident summary.</p>
+<p>Below the chain, a horizontal banner labeled "Defenses" lists controls aligned to each stage: SBOM (covers stages 3, 5, 9), code signing (stage 6, verified at 9), reproducible builds (stage 4), provenance attestations (stages 4–8, e.g., SLSA framework).</p>
+<p>Learning objective (Bloom — Analyze): given a real-world supply-chain incident, identify which stage of the chain was compromised and which defenses would have detected or prevented it.</p>
+<p>Responsive: chain wraps to two rows below 900px; attack annotations remain attached.</p>
+<p>Implementation: Mermaid graph LR with custom node styling; tooltips via Mermaid <code>click</code> callbacks or a thin overlay layer.</p>
+</details>
+<p>The historical record of supply-chain attacks reads like a weather report of escalating storms. The 2017 <strong>NotPetya</strong> attack pushed malware through a legitimate update channel of Ukrainian accounting software, causing roughly $10 billion in global damage. The 2018 <strong>event-stream</strong> attack added a malicious child dependency to a wildly popular npm package, targeting a single cryptocurrency wallet downstream. The 2020 <strong>SolarWinds</strong> attack inserted a backdoor into the build pipeline of network-management software used by 18,000 organizations including U.S. federal agencies. The 2021 <strong>Log4Shell</strong> vulnerability turned a transitive logging dependency into a global emergency. The 2024 <strong>xz-utils</strong> attempt nearly succeeded in slipping a backdoor into a compression library bundled with most Linux distributions, caught only by a Microsoft engineer noticing a half-second of latency.</p>
+<p>The lesson across all of these is that <strong>software security is now a property of the supply chain, not just the code</strong>. Defending against this class of threat requires three things: knowing what is in your software (Section 10), verifying that what you are running is what was built (Section 11), and reviewing changes — your own and those flowing in from upstream — with eyes open (Section 12).</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">What's The Blast Radius Of A Library You Don't Maintain?</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+The hard mental shift in supply-chain security is recognizing that <em>the code in your repo is a small minority of the code that runs in your service</em>. Ask the same questions about your dependencies that you would ask about your own code: who can change this, how do I verify it has not been changed, and what is the blast radius if it is hostile?</p>
+</div>
+<h2 id="10-sboms-a-bill-of-materials-for-software">10. SBOMs — A Bill of Materials For Software<a class="headerlink" href="#10-sboms-a-bill-of-materials-for-software" title="Permanent link">&para;</a></h2>
+<p>A <strong>Software Bill of Materials (SBOM)</strong> is a structured, machine-readable inventory of every component included in a piece of software, including each component's name, version, supplier, license, and (often) cryptographic hash. The phrase is borrowed from manufacturing, where a bill of materials lists every part in a physical product so that any defective part can be traced quickly when a recall is needed.</p>
+<p>The need became urgent during Log4Shell. Organizations spent the first 72 hours not patching, but <em>searching</em>: which of our applications use Log4j? Which version? Through which dependency? Did the vendor we bought this product from ship Log4j inside it? The teams that had SBOMs answered those questions in minutes; the teams that did not answered them in weeks. In May 2021, U.S. Executive Order 14028 made SBOMs a procurement requirement for software sold to the U.S. federal government, and the practice has since spread broadly.</p>
+<p>Two SBOM standards dominate. <strong>SPDX</strong> (Software Package Data Exchange) is an ISO/IEC standard developed by the Linux Foundation, focused on license and component metadata. <strong>CycloneDX</strong> is a specification developed by OWASP, focused on security-relevant metadata including vulnerability assertions. Both are JSON or XML based, both are produced automatically by build tools (Syft, Trivy, language-specific tools), and both are interoperable enough that most modern security platforms accept either.</p>
+<table>
+<thead>
+<tr>
+<th>SBOM field</th>
+<th>What it answers</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component name + version</td>
+<td>What is in this software?</td>
+<td>Vulnerability lookup</td>
+</tr>
+<tr>
+<td>Supplier / namespace</td>
+<td>Who maintains it?</td>
+<td>Trust assessment</td>
+</tr>
+<tr>
+<td>License</td>
+<td>What can we redistribute?</td>
+<td>Legal compliance</td>
+</tr>
+<tr>
+<td>Hash (SHA-256)</td>
+<td>Is this <em>exactly</em> the right artifact?</td>
+<td>Integrity verification</td>
+</tr>
+<tr>
+<td>Dependency relationship</td>
+<td>Which components depend on which?</td>
+<td>Transitive impact analysis</td>
+</tr>
+<tr>
+<td>PURL / CPE</td>
+<td>Standardized identifier</td>
+<td>Cross-tool correlation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-sbom-as-a-dependency-tree-explorer">Diagram: SBOM as a Dependency Tree Explorer<a class="headerlink" href="#diagram-sbom-as-a-dependency-tree-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive vis-network MicroSim that lets students explore an SBOM's transitive dependencies</summary>
+<p>Type: graph-data-model
+<strong>sim-id:</strong> sbom-dependency-explorer<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified</p>
+<p>An interactive graph visualization of a small-but-realistic application SBOM, rendered with vis-network in a responsive container (default 800x500, resizes on window resize).</p>
+<p>Nodes (about 35 total):</p>
+<ul>
+<li><strong>Root application</strong> (cybersecurity blue #1565c0, large): <code>my-web-app v1.4.2</code></li>
+<li><strong>Direct dependencies</strong> (slate steel #455a64, medium): ~8 nodes (e.g., <code>express</code>, <code>jsonwebtoken</code>, <code>lodash</code>, <code>axios</code>, <code>pg</code>, <code>winston</code>, <code>react</code>, <code>react-dom</code>)</li>
+<li><strong>Transitive dependencies</strong> (light gray, small): ~25 nodes including a deliberately included <code>log4js@2.4.0</code> as a known-vulnerable example</li>
+<li><strong>Vulnerable nodes</strong> (amber #ffa000 with red border): 2–3 nodes, each tagged with a CVE label visible on hover</li>
+<li><strong>Edges</strong>: directed, from dependent to dependency, slightly y-offset on horizontal edges so labels render correctly (per the project's vis-network rendering note)</li>
+</ul>
+<p>Controls (using p5-style buttons rendered as HTML buttons next to the canvas):</p>
+<ul>
+<li><strong>Filter:</strong> "Show vulnerable only" — hides any node not reachable from the root through a vulnerable node</li>
+<li><strong>Filter:</strong> "Show direct only" — hides transitive dependencies</li>
+<li><strong>Highlight path:</strong> click any node to highlight the full transitive path from root</li>
+<li><strong>Search box:</strong> find a component by name (allow-list filtered to alphanumerics)</li>
+</ul>
+<p>Side panel (right side, 30% width on desktop, below canvas on mobile):</p>
+<ul>
+<li>Selected component name, version, license, hash (truncated)</li>
+<li>"Listed CVEs" with severity badge</li>
+<li>"Path from root" as an arrow-separated breadcrumb</li>
+</ul>
+<p>Learning objective (Bloom — Apply): given a published CVE in a transitive dependency, locate the affected component in an SBOM and identify the path from the root application to the vulnerable component.</p>
+<p>Responsive: side panel collapses below the network below 700px viewport.</p>
+<p>Implementation: vis-network for the graph, vanilla JS for the side panel, fetch from a local <code>data.json</code> containing the SBOM in CycloneDX format. Note: apply the project's edge y-offset workaround for horizontal edges to avoid the label-rendering bug.</p>
+</details>
+<p>An SBOM is <strong>not a security control</strong> by itself — it does not stop an attacker — but it is the <em>prerequisite</em> for almost every other supply-chain control. Without it, you cannot quickly answer "are we exposed?" when the next Log4Shell-class vulnerability is announced. The 2026 maturity expectation is that an SBOM is generated automatically at build time, attached to the artifact (or stored adjacently), and consulted by both the security team and the vendor management process.</p>
+<h2 id="11-code-signing-verifying-what-you-are-about-to-run">11. Code Signing — Verifying What You Are About To Run<a class="headerlink" href="#11-code-signing-verifying-what-you-are-about-to-run" title="Permanent link">&para;</a></h2>
+<p><strong>Code signing</strong> is the cryptographic process of attaching a digital signature to a software artifact (a binary, a script, a container image, an installer) so that anyone who later receives the artifact can verify two things: that the artifact was produced by the holder of the signing key, and that it has not been modified since signing. Code signing uses the public-key signature primitives covered in Chapter 4, applied to the hash of the artifact.</p>
+<p>The chain of trust runs as follows. A publisher generates a keypair and obtains a code-signing certificate from a Certificate Authority that has verified their identity. When the publisher releases an artifact, they sign its hash with the private key and attach (or publish) the signature alongside the artifact. A receiver — an operating system, a package manager, a Kubernetes admission controller — fetches the artifact and the signature, computes the hash, verifies the signature against the publisher's public key, and allows execution only if the verification succeeds.</p>
+<p>Code signing addresses two distinct supply-chain threats. The first is <strong>integrity in transit</strong>: an attacker on the network or in a CDN cannot replace the artifact with a malicious version, because the substituted artifact will not have a valid signature from the legitimate publisher. The second is <strong>provenance</strong>: a receiver can refuse to run any code that was not signed by an approved publisher, drastically narrowing the set of binaries that can run on a hardened endpoint or in a Kubernetes cluster.</p>
+<p>Modern code signing is moving from per-publisher long-lived keys (with their attendant key-management burden and theft risk — see SolarWinds) toward <strong>transparency-logged</strong>, <strong>short-lived</strong>, <strong>identity-bound</strong> signing. The reference implementation in the open-source ecosystem is the <strong>Sigstore</strong> project, including its <code>cosign</code> tool, which uses ephemeral keys tied to OIDC identities and records every signing event in a public, append-only log (Rekor). The transparency log means that even if a signing identity is misused, the misuse is publicly visible and auditable after the fact.</p>
+<table>
+<thead>
+<tr>
+<th>Signing approach</th>
+<th>Key lifetime</th>
+<th>Where the trust comes from</th>
+<th>Audit log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Long-lived keypair + CA certificate</td>
+<td>Years</td>
+<td>CA's identity verification</td>
+<td>Per-CA, often internal</td>
+</tr>
+<tr>
+<td>Short-lived ephemeral key + OIDC identity (Sigstore)</td>
+<td>Minutes</td>
+<td>OIDC provider's identity</td>
+<td>Public transparency log (Rekor)</td>
+</tr>
+<tr>
+<td>Self-signed (no CA)</td>
+<td>Variable</td>
+<td>None — trust is asserted, not verified</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Verification is where most signing programs go wrong. It is straightforward to <em>sign</em> artifacts; it is much harder to <em>verify</em> signatures on every host that runs them, and to make the verification a hard gate rather than an advisory log line. The "I signed everything but verification was disabled" failure mode is common and silent — exactly the footgun shape of a default that flips behavior when accidentally omitted.</p>
+<h2 id="12-secure-code-review-humans-in-the-loop">12. Secure Code Review — Humans In The Loop<a class="headerlink" href="#12-secure-code-review-humans-in-the-loop" title="Permanent link">&para;</a></h2>
+<p>The final layer is the human one. <strong>Secure code review</strong> is the deliberate examination of source-code changes by a person other than the author, with the explicit goal of identifying security-relevant defects: missed validations, weakened access checks, hardcoded secrets, dangerous APIs, broken cryptographic patterns, and the dozens of subtler smells the automated tools cannot catch.</p>
+<p>Secure code review is <em>complementary</em> to static analysis, not redundant with it. Tools find pattern-based defects across a large surface; humans find intent-based defects that require judgment about <em>what the code is supposed to do</em>. A SAST tool can detect that a string flows from an HTTP parameter into an SQL execute call; only a human reviewer can decide whether the new endpoint that introduces this pattern is a legitimate feature, an accidental backdoor, or a malicious insertion.</p>
+<p>A modern code-review process pairs the human review with automation: the SAST run, the dependency scan, and the test suite all post their results into the pull request, and the human reviewer reads those results alongside the diff. The reviewer is then doing higher-leverage work: confirming that the threat model still holds, that any new trust boundary is actually validated, that any new use of a sensitive API has a justifying comment, and that the test coverage exercises the security-relevant paths.</p>
+<p>A useful checklist for the human reviewer to keep in mind, organized by trust boundary:</p>
+<ul>
+<li><strong>At every input boundary</strong>: is the new data validated against an allow-list before it is used?</li>
+<li><strong>At every output boundary</strong>: is data being written to a context (HTML, SQL, shell) where it must be encoded for that context?</li>
+<li><strong>At every authorization boundary</strong>: is the access check present, performed <em>before</em> the action, and based on the user's identity rather than any user-supplied parameter?</li>
+<li><strong>At every secret use</strong>: is the secret pulled from configuration (a vault, an env var) rather than hardcoded? Does any new logging or error path leak it?</li>
+<li><strong>At every cryptographic call</strong>: is a high-level primitive being used (AEAD, library-provided KDF) rather than a low-level one being assembled by hand?</li>
+<li><strong>At every dependency change</strong>: is the new package known? Has its license been reviewed? Has SCA been re-run?</li>
+<li><strong>At every test that covers a security path</strong>: is the test exercising the <em>real</em> behavior, or has the security check been mocked out for convenience?</li>
+</ul>
+<p>The last bullet hides one of the most insidious footguns in the field: a developer mocks out the authentication or authorization check "to make the test simpler," the test passes, the mock survives the code review, and the production code now has an untested security boundary. <strong>Mocking a security control in a test that purports to verify it is the same as having no test.</strong> The fix is structural — keep security-control tests hermetic and unmockable, or use integration tests that exercise the real control end-to-end.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Two Habits That Make Code Review Pay</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+Two habits change the return on a code review. First, <em>small diffs</em>: a 20-line PR gets a real review; a 2,000-line PR gets a rubber stamp. Second, <em>blameless tone</em>: the goal is to find bugs, not to find fault. Reviewers who feel safe to flag a "stupid question" find the bugs whose ownership is unclear — which are usually the bugs that bite production. Least privilege, by default; review by default; merge only when both have run.</p>
+</div>
+<h2 id="13-putting-it-all-together-the-assurance-pipeline">13. Putting It All Together — The Assurance Pipeline<a class="headerlink" href="#13-putting-it-all-together-the-assurance-pipeline" title="Permanent link">&para;</a></h2>
+<p>A mature software-assurance program composes the techniques in this chapter into a single pipeline that runs continuously, not as a quarterly audit. The pipeline binds a developer's commit to a set of automated and human gates, each of which catches a specific class of bug, and produces an auditable record at each stage.</p>
+<p>A representative pipeline looks like:</p>
+<ol>
+<li><strong>Pre-commit hook</strong> — fast linter; secrets scanner; reject obvious issues without a CI round-trip.</li>
+<li><strong>Pull request opens</strong> — full SAST; dependency scan; reviewer assigned; tests run.</li>
+<li><strong>Pull request approved + merged</strong> — build server compiles, runs unit tests, generates SBOM, signs the artifact with an ephemeral Sigstore identity.</li>
+<li><strong>Staging deploy</strong> — DAST run against the staging environment; IAST telemetry collected.</li>
+<li><strong>Release gate</strong> — security review sign-off if any high-severity finding is open; SBOM and signature attached to the release record.</li>
+<li><strong>Production deploy</strong> — admission controller verifies signature against expected publisher identity; refuses to run unsigned or unrecognized artifacts.</li>
+<li><strong>Continuous</strong> — fuzzing service runs against parsing surfaces; SCA continuously rechecks deployed SBOMs against newly published CVEs; on a critical CVE match, the inventory immediately tells the team which services to patch.</li>
+</ol>
+<p>Each step is independently weak; together they provide depth. A bug that defeats input validation may still be caught by static analysis. A bug that defeats static analysis may still be caught by a fuzzer. A malicious dependency that defeats human review may still be detected after publication when an SBOM is correlated against a new advisory. A compromised build server may still be caught when the produced artifact fails a signature policy at deploy time. <strong>The point of the pipeline is not that any one stage is bulletproof — it is that every stage of an attack must defeat a different control.</strong></p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read a software-assurance program — your team's, a vendor's, a published incident report — and identify which layers exist, which are missing, and which ones failed in a given breach. You can name the structural fix for SQL injection, distinguish SAST from DAST from fuzzing, explain why an SBOM matters and what code signing does and does not buy you. That is the foundation Chapter 7 builds on as we move from software to the components — hardware, firmware, embedded systems — that software runs on.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Three layers compose into a defensible program</strong>: in-code defenses (input validation, output encoding, parameterized queries), automated analysis (SAST, DAST, fuzzing), and supply-chain controls (SCA, SBOM, code signing).</li>
+<li><strong>Allow-listing beats deny-listing</strong>, <strong>server-side beats client-side</strong>, and <strong>rejecting beats auto-fixing</strong> — every time, on every input boundary.</li>
+<li><strong>Output encoding must match the destination context</strong> (HTML body, HTML attribute, JS string, URL, CSS); a single value placed into multiple contexts may need different encodings.</li>
+<li><strong>Parameterized queries make SQL injection impossible by construction</strong> — a structural fix, not a deny-list. The same separation-of-code-and-data pattern generalizes to shell commands and DOM operations.</li>
+<li><strong>SAST and DAST are complementary, not substitutes</strong>: SAST sees all paths but with false positives; DAST sees only exercised paths but reproduces real bugs. Run both. Add fuzzing for parsing-heavy code.</li>
+<li><strong>Most modern code is not your code</strong> — software composition analysis and dependency scanning are now table stakes. SBOMs make "are we exposed?" answerable in minutes instead of weeks.</li>
+<li><strong>Code signing protects integrity and provenance</strong>, but only if verification is enforced at deploy time. Sigstore-style transparency-logged ephemeral signing is the modern direction.</li>
+<li><strong>Human secure code review remains essential</strong> for intent-based defects automation cannot see. Small diffs, blameless tone, and never mocking security controls in their own tests.</li>
+<li><strong>The assurance pipeline is the unit of defense</strong>, not any single tool — every attack stage must defeat a different control.</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

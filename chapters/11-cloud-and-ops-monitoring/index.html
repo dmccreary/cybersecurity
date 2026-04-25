@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Running and watching modern systems at scale: shared responsibility, cloud IAM, SIEM/SOAR, the SOC, EDR/XDR, patching, hardening, baselines, and audit logging.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>11. Cloud and Ops Monitoring - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Cloud Security and Operations Monitoring - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              11. Cloud and Ops Monitoring
+              Cloud Security and Operations Monitoring
             
           </span>
         </div>
@@ -727,6 +727,243 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-operations-is-where-security-lives-or-dies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Operations Is Where Security Lives Or Dies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cloud-security-and-the-shared-responsibility-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cloud Security and the Shared Responsibility Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cloud Security and the Shared Responsibility Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shared-responsibility-across-iaas-paas-and-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shared Responsibility Across IaaS, PaaS, and SaaS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-what-changes-at-each-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 What Changes At Each Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cloud-iam-the-new-perimeter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Cloud IAM — The New Perimeter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-security-monitoring-watching-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Security Monitoring — Watching The System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Security Monitoring — Watching The System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-operations-monitoring-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Operations Monitoring Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-log-management-the-foundation-of-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Log Management — The Foundation of Detection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-siem-and-soar-from-logs-to-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. SIEM and SOAR — From Logs To Action
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-security-operations-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Security Operations Center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-endpoint-defense-from-antivirus-to-xdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Endpoint Defense — From Antivirus to XDR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Endpoint Defense — From Antivirus to XDR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-antivirus-signature-based-defense" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Antivirus — Signature-Based Defense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-host-based-ids-watching-the-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Host-Based IDS — Watching The Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-edr-the-modern-endpoint-telemetry-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 EDR — The Modern Endpoint Telemetry Platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-xdr-crossing-the-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 XDR — Crossing The Boundaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-keeping-systems-in-a-known-good-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Keeping Systems In A Known-Good State
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Keeping Systems In A Known-Good State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-patch-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Patch Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-system-hardening-baselines-and-cis-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 System Hardening, Baselines, and CIS Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 System Hardening, Baselines, and CIS Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardening-baselines-and-drift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardening, Baselines, and Drift
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-audit-logging-the-forensic-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Audit Logging — The Forensic Record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1320,243 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-operations-is-where-security-lives-or-dies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Operations Is Where Security Lives Or Dies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cloud-security-and-the-shared-responsibility-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cloud Security and the Shared Responsibility Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cloud Security and the Shared Responsibility Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shared-responsibility-across-iaas-paas-and-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shared Responsibility Across IaaS, PaaS, and SaaS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-what-changes-at-each-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 What Changes At Each Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cloud-iam-the-new-perimeter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Cloud IAM — The New Perimeter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-security-monitoring-watching-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Security Monitoring — Watching The System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Security Monitoring — Watching The System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-operations-monitoring-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Operations Monitoring Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-log-management-the-foundation-of-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Log Management — The Foundation of Detection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-siem-and-soar-from-logs-to-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. SIEM and SOAR — From Logs To Action
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-security-operations-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Security Operations Center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-endpoint-defense-from-antivirus-to-xdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Endpoint Defense — From Antivirus to XDR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Endpoint Defense — From Antivirus to XDR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-antivirus-signature-based-defense" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Antivirus — Signature-Based Defense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-host-based-ids-watching-the-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Host-Based IDS — Watching The Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-edr-the-modern-endpoint-telemetry-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 EDR — The Modern Endpoint Telemetry Platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-xdr-crossing-the-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 XDR — Crossing The Boundaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-keeping-systems-in-a-known-good-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Keeping Systems In A Known-Good State
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Keeping Systems In A Known-Good State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-patch-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Patch Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-system-hardening-baselines-and-cis-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 System Hardening, Baselines, and CIS Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 System Hardening, Baselines, and CIS Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardening-baselines-and-drift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardening, Baselines, and Drift
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-audit-logging-the-forensic-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Audit Logging — The Forensic Record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It All Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1143,13 +1617,344 @@
 <li><a href="../10-system-security/">Chapter 10: System Security: OS, Memory, and Access Control</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Running Systems Under Watch</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. So far we have built secure primitives, defended networks, and hardened individual machines. This chapter is about what happens once those systems are <em>deployed and running</em> — in someone else's data center, generating logs around the clock, with humans on call who must distinguish a real attack from a noisy printer at 3 a.m. Trust, but verify.</p>
+</div>
+<h2 id="1-why-operations-is-where-security-lives-or-dies">1. Why Operations Is Where Security Lives Or Dies<a class="headerlink" href="#1-why-operations-is-where-security-lives-or-dies" title="Permanent link">&para;</a></h2>
+<p>Every prior chapter has taught a property of a <em>static</em> artifact: a cipher that encrypts correctly, a protocol that resists tampering, an operating system that enforces access control. None of those properties survive contact with reality unless someone is running the system, watching it, patching it, and noticing when something is wrong. <strong>Security operations</strong> is the discipline that turns design-time guarantees into runtime resilience, and it is where most real-world breaches are either prevented or missed.</p>
+<p>The shift in mindset for this chapter is from <em>"is this system designed correctly?"</em> to <em>"is this system, right now, behaving the way our policy says it should?"</em> That second question can only be answered by collecting evidence — logs, metrics, alerts — and by having people and tooling that can reason about that evidence in time to act. The chapter walks through the modern stack of operational security: where systems live (the cloud), how they are watched (monitoring, SIEM, SOC), how endpoints are defended (antivirus, EDR, XDR), and how they are kept in a known-good state (patching, hardening, baselines).</p>
+<p>Two threads run through everything that follows. The first is <em>evidence</em>: who logs what, who reads the logs, and how long the logs are kept. The second is <em>change control</em>: every patch, every configuration tweak, every new instance is a chance to introduce drift away from the secure baseline, and operational discipline is what prevents that drift from accumulating into compromise.</p>
+<h2 id="2-cloud-security-and-the-shared-responsibility-model">2. Cloud Security and the Shared Responsibility Model<a class="headerlink" href="#2-cloud-security-and-the-shared-responsibility-model" title="Permanent link">&para;</a></h2>
+<p>For most of computing history, organizations owned their servers. They racked them, plugged them in, replaced disks, and were responsible for everything from the chiller in the data-center room up to the application running on the box. <strong>Cloud computing</strong> changed that model: organizations rent compute, storage, and services from a provider (AWS, Azure, Google Cloud, and many smaller players) and pay per hour or per request. <strong>Cloud security</strong> is the body of practice that makes those rented resources defensible.</p>
+<p>The single most important concept in cloud security is the <strong>Shared Responsibility Model</strong> — a written, vendor-published division of who is responsible for what. The provider is responsible for the <em>security of the cloud</em> (their hardware, their hypervisor, their physical facilities). The customer is responsible for the <em>security in the cloud</em> (their data, their configurations, their identity policies, their application code). Where exactly the boundary falls depends on the <em>service model</em> the customer chose, which is the next concept to define.</p>
+<p>Three service models dominate, traditionally drawn as a stack with the customer's responsibility shrinking at each level. <strong>IaaS (Infrastructure as a Service)</strong> rents virtual machines, virtual networks, and storage; the customer manages the operating system upward. <strong>PaaS (Platform as a Service)</strong> rents a managed runtime — a database, a container platform, a serverless function service — where the customer manages only the application and its data. <strong>SaaS (Software as a Service)</strong> rents a complete application, like Microsoft 365 or Salesforce, where the customer manages only their data, identities, and the configuration of the application's features.</p>
+<p>Before we examine the diagram, note the rule it encodes: each step "up" the stack hands more components to the provider but never relieves the customer of <em>data, identity, and configuration</em> responsibilities. Those three remain the customer's job at every level.</p>
+<h4 id="diagram-shared-responsibility-across-iaas-paas-and-saas">Diagram: Shared Responsibility Across IaaS, PaaS, and SaaS<a class="headerlink" href="#diagram-shared-responsibility-across-iaas-paas-and-saas" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Stacked-bar comparison of customer vs provider responsibilities at each cloud service tier</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> shared-responsibility-stack<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A four-column comparison. The leftmost column is "On-Prem" (legacy baseline). The next three are "IaaS", "PaaS", "SaaS". Each column is a vertical stack of nine layers, from bottom to top:</p>
+<ol>
+<li>Physical facilities</li>
+<li>Network hardware</li>
+<li>Hypervisor</li>
+<li>Host OS</li>
+<li>Guest OS / VM</li>
+<li>Runtime / middleware</li>
+<li>Application</li>
+<li>Configuration</li>
+<li>Data and identities</li>
+</ol>
+<p>Each layer is colored either <strong>slate-steel (#455a64)</strong> for "Provider responsibility" or <strong>cybersecurity-blue (#1565c0)</strong> for "Customer responsibility".</p>
+<ul>
+<li><strong>On-Prem:</strong> all 9 layers customer-blue.</li>
+<li><strong>IaaS:</strong> layers 1–4 provider-slate; layers 5–9 customer-blue.</li>
+<li><strong>PaaS:</strong> layers 1–6 provider-slate; layers 7–9 customer-blue.</li>
+<li><strong>SaaS:</strong> layers 1–7 provider-slate; layers 8–9 customer-blue.</li>
+</ul>
+<p>A persistent caption at the bottom reads: "In every model, <strong>data, identity, and configuration are always the customer's job.</strong>"</p>
+<p>Hover tooltips on each layer briefly state who is responsible and give one concrete example (e.g. on the "Configuration" layer for SaaS: "Customer — e.g., enabling MFA in Microsoft 365 admin center").</p>
+<p>Color: #1565c0 for customer layers, #455a64 for provider layers, #fff8e1 background. Responsive: columns reflow to two per row below 700px.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltip per layer.</p>
+</details>
+<p>The most common cloud breaches — exposed S3 buckets, world-readable databases, leaked API keys — almost always fall on the customer side of this line. The provider's hypervisor is unbroken; the customer left a configuration toggle in its insecure default. This is not a quirk of any one provider; it is a structural property of the model.</p>
+<h3 id="21-what-changes-at-each-level">2.1 What Changes At Each Level<a class="headerlink" href="#21-what-changes-at-each-level" title="Permanent link">&para;</a></h3>
+<p><strong>IaaS Security</strong> looks the most like classical system security from Chapter 10. The customer runs a Linux or Windows VM and is responsible for OS patching, host firewall, EDR agent, account hygiene, and disk encryption. The cloud-specific additions are network controls expressed as security groups (stateful firewalls attached to instances), tagging discipline so that ownership and data classification are visible, and avoiding the IaaS classic — assigning a public IP to a VM and forgetting that the SSH or RDP port is open to the entire internet.</p>
+<p><strong>PaaS Security</strong> trades some control for some safety. The runtime is patched by the provider, which is excellent, but the customer can no longer install host-based agents on it; visibility now comes from logs and metrics the platform exposes. The new failure modes are over-permissioned managed identities (the platform's service principal granted broader rights than the application needs), and configuration choices that change the trust model — for example, marking a managed database as publicly reachable from the internet rather than only from the application tier.</p>
+<p><strong>SaaS Security</strong> narrows the customer's surface to data, identity, and per-tenant configuration. The dominant operational discipline here is <em>posture management</em>: continuously checking that admin features (single sign-on, conditional access, sharing policies, retention rules) are configured the way policy requires. Tools called SSPM (SaaS Security Posture Management) automate this for popular SaaS applications. The classic SaaS breach pattern is a compromised admin account that flips a sharing policy to "public link" and exfiltrates years of internal documents in minutes.</p>
+<h3 id="22-cloud-iam-the-new-perimeter">2.2 Cloud IAM — The New Perimeter<a class="headerlink" href="#22-cloud-iam-the-new-perimeter" title="Permanent link">&para;</a></h3>
+<p>Once compute and storage are rented services, the <em>firewall</em> is a much weaker perimeter than it used to be. Every API call into the cloud control plane — "create a VM," "read this object," "delete this database" — is authenticated and authorized by the cloud's identity system. <strong>Cloud IAM (Identity and Access Management)</strong> is therefore where most cloud security policy actually lives. The blast radius of a leaked cloud credential is the union of every permission that credential carries; the blast radius of a misconfigured IAM role is every API call an attacker can make through it.</p>
+<p>Three primitives appear in every major cloud IAM system. <em>Principals</em> are identities — human users, groups, service accounts, machine roles. <em>Permissions</em> are actions on resources, typically expressed as policy documents in JSON or YAML. <em>Roles</em> are bundles of permissions that a principal can assume, often temporarily and with logging. The combination produces fine-grained authorization, which is good — but the same fine grain is also where over-permissioned defaults hide.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Wildcard Permission</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+The single most common cloud-IAM footgun is the wildcard. A policy with <code>"Action": "*"</code> on <code>"Resource": "*"</code> looks tidy in development and is catastrophic in production. Replace wildcards with the specific actions and resources the principal actually needs, and use the cloud's "access analyzer" tooling to flag broad permissions during code review. Least privilege, by default.</p>
+</div>
+<p>The defender's playbook in cloud IAM is small and important: prefer short-lived credentials and federated identity over long-lived access keys; require MFA on every human and root/management account; scope permissions narrowly; never embed credentials in source code (use the cloud's secrets manager and instance metadata service instead); and enable centralized audit logging so that every API call is recorded for later review (more on that in Section 9).</p>
+<h2 id="3-security-monitoring-watching-the-system">3. Security Monitoring — Watching The System<a class="headerlink" href="#3-security-monitoring-watching-the-system" title="Permanent link">&para;</a></h2>
+<p><strong>Security monitoring</strong> is the continuous collection and analysis of evidence about what a system is doing, with the goal of detecting deviations from the policy or expected baseline. Where prevention fails, monitoring gives you the chance to detect, respond, and limit damage. Most modern frameworks (NIST CSF, MITRE ATT&amp;CK) treat <em>Detect</em> and <em>Respond</em> as first-class functions on equal footing with <em>Protect</em>.</p>
+<p>A useful mental model is the <strong>defender's loop</strong> — collect evidence, derive signals, alert on signals that matter, respond to alerts, and feed lessons back into prevention. The chapter's remaining sections roughly follow that loop. Sections 4 and 5 cover the <em>collect-and-derive</em> part: log management, SIEM, and SOAR. Section 6 covers the human-and-process layer: the security operations center. Section 7 covers endpoint-specific evidence: antivirus, host-based IDS, EDR, XDR. Sections 8 and 9 close the loop with the <em>prevention-side</em> operational disciplines that reduce alert volume in the first place: patching, hardening, baselines, and audit logging.</p>
+<h4 id="diagram-the-operations-monitoring-pipeline">Diagram: The Operations Monitoring Pipeline<a class="headerlink" href="#diagram-the-operations-monitoring-pipeline" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Architecture diagram showing how raw events flow from sources through collection, SIEM, SOAR, and analyst</summary>
+<p>Type: drawing
+<strong>sim-id:</strong> ops-monitoring-pipeline<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A left-to-right pipeline diagram with five stages.</p>
+<p><strong>Stage 1 — Sources (left column, stacked vertically):</strong></p>
+<ul>
+<li>Endpoints (workstations, servers) with EDR agents</li>
+<li>Cloud control-plane logs (CloudTrail, Activity Log, Audit Log)</li>
+<li>Network devices (firewalls, IDS/IPS)</li>
+<li>Identity provider (Okta, Entra ID, AD)</li>
+<li>SaaS applications (M365, Salesforce, GitHub)</li>
+</ul>
+<p><strong>Stage 2 — Collection layer (single rounded box):</strong></p>
+<ul>
+<li>"Log shipper / agent / API pull" (e.g., Fluent Bit, Splunk forwarder, cloud-native collector)</li>
+<li>Annotation: "normalize, timestamp, enrich"</li>
+</ul>
+<p><strong>Stage 3 — Log management &amp; SIEM (large central box, cybersecurity blue):</strong></p>
+<ul>
+<li>Sub-boxes inside: "Index &amp; store", "Correlation rules", "Detection logic", "Dashboards"</li>
+</ul>
+<p><strong>Stage 4 — SOAR (parallel right-hand box):</strong></p>
+<ul>
+<li>Sub-boxes: "Playbooks", "Case management", "Automated containment"</li>
+</ul>
+<p><strong>Stage 5 — Analyst / SOC (rightmost, with a small Sentinel-fox-like silhouette icon):</strong></p>
+<ul>
+<li>Annotation: "Triage, investigate, escalate"</li>
+</ul>
+<p>Arrows from sources → collection → SIEM. Arrow from SIEM → SOAR → Analyst. A back-arrow from Analyst → SIEM ("tune rules, suppress noise") shows the feedback loop.</p>
+<p>A retention-policy strip runs underneath the SIEM box: "Hot: 30 days, Warm: 90 days, Cold: 1 year, Archive: 7 years (compliance)".</p>
+<p>Color: cybersecurity blue for the SIEM core, slate steel for collection and sources, accent amber on SOAR. Responsive: pipeline stacks vertically below 900px.</p>
+<p>Implementation: Mermaid graph LR with subgraphs.</p>
+</details>
+<h2 id="4-log-management-the-foundation-of-detection">4. Log Management — The Foundation of Detection<a class="headerlink" href="#4-log-management-the-foundation-of-detection" title="Permanent link">&para;</a></h2>
+<p><strong>Log management</strong> is the practice of collecting, transporting, storing, and retaining log data from the systems an organization operates. It sounds boring, and the operational reality often is, but every modern detection capability — every SIEM rule, every threat hunt, every post-incident timeline — rests on the assumption that the logs were complete and correct at the moment something interesting happened. If the logs are missing, the investigation is over before it starts.</p>
+<p>A log-management program defines, for each system class, four things: <em>what</em> to log, <em>where</em> to send it, <em>how long</em> to retain it, and <em>who</em> can read it. The first two are technical configuration; the last two are governance decisions that frequently appear in compliance frameworks (HIPAA's six-year retention for audit logs, PCI-DSS's one-year online plus three-year archive, GDPR's tension between retention and minimization).</p>
+<p>The volume problem is real. A medium enterprise generates terabytes of logs per day. The traditional approach was to ingest everything into a central store and index it for fast search; the modern approach is <em>tiered storage</em> — hot storage for recent logs that analysts query interactively, warm storage for medium-term, and cold or archive storage for long-term compliance. Pricing models in cloud-native log platforms have made this tiering an active cost-engineering concern.</p>
+<p>Common log sources, roughly in order of typical detection value:</p>
+<ul>
+<li><strong>Endpoint detection logs</strong> — process creation, parent-child process trees, network connections out, file writes to sensitive paths.</li>
+<li><strong>Authentication logs</strong> — sign-in success and failure, MFA challenges, conditional access decisions, privileged role assumptions.</li>
+<li><strong>Cloud control-plane logs</strong> — every API call against the cloud account: who, from where, on what resource, with what result.</li>
+<li><strong>Web application logs</strong> — requests, response codes, query strings (sanitized), authentication outcomes.</li>
+<li><strong>Network logs</strong> — firewall denies, IDS/IPS alerts, NetFlow / VPC flow logs for traffic analysis.</li>
+<li><strong>Application audit logs</strong> — domain-meaningful events ("user X exported customer list") that rarely come from the platform automatically.</li>
+</ul>
+<p>The two failure modes to design against are <em>gaps</em> (a log source that was never enabled, or that was disabled by an attacker) and <em>tampering</em> (an attacker who deletes or rewrites logs after access). Both are addressed by sending logs <em>off the source machine</em> as quickly as possible, ideally to an account or tenant the attacker would not also have compromised, and by integrity-protecting the log stream (signed batches, append-only object storage with retention locks).</p>
+<h2 id="5-siem-and-soar-from-logs-to-action">5. SIEM and SOAR — From Logs To Action<a class="headerlink" href="#5-siem-and-soar-from-logs-to-action" title="Permanent link">&para;</a></h2>
+<p>A pile of logs is not a detection. <strong>SIEM (Security Information and Event Management)</strong> is the class of platform that ingests logs from across an organization, normalizes them into a common schema, indexes them for search, and runs <em>correlation rules</em> and <em>detections</em> that fire alerts when patterns of interest appear. Typical platforms include Splunk, Microsoft Sentinel, Elastic Security, Sumo Logic, Chronicle, and a long tail of cloud-native and open-source options. The category is converging with general data platforms (data-lakes, query engines), but the core security-specific value is the curated detection content and the workflow around alerts.</p>
+<p>A SIEM detection is, at its simplest, a saved query plus an alerting threshold. "Five failed sign-ins followed by a success from the same source in under ten minutes" is a credential-stuffing detection. "A user assumed an admin role for the first time" is a privilege-escalation detection. "A process whose parent is a Microsoft Office app spawned <code>powershell.exe</code>" is an obvious-but-still-effective phishing-payload detection. Most modern SIEMs ship with hundreds of detections aligned to MITRE ATT&amp;CK techniques, and security teams spend a substantial portion of their time <em>tuning</em> those detections — suppressing benign causes (the legitimate admin who really does run PowerShell from Excel) without suppressing the actual bad guy.</p>
+<p>Detections raise <em>alerts</em>. Alerts arrive faster than humans can investigate them. <strong>SOAR (Security Orchestration, Automation, and Response)</strong> is the layer that adds case management, integration with other tools (ticketing, EDR, identity, firewall), and <em>playbooks</em> — codified, automatable response procedures. A SOAR playbook for the credential-stuffing alert above might automatically: pull the user's recent sign-in history, look up the source IP's reputation, page the on-call analyst if the IP is high-risk, and (if pre-approved policy allows) require a password reset or block the IP at the WAF.</p>
+<p>Before the next table, two terms worth distinguishing. <em>Orchestration</em> means coordinating actions across multiple tools (SIEM → EDR → identity → ticketing) without a human copy-pasting between consoles. <em>Automation</em> means having the system take a defined action without human approval at runtime — usually only for low-risk, high-confidence playbooks where the cost of a false positive is small. Most teams start by automating enrichment (gathering context) and human-confirm the actual containment.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Primary job</th>
+<th>Inputs</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log management</td>
+<td>Collect, store, search logs</td>
+<td>Raw events from sources</td>
+<td>Searchable archive, retention compliance</td>
+</tr>
+<tr>
+<td>SIEM</td>
+<td>Detect patterns of concern</td>
+<td>Normalized logs</td>
+<td>Alerts, dashboards, threat-hunt queries</td>
+</tr>
+<tr>
+<td>SOAR</td>
+<td>Coordinate response</td>
+<td>Alerts (often from SIEM)</td>
+<td>Cases, automated containment, audit trail</td>
+</tr>
+</tbody>
+</table>
+<p>The rule of thumb: log management answers <em>"what happened?"</em>, SIEM answers <em>"is something happening that I should care about?"</em>, and SOAR answers <em>"what do we do about it, consistently and quickly?"</em></p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Detection Is A Software-Engineering Discipline</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Treat your detection rules like code. Version-control them, code-review them, write tests against historical data, measure their false-positive rate, and retire ones that no longer earn their keep. Detection content that sits unmaintained for two years is detection content that no longer matches reality. Think like an attacker, build like a defender.</p>
+</div>
+<h2 id="6-the-security-operations-center">6. The Security Operations Center<a class="headerlink" href="#6-the-security-operations-center" title="Permanent link">&para;</a></h2>
+<p>The <strong>Security Operations Center (SOC)</strong> is the team — and, sometimes, the physical room — that watches the SIEM, runs the playbooks, takes the on-call pager, and coordinates the technical response when something goes wrong. SOCs come in many shapes: a single in-house team for a large enterprise; a 24×7 follow-the-sun operation across regions; a managed SOC where a third-party MSSP provides analysts; or a hybrid model that combines a small in-house team with outsourced overnight coverage.</p>
+<p>A common operating model is the <em>tiered SOC</em>. <strong>Tier 1 (triage)</strong> analysts receive incoming alerts, validate that they are not obvious false positives, and either close them or escalate. <strong>Tier 2 (investigation)</strong> analysts dig into the escalations, build a timeline, and coordinate response. <strong>Tier 3 (threat hunting and engineering)</strong> is the smaller senior group that proactively searches for adversaries the alerts have <em>not</em> fired on, builds new detections, and tunes the platform. Some modern SOCs flatten this into a <em>swarming</em> model where any analyst can pick up any case, but the underlying functions are the same.</p>
+<p>Several metrics shape SOC operations. <strong>MTTD (mean time to detect)</strong> measures how long an attacker is active before any alert fires; <strong>MTTR (mean time to respond)</strong> measures from first alert to containment. Industry benchmarks for MTTD are surprisingly long — multi-day in many studies — and reducing it is a primary justification for SIEM and EDR investment. <em>Alert fatigue</em> is the silent killer of SOC effectiveness: when analysts are drowning in low-quality alerts, the real one gets closed as routine. The cure is detection tuning, suppression of known-benign noise, and ruthless prioritization.</p>
+<p>The SOC also lives in the larger context of <em>incident response</em>, which gets its own treatment in Chapter 15 (the PICERL lifecycle — Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned). For this chapter, the relevant slice is <em>Identification</em> and the early <em>Containment</em> steps that the SOC owns directly.</p>
+<h2 id="7-endpoint-defense-from-antivirus-to-xdr">7. Endpoint Defense — From Antivirus to XDR<a class="headerlink" href="#7-endpoint-defense-from-antivirus-to-xdr" title="Permanent link">&para;</a></h2>
+<p>The <strong>endpoint</strong> — the laptop, the server, the phone, the container — is the place where users interact with data and where attackers land first. Endpoint defense has evolved through three generations, each broader than the last, and each generation continues to coexist with the next on most networks.</p>
+<h3 id="71-antivirus-signature-based-defense">7.1 Antivirus — Signature-Based Defense<a class="headerlink" href="#71-antivirus-signature-based-defense" title="Permanent link">&para;</a></h3>
+<p><strong>Antivirus (AV)</strong> is the original endpoint defense. Classical AV scans files for <em>signatures</em> — byte patterns or hashes of known malware — and quarantines or removes matches. AV vendors maintain large signature databases that update continuously. Modern AV products extend this with <em>heuristics</em> (suspicious file behaviors), <em>cloud lookups</em> (a hash check against a global reputation service), and <em>machine-learning classifiers</em> on file features.</p>
+<p>The structural limitation of signature-based AV is that it can only catch malware someone has already analyzed. Skilled attackers easily bypass signatures using packers, polymorphism, fileless techniques, or by using legitimate tools (PowerShell, certutil, regsvr32) maliciously — the <em>living-off-the-land</em> tactic. Antivirus remains a useful first line for the ambient flow of commodity malware, but it is not a complete endpoint defense.</p>
+<h3 id="72-host-based-ids-watching-the-host">7.2 Host-Based IDS — Watching The Host<a class="headerlink" href="#72-host-based-ids-watching-the-host" title="Permanent link">&para;</a></h3>
+<p>A <strong>Host-Based IDS (HIDS)</strong> monitors a single host for suspicious activity and integrity changes. Where antivirus focuses on files, HIDS focuses on <em>system behavior</em>: changes to critical files (Linux's <code>/etc/passwd</code>, Windows registry hives), unexpected listening ports, unauthorized scheduled tasks, kernel-module loads. The classic open-source examples are OSSEC and AIDE for file-integrity monitoring, and <code>auditd</code> for syscall-level Linux auditing. HIDS produces structured events that flow into the SIEM (Section 4) and form a substantial portion of the <em>endpoint detection logs</em> category.</p>
+<p>HIDS and AV are complementary. AV asks "is this file known-bad?"; HIDS asks "did this host's state change in a way our policy did not expect?". Both are still narrower than what modern endpoint products do.</p>
+<h3 id="73-edr-the-modern-endpoint-telemetry-platform">7.3 EDR — The Modern Endpoint Telemetry Platform<a class="headerlink" href="#73-edr-the-modern-endpoint-telemetry-platform" title="Permanent link">&para;</a></h3>
+<p><strong>EDR (Endpoint Detection and Response)</strong> is the current generation. An EDR agent runs on every endpoint and continuously records detailed telemetry — every process creation with its command line and parent, every network connection, every DNS lookup, every loaded module, every file write to sensitive paths — and ships it to a cloud backend. The backend correlates that stream against thousands of detection rules (typically aligned to MITRE ATT&amp;CK), surfaces high-confidence alerts to analysts, and supports interactive <em>response</em> actions: isolate the host from the network, kill a process, collect a forensic artifact, run a remediation script.</p>
+<p>EDR is not a successor to antivirus that <em>replaces</em> AV; in practice, modern endpoint products bundle prevention (formerly AV's job) with detection and response in one agent. The qualitative leap is <em>visibility</em>: an EDR agent gives an analyst the equivalent of a high-resolution flight recorder for every endpoint, making post-incident reconstruction and proactive threat hunting actually possible. Major commercial EDRs include CrowdStrike Falcon, Microsoft Defender for Endpoint, SentinelOne, and Sophos Intercept X; open-source-leaning options include Wazuh and Velociraptor.</p>
+<h3 id="74-xdr-crossing-the-boundaries">7.4 XDR — Crossing The Boundaries<a class="headerlink" href="#74-xdr-crossing-the-boundaries" title="Permanent link">&para;</a></h3>
+<p><strong>XDR (Extended Detection and Response)</strong> extends EDR's correlation across more data planes — endpoints <em>plus</em> email, identity, network, cloud workloads — into a single analytics layer. The promise of XDR is that an attack that hops across boundaries (a phishing email leads to a credential theft that leads to a cloud-console session that leads to a database dump) is detected as a single connected story rather than four separate alerts in four separate consoles. The reality, in 2026, is that XDR products vary widely in how broad and how deeply integrated their cross-domain correlation actually is, and many organizations build XDR-like capability themselves on top of a SIEM and a data lake.</p>
+<table>
+<thead>
+<tr>
+<th>Tool class</th>
+<th>Scope</th>
+<th>Question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antivirus</td>
+<td>Files on one host</td>
+<td>"Is this file known-bad?"</td>
+</tr>
+<tr>
+<td>HIDS</td>
+<td>Behavior on one host</td>
+<td>"Did the host's state change unexpectedly?"</td>
+</tr>
+<tr>
+<td>EDR</td>
+<td>Endpoint telemetry across the fleet</td>
+<td>"What did this endpoint do, and is it part of a known attack pattern?"</td>
+</tr>
+<tr>
+<td>XDR</td>
+<td>Endpoint + email + identity + network + cloud</td>
+<td>"Is the same actor moving across our environment?"</td>
+</tr>
+<tr>
+<td>SIEM</td>
+<td>All logs across the organization</td>
+<td>"Does any combination of evidence indicate an incident?"</td>
+</tr>
+</tbody>
+</table>
+<p>The categories overlap deliberately. In a mature program, SIEM, EDR/XDR, and the SOC's playbooks are integrated tightly enough that an alert fired by the EDR can be enriched with identity and cloud context from the SIEM, contained by a SOAR playbook, and tracked through to closure in a single case — without a human having to switch consoles four times.</p>
+<h2 id="8-keeping-systems-in-a-known-good-state">8. Keeping Systems In A Known-Good State<a class="headerlink" href="#8-keeping-systems-in-a-known-good-state" title="Permanent link">&para;</a></h2>
+<p>The single most effective thing operations can do for security is keep the systems it runs in a known, defensible configuration. Three disciplines do that work, and they are mutually reinforcing.</p>
+<h3 id="81-patch-management">8.1 Patch Management<a class="headerlink" href="#81-patch-management" title="Permanent link">&para;</a></h3>
+<p><strong>Patch management</strong> is the process of identifying, testing, and deploying software updates that fix vulnerabilities (and often functionality bugs as well). The case for patching is overwhelming: most successful intrusions exploit vulnerabilities for which a patch has been available for months or years. The case <em>against</em> fast patching is also real: patches occasionally break production, and a hasty patch deployed to thousands of machines can be its own incident.</p>
+<p>A serviceable patch management program has four moving parts. <em>Inventory</em> — every host, container image, and library in use, with version known. <em>Risk-based prioritization</em> — using vulnerability severity (CVSS), exploitability (is there public exploit code? is it being exploited in the wild?), and asset criticality, decide what to patch first. <em>Staged deployment</em> — patch a small canary, watch for regressions, expand to broader rings, finish with the most sensitive systems. <em>Verification</em> — confirm by scanning that the patch actually applied and the vulnerability is closed.</p>
+<p>The cloud and container era has changed patching subtly. For long-lived VMs, classical "agent installs patches" workflows still apply. For containers and serverless, <em>patching is rebuilding</em> — the unit of update is a new image deployed via the CI/CD pipeline, and the question becomes how fresh your base images and library dependencies are at build time. Software composition analysis (Chapter 6) feeds this question.</p>
+<h3 id="82-configuration-management">8.2 Configuration Management<a class="headerlink" href="#82-configuration-management" title="Permanent link">&para;</a></h3>
+<p><strong>Configuration management</strong> is the practice of defining, in code or declarative policy, what each class of system <em>should</em> look like, and then continuously enforcing that definition. Tools in this category include Ansible, Puppet, Chef, Salt, and the cloud-native equivalents (AWS Systems Manager, Azure Automation, GCP Config Manager). Container and Kubernetes worlds have their own variants — Helm charts, Kustomize, GitOps with ArgoCD or Flux, and admission controllers like OPA/Gatekeeper.</p>
+<p>Configuration management closes the gap between <em>intent</em> and <em>reality</em>. A baseline says "SSH must be configured to disable root login and password auth"; the configuration tool re-applies that setting on every run, so a manual change at 2 a.m. by a tired admin reverts within minutes. This kind of <em>self-healing</em> property is a major reason that Infrastructure as Code (IaC) has become the modern operations default — every change goes through code review, every drift is detected, every state is reproducible.</p>
+<p>The security risk in configuration management is the <em>blast radius</em> of the configuration system itself. Whoever can change the configuration code, or the credentials it uses, can change every system the platform manages. CI/CD pipelines that deploy infrastructure must be among the most carefully protected systems in the organization.</p>
+<h3 id="83-system-hardening-baselines-and-cis-benchmarks">8.3 System Hardening, Baselines, and CIS Benchmarks<a class="headerlink" href="#83-system-hardening-baselines-and-cis-benchmarks" title="Permanent link">&para;</a></h3>
+<p><strong>System hardening</strong> is the deliberate reduction of an operating system or application's attack surface — disabling unused services, closing unused ports, removing default accounts, tightening permissions, enabling audit logging, configuring secure defaults. <strong>Baseline configuration</strong> is the codified, named version of "this is what a hardened system in our environment looks like": a Windows Server 2022 baseline, a Linux baseline, a Kubernetes cluster baseline. Baselines are typically expressed in the configuration-management tool from the previous section.</p>
+<p>The widely used reference standard for hardening is the <strong>CIS Benchmarks</strong> — a freely available set of consensus-based, prescriptive guides published by the Center for Internet Security covering operating systems, cloud providers, container platforms, databases, browsers, and many other technologies. A CIS Benchmark for, say, Ubuntu 22.04 might contain 200+ specific recommendations, each with a rationale, an audit procedure, and a remediation step. CIS also distinguishes a <em>Level 1</em> profile (recommended for most environments) from a <em>Level 2</em> profile (more restrictive, for higher-sensitivity environments).</p>
+<p>The relationship among the four concepts is best summarized as a small workflow. <em>Hardening</em> is the activity. <em>Baselines</em> are its output, written down. <em>Configuration management</em> applies them. <em>CIS Benchmarks</em> are an excellent place to start the baseline rather than inventing one from scratch.</p>
+<h4 id="diagram-hardening-baselines-and-drift">Diagram: Hardening, Baselines, and Drift<a class="headerlink" href="#diagram-hardening-baselines-and-drift" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Causal-loop diagram showing how hardening, baselines, configuration enforcement, and detection of drift form a cycle</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> hardening-baselines-loop<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A cyclic diagram with four primary nodes and two outside influences.</p>
+<p><strong>Primary cycle (clockwise, with arrows):</strong></p>
+<ol>
+<li><strong>CIS Benchmarks</strong> (top) — external reference of recommendations</li>
+<li>→ <strong>Baseline Configuration</strong> (right) — codified, named "this is what hardened looks like for us"</li>
+<li>→ <strong>Configuration Management</strong> (bottom) — enforces baseline on every host</li>
+<li>→ <strong>Drift Detection</strong> (left) — measures gap between actual and baseline; reports findings</li>
+<li>→ back into <strong>Baseline Configuration</strong> (the cycle: findings revise baseline)</li>
+</ol>
+<p><strong>Outside influences:</strong></p>
+<ul>
+<li><strong>New vulnerabilities / patches</strong> → arrow into <strong>Baseline Configuration</strong> ("baseline must evolve")</li>
+<li><strong>Auditors / compliance frameworks</strong> → arrow into <strong>Baseline Configuration</strong> ("regulatory requirements feed in")</li>
+</ul>
+<p><strong>Annotations on arrows:</strong></p>
+<ul>
+<li>Baseline → Config Mgmt: "applied via Ansible/Puppet/IaC"</li>
+<li>Config Mgmt → Drift: "scanners verify (e.g., InSpec, OpenSCAP)"</li>
+<li>Drift → Baseline: "exceptions approved, baseline updated, or host remediated"</li>
+</ul>
+<p>Color: cybersecurity blue for the four primary nodes, slate steel for influences, amber #ffa000 highlight on Drift Detection (the place where ops attention concentrates). Responsive: cycle reflows to a vertical sequence below 700px.</p>
+<p>Implementation: Mermaid graph TD with curved arrows.</p>
+</details>
+<p>Drift — the gradual divergence between baseline and reality — is the operational enemy. New software gets installed, debug ports get opened, "temporary" exceptions become permanent, accounts proliferate. Without continuous re-application of the baseline and continuous measurement of drift, even an excellent original hardening posture decays in months.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Start From CIS, Don't Reinvent It</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+The first time you build a baseline, start from a CIS Benchmark and tailor <em>down</em> — disable the recommendations that genuinely don't fit your environment, with a written reason for each exception. Baselines built from scratch tend to miss controls that ten years of consensus have already worked through. Defense in depth is mostly about not skipping steps.</p>
+</div>
+<h2 id="9-audit-logging-the-forensic-record">9. Audit Logging — The Forensic Record<a class="headerlink" href="#9-audit-logging-the-forensic-record" title="Permanent link">&para;</a></h2>
+<p><strong>Audit logging</strong> is the deliberate, durable recording of security-relevant events for later review. It overlaps with general log management (Section 4) but has a specific job: producing the evidence that lets an organization answer the question <em>"who did what, when, on which resource, with what result?"</em> — long after the fact, often under regulatory or legal obligation.</p>
+<p>Audit log content is more carefully chosen than general log content. The event categories that audit logs almost always cover:</p>
+<ul>
+<li><strong>Authentication</strong> — every sign-in attempt, success or failure, with method (password, MFA, SSO), source IP, and user agent.</li>
+<li><strong>Authorization</strong> — every access decision on a sensitive resource, especially denials.</li>
+<li><strong>Privileged actions</strong> — every use of an administrative privilege: role assumption, configuration change, account creation, log policy modification.</li>
+<li><strong>Data access</strong> — reads or exports of designated sensitive data (regulated, classified, or business-critical).</li>
+<li><strong>Configuration changes</strong> — every change to security-relevant configuration: firewall rules, IAM policies, encryption settings, logging itself.</li>
+</ul>
+<p>A well-designed audit log has several quality properties beyond mere existence. Logs must be <em>complete</em> (no relevant events silently missing), <em>accurate</em> (timestamps, identities, and resource references reliable), <em>tamper-evident</em> (a hash chain, signed batches, or write-once storage so that an attacker cannot quietly rewrite history), and <em>retained</em> for the period the organization has committed to — often years, driven by regulation. HIPAA requires six years of audit retention for health information; PCI-DSS requires one year online plus three more in archive for cardholder data; many other frameworks specify their own.</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>What it means</th>
+<th>How operations addresses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completeness</td>
+<td>All required events captured</td>
+<td>Logging-policy tests, periodic gap audits</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Trustworthy timestamps and identities</td>
+<td>NTP synchronization, structured logging</td>
+</tr>
+<tr>
+<td>Tamper-evidence</td>
+<td>Detect unauthorized modification</td>
+<td>Off-host shipment, append-only storage, signed batches</td>
+</tr>
+<tr>
+<td>Confidentiality</td>
+<td>Logs themselves can leak (e.g., contain tokens)</td>
+<td>Redaction at source, access control on log store</td>
+</tr>
+<tr>
+<td>Retention</td>
+<td>Available for the required period</td>
+<td>Tiered storage, retention locks, legal hold</td>
+</tr>
+</tbody>
+</table>
+<p>The relationship between audit logging and the rest of this chapter is direct. Audit logs are a primary input to the SIEM (Section 5). The SOC investigates with them (Section 6). Configuration management produces them when it changes systems (Section 8). They are the evidence that the rest of the operational stack works — and the evidence that survives when a breach turns into a regulator's request, a board investigation, or a court case.</p>
+<h2 id="10-putting-it-all-together">10. Putting It All Together<a class="headerlink" href="#10-putting-it-all-together" title="Permanent link">&para;</a></h2>
+<p>A useful exercise to close the chapter: trace a single suspicious event from origin to resolution through the operations stack we have just built.</p>
+<p>A finance department user clicks a phishing link in their browser. The browser process opens an Office document, which spawns <code>powershell.exe</code> with an unusual command line. The EDR agent on the laptop records the process tree, pattern-matches against an ATT&amp;CK rule for "Office spawns PowerShell," and emits a <em>high-confidence alert</em> to the EDR backend. The alert lands in the SIEM via integration. A SOAR playbook fires automatically: it pulls the user's recent sign-in history from the identity provider, queries cloud audit logs for any sessions from the user's account in the last hour, isolates the laptop from the network, and creates a case for the on-call analyst. The Tier 1 analyst reviews the case, sees that the cloud audit log shows the user's account did <em>not</em> successfully assume any new roles in the past hour, and concludes the attack was stopped at the laptop. The case is escalated to Tier 2 to confirm full eradication, the user's password is reset, and a lessons-learned note feeds back into the awareness training pipeline (Chapter 12) and the EDR detection-tuning queue. Every step left an audit log entry.</p>
+<p>Every concept from this chapter is doing a specific job in that story. The endpoint had EDR because antivirus alone would not have caught a fileless PowerShell payload. The EDR alert reached the SIEM because the log management pipeline brought them together. The SOAR playbook ran because the SOC had codified that response. The cloud audit log was checked because the IAM permissions of a phished user are the next thing an attacker reaches for. The user's laptop was isolated because the configuration baseline included the EDR's containment capability. The lessons-learned note exists because operations is a loop, not a one-shot.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read a cloud architecture diagram and locate the customer-vs-provider line, design a basic logging-and-detection pipeline that funnels evidence from endpoints and cloud control planes into a SIEM, and explain what each generation of endpoint defense — AV, HIDS, EDR, XDR — actually adds. You also know why patching, hardening, baselines, and audit logs are not "boring ops" but the ground truth on which every detection and response decision rests. Chapter 12 turns the camera on the humans who use these systems.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The <strong>shared responsibility model</strong> divides cloud security between provider and customer; the customer always owns <em>data, identity, and configuration</em>, no matter the service tier.</li>
+<li><strong>IaaS, PaaS, SaaS</strong> progressively shift more components to the provider but never relieve the customer of those three core responsibilities.</li>
+<li><strong>Cloud IAM</strong> is the new perimeter; least privilege, no wildcards, MFA, and short-lived federated credentials are the daily disciplines.</li>
+<li><strong>Log management</strong> is the foundation; <strong>SIEM</strong> turns logs into detections; <strong>SOAR</strong> turns detections into consistent, fast response.</li>
+<li>The <strong>SOC</strong> is the human-and-process layer that operates the pipeline; alert fatigue is the silent killer, and detection tuning is a software-engineering discipline.</li>
+<li>Endpoint defense evolved from <strong>antivirus</strong> (signatures) through <strong>HIDS</strong> (host integrity) to <strong>EDR</strong> (full endpoint telemetry) and <strong>XDR</strong> (cross-domain correlation); modern programs use them together.</li>
+<li><strong>Patch management</strong> + <strong>configuration management</strong> + <strong>system hardening</strong> + <strong>baseline configuration</strong> + <strong>CIS Benchmarks</strong> are mutually reinforcing prevention disciplines that reduce the alert volume the SOC has to process.</li>
+<li><strong>Audit logging</strong> produces the durable, tamper-evident evidence that everything else depends on — and the record that survives into regulatory and legal review.</li>
+</ul>
+<p>Next chapter: human security — identity, authentication, social engineering, usable security, and the part of the system that does not patch on Tuesday.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 

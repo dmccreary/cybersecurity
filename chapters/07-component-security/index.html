@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Explores the trust foundation beneath software: TPM, HSM, secure enclaves, TEEs, secure and measured boot, side-channel attacks, hardware supply chain, embedded and IoT security, attestation, and hardware roots of trust.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>7. Component Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Component and Hardware Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Component Security
+              Component and Hardware Security
             
           </span>
         </div>
@@ -643,6 +643,246 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-hardware-security-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Hardware Security Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-cast-of-trust-anchors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Cast of Trust Anchors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Cast of Trust Anchors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardware-trust-anchors-on-a-modern-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardware Trust Anchors on a Modern System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-trusted-platform-module-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Trusted Platform Module in Depth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-boot-chain-where-trust-actually-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Boot Chain — Where Trust Actually Starts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Boot Chain — Where Trust Actually Starts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-secure-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Secure Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-measured-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Measured Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Measured Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-secure-boot-vs-measured-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Secure Boot vs. Measured Boot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-side-channel-attacks-information-leaks-through-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Side-Channel Attacks — Information Leaks Through Physics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Side-Channel Attacks — Information Leaks Through Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-timing-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Timing Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-power-analysis-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Power Analysis Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cache-side-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Cache Side-Channels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-rowhammer" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Rowhammer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Rowhammer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-side-channel-attack-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Side-Channel Attack Surface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-hardware-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Hardware Supply Chain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-embedded-and-iot-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Embedded and IoT Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Embedded and IoT Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-iot-device-security-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IoT Device Security Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-device-attestation-proving-what-you-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Device Attestation — Proving What You Are
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Device Attestation — Proving What You Are">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-device-attestation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Device Attestation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-hardware-root-of-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. The Hardware Root of Trust
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-day-in-the-life-of-a-booting-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together — A Day in the Life of a Booting Laptop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1323,246 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-hardware-security-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Hardware Security Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-cast-of-trust-anchors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Cast of Trust Anchors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Cast of Trust Anchors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hardware-trust-anchors-on-a-modern-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hardware Trust Anchors on a Modern System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-trusted-platform-module-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Trusted Platform Module in Depth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-boot-chain-where-trust-actually-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Boot Chain — Where Trust Actually Starts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Boot Chain — Where Trust Actually Starts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-secure-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Secure Boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-measured-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Measured Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Measured Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-secure-boot-vs-measured-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Secure Boot vs. Measured Boot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-side-channel-attacks-information-leaks-through-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Side-Channel Attacks — Information Leaks Through Physics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Side-Channel Attacks — Information Leaks Through Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-timing-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Timing Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-power-analysis-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Power Analysis Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cache-side-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Cache Side-Channels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-rowhammer" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Rowhammer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Rowhammer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-side-channel-attack-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Side-Channel Attack Surface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-hardware-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Hardware Supply Chain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-embedded-and-iot-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Embedded and IoT Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Embedded and IoT Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-iot-device-security-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IoT Device Security Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-device-attestation-proving-what-you-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Device Attestation — Proving What You Are
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Device Attestation — Proving What You Are">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-device-attestation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Device Attestation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-hardware-root-of-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. The Hardware Root of Trust
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-day-in-the-life-of-a-booting-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together — A Day in the Life of a Booting Laptop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1140,13 +1620,373 @@
 <li><a href="../06-software-assurance/">Chapter 6: Software Assurance and Supply Chain Security</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Foundations Beneath Software</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. Until now we have assumed that the CPU runs the instructions we wrote, that memory holds the bits we stored, and that the operating system we boot is the one we trust. This chapter questions every one of those assumptions. We will trace the trust chain down to the silicon, meet the side-channel attacks that read secrets through timing and power, and ask what it means for a device to <em>prove</em> what it is. Trust, but verify — and this chapter is where verification meets the metal.</p>
+</div>
+<h2 id="1-why-hardware-security-matters">1. Why Hardware Security Matters<a class="headerlink" href="#1-why-hardware-security-matters" title="Permanent link">&para;</a></h2>
+<p>Every security control we have studied so far — encryption, access control, integrity checks, authentication — runs as software on top of hardware. If the hardware lies, every layer above it lies with it. <strong>Hardware security</strong> is the discipline of designing, attesting, and defending the physical and microarchitectural foundation that software runs on. It addresses three questions that pure software security cannot answer on its own:</p>
+<ol>
+<li><em>Where do we keep secrets that even a compromised operating system cannot reach?</em></li>
+<li><em>How does a system prove that it booted the software we expected, not malware that replaced it?</em></li>
+<li><em>How do we keep an adversary with physical proximity to a device — a soldering iron, a logic analyzer, a refrigeration spray — from extracting our keys?</em></li>
+</ol>
+<p>The answers involve specialized chips, cryptographic protocols rooted in unchangeable silicon, and an awareness of <em>side channels</em> — leaks of information through timing, power, electromagnetic emanations, and even microarchitectural state that the chip's designers never intended to expose. The unifying idea is the <strong>trust boundary</strong>. In software security we drew trust boundaries between processes; in hardware security we draw them between regions of the same chip, between the chip and the board, between the board and the supply chain that built it.</p>
+<p>A second unifying idea is the <strong>root of trust</strong>. Every chain of verification has to start somewhere — a piece of code or a key that we trust by axiom because we cannot verify what came before it. In hardware, that anchor lives in immutable silicon and is the topic the chapter returns to repeatedly. We will define it precisely in section 9, but it is worth keeping in mind from the beginning: the question of hardware security is largely the question of "what is your root of trust, and why do you trust it?"</p>
+<p>This chapter maps directly to the <strong>Component Security</strong> knowledge area of the CSEC2017 / ABET CAC curriculum and complements the software-supply-chain treatment of Chapter 6 by going one layer deeper, into the hardware itself.</p>
+<h2 id="2-the-cast-of-trust-anchors">2. The Cast of Trust Anchors<a class="headerlink" href="#2-the-cast-of-trust-anchors" title="Permanent link">&para;</a></h2>
+<p>Modern systems contain several specialized chips and chip features whose only job is to be trustworthy storage and computation for cryptographic operations. The names overlap, the boundaries are sometimes fuzzy, and a typical laptop or phone may contain several of them at once. Before we diagram their interactions, let's define the four main categories.</p>
+<p>A <strong>Trusted Platform Module (TPM)</strong> is a small, standardized cryptographic chip (or firmware-emulated equivalent) found in essentially every modern PC and server. Defined by the Trusted Computing Group (TCG), the current standard is TPM 2.0. A TPM stores cryptographic keys, measures the boot process into special registers (PCRs — Platform Configuration Registers), generates random numbers, and can sign attestations about the system's state. A TPM is <em>passive</em> in the sense that it does not control the CPU; it is a coprocessor the CPU consults.</p>
+<p>A <strong>Hardware Security Module (HSM)</strong> is a higher-assurance cousin of the TPM, typically a separate device (a PCIe card, a network appliance, or a USB token) used by enterprises and certificate authorities to protect their most sensitive keys — root signing keys, payment-network keys, root-of-trust keys for cloud key-management services. HSMs have tamper-evident and tamper-responsive packaging: opening one should zeroize the keys it holds. They are typically certified to FIPS 140-2 or FIPS 140-3, with Level 3 or Level 4 indicating physical-tamper protection.</p>
+<p>A <strong>Secure Enclave</strong> is a small, isolated execution environment inside the main application processor (or in a dedicated security coprocessor on the same package). Apple's Secure Enclave Processor, Google's Titan M, and Samsung's Knox are well-known examples. Unlike a TPM, a secure enclave can <em>execute custom code</em> — typically a small, audited image — that operates on secrets the main OS never sees.</p>
+<p>A <strong>Trusted Execution Environment (TEE)</strong> is the more general category that secure enclaves belong to. A TEE is a region of the main CPU that runs code in an isolated mode the rest of the system cannot inspect, with its own memory protections and attestation. Major TEEs include <strong>Intel SGX</strong> (since 2015), <strong>Intel TDX</strong> (current), <strong>AMD SEV/SEV-SNP</strong>, and <strong>ARM TrustZone</strong>. TEEs are the foundation of <strong>confidential computing</strong>, where workloads run encrypted even from the cloud provider hosting them — a topic we revisit briefly in Chapter 16.</p>
+<p>The following table summarizes the trust anchors we just defined so you can compare them at a glance. Use the table as a reference; the prose above is what introduces them.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor</th>
+<th>Form factor</th>
+<th>Can run custom code?</th>
+<th>Typical use</th>
+<th>Threat model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TPM 2.0</td>
+<td>Discrete chip or firmware</td>
+<td>No (fixed command set)</td>
+<td>Boot measurement, key sealing, disk encryption keys</td>
+<td>Software attacker, modest physical</td>
+</tr>
+<tr>
+<td>HSM</td>
+<td>PCIe / network appliance / USB</td>
+<td>No (fixed command set)</td>
+<td>CA root keys, payment HSMs, KMS root</td>
+<td>Strong physical, supply-chain</td>
+</tr>
+<tr>
+<td>Secure Enclave</td>
+<td>On-package coprocessor</td>
+<td>Yes (signed firmware only)</td>
+<td>Biometric matching, device-bound keys, payment</td>
+<td>Compromised main OS</td>
+</tr>
+<tr>
+<td>TEE (SGX, TrustZone, SEV)</td>
+<td>Mode of main CPU</td>
+<td>Yes (developer code)</td>
+<td>Confidential computing, DRM, key isolation</td>
+<td>Compromised hypervisor / OS</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-hardware-trust-anchors-on-a-modern-system">Diagram: Hardware Trust Anchors on a Modern System<a class="headerlink" href="#diagram-hardware-trust-anchors-on-a-modern-system" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Layered diagram showing the relationship between TPM, HSM, secure enclave, and TEE on a typical system</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> trust-anchors-overview<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal layered diagram showing a modern computing system with four trust anchors highlighted.</p>
+<p>Layout (left to right, on a single board):</p>
+<ol>
+<li><strong>Main CPU package</strong> (large central box, slate-steel border)</li>
+<li>Inside: a smaller box labeled <strong>Application cores</strong> (cybersecurity blue)</li>
+<li>Inside: a smaller box labeled <strong>TEE region</strong> (amber outline) with caption "Intel SGX / TDX / AMD SEV / ARM TrustZone — runs developer code in isolation"</li>
+<li>
+<p>On the same package: a small box labeled <strong>Secure Enclave / Security coprocessor</strong> (cybersecurity blue) with caption "Apple SEP, Google Titan M, Samsung Knox — runs only signed firmware"</p>
+</li>
+<li>
+<p><strong>Discrete TPM chip</strong> (smaller box on the board, slate-steel) connected by a thin line labeled "LPC / SPI bus" to the main CPU. Caption: "Stores measurements and sealed keys. Standardized command set."</p>
+</li>
+<li>
+<p><strong>External HSM</strong> (separate box outside the main board, drawn as a 1U appliance) connected via a network or PCIe icon. Caption: "Enterprise key custody. FIPS 140-3 Level 3+. Tamper-responsive."</p>
+</li>
+</ol>
+<p>Above the main CPU package, a "Hardware Root of Trust" badge points down into the secure enclave / TEE region with an arrow labeled "Anchored in silicon, set at fabrication."</p>
+<p>Color: cybersecurity blue (#1565c0) for trusted regions, amber (#ffa000) outline on TEE to indicate "depends on microcode/firmware," slate steel (#455a64) for buses and packaging.</p>
+<p>Hover tooltips on each anchor display its main capabilities and threat model from the table above.</p>
+<p>Responsive: 4-column desktop layout collapses to vertical stack below 800px viewport.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltips per element.</p>
+</details>
+<h2 id="3-the-trusted-platform-module-in-depth">3. The Trusted Platform Module in Depth<a class="headerlink" href="#3-the-trusted-platform-module-in-depth" title="Permanent link">&para;</a></h2>
+<p>The <strong>TPM</strong> earns its own section because it is the trust anchor most students will encounter first — it is on essentially every business-class PC made since 2015 and is required for Windows 11. A TPM 2.0 exposes a small set of capabilities, which together support disk encryption, secure boot verification, attestation, and secure key storage. Three of these capabilities deserve naming:</p>
+<ul>
+<li><strong>Sealed storage</strong> — encrypt a key under the TPM such that decryption is only possible if the system's measured boot state matches a specified policy. If an attacker boots a different OS, the seal does not open.</li>
+<li><strong>Platform Configuration Registers (PCRs)</strong> — special registers that can only be <em>extended</em> (not overwritten) by hashing new measurements into them. PCRs are the running tally of "what booted on this machine," and they are the basis of measured boot (next section).</li>
+<li><strong>Attestation</strong> — the TPM can sign a quote of its current PCR values with a key that descends from a TPM-resident <em>Endorsement Key</em> installed at manufacture. A remote verifier can read this quote and decide whether the machine booted into a trustworthy state.</li>
+</ul>
+<p>The TPM is not a fortress against every attack. It is connected to the CPU over a low-speed bus (LPC or SPI), and that bus can be probed with cheap equipment — the well-known <em>TPM sniffing</em> attacks read the disk encryption key in transit between the TPM and the CPU during boot. The countermeasure is <em>parameter encryption</em> (TPM 2.0 supports this) or moving the TPM logic onto the CPU package itself (firmware TPM, fTPM). It is also worth knowing that fTPMs share the main CPU and have their own bug history — for example, the 2023 <em>faulTPM</em> paper extracted keys from AMD fTPMs via voltage glitching.</p>
+<p>Despite these limits, the TPM is enormously useful: it gives the operating system a place to store keys that survive an offline disk attack, it enables BitLocker / LUKS disk encryption with strong protection, and it underpins Windows Hello and similar passwordless authentication systems.</p>
+<h2 id="4-the-boot-chain-where-trust-actually-starts">4. The Boot Chain — Where Trust Actually Starts<a class="headerlink" href="#4-the-boot-chain-where-trust-actually-starts" title="Permanent link">&para;</a></h2>
+<p>Before any operating system runs, a sequence of firmware and bootloader code has already executed: the CPU's microcode brings the chip to a usable state, then immutable boot ROM loads the next stage, and so on through several stages until the OS kernel takes over. <strong>Firmware security</strong> is the discipline of protecting that chain, and it is where many of the most consequential breaches of the last decade have lived.</p>
+<p>Modern PCs run <strong>UEFI</strong> — the Unified Extensible Firmware Interface — which replaced the legacy BIOS during the 2010s. <strong>UEFI security</strong> features include cryptographic verification of boot stages, a database of trusted signing keys, and a modular driver architecture that runs before the OS does. UEFI is far more capable than legacy BIOS, but its complexity is also a liability: UEFI vulnerabilities (BootHole in 2020, BlackLotus bootkit in 2023, LogoFAIL in 2023) have repeatedly demonstrated that the pre-OS environment is a serious attack surface.</p>
+<p>The two related technologies that protect the boot chain are <em>secure boot</em> and <em>measured boot</em>. They are easily confused — the names sound interchangeable — but they answer different questions and they compose well together.</p>
+<h3 id="41-secure-boot">4.1 Secure Boot<a class="headerlink" href="#41-secure-boot" title="Permanent link">&para;</a></h3>
+<p><strong>Secure Boot</strong> is an <em>enforcement</em> mechanism: at each stage, the firmware verifies that the next stage is signed by a key in a trusted database, and refuses to execute an unsigned or untrusted stage. If verification fails, boot stops. Secure Boot is what prevents an attacker who has tampered with your bootloader on disk from running their replacement — the firmware will not load it.</p>
+<p>Secure Boot's trust comes from a chain of signatures: the firmware trusts a Platform Key (PK), which authorizes Key Exchange Keys (KEKs), which sign the database of allowed bootloader signers (the "db") and a database of revoked signers (the "dbx"). On a typical PC, the dbx is updated regularly by Microsoft, AMD, Intel, and the OS vendors to revoke compromised bootloaders. The effectiveness of Secure Boot depends entirely on this revocation discipline — BlackLotus survived because the vulnerable bootloaders it exploited were not promptly added to the dbx.</p>
+<h3 id="42-measured-boot">4.2 Measured Boot<a class="headerlink" href="#42-measured-boot" title="Permanent link">&para;</a></h3>
+<p><strong>Measured Boot</strong> is a <em>recording</em> mechanism: at each stage, the firmware computes a hash of the next stage <em>before</em> running it and <em>extends</em> that hash into a TPM PCR. The result is a tamper-evident log of every piece of code that ran during boot. Measured boot does not, by itself, refuse to boot anything — it only records what happened. The recording becomes useful when paired with two things: TPM key sealing (the disk encryption key only unlocks if the PCRs match a trusted state) and attestation (a remote verifier reads the PCRs and decides whether to trust the system).</p>
+<p>The two technologies are complementary. Secure Boot gives you a binary "boot-or-don't" guarantee at the moment of boot. Measured Boot gives you an evidentiary trail that survives the boot and lets a remote party — a corporate VPN, a cloud orchestrator, a remote-attestation service — make a trust decision <em>after</em> boot. Real systems use both.</p>
+<h4 id="diagram-secure-boot-vs-measured-boot">Diagram: Secure Boot vs. Measured Boot<a class="headerlink" href="#diagram-secure-boot-vs-measured-boot" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Side-by-side flow diagram showing how secure boot enforces trust while measured boot records it</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> secure-vs-measured-boot<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>Two parallel vertical flows side by side, both starting from "Power On" at the top.</p>
+<p><strong>Left column: Secure Boot (enforcement)</strong></p>
+<ol>
+<li>Power On → CPU Reset Vector</li>
+<li>Boot ROM (immutable, the silicon root of trust)</li>
+<li>Verifies signature of UEFI firmware → if FAIL, halt (red diamond)</li>
+<li>UEFI verifies signature of bootloader → if FAIL, halt (red diamond)</li>
+<li>Bootloader verifies kernel signature → if FAIL, halt (red diamond)</li>
+<li>Kernel runs</li>
+</ol>
+<p>Each step is colored cybersecurity blue with a green "verify" annotation; failure paths show a red halt diamond.</p>
+<p><strong>Right column: Measured Boot (recording)</strong></p>
+<ol>
+<li>Power On → CPU Reset Vector</li>
+<li>Boot ROM hashes UEFI firmware → extends PCR[0]</li>
+<li>UEFI hashes bootloader → extends PCR[4]</li>
+<li>Bootloader hashes kernel/initrd → extends PCR[8/9]</li>
+<li>Kernel runs (unconditionally)</li>
+<li>After boot: TPM holds PCR values that fingerprint the boot</li>
+</ol>
+<p>Each step shows a small "PCR" register box on the right that accumulates hash values; the final state can be read by a remote attester.</p>
+<p>Below both columns: a caption "Real systems use BOTH — Secure Boot prevents bad boots; Measured Boot proves what booted."</p>
+<p>Color: cybersecurity blue for trusted stages, slate steel for hardware/firmware boundaries, amber for the warning that PCRs are extend-only.</p>
+<p>Responsive: two columns collapse to stacked sequence below 700px.</p>
+<p>Implementation: Mermaid two flowcharts side by side via <code>flowchart TB</code> with subgraphs.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Secure vs. Measured — Two Different Questions</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Notice the asymmetry. Secure Boot answers <em>"should I run this?"</em> at boot time, with a binary verdict. Measured Boot answers <em>"what actually ran?"</em> with evidence that someone else can audit later. The first protects this boot; the second lets a third party trust this machine. Real production systems need both — and the TPM is what binds the second one to immutable hardware.</p>
+</div>
+<h2 id="5-side-channel-attacks-information-leaks-through-physics">5. Side-Channel Attacks — Information Leaks Through Physics<a class="headerlink" href="#5-side-channel-attacks-information-leaks-through-physics" title="Permanent link">&para;</a></h2>
+<p>So far we have treated cryptographic operations as black boxes: input goes in, output comes out, and the secret key inside never leaks unless someone breaks the math. <strong>Side-channel attacks</strong> challenge that abstraction. A side channel is any unintended information leak that depends on the secret being processed — the <em>time</em> an operation takes, the <em>power</em> the chip draws, the <em>electromagnetic field</em> it emits, the <em>acoustic noise</em> of its capacitors, even the <em>cache lines</em> it touches. Side channels do not break the cryptographic algorithm; they read the secret out the back of the implementation.</p>
+<p>The historical surprise of side channels is how <em>practical</em> they are. The 1996 Kocher paper on timing attacks demonstrated that real RSA implementations leaked their keys through millisecond differences in decryption time. Since then the field has expanded into power, EM, cache, and microarchitectural channels — most spectacularly with the <strong>Spectre</strong> and <strong>Meltdown</strong> disclosures of 2018, which showed that <em>speculative execution</em> in modern CPUs leaks information across what software developers had assumed were hard isolation boundaries.</p>
+<p>Side-channel attacks fall into rough families. Let's define each before showing them in a comparison table.</p>
+<h3 id="51-timing-attacks">5.1 Timing Attacks<a class="headerlink" href="#51-timing-attacks" title="Permanent link">&para;</a></h3>
+<p>A <strong>timing attack</strong> exploits variations in execution time that depend on the secret. Classic targets are comparison loops that exit early on the first byte mismatch — comparing an attacker-supplied MAC to the correct MAC byte by byte leaks how many leading bytes were correct. Modular exponentiation in a naive RSA implementation runs faster when the secret exponent has more zero bits than one bits; an attacker who can time many decryptions can recover the key. The countermeasure is <em>constant-time programming</em> — code paths that take the same time regardless of secret values. Modern crypto libraries (libsodium, BoringSSL, ring) take constant-timeness as a core requirement.</p>
+<h3 id="52-power-analysis-attacks">5.2 Power Analysis Attacks<a class="headerlink" href="#52-power-analysis-attacks" title="Permanent link">&para;</a></h3>
+<p>A <strong>power analysis attack</strong> measures the power consumption of a chip (or its electromagnetic emanations, by induction nearly the same channel) during a cryptographic operation and correlates that trace to the bits of the key. <em>Simple Power Analysis (SPA)</em> reads the trace directly to distinguish operations like square-vs-multiply. <em>Differential Power Analysis (DPA)</em> uses statistics over many traces to extract keys even from noisy measurements. Power analysis is the canonical threat to smart cards, embedded controllers, and IoT devices — the attacker needs only an oscilloscope and modest expertise. Countermeasures include <em>masking</em> (splitting the secret into random shares processed separately), <em>constant-power</em> circuit design, and shielding; FIPS 140-3 Level 3+ certification specifically requires evidence of power-analysis resistance.</p>
+<h3 id="53-cache-side-channels">5.3 Cache Side-Channels<a class="headerlink" href="#53-cache-side-channels" title="Permanent link">&para;</a></h3>
+<p>A <strong>cache side-channel</strong> uses the shared CPU cache as a covert communication channel. The attacker, running on the <em>same physical core</em> as the victim (often a co-located VM or a sibling hyperthread), measures which cache lines are present or evicted to infer which memory addresses the victim accessed. Because real cryptographic implementations often have data-dependent memory access patterns (e.g., AES T-tables indexed by key bytes), the attacker can recover key material. <em>Flush+Reload</em>, <em>Prime+Probe</em>, and <em>Flush+Flush</em> are the classical attack patterns. The countermeasures are protocol-level (no co-tenancy with untrusted code), implementation-level (constant-memory-access cryptography, AES-NI hardware instructions), and architectural (cache partitioning, e.g., Intel CAT). Spectre is, in essence, a cache side channel where the attacker first uses speculative execution to prime the cache with secret-dependent state, then recovers it with Flush+Reload.</p>
+<h3 id="54-rowhammer">5.4 Rowhammer<a class="headerlink" href="#54-rowhammer" title="Permanent link">&para;</a></h3>
+<p><strong>Rowhammer</strong> is a different beast: not a side channel that <em>reads</em> secrets, but a fault injection that <em>writes</em> through hardware. Modern DRAM packs cells so densely that repeatedly reading one row can cause electrical disturbances that flip bits in <em>adjacent</em> rows. An attacker who can hammer carefully chosen rows can flip bits in memory the operating system thought it had isolated from them — corrupting page tables to gain kernel privileges, corrupting cryptographic keys, or undermining VM isolation. The 2014 disclosure prompted vendor mitigations (Target Row Refresh, increased refresh rates), but variants — TRRespass (2020), Half-Double (2021), RowPress (2023) — keep finding ways around them. Rowhammer is the canonical example that <em>the abstraction of "memory is reliable storage" is a software fiction the hardware does not enforce.</em></p>
+<p>The following table compares the four side-channel families to organize what we just defined. Use it to compare attacker capability and countermeasure costs at a glance.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>What attacker observes</th>
+<th>Required access</th>
+<th>Primary countermeasure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timing</td>
+<td>Execution time (ms / cycles)</td>
+<td>Network or local</td>
+<td>Constant-time code</td>
+</tr>
+<tr>
+<td>Power / EM</td>
+<td>Current draw, EM emission</td>
+<td>Physical proximity</td>
+<td>Masking, shielding, FIPS-rated chip</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>Cache hit/miss patterns</td>
+<td>Co-resident code</td>
+<td>Constant-memory-access crypto, no co-tenancy</td>
+</tr>
+<tr>
+<td>Rowhammer</td>
+<td>(fault injection, not observation)</td>
+<td>Local code execution</td>
+<td>TRR, ECC memory, refresh hardening</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-side-channel-attack-surface">Diagram: Side-Channel Attack Surface<a class="headerlink" href="#diagram-side-channel-attack-surface" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Infographic showing how data leaks from a chip through timing, power, EM, cache, and fault channels</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> side-channel-overview<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A central illustration of a CPU chip on a board, with four labeled channels radiating outward.</p>
+<p>Center: a stylized CPU package (cybersecurity blue, slate-steel border) labeled "Cryptographic operation in progress." Inside, a small lock icon labeled "Secret key K."</p>
+<p>Four arrows leaving the chip, each in amber (#ffa000), each terminating at an attacker icon:</p>
+<ol>
+<li><strong>Up — Timing channel.</strong> Arrow labeled "execution time (cycles, ms)"; attacker shown with a stopwatch.</li>
+<li><strong>Right — Power / EM channel.</strong> Arrow labeled "current draw, EM field"; attacker shown with an oscilloscope and probe.</li>
+<li><strong>Down — Cache channel.</strong> Arrow labeled "shared cache state"; attacker shown as a co-tenant VM with a measuring icon.</li>
+<li><strong>Left — Rowhammer (fault).</strong> A two-way arrow labeled "induced bit flips in DRAM"; attacker shown writing to adjacent rows.</li>
+</ol>
+<p>Below the central chip: a green badge labeled "Defenses: constant-time code, masking, shielding, no co-tenancy, ECC RAM, TRR."</p>
+<p>Hover tooltips on each channel show a one-line description and a real-world example (Spectre for cache, faulTPM for power, etc.).</p>
+<p>Color: cybersecurity blue for the chip, amber for leak channels, slate steel for the board, green for the defenses badge.</p>
+<p>Responsive: 4-arrow radial layout collapses to vertical list with icons below 700px.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltips and a small JS handler to scale the radial pattern responsively.</p>
+</details>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Constant-Time Is A Discipline, Not A Default</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+Code like <code>if (mac == expected_mac)</code> looks correct and is. Code like <code>for (i = 0; i &lt; n; i++) if (mac[i] != expected[i]) return false;</code> looks correct and <em>isn't</em> — it leaks the position of the first wrong byte. Use your library's <code>constant_time_compare</code> for any comparison involving a secret. The naive comparison is the footgun, and "it worked in tests" is exactly the kind of silent failure side channels specialize in.</p>
+</div>
+<h2 id="6-the-hardware-supply-chain">6. The Hardware Supply Chain<a class="headerlink" href="#6-the-hardware-supply-chain" title="Permanent link">&para;</a></h2>
+<p>Software has a supply chain (Chapter 6); hardware does too, and it is harder to verify. The <strong>hardware supply chain</strong> runs from semiconductor IP design (ARM, RISC-V, Intel-internal cores), through fabrication (TSMC, Samsung, Intel Foundry, GlobalFoundries), through assembly and packaging, through the original-design manufacturer (ODM) that integrates chips onto a board, through the original-equipment manufacturer (OEM) that brands and ships the device, and finally through the distributor and the customer's receiving dock. Every stage is a place where an adversary could substitute, modify, or instrument hardware.</p>
+<p>The threats break into several categories. <em>Counterfeit components</em> — relabeled lower-grade parts or recycled chips passed off as new — have been a chronic problem in defense procurement and were the target of the U.S. SAE AS5553 standard. <em>Hardware Trojans</em> are deliberately inserted malicious circuitry, vanishingly hard to detect once a chip is in fabrication. <em>Implant attacks</em> during shipping or installation are reported (most famously in the disputed 2018 Bloomberg "Big Hack" allegations and in the more rigorously documented NSA TAO ANT catalog leaked in 2013). <em>Compromised firmware</em> — pre-installed at the factory or at an intermediate distributor — is the most common documented threat in the wild and is what Chapter 6's SBOM and code-signing apparatus tries to extend down to firmware images.</p>
+<p>The defenses are a mix of organizational and technical. Organizationally, governments and large enterprises maintain <em>trusted supplier lists</em> (the U.S. Trusted Foundry program, NIST SP 800-161 supply-chain risk management). Technically, <em>split-manufacturing</em> divides the chip across multiple fabs so no single fab sees the whole design; <em>PUFs</em> (Physically Unclonable Functions) provide a fingerprint unique to each die that cannot be cloned; and <em>device attestation</em> (section 9) lets the buyer cryptographically verify what they received. None of these are bulletproof, and a sophisticated nation-state attacker with fab access remains the worst-case threat that hardware supply chain practice is designed to bound rather than eliminate.</p>
+<h2 id="7-embedded-and-iot-security">7. Embedded and IoT Security<a class="headerlink" href="#7-embedded-and-iot-security" title="Permanent link">&para;</a></h2>
+<p>Most computers in the world are not laptops or servers; they are <strong>embedded systems</strong> — microcontrollers running fixed firmware in cars, medical devices, industrial controllers, point-of-sale terminals, smart meters, routers, and the long tail of the <em>Internet of Things</em>. <strong>Embedded security</strong> covers this enormous, heterogeneous category, and <strong>IoT security</strong> narrows the focus to the subset that connects to networks. The two share most of the same problems, in greater volume and with smaller defense budgets than enterprise IT.</p>
+<p>Embedded systems have several security-defining characteristics:</p>
+<ul>
+<li><strong>Long lifetimes.</strong> A car ECU stays in the field for 15+ years; a smart meter for 20+. The cryptography deployed at manufacture must remain defensible for the device's whole life, and the patching process must reach devices that may never have been online.</li>
+<li><strong>Tight resource budgets.</strong> A microcontroller may have 64 KB of RAM and a 32 MHz CPU. Running modern asymmetric crypto, sandboxing, or heavy logging is non-trivial.</li>
+<li><strong>Physical accessibility.</strong> Smart meters bolt onto the side of a house; payment terminals sit on counters. Adversaries get physical access at scale.</li>
+<li><strong>Fragmented update channels.</strong> Many devices have no update mechanism, or one that requires a vendor visit. Insecure-by-default is the failure mode at industrial scale.</li>
+<li><strong>Composability with safety.</strong> When the device controls a pacemaker, a brake, an insulin pump, or a substation breaker, security failures become safety failures.</li>
+</ul>
+<p>The result is an ecosystem with extraordinarily uneven security. Industry standards are emerging — the U.S. <em>Cyber Trust Mark</em> labeling program (2024+), the EU <em>Cyber Resilience Act</em> (2024), ETSI EN 303 645 for consumer IoT, IEC 62443 for industrial systems — but the installed base will take a generation to replace. The high-leverage controls a designer of an embedded device should focus on are: a hardware root of trust (section 9), authenticated and signed firmware updates, no default passwords, encrypted communications, and a <em>defined end-of-support date</em> communicated to buyers.</p>
+<h4 id="diagram-iot-device-security-stack">Diagram: IoT Device Security Stack<a class="headerlink" href="#diagram-iot-device-security-stack" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Layered diagram showing the security stack of a representative IoT device from silicon root of trust to cloud backend</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> iot-security-stack<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A vertical layered diagram of a representative IoT device, with each layer annotated for its security role.</p>
+<p>From bottom to top:</p>
+<ol>
+<li><strong>Silicon (immutable boot ROM, fuses, PUF)</strong> — slate steel — caption: "Hardware root of trust. Cannot be re-flashed."</li>
+<li><strong>Secure Boot Loader (signed)</strong> — cybersecurity blue — caption: "Verifies next stage signature."</li>
+<li><strong>Firmware (signed, version-anti-rolled-back)</strong> — cybersecurity blue — caption: "Application logic. OTA-updatable."</li>
+<li><strong>OS / RTOS (FreeRTOS, Zephyr, embedded Linux)</strong> — cybersecurity blue — caption: "Process isolation, if any."</li>
+<li><strong>Application code</strong> — cybersecurity blue</li>
+<li><strong>TLS-based communication channel</strong> — drawn as an arrow leaving the device upward — caption: "Mutual TLS to backend, device-bound key from secure element."</li>
+<li><strong>Cloud backend / Device management plane</strong> — drawn at the top as a separate box — caption: "Identity registry, OTA orchestration, attestation verifier."</li>
+</ol>
+<p>On the right side, a vertical bar shows "trust diminishes upward — most attacks target firmware and application." On the left side, a vertical bar shows "blast radius grows upward — a backend compromise hits the whole fleet."</p>
+<p>Color: cybersecurity blue for layers, slate steel for the immutable silicon, amber for the OTA channel (because that is the most common attack surface).</p>
+<p>Responsive: vertical stack on all viewports; annotations move below boxes on narrow screens.</p>
+<p>Implementation: Mermaid <code>flowchart TB</code> with subgraphs for the device and backend.</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The IoT Defense-in-Depth Minimum</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+For any connected device you ship, target this minimum: hardware root of trust, signed and rollback-protected firmware updates, unique per-device credentials at provisioning, mutual TLS to a known backend, and a documented end-of-support date. Defense in depth at the device level is what keeps a single CVE from turning into a million-device botnet.</p>
+</div>
+<h2 id="8-device-attestation-proving-what-you-are">8. Device Attestation — Proving What You Are<a class="headerlink" href="#8-device-attestation-proving-what-you-are" title="Permanent link">&para;</a></h2>
+<p>We now have the pieces to define <strong>device attestation</strong>: the cryptographic process by which a device proves to a remote party what hardware and software it is running. Attestation is the answer to "how does my server actually know that the laptop connecting to the VPN is a corporate machine in a healthy state, rather than a stolen disk imaged onto an attacker's laptop?"</p>
+<p>The core mechanism, for TPM-based attestation, is a <em>quote</em>: the TPM signs a snapshot of its PCRs (the measured-boot trace) plus a fresh nonce supplied by the verifier. The signature is produced with an <em>Attestation Identity Key</em> (AIK) that derives from the TPM's manufacturer-installed Endorsement Key (EK), which the manufacturer's certificate vouches for. The verifier checks the signature, checks that the EK certificate chains to a known manufacturer, checks that the PCR values match a policy of trusted boot states, and on success accepts the device as healthy.</p>
+<p>For a TEE — Intel SGX, AMD SEV-SNP, ARM TrustZone — the structure is similar, but the signed quote includes a measurement of the <em>enclave code</em> itself rather than the boot state. Cloud providers run <em>attestation services</em> (Microsoft Azure Attestation, Intel's IAS, Google's Confidential Space, AWS Nitro Attestation) that issue tokens consumable by application backends. The pattern is the same in each case:</p>
+<ol>
+<li>Verifier sends a fresh nonce to the device.</li>
+<li>Device's hardware root of trust assembles a measurement (PCRs or enclave hash) plus the nonce.</li>
+<li>Device signs the bundle with a key whose certificate chains to a manufacturer the verifier trusts.</li>
+<li>Verifier checks signature, certificate chain, freshness, and policy.</li>
+<li>Verifier issues an attestation token that downstream services can rely on.</li>
+</ol>
+<p>Attestation is the cryptographic backbone of many things you may already have used: BitLocker recovery, FIDO2 device authentication (the "attestation statement" in WebAuthn), Apple's iCloud Keychain trust, Google Play Integrity, and confidential-computing workloads in the cloud. Whenever a service distinguishes "real device" from "anything claiming to be a device," attestation is what is doing the work behind the scenes.</p>
+<p>A subtle but important note: attestation proves <em>what</em> is running, not that <em>what is running is good</em>. The verifier's policy database — the list of acceptable PCR values, acceptable enclave hashes, acceptable firmware versions — is the human judgment that turns "I am a Lenovo laptop with kernel 6.7" into "I am acceptable to my employer's VPN." That policy is what gets out of date when bootloaders are revoked, when CVEs are disclosed, when fleet inventories drift. Attestation moves the trust problem from "can I trust this device?" to "is my policy current?" — which is a problem with the same shape but much better tooling.</p>
+<h4 id="diagram-device-attestation-flow">Diagram: Device Attestation Flow<a class="headerlink" href="#diagram-device-attestation-flow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Sequence diagram showing a device proving its boot state to a remote verifier using a TPM quote</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> device-attestation-flow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A sequence diagram with three actors:</p>
+<ul>
+<li><strong>Verifier</strong> (left) — e.g., corporate VPN server or cloud attestation service</li>
+<li><strong>Device</strong> (middle) — e.g., laptop or VM</li>
+<li><strong>TPM / Hardware Root of Trust</strong> (right) — on the device but conceptually distinct</li>
+</ul>
+<p>Steps from top to bottom:</p>
+<ol>
+<li>Verifier → Device: "Attestation request (nonce N)"</li>
+<li>Device → TPM: "Quote PCRs with nonce N, sign with AIK"</li>
+<li>TPM → Device: "Quote = sign_AIK(PCR0..23 || N)"</li>
+<li>Device → Verifier: "Quote + AIK certificate + EK certificate chain"</li>
+<li>Verifier checks: (a) certificate chains to known manufacturer, (b) signature is valid, (c) nonce matches, (d) PCRs match policy of acceptable boot states</li>
+<li>Verifier → Device: "Attestation token (or denial)"</li>
+</ol>
+<p>A side-note box at the bottom: "Trust depends on the manufacturer's EK certificate AND the verifier's policy of acceptable PCR values. Both must be current."</p>
+<p>Color: cybersecurity blue for verifier and device, slate steel for the TPM/HW root, amber for the policy-check step (because policy currency is the operational footgun).</p>
+<p>Responsive: actor lanes simplify to single column below 600px.</p>
+<p>Implementation: Mermaid sequenceDiagram.</p>
+</details>
+<h2 id="9-the-hardware-root-of-trust">9. The Hardware Root of Trust<a class="headerlink" href="#9-the-hardware-root-of-trust" title="Permanent link">&para;</a></h2>
+<p>Throughout this chapter we have referenced the <strong>hardware root of trust</strong> — the immutable foundation on which everything else stands. Now we can define it precisely:</p>
+<p>A hardware root of trust is a piece of computation and storage, fixed in silicon at manufacture, whose integrity and authenticity are taken as axiomatic by the rest of the system because there is no lower layer to verify them against. It typically consists of (a) an <em>immutable boot ROM</em> whose contents are mask-programmed into the chip, (b) a set of <em>fuses</em> that hold device-unique secrets and certificates burned at the factory, (c) the cryptographic public keys of the manufacturer used to verify all subsequent firmware, and (d) a small set of critical operations — random-number generation, cryptographic signing, key derivation — that depend only on those silicon-resident assets.</p>
+<p>Every higher-level trust property in this chapter chains back to that root. Secure Boot's signature verification chain ends at a manufacturer key in the boot ROM. Measured Boot's PCRs are extended starting from a value the boot ROM wrote. The TPM's Endorsement Key is signed by a manufacturer key whose root is in the silicon. A TEE's attestation key derives from a fused per-die secret. If you reach the bottom of any of these chains, you find the same answer: <em>we trust this because changing it would require physically rebuilding the chip.</em></p>
+<p>The honest phrasing is that the hardware root of trust pushes the trust problem somewhere we can credibly defend, not somewhere we can eliminate it. The fab, the masking process, and the manufacturer's signing infrastructure are the new attack surfaces — small enough to defend with serious engineering and physical security, but not zero. Confidential-computing research is now extending the root of trust upward into formally verified boot stages and downward into PUFs that make even the manufacturer's job harder; the field is active and improving.</p>
+<p>The following list summarizes the chain of trust, from silicon to application, that you should be able to recite by the end of this chapter. Everything we covered slots in somewhere on it.</p>
+<ol>
+<li><strong>Silicon root of trust</strong> — boot ROM, fuses, manufacturer public key, PUF (immutable; cannot be re-flashed).</li>
+<li><strong>First-stage bootloader</strong> — verified by silicon root, hashed into PCRs.</li>
+<li><strong>UEFI / second-stage firmware</strong> — verified by first stage, hashed into PCRs.</li>
+<li><strong>OS bootloader (GRUB, systemd-boot, Windows Boot Manager)</strong> — verified by Secure Boot db, hashed into PCRs.</li>
+<li><strong>OS kernel and initramfs</strong> — verified by bootloader, hashed into PCRs.</li>
+<li><strong>Userspace integrity (IMA, dm-verity, Apple's APFS sealed system volume)</strong> — measured continuously in some systems.</li>
+<li><strong>TPM-sealed keys / TEE-bound secrets</strong> — released only when the chain above produces an expected fingerprint.</li>
+<li><strong>Application</strong> — runs on a foundation it can reason about because the chain has been measured and (often) attested to a remote verifier.</li>
+</ol>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">What 'Trust' Means Here</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Notice the structure: we do not eliminate the need for trust — we concentrate it. The <em>root</em> is small, immutable, and physically defended; everything above it is verified against the root. That is the same shape as PKI (one CA root, many derived certificates) and the same shape as defense in depth (many layers, but anchored in a foundation). Hardware security is the place where that shape becomes literal silicon.</p>
+</div>
+<h2 id="10-putting-it-together-a-day-in-the-life-of-a-booting-laptop">10. Putting It Together — A Day in the Life of a Booting Laptop<a class="headerlink" href="#10-putting-it-together-a-day-in-the-life-of-a-booting-laptop" title="Permanent link">&para;</a></h2>
+<p>To anchor the abstractions, walk through what happens when you press the power button on a modern Windows 11 laptop with BitLocker enabled and a corporate VPN that requires attestation:</p>
+<ol>
+<li>The CPU comes out of reset and executes from boot ROM. The boot ROM verifies the UEFI firmware's signature against keys fused into the chip at manufacture. (Silicon root of trust enforces step one.)</li>
+<li>UEFI initializes hardware, then verifies the OS bootloader against the Secure Boot db. The hash of UEFI is extended into TPM PCR[0]; the hash of the bootloader into PCR[4]. (Secure Boot enforces; Measured Boot records.)</li>
+<li>The bootloader verifies and loads the Windows kernel; the kernel hash is extended into PCR[11].</li>
+<li>The kernel boots, asks the TPM to <em>unseal</em> the BitLocker disk encryption key. The TPM checks that PCR[0..11] match the policy that was set when BitLocker was enabled; if any boot stage was tampered with, the seal does not open and BitLocker prompts for the recovery key.</li>
+<li>Windows loads, the user logs in. The laptop connects to the corporate VPN.</li>
+<li>The VPN server sends a fresh nonce. The laptop asks the TPM to quote PCR[0..11] with that nonce. The TPM signs with an AIK derived from the manufacturer-issued EK. (Attestation.)</li>
+<li>The VPN server verifies the signature, checks the EK certificate chain to a Trusted Computing Group root, checks that the PCR values are on its allow-list of corporate-approved boot states, and either grants or denies access.</li>
+</ol>
+<p>Every concept in this chapter — TPM, secure boot, measured boot, sealed storage, attestation, hardware root of trust — appears in that one boot sequence. Every concept is also the place where a real system has failed at some point in the last five years, which is why hardware security is an active engineering discipline and not a solved problem.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Reason About</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now name the trust anchors of a modern system, distinguish secure boot from measured boot, recognize the four families of side-channel attack, and trace a chain of trust from silicon to application. That is the foundation we will build on in Chapter 8, where we leave the device behind and ask the harder question: how do we trust the <em>network</em> between two devices that have already proven what they are?</p>
+</div>
+<h2 id="11-key-takeaways">11. Key Takeaways<a class="headerlink" href="#11-key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Hardware security</strong> asks where keys live, what code actually booted, and how to defend against adversaries with physical or microarchitectural access.</li>
+<li><strong>TPM</strong> is the standardized boot-measurement and key-sealing chip on essentially every modern PC; <strong>HSM</strong> is its higher-assurance cousin for enterprise key custody; <strong>secure enclaves</strong> and <strong>TEEs</strong> run isolated code on the main processor.</li>
+<li><strong>Secure boot</strong> enforces signed boot stages; <strong>measured boot</strong> records every stage's hash into TPM PCRs. They are complementary, not redundant.</li>
+<li><strong>UEFI security</strong> has replaced legacy BIOS but has its own significant attack surface; <strong>firmware security</strong> is now a first-class concern.</li>
+<li><strong>Side-channel attacks</strong> — timing, power, cache, Rowhammer — extract secrets through unintended physical or microarchitectural leakage, and require disciplined countermeasures (constant-time code, masking, no co-tenancy, ECC RAM).</li>
+<li><strong>Hardware supply chain</strong> threats are bounded, not eliminated, by trusted suppliers, split manufacturing, PUFs, and attestation.</li>
+<li><strong>Embedded and IoT security</strong> apply these ideas under tight resource and lifetime constraints, with hardware root of trust and signed updates as the high-leverage controls.</li>
+<li><strong>Device attestation</strong> lets a remote verifier cryptographically check what hardware and software a device is running.</li>
+<li><strong>Hardware root of trust</strong> is the immutable silicon foundation that every higher-level trust property chains back to. The whole chapter, in one phrase, is <em>what is your root of trust, and why do you trust it?</em></li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

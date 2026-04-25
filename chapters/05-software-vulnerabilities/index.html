@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Covers the secure software development lifecycle and the most consequential vulnerability classes: OWASP Top Ten, CWE Top 25, memory-safety bugs, injection attacks, deserialization, race conditions, broken access control, and security misconfiguration.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>5. Software Vulnerabilities - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Software Vulnerabilities and Secure Coding - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Software Vulnerabilities
+              Software Vulnerabilities and Secure Coding
             
           </span>
         </div>
@@ -596,6 +596,300 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-software-is-where-breaches-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Software Is Where Breaches Happen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-secure-software-development-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Secure Software Development Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Secure Software Development Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cost-of-fixing-a-bug-across-sdlc-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cost of Fixing a Bug Across SDLC Phases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-secure-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Secure Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-secure-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Secure Coding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-canonical-vulnerability-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Canonical Vulnerability Lists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-safety-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory-Safety Vulnerabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Memory-Safety Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Buffer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-stack-overflow-vs-heap-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Stack Overflow vs. Heap Overflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Stack Overflow vs. Heap Overflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stack-layout-during-a-buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stack Layout During a Buffer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-integer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Integer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-format-string-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Format String Bug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-injection-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Injection Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Injection Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 SQL Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-command-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Command Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cross-site-scripting-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Cross-Site Scripting (XSS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Cross-Site Scripting (XSS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-three-flavors-of-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Three Flavors of XSS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-cross-site-request-forgery-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Cross-Site Request Forgery (CSRF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-server-side-request-forgery-ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Server-Side Request Forgery (SSRF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-insecure-deserialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Insecure Deserialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-race-conditions-and-toctou" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Race Conditions and TOCTOU
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Race Conditions and TOCTOU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-toctou-race-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A TOCTOU Race Condition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-broken-access-control-and-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Broken Access Control and Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-security-misconfiguration-and-sensitive-data-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Security Misconfiguration and Sensitive Data Exposure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-case-study-drawn-from-the-cwe-top-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. A Case Study Drawn From The CWE Top 25
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. A Case Study Drawn From The CWE Top 25">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vulnerability-sandbox-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vulnerability Sandbox MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-putting-it-together-a-mental-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Putting It Together — A Mental Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-chapter-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Chapter Wrap
     </span>
   </a>
   
@@ -1083,6 +1377,300 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-software-is-where-breaches-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Software Is Where Breaches Happen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-secure-software-development-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Secure Software Development Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Secure Software Development Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cost-of-fixing-a-bug-across-sdlc-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cost of Fixing a Bug Across SDLC Phases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-secure-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Secure Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-secure-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Secure Coding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-canonical-vulnerability-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Canonical Vulnerability Lists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-safety-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory-Safety Vulnerabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Memory-Safety Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Buffer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-stack-overflow-vs-heap-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Stack Overflow vs. Heap Overflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Stack Overflow vs. Heap Overflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stack-layout-during-a-buffer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stack Layout During a Buffer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-integer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Integer Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-format-string-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Format String Bug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-injection-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Injection Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Injection Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 SQL Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-command-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Command Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cross-site-scripting-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Cross-Site Scripting (XSS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Cross-Site Scripting (XSS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-three-flavors-of-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Three Flavors of XSS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-cross-site-request-forgery-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Cross-Site Request Forgery (CSRF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-server-side-request-forgery-ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Server-Side Request Forgery (SSRF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-insecure-deserialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Insecure Deserialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-race-conditions-and-toctou" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Race Conditions and TOCTOU
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Race Conditions and TOCTOU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-toctou-race-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A TOCTOU Race Condition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-broken-access-control-and-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Broken Access Control and Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-security-misconfiguration-and-sensitive-data-exposure" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Security Misconfiguration and Sensitive Data Exposure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-case-study-drawn-from-the-cwe-top-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. A Case Study Drawn From The CWE Top 25
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. A Case Study Drawn From The CWE Top 25">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vulnerability-sandbox-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vulnerability Sandbox MicroSim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-putting-it-together-a-mental-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Putting It Together — A Mental Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-chapter-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Chapter Wrap
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1146,13 +1734,439 @@
 <li><a href="../02-threats-and-controls/">Chapter 2: Threats, Vulnerabilities, and Security Controls</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Software Security</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. The previous chapters armed you with cryptographic primitives that, used correctly, are essentially unbreakable. This chapter is about the layer above them — the application code where most real breaches actually happen. We will catalogue the bug classes that the industry has been making, and patching, for decades. Trust, but verify — because the compiler will not.</p>
+</div>
+<h2 id="1-why-software-is-where-breaches-happen">1. Why Software Is Where Breaches Happen<a class="headerlink" href="#1-why-software-is-where-breaches-happen" title="Permanent link">&para;</a></h2>
+<p>Cryptography, configured correctly, is rarely the weak link in a system. The weak link is the application code that calls the cryptographic library, parses untrusted input, talks to the database, renders the HTML, deserializes the cookie, and decides who is allowed to do what. A 2048-bit RSA key does not help when the login endpoint accepts <code>' OR 1=1 --</code> as a valid password. A perfectly tuned firewall does not help when a single endpoint reflects user input back into the page without escaping. The breaches that make the news — Equifax, Capital One, MOVEit, Log4Shell — are almost always <em>software bugs</em> in the application layer, not failures of cryptographic primitives.</p>
+<p>The good news is that the bug classes are <em>not</em> infinite. The vast majority of exploitable vulnerabilities fall into a few dozen well-known patterns, catalogued and ranked by the security community for more than two decades. If you can recognize these patterns in your own code, you can eliminate most of the risk surface before an attacker ever sees the system. That is the work of this chapter.</p>
+<p>We will move from process (how to build software securely) through the canonical vulnerability lists (what to look for) and into the specific bug classes that account for the lion's share of real-world incidents. Each class will be presented with: what it is, how an attacker exploits it, what makes the underlying language or framework vulnerable to it, and the structural fix that makes it impossible rather than "fixed for now."</p>
+<h2 id="2-the-secure-software-development-lifecycle">2. The Secure Software Development Lifecycle<a class="headerlink" href="#2-the-secure-software-development-lifecycle" title="Permanent link">&para;</a></h2>
+<p>The <strong>Secure Software Development Lifecycle (SSDLC, sometimes "Secure SDLC")</strong> is the practice of integrating security activities into every phase of software development, rather than bolting on a security review at the end. The traditional SDLC has phases like requirements, design, implementation, testing, deployment, and maintenance. The SSDLC adds matching security activities to each:</p>
+<ul>
+<li><strong>Requirements</strong> — capture security requirements alongside functional ones (authentication, authorization, data classification, regulatory constraints, abuse cases)</li>
+<li><strong>Design</strong> — perform threat modeling, define trust boundaries, choose secure architectural patterns</li>
+<li><strong>Implementation</strong> — apply secure coding standards, use safe libraries and frameworks, perform peer review</li>
+<li><strong>Testing</strong> — run static analysis (SAST), dynamic analysis (DAST), software composition analysis (SCA), and fuzzing</li>
+<li><strong>Deployment</strong> — harden the environment, manage secrets, enable telemetry</li>
+<li><strong>Maintenance</strong> — track CVEs in dependencies, run vulnerability scans, respond to disclosures</li>
+</ul>
+<p>The cost economics of SSDLC are well-studied and consistent across decades of research: a vulnerability caught in design costs perhaps an hour to fix; the same vulnerability caught in production after exploitation can cost months of incident response, regulatory penalties, and lost customer trust. Industry studies (notably IBM's annual <em>Cost of a Data Breach</em> report) have repeatedly placed the cost ratio at roughly 100x between "fix in design" and "fix after breach."</p>
+<h4 id="diagram-cost-of-fixing-a-bug-across-sdlc-phases">Diagram: Cost of Fixing a Bug Across SDLC Phases<a class="headerlink" href="#diagram-cost-of-fixing-a-bug-across-sdlc-phases" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Bar chart showing the relative cost of fixing a vulnerability at each phase of the SDLC</summary>
+<p>Type: chart
+<strong>sim-id:</strong> ssdlc-cost-curve<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal bar chart with phases on the y-axis and relative cost on the x-axis (logarithmic scale).</p>
+<p>Bars (top to bottom):</p>
+<ul>
+<li><strong>Requirements</strong>: 1x (lightest blue)</li>
+<li><strong>Design</strong>: 2x</li>
+<li><strong>Implementation</strong>: 5x</li>
+<li><strong>Testing</strong>: 10x</li>
+<li><strong>Deployment</strong>: 30x</li>
+<li><strong>Production (post-incident)</strong>: 100x (darkest blue, with red border)</li>
+</ul>
+<p>Title: "Relative cost of remediating a security defect by phase discovered."</p>
+<p>Subtitle: "Catching bugs early is roughly 100x cheaper than catching them after a breach."</p>
+<p>Color palette: cybersecurity blue gradient (<code>#bbdefb</code> to <code>#0d47a1</code>), with the production bar bordered in alert amber (<code>#ffa000</code>).</p>
+<p>Hovering on each bar shows: phase name, typical activities ("threat modeling", "code review", "fuzzing", "incident response"), and an example cost driver.</p>
+<p>Responsive: rotates to vertical layout below 600px viewport. Title remains visible.</p>
+<p>Implementation: Chart.js horizontal bar chart with logarithmic x-axis and custom tooltip callbacks.</p>
+</details>
+<h3 id="21-secure-design">2.1 Secure Design<a class="headerlink" href="#21-secure-design" title="Permanent link">&para;</a></h3>
+<p><strong>Secure design</strong> is the practice of choosing architectures and patterns that make whole classes of vulnerability impossible, rather than relying on each developer to remember every rule. A few canonical secure-design practices appear repeatedly in the rest of this chapter:</p>
+<ul>
+<li><strong>Trust boundaries</strong> — explicitly mark the points in your system where data crosses from less-trusted to more-trusted contexts (the network, the user, a third-party service). Validation and authorization happen <em>at</em> the boundary.</li>
+<li><strong>Least privilege</strong> — every component runs with the minimum permissions it needs to do its job. A web server does not need root; a microservice does not need full database access; a build job does not need production credentials.</li>
+<li><strong>Defense in depth</strong> — assume any single control will fail and stack independent controls so that no single failure is fatal. Input validation <em>and</em> parameterized queries <em>and</em> a least-privileged database account <em>and</em> monitoring.</li>
+<li><strong>Fail secure (fail closed)</strong> — when something goes wrong, the default behavior should be to deny access, not to grant it. An authorization check that throws an exception should result in 403, not 200.</li>
+<li><strong>Open design</strong> — security should not depend on the secrecy of the design. Security should depend on the secrecy of <em>keys</em> and <em>credentials</em> (Kerckhoffs's principle, generalized).</li>
+</ul>
+<h3 id="22-secure-coding">2.2 Secure Coding<a class="headerlink" href="#22-secure-coding" title="Permanent link">&para;</a></h3>
+<p><strong>Secure coding</strong> is the practice of writing implementation-level code that is robust against the bug classes we will catalogue in this chapter. Most modern organizations adopt a written secure coding standard — CERT Secure Coding Standards (for C, C++, Java), OWASP Secure Coding Practices, or a language-specific style guide that incorporates security rules. The standard codifies defaults: how to handle input, how to call cryptographic libraries, how to log without leaking secrets, how to construct database queries.</p>
+<p>The single most important shift in modern secure coding has been the move toward <strong>memory-safe languages</strong> (Rust, Go, Java, C#, Python, JavaScript). Memory-safe languages eliminate, by construction, an entire class of bugs that we will examine in section 4 — buffer overflows, use-after-free, double-free. Microsoft and Google have both reported that approximately 70% of historical security bugs in their large C/C++ codebases were memory-safety bugs that simply could not exist in Rust or Go. The U.S. government's Cybersecurity and Infrastructure Security Agency (CISA) and the NSA have publicly recommended memory-safe languages as a strategic mitigation for new development.</p>
+<h2 id="3-the-canonical-vulnerability-lists">3. The Canonical Vulnerability Lists<a class="headerlink" href="#3-the-canonical-vulnerability-lists" title="Permanent link">&para;</a></h2>
+<p>Two industry-maintained lists organize the bulk of known vulnerability patterns. Knowing both is part of the working vocabulary of every security engineer.</p>
+<p>The <strong>OWASP Top Ten</strong> is a list maintained by the Open Worldwide Application Security Project. It is updated every few years (most recently 2021, with 2024 candidates in review at the time of writing) and ranks the most critical <em>web application</em> security risks by a combination of exploitability, prevalence, detectability, and impact. The list is grouped by <em>risk category</em> rather than by individual bug — for example, "A03: Injection" covers SQL injection, command injection, LDAP injection, and many others, all of which share a structural cause.</p>
+<p>The <strong>CWE Top 25</strong> is maintained by MITRE and ranks the most dangerous <em>software weaknesses</em> from the much larger Common Weakness Enumeration (CWE) catalog. CWE entries are more granular than OWASP categories — CWE-79 is specifically Cross-Site Scripting, CWE-89 is specifically SQL Injection, CWE-787 is specifically Out-of-Bounds Write — and the Top 25 is derived from real CVE data over the prior two years, weighted by exploitability and impact.</p>
+<p>The two lists overlap heavily but serve different purposes. OWASP Top Ten is a <em>teaching and prioritization</em> list for web application teams; CWE Top 25 is a <em>taxonomy and tracking</em> list used by static analysis tools, vulnerability databases, and government procurement standards.</p>
+<p>The 2021 OWASP Top Ten, in rank order, is the framing scaffold for the rest of this chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Category</th>
+<th>Representative bug class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>Broken Access Control</td>
+<td>Missing authorization, IDOR, privilege escalation</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>Cryptographic Failures</td>
+<td>Weak ciphers, missing TLS, exposed PII</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>Injection</td>
+<td>SQLi, command injection, XSS</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>Insecure Design</td>
+<td>Missing threat model, abuse-case blindness</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>Security Misconfiguration</td>
+<td>Default creds, exposed admin panels, verbose errors</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>Vulnerable &amp; Outdated Components</td>
+<td>Unpatched libraries (e.g., Log4Shell)</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>Identification &amp; Authentication Failures</td>
+<td>Weak passwords, broken session management</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>Software &amp; Data Integrity Failures</td>
+<td>Insecure deserialization, unsigned updates</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>Security Logging &amp; Monitoring Failures</td>
+<td>Silent compromise, no detection</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Server-Side Request Forgery</td>
+<td>SSRF</td>
+</tr>
+</tbody>
+</table>
+<p>We will work through the most consequential of these in turn, plus the memory-safety class that the OWASP list does not explicitly call out (because OWASP focuses on web apps, where memory safety is usually handled by the runtime).</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Patterns, Not Incidents</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Notice that the OWASP and CWE lists are organized by <em>pattern</em>, not by incident. The same structural mistake — trusting input that crosses a trust boundary — produces SQL injection, command injection, XSS, SSRF, deserialization bugs, and path traversal. Learn the pattern once and you will recognize it in every form it takes.</p>
+</div>
+<h2 id="4-memory-safety-vulnerabilities">4. Memory-Safety Vulnerabilities<a class="headerlink" href="#4-memory-safety-vulnerabilities" title="Permanent link">&para;</a></h2>
+<p>The first family of bugs we examine arises from languages — primarily C and C++ — that allow direct manipulation of memory without bounds checking. These languages are still pervasive in operating system kernels, browsers, network daemons, embedded firmware, and high-performance libraries. They are also the historical home of the most severe and most exploitable vulnerabilities ever cataloged.</p>
+<h3 id="41-buffer-overflow">4.1 Buffer Overflow<a class="headerlink" href="#41-buffer-overflow" title="Permanent link">&para;</a></h3>
+<p>A <strong>buffer overflow</strong> occurs when a program writes data beyond the end of an allocated buffer (an array, a struct, a heap block) into adjacent memory. The corrupted memory may contain other variables, control flow data (function pointers, return addresses), or heap metadata. By choosing the input carefully, an attacker can use a buffer overflow to alter control flow — redirecting execution to attacker-controlled code or to existing code reused for malicious purposes (return-oriented programming).</p>
+<p>The classic example, distilled, is a C function that copies a fixed-size input into a smaller fixed-size buffer without checking the length. Before we examine the code, the key C functions to know are: <code>strcpy(dest, src)</code>, which copies bytes from <code>src</code> into <code>dest</code> until it hits a null terminator (with no length check); and <code>gets(buf)</code>, which reads a line of input into <code>buf</code> (also with no length check, and so dangerous that it was removed from the C standard in C11).</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w">   </span><span class="c1">// No length check!</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>If <code>name</code> is longer than 16 bytes, <code>strcpy</code> keeps writing past the end of <code>buffer</code>, into whatever is on the stack next — typically the saved frame pointer and the return address. An attacker who can control <code>name</code> can overwrite the return address to point at code of their choosing.</p>
+<h3 id="42-stack-overflow-vs-heap-overflow">4.2 Stack Overflow vs. Heap Overflow<a class="headerlink" href="#42-stack-overflow-vs-heap-overflow" title="Permanent link">&para;</a></h3>
+<p>A <strong>stack overflow</strong> is a buffer overflow that occurs in a buffer allocated on the <em>stack</em> — typically a local variable inside a function. Stack-based overflows are the classic exploitation target because the stack contains the saved return address that the function will jump to when it finishes; overwriting that return address gives the attacker control of the program counter.</p>
+<p>A <strong>heap overflow</strong> is a buffer overflow that occurs in a buffer allocated from the <em>heap</em> via <code>malloc()</code> or <code>new</code>. Heap overflows do not directly overwrite a return address, but they can corrupt heap metadata (the data structures the allocator uses to track free blocks) or adjacent objects (whose function pointers can later be invoked). Modern heap allocators include hardening to make pure metadata-corruption attacks harder, but heap overflows remain regularly exploitable.</p>
+<p>The defenses against both are the same general pattern: bounds-checking input, using safer string functions (<code>strncpy</code>, <code>strlcpy</code>, <code>snprintf</code>), enabling compiler protections (stack canaries, ASLR, DEP/NX), and — most decisively — moving to memory-safe languages where the bug class does not exist.</p>
+<h4 id="diagram-stack-layout-during-a-buffer-overflow">Diagram: Stack Layout During a Buffer Overflow<a class="headerlink" href="#diagram-stack-layout-during-a-buffer-overflow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Annotated diagram showing stack memory before and after a buffer overflow corrupts the return address</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> stack-overflow-anatomy<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A side-by-side comparison of two stack frames, drawn vertically with high addresses at the top and low addresses at the bottom (the conventional stack-grows-down orientation).</p>
+<p><strong>Left panel: "Normal call"</strong></p>
+<p>From top to bottom of the stack frame:
+- Caller's stack (greyed out)
+- Return address (slate <code>#455a64</code>, labeled "Return address: 0x4011d3")
+- Saved frame pointer (slate)
+- <code>buffer[16]</code> (16 cells, white, contents: "Hello\0...")
+- Stack pointer arrow at bottom</p>
+<p><strong>Right panel: "Overflow"</strong></p>
+<p>Same layout, but:
+- <code>buffer[16]</code> is fully filled with "AAAA..." in red (<code>#d84315</code>)
+- Saved frame pointer is overwritten with "AAAA" in red
+- Return address is overwritten with attacker-chosen address "0xdeadbeef" in red
+- An annotation arrow points from the return address to "→ now jumps to attacker code (shellcode or ROP chain)"</p>
+<p>A caption below: "When the function returns, the CPU pops the (corrupted) return address and jumps to attacker-controlled memory."</p>
+<p>Hovering on each cell shows the byte address and what defenses (stack canary, ASLR, DEP) would have stopped it.</p>
+<p>Color palette: slate steel for normal stack contents, rust orange/red for attacker-controlled bytes, cybersecurity blue for annotations.</p>
+<p>Responsive: panels stack vertically below 700px.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltips on each labeled region.</p>
+</details>
+<h3 id="43-integer-overflow">4.3 Integer Overflow<a class="headerlink" href="#43-integer-overflow" title="Permanent link">&para;</a></h3>
+<p>An <strong>integer overflow</strong> occurs when an arithmetic operation produces a result that cannot be represented in the destination type — for example, multiplying two 32-bit integers and getting a result larger than 2³² − 1. In C, signed integer overflow is <em>undefined behavior</em> (the compiler may legally do anything); unsigned integer overflow wraps around silently. In either case, the program continues with a number that is not the mathematically correct answer, and security bugs follow.</p>
+<p>The most consequential pattern is an integer overflow used to size a buffer allocation. A common pattern: read a count from the network, multiply by the size of an element, allocate that many bytes, then read that many elements. If the multiplication overflows, the allocation is too small but the loop still reads the original count of elements — producing a heap overflow seeded by an integer overflow several lines earlier. CVE-2002-0639 (the OpenSSH challenge-response overflow) and many others fit this shape.</p>
+<h3 id="44-format-string-bug">4.4 Format String Bug<a class="headerlink" href="#44-format-string-bug" title="Permanent link">&para;</a></h3>
+<p>A <strong>format string bug</strong> is a vulnerability in C's printf-family functions when an attacker controls the <em>format string</em> argument rather than just the data arguments. The format string contains directives like <code>%s</code> (read a string from the next argument), <code>%x</code> (read a hex integer), and the more dangerous <code>%n</code> (write the count of bytes printed so far to the address pointed to by the next argument). If an attacker can supply the format string, they can read process memory (<code>%x %x %x ...</code>), determine where things are in memory (defeating ASLR), and write to arbitrary memory locations (<code>%n</code>).</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">printf</span><span class="p">(</span><span class="n">user_input</span><span class="p">);</span><span class="w">              </span><span class="c1">// Vulnerable: user controls format string</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">user_input</span><span class="p">);</span><span class="w">        </span><span class="c1">// Safe: user input is data, not format</span>
+</span></code></pre></div>
+<p>The structural fix is non-negotiable: never let untrusted input become the format string. Modern compilers warn on this pattern; modern static analyzers flag it; and most modern languages do not expose the bug in the same form (Python's old <code>%</code> formatting is type-checked; Rust's <code>format!</code> is a macro that requires a literal format string).</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Memory-Unsafe Languages Are Strategic Risk</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+Buffer, stack, heap, integer, and format-string bugs share one root cause: a language that lets the program write to memory it does not own. Approximately 70% of the severe vulnerabilities patched in Chrome and Windows over the last two decades are memory-safety bugs. For new code where you have a choice, choose Rust, Go, Swift, or another memory-safe language. Defense in depth.</p>
+</div>
+<h2 id="5-injection-attacks">5. Injection Attacks<a class="headerlink" href="#5-injection-attacks" title="Permanent link">&para;</a></h2>
+<p>The second great family of software vulnerabilities is <strong>injection</strong>. An injection attack is any vulnerability where untrusted input is concatenated into a command or query that is then interpreted by another component — a database, a shell, a browser, an LDAP server, an XML parser. The interpreter cannot distinguish the original (trusted) command structure from the (untrusted) input, so input that contains the interpreter's own metacharacters can change the meaning of the command.</p>
+<p>The structural fix for the entire injection family is the same: do not build commands by string concatenation. Use an API that <em>separates</em> the command structure from the data — parameterized queries for SQL, parameter arrays for shell execution, contextual escaping for HTML output, structured deserializers instead of pickle. The principle is: <strong>data and code should travel in different lanes</strong>.</p>
+<h3 id="51-sql-injection">5.1 SQL Injection<a class="headerlink" href="#51-sql-injection" title="Permanent link">&para;</a></h3>
+<p><strong>SQL injection (SQLi)</strong> occurs when untrusted input is interpolated into a SQL query string. Consider a login function:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># VULNERABLE</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM users WHERE username=&#39;&quot;</span> <span class="o">+</span> <span class="n">user</span> <span class="o">+</span> <span class="s2">&quot;&#39; AND password=&#39;&quot;</span> <span class="o">+</span> <span class="n">pw</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></code></pre></div>
+<p>If the attacker submits <code>user = "admin' --"</code>, the resulting query becomes:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="w"> </span><span class="c1">--&#39; AND password=&#39;whatever&#39;</span>
+</span></code></pre></div>
+<p>The <code>--</code> is a SQL comment, so the password check is removed and the attacker logs in as admin. More aggressive payloads can exfiltrate the entire user table, drop tables, or, in some configurations, achieve OS command execution via database functions.</p>
+<p>The structural fix is <strong>parameterized queries</strong> (also called <em>prepared statements</em>). The query string contains placeholders (<code>?</code> or named parameters), and the database driver substitutes the input values into the <em>data slots</em> without ever letting them affect the <em>query structure</em>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># SAFE</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pw</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Every modern database driver supports parameterized queries. Object-relational mappers (SQLAlchemy, Django ORM, Hibernate) use them internally for any query you build through the ORM — the danger zones are raw query escape hatches and dynamic table/column names, which parameterization cannot help with. For those, use an allow-list of legal identifiers.</p>
+<h3 id="52-command-injection">5.2 Command Injection<a class="headerlink" href="#52-command-injection" title="Permanent link">&para;</a></h3>
+<p><strong>Command injection</strong> is the shell-execution version of SQL injection. The vulnerable pattern is constructing a shell command by concatenating user input and passing the result to a function that invokes a shell:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># VULNERABLE</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;ping -c 1 &quot;</span> <span class="o">+</span> <span class="n">user_supplied_host</span><span class="p">)</span>
+</span></code></pre></div>
+<p>If the attacker supplies <code>8.8.8.8; rm -rf /</code>, the shell executes both commands. The metacharacters <code>;</code>, <code>&amp;&amp;</code>, <code>|</code>, <code>`</code>, and <code>$()</code> all change the meaning of the command line.</p>
+<p>The structural fix is to bypass the shell entirely. Most languages offer an API that takes the executable name and a list of arguments separately, with no shell interpretation — <code>subprocess.run(["ping", "-c", "1", host], shell=False)</code> in Python, <code>exec.Command("ping", "-c", "1", host)</code> in Go. The arguments are passed directly to the OS <code>execve()</code> syscall as separate strings; shell metacharacters in <code>host</code> are just bytes in an argument and have no special meaning.</p>
+<h3 id="53-cross-site-scripting-xss">5.3 Cross-Site Scripting (XSS)<a class="headerlink" href="#53-cross-site-scripting-xss" title="Permanent link">&para;</a></h3>
+<p><strong>Cross-Site Scripting (XSS)</strong> is injection into the <em>browser</em> — the attacker gets the victim's browser to execute attacker-supplied JavaScript in the security context of the vulnerable site. The attacker's script then has access to the victim's cookies, can read and modify the page, can make requests as the victim, and can capture keystrokes. XSS is consistently in the OWASP Top Ten and CWE Top 25 because it is everywhere and devastating.</p>
+<p>XSS comes in three subtypes, which differ in <em>where the malicious script enters the page</em>.</p>
+<p><strong>Stored XSS</strong> (also called <em>persistent XSS</em>) occurs when the attacker's payload is <em>stored</em> on the server (in a database, a file, a cache) and <em>served to other users</em> on a later request. A comment field on a forum that does not escape HTML, where an attacker posts <code>&lt;script&gt;...&lt;/script&gt;</code>, will execute that script for every subsequent reader. Stored XSS is the most serious subtype because a single injection compromises every visitor to the page.</p>
+<p><strong>Reflected XSS</strong> occurs when the attacker's payload is included in a request (typically a URL parameter) and <em>reflected</em> back into the response page without escaping. The attacker tricks the victim into clicking a crafted URL — by phishing, by posting it in a forum, by embedding it in an ad — and the victim's browser receives a page with the script in it. Reflected XSS requires social engineering to deliver the payload, but works against any visitor who clicks the link.</p>
+<p><strong>DOM-based XSS</strong> occurs entirely in the browser, with no server-side involvement. The vulnerable site has client-side JavaScript that reads from a <em>source</em> (the URL fragment, <code>document.location</code>, <code>window.name</code>) and writes it into a <em>sink</em> (<code>innerHTML</code>, <code>eval</code>, <code>document.write</code>) without sanitizing. The server never sees the payload — it lives in the URL fragment after the <code>#</code>, which browsers do not send to the server. This makes DOM XSS invisible to traditional server-side scanning and logging.</p>
+<h4 id="diagram-three-flavors-of-xss">Diagram: Three Flavors of XSS<a class="headerlink" href="#diagram-three-flavors-of-xss" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Comparison diagram showing stored, reflected, and DOM-based XSS data flow</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> xss-three-flavors<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A three-column infographic, one column per XSS subtype, each showing the data flow as a sequence of actors and arrows.</p>
+<p><strong>Column 1: Stored XSS</strong></p>
+<p>Actors top-to-bottom: Attacker → Server (with database icon) → Victim browser</p>
+<p>Arrows:
+1. Attacker → Server: "POST /comment payload=<code>&lt;script&gt;...&lt;/script&gt;</code>"
+2. Server stores payload in database
+3. Victim → Server: "GET /comments"
+4. Server → Victim: "page contains <code>&lt;script&gt;...&lt;/script&gt;</code>"
+5. Victim browser executes script</p>
+<p>Caption: "One injection compromises every visitor."</p>
+<p><strong>Column 2: Reflected XSS</strong></p>
+<p>Actors: Attacker → Victim → Server → Victim browser</p>
+<p>Arrows:
+1. Attacker → Victim: "Phishing email with crafted link <code>?q=&lt;script&gt;...&lt;/script&gt;</code>"
+2. Victim → Server: "GET /search?q=<code>&lt;script&gt;...&lt;/script&gt;</code>"
+3. Server → Victim: "Search results page reflects <code>q</code> into HTML without escaping"
+4. Victim browser executes script</p>
+<p>Caption: "Requires the victim to click the crafted URL."</p>
+<p><strong>Column 3: DOM-based XSS</strong></p>
+<p>Actors: Attacker → Victim → Browser only (no server interaction)</p>
+<p>Arrows:
+1. Attacker → Victim: "Crafted URL <code>https://site/#payload=&lt;script&gt;...&lt;/script&gt;</code>"
+2. Victim browser fetches static page
+3. Page's JavaScript reads <code>location.hash</code>
+4. Page's JavaScript writes hash into <code>innerHTML</code> → script executes</p>
+<p>Caption: "Server never sees the payload — invisible to server logs."</p>
+<p>Color: cybersecurity blue for legitimate flows, alert amber <code>#ffa000</code> for attacker-controlled data, red outline on the "executes script" box.</p>
+<p>Responsive: columns stack vertically below 900px.</p>
+<p>Implementation: Static SVG with consistent layout, <code>&lt;title&gt;</code> tooltips on each step.</p>
+</details>
+<p>The structural defenses against XSS, in order of robustness:</p>
+<ul>
+<li><strong>Contextual output encoding</strong> — escape user data appropriately for the context where it will be rendered (HTML body, HTML attribute, JavaScript string, CSS, URL). Modern templating engines (Jinja2, React JSX, Vue templates, Django templates) escape by default and require an explicit "trust me" annotation to disable escaping.</li>
+<li><strong>Content Security Policy (CSP)</strong> — an HTTP response header that tells the browser which script sources to trust. A strict CSP can refuse to execute inline scripts entirely, neutralizing most XSS payloads even if the encoding fails.</li>
+<li><strong>Input validation</strong> — accept only the characters that make sense for the field. Useful as defense in depth, but never sufficient on its own (rejecting <code>&lt;</code> will not stop every payload).</li>
+</ul>
+<h3 id="54-cross-site-request-forgery-csrf">5.4 Cross-Site Request Forgery (CSRF)<a class="headerlink" href="#54-cross-site-request-forgery-csrf" title="Permanent link">&para;</a></h3>
+<p><strong>Cross-Site Request Forgery (CSRF)</strong> is closely related to XSS in name but different in mechanism. In CSRF, the attacker tricks the victim's browser into sending a <em>state-changing request</em> to a site where the victim is already logged in. The attacker does not need to read the response; they only need the request to be processed.</p>
+<p>The classic example: a banking site has an endpoint <code>POST /transfer</code> that takes <code>to</code> and <code>amount</code>. The victim is logged in (session cookie present). The attacker creates a malicious page containing a form auto-submitted via JavaScript:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://bank.example/transfer&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;to&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;attacker&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;amount&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;10000&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">();&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>When the victim visits the malicious page, the browser submits the form to the bank, <em>automatically attaching the bank's session cookie</em>, because that is how cookies work. The bank sees an authenticated request and processes the transfer.</p>
+<p>The structural fixes are well-understood: <strong>anti-CSRF tokens</strong> (a per-session unpredictable token included in every state-changing form, validated on the server), <strong>SameSite cookies</strong> (a cookie attribute that tells the browser not to send the cookie on cross-site requests; modern browsers default to <code>SameSite=Lax</code>), and <strong>requiring re-authentication</strong> for sensitive operations.</p>
+<h3 id="55-server-side-request-forgery-ssrf">5.5 Server-Side Request Forgery (SSRF)<a class="headerlink" href="#55-server-side-request-forgery-ssrf" title="Permanent link">&para;</a></h3>
+<p><strong>Server-Side Request Forgery (SSRF)</strong> is injection at the <em>outbound</em> request. A web application accepts a URL from the user (image fetch, webhook, PDF generator, URL preview) and fetches that URL from the <em>server</em>. If the server has access to internal resources that the user does not — cloud metadata services (<code>http://169.254.169.254/</code>), internal admin panels, databases on private networks — the attacker can use the server as a confused deputy to reach them.</p>
+<p>The Capital One breach in 2019 was a high-profile SSRF exploit: an attacker made the application fetch <code>http://169.254.169.254/latest/meta-data/iam/security-credentials/</code>, the AWS instance metadata endpoint, which returned temporary IAM credentials with read access to the S3 buckets containing customer data.</p>
+<p>Defenses include allow-listing the destinations the application is permitted to fetch (no arbitrary URLs), refusing to follow redirects to private IP ranges, and — at the infrastructure layer — using IMDSv2 on AWS, which requires a session token that defeats most SSRF patterns against the metadata service.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Injection Family Has One Cure</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+SQL injection, command injection, XSS, and SSRF look different but share one cure: separate code from data. Parameterized queries, argument arrays instead of shell strings, contextual encoding, and URL allow-lists are all the same idea. When you design an API that takes user input, ask: where does this data turn into code, and what keeps the boundary intact?</p>
+</div>
+<h2 id="6-insecure-deserialization">6. Insecure Deserialization<a class="headerlink" href="#6-insecure-deserialization" title="Permanent link">&para;</a></h2>
+<p><strong>Insecure deserialization</strong> is the vulnerability that arises when an application deserializes attacker-controlled bytes into in-memory objects using a serialization format that allows arbitrary code execution during the deserialization process itself. Java's native serialization, Python's <code>pickle</code>, PHP's <code>unserialize</code>, and Ruby's YAML parsing have all had this property; consequently, all four have produced a long stream of remote-code-execution CVEs.</p>
+<p>The mechanism is subtle. These serialization formats encode not just data but also <em>which classes the data belongs to</em> and <em>which methods to invoke during reconstruction</em> (constructors, <code>__reduce__</code>, <code>readObject</code>). An attacker who can supply the byte stream can specify any class available on the application's classpath, including classes whose construction has side effects — running shell commands, opening network connections, modifying files. A "gadget chain" of legitimate library classes can be assembled to achieve full remote code execution from a single deserialization call.</p>
+<p>The structural fix is to never deserialize untrusted input with a code-executing format. Use a <em>data-only</em> format like JSON, MessagePack, or Protocol Buffers, and deserialize into specific schemas. If you must use a code-capable serializer (e.g., for legacy compatibility), deserialize only inside a hardened context with class allow-lists.</p>
+<p>The 2017 Apache Struts 2 CVE that led to the <strong>Equifax breach</strong> was, at root, an insecure-deserialization-style flaw in an XML parser; the 2021 <strong>Log4Shell</strong> vulnerability was a different shape (a logging library that performed JNDI lookups on attacker-controlled strings) but exhibits the same structural failure: untrusted data was passed to a component that interpreted it as code.</p>
+<h2 id="7-race-conditions-and-toctou">7. Race Conditions and TOCTOU<a class="headerlink" href="#7-race-conditions-and-toctou" title="Permanent link">&para;</a></h2>
+<p>A <strong>race condition</strong> is a vulnerability where the correctness of a program depends on the relative timing of multiple concurrent operations, and an attacker can manipulate the timing to violate the program's invariants. Race conditions are notoriously hard to test for because they are non-deterministic; they typically reveal themselves under high concurrency, in production, often years after deployment.</p>
+<p>The most security-relevant race-condition pattern is <strong>TOCTOU (Time-of-check to time-of-use)</strong>. The application checks a property of a resource at time T1 (is this file world-writable? is the user authorized to read this path?) and acts on the resource at time T2, assuming the property still holds. Between T1 and T2, an attacker who can manipulate the resource changes it — replacing the file with a symbolic link to <code>/etc/passwd</code>, or changing the directory the path resolves to — and the application performs the action on the <em>substituted</em> resource.</p>
+<p>A canonical TOCTOU example, in pseudocode:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">access</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">R_OK</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// check at T1</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span><span class="w">   </span><span class="c1">// use at T2</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="c1">// attacker replaced filename with a symlink between T1 and T2</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The structural fix for filesystem TOCTOU is to perform the check and the use <em>atomically</em>, on a <em>handle to the resource</em> rather than a path that can be redirected. On POSIX, that means using <code>openat</code>, file descriptors, and <code>O_NOFOLLOW</code>; on Windows, file handles and <code>FILE_FLAG_OPEN_REPARSE_POINT</code>. For higher-level race conditions (database state, application state), the fix is transactions, locks, or compare-and-swap operations that make the check and the action a single atomic unit.</p>
+<h4 id="diagram-a-toctou-race-condition">Diagram: A TOCTOU Race Condition<a class="headerlink" href="#diagram-a-toctou-race-condition" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Sequence diagram showing how an attacker can race between a permission check and a file operation</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> toctou-race<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A sequence diagram with three actors: Privileged Process (left), Filesystem (center), Attacker (right).</p>
+<p>Time flows top-to-bottom. Steps:</p>
+<ol>
+<li>Privileged Process → Filesystem: <code>access("/tmp/x", R_OK)</code> (T1: check)</li>
+<li>Filesystem → Privileged Process: returns OK (file is a normal user-owned file)</li>
+<li><strong>CRITICAL WINDOW</strong> (annotated with a red dashed box around steps 4-5):</li>
+<li>Attacker → Filesystem: <code>unlink("/tmp/x")</code></li>
+<li>Attacker → Filesystem: <code>symlink("/etc/shadow", "/tmp/x")</code></li>
+<li>Privileged Process → Filesystem: <code>open("/tmp/x", O_RDONLY)</code> (T2: use)</li>
+<li>Filesystem → Privileged Process: returns file descriptor for /etc/shadow (because the privileged process followed the symlink)</li>
+<li>Privileged Process reads /etc/shadow</li>
+</ol>
+<p>A side note labels the window between T1 and T2 as "TOCTOU window".</p>
+<p>Below the sequence diagram, a small box shows the structural fix: "Use openat() with O_NOFOLLOW, or open the file once and operate on the file descriptor — eliminates the window."</p>
+<p>Color: cybersecurity blue for legitimate actors, rust orange (<code>#d84315</code>) for attacker actions, alert amber for the critical window box.</p>
+<p>Responsive: simplifies to vertical sequence below 600px.</p>
+<p>Implementation: Mermaid sequenceDiagram with rect-bordered critical window.</p>
+</details>
+<h2 id="8-broken-access-control-and-authentication">8. Broken Access Control and Authentication<a class="headerlink" href="#8-broken-access-control-and-authentication" title="Permanent link">&para;</a></h2>
+<p><strong>Broken Access Control</strong> is OWASP's top-ranked risk in 2021 — the most common and most impactful category in modern web applications. The category covers any failure where the application does not correctly enforce <em>who is allowed to do what</em>. Common patterns include:</p>
+<ul>
+<li><strong>Insecure Direct Object References (IDOR)</strong> — <code>/api/orders/12345</code> returns the order, but the application never checks that the requesting user owns order 12345. Changing the ID in the URL exposes other users' data.</li>
+<li><strong>Vertical privilege escalation</strong> — a regular user can reach an admin-only endpoint because the application checks "is the user logged in?" but not "does the user have the admin role?"</li>
+<li><strong>Horizontal privilege escalation</strong> — User A can read or modify User B's data because the authorization check only verified that <em>some</em> user is logged in.</li>
+<li><strong>Missing function-level access control</strong> — the UI hides admin links from regular users, but the underlying endpoints have no server-side authorization check; anyone who guesses or scrapes the URLs can reach them.</li>
+</ul>
+<p>The structural fix is to enforce authorization on <em>every</em> request to a protected resource, server-side, on the data layer itself. "Deny by default" — every endpoint requires an explicit grant. The check is parameterized by both the user identity <em>and</em> the specific resource being accessed (<code>is user X allowed to perform action Y on resource Z?</code>), not just whether the user is logged in.</p>
+<p><strong>Broken Authentication</strong> is the closely related category covering failures in <em>establishing</em> who the user is in the first place: weak password policies, password reset flows that leak account existence, session tokens that are predictable or never rotated, missing multi-factor authentication, login endpoints with no rate limiting that allow credential stuffing. NIST SP 800-63B is the modern reference standard for authentication and is required reading for anyone building a login system.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Authorization Is Harder Than It Looks</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering encouragement">
+Authorization is one of the hardest problems in software security because every endpoint, every resource, every role, and every relationship contributes to the policy surface. It is normal for new engineers to underestimate the complexity. Build authorization once, into a single layer the application calls into — not scattered through handlers — and audit it like the load-bearing wall it is.</p>
+</div>
+<h2 id="9-security-misconfiguration-and-sensitive-data-exposure">9. Security Misconfiguration and Sensitive Data Exposure<a class="headerlink" href="#9-security-misconfiguration-and-sensitive-data-exposure" title="Permanent link">&para;</a></h2>
+<p><strong>Security Misconfiguration</strong> is the failure to configure a system, framework, or platform securely — the bug is in the operations, not the code. Examples accumulate quickly: default admin credentials left in production, debug or trace endpoints exposed to the public internet, verbose error pages that leak stack traces and database schema, S3 buckets configured for public read, Kubernetes dashboards exposed without authentication, security headers (CSP, HSTS, X-Frame-Options) absent, TLS configured with weak ciphers or expired certificates, unnecessary services running.</p>
+<p>The structural fix is <strong>secure-by-default configuration baselines</strong>, applied automatically by infrastructure-as-code (Terraform modules, Kubernetes admission controllers, CIS Benchmarks) rather than left to manual checklists. A configuration that requires an explicit human to make it secure will, eventually, be deployed without that human.</p>
+<p><strong>Sensitive Data Exposure</strong> is OWASP's renamed category in 2021, "Cryptographic Failures" — the failure to protect data appropriately when it is stored, transmitted, or processed. Examples: PII transmitted over plain HTTP, database backups copied to public buckets, passwords stored unhashed (or hashed with MD5 or SHA-1, both of which are unsuitable for password hashing), credit card data stored without tokenization, error messages or logs that include API keys or session tokens.</p>
+<p>The defenses follow directly from the cryptography chapters: TLS for everything in transit, AES-GCM (or platform-managed encryption) for data at rest, Argon2id or scrypt for password hashing (never raw SHA), and a separation between <em>secrets</em> and <em>configuration</em> that keeps secrets out of source control entirely. Tools like HashiCorp Vault, AWS Secrets Manager, and Kubernetes External Secrets exist to make the right thing the easy thing.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Common manifestation</th>
+<th>Structural fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Misconfiguration</td>
+<td>Default creds, exposed admin panels</td>
+<td>Secure-by-default IaC, CIS benchmarks</td>
+</tr>
+<tr>
+<td>Misconfiguration</td>
+<td>Verbose error pages</td>
+<td>Generic errors in prod, full detail in private logs</td>
+</tr>
+<tr>
+<td>Sensitive Data Exposure</td>
+<td>Plain HTTP, weak TLS</td>
+<td>TLS 1.2+, HSTS, modern cipher suites</td>
+</tr>
+<tr>
+<td>Sensitive Data Exposure</td>
+<td>Passwords with weak hash</td>
+<td>Argon2id with appropriate cost</td>
+</tr>
+<tr>
+<td>Sensitive Data Exposure</td>
+<td>Secrets in git</td>
+<td>Secret manager + git pre-commit scanners</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-a-case-study-drawn-from-the-cwe-top-25">10. A Case Study Drawn From The CWE Top 25<a class="headerlink" href="#10-a-case-study-drawn-from-the-cwe-top-25" title="Permanent link">&para;</a></h2>
+<p>To make the abstractions concrete, consider a small, simulated application that combines several of the issues above — and how each is structurally fixed. We build a vulnerability sandbox that lets you flip between the vulnerable and the fixed implementation of a single endpoint and observe the difference.</p>
+<h4 id="diagram-vulnerability-sandbox-microsim">Diagram: Vulnerability Sandbox MicroSim<a class="headerlink" href="#diagram-vulnerability-sandbox-microsim" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive p5.js simulation that visualizes how a vulnerability is exploited and how the fix prevents it</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> vuln-sandbox<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective (Bloom: Analyze):</strong> Given the same attacker payload, the student compares the behavior of a vulnerable and a fixed implementation of a web endpoint, identifies the structural difference, and reasons about why the fix makes the bad outcome impossible.</p>
+<p><strong>Canvas layout:</strong> 800px wide × 600px tall, responsive. Top region (200px): controls. Middle region (300px): two side-by-side simulated server panels (vulnerable on the left, fixed on the right). Bottom region (100px): outcome display.</p>
+<p><strong>Controls (using p5.js built-in controls):</strong></p>
+<ul>
+<li>A <code>createSelect()</code> dropdown labeled "Vulnerability class" with options: SQL Injection, Command Injection, Reflected XSS, Path Traversal, IDOR.</li>
+<li>A <code>createInput()</code> text field labeled "Attacker payload" pre-filled with a default payload appropriate to the selected class (e.g., <code>' OR 1=1 --</code> for SQLi). Updates when class changes.</li>
+<li>A <code>createButton("Send request")</code> that submits the payload to both panels.</li>
+<li>A <code>createCheckbox("Show internals", true)</code> that toggles a translucent overlay showing the constructed query/command for each panel.</li>
+</ul>
+<p><strong>Vulnerable panel (left):</strong> Displays the constructed query as a single concatenated string with the payload highlighted in rust orange (<code>#d84315</code>). Animates the string flowing into a "Database/Shell/Browser" icon at the bottom and shows the exploit outcome: "Returned all 10,000 user rows" / "Ran <code>rm -rf</code>" / "Stole session cookie" — in red.</p>
+<p><strong>Fixed panel (right):</strong> Displays the parameterized query / argument array / contextually escaped output. The payload is shown as data, color-coded distinctly from the query structure (cybersecurity blue for code, slate steel for data). Outcome: "Returned 0 rows" / "Argument was treated as a literal hostname" / "Payload rendered as text, not script" — in green.</p>
+<p><strong>Outcome display:</strong> A summary bar at the bottom: "Same payload. Different defense. Outcome: [exploited / contained]."</p>
+<p><strong>Default state on load:</strong> SQL Injection class, payload <code>admin' --</code>, both panels visible, internals shown.</p>
+<p><strong>Resize behavior:</strong> <code>updateCanvasSize()</code> called first in setup(); panels stack vertically below 700px viewport.</p>
+<p><strong>Color palette:</strong> cybersecurity blue (<code>#1565c0</code>) for safe code, rust orange (<code>#d84315</code>) for attacker payload, slate steel (<code>#455a64</code>) for normal data, alert amber (<code>#ffa000</code>) for the warning indicator, green (<code>#2e7d32</code>) for "contained" outcome.</p>
+<p>Implementation: p5.js sketch with <code>canvas.parent(document.querySelector('main'));</code> and <code>updateCanvasSize()</code> as the first call in setup().</p>
+</details>
+<p>The reader who completes this simulation should be able to articulate, for each vulnerability class, the <em>exact line</em> where the bug lives and the <em>exact replacement</em> that eliminates it.</p>
+<h2 id="11-putting-it-together-a-mental-checklist">11. Putting It Together — A Mental Checklist<a class="headerlink" href="#11-putting-it-together-a-mental-checklist" title="Permanent link">&para;</a></h2>
+<p>When you sit down to review code or design a new endpoint, the bug classes in this chapter compress into a small mental checklist — the questions to ask at each trust boundary:</p>
+<ul>
+<li>Where does untrusted input enter this code? Is it validated against an allow-list of expected shapes?</li>
+<li>Where does untrusted input become part of a command interpreted by another component (database, shell, browser, deserializer, URL fetcher)? Is the boundary enforced by an API that separates code from data?</li>
+<li>What memory safety guarantees does the language give us? If we are in C or C++, is the bounds-checking explicit and the static analyzer enforcing it?</li>
+<li>Who is allowed to perform this action on this resource? Is the check on the server, on every request, parameterized by both user <em>and</em> resource?</li>
+<li>What does the code do when something fails? Does it fail closed?</li>
+<li>What does this code log? Does it log secrets? Does it log enough to detect abuse?</li>
+<li>What happens between any two operations? Is there a window an attacker can race into?</li>
+</ul>
+<p>A surprisingly large fraction of real-world breaches would have been prevented by a code review whose reviewer asked these seven questions out loud. They are not glamorous — they are the working questions of a defensible-engineering practice.</p>
+<h2 id="12-chapter-wrap">12. Chapter Wrap<a class="headerlink" href="#12-chapter-wrap" title="Permanent link">&para;</a></h2>
+<p>The bug classes in this chapter are old and well-known, and yet they continue to appear in production systems every week. The cause is rarely ignorance of the bugs — it is the friction between knowing them in the abstract and recognizing them in code under deadline pressure. The remedy is <em>structural</em>: choose languages, frameworks, and APIs that make the bad pattern impossible rather than merely "fixed for now." Memory-safe languages, parameterized queries, contextual encoding by default, secrets managers, and authorization libraries pulled into a single module — these are the load-bearing structural choices. They do more for security than any number of "be careful" admonitions in a coding standard.</p>
+<p>Chapter 6 will turn from the bugs themselves to the <em>tools and processes</em> that find them at scale: static analysis, dynamic analysis, fuzzing, software composition analysis, and the supply-chain assurance practices that defend against bugs you did not write.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read the OWASP Top Ten and CWE Top 25 with the eye of an engineer rather than a checklist follower. You can recognize the injection family in any of its forms, name the structural fix, and reason about why a memory-safe language eliminates an entire bug class by construction. That is the foundation we need before Chapter 6's tooling — because a tool only finds what you already know how to recognize.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

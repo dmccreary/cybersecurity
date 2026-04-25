@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Inside the operating system and runtime: kernel security, process isolation, memory protections (ASLR, DEP, stack canaries), access-control models (DAC, MAC, RBAC, ABAC), file permissions, MAC implementations (SELinux, AppArmor), and virtualization, hypervisor, container, Docker, and Kubernetes security.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>10. System Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>System Security: OS, Memory, and Access Control - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. System Security
+              System Security: OS, Memory, and Access Control
             
           </span>
         </div>
@@ -706,6 +706,303 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-what-system-security-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What "System Security" Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-kernel-and-why-it-is-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Kernel and Why It Is Special
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Kernel and Why It Is Special">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-process-isolation-one-program-one-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Process Isolation — One Program, One World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-protection-defending-the-address-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory Protection — Defending The Address Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Memory Protection — Defending The Address Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-dep-make-data-unexecutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 DEP — Make Data Unexecutable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-aslr-make-memory-unpredictable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 ASLR — Make Memory Unpredictable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-stack-canaries-detect-the-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Stack Canaries — Detect The Tampering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Stack Canaries — Detect The Tampering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stack Frame With and Without a Canary Under Overflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-where-the-hierarchy-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Where The Hierarchy Comes From
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-access-control-who-can-do-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Access Control — Who Can Do What
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Access Control — Who Can Do What">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-dac-discretionary-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 DAC — Discretionary Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-mac-mandatory-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 MAC — Mandatory Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-rbac-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 RBAC — Role-Based Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-abac-attribute-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 ABAC — Attribute-Based Access Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 ABAC — Attribute-Based Access Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-access-control-decision-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Access Control Decision Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-file-permissions-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. File Permissions In Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-selinux-and-apparmor-mac-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. SELinux and AppArmor — MAC On Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. SELinux and AppArmor — MAC On Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-layers-of-access-control-on-a-modern-linux-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Layers of Access Control on a Modern Linux Box
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtualization-and-hypervisor-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Virtualization and Hypervisor Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Virtualization and Hypervisor Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hypervisor-architecture-and-the-trust-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hypervisor Architecture and the Trust Boundary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-containers-lighter-isolation-different-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Containers — Lighter Isolation, Different Tradeoffs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Containers — Lighter Isolation, Different Tradeoffs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-docker-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Docker Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-kubernetes-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Kubernetes Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 Kubernetes Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-container-isolation-strength-comparator" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Container Isolation Strength Comparator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-defensible-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together — A Defensible System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1380,303 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-what-system-security-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What "System Security" Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-kernel-and-why-it-is-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Kernel and Why It Is Special
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Kernel and Why It Is Special">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-process-isolation-one-program-one-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Process Isolation — One Program, One World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-protection-defending-the-address-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory Protection — Defending The Address Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Memory Protection — Defending The Address Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-dep-make-data-unexecutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 DEP — Make Data Unexecutable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-aslr-make-memory-unpredictable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 ASLR — Make Memory Unpredictable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-stack-canaries-detect-the-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Stack Canaries — Detect The Tampering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Stack Canaries — Detect The Tampering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stack Frame With and Without a Canary Under Overflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-where-the-hierarchy-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Where The Hierarchy Comes From
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-access-control-who-can-do-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Access Control — Who Can Do What
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Access Control — Who Can Do What">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-dac-discretionary-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 DAC — Discretionary Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-mac-mandatory-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 MAC — Mandatory Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-rbac-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 RBAC — Role-Based Access Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-abac-attribute-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 ABAC — Attribute-Based Access Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 ABAC — Attribute-Based Access Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-access-control-decision-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Access Control Decision Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-file-permissions-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. File Permissions In Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-selinux-and-apparmor-mac-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. SELinux and AppArmor — MAC On Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. SELinux and AppArmor — MAC On Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-layers-of-access-control-on-a-modern-linux-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Layers of Access Control on a Modern Linux Box
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtualization-and-hypervisor-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Virtualization and Hypervisor Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Virtualization and Hypervisor Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hypervisor-architecture-and-the-trust-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Hypervisor Architecture and the Trust Boundary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-containers-lighter-isolation-different-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Containers — Lighter Isolation, Different Tradeoffs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Containers — Lighter Isolation, Different Tradeoffs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-docker-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Docker Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-kubernetes-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Kubernetes Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 Kubernetes Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-container-isolation-strength-comparator" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Container Isolation Strength Comparator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-defensible-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together — A Defensible System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1140,13 +1734,444 @@
 <li><a href="../05-software-vulnerabilities/">Chapter 5: Software Vulnerabilities and Secure Coding</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the System Layer</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. So far we have looked at the network on the wire and at the application that produces traffic. This chapter is about the layer in between — the operating system, the runtime, and the isolation primitives that decide which code can read which bytes. The bugs here are quieter than a buffer overflow but louder than a misconfigured firewall: they are the failures that turn a small compromise into total system ownership. Trust, but verify — and start with what the kernel is willing to grant you.</p>
+</div>
+<h2 id="1-what-system-security-covers">1. What "System Security" Covers<a class="headerlink" href="#1-what-system-security-covers" title="Permanent link">&para;</a></h2>
+<p>Up to now the book has treated the <em>operating system</em> as a reliable substrate underneath the application. In practice, the OS is a complex, privileged piece of software with its own attack surface, its own threat model, and its own security mechanisms. <strong>Operating system security</strong> is the discipline of designing, configuring, and operating an OS so that no single process can read another's secrets, escalate to administrator, or persist undetectably across reboots. Every modern security control — sandboxing, encryption-at-rest, access logging — ultimately rests on the OS getting its job right.</p>
+<p>The OS sits at a uniquely sensitive trust boundary. On one side is application code, which is plentiful, frequently updated, and often untrusted. On the other side is hardware, which the OS is the only piece of software allowed to talk to directly. The OS must mediate every attempt by application code to use the hardware: every memory allocation, every file read, every network packet, every system call. If an attacker can convince the OS to run their code with kernel privileges, every other security control above it becomes negotiable.</p>
+<p>The chapter has three movements. First, the <em>runtime</em> — what the OS does to keep processes from interfering with each other and what memory protections prevent the kind of buffer-overflow exploits we met in Chapter 5 from succeeding even when the bug exists. Second, <em>access control</em> — the policy languages the OS uses to decide who can do what, from classical Unix permissions through enterprise role models and attribute-based authorization. Third, <em>isolation primitives above the OS</em> — virtualization, hypervisors, containers, and Kubernetes — which extend the OS's isolation story to cloud-scale workloads.</p>
+<h2 id="2-the-kernel-and-why-it-is-special">2. The Kernel and Why It Is Special<a class="headerlink" href="#2-the-kernel-and-why-it-is-special" title="Permanent link">&para;</a></h2>
+<p>The <strong>kernel</strong> is the part of the OS that runs in <em>privileged mode</em> (also called <em>kernel mode</em> or <em>ring 0</em> on x86). Kernel code can execute any CPU instruction, access any memory, and talk to any hardware. Application code, by contrast, runs in <em>user mode</em> (ring 3) where the CPU traps on privileged instructions and forces a transition into the kernel through a controlled gateway called a <strong>system call</strong>. This privilege separation is the most important architectural fact in OS security: there is exactly one piece of software with full power over the machine, and it is the piece you most want to keep small, audited, and unsurprising.</p>
+<p><strong>Kernel security</strong> is the practice of keeping that privileged code trustworthy. It includes hardening the kernel itself against bugs (memory-safe kernel modules, fuzzing the system-call interface, reducing the attack surface by removing unused features), protecting the kernel from user-mode exploitation (KASLR — kernel address space layout randomization, SMEP/SMAP — supervisor mode execute and access prevention, kernel-page-table isolation that defends against Meltdown), and signing kernel modules so that an attacker with root cannot quietly load a rootkit driver. Modern operating systems also support <strong>secure boot</strong>, where firmware verifies the kernel's signature before transferring control to it, anchoring the trust chain at the hardware (a topic we revisit in component security).</p>
+<p>The kernel attack surface is larger than newcomers expect. A typical Linux kernel exposes several hundred system calls, each accepting structured arguments that the kernel must validate. A bug in any one of them — a missing bounds check, an integer overflow in a length field, a race condition between two threads — can become a <em>local privilege escalation</em> (LPE) that turns a user-level shell into a root shell. The CVE database is full of such bugs; treat each one as a reminder that "we are user-only, so kernel bugs do not affect us" is rarely the right model.</p>
+<h4 id="diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary">Diagram: Kernel Mode vs. User Mode and the System Call Boundary<a class="headerlink" href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Cross-section diagram of user/kernel separation and the system call gateway</summary>
+<p>Type: drawing
+<strong>sim-id:</strong> kernel-user-boundary<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal stack diagram with three layers, top to bottom:</p>
+<p><strong>Top layer (user mode, ring 3) — light blue background <code>#e3f2fd</code>:</strong>
+- Three application boxes: "Browser", "Database", "Editor"
+- Each has a small lock icon in the corner labeled "unprivileged"</p>
+<p><strong>Middle layer (kernel boundary) — slate steel <code>#455a64</code> line, 4px thick:</strong>
+- A single labeled gateway: "System Call Interface (open, read, write, mmap, ...)"
+- Two arrows shown crossing it: one labeled "syscall" going down, one labeled "return" going up</p>
+<p><strong>Bottom layer (kernel mode, ring 0) — cybersecurity blue background <code>#1565c0</code> with white text:</strong>
+- Subdivided into: "Process Scheduler", "Memory Manager", "VFS / File Systems", "Network Stack", "Device Drivers"
+- A small label at the bottom: "Direct hardware access"</p>
+<p><strong>Below the kernel layer, a thinner hardware layer (gray <code>#cfd8dc</code>):</strong>
+- Labeled "CPU / RAM / Disk / NIC"</p>
+<p>Hover tooltips:
+- Hovering on a user-mode app shows: "Cannot directly touch hardware. Must ask the kernel via syscalls."
+- Hovering on the system call line shows: "The only legal way for user code to enter kernel mode."
+- Hovering on the kernel layer shows: "Trusted code. A bug here = total compromise."</p>
+<p>Color: cybersecurity blue <code>#1565c0</code> (kernel), slate steel <code>#455a64</code> (boundary), light blue <code>#e3f2fd</code> (user mode), gray <code>#cfd8dc</code> (hardware). Responsive: stacks layers tightly below 700px viewport but preserves the horizontal arrows.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> tooltips per layer.</p>
+</details>
+<h2 id="3-process-isolation-one-program-one-world">3. Process Isolation — One Program, One World<a class="headerlink" href="#3-process-isolation-one-program-one-world" title="Permanent link">&para;</a></h2>
+<p>When two programs run on the same machine, the OS must convince each one that it has the machine to itself, while making sure that neither can read or modify the other. This is <strong>process isolation</strong>, and it rests on three pillars: separate virtual address spaces, separate file-descriptor tables, and the privilege separation we just described between user and kernel mode.</p>
+<p>The most fundamental of these is the <strong>virtual address space</strong>. The CPU's memory management unit (MMU), under control of the kernel, translates each process's virtual addresses to physical addresses through per-process page tables. Process A's "address <code>0x4000</code>" and Process B's "address <code>0x4000</code>" map to entirely different physical pages of RAM. Neither process can name the other's memory; the addresses they would have to use simply do not resolve. This is why a buffer overflow in one process cannot, by itself, corrupt another process — the runaway pointer cannot reach into a different address space.</p>
+<p>Process isolation is not absolute. Processes share the kernel, the CPU, the cache, and the clock. Side channels — measuring how long an operation takes, what the cache contains, how branch prediction behaves — can leak information across the isolation boundary even when the explicit channels (memory, files, IPC) are closed. The Spectre and Meltdown disclosures of 2018 made these channels a first-class concern, and modern operating systems mitigate them with software workarounds at measurable performance cost. We will return to side channels in the component security chapter.</p>
+<table>
+<thead>
+<tr>
+<th>Isolation mechanism</th>
+<th>What it separates</th>
+<th>What it does not separate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual address spaces</td>
+<td>Memory contents per process</td>
+<td>CPU caches, branch predictors</td>
+</tr>
+<tr>
+<td>File-descriptor tables</td>
+<td>Open files, sockets per process</td>
+<td>Filesystem itself (still shared)</td>
+</tr>
+<tr>
+<td>User IDs / credentials</td>
+<td>Identity-based authorization</td>
+<td>Kernel attack surface</td>
+</tr>
+<tr>
+<td>Namespaces (Linux)</td>
+<td>Views of mounts, PIDs, networks</td>
+<td>Underlying kernel</td>
+</tr>
+<tr>
+<td>Hypervisor / VM</td>
+<td>Almost everything (guest kernels)</td>
+<td>CPU caches, hardware bugs</td>
+</tr>
+</tbody>
+</table>
+<p>The table is a preview of the layered isolation story this chapter develops. Each row is a stronger boundary than the previous, and each row carries a corresponding cost in performance and operational complexity. Choosing the right isolation strength for a workload is a security-engineering judgment we will return to throughout the chapter.</p>
+<h2 id="4-memory-protection-defending-the-address-space">4. Memory Protection — Defending The Address Space<a class="headerlink" href="#4-memory-protection-defending-the-address-space" title="Permanent link">&para;</a></h2>
+<p>A successful Chapter 5 buffer overflow gets the attacker control of a return address, a function pointer, or a heap structure. Memory protections are the OS-and-toolchain features that make exploiting the bug <em>much harder</em> even when the bug itself remains. They do not make memory-corruption bugs disappear; they raise the cost of weaponizing them. Three are foundational, and most modern operating systems compose all three by default.</p>
+<p><strong>Memory protection</strong> is the umbrella term for the set of OS mechanisms that constrain what an executing process can do with memory it does not own (or with memory it does own, but should not be able to execute or rewrite). The three load-bearing mechanisms are non-executable memory (DEP), randomization (ASLR), and stack protection (canaries).</p>
+<h3 id="41-dep-make-data-unexecutable">4.1 DEP — Make Data Unexecutable<a class="headerlink" href="#41-dep-make-data-unexecutable" title="Permanent link">&para;</a></h3>
+<p><strong>DEP (Data Execution Prevention)</strong> marks memory regions that hold <em>data</em> — the stack, the heap, and read-only data segments — as <em>non-executable</em>. The CPU enforces this through a per-page "no-execute" bit (called NX on AMD/Intel, XN on ARM). When DEP is on, an attacker who has overflowed a buffer with shellcode cannot simply jump into the buffer to execute it: the CPU will trap on the first instruction fetched from that page and the kernel will kill the process.</p>
+<p>DEP turned classic stack-smashing-shellcode attacks from one-step exploits into harder problems. Attackers responded with <strong>return-oriented programming (ROP)</strong>, which chains together short instruction sequences (gadgets) already present in executable code, never executing data pages directly. ROP is harder to construct than shellcode, but it is not stopped by DEP alone — that is what ASLR is for.</p>
+<h3 id="42-aslr-make-memory-unpredictable">4.2 ASLR — Make Memory Unpredictable<a class="headerlink" href="#42-aslr-make-memory-unpredictable" title="Permanent link">&para;</a></h3>
+<p><strong>ASLR (Address Space Layout Randomization)</strong> randomizes the base addresses of the stack, heap, executable, and shared libraries every time a process starts. Without ASLR, an exploit author can write down the exact address of a useful gadget or function and bake it into the exploit; with ASLR, those addresses change each run, and the attacker has to either guess (and crash on a wrong guess), leak an address through a separate information disclosure bug, or brute-force a 32- or 64-bit search space.</p>
+<p>The strength of ASLR depends on the <em>entropy</em> — the number of random bits in the base address. 32-bit ASLR is weak (often only 8–16 bits of entropy, which is feasible to brute-force for some services). 64-bit ASLR provides 28+ bits of entropy on typical configurations and makes blind guessing impractical. ASLR composes with DEP: DEP prevents executing data, ASLR prevents knowing where to jump.</p>
+<h3 id="43-stack-canaries-detect-the-tampering">4.3 Stack Canaries — Detect The Tampering<a class="headerlink" href="#43-stack-canaries-detect-the-tampering" title="Permanent link">&para;</a></h3>
+<p>A <strong>stack canary</strong> is a random value the compiler inserts into a function's stack frame, between the local variables and the saved return address. On function exit, the prologue checks that the canary still holds its original value. A linear stack-buffer overflow that overwrites the return address must, in passing, also overwrite the canary; the mismatch is detected, and the process aborts before the corrupted return address is used. Canaries do not stop overflows; they catch the most common consequence of one before it does damage.</p>
+<p>Canary values are typically randomized per-process and include a leading null byte (so that string-copy bugs cannot easily preserve the canary while overflowing past it). Sophisticated exploits sometimes leak the canary through a separate information-disclosure bug and then craft an overflow that re-writes it to its correct value — at which point the canary check passes. As with all individual mitigations, canaries raise the bar without being a complete defense.</p>
+<h4 id="diagram-stack-frame-with-and-without-a-canary-under-overflow">Diagram: Stack Frame With and Without a Canary Under Overflow<a class="headerlink" href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Side-by-side stack frame visualizations during a buffer overflow attack</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> stack-canary-comparison<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>Two stack frames shown side by side, drawn vertically with high-address at top and low-address at bottom (the standard stack layout).</p>
+<p><strong>Left frame — "Without Canary":</strong>
+- Top to bottom: "Saved return address" (dark gray), "Saved frame pointer" (gray), "Local variable: char buf[16]" (yellow)
+- Below the left frame, a red arrow labeled "strcpy(buf, attacker_input)" pointing upward into the buffer
+- Annotation: "Long input overruns buf, overwrites saved return address"
+- Result label at top: "Return → attacker-controlled address. Exploit succeeds silently."</p>
+<p><strong>Right frame — "With Canary":</strong>
+- Top to bottom: "Saved return address" (dark gray), "Saved frame pointer" (gray), "Stack canary: 0xA3F2B7C1" (green), "Local variable: char buf[16]" (yellow)
+- Below the right frame, the same red overflow arrow
+- Annotation: "Overflow path crosses canary first"
+- Result label at top: "Canary check fails on return → process aborts before return"</p>
+<p>A small legend below explains the colors: yellow = attacker-writable buffer, green = canary, gray = saved frame pointer, dark gray = saved return address.</p>
+<p>Hover tooltips:
+- Hovering on the canary box shows: "A random per-process value. Compiler inserts; prologue checks."
+- Hovering on the saved return address shows: "Where the function returns to. Hijacking this is the classic exploit goal."</p>
+<p>Color: amber <code>#ffa000</code> accent on the "exploit succeeds" label (warning), green <code>#4caf50</code> on the canary, slate steel for return address, light yellow for buffer. Responsive: side-by-side at &gt;800px, stacked vertically below.</p>
+<p>Implementation: Static SVG.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Defense In Depth, At The Bit Level</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+No single memory protection stops exploitation; together they make the path long and noisy. DEP forces the attacker to reuse code rather than inject it. ASLR forces them to leak addresses before they can target it. Canaries force them to leak the canary too. Each step is a bug they have to find — and each bug found is a defender's chance to detect them.</p>
+</div>
+<h3 id="44-where-the-hierarchy-comes-from">4.4 Where The Hierarchy Comes From<a class="headerlink" href="#44-where-the-hierarchy-comes-from" title="Permanent link">&para;</a></h3>
+<p>The three mitigations above are the durable foundation. Modern systems layer further: <strong>Control-Flow Integrity (CFI)</strong> validates indirect call/jump targets against a known-good set; <strong>shadow stacks</strong> keep a second copy of return addresses in protected memory; <strong>Intel CET</strong> and <strong>ARM Pointer Authentication</strong> add hardware enforcement to both. Each addition closes a class of bypasses against the older mitigations. The trend is unmistakable: silicon and OS together are increasingly hostile to memory-corruption exploitation, which is part of why memory-safe languages (Rust, Go, modern C++ with sanitizers) and memory-safe targets (Android adopting Rust for new system code) are gaining ground.</p>
+<h2 id="5-access-control-who-can-do-what">5. Access Control — Who Can Do What<a class="headerlink" href="#5-access-control-who-can-do-what" title="Permanent link">&para;</a></h2>
+<p>Memory protection answers "what can a running process do to itself"; access control answers "what can a running process do to <em>the rest of the system</em> — files, devices, network, other processes". <strong>Access control</strong> is the policy mechanism by which the OS decides whether a particular <em>subject</em> (a user or process) may perform a particular <em>operation</em> (read, write, execute) on a particular <em>object</em> (a file, a device node, a socket). This is the AAA (Authentication, Authorization, Accounting) authorization layer from Chapter 1, made concrete inside the OS.</p>
+<p>Before we examine the access-control models, two definitions are essential. A <strong>subject</strong> is the active entity making the request — typically a process running on behalf of a user, identified by a numeric user ID and a set of group IDs on Unix systems. An <strong>object</strong> is the passive entity being acted upon — a file, a directory, a device, an IPC endpoint. An <em>access decision</em> is the OS answer to "may this subject perform this operation on this object", made every time a request is issued.</p>
+<p>Different operating systems and different security regimes use different <em>models</em> for expressing the policy. Four models cover almost all practical deployments. Each makes a different tradeoff between flexibility, manageability, and assurance, and each shows up in different parts of a real system.</p>
+<h3 id="51-dac-discretionary-access-control">5.1 DAC — Discretionary Access Control<a class="headerlink" href="#51-dac-discretionary-access-control" title="Permanent link">&para;</a></h3>
+<p><strong>DAC (Discretionary Access Control)</strong> lets the <em>owner</em> of an object set the access policy on it. If you own a file, you decide who else can read or write it; the OS enforces your decision but does not constrain what you may decide. The classical example is Unix file permissions: the file's owner runs <code>chmod</code> and <code>chown</code>, and the kernel honors the result.</p>
+<p>DAC is flexible and intuitive — it matches most users' mental model of "my files, my rules". Its weakness is that policy is fragmented: there is no central statement of who can read what, only a forest of per-file decisions made by individual owners over time. A single careless <code>chmod 777</code> opens a file to the world, and the OS will not warn the owner that this contradicts an organizational policy, because in DAC there is no organizational policy — only owners' decisions.</p>
+<h3 id="52-mac-mandatory-access-control">5.2 MAC — Mandatory Access Control<a class="headerlink" href="#52-mac-mandatory-access-control" title="Permanent link">&para;</a></h3>
+<p><strong>MAC (Mandatory Access Control)</strong> removes the owner's discretion: the <em>system</em> sets and enforces policy, and individual users — even file owners, even root — cannot relax it. MAC originated in defense and intelligence systems where data has classification labels (Unclassified, Confidential, Secret, Top Secret) and subjects have clearances. The classical Bell-LaPadula model formalizes this with two rules: <em>no read up</em> (a subject cannot read data above its clearance) and <em>no write down</em> (a subject cannot write data below its clearance, preventing information leakage from high to low).</p>
+<p>In modern Linux, MAC is not just about data classification; it is also about <em>type enforcement</em>, where every process and every file is labeled with a type, and a system-wide policy says which process types may perform which operations on which file types. The two dominant Linux MAC implementations — SELinux and AppArmor — are detailed in Section 7. The defining property of MAC is that policy is enforced <em>even against root</em>: an attacker who escalates to root still cannot perform actions the MAC policy forbids.</p>
+<h3 id="53-rbac-role-based-access-control">5.3 RBAC — Role-Based Access Control<a class="headerlink" href="#53-rbac-role-based-access-control" title="Permanent link">&para;</a></h3>
+<p><strong>RBAC (Role-Based Access Control)</strong> structures permissions around <em>roles</em> rather than individuals. Permissions are granted to roles ("billing-clerk can read invoices, write payments"); users are assigned to roles ("Alice is a billing-clerk"); and the system grants Alice a permission whenever she activates the role that has it. When Alice changes jobs, you change her role assignment, not the dozens of permissions her job required.</p>
+<p>RBAC scales the way DAC does not. A 50,000-employee enterprise cannot maintain a per-user permission list for every resource; it can maintain a few hundred roles, each with carefully scoped permissions, and assign every employee to one or a few roles. RBAC is the dominant model in enterprise applications, in cloud IAM ("Storage Admin" role in AWS, GCP, Azure), and in Kubernetes (which has a literal <code>Role</code> and <code>ClusterRole</code> object, covered later).</p>
+<p>RBAC's limitation is that <em>role</em> is a coarse handle. If billing-clerks should see invoices for <em>their region only</em>, RBAC alone cannot express that — every region would need its own role, and the role count explodes. That is the gap ABAC fills.</p>
+<h3 id="54-abac-attribute-based-access-control">5.4 ABAC — Attribute-Based Access Control<a class="headerlink" href="#54-abac-attribute-based-access-control" title="Permanent link">&para;</a></h3>
+<p><strong>ABAC (Attribute-Based Access Control)</strong> evaluates access decisions against arbitrary <em>attributes</em> of the subject, the object, and the environment. A policy is a logical expression: "permit if <code>subject.department == object.department AND environment.time IN business_hours</code>". ABAC subsumes RBAC (a role is just an attribute) and goes further by letting decisions consider context — location, device posture, time of day, sensitivity label, recent risk score.</p>
+<p>ABAC is what cloud IAM has been moving toward, expressed in policy languages like AWS IAM JSON, GCP IAM Conditions, and the more general XACML. Zero Trust architectures rely on ABAC to make per-request decisions that consider device health and user risk, not just static role membership. ABAC's cost is policy complexity: an expressive policy language is easier to misconfigure than a list of role assignments, and policy review becomes a real engineering activity rather than a clerical one.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Who sets policy</th>
+<th>Strength</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAC</td>
+<td>The object's owner</td>
+<td>Flexible, intuitive</td>
+<td>Unix files, classic OS</td>
+</tr>
+<tr>
+<td>MAC</td>
+<td>The system / security policy</td>
+<td>High assurance</td>
+<td>Defense, hardened Linux (SELinux)</td>
+</tr>
+<tr>
+<td>RBAC</td>
+<td>An admin via roles</td>
+<td>Scales to enterprises</td>
+<td>Apps, cloud IAM, Kubernetes</td>
+</tr>
+<tr>
+<td>ABAC</td>
+<td>A policy author via attributes</td>
+<td>Expressive, context-aware</td>
+<td>Cloud, Zero Trust</td>
+</tr>
+</tbody>
+</table>
+<p>The table compares the four models along three axes that this section explained in prose. Most real systems mix at least two of these — Linux uses DAC by default with MAC layered on top via SELinux/AppArmor, while cloud platforms typically use RBAC for human users and ABAC for fine-grained service-to-service authorization.</p>
+<h4 id="microsim-access-control-decision-explorer">MicroSim: Access Control Decision Explorer<a class="headerlink" href="#microsim-access-control-decision-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive simulator that takes a (subject, action, object) and shows how each access-control model decides</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> access-control-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective (Bloom: Analyzing):</strong> Given a request from a subject to perform an action on an object, learners predict and compare how DAC, MAC, RBAC, and ABAC each render the access decision, and identify which models would forbid an apparently reasonable request.</p>
+<p><strong>Layout (700 × 480 canvas, responsive — uses <code>updateCanvasSize()</code> on setup):</strong></p>
+<ul>
+<li>Top control panel (createSelect, createSelect, createSelect — p5.js builtin controls):</li>
+<li>"Subject:" dropdown — Alice (HR analyst), Bob (engineer), Charlie (intern), root</li>
+<li>"Action:" dropdown — read, write, execute</li>
+<li>"Object:" dropdown — payroll.csv (HR-owned, sensitive), build.sh (engineering, executable), public.txt (world-readable)</li>
+<li>A "Request" button (createButton) that triggers the evaluation</li>
+<li>Below controls, four panels arranged in a 2×2 grid, one per model: DAC, MAC, RBAC, ABAC</li>
+<li>Each panel shows:</li>
+<li>The model name (header)</li>
+<li>The policy snippet relevant to the current request (e.g., "DAC: payroll.csv perms = <code>rw- r-- ---</code>; Alice in HR group → READ allowed")</li>
+<li>A green "ALLOW" or red "DENY" badge with the rationale</li>
+<li>Bottom info strip:</li>
+<li>A short generalization comparing the four answers, noting any disagreement (e.g., "DAC permits, but SELinux MAC denies because <code>analyst_t</code> cannot read <code>payroll_finance_t</code>.")</li>
+</ul>
+<p><strong>Behavior:</strong>
+- Default state shows Alice / read / payroll.csv with the four model decisions populated
+- Changing any dropdown re-runs all four models and updates badges in real time
+- A "Randomize scenario" button picks a (subject, action, object) tuple to encourage exploration
+- A "Show policy" toggle reveals each model's underlying rules in a side drawer</p>
+<p><strong>Visual style:</strong>
+- cybersecurity blue <code>#1565c0</code> headers
+- green <code>#4caf50</code> ALLOW badges, red <code>#d32f2f</code> DENY badges
+- slate steel <code>#455a64</code> for policy text
+- responsive: panels collapse to a vertical stack below 700px viewport</p>
+<p><strong>Setup details:</strong>
+- <code>setup()</code> begins with <code>updateCanvasSize();</code>
+- <code>canvas.parent(document.querySelector('main'));</code>
+- All controls are created with p5.js builtin functions (createSelect, createButton)
+- Resize event re-flows the panel grid</p>
+<p>Implementation: p5.js sketch with a small policy-engine in JavaScript. The policy data lives in <code>data.json</code> so instructors can edit subjects, objects, and policies without touching the sketch.</p>
+</details>
+<h2 id="6-file-permissions-in-practice">6. File Permissions In Practice<a class="headerlink" href="#6-file-permissions-in-practice" title="Permanent link">&para;</a></h2>
+<p>The most familiar instance of DAC is the classical Unix <strong>file permissions</strong> model, which expresses every file's policy in nine bits: read, write, and execute, each repeated for <em>owner</em>, <em>group</em>, and <em>other</em>. A directory listing displays them as <code>rwxr-x---</code>: owner can read/write/execute, group can read/execute, other has no access. Two numeric values control the mapping — the file's <em>owner UID</em> and <em>group GID</em> — and three octal digits encode the permission bits (the familiar <code>chmod 750</code>).</p>
+<p>Three special bits modify the basic model. <strong>setuid</strong> (<code>chmod u+s</code>) makes an executable run with the owner's privileges instead of the caller's — historically used so non-root users could ping or change their password, and historically the source of most local privilege escalation bugs in Unix. <strong>setgid</strong> does the same for group identity, and on directories causes new files to inherit the directory's group. <strong>The sticky bit</strong> on a directory (<code>chmod +t</code>, displayed as <code>t</code> in the other-execute slot) prevents non-owners from deleting files they did not create — used on <code>/tmp</code> so users cannot delete each other's temp files.</p>
+<p>Two newer mechanisms extend the basic model. <strong>Access Control Lists (ACLs)</strong>, accessed via <code>getfacl</code>/<code>setfacl</code>, allow per-user and per-group permissions beyond the single owner+group+other triple — useful when a project needs read access for a half-dozen specific people who don't all share a group. <strong>Capabilities</strong>, used in Linux to break root's monolithic power into ~40 finer-grained privileges (CAP_NET_BIND_SERVICE for binding to ports below 1024, CAP_SYS_ADMIN for many admin operations), let a process drop the privileges it does not need so that a compromise does not yield full root.</p>
+<p>The classical file-permission model is <em>DAC</em>: each file's owner sets policy. It is also <em>coarse</em> — every read either is or is not permitted, with no per-attribute conditions. That coarseness is exactly why high-assurance Linux systems layer SELinux or AppArmor on top of file permissions, and why containers further constrain what a process can do regardless of what its UID would imply.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">World-Writable Files Are A Persistent Footgun</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+A <code>chmod 777</code> on a script that root will later run is the classic local-escalation foothold. Any user can replace the script's contents; root will then execute the attacker's code. The pattern looks fine in development ("just give it permission"), survives review because nothing breaks, and remains a footgun until exploited. Default file modes should be 644 for data and 755 for executables, never 777.</p>
+</div>
+<h2 id="7-selinux-and-apparmor-mac-on-linux">7. SELinux and AppArmor — MAC On Linux<a class="headerlink" href="#7-selinux-and-apparmor-mac-on-linux" title="Permanent link">&para;</a></h2>
+<p>The two production-grade Linux MAC implementations take different paths to the same destination: enforcing system-defined policy regardless of file owner.</p>
+<p><strong>SELinux (Security-Enhanced Linux)</strong> was originally developed by the U.S. NSA and is the default MAC layer on Red Hat, Fedora, CentOS Stream, and Android. SELinux uses <em>type enforcement</em>: every process and every file is labeled with a <em>type</em> (a short string like <code>httpd_t</code> or <code>var_log_t</code>), and the policy is a long list of "allow" rules stating which subject-type may perform which operation on which object-type. Out of the box, the targeted policy ships rules for hundreds of common services (Apache, MySQL, sshd, systemd) — so a compromised Apache process can only read <code>httpd_sys_content_t</code> files and cannot touch <code>/etc/shadow</code>, even though Apache runs as root in some configurations.</p>
+<p>SELinux has earned a reputation for being hard to administer. The policy language is dense, error messages are terse ("avc: denied"), and the friction of writing custom policy for a new application is real. The tooling has improved (audit2allow generates suggested rules from denial messages, semanage simplifies common edits), but operating SELinux at scale still requires a dedicated engineer's attention.</p>
+<p><strong>AppArmor</strong> was developed by Immunix and is the default MAC layer on Ubuntu, openSUSE, and Debian. AppArmor's central concept is the <em>profile</em>: a per-program file in <code>/etc/apparmor.d/</code> listing the paths the program is allowed to read, write, or execute. AppArmor is <em>path-based</em> (rather than label-based), which makes profiles easier to read and write — they look like a list of file paths with permission letters — but it also makes them more fragile to symlinks and bind mounts that change what a path resolves to.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>SELinux</th>
+<th>AppArmor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy model</td>
+<td>Type enforcement (labels on every object)</td>
+<td>Path-based profiles per program</td>
+</tr>
+<tr>
+<td>Default on</td>
+<td>Red Hat / Fedora / Android</td>
+<td>Ubuntu / openSUSE / Debian</td>
+</tr>
+<tr>
+<td>Granularity</td>
+<td>Very fine (hundreds of types, tens of thousands of rules)</td>
+<td>Per-program, file-path-scoped</td>
+</tr>
+<tr>
+<td>Learning curve</td>
+<td>Steep</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Common failure mode</td>
+<td>Mislabeled files after restore from backup</td>
+<td>Profile bypass via unanticipated path</td>
+</tr>
+</tbody>
+</table>
+<p>Both systems support <em>enforcing</em>, <em>permissive</em> (logs denials but does not block — useful for debugging), and <em>disabled</em> modes. The presence of MAC is a strong defense-in-depth control: even if an attacker exploits a service to gain its UID, MAC bounds what that UID can do to a small subset of the filesystem. The most common MAC failure in practice is not bypass — it is administrators putting the system in permissive mode "to fix something" and forgetting to re-enable it.</p>
+<h4 id="diagram-layers-of-access-control-on-a-modern-linux-box">Diagram: Layers of Access Control on a Modern Linux Box<a class="headerlink" href="#diagram-layers-of-access-control-on-a-modern-linux-box" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Stacked-layer diagram showing how DAC, capabilities, and MAC compose for one access decision</summary>
+<p>Type: drawing
+<strong>sim-id:</strong> linux-ac-layers<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A vertical flow showing a single <code>read(/etc/shadow)</code> syscall traveling through each access-control gate.</p>
+<p>Top to bottom:
+1. <strong>Process</strong> (white box, top): "httpd, UID=apache, current AppArmor profile: usr.sbin.apache2"
+2. Arrow labeled <code>read("/etc/shadow")</code> going down
+3. <strong>DAC check</strong> (light blue box): "Is UID <code>apache</code> in shadow's owner/group, or does it have read for other? <code>/etc/shadow</code> is <code>0640 root:shadow</code> — DAC: DENY for non-root non-shadow."
+4. <strong>Capability check</strong> (cyan box): "Does process hold <code>CAP_DAC_READ_SEARCH</code>? No. Skip."
+5. <strong>MAC check</strong> (cybersecurity blue box): "Is <code>httpd_t</code> allowed to read <code>shadow_t</code>? Policy: NO. MAC: DENY."
+6. <strong>Result</strong> (red box): "EACCES — read denied. Logged in audit.log."</p>
+<p>A side note in slate steel: "Even one DENY is enough; checks are AND-composed. If DAC permits but MAC denies, MAC wins."</p>
+<p>Alongside the diagram, a small alternate path shown to the right where DAC permits a <code>read("/var/www/html/index.html")</code> and the process does hold the right MAC label, leading to a green ALLOW result.</p>
+<p>Color: cybersecurity blue <code>#1565c0</code> for MAC layer, slate steel <code>#455a64</code> for capability layer, light blue <code>#e3f2fd</code> for DAC layer, red <code>#d32f2f</code> for DENY, green <code>#4caf50</code> for ALLOW. Responsive: vertical orientation on narrow screens.</p>
+<p>Implementation: Mermaid flowchart TD with custom node styling.</p>
+</details>
+<h2 id="8-virtualization-and-hypervisor-security">8. Virtualization and Hypervisor Security<a class="headerlink" href="#8-virtualization-and-hypervisor-security" title="Permanent link">&para;</a></h2>
+<p>A <strong>virtual machine (VM)</strong> is an emulated computer running its own operating system on top of a host. A <strong>hypervisor</strong> is the software layer that creates and manages VMs, mapping each VM's virtual hardware to a slice of the host's real hardware. <strong>Virtualization security</strong> is the practice of keeping each VM convinced it has a private machine, while preventing any VM (or the workloads inside it) from breaking out to affect the host or other guests.</p>
+<p>Hypervisors come in two architectural flavors. <strong>Type 1 ("bare metal") hypervisors</strong> — VMware ESXi, Microsoft Hyper-V, KVM, Xen — run directly on hardware and are the foundation of every cloud provider's compute service. <strong>Type 2 ("hosted") hypervisors</strong> — VirtualBox, VMware Workstation — run as an application on a host OS and are typical for developer machines. Type 1 hypervisors have a smaller attack surface because they do not include a general-purpose host OS underneath them; type 2 hypervisors inherit whatever vulnerabilities the host OS has.</p>
+<p><strong>Hypervisor security</strong> centers on a single threat: <em>VM escape</em>, where code inside a guest exploits a bug in the hypervisor or in emulated hardware to execute on the host or in another guest. VM escape is rare but devastating — a single such bug in a public cloud lets one tenant read another tenant's data. Notable historical examples include CVE-2015-3456 (the "VENOM" floppy-controller bug in QEMU/KVM), various Xen privilege-escalation issues, and a long tail of bugs in emulated USB and network controllers. The mitigations are: minimize the hypervisor's attack surface (disable unused emulated devices), patch promptly, use hardware-assisted virtualization (Intel VT-x, AMD-V) which moves much of the isolation into silicon, and consider tenant isolation strategies (dedicated hosts, single-tenant clusters) for the most sensitive workloads.</p>
+<p>A second concern is <strong>side-channel attacks across VMs sharing a CPU</strong>. The same Spectre/Meltdown family of issues that crosses process boundaries also crosses VM boundaries, because the cache and branch predictor are shared at the silicon level. Cloud providers mitigate with microcode updates, scheduler awareness (avoid co-tenanting hostile workloads on the same physical core), and — for the highest-assurance workloads — confidential computing technologies (Intel SGX, AMD SEV, Intel TDX) that encrypt VM memory in a way the hypervisor itself cannot read.</p>
+<h4 id="diagram-hypervisor-architecture-and-the-trust-boundary">Diagram: Hypervisor Architecture and the Trust Boundary<a class="headerlink" href="#diagram-hypervisor-architecture-and-the-trust-boundary" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Stacked architecture showing Type 1 vs. Type 2 hypervisors and the VM-escape threat model</summary>
+<p>Type: drawing
+<strong>sim-id:</strong> hypervisor-architecture<br/>
+<strong>Library:</strong> Static SVG<br/>
+<strong>Status:</strong> Specified</p>
+<p>Two stacks shown side by side.</p>
+<p><strong>Left stack — Type 1 (Bare Metal):</strong>
+- Top: 3 VM boxes side-by-side, each labeled "Guest OS + Apps" with light-blue fill
+- Below: a single wide cybersecurity-blue band labeled "Hypervisor (ESXi / KVM / Hyper-V)"
+- Bottom: a gray hardware band labeled "CPU / RAM / NIC / Disk"
+- A red dashed arrow labeled "VM escape" going from one VM down through the hypervisor to the hardware band, with a "?" mark — the threat to mitigate</p>
+<p><strong>Right stack — Type 2 (Hosted):</strong>
+- Top: 2 VM boxes labeled "Guest OS"
+- Below: a slate band labeled "Hypervisor (VirtualBox / VMware Workstation)"
+- Below that: a wider band labeled "Host OS (Windows / macOS / Linux)"
+- Bottom: gray hardware band
+- Annotation: "Larger attack surface — host OS bugs can affect all guests."</p>
+<p>Captions:
+- Above the left stack: "Type 1: hypervisor on hardware. Cloud providers use this."
+- Above the right stack: "Type 2: hypervisor as application. Developers use this."</p>
+<p>Color: cybersecurity blue <code>#1565c0</code> for Type 1 hypervisor band, slate steel for Type 2 hypervisor band, light blue for VMs, gray for hardware, red dashed for the escape arrow.</p>
+<p>Responsive: stacks render side-by-side at &gt;800px and stack vertically below.</p>
+<p>Implementation: Static SVG.</p>
+</details>
+<h2 id="9-containers-lighter-isolation-different-tradeoffs">9. Containers — Lighter Isolation, Different Tradeoffs<a class="headerlink" href="#9-containers-lighter-isolation-different-tradeoffs" title="Permanent link">&para;</a></h2>
+<p>A <strong>container</strong> is an isolated process group on a single host kernel, made to look (from the inside) like its own machine. Where a VM virtualizes the hardware and runs a full guest kernel, a container shares the host kernel and uses kernel features — namespaces, cgroups, capabilities, seccomp filters — to give the contained process a partial, restricted view. Containers start in milliseconds, weigh megabytes instead of gigabytes, and have become the default packaging unit for cloud-native workloads.</p>
+<p><strong>Container security</strong> is the practice of getting the right amount of isolation out of those kernel features for a workload that you may or may not fully trust. The headline tradeoff is well known: containers offer <em>lighter</em> isolation than VMs, because all containers on a host share one kernel — and any kernel privilege-escalation bug is a potential container-escape primitive. For most workloads (your own services in your own infrastructure), this tradeoff is fine; for hostile multi-tenant workloads, it is not enough on its own and is typically wrapped in a VM or a sandboxed runtime (gVisor, Kata Containers, Firecracker).</p>
+<p>The kernel features that compose into "a container" are:</p>
+<ul>
+<li><strong>Namespaces</strong> — give the container its own view of PIDs, network interfaces, mount points, user/group IDs, and IPC. Namespaces are why <code>ps</code> inside a container shows only the container's processes.</li>
+<li><strong>cgroups (control groups)</strong> — bound how much CPU, memory, I/O, and process count the container can consume. Without cgroups a container could fork-bomb the host.</li>
+<li><strong>Capabilities</strong> — drop dangerous Linux capabilities (CAP_SYS_ADMIN, CAP_NET_RAW, CAP_SYS_PTRACE) that the container does not need.</li>
+<li><strong>seccomp filters</strong> — restrict which system calls the container can issue, reducing the kernel attack surface from hundreds of syscalls to dozens.</li>
+<li><strong>MAC profiles</strong> — apply an SELinux type or AppArmor profile to further bound what the container can touch on the host filesystem.</li>
+</ul>
+<p>These are not optional layers; a "container" with namespaces but no capability dropping, no seccomp, no MAC, and no read-only root filesystem is roughly as isolated as a <code>chroot</code> jail — which is to say, not very. Production container security means turning on every layer that does not break the workload.</p>
+<h3 id="91-docker-security">9.1 Docker Security<a class="headerlink" href="#91-docker-security" title="Permanent link">&para;</a></h3>
+<p><strong>Docker</strong> is the most widely deployed container engine and the source of the "container" mental model most engineers have. <strong>Docker security</strong> considerations cluster into four buckets, each of which is a frequent finding in production audits.</p>
+<p><strong>Image security.</strong> A Docker image is a stack of filesystem layers, ultimately based on some base image. Vulnerabilities in base images, libraries inside images, or in the application binaries are inherited by every container that runs from them. Practical hygiene: use minimal base images (distroless, Alpine, scratch), scan images with a tool like Trivy, Grype, or Snyk, sign and verify images (Cosign, Notary), and rebuild promptly when CVEs are disclosed against base images.</p>
+<p><strong>Runtime security.</strong> A running container should drop privileges aggressively: never run as root inside the container if you can avoid it (use <code>USER</code> directive in Dockerfile), drop all Linux capabilities and add back only what's needed (<code>--cap-drop=ALL --cap-add=NET_BIND_SERVICE</code>), use a read-only root filesystem (<code>--read-only</code>), apply seccomp and AppArmor/SELinux profiles, and never run with <code>--privileged</code> (which disables almost every isolation feature). The most consequential Docker footgun is mounting the Docker socket (<code>/var/run/docker.sock</code>) into a container — a process inside the container can then issue Docker API calls and trivially launch a privileged container that escapes.</p>
+<p><strong>Registry and supply chain security.</strong> Images come from registries; registries can be compromised, mirrors can be poisoned, and <code>latest</code> tags can drift. Pin images by digest (<code>@sha256:...</code>) for production, run a private registry with strict push controls, and keep an SBOM (software bill of materials) for every shipped image.</p>
+<p><strong>Host security.</strong> The Docker daemon runs as root and has full access to the host. Anyone who can talk to the Docker socket has effective root on the host. Restrict socket access to a small admin group, never expose the daemon's TCP API without TLS and client certificate authentication, and consider rootless Docker for developer machines.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Two Defaults That Are Footguns</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+Two Docker patterns look fine and aren't. (1) Mounting <code>/var/run/docker.sock</code> into a container that "needs to launch other containers" — that container can now launch a <code>--privileged</code> sibling and pivot to host root. (2) Running as root inside a container "because the build is simpler" — most container escapes that work require root inside. Default to a non-root <code>USER</code>, drop the socket, and only relax when you have written down why.</p>
+</div>
+<h3 id="92-kubernetes-security">9.2 Kubernetes Security<a class="headerlink" href="#92-kubernetes-security" title="Permanent link">&para;</a></h3>
+<p><strong>Kubernetes</strong> is the dominant container orchestration platform: it schedules containers across a cluster of hosts, gives them networking, manages their lifecycle, and exposes a declarative API for the whole thing. <strong>Kubernetes security</strong> inherits all of Docker's security concerns and adds several new ones at the cluster level.</p>
+<p>The Kubernetes attack surface is large because the cluster is a <em>distributed system</em> with several privileged components: the API server (the cluster's brain, exposes a REST API), etcd (the cluster's database, holds all state including secrets), the scheduler, the controller manager, the kubelet on every node, and an ingress and CNI plugin layer. Each is a potential point of compromise; collectively they are why Kubernetes has its own security guidance from CIS, NSA, and most cloud providers.</p>
+<p>The five most consequential Kubernetes security controls in practice are:</p>
+<ul>
+<li><strong>RBAC</strong> — Kubernetes ships with first-class Role-Based Access Control. Every API request is authenticated (usually by a service account or human user) and authorized against <code>Role</code> and <code>ClusterRole</code> definitions. The default service account in a namespace should <em>not</em> have cluster-admin permissions; the principle of least privilege says each workload should have its own service account with the minimum required API access.</li>
+<li><strong>Pod Security Standards (Restricted, Baseline, Privileged)</strong> — replace the deprecated PodSecurityPolicy and bound what pods can do at admission time: forbid privileged containers, forbid host network/PID/IPC, require non-root users, require seccomp profiles. The Restricted profile is the right default for application namespaces.</li>
+<li><strong>Network Policies</strong> — by default, all pods in a Kubernetes cluster can talk to all other pods. NetworkPolicy resources let you write allow-lists ("frontend may talk to backend on port 8080; nothing else may talk to backend"), implementing the network segmentation that microservice architectures otherwise lack. Without network policies, one compromised pod has lateral access to every other workload.</li>
+<li><strong>Secrets management</strong> — Kubernetes Secrets are base64-encoded by default in etcd and accessible to any pod with the right RBAC binding. Production deployments encrypt secrets at rest in etcd, restrict secret access via RBAC, and increasingly externalize secrets to a dedicated secret manager (HashiCorp Vault, AWS Secrets Manager, GCP Secret Manager) accessed via short-lived tokens.</li>
+<li><strong>Admission controllers</strong> — pluggable policy enforcement at API request time, increasingly via OPA Gatekeeper or Kyverno. Admission policies enforce organizational rules ("no images from outside our registry", "every workload must have CPU/memory limits", "no <code>hostPath</code> mounts") at the moment they would otherwise become a running workload.</li>
+</ul>
+<p>The Kubernetes failure modes that lead to real incidents tend to cluster: an exposed dashboard with no authentication, a service account binding that grants <code>cluster-admin</code> to a workload that did not need it, a network policy that does not exist so a compromised pod can reach the cloud metadata service and steal IAM credentials, and secrets stored in environment variables (visible in <code>kubectl describe</code>) rather than mounted with restricted permissions. None of these are exotic; all are routine findings.</p>
+<h4 id="microsim-container-isolation-strength-comparator">MicroSim: Container Isolation Strength Comparator<a class="headerlink" href="#microsim-container-isolation-strength-comparator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive simulator comparing the isolation strength of chroot, Docker, hardened Docker, and a VM</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> container-isolation-comparator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective (Bloom: Evaluating):</strong> Given a hypothetical workload (trusted, semi-trusted, hostile multi-tenant), learners select an isolation level and evaluate whether each available threat — host filesystem access, kernel exploit, sibling-container interference, hardware side channel — is mitigated.</p>
+<p><strong>Layout (700 × 540 canvas, responsive):</strong></p>
+<ul>
+<li>Top control row:</li>
+<li>"Isolation level:" select (createSelect) — chroot, Docker (default), Docker (hardened: non-root, drop-caps, seccomp, MAC), VM (KVM), VM + confidential computing</li>
+<li>"Workload trust:" select — fully trusted, semi-trusted, hostile multi-tenant</li>
+<li>"Run threat suite" button (createButton)</li>
+<li>Center: a vertical list of five threat scenarios:</li>
+<li>"Container reads <code>/etc/shadow</code> on host"</li>
+<li>"Container exploits a kernel CVE for LPE"</li>
+<li>"Container A reads memory of Container B (cache side channel)"</li>
+<li>"Container reaches AWS metadata service at 169.254.169.254"</li>
+<li>"Compromised container modifies the orchestrator API"</li>
+<li>For each scenario, a colored badge appears: green "blocked", amber "mitigated with caveats", red "feasible"</li>
+<li>Right side: a "Verdict" panel that recommends whether the chosen isolation is appropriate for the chosen workload</li>
+</ul>
+<p><strong>Behavior:</strong>
+- Each combination of isolation level + workload trust produces a deterministic threat-evaluation table
+- A "Why?" hover on each badge shows a one-sentence rationale tied to a concept from the chapter (namespaces, seccomp, hardware-assisted virtualization, etc.)
+- A "Reset" button (createButton) restores defaults</p>
+<p><strong>Visual style:</strong>
+- cybersecurity blue <code>#1565c0</code> headers and section borders
+- green <code>#4caf50</code>, amber <code>#ffa000</code>, red <code>#d32f2f</code> badges
+- slate steel <code>#455a64</code> rationale text
+- responsive: threat list collapses to two columns above 900px, single column below</p>
+<p><strong>Setup details:</strong>
+- <code>setup()</code> begins with <code>updateCanvasSize();</code>
+- <code>canvas.parent(document.querySelector('main'));</code>
+- All controls are p5.js builtins</p>
+<p>Implementation: p5.js sketch with isolation-level → threat-mitigation matrix in <code>data.json</code>. Instructors can extend with new scenarios by editing the JSON.</p>
+</details>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Containers Reward A Layered Mental Model</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering encouragement">
+The container ecosystem can feel like an avalanche of acronyms — namespaces, cgroups, seccomp, AppArmor, RBAC, NetworkPolicy, Pod Security Standards. Hold onto one thread: each one closes a different escape path, and you turn them all on for the same reason — defense in depth. You do not have to memorize every flag at once. Recognize what each layer is doing, and the rest follows.</p>
+</div>
+<h2 id="10-putting-it-together-a-defensible-system">10. Putting It Together — A Defensible System<a class="headerlink" href="#10-putting-it-together-a-defensible-system" title="Permanent link">&para;</a></h2>
+<p>A modern hardened Linux server running a containerized application stacks every concept in this chapter at once. From the bottom up:</p>
+<ol>
+<li><strong>Hardware and firmware</strong> verify a signed boot chain, anchoring trust before any software runs (Chapter 7's territory, but it begins here).</li>
+<li><strong>The kernel</strong> boots in privileged mode with KASLR, SMEP/SMAP, and module signing on. Its system-call surface is reduced where possible.</li>
+<li><strong>Memory protections</strong> (DEP, ASLR, stack canaries, control-flow integrity) raise the cost of exploiting any memory-safety bug in user-space code.</li>
+<li><strong>DAC file permissions</strong> give every file a sensible owner and mode; no <code>chmod 777</code> survived review.</li>
+<li><strong>Linux capabilities</strong> replace monolithic root with finer-grained privileges that services drop after binding their ports.</li>
+<li><strong>MAC</strong> (SELinux or AppArmor) bounds what each service type can do on the filesystem, even if it runs as root.</li>
+<li><strong>Containers</strong> wrap the application in namespaces, cgroups, dropped capabilities, seccomp, and a MAC profile — adding another envelope around the workload.</li>
+<li><strong>Kubernetes</strong> schedules the container with a least-privilege service account, a Restricted Pod Security Standard, a network policy that allows only the connections the service needs, and admission controls that enforce organizational policy.</li>
+<li><strong>A hypervisor</strong> below the host kernel isolates this whole stack from the other tenants on the same physical machine.</li>
+</ol>
+<p>Every layer is doing exactly one job; together they form the defense-in-depth posture that no single layer can provide. When an attacker finds a bug in any one of them — and they will — the next layer up is what determines whether the bug becomes an incident or stays an interesting log entry.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read the security posture of a Linux system end-to-end: kernel hardening, the three foundational memory protections, the four access-control models and where each fits, the difference between SELinux and AppArmor, and how containers and VMs trade isolation strength for performance. The next chapter takes this stack to the cloud and folds in the monitoring layer that watches it operate.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The kernel is the most privileged code on the machine.</strong> Every other security control rests on it being correct. Reduce its attack surface, sign its modules, and patch it.</li>
+<li><strong>Process isolation rests on virtual address spaces, file-descriptor tables, and the user/kernel privilege boundary.</strong> Side channels can still cross even hard boundaries.</li>
+<li><strong>Memory protections — DEP, ASLR, stack canaries — do not eliminate memory bugs; they raise the cost of exploiting them.</strong> Use them all; they compose.</li>
+<li><strong>Four access-control models cover almost everything:</strong> DAC (owner-set, classic Unix), MAC (system-set, defense-grade), RBAC (role-based, enterprise-friendly), ABAC (attribute-based, expressive). Most real systems mix them.</li>
+<li><strong>Linux file permissions are DAC.</strong> SELinux and AppArmor add a MAC layer on top; the two MAC implementations differ in policy model (labels vs. paths) but serve the same goal.</li>
+<li><strong>Hypervisors give strong isolation at higher cost; containers give lighter isolation at lower cost.</strong> VM escape is rare but devastating; container escape is more feasible and is the threat model containers are designed against.</li>
+<li><strong>Containers are not one feature.</strong> They are a composition of namespaces, cgroups, capabilities, seccomp, and MAC. A container with any of those layers off is much weaker than one with all on.</li>
+<li><strong>Kubernetes adds cluster-level concerns</strong> — RBAC, Pod Security Standards, NetworkPolicy, secrets management, admission control — and most real Kubernetes incidents trace to one of these being misconfigured rather than to a novel exploit.</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

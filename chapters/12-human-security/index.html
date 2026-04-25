@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Centers on the people in the system: identity and access management, authentication mechanisms, federated identity, social engineering, usable security, insider threat, and privacy engineering.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>12. Human Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Human Security: Identity, Authentication, and Social Engineering - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Human Security
+              Human Security: Identity, Authentication, and Social Engineering
             
           </span>
         </div>
@@ -748,6 +748,198 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-human-security-is-its-own-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Human Security Is Its Own Discipline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-identity-and-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Identity and Access Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Identity and Access Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-iam-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IAM Request Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-single-sign-on-and-federated-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Single Sign-On and Federated Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-authentication-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Authentication Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Authentication Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-password-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Password Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-multi-factor-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Multi-Factor Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-biometric-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Biometric Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-fido2-and-passkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 FIDO2 and Passkeys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 FIDO2 and Passkeys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-authentication-mechanism-strength-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Authentication Mechanism Strength Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-federation-protocols-saml-oauth-20-and-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Federation Protocols: SAML, OAuth 2.0, and OIDC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-social-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Social Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Social Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-phishing-email-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Phishing Email Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-usable-security-and-awareness-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Usable Security and Awareness Training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-insider-threat-and-privilege-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Insider Threat and Privilege Lifecycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-privacy-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Privacy Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Privacy Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-privacy-engineering-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Privacy Engineering Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1275,198 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-human-security-is-its-own-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Human Security Is Its Own Discipline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-identity-and-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Identity and Access Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Identity and Access Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-iam-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IAM Request Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-single-sign-on-and-federated-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Single Sign-On and Federated Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-authentication-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Authentication Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Authentication Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-password-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Password Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-multi-factor-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Multi-Factor Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-biometric-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Biometric Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-fido2-and-passkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 FIDO2 and Passkeys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 FIDO2 and Passkeys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-authentication-mechanism-strength-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Authentication Mechanism Strength Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-federation-protocols-saml-oauth-20-and-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Federation Protocols: SAML, OAuth 2.0, and OIDC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-social-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Social Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Social Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-phishing-email-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Phishing Email Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-usable-security-and-awareness-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Usable Security and Awareness Training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-insider-threat-and-privilege-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Insider Threat and Privilege Lifecycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-privacy-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Privacy Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Privacy Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-privacy-engineering-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Privacy Engineering Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1151,13 +1535,319 @@
 <li><a href="../11-cloud-and-ops-monitoring/">Chapter 11: Cloud Security and Operations Monitoring</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Human Layer</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. Up to now we have hardened code, networks, and systems against adversaries who attack machines. This chapter turns to the layer those machines exist to serve — the people. Identity, authentication, and the social games adversaries play to bypass technical controls live here. Trust, but verify, and remember that the verifier is usually a tired human at a screen.</p>
+</div>
+<h2 id="1-why-human-security-is-its-own-discipline">1. Why Human Security Is Its Own Discipline<a class="headerlink" href="#1-why-human-security-is-its-own-discipline" title="Permanent link">&para;</a></h2>
+<p>Most of this textbook treats security as a property of code, networks, and systems. Real attackers, however, do not always have to break the technical stack. They often go around it, by convincing a human to do the breaking for them. The 2020 Twitter incident — in which a teenager talked his way to admin tools and hijacked celebrity accounts — was not a software vulnerability. The 2022 Uber breach was a contractor whose multi-factor prompts were spammed until he tapped "approve." The 2023 MGM Resorts outage began with a 10-minute LinkedIn-and-helpdesk phone call. These are <em>human-layer</em> failures, and they require their own threat models, controls, and habits of mind.</p>
+<p>This chapter studies that layer in three movements. The first is <em>identity and access management</em> — how systems decide who someone is and what they may do. The second is <em>authentication</em> — the specific mechanisms (passwords, MFA, biometrics, passkeys) by which a human or machine proves a claim of identity. The third is <em>adversarial human behavior</em> — social engineering attacks, the cognitive biases they exploit, and the principles of usable security and privacy engineering that make attacks harder and good behavior easier.</p>
+<p>The pervasive theme is that humans are not the weakest link to be blamed and trained around. They are participants in a sociotechnical system. When users make insecure choices, the system has usually given them no easy secure choice. Defensible design fixes the system.</p>
+<h2 id="2-identity-and-access-management">2. Identity and Access Management<a class="headerlink" href="#2-identity-and-access-management" title="Permanent link">&para;</a></h2>
+<p>Two related but distinct problems sit at the foundation of human security. <strong>Identity management</strong> is the discipline of representing, provisioning, and lifecycle-managing the digital identities of users, services, and devices in an organization. <strong>Access management</strong> is the discipline of deciding, at runtime, what those identities are allowed to do. Together they answer two questions every request must answer: <em>who are you?</em> and <em>are you allowed to do this?</em></p>
+<p>An <strong>IAM system</strong> is the integrated platform that handles both. A modern IAM system stores user records (usually in a directory like Active Directory, LDAP, or a cloud identity provider such as Okta, Microsoft Entra ID, or AWS IAM Identity Center), enforces authentication policies, issues tokens that carry identity claims, and integrates with downstream applications to enforce authorization decisions. The IAM system is one of the most security-critical pieces of infrastructure an organization owns: an attacker with control of the IAM is an attacker with control of every application that trusts it.</p>
+<p>Before we examine how an IAM system fits into a request flow, let us define three terms that will recur. An <strong>identity provider</strong> (IdP) is the service that authenticates a user and issues a token attesting to the result. A <strong>service provider</strong> (SP), sometimes called a <strong>relying party</strong> (RP), is the application that consumes the token and decides what the user may do. A <strong>claim</strong> is a statement inside the token — <em>this user is alice@example.com</em>, <em>this user is in the engineering group</em>, <em>this token was issued at 14:02 UTC</em>.</p>
+<h4 id="diagram-iam-request-flow">Diagram: IAM Request Flow<a class="headerlink" href="#diagram-iam-request-flow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>End-to-end flow showing user, identity provider, and service provider exchanging an identity token</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> iam-request-flow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal sequence diagram with four lanes: User, Browser/Client, Identity Provider (IdP), Service Provider (SP).</p>
+<ol>
+<li>User → Browser: Visits SP application URL.</li>
+<li>Browser → SP: GET /protected-resource (no session).</li>
+<li>SP → Browser: 302 redirect to IdP with an authentication request.</li>
+<li>Browser → IdP: Authentication request.</li>
+<li>IdP ↔ User: Prompts for credentials (password + MFA).</li>
+<li>IdP → Browser: Issues signed identity token; redirects back to SP.</li>
+<li>Browser → SP: Presents identity token.</li>
+<li>SP: Verifies token signature, extracts claims (user id, groups, expiry).</li>
+<li>SP → Browser: Returns the protected resource.</li>
+</ol>
+<p>Annotations on the side: "IdP authenticates. SP authorizes. The token is the only thing the SP trusts about who the user is — so its signature, expiry, and audience all matter."</p>
+<p>Color: cybersecurity blue (#1565c0) for IdP lane, slate (#455a64) for SP lane, white for user/browser. Responsive: vertical stacking under 700px viewport.</p>
+<p>Implementation: Mermaid sequenceDiagram with custom theme colors.</p>
+</details>
+<p>The IAM system is also responsible for the <em>lifecycle</em> of an identity: provisioning a new account when an employee joins, updating group memberships when they change roles, and — most importantly — deprovisioning the account when they leave. The phrase <strong>privilege creep</strong> describes what happens when this lifecycle is broken. Over time, a long-tenured employee accumulates entitlements from every project they touched, and nobody removes the ones they no longer need. After ten years, the employee has standing access to systems and data far beyond what their current role requires. If their account is compromised, the blast radius is the union of everything they have ever worked on. The structural fix is <em>attestation</em> (periodic review where managers confirm or remove each entitlement) plus <em>just-in-time access</em> (granting privilege only for the duration of a specific task), which we revisit later.</p>
+<h2 id="3-single-sign-on-and-federated-identity">3. Single Sign-On and Federated Identity<a class="headerlink" href="#3-single-sign-on-and-federated-identity" title="Permanent link">&para;</a></h2>
+<p>If every application maintained its own user database and password file, two things would happen. Users would face the <strong>password fatigue</strong> problem — too many passwords to remember, leading to reuse across sites, which is the most reliable way for a breach at one service to propagate to another. And administrators would face an offboarding nightmare — a departing employee's account has to be disabled in every application separately, with high probability that one is missed.</p>
+<p><strong>Single sign-on</strong> (SSO) is the solution: a user authenticates once to a central identity provider, and that authentication is carried (via short-lived signed tokens) to every application the user accesses. The user types one password and one MFA code per workday; the applications never see the password at all. From a security perspective, SSO is a major win because it concentrates authentication policy in one place where strong controls (MFA, anomaly detection, session monitoring) can be applied uniformly.</p>
+<p><strong>Federated identity</strong> generalizes SSO across organizational boundaries. Instead of just sharing identity within one company's apps, federation lets an identity issued by one organization be trusted by another — <em>Sign in with Google</em> on a third-party site, or a partner company's employees accessing your contractor portal using their employer's identity. Federation runs on cryptographically signed tokens (and on the careful definition of who trusts whom for what). The dominant federation protocols are SAML, OAuth 2.0, and OIDC, which we examine in Section 5.</p>
+<p>The benefits of SSO are real, but the model has one structural property worth naming: SSO concentrates risk. A successful attack on the IdP — credential stuffing the admin account, exfiltrating signing keys, exploiting a federation bug — gives the attacker access to <em>every</em> downstream application. SSO is not a reason to weaken IdP security; it is a reason to invest disproportionately in it.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Concentration as a Design Choice</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Notice that SSO is a deliberate concentration of trust. We exchange "many weak doors" for "one strong door." That is a defensible choice when the strong door is genuinely strong and continuously monitored. It is a catastrophic choice when the IdP is treated as a commodity service. The question is not "should we do SSO?" but "is the IdP getting the security investment a single point of trust deserves?"</p>
+</div>
+<h2 id="4-authentication-mechanisms">4. Authentication Mechanisms<a class="headerlink" href="#4-authentication-mechanisms" title="Permanent link">&para;</a></h2>
+<p>Authentication mechanisms answer the question <em>how does the verifier convince itself that the claimant is who they say they are?</em> The classic taxonomy lists three <strong>authentication factors</strong>:</p>
+<ul>
+<li><strong>Something you know</strong> — a password, PIN, or answer to a security question.</li>
+<li><strong>Something you have</strong> — a hardware token, a phone, a smart card, a cryptographic key on a device.</li>
+<li><strong>Something you are</strong> — a biometric: fingerprint, face, voice, iris.</li>
+</ul>
+<p>A fourth category — <em>something you do</em> (typing rhythm, gait) — is sometimes added under behavioral biometrics. <strong>Multi-factor authentication</strong> (MFA) requires evidence from two or more <em>different</em> categories. Two passwords are not MFA. A password plus a hardware key is.</p>
+<h3 id="41-password-authentication">4.1 Password Authentication<a class="headerlink" href="#41-password-authentication" title="Permanent link">&para;</a></h3>
+<p><strong>Password authentication</strong> is the oldest and still most pervasive mechanism. The user supplies a secret string; the verifier checks it against a stored value. The verifier should never store the password itself. Instead, it stores a salted, slow hash (using a memory-hard function such as Argon2id, scrypt, or bcrypt — never plain SHA-256, and never MD5). On login, the verifier hashes the submitted password with the stored salt and compares. This pattern is covered in Chapter 3 and Chapter 5; here we focus on the policy and human-factor questions.</p>
+<p>A <strong>password policy</strong> is the set of rules the system enforces about what passwords are acceptable: length, character composition, rotation frequency, history (no reuse of recent passwords), and account-lockout behavior on failed attempts. For decades, conventional wisdom was that strong policies meant complex composition rules ("must include uppercase, lowercase, digit, symbol") and frequent rotation ("change every 90 days"). Modern guidance, codified in NIST SP 800-63B, has reversed much of this.</p>
+<p>Before we examine a comparison table, let us define the modern recommendations we will compare against. NIST 800-63B-3 (2017, revised through 2024) recommends: minimum 8 characters with no maximum below 64, no composition rules, no scheduled rotation, screening against a list of known-breached passwords, and rate-limiting failed attempts rather than locking accounts.</p>
+<table>
+<thead>
+<tr>
+<th>Policy element</th>
+<th>Old (NIST 800-63 pre-2017)</th>
+<th>Modern (NIST 800-63B)</th>
+<th>Why the change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum length</td>
+<td>8 characters</td>
+<td>8+ (encourage 15+)</td>
+<td>Length is the dominant strength factor</td>
+</tr>
+<tr>
+<td>Composition rules</td>
+<td>Require upper/lower/digit/symbol</td>
+<td>Disallow no characters</td>
+<td>Complexity rules push users to predictable patterns (<code>Passw0rd!</code>)</td>
+</tr>
+<tr>
+<td>Rotation</td>
+<td>Every 60–90 days</td>
+<td>Only on evidence of compromise</td>
+<td>Forced rotation produces weaker, transformation-based passwords</td>
+</tr>
+<tr>
+<td>Hint / security questions</td>
+<td>Allowed</td>
+<td>Disallowed</td>
+<td>Easily guessable from public information</td>
+</tr>
+<tr>
+<td>Breached-password screening</td>
+<td>Not required</td>
+<td>Required</td>
+<td>Stops credential stuffing from public dumps</td>
+</tr>
+<tr>
+<td>Account lockout</td>
+<td>Hard lockout after N tries</td>
+<td>Rate-limit; optionally CAPTCHA</td>
+<td>Hard lockout is a denial-of-service vector</td>
+</tr>
+</tbody>
+</table>
+<p>The deeper lesson is that password policies should be optimized for <em>resistance to the attacks that actually happen</em> — credential stuffing from breach dumps and online guessing — not for theoretical entropy. A 16-character passphrase the user can remember beats an 8-character random string the user writes on a sticky note.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">MFA Fatigue Is The Modern Footgun</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+Push-notification MFA looks safe and isn't, when an attacker who already has the password can spam approval prompts until a tired user taps "yes." This pattern looks fine and isn't — the structural fix is <em>number matching</em> (the user must type a code shown on the login screen) or moving to phishing-resistant MFA (FIDO2/passkeys), where there is no prompt to mistakenly approve.</p>
+</div>
+<h3 id="42-multi-factor-authentication">4.2 Multi-Factor Authentication<a class="headerlink" href="#42-multi-factor-authentication" title="Permanent link">&para;</a></h3>
+<p><strong>Multi-factor authentication</strong> raises the bar by requiring evidence from at least two factor categories. The factors should be independent: an attacker who phishes the password should not, in the same step, also get the second factor. The MFA mechanisms in widespread use today are not equally strong.</p>
+<p>The main MFA mechanisms, in roughly increasing order of phishing resistance, are:</p>
+<ul>
+<li><strong>SMS one-time codes</strong> — a six-digit code texted to the user's phone. Easy to use, phishable (the user types the code into an attacker's fake site), and vulnerable to SIM-swap attacks where the attacker convinces the carrier to port the number to their device.</li>
+<li><strong>TOTP authenticator apps</strong> (Google Authenticator, Authy, 1Password) — a six-digit code generated on the device from a shared secret and the current time, per RFC 6238. Not susceptible to SIM swap, but still phishable.</li>
+<li><strong>Push-notification MFA</strong> (Duo, Microsoft Authenticator) — the IdP sends an approval prompt to the user's enrolled device. The user taps yes/no. Vulnerable to <em>MFA fatigue</em> (also called <em>prompt bombing</em>) where attackers spam prompts until the user taps yes; mitigated by <em>number matching</em>.</li>
+<li><strong>FIDO2 / WebAuthn</strong> — a hardware key or device-bound key signs a challenge that includes the relying party's origin. The signature only validates against the legitimate site, so a phishing site that proxies the challenge cannot get a usable signature. This is <em>phishing-resistant</em> MFA.</li>
+</ul>
+<h3 id="43-biometric-authentication">4.3 Biometric Authentication<a class="headerlink" href="#43-biometric-authentication" title="Permanent link">&para;</a></h3>
+<p><strong>Biometric authentication</strong> uses something you <em>are</em>: a fingerprint, face geometry, voice, iris, or behavioral pattern. Biometrics are convenient and increasingly accurate, but they have properties no other factor shares. Biometrics cannot be reset — if your fingerprint hash is leaked from a database, you cannot pick a new fingerprint. They are not perfectly secret — your face and fingerprints are on every surface you touch and every photo you appear in. And biometric systems have <em>false-accept</em> and <em>false-reject</em> rates that the operator must tune; the right tradeoff depends on the threat model.</p>
+<p>Modern biometric implementations (Apple Face ID, Windows Hello, Android fingerprint) avoid most of the historical pitfalls by keeping the biometric template inside a secure hardware element on the user's device and using it only as a <em>local unlock</em> for a cryptographic key — the biometric itself never leaves the device, and the server never sees it. This pattern is the foundation of FIDO2 and passkeys.</p>
+<h3 id="44-fido2-and-passkeys">4.4 FIDO2 and Passkeys<a class="headerlink" href="#44-fido2-and-passkeys" title="Permanent link">&para;</a></h3>
+<p><strong>FIDO2</strong> is the family of standards (W3C WebAuthn for the browser API, FIDO CTAP for the device protocol) that defines public-key authentication for the web. The flow is straightforward: when a user registers with a site, the user's device generates a fresh public/private key pair, sends the <em>public</em> key to the site, and stores the private key in a hardware-protected element (a USB security key like YubiKey, or the secure enclave of a phone or laptop). On future logins, the site sends a random challenge; the device signs the challenge (after a local user-presence test, often a fingerprint or PIN); the site verifies the signature against the stored public key.</p>
+<p>A <strong>passkey</strong> is a FIDO2 credential that is <em>synced across the user's devices</em> by the platform's password manager (iCloud Keychain, Google Password Manager, 1Password, etc.) so the user can log in from any of their devices without re-enrolling. Passkeys are the consumer-friendly packaging of FIDO2 — same cryptography, with credential portability built in.</p>
+<p>Two properties make FIDO2/passkeys phishing-resistant. First, the signed challenge includes the relying party's origin (the actual domain of the site the user is on), so a signature obtained on <code>attacker.example</code> is useless against <code>bank.example</code>. Second, the private key never leaves the device, so an attacker who compromises the server only obtains <em>public</em> keys, which are useless for impersonation.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">FIDO2's Mental Model Takes A Few Passes</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering encouragement">
+The FIDO2 flow can feel abstract on first read — keys generated where, signed by what, verified against which origin. Run through the registration and login steps once on a real site (most major providers support it now), and the protocol clicks. The payoff is the strongest authentication primitive currently deployed at consumer scale.</p>
+</div>
+<h4 id="diagram-authentication-mechanism-strength-comparison">Diagram: Authentication Mechanism Strength Comparison<a class="headerlink" href="#diagram-authentication-mechanism-strength-comparison" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive infographic comparing authentication mechanisms across phishing resistance, usability, and recoverability</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> auth-mechanism-comparison<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal bar-chart-style infographic with seven authentication mechanisms (rows): Password only, Password + SMS, Password + TOTP, Password + Push MFA, Password + Push MFA with number match, FIDO2 hardware key, Passkey (synced).</p>
+<p>For each row, three colored bars (segments) show: phishing resistance (red→green), usability (red→green), and account-recovery cost (green→red, where green means easy recovery and red means hard).</p>
+<p>Hovering on a row reveals a tooltip with a one-paragraph summary of the mechanism's strengths, weaknesses, and a representative deployment story (e.g., "TOTP defeats SMS-swap attacks but is still phishable — the user types the code into whatever site asks").</p>
+<p>Controls:
+- Toggle: "Threat model" — switches between <em>opportunistic credential stuffing</em> and <em>targeted spear-phishing</em> views; bar values update.
+- Toggle: "Show recommended for: consumers / enterprise / high-value accounts."</p>
+<p>Learning objective (Bloom level: Evaluating): Students judge the appropriate authentication mechanism for a given threat model and user population, and justify the choice with criteria from the diagram.</p>
+<p>Canvas: 800×500 default, responsive. Color palette uses cybersecurity blue (#1565c0) for primary, slate (#455a64) for borders, traffic-light red/yellow/green for the strength bars.</p>
+<p>Implementation: p5.js with hover-detection on row regions; data driven by a small JS object so values can be updated without redrawing logic. updateCanvasSize() called first in setup().</p>
+</details>
+<h2 id="5-federation-protocols-saml-oauth-20-and-oidc">5. Federation Protocols: SAML, OAuth 2.0, and OIDC<a class="headerlink" href="#5-federation-protocols-saml-oauth-20-and-oidc" title="Permanent link">&para;</a></h2>
+<p>Federation runs on three protocols you will see constantly: SAML, OAuth 2.0, and OIDC. They solve different (overlapping) problems, and confusing them is one of the most common sources of broken IAM designs.</p>
+<p><strong>SAML</strong> (Security Assertion Markup Language, currently version 2.0) is an XML-based federation protocol that originated in the early 2000s. SAML's primary use case is <em>enterprise web SSO</em>: a user authenticates to their organization's IdP, and the IdP issues a signed XML assertion that the SP verifies. SAML is verbose, hard to debug, and its XML signature handling has been a source of historical vulnerabilities (XML Signature Wrapping, XML External Entity attacks). It is, however, deeply entrenched in enterprise software and remains the default for many B2B integrations.</p>
+<p><strong>OAuth 2.0</strong> (RFC 6749 and friends) is an <em>authorization</em> protocol, not an authentication protocol. OAuth 2.0 lets a user grant a third-party application limited access to a resource on their behalf — <em>Spotify wants to read your Google Calendar; do you allow it?</em> — by issuing the third party a short-lived <strong>access token</strong> scoped to specific permissions. OAuth 2.0 deliberately does not specify how the user's identity is conveyed to the application; it specifies how <em>delegated authorization</em> is conveyed.</p>
+<p><strong>OIDC</strong> (OpenID Connect) is the identity layer built on top of OAuth 2.0. OIDC adds an <strong>ID token</strong> — a signed JWT containing claims about the authenticated user (subject, email, issuance time, audience) — to the standard OAuth 2.0 flow, turning OAuth into an authentication protocol. When you click <em>Sign in with Google</em> on a third-party site, you are using OIDC. OIDC is the modern default for new federated authentication designs because it is both well-specified and operationally simpler than SAML.</p>
+<p>Before we examine the comparison table, let us anchor each protocol to a typical use case: SAML for enterprise SSO into legacy SaaS apps; OAuth 2.0 for "let this app access my Calendar without giving it my Google password"; OIDC for "let this app log me in using my Google account."</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th style="text-align: right;">Year</th>
+<th>Encoding</th>
+<th>Purpose</th>
+<th>Common use today</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAML 2.0</td>
+<td style="text-align: right;">2005</td>
+<td>XML</td>
+<td>Authentication + attribute exchange</td>
+<td>Enterprise SSO into SaaS apps</td>
+</tr>
+<tr>
+<td>OAuth 2.0</td>
+<td style="text-align: right;">2012</td>
+<td>JSON</td>
+<td>Delegated authorization</td>
+<td>API access by third-party apps</td>
+</tr>
+<tr>
+<td>OIDC</td>
+<td style="text-align: right;">2014</td>
+<td>JSON (JWT)</td>
+<td>Authentication on top of OAuth 2.0</td>
+<td>Consumer "Sign in with X"; new SSO designs</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that OAuth 2.0 alone does <em>not</em> tell the application who the user is — only what the application is permitted to do. Many real breaches have come from developers using an OAuth access token as if it were proof of identity. OIDC fixes that by adding the ID token. This distinction is one of the single most important things to get right in a modern authentication design.</p>
+<h2 id="6-social-engineering">6. Social Engineering<a class="headerlink" href="#6-social-engineering" title="Permanent link">&para;</a></h2>
+<p>Defensive engineering can produce a hardened technical stack and still lose to a five-minute phone call. <strong>Social engineering</strong> is the discipline (from the attacker's perspective) of manipulating people into taking actions or disclosing information that compromise security. Attackers exploit cognitive shortcuts: authority bias (the caller claims to be IT), urgency (the deadline is in 10 minutes), reciprocity (a small favor first), and the natural human desire to be helpful.</p>
+<p>The major variants of social engineering you must recognize by name are:</p>
+<ul>
+<li><strong>Phishing</strong> — bulk email or messaging that impersonates a trusted entity and lures the recipient to click a link, open an attachment, or enter credentials on a fake site. Bulk phishing trades depth for breadth: the attacker sends millions of messages, accepting a low click-through rate.</li>
+<li><strong>Spear phishing</strong> — targeted phishing aimed at a specific person or small group, using research from LinkedIn, company websites, and prior breaches to make the message highly plausible. A spear-phishing email might reference the target's actual project, manager, or recent travel.</li>
+<li><strong>Pretexting</strong> — establishing a believable false context (the <em>pretext</em>) to extract information or action over multiple interactions, often by phone. The attacker might pose as an auditor, a help-desk technician, or a vendor's account manager and patiently build rapport before asking for the thing they came for.</li>
+<li><strong>Baiting</strong> — leaving a tempting artifact in the target's path: a USB drive in a parking lot, a "free music" download, a too-good-to-miss attachment. Curiosity does the rest.</li>
+<li><strong>Vishing</strong> (voice phishing) and <strong>smishing</strong> (SMS phishing) — the same playbook delivered by phone or text.</li>
+<li><strong>Business Email Compromise</strong> (BEC) — a senior-executive impersonation pattern in which the attacker, often after compromising a real account, instructs accounts payable to wire funds to a new vendor or change a payroll deposit account. BEC is one of the most financially damaging attack categories in current FBI IC3 reporting.</li>
+</ul>
+<h4 id="diagram-phishing-email-anatomy">Diagram: Phishing Email Anatomy<a class="headerlink" href="#diagram-phishing-email-anatomy" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Annotated diagram of a typical spear-phishing email with hover tooltips on each indicator</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> phishing-email-anatomy<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>A rendered mock-up of a phishing email shown in a stylized email-client window. The email impersonates a finance team request to review an invoice. Several hotspots are highlighted with subtle red glow:</p>
+<ol>
+<li><strong>Sender display name</strong> — "Finance Department" but the actual address is <code>finance-dept@finance-securemail.co</code>. Tooltip explains display-name spoofing.</li>
+<li><strong>Greeting</strong> — generic "Dear Colleague" instead of the recipient's name. Tooltip notes that bulk phishing skips personalization while spear phishing nails it.</li>
+<li><strong>Urgency trigger</strong> — "Please review by end of business today to avoid late fee." Tooltip explains how urgency suppresses careful thinking.</li>
+<li><strong>Hyperlink</strong> — visible text reads <code>https://intranet.example.com/invoices/1042</code> but on hover the actual URL is <code>https://intranet-example.invoice-portal.ru/login</code>. Tooltip explains the lookalike-domain pattern.</li>
+<li><strong>Attachment</strong> — <code>Invoice_Q3.html</code> (an HTML file that opens a credential prompt). Tooltip explains why HTML attachments are a common credential-harvesting vector.</li>
+<li><strong>Footer</strong> — corporate-looking signature copied from a real company website. Tooltip explains how attackers source these.</li>
+</ol>
+<p>A toggle at the top switches between "Spot the indicators" mode (hotspots invisible, user must click to find them; score shown) and "Annotated" mode (all hotspots and explanations visible).</p>
+<p>Learning objective (Bloom level: Analyzing): Students decompose a realistic spear-phishing message into its component manipulation techniques and identify the specific signals that should trigger suspicion.</p>
+<p>Canvas: 900×600 default, responsive. Soft drop-shadow window styling; cream background for the email body.</p>
+<p>Implementation: p5.js with rectangular hit-region detection and a small data file mapping hotspot coordinates to explanation text.</p>
+</details>
+<h2 id="7-usable-security-and-awareness-training">7. Usable Security and Awareness Training<a class="headerlink" href="#7-usable-security-and-awareness-training" title="Permanent link">&para;</a></h2>
+<p>If users keep clicking the phishing links, the question is not "how do we punish the users?" but "why is the secure path so much harder than the insecure path?" <strong>Usable security</strong> is the engineering discipline of designing security controls so that the easy thing to do is also the secure thing to do. The phrase comes from a foundational paper by Whitten and Tygar — "Why Johnny Can't Encrypt" — that documented users' inability to use PGP correctly even with motivation and training. The conclusion was not that users are stupid; it was that PGP's interface forced too many security-critical decisions on people without the context to make them.</p>
+<p>Usable security is not a soft topic. It is responsible for some of the largest measurable improvements in real-world security outcomes:</p>
+<ul>
+<li><strong>Browser address-bar redesign</strong> with prominent HTTPS / lock-icon indicators reduced victims of basic credential phishing.</li>
+<li><strong>Password managers</strong> that auto-fill only on the legitimate domain reduce reuse and break a class of credential-phishing attacks structurally.</li>
+<li><strong>Phishing-resistant MFA</strong> (FIDO2) eliminates the user-as-decision-maker for "is this site real?" by tying signatures to origin in the protocol.</li>
+<li><strong>Default-deny</strong> patterns (default-private repositories, default-internal calendar visibility) prevent the most common configuration mistakes by making the safe choice the path of least resistance.</li>
+</ul>
+<p><strong>Security awareness training</strong> is the organizational practice of teaching users to recognize and resist social-engineering attacks. Modern programs are short (5–10 minutes), frequent (monthly), interactive, and paired with simulated phishing campaigns where employees who click receive immediate just-in-time coaching. Training works best when it is calibrated to the actual phishing patterns the organization sees, treats employees as intelligent adults, and is paired with a <em>no-blame, fast-reporting</em> culture — the goal is for an employee who clicks a suspicious link to feel safe reporting it within minutes, not to feel shamed into hiding it.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Train For Reporting, Not Just Recognition</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+The single most useful behavior you can train for is <em>fast, blameless reporting</em>. The first user who clicks the phishing link is rarely the only one who got the email; if they report within five minutes, you can pull the message from every other inbox. If they hide it for fear of being blamed, you find out from the SOC three days later. Design the report button to be one click and the response to be a thank-you.</p>
+</div>
+<h2 id="8-insider-threat-and-privilege-lifecycle">8. Insider Threat and Privilege Lifecycle<a class="headerlink" href="#8-insider-threat-and-privilege-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Not all attackers are external. An <strong>insider threat</strong> is a security risk arising from someone with legitimate access — an employee, contractor, business partner, or anyone whose credentials work <em>by design</em>. Insider threats fall into three rough categories: the <em>malicious insider</em> (deliberate theft or sabotage), the <em>negligent insider</em> (lost laptops, mishandled data), and the <em>compromised insider</em> (a real employee whose account is now in the attacker's hands). The technical controls for the three categories overlap heavily, even though the human dynamics differ.</p>
+<p>The pervasive structural problem is that legitimate access tends to grow. <strong>Privilege creep</strong>, introduced earlier, is the slow accumulation of unneeded entitlements over a career. The combination of long-tenured employees and broad standing access means that any single account compromise can have an enormous blast radius.</p>
+<p>Two structural controls reduce this. The first is <em>periodic access review and attestation</em> — every quarter (or more often for sensitive systems), the IAM system produces a list of each user's entitlements, and managers must explicitly confirm each one is still required. Anything not affirmed is removed. The second is <strong>just-in-time access</strong> — instead of granting standing access to a sensitive resource, the user requests access for a specific task and a specific time window, the request is approved (sometimes automatically, sometimes by a human approver), and the access is automatically revoked when the window expires.</p>
+<p>Just-in-time access is the structural answer to "what is the minimum standing privilege everyone needs?" The answer should be <em>as little as possible</em>, with the rest granted on demand. This is least privilege expressed in the time dimension — and it dramatically shrinks the blast radius of any compromise, because most accounts at most times have only the entitlements needed for routine work.</p>
+<p><strong>User behavior analytics</strong> (UBA), sometimes called UEBA when it includes entities (servers, service accounts), is a complementary detective control. UBA systems build behavioral baselines for each user — typical login hours, typical resources accessed, typical data volumes — and surface deviations. A finance user who suddenly downloads the entire customer database at 2 AM from a country they have never logged in from looks anomalous against their own baseline, even if every individual action is technically permitted. UBA is most useful for catching the compromised-insider case, where the attacker is using legitimate credentials but with abnormal patterns.</p>
+<h2 id="9-privacy-engineering">9. Privacy Engineering<a class="headerlink" href="#9-privacy-engineering" title="Permanent link">&para;</a></h2>
+<p>Security and privacy overlap heavily but are not identical. Security asks <em>who can access this data?</em> Privacy asks <em>should we have collected this data at all, and do the people it concerns understand and consent to how it is used?</em> <strong>Privacy engineering</strong> is the discipline of building systems that handle personal data in ways that respect those questions, by default and at every stage of the data lifecycle.</p>
+<p>The foundational stance is <strong>privacy by design</strong>, articulated by Ann Cavoukian and now codified in regulations such as the EU GDPR. Privacy by design holds that privacy protections should be built into systems from the earliest design phase rather than bolted on after launch, that privacy should be the default setting, and that the system should work for the user without forcing them to actively defend their own privacy.</p>
+<p>The most powerful single practice within privacy by design is <strong>data minimization</strong>. Data minimization means collecting and retaining only the data that is genuinely required for the system's stated purpose, and only for as long as it is needed. The logic is plain: data you do not collect cannot be breached, cannot be subpoenaed, cannot be misused by a future feature, and cannot be fed into a downstream analytics pipeline you have not yet built. Every field on a registration form, every log line written to disk, every metric exported to a third-party analytics service is a privacy decision.</p>
+<p>Privacy engineering, like usable security, is most effective when it is structural. Some examples:</p>
+<ul>
+<li>Ask only for the data the feature requires (no shipping address on a digital-only purchase).</li>
+<li>Default to short retention windows; require an explicit business justification for longer.</li>
+<li>Hash, salt, or tokenize identifiers used for analytics so they cannot be linked back to the individual.</li>
+<li>Architect data access through APIs that return only the fields the caller is authorized to see, rather than handing out full records.</li>
+<li>Prefer client-side processing over server-side when feasible (the data never leaves the user's device).</li>
+<li>Distinguish between <em>purpose limitation</em> (data collected for X is not silently reused for Y) and <em>consent</em> (the user agreed to X in the first place); both are required.</li>
+</ul>
+<h4 id="diagram-privacy-engineering-decision-tree">Diagram: Privacy Engineering Decision Tree<a class="headerlink" href="#diagram-privacy-engineering-decision-tree" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Decision flow for evaluating whether to collect, retain, or share a piece of personal data</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> privacy-decision-tree<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A top-down decision tree that an engineer or privacy reviewer walks through for each proposed data field.</p>
+<p>Root: "Do we need this data for a specific stated purpose?"</p>
+<ul>
+<li>No → "Do not collect."</li>
+<li>Yes → "Can we satisfy the purpose with less identifying data (aggregated, hashed, derived)?"</li>
+<li>Yes → "Use the less-identifying form."</li>
+<li>No → "What is the minimum retention period to satisfy the purpose?"<ul>
+<li>Define retention window → "Is the data shared with third parties?"</li>
+<li>No → "Document purpose, retention, and access controls. Approve."</li>
+<li>Yes → "Is there a data-processing agreement and a lawful basis for sharing?"<ul>
+<li>No → "Stop. Do not share."</li>
+<li>Yes → "Document third-party scope, purpose, and DPA. Approve with annual review."</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Each leaf node has a small annotation linking to the relevant GDPR/CCPA principle (data minimization, purpose limitation, lawful basis, retention limits).</p>
+<p>Color: cybersecurity blue for decision nodes, slate for outcome leaves, alert orange for "Do not collect" / "Stop" leaves. Responsive: collapses to a sequential checklist on narrow viewports.</p>
+<p>Implementation: Mermaid graph TD with custom node classes.</p>
+</details>
+<p>The convergence of privacy and security engineering is one of the major shifts in the field over the last decade. Regulations such as GDPR (2018), CCPA (2020), and the growing patchwork of state laws have made privacy a board-level concern with material penalties. The good news is that the technical controls — strong access management, least privilege, encryption in transit and at rest, careful logging — are largely the same controls security teams already build. The discipline that privacy engineering adds is the relentless habit of asking <em>do we need this data at all?</em> before any of the other controls become relevant.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now reason about the human layer as a designed system: identity lifecycles, authentication mechanisms ranked by phishing resistance, federation protocols and which one to reach for, the social-engineering playbook adversaries actually use, usable-security and privacy-engineering as structural answers rather than training answers, and the lifecycle controls that shrink blast radius. That is the foundation we will build the organizational-security chapter on next.</p>
+</div>
+<h2 id="10-key-takeaways">10. Key Takeaways<a class="headerlink" href="#10-key-takeaways" title="Permanent link">&para;</a></h2>
+<p>The themes of this chapter compose into a small set of operational principles you can carry into design reviews and incident analyses:</p>
+<ul>
+<li><strong>Identity is infrastructure.</strong> The IAM system is the most security-critical service in the organization. Treat it accordingly.</li>
+<li><strong>Concentrate trust deliberately.</strong> SSO and federation concentrate risk in the IdP; that is the right tradeoff if and only if the IdP gets the security investment it deserves.</li>
+<li><strong>Authentication strength is a spectrum, not a checkbox.</strong> Password + SMS is not the same as password + FIDO2. Match the mechanism to the threat model and the value of the asset.</li>
+<li><strong>Phishing-resistant MFA is the structural answer.</strong> FIDO2 / passkeys remove the user from the <em>is this site real?</em> decision by tying signatures to origin in the protocol.</li>
+<li><strong>Social engineering exploits cognition, not technology.</strong> The defense is structural — usable security, default-deny, fast blameless reporting — not just training.</li>
+<li><strong>Privilege creeps; design for it.</strong> Just-in-time access, periodic attestation, and UBA shrink blast radius even when accounts are compromised.</li>
+<li><strong>Privacy by design is data minimization first.</strong> Data you never collected cannot be breached, leaked, or subpoenaed.</li>
+</ul>
+<p>In the next chapter we move from the human layer to the organizational layer: governance, risk, compliance, and the management systems that put the controls of the last twelve chapters into a defensible program.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 

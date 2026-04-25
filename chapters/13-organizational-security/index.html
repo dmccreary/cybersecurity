@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="The management layer of security — GRC, policies, frameworks (NIST CSF, ISO 27001, SOC 2, PCI-DSS, HIPAA), the CISO role, business continuity, third-party risk, security metrics, and the four risk-treatment options.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>13. Organizational Security - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Organizational Security: Governance, Risk, and Compliance - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13. Organizational Security
+              Organizational Security: Governance, Risk, and Compliance
             
           </span>
         </div>
@@ -769,6 +769,285 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-organizational-security-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Organizational Security Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-governance-risk-and-compliance-grc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Governance, Risk, and Compliance (GRC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Governance, Risk, and Compliance (GRC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-grc-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: GRC Relationship
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-policies-standards-and-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Policies, Standards, and Procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-security-frameworks-the-fields-reference-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Security Frameworks — The Field's Reference Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Security Frameworks — The Field's Reference Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-nist-csf-the-common-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 NIST CSF — The Common Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 NIST CSF — The Common Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nist-csf-20-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: NIST CSF 2.0 Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-isoiec-27001-the-internationally-recognized-certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 ISO/IEC 27001 — The Internationally-Recognized Certification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-soc-2-customer-assurance-for-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 SOC 2 — Customer Assurance for SaaS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-pci-dss-payment-card-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 PCI-DSS — Payment Card Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-hipaa-us-healthcare-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 HIPAA — U.S. Healthcare Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-risk-management-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. The Risk Management Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. The Risk Management Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-four-risk-treatment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 The Four Risk-Treatment Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The Four Risk-Treatment Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-risk-treatment-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Risk Treatment Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-risk-register-where-risk-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Risk Register — Where Risk Lives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Risk Register — Where Risk Lives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-risk-heat-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Risk Heat Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-compliance-vs-security-a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Compliance vs. Security — A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-business-continuity-and-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Business Continuity and Disaster Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Business Continuity and Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rto-and-rpo-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: RTO and RPO Timeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-vendor-and-third-party-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Vendor and Third-Party Risk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Vendor and Third-Party Risk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vendor-risk-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vendor Risk Tiers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-security-metrics-and-the-risk-conversation-with-executives" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Security Metrics and the Risk Conversation with Executives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-security-program-and-the-ciso" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. The Security Program and the CISO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. The Security Program and the CISO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-security-program-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Security Program at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-you-can-now-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. What You Can Now Do
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1362,285 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-why-organizational-security-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Organizational Security Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-governance-risk-and-compliance-grc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Governance, Risk, and Compliance (GRC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Governance, Risk, and Compliance (GRC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-grc-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: GRC Relationship
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-policies-standards-and-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Policies, Standards, and Procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-security-frameworks-the-fields-reference-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Security Frameworks — The Field's Reference Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Security Frameworks — The Field's Reference Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-nist-csf-the-common-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 NIST CSF — The Common Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 NIST CSF — The Common Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nist-csf-20-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: NIST CSF 2.0 Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-isoiec-27001-the-internationally-recognized-certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 ISO/IEC 27001 — The Internationally-Recognized Certification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-soc-2-customer-assurance-for-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 SOC 2 — Customer Assurance for SaaS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-pci-dss-payment-card-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 PCI-DSS — Payment Card Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-hipaa-us-healthcare-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 HIPAA — U.S. Healthcare Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-risk-management-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. The Risk Management Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. The Risk Management Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-four-risk-treatment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 The Four Risk-Treatment Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The Four Risk-Treatment Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-risk-treatment-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Risk Treatment Decision Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-risk-register-where-risk-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Risk Register — Where Risk Lives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Risk Register — Where Risk Lives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-risk-heat-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Risk Heat Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-compliance-vs-security-a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Compliance vs. Security — A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-business-continuity-and-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Business Continuity and Disaster Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Business Continuity and Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rto-and-rpo-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: RTO and RPO Timeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-vendor-and-third-party-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Vendor and Third-Party Risk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Vendor and Third-Party Risk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vendor-risk-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vendor Risk Tiers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-security-metrics-and-the-risk-conversation-with-executives" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Security Metrics and the Risk Conversation with Executives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-security-program-and-the-ciso" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. The Security Program and the CISO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. The Security Program and the CISO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-security-program-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Security Program at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-you-can-now-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. What You Can Now Do
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1147,13 +1705,473 @@
 <li><a href="../06-software-assurance/">Chapter 6: Software Assurance and Supply Chain Security</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Management Layer</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. So far we have built security as engineers. In this chapter we put on a different hat: how does an organization decide which controls to fund, who is accountable when something goes wrong, and how do regulators and customers verify that any of it is real? Trust, but verify — at the institutional scale.</p>
+</div>
+<h2 id="1-why-organizational-security-exists">1. Why Organizational Security Exists<a class="headerlink" href="#1-why-organizational-security-exists" title="Permanent link">&para;</a></h2>
+<p>Security is not built by one engineer at one keyboard. It is built — or eroded — by the <em>system of decisions</em> that an organization makes about funding, staffing, prioritization, vendor selection, training, and accountability. A company with brilliant engineers and no governance can still be breached because nobody decided who owns the patching of a particular legacy server. A company with mediocre engineers but disciplined governance often performs better than the first one, because every important asset has a named owner and every important risk has a named decision.</p>
+<p>This chapter is about that management layer. It is the layer that ABET CAC explicitly calls out under "Organizational Security," and it is the layer where most graduates of cybersecurity programs spend at least part of their careers — whether as a security analyst writing the controls into a Jira ticket, an auditor reading evidence at a SaaS vendor, or eventually a CISO writing the budget.</p>
+<p>The single most important habit for this chapter is to <strong>think in terms of decisions and accountability, not in terms of tools</strong>. A new firewall does not, by itself, reduce risk. A new firewall <em>plus</em> a documented decision about what it must enforce, <em>plus</em> an owner who is accountable for keeping it tuned, <em>plus</em> a metric that signals when it is failing — that reduces risk.</p>
+<p>The chapter is organized in four arcs:</p>
+<ul>
+<li><strong>Governance</strong> — who decides, what is policy, and what frameworks shape the decisions (Sections 2–4).</li>
+<li><strong>Risk management</strong> — how organizations identify, treat, and track risk (Sections 5–7).</li>
+<li><strong>Continuity and third-party risk</strong> — preparing for failure and managing the risk that comes from outside the organization (Sections 8–9).</li>
+<li><strong>Measurement and assurance</strong> — metrics, audits, and the CISO's job of telling the truth to executives (Sections 10–11).</li>
+</ul>
+<h2 id="2-governance-risk-and-compliance-grc">2. Governance, Risk, and Compliance (GRC)<a class="headerlink" href="#2-governance-risk-and-compliance-grc" title="Permanent link">&para;</a></h2>
+<p>The umbrella term that captures the management layer is <strong>GRC: Governance, Risk, and Compliance</strong>. The three words name three distinct activities that often share staff, tools, and reporting lines.</p>
+<ul>
+<li><strong>Governance</strong> is the system of authority. It answers: <em>Who decides? On what basis? Who is accountable when the decision is wrong?</em> In security, governance defines who owns each asset, who approves each policy, and to whom security risks ultimately roll up (typically the board).</li>
+<li><strong>Risk</strong> is the discipline of identifying what could go wrong, estimating likelihood and impact, deciding what to do about it, and tracking the decision over time. We met the basic risk equation in Chapter 1; this chapter operationalizes it.</li>
+<li><strong>Compliance</strong> is the discipline of demonstrating — to regulators, auditors, customers, and partners — that the organization's controls meet a stated external standard. Compliance is <em>evidence</em>, not security; an organization can be perfectly compliant and still insecure if its standards do not match its threat model.</li>
+</ul>
+<p>These three are different, and conflating them is one of the field's classic mistakes. Compliance is the most visible of the three because it generates audit reports and certifications. Risk is the most useful because it is what actually drives prioritization. Governance is the most load-bearing because, without it, neither risk nor compliance has a place to land.</p>
+<h4 id="diagram-grc-relationship">Diagram: GRC Relationship<a class="headerlink" href="#diagram-grc-relationship" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Three overlapping circles showing how Governance, Risk, and Compliance relate</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> grc-relationship<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A three-circle Venn diagram occupying a 900x520 canvas:</p>
+<ul>
+<li><strong>Top-left circle (Governance)</strong> — cybersecurity blue (#1565c0), 50% opacity. Label: "GOVERNANCE — Who decides; who is accountable."</li>
+<li><strong>Top-right circle (Risk)</strong> — slate steel (#455a64), 50% opacity. Label: "RISK — What could go wrong; what we do about it."</li>
+<li><strong>Bottom circle (Compliance)</strong> — amber (#ffa000), 50% opacity. Label: "COMPLIANCE — Evidence we meet external standards."</li>
+</ul>
+<p>Overlap labels:
+- Governance ∩ Risk: "Risk appetite, board reporting"
+- Governance ∩ Compliance: "Policy ownership, audit response"
+- Risk ∩ Compliance: "Control mapping, gap analysis"
+- All three (center): "Security Program"</p>
+<p>Below the Venn, a one-line caption: "An organization can be compliant and still insecure. Compliance is evidence; risk is reality; governance is who decides between them."</p>
+<p>Hover tooltips on each region give a 1-sentence definition consistent with the glossary.</p>
+<p>Responsive: SVG scales to container width; below 600px, circles arrange vertically with labels beside them. Includes window-resize listener that re-renders on container width change.</p>
+<p>Implementation: Inline SVG with <code>&lt;title&gt;</code> elements for hover tooltips; minimal JS for resize handling.</p>
+</details>
+<h2 id="3-policies-standards-and-procedures">3. Policies, Standards, and Procedures<a class="headerlink" href="#3-policies-standards-and-procedures" title="Permanent link">&para;</a></h2>
+<p>Governance produces written artifacts. The vocabulary for those artifacts is precise, and using it correctly is a marker of professional fluency. The four most common artifact levels, from highest to lowest, are policy, standard, procedure, and guideline.</p>
+<p>A <strong>security policy</strong> is a high-level statement of management intent. It is short — often one to three pages — and it answers questions like <em>what is our position on encryption of customer data?</em> without specifying <em>which algorithm and key length</em>. Policies are approved by senior leadership and changed rarely. A typical policy reads: "All customer data classified Confidential or higher must be encrypted at rest and in transit."</p>
+<p>A <strong>security standard</strong> translates policy into specific, testable requirements. Standards specify the algorithm, the key length, the configuration parameter, the version. A standard for the policy above might read: "Customer data at rest must be encrypted with AES-256-GCM. TLS in transit must be TLS 1.3 with the cipher suite list defined in Appendix B." Standards are approved by security leadership and updated as the threat landscape moves.</p>
+<p>A <strong>security procedure</strong> is a step-by-step operational instruction for a specific task, written for the person who must perform it. Procedures translate standards into "do this, then this, then that." A procedure for the encryption standard above might be a runbook: "How to rotate the database master key in AWS KMS without downtime."</p>
+<p>The reader will encounter a fourth term, <strong>guideline</strong>, which is a <em>recommended</em> practice that is not mandatory. Guidelines exist to share institutional wisdom without creating audit findings.</p>
+<p>The following table summarizes how these four artifact types compare. It reinforces the prose above and gives you a quick reference for the audit conversations you will have later in this chapter.</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Audience</th>
+<th style="text-align: center;">Mandatory?</th>
+<th>Frequency of change</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy</td>
+<td>All employees, board</td>
+<td style="text-align: center;">Yes</td>
+<td>Years</td>
+<td>"Customer data must be encrypted."</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>Engineers, ops, security</td>
+<td style="text-align: center;">Yes</td>
+<td>Annually or when threats shift</td>
+<td>"Use AES-256-GCM; TLS 1.3 only."</td>
+</tr>
+<tr>
+<td>Procedure</td>
+<td>The person doing the task</td>
+<td style="text-align: center;">Yes for that task</td>
+<td>Whenever the system changes</td>
+<td>"How to rotate the KMS key."</td>
+</tr>
+<tr>
+<td>Guideline</td>
+<td>Whoever finds it useful</td>
+<td style="text-align: center;">No</td>
+<td>As needed</td>
+<td>"Recommended secure-coding patterns."</td>
+</tr>
+</tbody>
+</table>
+<p>A particular policy that every organization needs and that students will encounter on day one of any internship is the <strong>Acceptable Use Policy (AUP)</strong>. The AUP is the policy that defines what employees and contractors may and may not do with company-issued devices, accounts, and networks. It typically covers: prohibited activities (illegal use, harassment, unauthorized access), personal use limits, monitoring disclosures (so employees have no expectation of privacy on company systems), and the consequences of violation. The AUP is also the document that gives the organization legal grounding to terminate access when someone misuses it.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Read Before You Sign</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+On your first day at any job, you will be asked to sign the Acceptable Use Policy. Read it. The AUP defines the trust boundary between you and your employer's systems — what is authorized, what is monitored, and what is grounds for termination. It is also the document an incident responder will reference if your account is involved in an incident. Least privilege, by default.</p>
+</div>
+<h2 id="4-security-frameworks-the-fields-reference-architectures">4. Security Frameworks — The Field's Reference Architectures<a class="headerlink" href="#4-security-frameworks-the-fields-reference-architectures" title="Permanent link">&para;</a></h2>
+<p>When an organization writes its first security program, it does not write the policies and standards from scratch. It picks one or more <em>frameworks</em> — public, peer-reviewed catalogs of controls and practices — and tailors them to its environment. Frameworks save effort, but more importantly, they give the organization a common vocabulary for talking to auditors, customers, regulators, and insurers.</p>
+<p>There are dozens of frameworks. Five matter most in U.S. and global practice today: NIST CSF, ISO/IEC 27001, SOC 2, PCI-DSS, and HIPAA. Each was designed for a different purpose, and an organization will often map to several at once.</p>
+<h3 id="41-nist-csf-the-common-vocabulary">4.1 NIST CSF — The Common Vocabulary<a class="headerlink" href="#41-nist-csf-the-common-vocabulary" title="Permanent link">&para;</a></h3>
+<p>The <strong>NIST Cybersecurity Framework (NIST CSF)</strong>, originally published in 2014 and updated to version 2.0 in 2024, is a voluntary framework developed by the U.S. National Institute of Standards and Technology. It is the most widely adopted starting point in the United States because it is free, technology-neutral, and organized around six high-level <em>functions</em> that read like a coherent narrative of a security program.</p>
+<p>The six NIST CSF 2.0 functions are:</p>
+<ol>
+<li><strong>Govern</strong> — establish and monitor the cybersecurity risk management strategy, expectations, and policy. (This function was added in 2.0 to make governance a peer of the technical functions, not an afterthought.)</li>
+<li><strong>Identify</strong> — develop the organizational understanding of assets, risks, and roles.</li>
+<li><strong>Protect</strong> — implement safeguards to limit or contain the impact of a cybersecurity event.</li>
+<li><strong>Detect</strong> — develop and implement activities to identify the occurrence of cybersecurity events.</li>
+<li><strong>Respond</strong> — take action regarding a detected cybersecurity incident.</li>
+<li><strong>Recover</strong> — restore capabilities or services that were impaired due to an incident.</li>
+</ol>
+<p>You can read NIST CSF as a verb-by-verb description of what a security program does over the lifecycle of a threat: govern the program, identify what you have, protect it, detect when protection fails, respond when something goes wrong, and recover to a known-good state. The diagram below makes the cyclical nature explicit.</p>
+<h4 id="diagram-nist-csf-20-functions">Diagram: NIST CSF 2.0 Functions<a class="headerlink" href="#diagram-nist-csf-20-functions" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Wheel diagram showing the six NIST CSF 2.0 functions with Govern at the center</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> nist-csf-functions<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A wheel diagram on a 900x600 canvas:</p>
+<ul>
+<li>Center hub: <strong>GOVERN</strong> (cybersecurity blue #1565c0, white text). Subtitle: "Strategy, expectations, policy."</li>
+<li>Five spokes radiating outward, each a colored arc segment forming a ring around the hub:</li>
+<li><strong>IDENTIFY</strong> (slate steel #455a64) — Subtitle: "Assets, risks, roles."</li>
+<li><strong>PROTECT</strong> (cybersecurity blue, lighter shade) — Subtitle: "Safeguards, training, access control."</li>
+<li><strong>DETECT</strong> (amber #ffa000) — Subtitle: "Monitoring, anomalies, IDS."</li>
+<li><strong>RESPOND</strong> (rust orange #d84315) — Subtitle: "Containment, communications, analysis."</li>
+<li><strong>RECOVER</strong> (cream #fff8e1, dark text) — Subtitle: "Restore, lessons learned, plans."</li>
+<li>A thin clockwise arrow on the outside of the ring suggests the cyclical flow Identify → Protect → Detect → Respond → Recover → (back to Identify), with Govern overseeing all five.</li>
+</ul>
+<p>Each segment has a hover tooltip: a one-sentence description of what the function actually does, e.g., "DETECT — Continuous monitoring identifies anomalies and signals incidents within the time-to-detect target."</p>
+<p>Caption beneath: "NIST CSF 2.0 added GOVERN as a sixth function in 2024 to elevate governance to a peer of the technical functions."</p>
+<p>Responsive: SVG scales to container width. Below 600px, the wheel becomes a vertical numbered list of the six functions. Window-resize listener re-renders.</p>
+<p>Implementation: Inline SVG with <code>&lt;title&gt;</code> tooltips and a small resize handler.</p>
+</details>
+<h3 id="42-isoiec-27001-the-internationally-recognized-certification">4.2 ISO/IEC 27001 — The Internationally-Recognized Certification<a class="headerlink" href="#42-isoiec-27001-the-internationally-recognized-certification" title="Permanent link">&para;</a></h3>
+<p><strong>ISO/IEC 27001</strong> is an international standard, first published in 2005 and most recently revised in 2022, that defines requirements for an <strong>Information Security Management System (ISMS)</strong>. Where NIST CSF is a voluntary framework, ISO 27001 is a <em>certifiable</em> standard: a third-party auditor inspects the organization's ISMS and, if it meets the requirements, issues a certificate that is recognized worldwide.</p>
+<p>ISO 27001 is structured around a management system (the ISMS itself — the policies, procedures, and continual improvement loop) and a catalog of controls in Annex A (93 controls in the 2022 revision, organized into four themes: Organizational, People, Physical, and Technological). Organizations doing business internationally — especially in Europe, Japan, and the U.K. — are often required by customers to hold an ISO 27001 certification. The cost of certification (initial audit, surveillance audits, internal program work) typically runs into hundreds of thousands of dollars for a mid-sized company, so it is not undertaken lightly.</p>
+<h3 id="43-soc-2-customer-assurance-for-saas">4.3 SOC 2 — Customer Assurance for SaaS<a class="headerlink" href="#43-soc-2-customer-assurance-for-saas" title="Permanent link">&para;</a></h3>
+<p><strong>SOC 2 (Service Organization Control 2)</strong> is a U.S.-centric audit report defined by the AICPA (American Institute of Certified Public Accountants), tailored to service providers — most commonly, SaaS vendors. SOC 2 evaluates a service organization against five <strong>Trust Services Criteria</strong>: Security, Availability, Processing Integrity, Confidentiality, and Privacy. Security is mandatory; the other four are optional based on what the organization wants to attest to.</p>
+<p>Two SOC 2 report types matter:</p>
+<ul>
+<li><strong>SOC 2 Type I</strong> — A point-in-time report. The auditor reviews the design of controls <em>as of a specific date</em>. It says: "On June 30, 2026, this company had these controls in place."</li>
+<li><strong>SOC 2 Type II</strong> — A period-of-time report, typically covering 6 to 12 months. The auditor reviews both the design <em>and the operating effectiveness</em> of the controls over the period. It says: "Between January 1 and December 31, 2026, these controls operated as designed."</li>
+</ul>
+<p>Customers buying SaaS almost always require SOC 2 Type II. Type I is sometimes acceptable for a brand-new service that does not yet have an audit period of history. SOC 2 reports themselves are not public — they are shared under NDA between the SaaS vendor and the customer's procurement and security teams.</p>
+<h3 id="44-pci-dss-payment-card-data">4.4 PCI-DSS — Payment Card Data<a class="headerlink" href="#44-pci-dss-payment-card-data" title="Permanent link">&para;</a></h3>
+<p><strong>PCI-DSS (Payment Card Industry Data Security Standard)</strong> is a contractual standard, currently at version 4.0.1, imposed by the major card brands (Visa, Mastercard, American Express, Discover, JCB) on any merchant or service provider that stores, processes, or transmits cardholder data. Unlike NIST CSF or ISO 27001, PCI-DSS is <em>prescriptive</em>: it tells you specifically that you must, for example, encrypt cardholder data at rest with strong cryptography and rotate keys at defined intervals. PCI-DSS has 12 high-level requirements organized into six control objectives (build and maintain a secure network, protect cardholder data, maintain a vulnerability management program, implement strong access controls, monitor and test networks, and maintain an information security policy).</p>
+<p>The level of PCI-DSS scrutiny scales with transaction volume. A small merchant doing fewer than 20,000 transactions a year self-attests; a Level 1 merchant doing more than 6 million transactions a year requires an annual on-site assessment by a Qualified Security Assessor (QSA). Failing PCI-DSS does not produce a fine from the government — the card brands and acquiring banks impose penalties under contract — but the consequences (loss of the ability to process payments) are existential for any business that takes cards.</p>
+<h3 id="45-hipaa-us-healthcare-data">4.5 HIPAA — U.S. Healthcare Data<a class="headerlink" href="#45-hipaa-us-healthcare-data" title="Permanent link">&para;</a></h3>
+<p><strong>HIPAA Compliance</strong> refers to compliance with the U.S. Health Insurance Portability and Accountability Act of 1996, specifically its Privacy Rule (2003) and Security Rule (2005), as expanded by the HITECH Act of 2009. HIPAA applies to <strong>covered entities</strong> (healthcare providers, health plans, healthcare clearinghouses) and their <strong>business associates</strong> (third parties that handle protected health information on behalf of a covered entity — including most SaaS vendors in healthcare).</p>
+<p>The Security Rule organizes its requirements into three categories of safeguards: <strong>administrative</strong> (policies, training, risk analysis), <strong>physical</strong> (facility access, workstation security), and <strong>technical</strong> (access control, audit controls, transmission security). HIPAA is famous for being relatively flexible — it specifies <em>what</em> (e.g., "implement access controls") rather than <em>how</em> (e.g., "use RBAC with quarterly access reviews") — which gives organizations latitude but also creates a long compliance tail. Penalties for HIPAA violations are tiered, and willful neglect that is not corrected can reach $1.5 million per violation category per year, plus criminal penalties in egregious cases.</p>
+<p>The five frameworks above are not interchangeable. The table below summarizes when each applies. It is meant as a reference for the discussion above, not as a substitute for it.</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Type</th>
+<th>Required by</th>
+<th>Audited by</th>
+<th>Typical scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NIST CSF</td>
+<td>Voluntary framework</td>
+<td>Nothing (voluntary)</td>
+<td>Self-assessment or consultant</td>
+<td>Whole organization</td>
+</tr>
+<tr>
+<td>ISO/IEC 27001</td>
+<td>Certifiable standard</td>
+<td>Customer contracts (often international)</td>
+<td>Accredited registrar</td>
+<td>The defined ISMS scope</td>
+</tr>
+<tr>
+<td>SOC 2</td>
+<td>Audit report</td>
+<td>Customer contracts (SaaS)</td>
+<td>CPA firm</td>
+<td>The service offering</td>
+</tr>
+<tr>
+<td>PCI-DSS</td>
+<td>Contractual mandate</td>
+<td>Card brands</td>
+<td>QSA (Level 1) or self (lower levels)</td>
+<td>Cardholder Data Environment (CDE)</td>
+</tr>
+<tr>
+<td>HIPAA</td>
+<td>U.S. federal regulation</td>
+<td>Federal law</td>
+<td>HHS Office for Civil Rights (after a complaint or breach)</td>
+<td>Protected Health Information systems</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Compliance-Security Gap</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel reflecting on a key insight">
+Notice that none of these frameworks asks "are you actually secure?" They ask "do you have controls that meet our list?" An organization can pass SOC 2 with controls that fail under a real adversary, and an organization that resists a serious attack may still have audit findings. Compliance is a floor, not a ceiling — and the gap between the floor and your actual threat model is exactly where security engineering lives.</p>
+</div>
+<h2 id="5-the-risk-management-lifecycle">5. The Risk Management Lifecycle<a class="headerlink" href="#5-the-risk-management-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Frameworks tell you <em>what</em> controls to consider. Risk management tells you <em>which ones to fund first</em>. The risk management lifecycle is a continuous loop, not a one-time exercise.</p>
+<p>The classic five-step cycle is:</p>
+<ol>
+<li><strong>Identify</strong> — enumerate assets, threats, and vulnerabilities.</li>
+<li><strong>Assess</strong> — estimate likelihood and impact for each risk; produce a prioritized list.</li>
+<li><strong>Treat</strong> — choose one of the four treatment options (mitigate, transfer, accept, avoid) for each risk.</li>
+<li><strong>Monitor</strong> — track the residual risk and the effectiveness of the chosen treatment.</li>
+<li><strong>Review</strong> — periodically reassess as the environment changes.</li>
+</ol>
+<p>The basic quantification, from Chapter 1, is <strong>Risk = Likelihood × Impact</strong>. In practice, most organizations express likelihood and impact on a small ordinal scale (e.g., 1–5 each, producing a heat map from 1 to 25) rather than as precise probabilities and dollar amounts. The ordinal approach is faster and more defensible to non-technical audiences; quantitative approaches such as <strong>FAIR (Factor Analysis of Information Risk)</strong> are used where the precision is worth the modeling effort.</p>
+<p>In LaTeX, a slightly more useful formulation that also accounts for control effectiveness is:</p>
+<p>[
+\text{Residual Risk} = \text{Likelihood} \times \text{Impact} \times (1 - \text{Control Effectiveness})
+]</p>
+<p>This says: even after we mitigate, some risk remains. The mitigation reduces it but never to zero — and managing residual risk is the recurring work of a security program.</p>
+<h3 id="51-the-four-risk-treatment-options">5.1 The Four Risk-Treatment Options<a class="headerlink" href="#51-the-four-risk-treatment-options" title="Permanent link">&para;</a></h3>
+<p>For every identified risk, the organization must choose one of four treatments. These four options are the operational heart of the chapter, and you will be expected to use them precisely.</p>
+<ul>
+<li><strong>Risk Mitigation</strong> — reduce the likelihood, the impact, or both, by implementing a control. Most security work is mitigation. Example: deploy MFA to reduce the likelihood of credential-stuffing success.</li>
+<li><strong>Risk Transfer</strong> — shift the financial impact to another party, typically through insurance or a contract. Cyber insurance is the canonical example; outsourcing payment processing to a PCI-Level-1 provider is another. Transfer does not eliminate the risk; it moves the financial consequence.</li>
+<li><strong>Risk Acceptance</strong> — formally acknowledge the risk and decide to live with it because the cost of mitigation exceeds the expected loss, or because the residual risk is below the organization's risk appetite. Acceptance must be explicit, documented, signed by an accountable executive, and time-bounded.</li>
+<li><strong>Risk Avoidance</strong> — eliminate the activity that produces the risk. The classic example is a company deciding not to operate in a regulated jurisdiction because the compliance burden exceeds the expected revenue.</li>
+</ul>
+<p>The choice among these four is rarely obvious. A useful sanity check: if you find yourself "mitigating" a risk that nobody actually has the authority or budget to fix, what you are really doing is <em>implicitly</em> accepting it — and implicit acceptance is where breaches come from. Make the acceptance explicit, or commit to the mitigation.</p>
+<h4 id="diagram-risk-treatment-decision-tree">Diagram: Risk Treatment Decision Tree<a class="headerlink" href="#diagram-risk-treatment-decision-tree" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Decision tree showing how to choose among mitigate, transfer, accept, and avoid</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> risk-treatment-decision-tree<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A flowchart starting from a single root box: "Identified Risk: likelihood × impact rating".</p>
+<p>Branches:</p>
+<ol>
+<li>First decision diamond: "Can the activity be eliminated without unacceptable business loss?"</li>
+<li>Yes → terminal node "AVOID — Stop the activity. Document the decision."</li>
+<li>
+<p>No → continue to next decision.</p>
+</li>
+<li>
+<p>Second decision diamond: "Is residual risk after available controls below the organization's risk appetite?"</p>
+</li>
+<li>Yes (and a control is feasible) → terminal node "MITIGATE — Implement control(s). Track residual risk."</li>
+<li>
+<p>No → continue.</p>
+</li>
+<li>
+<p>Third decision diamond: "Can the financial impact be transferred to another party (insurance, contract)?"</p>
+</li>
+<li>Yes → terminal node "TRANSFER — Procure insurance / vendor contract. Track coverage limits."</li>
+<li>
+<p>No → continue.</p>
+</li>
+<li>
+<p>Final terminal: "ACCEPT — Document, sign at appropriate executive level, time-bound (typically 12 months), reassess on schedule."</p>
+</li>
+</ol>
+<p>Color: each terminal node colored distinctly — Avoid (slate steel), Mitigate (cybersecurity blue), Transfer (amber), Accept (rust orange).</p>
+<p>Caption beneath: "Implicit acceptance is the failure mode. Every risk gets exactly one of these four labels, with an owner and a date."</p>
+<p>Responsive: Mermaid graph TD; renders to container width. Caption wraps below 500px.</p>
+<p>Implementation: Mermaid flowchart with classDef styling for the four terminal types.</p>
+</details>
+<h2 id="6-the-risk-register-where-risk-lives">6. The Risk Register — Where Risk Lives<a class="headerlink" href="#6-the-risk-register-where-risk-lives" title="Permanent link">&para;</a></h2>
+<p>A <strong>risk register</strong> is the canonical artifact of a risk program: a structured list of identified risks, each with a small set of attributes that make it actionable. Every meaningful organization has one, even if it is just a spreadsheet — and the maturity of the risk register is one of the strongest signals of whether a security program is real.</p>
+<p>The minimum useful columns in a risk register are:</p>
+<ul>
+<li><strong>ID</strong> — a stable identifier so the risk can be referenced over time.</li>
+<li><strong>Description</strong> — what specifically can go wrong.</li>
+<li><strong>Asset / scope</strong> — what is affected.</li>
+<li><strong>Likelihood</strong> — typically 1–5.</li>
+<li><strong>Impact</strong> — typically 1–5.</li>
+<li><strong>Inherent risk score</strong> — likelihood × impact, before any controls.</li>
+<li><strong>Existing controls</strong> — what is in place today.</li>
+<li><strong>Residual risk score</strong> — what remains after controls.</li>
+<li><strong>Treatment</strong> — mitigate / transfer / accept / avoid.</li>
+<li><strong>Owner</strong> — the named, accountable person (not "IT").</li>
+<li><strong>Target date / next review</strong> — when this risk is reassessed.</li>
+<li><strong>Status</strong> — open, in-progress, closed.</li>
+</ul>
+<p>A sample row, in narrative form: <em>Risk R-042. A privileged service account in the production database has its credential hard-coded in a CI/CD pipeline configuration file. Likelihood 4 (the file is in a repository accessible to all developers); Impact 5 (full database read/write access). Inherent score 20. Existing controls: none. Residual: 20. Treatment: mitigate. Owner: VP of Engineering. Target: rotate to a managed secret store within 60 days.</em></p>
+<h4 id="diagram-risk-heat-map">Diagram: Risk Heat Map<a class="headerlink" href="#diagram-risk-heat-map" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive 5x5 risk matrix where users place sample risks and see treatment recommendations</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> risk-heat-map<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>A 920x720 canvas implementing an interactive risk heat map.</p>
+<p><strong>Learning objective (Bloom: Analyzing):</strong> Given a brief risk description, students place it on a 5x5 likelihood-by-impact grid and observe how the recommended treatment changes with placement.</p>
+<p><strong>Visual layout:</strong>
+- Left side (700x700): a 5x5 grid. X-axis: Likelihood (1=Rare to 5=Almost Certain). Y-axis: Impact (1=Negligible to 5=Catastrophic). Cells colored on a green-yellow-amber-red gradient: 1-4 green, 5-9 yellow, 10-14 amber, 15-25 red. Axis labels and per-cell scores rendered.
+- Right side (220x700): control panel.
+  - Dropdown "Sample risk" with options: "Phishing email reaches employee", "Hard-coded DB credential", "Vendor SaaS outage", "Lost employee laptop", "Quantum-broken legacy crypto", "Custom (drag your own)".
+  - Two sliders: Likelihood (1–5), Impact (1–5).
+  - Reset button.
+  - Output panel showing: chosen risk, score, recommended treatment per the decision tree above (Mitigate / Transfer / Accept / Avoid), and a one-sentence rationale.</p>
+<p><strong>Behavior:</strong>
+- Selecting a sample risk auto-positions a marker on the grid based on a default likelihood/impact for that risk.
+- Dragging the marker (or moving the sliders) updates score and recommendation in real time.
+- The recommendation logic: score ≥ 15 → Mitigate or Avoid; 10–14 → Mitigate or Transfer; 5–9 → Mitigate (controls feasible) or Accept; ≤ 4 → Accept (within appetite).
+- Hovering a grid cell shows that cell's interpretation ("High likelihood, moderate impact — mitigate with preventive control").</p>
+<p><strong>Controls:</strong> All controls are p5.js builtins (createSelect, createSlider, createButton). On setup, call <code>updateCanvasSize()</code> first; parent canvas with <code>canvas.parent(document.querySelector('main'))</code>.</p>
+<p><strong>Responsive:</strong> updateCanvasSize() listens for window-resize and re-flows the grid + control panel. Below 700px container width, the panel stacks below the grid.</p>
+<p><strong>Color:</strong> Use the textbook palette: green #4caf50 (1–4), yellow #fbc02d (5–9), amber #ffa000 (10–14), red-orange #d84315 (15–25). Marker is cybersecurity blue #1565c0 with a thin slate-steel border.</p>
+<p>Implementation: p5.js sketch.js with HTML page that includes p5.min.js from CDN.</p>
+</details>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Risk Reasoning Takes Practice</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel encouraging the reader">
+The first time you build a risk register, your scores will feel arbitrary. That is normal. The value comes from doing it consistently across many risks — the <em>relative</em> prioritization is what matters, not the absolute number. Run through the heat map above with three or four risks from your own life or coursework and notice how the treatment recommendation shifts. After a few iterations, the four-treatment vocabulary becomes second nature.</p>
+</div>
+<h2 id="7-compliance-vs-security-a-worked-example">7. Compliance vs. Security — A Worked Example<a class="headerlink" href="#7-compliance-vs-security-a-worked-example" title="Permanent link">&para;</a></h2>
+<p>A common interview question for a junior security engineer is: <em>"Give me a control that satisfies a compliance requirement but does not actually reduce risk."</em> The answer most experienced practitioners reach for is some variant of <strong>password expiration</strong>.</p>
+<p>For decades, regulations and frameworks required users to change passwords every 30, 60, or 90 days. The control was inherited from a 1985 Department of Defense publication (the "Green Book"), kept by inertia, and ticked off on every audit. By the mid-2010s, however, empirical research and analysis from NIST showed that mandatory rotation made things <em>worse</em>: users responded by choosing weaker passwords, incrementing them predictably (<code>Spring2025!</code> → <code>Summer2025!</code>), and writing them down. NIST SP 800-63B in 2017 reversed the long-standing guidance: organizations should <em>not</em> require periodic rotation in the absence of evidence of compromise.</p>
+<p>Yet rotation requirements lived on in many compliance frameworks for years afterward. Organizations that prioritized compliance scoring kept the control; organizations that prioritized actual risk dropped it (replacing it with credential-stuffing detection and MFA). This is the <strong>compliance-security gap</strong> in miniature: the framework was wrong about real-world risk, the audit kept asking, and the security team had to choose.</p>
+<p>The professional judgment to make in cases like this is: <em>meet the compliance requirement at the lowest defensible threshold and put the saved budget into the controls that actually move the risk needle</em>. Document the reasoning. Let the auditors do their work.</p>
+<h2 id="8-business-continuity-and-disaster-recovery">8. Business Continuity and Disaster Recovery<a class="headerlink" href="#8-business-continuity-and-disaster-recovery" title="Permanent link">&para;</a></h2>
+<p>Risk management ultimately runs into a hard ceiling: some events cannot be fully prevented. Earthquakes, ransomware, supplier bankruptcies, multi-region cloud outages. For those events, the question shifts from <em>"how do we keep this from happening?"</em> to <em>"how do we keep operating when it does?"</em> — the domain of business continuity and disaster recovery.</p>
+<p><strong>Business Continuity (BC)</strong> is the discipline of maintaining critical business functions during and after a disruption. Its scope is broader than IT — it includes facilities, staffing, communications, supply chains, and customer-facing operations. <strong>Disaster Recovery (DR)</strong> is the IT-focused subset: restoring systems, data, and connectivity after a disruption. Every organization needs both. They are often documented as a <strong>BCDR plan</strong> and exercised through tabletop drills and live failover tests.</p>
+<p>The foundation document for both is the <strong>Business Impact Analysis (BIA)</strong>. A BIA enumerates the organization's critical processes, identifies the systems and dependencies each one needs, estimates the financial and reputational impact of an outage at various durations (1 hour, 4 hours, 24 hours, 1 week), and produces two crucial numbers per process:</p>
+<ul>
+<li><strong>RTO (Recovery Time Objective)</strong> — the maximum acceptable downtime for the process. <em>"How long can we be down before the business is unrecoverable?"</em> Expressed as a duration. Tighter RTOs require more expensive recovery infrastructure (warm sites, hot sites, multi-region active-active deployments).</li>
+<li><strong>RPO (Recovery Point Objective)</strong> — the maximum acceptable data loss, measured backward from the moment of the incident. <em>"How much data can we afford to lose?"</em> Expressed as a duration of work that can be re-created or written off. Tighter RPOs require more frequent backups, replication, or synchronous writes.</li>
+</ul>
+<p>These two numbers are not preferences — they are constraints that drive technical architecture and budget. An RTO of 1 hour and an RPO of 5 minutes for a transaction-processing system imply hot-standby replication and automated failover. An RTO of 72 hours and an RPO of 24 hours for an internal HR portal imply nightly backups and a documented manual restore procedure. Mismatching the RTO/RPO to the architecture is a common and expensive mistake — either you overspend on infrastructure for a non-critical system, or you discover during an outage that the system you thought had a 1-hour RTO actually has a 12-hour one.</p>
+<h4 id="diagram-rto-and-rpo-timeline">Diagram: RTO and RPO Timeline<a class="headerlink" href="#diagram-rto-and-rpo-timeline" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Annotated timeline showing RTO and RPO relative to an incident</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> rto-rpo-timeline<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal timeline 900px wide:</p>
+<ul>
+<li>Center marker labeled "INCIDENT" (red vertical bar) — time 0.</li>
+<li>Left of incident: a clock icon and label "RPO — last recoverable backup". A bracketed segment from "RPO point" to "INCIDENT" colored amber. Tooltip: "Data written between the RPO point and the incident is potentially lost."</li>
+<li>Right of incident: a clock icon and label "RTO — system back online". A bracketed segment from "INCIDENT" to "RTO point" colored slate steel. Tooltip: "The business is degraded or down throughout this window."</li>
+<li>Above the timeline, two callout boxes:</li>
+<li>"RPO answers: How much data can we afford to lose?"</li>
+<li>"RTO answers: How long can we be down?"</li>
+<li>Below the timeline, a small example legend: "Tier-1 transactional system: RPO 5 min, RTO 1 hr. Internal HR portal: RPO 24 hr, RTO 72 hr."</li>
+</ul>
+<p>Color: incident bar #d84315; RPO segment #ffa000; RTO segment #455a64; callouts #1565c0 with white text.</p>
+<p>Responsive: SVG scales with container; below 600px, the timeline rotates to vertical with labels on the right. Window-resize listener re-renders.</p>
+<p>Implementation: Inline SVG with <code>&lt;title&gt;</code> tooltips and a small resize handler.</p>
+</details>
+<p>A complete BCDR program also addresses <strong>alternate sites</strong> (cold, warm, hot, or cloud-based), <strong>call trees</strong> for emergency communication, <strong>vendor contact lists</strong>, and a regular cadence of <strong>tabletop exercises</strong> (low-cost, no-failure drills where stakeholders walk through a scenario verbally) and <strong>functional tests</strong> (actually failing over a workload to the DR environment).</p>
+<h2 id="9-vendor-and-third-party-risk">9. Vendor and Third-Party Risk<a class="headerlink" href="#9-vendor-and-third-party-risk" title="Permanent link">&para;</a></h2>
+<p>Modern organizations run on third parties. Cloud platforms host the workloads, SaaS vendors hold the customer data, payment processors handle the cards, identity providers issue the tokens, OSS dependencies make up most of the source code. Each of these third parties extends the organization's attack surface — and most major breaches in the last decade have routed through a third party rather than being a direct attack on the victim.</p>
+<p>We need three terms before we look at the diagram below.</p>
+<ul>
+<li><strong>Third-Party Risk</strong> is the risk that an external organization (vendor, partner, contractor) will fail in a way that harms us. Failure can be a breach, a data leak, a compliance violation, an outage, or a quality defect.</li>
+<li><strong>Vendor Risk Management (VRM)</strong> is the program — typically owned by procurement, security, and legal jointly — that identifies, assesses, and tracks third-party risk across the vendor portfolio.</li>
+<li><strong>Supply Chain Risk</strong> is the broader category that includes third parties <em>and the third parties of those third parties</em> — the so-called fourth-party and Nth-party risk. SolarWinds (2020) and the MOVEit cascade (2023) are textbook supply chain incidents: a single upstream compromise propagates to thousands of downstream organizations.</li>
+</ul>
+<h4 id="diagram-vendor-risk-tiers">Diagram: Vendor Risk Tiers<a class="headerlink" href="#diagram-vendor-risk-tiers" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Concentric ring diagram showing vendor risk tiers and the controls applied at each tier</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> vendor-risk-tiers<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A concentric-ring diagram on a 900x600 canvas, with the organization at the center.</p>
+<p>Center: "Our Organization" — cybersecurity blue circle.</p>
+<p>Ring 1 (Tier-1 Critical Vendors) — closest ring, slate steel:
+- Examples: cloud platform, identity provider, payment processor.
+- Tooltip: "Annual SOC 2 review, executive escalation path, contractual SLAs, joint incident response runbook."</p>
+<p>Ring 2 (Tier-2 Important Vendors) — middle ring, lighter slate:
+- Examples: HR SaaS, monitoring tools, analytics platforms.
+- Tooltip: "Annual security questionnaire, quarterly review of public incidents, contract review."</p>
+<p>Ring 3 (Tier-3 Standard Vendors) — outer ring, cream:
+- Examples: office supplies, marketing tools without sensitive data.
+- Tooltip: "Self-attestation, lightweight onboarding."</p>
+<p>Beyond Ring 3 — small "Fourth-party" cluster, drawn as small circles outside the rings, connected by dotted lines to the Tier-1 vendors:
+- Tooltip: "Subprocessors of our vendors. Inherited risk; usually disclosed in DPAs."</p>
+<p>Each ring has hover tooltips listing typical controls. Caption beneath: "Tier the vendor portfolio. The same questionnaire for every vendor is the wrong default."</p>
+<p>Responsive: SVG scales with container; below 600px, rings flatten to a vertical stacked list with controls beside each tier. Window-resize listener re-renders.</p>
+<p>Implementation: Inline SVG with <code>&lt;title&gt;</code> tooltips and a small resize handler.</p>
+</details>
+<p>The standard sequence for onboarding a new vendor is: <strong>due diligence</strong> (review SOC 2 / ISO 27001 / pen test reports, send a security questionnaire), <strong>contractual controls</strong> (a Data Processing Agreement or DPA, a security addendum specifying breach-notification timelines and audit rights), <strong>ongoing monitoring</strong> (renewal reviews, breach-news monitoring, periodic re-questionnaires), and <strong>off-boarding</strong> (data deletion attestations, access revocation, key rotation). Skipping any of these stages is a recurring source of incidents.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Forgotten Vendor</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+The most dangerous vendor is the one you onboarded three years ago, that nobody currently owns, that still has API keys to your production environment. Off-boarding is the step organizations skip first when budgets tighten, and it is the step that produces the headlines. Maintain a vendor inventory with a named owner per vendor, or assume breach.</p>
+</div>
+<h2 id="10-security-metrics-and-the-risk-conversation-with-executives">10. Security Metrics and the Risk Conversation with Executives<a class="headerlink" href="#10-security-metrics-and-the-risk-conversation-with-executives" title="Permanent link">&para;</a></h2>
+<p>A security program that cannot be measured cannot be managed. <strong>Security metrics</strong> are the quantitative signals that tell leadership whether the program is working, where it is failing, and where investment will produce the most risk reduction. Good metrics are few, stable over time, and tied to outcomes rather than activities.</p>
+<p>A common failure mode is to measure activity instead of outcome — <em>"we ran 12 phishing simulations this quarter"</em> tells you nothing about whether employees are more resistant to phishing. The corresponding outcome metric is the <strong>phishing simulation click-through rate over time</strong>, which does.</p>
+<p>A small, well-chosen set of metrics that most mature programs track:</p>
+<ul>
+<li><strong>Mean Time to Detect (MTTD)</strong> — average time from an attacker's initial action to a defender's first awareness. Drives detection investment.</li>
+<li><strong>Mean Time to Respond (MTTR)</strong> — average time from detection to containment. Drives response and runbook investment.</li>
+<li><strong>Patch latency</strong> — median days between vendor patch release and patch deployment for critical CVEs. Drives vulnerability management investment.</li>
+<li><strong>Phishing simulation click rate</strong> — percentage of employees who click a simulated phish, tracked over time. Drives awareness investment.</li>
+<li><strong>Privileged access review completion rate</strong> — percentage of privileged accounts reviewed on the scheduled cadence. Drives identity governance.</li>
+<li><strong>Audit findings closure rate</strong> — percentage of findings remediated by the agreed date. Drives accountability.</li>
+</ul>
+<p>The CISO's job, broadly, is to translate these metrics — and the underlying risk register — into a small number of decisions that the board and CEO must make: <em>"Our largest residual risk is X. The mitigation costs Y over Z months. Do we fund it, accept it, or transfer it?"</em> Everything else in the security program is in service of producing those decisions cleanly and on time.</p>
+<h2 id="11-the-security-program-and-the-ciso">11. The Security Program and the CISO<a class="headerlink" href="#11-the-security-program-and-the-ciso" title="Permanent link">&para;</a></h2>
+<p><strong>Security Program Management</strong> is the discipline of building and running the entire portfolio described in this chapter — governance, policy, risk, compliance, BCDR, vendor management, metrics — as a coherent whole. It is a multi-year, cross-functional effort, and it is what differentiates a security <em>team</em> from a security <em>program</em>.</p>
+<p>The <strong>CISO (Chief Information Security Officer)</strong> is the executive accountable for the program. The role has evolved sharply since its emergence in the late 1990s: early CISOs reported to the CIO and were treated as a technical sub-function; modern CISOs increasingly report directly to the CEO or to the board, in part because the SEC's 2023 cybersecurity disclosure rules made cybersecurity a first-class governance topic for U.S. public companies.</p>
+<p>A modern CISO's responsibilities cluster into four areas:</p>
+<ul>
+<li><strong>Strategy and governance</strong> — set the multi-year security strategy aligned to the business, own the policy hierarchy, brief the board on cyber risk.</li>
+<li><strong>Risk and compliance</strong> — own the risk register and the compliance program; sign off on risk acceptances above a threshold.</li>
+<li><strong>Operations and engineering</strong> — oversee SOC operations (Chapter 15), security engineering, IAM, and incident response.</li>
+<li><strong>Culture and program</strong> — own security training, the relationship with HR for insider risk, and the relationship with legal for regulatory matters.</li>
+</ul>
+<p>The CISO sits at the intersection of three constituencies that have different incentives: <strong>engineering</strong> (wants to ship), <strong>legal/compliance</strong> (wants to attest), and <strong>executives/board</strong> (want defensible, communicable risk decisions). Doing the role well requires fluency in the technical, the legal, and the financial dialects of risk — which is why CISOs usually emerge from a decade or more of security engineering combined with deliberate exposure to audit, finance, and executive communication.</p>
+<p>The closing piece of the program is the <strong>security audit</strong> — a structured, evidence-based examination by either an internal audit function or an external auditor. Internal audits run continuously and report to the audit committee of the board. External audits (SOC 2, ISO 27001 surveillance, PCI QSA) run on a regulated cadence and produce reports that the organization shares with customers and regulators. A useful mental model: internal audit is <em>for the board</em>; external audit is <em>for the market</em>.</p>
+<h4 id="diagram-the-security-program-at-a-glance">Diagram: The Security Program at a Glance<a class="headerlink" href="#diagram-the-security-program-at-a-glance" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Layered diagram showing how governance, risk, compliance, operations, and metrics fit together</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> security-program-layers<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A four-layer stacked diagram on a 900x640 canvas, top to bottom:</p>
+<ol>
+<li><strong>Top layer — Board and CEO</strong> (slate steel, narrowest band): "Risk appetite, executive accountability, public disclosures." Tooltip: "Sets the appetite; receives the metrics; signs off on top risks."</li>
+<li><strong>Second layer — CISO and Security Leadership</strong> (cybersecurity blue): "Strategy, policy, risk register, compliance roadmap." Tooltip: "Owns the program; translates risk into board-readable decisions."</li>
+<li><strong>Third layer — Security Functions</strong> (lighter blue, wider band): four side-by-side boxes labeled "Risk &amp; Compliance", "Security Engineering", "Security Operations (SOC)", "GRC &amp; Audit". Each has a small tooltip with one-sentence scope.</li>
+<li><strong>Fourth layer — Foundations</strong> (cream, widest band): "Asset inventory · Access management · Logging · Vendor inventory · Training". Tooltip: "Without these, the layers above cannot operate."</li>
+</ol>
+<p>A vertical arrow on the left labeled "Metrics flow up" runs from the foundations to the board layer.
+A vertical arrow on the right labeled "Strategy &amp; policy flow down" runs from the board layer to the foundations.</p>
+<p>Caption beneath: "The security program is a system, not a checklist. Every layer depends on the one below it being honest."</p>
+<p>Responsive: SVG scales with container; below 600px, the third layer's four boxes stack vertically. Window-resize listener re-renders.</p>
+<p>Implementation: Inline SVG with <code>&lt;title&gt;</code> tooltips and a small resize handler.</p>
+</details>
+<h2 id="12-what-you-can-now-do">12. What You Can Now Do<a class="headerlink" href="#12-what-you-can-now-do" title="Permanent link">&para;</a></h2>
+<p>You started the chapter as an engineer. You end it with a working model of how organizations decide which security work to fund and how they prove it to others. Specifically, you can now:</p>
+<ul>
+<li>Distinguish governance, risk, and compliance, and explain why an organization can be compliant and still insecure.</li>
+<li>Use the policy / standard / procedure / guideline vocabulary correctly.</li>
+<li>Pick the right framework for a given context: NIST CSF for a voluntary baseline, ISO 27001 for international certification, SOC 2 for SaaS customer assurance, PCI-DSS for card data, HIPAA for U.S. healthcare.</li>
+<li>Walk a risk through identification, assessment, treatment (mitigate / transfer / accept / avoid), and monitoring, and record it on a risk register.</li>
+<li>Read or draft a Business Impact Analysis with defensible RTO and RPO numbers.</li>
+<li>Tier a vendor portfolio and design due diligence, contractual, monitoring, and off-boarding controls appropriate to each tier.</li>
+<li>Pick a small set of outcome-oriented security metrics and explain what each one signals.</li>
+<li>Describe what a CISO does, why the role increasingly reports to the CEO or board, and how internal and external audits fit into the program.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Foundation for the Rest of the Stack</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating the chapter close">
+You can now reason about cybersecurity at the institutional scale — the level at which budgets are set and breaches are explained to boards. That is the foundation for Chapter 14 (Societal Security and the law) and Chapter 15 (Security Operations), where the program you just learned to design meets the real world of regulators, courts, and adversaries.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

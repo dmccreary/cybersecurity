@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Operational security practice: penetration testing, red/blue/purple teaming, MITRE ATT&CK, threat intelligence, threat hunting, vulnerability management, the PICERL incident-response lifecycle, malware analysis, adversary techniques, runbooks, tabletop exercises, and detection engineering.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>15. Security Operations - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Offensive and Defensive Security Operations - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              15. Security Operations
+              Offensive and Defensive Security Operations
             
           </span>
         </div>
@@ -811,6 +811,309 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-from-controls-to-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From Controls to Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. From Controls to Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-security-operations-activity-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Security Operations Activity Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-offensive-security-adversary-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Offensive Security: Adversary Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Offensive Security: Adversary Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-penetration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Penetration Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-red-teams-blue-teams-and-purple-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Red Teams, Blue Teams, and Purple Teams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-bug-bounty-programs-and-capture-the-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Bug Bounty Programs and Capture the Flag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-mitre-attck-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The MITRE ATT&amp;CK Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The MITRE ATT&CK Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-mitre-attck-tactic-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MITRE ATT&amp;CK Tactic Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-threat-intelligence-and-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Threat Intelligence and OSINT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Threat Intelligence and OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-pyramid-of-pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Pyramid of Pain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vulnerability-management-and-threat-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vulnerability Management and Threat Hunting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Vulnerability Management and Threat Hunting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Vulnerability Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-threat-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Threat Hunting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-detection-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Detection Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-incident-response-lifecycle-picerl" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. The Incident Response Lifecycle (PICERL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. The Incident Response Lifecycle (PICERL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-picerl-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The PICERL Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Identification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Containment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-eradication-recovery-and-lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Eradication, Recovery, and Lessons Learned
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-adversary-techniques-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Adversary Techniques in Depth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Adversary Techniques in Depth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Privilege Escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-lateral-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Lateral Movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-command-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Command and Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-data-exfiltration" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Data Exfiltration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-persistence-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 Persistence Mechanisms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-malware-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Malware Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-day-in-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together: A Day in Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1083,6 +1386,309 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-from-controls-to-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From Controls to Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. From Controls to Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-security-operations-activity-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Security Operations Activity Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-offensive-security-adversary-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Offensive Security: Adversary Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Offensive Security: Adversary Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-penetration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Penetration Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-red-teams-blue-teams-and-purple-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Red Teams, Blue Teams, and Purple Teams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-bug-bounty-programs-and-capture-the-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Bug Bounty Programs and Capture the Flag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-mitre-attck-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The MITRE ATT&amp;CK Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The MITRE ATT&CK Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-mitre-attck-tactic-sequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: MITRE ATT&amp;CK Tactic Sequence Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-threat-intelligence-and-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Threat Intelligence and OSINT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Threat Intelligence and OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-pyramid-of-pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Pyramid of Pain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vulnerability-management-and-threat-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Vulnerability Management and Threat Hunting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Vulnerability Management and Threat Hunting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Vulnerability Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-threat-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Threat Hunting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-detection-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Detection Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-incident-response-lifecycle-picerl" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. The Incident Response Lifecycle (PICERL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. The Incident Response Lifecycle (PICERL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-picerl-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The PICERL Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Identification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-containment" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Containment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-eradication-recovery-and-lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Eradication, Recovery, and Lessons Learned
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-adversary-techniques-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Adversary Techniques in Depth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Adversary Techniques in Depth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Privilege Escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-lateral-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Lateral Movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-command-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Command and Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-data-exfiltration" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Data Exfiltration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-persistence-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 Persistence Mechanisms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-malware-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Malware Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-putting-it-together-a-day-in-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Putting It Together: A Day in Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1156,13 +1762,504 @@
 <li><a href="../14-societal-security/">Chapter 14: Societal Security: Law, Forensics, and Ethics</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Operations Floor</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. Earlier chapters built the controls; this chapter is where they meet a thinking adversary. We will work through the rhythm of an operational security team — find the gaps before attackers do, watch the network for the ones that slipped through, and respond when something gets in. Trust, but verify.</p>
+</div>
+<h2 id="1-from-controls-to-operations">1. From Controls to Operations<a class="headerlink" href="#1-from-controls-to-operations" title="Permanent link">&para;</a></h2>
+<p>Most of this textbook has been about controls — the cryptographic primitives, network defenses, secure coding practices, identity systems, and governance frameworks that, in principle, keep an organization safe. <strong>Security operations</strong> is the discipline of running those controls in the real world against adversaries who get to pick the time, target, and technique. The controls are necessary but not sufficient. An organization with strong controls and weak operations is a fortress with no guards on the wall.</p>
+<p>Operational security work splits into three intertwined activities. <em>Offensive</em> work simulates adversaries to find weaknesses before real ones do. <em>Defensive</em> work watches the running environment for evidence of attack and stops it. <em>Response</em> work takes over when prevention has already failed, contains the damage, and rebuilds trust in the system. The same organization needs all three, and the three teams must learn from each other or none of them will improve.</p>
+<p>This chapter is heavier on practice than theory. The frameworks here — MITRE ATT&amp;CK, the PICERL lifecycle, the cyber kill chain — are useful precisely because they let practitioners speak a common language across organizations. A junior analyst at a regional bank and a senior responder at a cloud provider can both say "we observed T1059 followed by T1078 and we contained at the lateral-movement stage" and mean the same thing. Frameworks are scaffolding for operational reasoning.</p>
+<p>The diagram below previews the major activities we will cover, grouped by their place in the offensive/defensive/response triangle.</p>
+<h4 id="diagram-security-operations-activity-map">Diagram: Security Operations Activity Map<a class="headerlink" href="#diagram-security-operations-activity-map" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Triangle showing offensive, defensive, and response activities and how they feed each other</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> secops-activity-map<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A triangle layout with three major nodes at each vertex:</p>
+<ul>
+<li><strong>Offensive (top, cybersecurity blue #1565c0):</strong> Penetration Testing, Red Team, Bug Bounty, Capture the Flag, Threat Modeling</li>
+<li><strong>Defensive (bottom-left, slate steel #455a64):</strong> Blue Team, SOC Monitoring, Threat Hunting, Vulnerability Management, Detection Engineering</li>
+<li><strong>Response (bottom-right, alert accent #ffa000):</strong> Incident Response, PICERL, Forensics, Malware Analysis, Lessons Learned</li>
+</ul>
+<p>Three connecting flows:</p>
+<ol>
+<li>Offensive → Defensive: "Findings improve detections"</li>
+<li>Defensive → Response: "Alerts trigger investigations"</li>
+<li>Response → Offensive: "Lessons drive next exercise"</li>
+</ol>
+<p>A central node labeled <strong>Purple Team</strong> sits in the middle, connected to all three vertices, representing the integrative practice.</p>
+<p>Around the outside, a thin arc labeled <strong>Threat Intelligence</strong> feeds all three vertices, indicating intel is consumed by all functions.</p>
+<p>Color palette: cybersecurity blue (#1565c0), slate steel (#455a64), alert accent (#ffa000). Background: white. Responsive: stacks vertically below 700px viewport.</p>
+<p>Implementation: Mermaid graph TD with custom node styling and color coding.</p>
+</details>
+<h2 id="2-offensive-security-adversary-simulation">2. Offensive Security: Adversary Simulation<a class="headerlink" href="#2-offensive-security-adversary-simulation" title="Permanent link">&para;</a></h2>
+<p>Offensive security is the practice of attacking systems with permission, in order to find and document weaknesses before unauthorized adversaries do. The work is bounded by a written <em>rules of engagement</em> document that defines scope (which assets), time (which window), techniques (allowed and forbidden), and reporting (who learns what, when). Without that document, the same actions are crimes under the Computer Fraud and Abuse Act and equivalent laws in other jurisdictions, as Chapter 14 covered.</p>
+<h3 id="21-penetration-testing">2.1 Penetration Testing<a class="headerlink" href="#21-penetration-testing" title="Permanent link">&para;</a></h3>
+<p><strong>Penetration testing</strong> (often shortened to <em>pentesting</em>) is a time-boxed, scoped engagement in which a tester attempts to compromise specified targets using techniques a real attacker might use, then writes a report documenting what was found, how it was exploited, and how to fix it. A typical engagement runs two to six weeks and produces a remediation-focused report graded by severity.</p>
+<p>Pentests are usually classified by the level of prior knowledge given to the tester:</p>
+<ul>
+<li><strong>Black-box</strong> — the tester has no internal knowledge; they start with only what an external attacker would know (a domain name, an IP range). This simulates an outsider attack but is slow and may miss bugs that are deep inside the application.</li>
+<li><strong>Gray-box</strong> — the tester has limited insider information (a low-privileged user account, architectural overview). This simulates a compromised account or insider with reduced privilege, and balances coverage against realism.</li>
+<li><strong>White-box</strong> — the tester has full access to source code, architecture diagrams, and credentials. This is the most efficient path to deep findings but does not simulate any realistic adversary.</li>
+</ul>
+<p>Most mature organizations run a mix. Black-box tests once a year for a realistic outside view; white-box tests for new components where deep coverage matters more than realism; gray-box tests for production applications.</p>
+<h3 id="22-red-teams-blue-teams-and-purple-teams">2.2 Red Teams, Blue Teams, and Purple Teams<a class="headerlink" href="#22-red-teams-blue-teams-and-purple-teams" title="Permanent link">&para;</a></h3>
+<p>A <strong>red team</strong> is an internal or contracted offensive team whose job is to emulate a specific adversary's <em>full campaign</em> against the organization, end-to-end, often over months. Unlike a pentest, a red team engagement is goal-oriented ("exfiltrate the customer database without detection") rather than coverage-oriented ("find all bugs in this application"), and its success criterion is whether it achieved the goal without being caught.</p>
+<p>A <strong>blue team</strong> is the defensive operations team — the analysts watching the SIEM, the engineers tuning detections, the responders on call. Their job is to detect the red team (and real attackers) as early in the kill chain as possible, contain the activity, and learn from what they missed.</p>
+<p>A <strong>purple team</strong> is not a separate organization in most companies; it is a <em>practice</em> in which red and blue work together in the same room, in real time. The red team performs a technique (say, a Kerberoasting attack against Active Directory). The blue team checks whether their detections fired. If not, they add a detection rule, re-run the technique, and confirm the alert. Purple teaming compresses the feedback loop from "we got beat in the report" to "we caught it on the second try, today."</p>
+<p>The table below summarizes the differences. Note that this table reinforces concepts the prose has already introduced — it is a comparison, not an introduction.</p>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Time scale</th>
+<th>Goal</th>
+<th>Success criterion</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penetration test</td>
+<td>2–6 weeks</td>
+<td>Find bugs in scoped target</td>
+<td>Coverage of attack surface</td>
+<td>Findings report</td>
+</tr>
+<tr>
+<td>Red team</td>
+<td>1–6 months</td>
+<td>Emulate a specific threat actor</td>
+<td>Achieve objective stealthily</td>
+<td>Campaign narrative + lessons</td>
+</tr>
+<tr>
+<td>Blue team</td>
+<td>Continuous</td>
+<td>Detect and respond to attacks</td>
+<td>Time-to-detect, time-to-contain</td>
+<td>Detection rules + IR reports</td>
+</tr>
+<tr>
+<td>Purple team</td>
+<td>Hours to days</td>
+<td>Close detection gaps</td>
+<td>Detection coverage of TTPs</td>
+<td>New / improved detections</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-bug-bounty-programs-and-capture-the-flag">2.3 Bug Bounty Programs and Capture the Flag<a class="headerlink" href="#23-bug-bounty-programs-and-capture-the-flag" title="Permanent link">&para;</a></h3>
+<p>Penetration tests and red teams cost money and produce findings on a calendar. A <strong>bug bounty program</strong> flips the economics: the organization publishes a scope and a price list, and any independent researcher who finds a qualifying vulnerability submits it for a reward. Programs run on platforms like HackerOne, Bugcrowd, and Intigriti, or directly through the organization's own security page.</p>
+<p>Bug bounties are not a substitute for internal security work. They are a <em>long tail</em> — the program will turn up a steady trickle of findings that no one on staff would have time to look for, including bugs in third-party libraries the organization uses. The downside is signal-to-noise: a public program will receive many low-quality submissions ("your site doesn't have header X" reports that don't represent real risk), and triaging those takes a real budget of analyst time.</p>
+<p><strong>Capture the Flag (CTF)</strong> competitions are the educational and recruiting cousin of offensive security work. Participants solve technical challenges — exploit a deliberately vulnerable web app, reverse a binary, decrypt a ciphertext — and submit a "flag" string for points. Two formats dominate: <em>Jeopardy-style</em> (independent challenges across categories) and <em>attack-defense</em> (each team gets a vulnerable network and must patch their own while attacking others'). For students, CTFs are how a great many practitioners learn the field; for employers, they are an interview signal that scales better than asking people to do live work in the interview room.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Asymmetry</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel reflecting">
+Notice the asymmetry: the defender must cover every path; the attacker only needs one. Offensive exercises exist not because adversaries are smarter, but because finding one missing brick is easier than auditing the whole wall. Plan accordingly.</p>
+</div>
+<h2 id="3-the-mitre-attck-framework">3. The MITRE ATT&amp;CK Framework<a class="headerlink" href="#3-the-mitre-attck-framework" title="Permanent link">&para;</a></h2>
+<p>Once you have a red team, a blue team, and a backlog of findings, you need a shared vocabulary for what the attackers actually <em>did</em>. <strong>MITRE ATT&amp;CK</strong> (Adversarial Tactics, Techniques, and Common Knowledge) is the open framework that has become that vocabulary across the industry.</p>
+<p>ATT&amp;CK organizes adversary behavior into a matrix. The columns are <strong>tactics</strong> — the <em>why</em> of an action, the attacker's high-level goal at each stage. The rows within each column are <strong>techniques</strong> — the <em>how</em>, the specific methods used to achieve that tactic. Each technique has a stable identifier (e.g., <code>T1059</code> for Command and Scripting Interpreter), a description, common detection ideas, and references to real-world threat actors observed using it.</p>
+<p>The standard tactic columns, in roughly the order an attacker uses them, are:</p>
+<ol>
+<li><strong>Reconnaissance</strong> — gathering information about the target before contact</li>
+<li><strong>Resource Development</strong> — preparing infrastructure (domains, certificates, malware)</li>
+<li><strong>Initial Access</strong> — getting a first foothold (phishing, exploit, valid account)</li>
+<li><strong>Execution</strong> — running attacker code on a system</li>
+<li><strong>Persistence</strong> — surviving reboot, password change, and reinstall</li>
+<li><strong>Privilege Escalation</strong> — going from low to high privilege locally</li>
+<li><strong>Defense Evasion</strong> — avoiding detection by security tools</li>
+<li><strong>Credential Access</strong> — stealing passwords, hashes, tokens</li>
+<li><strong>Discovery</strong> — mapping the internal environment</li>
+<li><strong>Lateral Movement</strong> — moving from compromised host to other hosts</li>
+<li><strong>Collection</strong> — gathering target data</li>
+<li><strong>Command and Control</strong> — communicating with attacker infrastructure</li>
+<li><strong>Exfiltration</strong> — getting data out</li>
+<li><strong>Impact</strong> — destroying, encrypting, or otherwise harming the environment</li>
+</ol>
+<p>A real attack campaign is rarely a single technique; it is a <em>sequence</em> of techniques across several tactics, and the value of ATT&amp;CK is that defenders can describe an attack as "T1566 → T1059 → T1078 → T1003 → T1021" and other defenders will understand exactly what happened and where to look in their own logs.</p>
+<h4 id="diagram-mitre-attck-tactic-sequence-explorer">Diagram: MITRE ATT&amp;CK Tactic Sequence Explorer<a class="headerlink" href="#diagram-mitre-attck-tactic-sequence-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive sequence showing how attacker techniques chain across tactics</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> attack-tactic-sequence<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that visualizes how an attack progresses across MITRE ATT&amp;CK tactics.</p>
+<p><strong>Learning objective (Bloom's: Analyzing):</strong> Students will analyze how individual techniques chain into a complete campaign by stepping through preset scenarios and identifying which tactic each technique belongs to.</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Canvas: 900 × 520, responsive (uses <code>updateCanvasSize()</code> first in setup).</li>
+<li>Top: 14 tactic columns rendered as labeled vertical bars (Reconnaissance through Impact). Each column header shows the tactic name in slate steel #455a64.</li>
+<li>Center: animated timeline with attacker techniques represented as cybersecurity-blue (#1565c0) circles; each circle is positioned in the column of its tactic.</li>
+<li>Bottom: scenario selector dropdown and step controls.</li>
+</ul>
+<p><strong>Controls:</strong></p>
+<ul>
+<li><code>createSelect()</code> for "Scenario": options are "Phishing → Ransomware", "Supply Chain Compromise (SolarWinds-style)", "Web App SQLi → Data Theft", "Insider Credential Abuse"</li>
+<li><code>createButton("Step Forward")</code> advances one technique</li>
+<li><code>createButton("Step Back")</code> rewinds one technique</li>
+<li><code>createButton("Play All")</code> auto-advances at 1.5s/step</li>
+<li><code>createButton("Reset")</code> returns to start</li>
+<li><code>createSlider(0.5, 3.0, 1.5, 0.1)</code> for play speed (label: "Speed (s/step)")</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Each step adds the next technique circle in its appropriate tactic column with an animated arrow from the previous one.</li>
+<li>Clicking a technique circle pops up a tooltip with the technique ID, name (e.g., "T1566 — Phishing"), short description, and one defender-side detection idea.</li>
+<li>An "alert accent" #ffa000 highlight pulses on the <em>first</em> technique that a typical SOC would have detected, prompting students to reason about earliest detection point.</li>
+<li>Below the timeline: a running text strip showing "Cumulative attacker progress: &lt;% of campaign&gt;".</li>
+</ul>
+<p><strong>Default scenario:</strong> "Phishing → Ransomware" pre-loaded.</p>
+<p><strong>Responsive design:</strong> Canvas reflows to container width. On widths below 700px, tactic column labels rotate 45° to fit.</p>
+<p>Implementation: p5.js with a JSON data file containing each scenario's technique sequence and metadata. <code>canvas.parent(document.querySelector('main'));</code></p>
+</details>
+<p>ATT&amp;CK is descriptive, not prescriptive. It catalogs what attackers <em>have done</em>, drawn from real incident reports and threat intelligence; it does not rank techniques by importance or claim to be exhaustive. New techniques are added regularly, and old ones are deprecated when better names appear. The framework is most useful when paired with two practices: <strong>detection coverage mapping</strong> (which ATT&amp;CK techniques can your SOC currently detect?) and <strong>threat-actor mapping</strong> (which techniques does the adversary you most worry about actually use?).</p>
+<h2 id="4-threat-intelligence-and-osint">4. Threat Intelligence and OSINT<a class="headerlink" href="#4-threat-intelligence-and-osint" title="Permanent link">&para;</a></h2>
+<p>A defender who watches every alert from every system equally will drown in noise. <strong>Threat intelligence</strong> is the discipline of collecting, analyzing, and applying information about threats so that defensive effort focuses where it matters. Useful intelligence answers concrete questions: <em>Which adversaries target organizations like ours? What infrastructure are they currently using? Which vulnerabilities are being exploited in the wild this week?</em></p>
+<p>Intelligence is usually classified by abstraction level:</p>
+<ul>
+<li><strong>Strategic</strong> — long-horizon trends and adversary motivations, consumed by executives and risk committees</li>
+<li><strong>Operational</strong> — specific campaigns and the TTPs (tactics, techniques, procedures) being used right now</li>
+<li><strong>Tactical</strong> — the technical patterns to look for in logs (file hashes, registry keys, command-line strings)</li>
+<li><strong>Technical (Indicators of Compromise / IOCs)</strong> — concrete observables: IP addresses, domains, hashes, certificates</li>
+</ul>
+<p>The value of an indicator decays quickly. A malicious IP address used in an attack last month may be reused, but is more often discarded; a malware hash will match only one specific build. The TTP-level intelligence above the IOCs ages much more slowly — adversaries change infrastructure frequently but change their <em>methods</em> slowly. This is the basis of David Bianco's <strong>Pyramid of Pain</strong>: detecting an attacker by their TTPs causes them more difficulty than detecting them by their hash.</p>
+<h4 id="diagram-the-pyramid-of-pain">Diagram: The Pyramid of Pain<a class="headerlink" href="#diagram-the-pyramid-of-pain" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Pyramid showing increasing attacker pain from hash detection to TTP detection</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> pyramid-of-pain<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic showing David Bianco's Pyramid of Pain.</p>
+<p><strong>Learning objective (Bloom's: Understanding):</strong> Students will explain why detecting attackers at higher levels of the pyramid imposes more cost on the adversary than detecting them at lower levels.</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Canvas: 700 × 520, responsive.</li>
+<li>A 6-level pyramid, narrowest at top, widest at bottom:</li>
+<li><strong>Top — TTPs (cybersecurity blue #1565c0):</strong> "Tough!" Adversary must change methodology</li>
+<li><strong>Tools (slate steel #455a64):</strong> "Challenging" Adversary must rebuild capability</li>
+<li><strong>Network/Host Artifacts (medium blue):</strong> "Annoying" Adversary must change tradecraft</li>
+<li><strong>Domain Names (light slate):</strong> "Simple" Adversary must register new domains</li>
+<li><strong>IP Addresses (light gray):</strong> "Easy" Attacker rotates infrastructure</li>
+<li><strong>Bottom — Hash Values (palest gray):</strong> "Trivial" Attacker rebuilds with one byte changed</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Hovering each level expands a tooltip in cream (#fff8e1) explaining what an indicator at that level is, what detecting it forces the adversary to do, and one example.</li>
+<li>Clicking each level reveals a sample SIEM detection rule for that level (e.g., for TTPs: a behavioral rule, "process spawning powershell.exe with -enc base64 flag").</li>
+<li>A radio control toggles between "Defender view" (shows detection ideas) and "Attacker view" (shows what evading detection at that level costs the adversary).</li>
+</ul>
+<p><strong>Responsive design:</strong> Canvas reflows; on narrow screens the labels move below the pyramid layers as a stacked legend.</p>
+<p>Implementation: p5.js with hover detection on layer regions. <code>canvas.parent(document.querySelector('main'));</code></p>
+</details>
+<p><strong>Open-Source Intelligence (OSINT)</strong> is the subset of intelligence collected from publicly available sources — search engines, social media, WHOIS records, certificate transparency logs, code repositories, leaked credential dumps, and so on. OSINT serves both attackers (reconnaissance against a target) and defenders (understanding what an attacker can already learn about the organization). A defensive OSINT review is now standard before any new system goes live: search for credentials, secrets, internal hostnames, and architecture details that may have leaked into public GitHub repositories or developer Q&amp;A sites.</p>
+<h2 id="5-vulnerability-management-and-threat-hunting">5. Vulnerability Management and Threat Hunting<a class="headerlink" href="#5-vulnerability-management-and-threat-hunting" title="Permanent link">&para;</a></h2>
+<h3 id="51-vulnerability-management">5.1 Vulnerability Management<a class="headerlink" href="#51-vulnerability-management" title="Permanent link">&para;</a></h3>
+<p><strong>Vulnerability management</strong> is the continuous process of finding, prioritizing, fixing, and verifying weaknesses across the organization's systems. It differs from a one-shot pentest in that it is a <em>program</em>, not an event: a cycle that runs forever and measures itself by metrics like mean time to remediate (MTTR), patch coverage, and percentage of critical vulnerabilities remediated within the policy window.</p>
+<p>The standard cycle has five steps:</p>
+<ol>
+<li><strong>Discover</strong> — find all assets in scope (endpoints, servers, containers, cloud workloads, network devices)</li>
+<li><strong>Scan</strong> — run <strong>vulnerability scanning</strong> tools against the assets to identify known vulnerabilities by version comparison</li>
+<li><strong>Prioritize</strong> — rank by exploitability, exposure, and asset criticality</li>
+<li><strong>Remediate</strong> — patch, reconfigure, or compensate</li>
+<li><strong>Verify</strong> — re-scan to confirm the fix landed</li>
+</ol>
+<p><strong>Vulnerability scanning</strong> tools (Nessus, Qualys, OpenVAS, Tenable.io, cloud-native scanners) compare the versions of installed software against a database of known CVEs and report any matches. Scanners are inexpensive and produce huge lists, which is exactly the problem: a typical mid-sized organization will have tens of thousands of findings open at any moment, and most cannot be exploited from where the attacker would actually stand.</p>
+<p>Prioritization is what separates a useful program from a noise generator. CVSS scores alone are a poor prioritization signal because they describe theoretical severity, not exploitability in your environment. Modern programs combine CVSS with three other inputs:</p>
+<ul>
+<li><strong>Exploit availability</strong> — is there a public exploit, in Metasploit or as a standalone tool?</li>
+<li><strong>Active exploitation</strong> — is the CVE on CISA's Known Exploited Vulnerabilities (KEV) catalog, meaning attackers are using it <em>right now</em>?</li>
+<li><strong>Exposure and reachability</strong> — is the affected system actually reachable from where the attacker can stand (internet-facing, lateral movement away)?</li>
+</ul>
+<p>EPSS (Exploit Prediction Scoring System) is the current best-of-class third-party signal for the second item: a probability that a CVE will be exploited in the wild in the next 30 days, updated daily.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Patch What's Reachable First</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering practical advice">
+In production, prioritize a CVSS-7 vulnerability on an internet-facing host above a CVSS-9 vulnerability on an isolated internal box. Reachability and exploit availability beat raw severity score every time. Least privilege, by default — and least exposure first.</p>
+</div>
+<h3 id="52-threat-hunting">5.2 Threat Hunting<a class="headerlink" href="#52-threat-hunting" title="Permanent link">&para;</a></h3>
+<p>Vulnerability management asks "where could we be hit?" <strong>Threat hunting</strong> asks "have we already been hit, and is the SIEM just not seeing it?" A threat hunter starts from a <em>hypothesis</em> — typically informed by threat intelligence — and goes looking through logs, telemetry, and host data for evidence that the hypothesis is true.</p>
+<p>A typical hunt looks like this:</p>
+<ol>
+<li><strong>Form a hypothesis</strong> — "If APT-X has gained a foothold here, we'd see PowerShell with <code>-EncodedCommand</code> running from non-admin accounts during business hours."</li>
+<li><strong>Define the data sources</strong> — endpoint process logs, PowerShell module logs, Sysmon events</li>
+<li><strong>Query and analyze</strong> — run searches, look at outliers, follow up on suspicious results</li>
+<li><strong>Triage outcomes</strong> — confirmed incident → escalate to IR; false positive → document the why; <em>gap</em> → if the hypothesis cannot even be tested with current data, that is a logging deficiency to fix</li>
+<li><strong>Convert to detection</strong> — if the hunt found something worth catching, write a detection rule so it triggers automatically next time</li>
+</ol>
+<p>The crucial output of threat hunting is not "we caught an attacker today" — most hunts find nothing — it is <em>durable detections</em>. A hunt that found nothing but identified a logging gap, or produced a new high-fidelity detection rule, has paid for itself.</p>
+<h2 id="6-detection-engineering">6. Detection Engineering<a class="headerlink" href="#6-detection-engineering" title="Permanent link">&para;</a></h2>
+<p><strong>Detection engineering</strong> is the discipline of designing, implementing, and maintaining the rules and analytics that make alerts fire. It treats detections as software: written in a query language, version-controlled in Git, tested with sample data, deployed through CI/CD, and measured by quality metrics rather than gut feeling.</p>
+<p>A useful detection has three properties:</p>
+<ul>
+<li><strong>Sensitivity</strong> — does it fire on the actual attacker behavior?</li>
+<li><strong>Specificity</strong> — does it <em>not</em> fire on benign behavior that looks similar?</li>
+<li><strong>Maintainability</strong> — can the next analyst understand why it exists, what it covers, and how to tune it?</li>
+</ul>
+<p>The trade-off between sensitivity and specificity is the central engineering problem. A rule that alerts on "any PowerShell execution" is highly sensitive but useless — every Windows admin uses PowerShell. A rule that alerts only on a specific malware hash is highly specific but trivially evaded. Detection engineers learn to write rules that exploit <em>behavioral</em> signals (process lineage, command-line entropy, unusual time-of-day, unusual host-pair communication) where attackers cannot trivially blend in.</p>
+<p>The standard toolkit and language ecosystem includes:</p>
+<table>
+<thead>
+<tr>
+<th>Tool / language</th>
+<th>Purpose</th>
+<th>Where it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sigma</td>
+<td>Vendor-neutral detection rule format</td>
+<td>Translates to Splunk, Elastic, Sentinel queries</td>
+</tr>
+<tr>
+<td>YARA</td>
+<td>Pattern matching on file content</td>
+<td>Endpoint, mail gateways, sandboxes</td>
+</tr>
+<tr>
+<td>Snort / Suricata rules</td>
+<td>Network signature matching</td>
+<td>IDS / IPS sensors</td>
+</tr>
+<tr>
+<td>KQL (Kusto Query Language)</td>
+<td>Detections in Microsoft Sentinel / Defender</td>
+<td>Cloud SIEM</td>
+</tr>
+<tr>
+<td>SPL (Splunk Search Processing Language)</td>
+<td>Detections in Splunk</td>
+<td>Splunk SIEM</td>
+</tr>
+<tr>
+<td>EQL (Event Query Language)</td>
+<td>Sequence-based detections</td>
+<td>Elastic Security</td>
+</tr>
+</tbody>
+</table>
+<p>A modern detection engineering practice maintains a <strong>detection coverage map</strong> — typically rendered as an ATT&amp;CK matrix colored by which techniques have at least one high-fidelity detection — and uses it to drive backlog priorities. Coverage gaps that overlap with the techniques used by the organization's most relevant threat actors get fixed first.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Don't Let Mocked Tests Be Your Only Validation</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel cautioning">
+A detection that passes its unit test against synthetic events but never fires on real attacker behavior is a control that fails open. Validate every rule against real (or red-team-generated) telemetry before counting it as coverage. If a detection has never alerted, you do not know whether it works.</p>
+</div>
+<h2 id="7-the-incident-response-lifecycle-picerl">7. The Incident Response Lifecycle (PICERL)<a class="headerlink" href="#7-the-incident-response-lifecycle-picerl" title="Permanent link">&para;</a></h2>
+<p>Even with strong prevention and good detection, incidents happen. <strong>Incident response</strong> is the structured process of handling a confirmed or suspected security incident from first signal through full recovery and learning. The dominant model is the <strong>PICERL lifecycle</strong>, codified in NIST SP 800-61 and adopted across the industry:</p>
+<ul>
+<li><strong>P</strong>reparation</li>
+<li><strong>I</strong>dentification</li>
+<li><strong>C</strong>ontainment</li>
+<li><strong>E</strong>radication</li>
+<li><strong>R</strong>ecovery</li>
+<li><strong>L</strong>essons Learned</li>
+</ul>
+<p>The phases are pedagogically sequential but operationally overlapping — a complex incident may have one team eradicating on host A while another is still identifying scope on host B. The discipline is in not skipping phases, especially the unglamorous bookends (Preparation and Lessons Learned) that pay back across every future incident.</p>
+<h4 id="diagram-the-picerl-lifecycle">Diagram: The PICERL Lifecycle<a class="headerlink" href="#diagram-the-picerl-lifecycle" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Cyclical diagram of the six-phase incident response lifecycle</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> picerl-lifecycle<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A circular workflow diagram showing the six PICERL phases as a closed loop, with Lessons Learned feeding back into Preparation.</p>
+<p><strong>Layout:</strong></p>
+<p>Six rounded boxes arranged in a clockwise circle:</p>
+<ol>
+<li><strong>Preparation</strong> (top, cybersecurity blue #1565c0) — "Plans, runbooks, training, tooling"</li>
+<li><strong>Identification</strong> (top-right, slate steel #455a64) — "Detect, triage, declare"</li>
+<li><strong>Containment</strong> (bottom-right, alert accent #ffa000) — "Short-term and long-term containment"</li>
+<li><strong>Eradication</strong> (bottom, slate steel) — "Remove attacker access and artifacts"</li>
+<li><strong>Recovery</strong> (bottom-left, slate steel) — "Restore services, monitor closely"</li>
+<li><strong>Lessons Learned</strong> (top-left, cybersecurity blue) — "Post-incident review, durable improvements"</li>
+</ol>
+<p>Arrows form a clockwise cycle. A dashed arrow returns from Lessons Learned to Preparation, emphasizing the feedback loop.</p>
+<p>A clock-face annotation around the outside indicates relative time on each phase ("hours" for Identification, "minutes-hours" for Containment, "days" for Eradication, "weeks" for Recovery, "weeks after" for Lessons Learned).</p>
+<p>Color: cybersecurity blue (#1565c0), slate steel (#455a64), alert accent (#ffa000) used for the time-critical phase. Background white. Responsive: stacks vertically below 700px.</p>
+<p>Implementation: Mermaid graph LR or custom SVG with circular layout.</p>
+</details>
+<h3 id="71-preparation">7.1 Preparation<a class="headerlink" href="#71-preparation" title="Permanent link">&para;</a></h3>
+<p><strong>Incident preparation</strong> is the work done <em>before</em> anything happens, and it is the single highest-leverage phase. Preparation includes:</p>
+<ul>
+<li>Writing the <strong>incident response plan</strong> — a document approved by leadership that names the IR team, defines roles, sets escalation paths, lists communication channels (and <em>out-of-band</em> channels for when normal email is compromised), and references the legal and regulatory notification obligations from Chapter 14</li>
+<li>Building <strong>runbooks</strong> for common incident classes (ransomware, business email compromise, web shell, data exfiltration)</li>
+<li>Provisioning IR tooling (forensic acquisition, network blocking authority, log retention)</li>
+<li>Running <strong>tabletop exercises</strong> to rehearse the plan</li>
+<li>Establishing relationships with external parties — outside counsel, IR retainer firm, FBI/Secret Service field office, cyber insurance carrier — <em>before</em> you need them at 2 AM</li>
+</ul>
+<p>A <strong>runbook</strong> is a step-by-step procedure for responding to a specific class of incident. Good runbooks specify <em>who decides</em>, <em>who acts</em>, and <em>what evidence to preserve</em> at each step. They are written for someone tired and stressed at 3 AM, not for a calm reviewer at a desk. They are also living documents — every real incident reveals at least one thing the runbook said wrong.</p>
+<p>A <strong>tabletop exercise</strong> is a discussion-based simulation in which the IR team and stakeholders work through a hypothetical scenario without touching production systems. A facilitator narrates the scenario ("a ransomware note appears on twelve workstations"), injects developments ("the CFO's laptop is among them"), and watches how the team responds. Tabletops surface gaps in the plan — missing decision authority, unclear ownership, untested tools — far cheaper than a real incident does. They are required by many compliance frameworks, but the value of a <em>good</em> tabletop comes from honest engagement with realistic scenarios, not from checking the compliance box.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">The First Tabletop Is the Hardest</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering reassurance">
+The first tabletop exercise an organization runs is often awkward — gaps everywhere, unclear authority, half-written runbooks. That is normal, and that is the entire point. The discomfort during a tabletop is the discomfort you wanted to feel before the real thing. Each rehearsal makes the next one calmer.</p>
+</div>
+<h3 id="72-identification">7.2 Identification<a class="headerlink" href="#72-identification" title="Permanent link">&para;</a></h3>
+<p><strong>Incident identification</strong> turns a signal into a declared incident. The signal might come from a SIEM alert, a user report, a third party (your bank calling about strange wires), or a threat hunt. The IR team triages: is this real, what is its scope, and is it serious enough to declare? A <em>declared incident</em> triggers the full IR process — a dedicated bridge, evidence preservation, notification clocks running.</p>
+<p>Two questions dominate this phase. First, what are the <strong>indicators of compromise (IOCs)</strong> — the specific observables that confirm and bound the incident (a malicious file hash, an attacker IP, a compromised account)? Second, what is the <strong>scope</strong> — how many hosts, accounts, data records are affected? Scope estimates often grow during the response; a hallmark of mature teams is communicating the <em>uncertainty</em> in scope rather than committing too early to a number that may be wrong by an order of magnitude.</p>
+<h3 id="73-containment">7.3 Containment<a class="headerlink" href="#73-containment" title="Permanent link">&para;</a></h3>
+<p><strong>Incident containment</strong> stops the bleeding without destroying the evidence needed for eradication and prosecution. Containment splits into two phases:</p>
+<ul>
+<li><strong>Short-term containment</strong> — fast actions to limit damage, often with imperfect information: isolate hosts at the network layer, disable accounts, block IPs at the firewall, revoke session tokens</li>
+<li><strong>Long-term containment</strong> — once the scope is understood, deploy more durable measures: network segmentation, hardened replacements, full credential rotation across affected trust boundaries</li>
+</ul>
+<p>The classic containment dilemma is whether to <strong>immediately yank the network cable</strong> of a compromised host or <strong>leave it running while you observe</strong>. Yanking cuts off the attacker but tips them off; observing preserves visibility but risks more damage. The right answer depends on what the attacker is doing: if data is actively exfiltrating, contain now; if the attacker is dormant and you need to understand their full footprint before acting, watch carefully under tight legal guidance.</p>
+<h3 id="74-eradication-recovery-and-lessons-learned">7.4 Eradication, Recovery, and Lessons Learned<a class="headerlink" href="#74-eradication-recovery-and-lessons-learned" title="Permanent link">&para;</a></h3>
+<p><strong>Incident eradication</strong> removes the attacker's access and artifacts: malware, web shells, scheduled tasks, persistence keys, attacker-created accounts, modified system binaries. The temptation to declare eradication done after one round is dangerous. Sophisticated attackers plant <em>multiple</em> persistence mechanisms; if you remove one and miss the others, they will come back through the spare door three days later. Eradication is finished when an honest threat hunt across the affected environment finds nothing.</p>
+<p><strong>Incident recovery</strong> restores normal operations. Hosts come back from clean backups or are rebuilt from gold images; services come back online in stages; monitoring on the affected systems is set tighter than baseline for some weeks afterward. A common mistake is to recover and then <em>quietly</em> return to baseline monitoring — the exact moment the attacker counts on, if they have any reentry path you missed.</p>
+<p><strong>Lessons learned</strong> is the post-incident review, and it is the phase most often skipped or done badly. A useful post-incident review names what happened <em>blamelessly</em>, identifies the <em>systemic</em> causes (not just the proximate cause), and produces a small number of <em>durable</em> improvements that go on someone's actual roadmap with a date. A review that produces fifty-two action items will produce zero outcomes; a review that produces three real ones changes the organization. The output should also feed back into runbooks and detection engineering, so the next incident of this class costs less.</p>
+<p>The table summarizes typical artifacts produced at each PICERL phase. Note this table organizes prose we have already explained — it does not introduce new concepts.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Time scale</th>
+<th>Key activities</th>
+<th>Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preparation</td>
+<td>Continuous</td>
+<td>IR plan, runbooks, tabletops, tooling</td>
+<td>IR plan, runbook library, exercise reports</td>
+</tr>
+<tr>
+<td>Identification</td>
+<td>Minutes to hours</td>
+<td>Triage, declaration, IOC capture</td>
+<td>Incident ticket, IOC list, scope estimate</td>
+</tr>
+<tr>
+<td>Containment</td>
+<td>Minutes to days</td>
+<td>Isolate, disable, block</td>
+<td>Containment log, evidence images</td>
+</tr>
+<tr>
+<td>Eradication</td>
+<td>Days to weeks</td>
+<td>Remove attacker access and artifacts</td>
+<td>Eradication checklist, hunt results</td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>Days to weeks</td>
+<td>Rebuild, restore, monitor</td>
+<td>Restoration plan, validation results</td>
+</tr>
+<tr>
+<td>Lessons Learned</td>
+<td>Weeks after</td>
+<td>Post-incident review</td>
+<td>PIR document, improvement backlog</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-adversary-techniques-in-depth">8. Adversary Techniques in Depth<a class="headerlink" href="#8-adversary-techniques-in-depth" title="Permanent link">&para;</a></h2>
+<p>To respond to attacks intelligently, defenders must understand the small repertoire of moves attackers use <em>inside</em> a compromised environment. The PICERL phases are the defender's structure; the techniques in this section are what the attacker is doing during your Identification, Containment, and Eradication.</p>
+<h3 id="81-privilege-escalation">8.1 Privilege Escalation<a class="headerlink" href="#81-privilege-escalation" title="Permanent link">&para;</a></h3>
+<p><strong>Privilege escalation</strong> is the act of moving from a low-privileged context (a normal user, a service account, a container) to a higher-privileged one (administrator, root, domain admin) on the same host or within the same trust boundary. It splits into:</p>
+<ul>
+<li><strong>Vertical escalation</strong> — going from user to admin on the same host (kernel exploit, misconfigured <code>sudo</code>, weak service permissions)</li>
+<li><strong>Horizontal escalation</strong> — moving sideways into another account at a similar privilege level whose access happens to include something the attacker wants</li>
+</ul>
+<p>Vertical escalation often exploits a small, well-known set of conditions: a setuid binary that calls a user-controlled program, a service running as SYSTEM with a writable executable path, a token-impersonation primitive in Windows, or a kernel CVE for which a public exploit exists. Defending against privilege escalation is one of the highest-leverage hardening activities — it forces the attacker to convert a small foothold into a useful one, and a good defender can make that conversion expensive or impossible.</p>
+<h3 id="82-lateral-movement">8.2 Lateral Movement<a class="headerlink" href="#82-lateral-movement" title="Permanent link">&para;</a></h3>
+<p><strong>Lateral movement</strong> is the act of reaching from one compromised host to another inside the environment. The attacker has some access; they want <em>more</em> access — to the file server, to the domain controller, to the database holding the prize. Lateral movement techniques include:</p>
+<ul>
+<li><strong>Pass-the-hash / pass-the-ticket</strong> — reusing stolen credential material against other hosts in the same Windows domain</li>
+<li><strong>Remote service execution</strong> — using legitimate administrative protocols (SMB, WinRM, SSH, WMI) with stolen credentials</li>
+<li><strong>Internal exploitation</strong> — exploiting an unpatched internal service that the perimeter would never have exposed</li>
+<li><strong>Credential harvesting from memory</strong> — using tools like Mimikatz to extract cached credentials from a host, then using those credentials to reach the next host</li>
+</ul>
+<p>Lateral movement is the single highest-value detection target for most defenders, because nearly every serious incident passes through it and the legitimate-looking traffic produces high-fidelity behavioral detections. Network segmentation, jump hosts, just-in-time admin, and tiered administration models (Microsoft's "Tier 0/1/2" model is the canonical example) are the architectural defenses that limit how far lateral movement can travel before hitting a wall.</p>
+<h3 id="83-command-and-control">8.3 Command and Control<a class="headerlink" href="#83-command-and-control" title="Permanent link">&para;</a></h3>
+<p><strong>Command and control (C2)</strong> is the channel an attacker uses to issue commands to the implant on a compromised host and receive results. Modern attackers prefer C2 channels that blend into normal traffic — HTTPS to a domain that <em>looks</em> like a CDN, DNS queries that encode commands in subdomain names, traffic to legitimate services like Slack or GitHub being repurposed as carriers. The defender's job is to find the patterns that distinguish attacker C2 from real user traffic at scale.</p>
+<p>Useful C2 detection signals include:</p>
+<ul>
+<li><strong>Beaconing</strong> — the implant calls home on a regular interval; jittered beacons still produce a detectable distribution</li>
+<li><strong>Low-and-slow data volumes</strong> — periodic small POSTs to an unfamiliar domain</li>
+<li><strong>JA3/JA4 TLS fingerprinting</strong> — TLS client fingerprints that do not match any legitimate browser or library on the host</li>
+<li><strong>Newly registered or low-reputation domains</strong> in outbound DNS</li>
+</ul>
+<p>Mature SOCs maintain detections for each, plus an analyst-reviewed feed of suspicious outbound destinations.</p>
+<h3 id="84-data-exfiltration">8.4 Data Exfiltration<a class="headerlink" href="#84-data-exfiltration" title="Permanent link">&para;</a></h3>
+<p><strong>Data exfiltration</strong> is the attacker's act of getting target data out of the environment. The exfiltration path can be the same channel as C2, or it can be deliberately separated to avoid the size signal — large outbound transfers stand out, whereas a short C2 channel and a separate, brief upload to a cloud storage service may not. Common patterns include:</p>
+<ul>
+<li>DNS tunneling for slow, low-volume exfiltration</li>
+<li>HTTPS POST to attacker-controlled web endpoints</li>
+<li>Cloud storage uploads (Mega, Dropbox, S3) using stolen API credentials</li>
+<li>Email, with attached encrypted archives, from a compromised mailbox</li>
+</ul>
+<p>Defensive controls layer at multiple boundaries: data loss prevention (DLP) at the egress, anomaly detection on user-data-volume baselines, prohibition (or proxying) of unsanctioned cloud storage, and mandatory egress filtering for sensitive zones.</p>
+<h3 id="85-persistence-mechanisms">8.5 Persistence Mechanisms<a class="headerlink" href="#85-persistence-mechanisms" title="Permanent link">&para;</a></h3>
+<p>A <strong>persistence mechanism</strong> is any technique an attacker uses to survive a reboot, password change, or partial cleanup. Persistence is <em>the</em> reason eradication is harder than containment: an attacker who is contained on the network but has a scheduled task that fetches a new implant each morning is back tomorrow.</p>
+<p>Common persistence mechanisms include:</p>
+<ul>
+<li><strong>Scheduled tasks</strong> (cron, Windows Task Scheduler) that launch attacker code on a schedule</li>
+<li><strong>Registry Run keys</strong> in Windows that launch attacker code at user logon</li>
+<li><strong>Service installation</strong> — register a service that runs as SYSTEM at boot</li>
+<li><strong>WMI event subscriptions</strong> — fire attacker code on system events</li>
+<li><strong>Modified login profiles</strong> (<code>.bashrc</code>, PowerShell profiles, browser extensions)</li>
+<li><strong>Bootkits and firmware implants</strong> (rare but devastating; they survive even OS reinstall)</li>
+<li><strong>Cloud persistence</strong> — attacker-created IAM users, SSH keys, OAuth grants, backdoor Lambda functions</li>
+</ul>
+<p>Eradication that does not enumerate and remove every plausible persistence mechanism is unfinished work. This is why mature IR teams maintain checklists per environment ("the 27 places persistence can hide on a Windows endpoint, the 18 in our AWS account, the 9 in our Kubernetes clusters") and run them all.</p>
+<h2 id="9-malware-analysis">9. Malware Analysis<a class="headerlink" href="#9-malware-analysis" title="Permanent link">&para;</a></h2>
+<p>When an attacker drops a binary or script during an incident, the IR team needs to know what it does — what data it touches, what hosts it talks to, what persistence it plants — so that scope and eradication can be complete. <strong>Malware analysis</strong> is the discipline of answering those questions, and it splits into two complementary approaches:</p>
+<ul>
+<li><strong>Static analysis</strong> — examining the sample without executing it. Reading strings, examining imported libraries, looking for embedded indicators, decompiling key functions, identifying packers and obfuscators.</li>
+<li><strong>Dynamic analysis</strong> — running the sample in a controlled environment (a sandbox or an air-gapped analysis VM) and watching its behavior. File system changes, registry modifications, network connections, process injection.</li>
+</ul>
+<p>For most operational teams, the right first step is an automated sandbox (commercial: Joe Sandbox, ANY.RUN; open-source: Cuckoo, CAPE) that produces a behavioral report in minutes. Deep manual reverse engineering — debugger-driven inspection of the unpacked code — is reserved for samples where the report is incomplete or where attribution and capability assessment matter (high-end APT samples, novel ransomware variants).</p>
+<p>The output of malware analysis feeds directly into IR: IOCs to hunt for elsewhere in the environment, persistence mechanisms to remove, network indicators to block, and a behavioral profile that makes detection of <em>this same family</em> automatic next time.</p>
+<h2 id="10-putting-it-together-a-day-in-operations">10. Putting It Together: A Day in Operations<a class="headerlink" href="#10-putting-it-together-a-day-in-operations" title="Permanent link">&para;</a></h2>
+<p>Imagine a typical Wednesday at a mid-sized organization with a real security operations practice. Threat intelligence has flagged an active campaign by a financially motivated group exploiting a recently disclosed vulnerability in a popular VPN appliance. The day might unfold like this:</p>
+<ol>
+<li><strong>Morning</strong> — vulnerability management team confirms the relevant appliance is in inventory, kicks off an emergency patch cycle, and updates the SLA dashboard. The detection engineering team writes a Sigma rule for the specific exploit pattern and ships it to the SIEM.</li>
+<li><strong>Mid-morning</strong> — a threat hunter, working from the campaign's published TTPs, queries the last 30 days of VPN logs for the attacker's known indicators. They find nothing on the matched host but identify a logging gap (the appliance's full request body is not retained) and file a ticket to fix it.</li>
+<li><strong>Midday</strong> — the SIEM fires the new detection on a different host. The on-call analyst triages, declares an incident, and the IR runbook for "VPN appliance compromise" engages. Containment isolates the appliance; identification expands scope by examining authentication logs and outbound connections from any account that authenticated through the appliance in the last 14 days.</li>
+<li><strong>Afternoon</strong> — eradication removes the attacker's web shell and three persistence mechanisms; recovery rebuilds the appliance from a clean image with the patch applied. The malware-analysis team finishes a behavioral report on the dropper and the C2 traffic pattern.</li>
+<li><strong>End of day</strong> — the incident is closed pending the post-incident review. The detection rule that fired is promoted from "experimental" to "production"; one new runbook step is added based on a decision the IR lead had to make ad-hoc; the logging gap from the morning is on next sprint's backlog.</li>
+</ol>
+<p>What makes this a <em>good</em> day is not that nothing went wrong — something always goes wrong — but that every part of the operation produced a durable improvement. Threat intel produced a hunt and a detection. The hunt produced a logging fix. The incident produced a runbook update and an upgraded detection. The malware analysis produced new IOCs that go into the next intel feed. This is the rhythm a security operations program is trying to achieve: every signal, in or out, leaves the organization a little harder to attack tomorrow than it was today.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read an incident report and name where the attacker was in MITRE ATT&amp;CK at each step, identify which PICERL phase the responders were in, and reason about which detection or control should have caught the attack earlier. That is the foundation Chapter 16 builds on as we look at emerging topics — AI security, post-quantum migration, and the capstone you will defend.</p>
+</div>
+<h2 id="11-key-takeaways">11. Key Takeaways<a class="headerlink" href="#11-key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Security operations</strong> is the running practice of finding, watching, and responding — necessary because no set of controls alone is sufficient against thinking adversaries.</li>
+<li><strong>Penetration tests</strong> find bugs in scope; <strong>red teams</strong> emulate full adversary campaigns; <strong>blue teams</strong> detect and respond; <strong>purple teams</strong> close detection gaps in real time.</li>
+<li><strong>MITRE ATT&amp;CK</strong> is the shared vocabulary of adversary techniques; defenders use it to map detection coverage and prioritize gaps.</li>
+<li><strong>Threat intelligence</strong> prioritizes defensive effort; the <strong>Pyramid of Pain</strong> explains why detecting TTPs costs the adversary far more than detecting hashes.</li>
+<li><strong>Vulnerability management</strong> is the continuous discover-scan-prioritize-remediate-verify cycle; prioritize on exploitability and reachability, not raw CVSS.</li>
+<li><strong>Threat hunting</strong> is hypothesis-driven search through data for attackers your detections missed; the best output is a new durable detection.</li>
+<li><strong>Detection engineering</strong> treats detections as software, with tests, version control, and coverage metrics tracked against ATT&amp;CK.</li>
+<li>The <strong>PICERL lifecycle</strong> — Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned — is the operational structure of incident response; preparation and lessons learned are the highest-leverage phases.</li>
+<li><strong>Adversary techniques</strong> (privilege escalation, lateral movement, C2, exfiltration, persistence) are the small repertoire defenders must recognize and architect against.</li>
+<li><strong>Bug bounties</strong> and <strong>CTFs</strong> extend the offensive talent pool and develop practitioners; they complement rather than replace internal work.</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
