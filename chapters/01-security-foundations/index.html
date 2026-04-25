@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Establishes the core vocabulary, mindset, threat-modeling techniques, risk reasoning, and Saltzer-Schroeder design principles that ground every later chapter.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>1. Security Foundations - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Security Foundations: Properties, Mindset, and Risk - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Security Foundations
+              Security Foundations: Properties, Mindset, and Risk
             
           </span>
         </div>
@@ -512,6 +512,147 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-cybersecurity-actually-defends" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What Cybersecurity Actually Defends
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What Cybersecurity Actually Defends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cia-triad-with-example-threats-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: CIA Triad with Example Threats and Controls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-beyond-cia-the-aaa-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Beyond CIA — The AAA Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Beyond CIA — The AAA Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aaa-pipeline-with-non-repudiation-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: AAA Pipeline with Non-Repudiation Sidebar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-habits-of-mind-adversarial-and-systems-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Habits of Mind: Adversarial and Systems Thinking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-threat-modeling-making-adversarial-thinking-repeatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Threat Modeling: Making Adversarial Thinking Repeatable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Threat Modeling: Making Adversarial Thinking Repeatable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-threat-modeling-methodology-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Threat Modeling Methodology Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-risk-quantifying-what-could-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Risk: Quantifying What Could Go Wrong
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Risk: Quantifying What Could Go Wrong">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-5x5-risk-heat-map-with-treatment-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 5x5 Risk Heat Map with Treatment Bands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-saltzer-schroeder-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Saltzer-Schroeder Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-security-economics-when-principles-meet-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Security Economics: When Principles Meet Budgets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bringing-it-together-a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Bringing It Together — A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
     </span>
   </a>
   
@@ -1083,6 +1224,147 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-what-cybersecurity-actually-defends" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What Cybersecurity Actually Defends
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What Cybersecurity Actually Defends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cia-triad-with-example-threats-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: CIA Triad with Example Threats and Controls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-beyond-cia-the-aaa-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Beyond CIA — The AAA Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Beyond CIA — The AAA Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aaa-pipeline-with-non-repudiation-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: AAA Pipeline with Non-Repudiation Sidebar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-habits-of-mind-adversarial-and-systems-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Habits of Mind: Adversarial and Systems Thinking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-threat-modeling-making-adversarial-thinking-repeatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Threat Modeling: Making Adversarial Thinking Repeatable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Threat Modeling: Making Adversarial Thinking Repeatable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-threat-modeling-methodology-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Threat Modeling Methodology Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-risk-quantifying-what-could-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Risk: Quantifying What Could Go Wrong
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Risk: Quantifying What Could Go Wrong">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-5x5-risk-heat-map-with-treatment-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 5x5 Risk Heat Map with Treatment Bands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-saltzer-schroeder-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Saltzer-Schroeder Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-security-economics-when-principles-meet-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Security Economics: When Principles Meet Budgets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bringing-it-together-a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Bringing It Together — A Worked Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1146,13 +1428,296 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Cybersecurity</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome. This chapter trades the comfortable assumption that "the system is benign" for a sharper instinct: every input, every interface, every assumption is somewhere an adversary can lie. We will build the vocabulary first, then the mindset, then the principles that turn that mindset into engineering. Trust, but verify.</p>
+</div>
+<h2 id="1-what-cybersecurity-actually-defends">1. What Cybersecurity Actually Defends<a class="headerlink" href="#1-what-cybersecurity-actually-defends" title="Permanent link">&para;</a></h2>
+<p><strong>Cybersecurity</strong> is the computing discipline concerned with establishing and maintaining trustworthy operation of information, systems, and infrastructure in the presence of adversaries. The defining word in that sentence is <em>adversaries</em> — people and programs that act against your goals on purpose. Reliability engineering studies what happens when systems fail by accident; cybersecurity studies what happens when they fail because someone arranged for them to.</p>
+<p>A closely related term, <strong>information security</strong> (often shortened to "infosec"), is the older and broader discipline that protects information regardless of medium — paper, voice, electronic. Cybersecurity is the subset of information security that deals with information <em>in computing systems and networks</em>. The two terms overlap heavily in practice, and in modern usage they are nearly interchangeable, but the distinction matters when you read older standards or when a problem touches non-digital assets.</p>
+<p>Three properties have anchored security thinking for fifty years. <strong>Confidentiality</strong> is the property that information is disclosed only to authorized parties — a stolen laptop with an encrypted disk preserves confidentiality even when the hardware is in adversary hands. <strong>Integrity</strong> is the property that information and systems are not modified without authorization — a banking transaction that arrives with the amount changed in transit has lost integrity. <strong>Availability</strong> is the property that authorized users can access the system when they need to — a denial-of-service attack does not steal anything, but it destroys availability all the same.</p>
+<p>Together these three properties form the <strong>CIA triad</strong>, and they are the first lens you will reach for when you analyze any system. Every control, every attack, and every requirement in this textbook can be traced back to one or more of these three letters.</p>
+<h4 id="diagram-cia-triad-with-example-threats-and-controls">Diagram: CIA Triad with Example Threats and Controls<a class="headerlink" href="#diagram-cia-triad-with-example-threats-and-controls" title="Permanent link">&para;</a></h4>
+<details>
+<summary>CIA Triad with example threats and controls per leg</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> cia-triad-overview<br/>
+<strong>Library:</strong> Mermaid (or static SVG)<br/>
+<strong>Status:</strong> Specified</p>
+<p>A triangle with the three letters C, I, A at the vertices. Each vertex is labeled with the property name (Confidentiality, Integrity, Availability) and shows two columns beneath the label:</p>
+<ul>
+<li><strong>Threats column</strong> (red): one threat that violates this property</li>
+<li>C: "Eavesdropping on unencrypted traffic"</li>
+<li>I: "Tampering with a database row"</li>
+<li>A: "DDoS flooding a public service"</li>
+<li><strong>Controls column</strong> (green): one control that supports this property</li>
+<li>C: "AES-GCM encryption + access control"</li>
+<li>I: "Digital signatures + write-protected logs"</li>
+<li>A: "Load balancing + rate limiting"</li>
+</ul>
+<p>Center of the triangle: the words "Information Asset". Hover/click on each vertex reveals a short definition tooltip. Color: cybersecurity blue (#1565c0) for the triangle, white background, slate-steel text. Responsive design that reflows to a vertical stacked list below 600px viewport width.</p>
+<p>Implementation: Static SVG generated at build time, or a small Mermaid graph. No interactivity needed beyond hover tooltips.</p>
+</details>
+<p>The triad is necessary but not sufficient. Modern systems require additional properties to support accountability and trust between parties.</p>
+<h2 id="2-beyond-cia-the-aaa-framework">2. Beyond CIA — The AAA Framework<a class="headerlink" href="#2-beyond-cia-the-aaa-framework" title="Permanent link">&para;</a></h2>
+<p>When systems became multi-user and networked, three more properties became essential. <strong>Authentication</strong> is the process of verifying that a claimed identity is genuine — proving you are who you say you are. <strong>Authorization</strong> is the process of deciding whether an authenticated identity is permitted to perform a specific action — once we know it is you, do we let you do <em>this</em>? <strong>Accounting</strong> (sometimes called <em>auditing</em>) is the process of recording what authenticated identities actually did, so that activity can be reviewed, billed, or investigated.</p>
+<p>These three together form the <strong>AAA framework</strong>, and they are the operational backbone of most identity and access management systems. Notice that they form a pipeline: you authenticate first, you authorize next, and you account throughout.</p>
+<p>A fourth property is often added when legal or contractual disputes are possible. <strong>Non-repudiation</strong> is the property that an actor cannot credibly deny having performed an action — typically achieved with digital signatures or tamper-evident logs. Non-repudiation is what lets a court conclude that the message really was sent by the claimed sender, or that the transaction really was authorized by the named party.</p>
+<p>Before we examine the AAA pipeline visually, let us establish two terms the diagram uses: a <em>principal</em> is the entity (user, service, or device) being authenticated, and a <em>resource</em> is the asset the principal is trying to access.</p>
+<h4 id="diagram-aaa-pipeline-with-non-repudiation-sidebar">Diagram: AAA Pipeline with Non-Repudiation Sidebar<a class="headerlink" href="#diagram-aaa-pipeline-with-non-repudiation-sidebar" title="Permanent link">&para;</a></h4>
+<details>
+<summary>AAA pipeline showing authentication, authorization, accounting, and non-repudiation</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> aaa-pipeline<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal flow diagram with four boxes connected by arrows:</p>
+<ol>
+<li><strong>Principal</strong> (left) - "Claims an identity (e.g., user@example.com)"</li>
+<li><strong>Authentication</strong> - "Is the claim genuine? (password, MFA, certificate)"</li>
+<li><strong>Authorization</strong> - "Is this principal allowed this action on this resource?"</li>
+<li><strong>Accounting</strong> - "Record what happened (logs, audit trail)"</li>
+<li><strong>Resource</strong> (right) - "Protected asset"</li>
+</ol>
+<p>Below the main flow, a side-box labeled <strong>Non-Repudiation</strong> with arrows from "Authentication" and "Accounting" feeding into it, with the caption "Cryptographic evidence — actor cannot deny the action."</p>
+<p>Each step is color-coded: authentication = blue (#1565c0), authorization = green, accounting = slate-steel (#455a64), non-repudiation = amber (#ffa000). Clicking each step expands a definition tooltip. Responsive: stacks vertically on screens under 700px wide.</p>
+<p>Implementation: Mermaid graph LR with subgraph for non-repudiation sidebar.</p>
+</details>
+<p>In casual writing you will see "AAA" used to mean <em>authentication, authorization, accounting</em>; in some standards documents you will see it expanded to four or five letters that include non-repudiation, identification, or auditing as separate steps. The exact letter count is less important than recognizing that real systems need all of these properties working together.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why CIA and AAA Are Not the Same Question</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+The CIA triad asks <em>what properties does the asset need?</em> The AAA framework asks <em>who is acting on the asset, and are they allowed to?</em> You will see students conflate them — confidentiality is not authentication. A correctly authenticated user can still violate confidentiality if your authorization rules are wrong.</p>
+</div>
+<h2 id="3-the-habits-of-mind-adversarial-and-systems-thinking">3. The Habits of Mind: Adversarial and Systems Thinking<a class="headerlink" href="#3-the-habits-of-mind-adversarial-and-systems-thinking" title="Permanent link">&para;</a></h2>
+<p>Vocabulary is necessary but not sufficient. The hardest part of cybersecurity is <em>thinking like a defender in a world full of adversaries</em>, and that requires two cross-cutting habits of mind.</p>
+<p><strong>Adversarial thinking</strong> is the deliberate practice of asking "how would an attacker abuse this?" about every feature, interface, and assumption. It is the opposite of the engineering instinct to focus on the happy path. A developer building a comment form thinks about valid comments; an adversarial thinker also asks: <em>What if the comment contains JavaScript? What if it is 10 megabytes long? What if there are a million of them per second? What if the user impersonates someone else?</em></p>
+<p><strong>Systems thinking</strong> is the discipline of reasoning about how components interact, how trust flows, and how a change in one place propagates somewhere unexpected. Most real-world breaches are not the failure of a single control but the surprising composition of multiple controls that each looked correct in isolation. A login service that is "secure" and a password reset flow that is "secure" can compose into a system that is <em>not</em> secure if the password reset bypasses the login service's rate limiter.</p>
+<p>These two habits reinforce each other. Adversarial thinking asks "what could go wrong here?"; systems thinking asks "where else does this connection reach?" Together they produce the question that distinguishes a security engineer from a feature engineer: <strong>what does this control assume, and what happens at the boundary where the assumption stops being true?</strong></p>
+<p>The following table contrasts the two mindsets — both are essential, and they apply at different moments in a design conversation.</p>
+<table>
+<thead>
+<tr>
+<th>Mindset</th>
+<th>Default question</th>
+<th>Useful at</th>
+<th>Failure mode if missing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engineering (default)</td>
+<td>"How do I make this work?"</td>
+<td>Building features</td>
+<td>Ignores misuse cases</td>
+</tr>
+<tr>
+<td>Adversarial thinking</td>
+<td>"How would an attacker abuse this?"</td>
+<td>Reviewing controls, threat modeling</td>
+<td>Becomes paranoia without context</td>
+</tr>
+<tr>
+<td>Systems thinking</td>
+<td>"Where does this connection reach? What does it assume?"</td>
+<td>Architecture, incident response</td>
+<td>Becomes academic without specifics</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">A Habit Worth Building</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+When you read a feature spec, write three lines of adversarial questions in the margin before you write any code. You will catch more issues during design than any audit will catch later. Think like an attacker, build like a defender.</p>
+</div>
+<h2 id="4-threat-modeling-making-adversarial-thinking-repeatable">4. Threat Modeling: Making Adversarial Thinking Repeatable<a class="headerlink" href="#4-threat-modeling-making-adversarial-thinking-repeatable" title="Permanent link">&para;</a></h2>
+<p>Adversarial thinking is a habit; <strong>threat modeling</strong> is the structured process that makes that habit repeatable across teams and across time. A threat model is an explicit, written description of (a) what assets the system protects, (b) where the trust boundaries are, (c) what an adversary might try, and (d) which threats the design mitigates versus which it accepts.</p>
+<p>Three threat-modeling methodologies dominate professional practice, and you should be able to apply at least one fluently before you finish this course.</p>
+<p><strong>STRIDE</strong>, developed at Microsoft, classifies threats into six categories that map directly to the security properties they violate. Each letter of STRIDE is a question you ask of every component in the system:</p>
+<ul>
+<li><strong>S</strong>poofing — can an adversary impersonate a legitimate identity? (violates authentication)</li>
+<li><strong>T</strong>ampering — can an adversary modify data or code? (violates integrity)</li>
+<li><strong>R</strong>epudiation — can an actor plausibly deny an action? (violates non-repudiation)</li>
+<li><strong>I</strong>nformation disclosure — can an adversary read what they should not? (violates confidentiality)</li>
+<li><strong>D</strong>enial of service — can an adversary deny use to legitimate users? (violates availability)</li>
+<li><strong>E</strong>levation of privilege — can an adversary gain capabilities they should not have? (violates authorization)</li>
+</ul>
+<p>STRIDE is fast, structured, and works well in design reviews because every component gets all six questions. Its weakness is that it does not naturally consider <em>why</em> an attacker would bother — it is property-driven, not goal-driven.</p>
+<p><strong>PASTA</strong> (Process for Attack Simulation and Threat Analysis) is a heavier, seven-stage methodology that begins with business objectives and ends with concrete attack simulations. PASTA forces the analyst to define what the business is trying to do, what assets support those objectives, who would target those assets, and what attack scenarios would actually achieve the attacker's goals. PASTA produces richer threat models than STRIDE but takes substantially more time, so it is reserved for high-stakes systems and compliance-driven analyses.</p>
+<p><strong>Attack trees</strong>, formalized by Bruce Schneier in the late 1990s, are a hierarchical decomposition of an attacker's goal. The root of the tree is the attacker's objective (for example, "read patient X's medical record"); the children are the different ways to achieve that objective; their children are the steps that would be required for each path. Attack trees make trade-offs between attacker paths visible and let you compare the cost or feasibility of each branch.</p>
+<h4 id="diagram-threat-modeling-methodology-comparison">Diagram: Threat Modeling Methodology Comparison<a class="headerlink" href="#diagram-threat-modeling-methodology-comparison" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Side-by-side comparison of STRIDE, PASTA, and attack trees</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> threat-modeling-methods<br/>
+<strong>Library:</strong> Static SVG or Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>Three vertical columns of equal width:</p>
+<p><strong>Column 1 — STRIDE</strong> (header in cybersecurity blue #1565c0)
+- Six rows, one per letter, each showing: letter, name, property violated
+- Footer: "Use for: design reviews, fast component-by-component analysis"</p>
+<p><strong>Column 2 — PASTA</strong> (header in slate steel #455a64)
+- Seven numbered stages from "Define Objectives" to "Simulate Attacks"
+- Footer: "Use for: high-stakes systems, business-aligned analysis"</p>
+<p><strong>Column 3 — Attack Trees</strong> (header in amber #ffa000)
+- A small attack tree showing root "Steal Customer Data" branching to three children: "Compromise database", "Phish admin", "Exploit API"; one child further expanded to two grandchildren
+- Footer: "Use for: comparing attacker paths, cost/feasibility analysis"</p>
+<p>Below all three columns: a single-line summary table showing time-to-complete (STRIDE: hours, PASTA: days–weeks, attack trees: hours–days), output type, and best fit. Responsive: columns stack vertically below 800px.</p>
+<p>Implementation: Static SVG built once, or three small Mermaid diagrams in a CSS grid.</p>
+</details>
+<p>In practice, mature security programs use STRIDE for routine design reviews, attack trees when they need to compare specific adversary paths, and PASTA only for systems where regulatory or contractual stakes justify the time investment. None of the three is "best" — they are different tools for different conversations.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">If This Feels Like A Lot — It Is</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Sentinel offering encouragement">
+First-time threat models are awkward. You will second-guess your asset list, miss obvious threats, and feel like the methodology is fighting you. That is normal — threat modeling is a skill that compounds with practice. Run STRIDE on a small system three times, and the pattern stops being theory and starts being instinct.</p>
+</div>
+<h2 id="5-risk-quantifying-what-could-go-wrong">5. Risk: Quantifying What Could Go Wrong<a class="headerlink" href="#5-risk-quantifying-what-could-go-wrong" title="Permanent link">&para;</a></h2>
+<p>Threat modeling enumerates what could go wrong; <strong>risk</strong> quantifies how much it would matter. Risk is the bridge between technical security work and the business decisions that fund it. Stakeholders rarely care about the existence of a vulnerability — they care about the <em>risk</em> the vulnerability creates.</p>
+<p>Two ingredients combine to form risk: <strong>likelihood</strong> is the probability that a specific adverse event occurs in a given time window, and <strong>impact</strong> is the magnitude of harm if it does. The standard simplification is that risk is the product of likelihood and impact, often written as</p>
+<p>[
+\text{Risk} = \text{Likelihood} \times \text{Impact}
+]</p>
+<p>This formula is more a way of <em>thinking</em> than a way of <em>computing</em> — actual numbers are usually approximate ranges, and impact is often multidimensional (financial loss, reputational harm, regulatory exposure, human safety). What the formula buys you is the discipline to consider both factors at once. A high-impact event with a vanishingly small likelihood may not justify the same investment as a moderate-impact event that happens monthly.</p>
+<p>A <strong>risk assessment</strong> is a structured exercise that catalogs threats, estimates their likelihood and impact, and ranks them. The output is typically a risk register — a prioritized list that drives the security program's investment decisions for the next planning cycle.</p>
+<p>Before we look at the risk-assessment matrix below, two terms worth pinning down. <em>Likelihood</em> is normally rated on a coarse ordinal scale (rare / unlikely / possible / likely / almost certain) rather than a precise probability, because real threat data rarely supports more precision. <em>Impact</em> is similarly rated on an ordinal scale (negligible / minor / moderate / major / catastrophic) tied to concrete dollar ranges or harm categories defined by the organization.</p>
+<h4 id="diagram-5x5-risk-heat-map-with-treatment-bands">Diagram: 5x5 Risk Heat Map with Treatment Bands<a class="headerlink" href="#diagram-5x5-risk-heat-map-with-treatment-bands" title="Permanent link">&para;</a></h4>
+<details>
+<summary>5x5 risk matrix with treatment recommendations per cell</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> risk-heat-map<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A 5x5 grid:
+- X-axis: Likelihood (Rare → Almost Certain), labels at column centers
+- Y-axis: Impact (Negligible → Catastrophic), labels at row centers
+- Each of the 25 cells is colored on a green-yellow-orange-red gradient based on Likelihood × Impact severity
+- Cells along the diagonal and upper-right are red ("Critical — mitigate immediately")
+- Yellow band of cells is "Significant — mitigate or transfer"
+- Green band is "Acceptable — monitor"</p>
+<p>A legend below shows four severity tiers (Acceptable / Significant / Critical / Mitigate Immediately) with their treatment recommendations. Hover tooltips on each cell explain the recommended treatment ("e.g., for Likelihood=Possible, Impact=Major: Mitigate or transfer; assign owner; review in 30 days").</p>
+<p>Color palette: green #4caf50, yellow #fdd835, orange #fb8c00, red #c62828. Responsive: rotates to portrait orientation under 600px wide.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> elements per cell for tooltip text.</p>
+</details>
+<p>Risk reasoning underpins almost every security decision in this course. When you encounter a control later in the textbook — encryption, network segmentation, multi-factor authentication — the question to ask is always <em>what risk does this control address, and is the cost commensurate with the risk?</em></p>
+<h2 id="6-the-saltzer-schroeder-design-principles">6. The Saltzer-Schroeder Design Principles<a class="headerlink" href="#6-the-saltzer-schroeder-design-principles" title="Permanent link">&para;</a></h2>
+<p>In 1975, Jerome Saltzer and Michael Schroeder published a paper titled "The Protection of Information in Computer Systems" that distilled the field's accumulated wisdom into a set of design principles. Half a century later, these principles remain the most concise summary of how to design defensible systems, and modern security frameworks still refer to them by name. We will examine the most important ones individually, then return to a comparison table.</p>
+<p><strong>Defense in depth</strong> is the principle that no single control should be expected to stop a determined adversary; instead, the system should layer multiple independent controls so that the failure of any one does not lead to total compromise. A well-designed system might use a network firewall, a host firewall, an intrusion detection system, encrypted databases, and access controls <em>all</em> protecting the same asset. The attacker must defeat each layer in turn, and the cost compounds.</p>
+<p><strong>Least privilege</strong> is the principle that every actor (user, service, process) should run with the minimum set of permissions required to do its job, and no more. A web server that only needs to read static files should not have write access to its own code. A backup process that only needs to read databases should not have credentials that can drop tables. Least privilege limits the <em>blast radius</em> — the scope of damage when something does go wrong.</p>
+<p><strong>Separation of duties</strong> is the principle that critical actions should require multiple independent actors, so that no single compromised account can cause catastrophic harm. The classical example is finance: the person who initiates a payment should not be the same person who approves it. In security, separation of duties shows up in code-deployment pipelines (developer commits, reviewer approves, automation deploys) and in privileged-access workflows (operator requests, manager approves, audit logs the action).</p>
+<p><strong>Fail secure default</strong> is the principle that when a system fails or encounters an unexpected condition, it should fail into a <em>secure</em> state — denying access, logging the failure, and refusing to make a guess. The opposite, fail-open behavior, is a footgun: an authentication service that returns "authenticated" when it can't reach the user database is failing in the wrong direction.</p>
+<p><strong>Complete mediation</strong> is the principle that every access to every protected resource must be checked against the authorization policy <em>every single time</em>, not cached or assumed. Caching authorization decisions is tempting for performance and is the source of an entire class of vulnerabilities (TOCTOU bugs, stale capability checks).</p>
+<p><strong>Open design</strong> is the principle that the security of a system should not depend on the secrecy of its design. Auguste Kerckhoffs articulated this in 1883 for cryptography ("the system should remain secure even if the design is known to the adversary"), and it generalizes to all of security. Secret algorithms cannot be peer-reviewed, and once leaked they offer no protection. Real security depends on secrets that are <em>replaceable</em> (keys, passwords) — not on the design itself.</p>
+<p><strong>Economy of mechanism</strong> is the principle that security mechanisms should be as small and simple as possible. Complex code has more bugs, and security bugs are catastrophic. The smallest mechanism that meets the requirement is almost always the right one; clever mechanisms accumulate failure modes faster than features.</p>
+<p><strong>Psychological acceptability</strong> is the principle that controls must be usable in practice. A password policy that requires 32-character random passwords rotated daily will produce sticky notes on monitors. Security mechanisms that are not psychologically acceptable get bypassed, and the bypassed system is less secure than a less-strict mechanism that people actually follow. This principle is the bridge between the Component, System, and Human Security knowledge areas — usable security is real security.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Most Common Way Principles Fail</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+These principles fail not when they are unknown, but when they are silently violated for short-term convenience. "We'll grant the service full database access for now and tighten it later" violates least privilege; "the auth check is expensive, let's cache it for 60 seconds" violates complete mediation. The principles are not obstacles — they are the failure modes of expedient shortcuts written down in advance.</p>
+</div>
+<p>The principles are not independent — they reinforce each other. The following table summarizes each principle, the question it answers, and a typical violation. (Recall that all eight principles have been defined in the prose above; this table reinforces that material.)</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Question it answers</th>
+<th>Typical violation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defense in depth</td>
+<td>What if my primary control fails?</td>
+<td>"We have a firewall — that's enough."</td>
+</tr>
+<tr>
+<td>Least privilege</td>
+<td>What's the minimum capability needed?</td>
+<td>Service runs as root for "convenience"</td>
+</tr>
+<tr>
+<td>Separation of duties</td>
+<td>Can one compromised account cause catastrophe?</td>
+<td>One admin can deploy and approve their own code</td>
+</tr>
+<tr>
+<td>Fail secure default</td>
+<td>What happens when the system errors?</td>
+<td>Auth service fails-open on database timeout</td>
+</tr>
+<tr>
+<td>Complete mediation</td>
+<td>Is every access checked, every time?</td>
+<td>Cached authorization decisions</td>
+</tr>
+<tr>
+<td>Open design</td>
+<td>Does security rely on secret design?</td>
+<td>"Security through obscurity"</td>
+</tr>
+<tr>
+<td>Economy of mechanism</td>
+<td>Is this as simple as it can be?</td>
+<td>Custom crypto, custom auth, custom protocols</td>
+</tr>
+<tr>
+<td>Psychological acceptability</td>
+<td>Will people actually follow this?</td>
+<td>32-char passwords, rotated daily</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-security-economics-when-principles-meet-budgets">7. Security Economics: When Principles Meet Budgets<a class="headerlink" href="#7-security-economics-when-principles-meet-budgets" title="Permanent link">&para;</a></h2>
+<p>The principles above describe what <em>should</em> happen; <strong>security economics</strong> is the discipline of deciding what <em>will</em> happen given finite budgets, finite attention, and rational adversaries. Security work is never about eliminating risk — it is about spending the next dollar on the control that reduces risk the most.</p>
+<p>Three economic insights shape practical security work. First, security is a market with two sides: defenders pay to protect, and attackers pay to attack. A control is effective when it raises the attacker's cost above the value the attacker can extract. You do not need a perfect control — you need a control that makes you a less attractive target than the next system on the attacker's list.</p>
+<p>Second, the marginal value of additional security investment diminishes. The first dollar spent on security typically returns enormous risk reduction; the millionth dollar may produce almost none. Beyond a certain point, additional spending fails to reduce risk faster than it consumes resources that could be used elsewhere.</p>
+<p>Third, externalities and information asymmetries distort the market. Software vendors often bear less of the cost of insecurity than their customers do, which leads to systematic underinvestment in security. Regulation (HIPAA, GDPR, breach disclosure laws) exists in part to correct these market failures by forcing the cost back onto the producer.</p>
+<p>Below is a small numeric example to make the trade-off concrete. Suppose a system faces a threat with annual likelihood 0.10 and expected impact $200,000 if the threat materializes.</p>
+<p>[
+\text{Annual Loss Expectancy} = 0.10 \times \$200{,}000 = \$20{,}000
+]</p>
+<p>A control that costs $5,000 per year and reduces likelihood from 0.10 to 0.02 reduces ALE to</p>
+<p>[
+0.02 \times \$200{,}000 = \$4{,}000
+]</p>
+<p>The control reduces expected loss by $16,000 per year at a cost of $5,000 — a clear win. A second, additional control that costs $30,000 per year and reduces likelihood further to 0.01 only saves an additional $2,000 in expected loss. The second control is uneconomic, even though it is technically effective. Economics, not technology, decides what gets deployed.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Real Question Stakeholders Are Asking</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+When a manager asks "is this secure?" they almost never mean "is this perfectly secure?" They mean "is the residual risk acceptable given what it costs to reduce it further?" Learning to translate technical findings into that question is the bridge from security analyst to security engineer.</p>
+</div>
+<h2 id="8-bringing-it-together-a-worked-example">8. Bringing It Together — A Worked Example<a class="headerlink" href="#8-bringing-it-together-a-worked-example" title="Permanent link">&para;</a></h2>
+<p>To anchor the chapter, consider a small example that uses every concept introduced. Imagine an organization is designing a customer portal that lets users view their billing history.</p>
+<p>The CIA properties for the portal are clear: <em>confidentiality</em> of billing data, <em>integrity</em> of the displayed amounts, and <em>availability</em> during business hours. The AAA pipeline is also clear: customers authenticate (probably with passwords plus MFA), are authorized (each customer can see only their own records), and the system accounts (every billing-history view is logged for audit). Non-repudiation matters less for read-only billing views, but it matters greatly for the payment-submission feature that will follow.</p>
+<p>Adversarial thinking on this design surfaces immediate questions: what stops a customer from changing the customer-ID parameter in the URL to view someone else's bills? What if an attacker tries 10,000 password guesses? What if the portal's reverse proxy fails and the application reachable behind it has weaker controls?</p>
+<p>A STRIDE pass over the architecture surfaces six categories of threat, of which the most pressing are <em>spoofing</em> (credential stuffing against the login) and <em>information disclosure</em> (the customer-ID-in-URL pattern). A small attack tree confirms that the cheapest attacker path is credential stuffing using leaked passwords from other breaches.</p>
+<p>Risk assessment ranks the credential-stuffing threat as <em>likely</em> with <em>major</em> impact (regulatory exposure if customer data leaks), placing it in the red zone of the heat map. Treatment: add MFA (mitigate), and add rate limiting plus credential-stuffing detection (mitigate further).</p>
+<p>Design principles guide the controls: <em>defense in depth</em> says rate-limit at the load balancer <em>and</em> in the application; <em>least privilege</em> says the portal service account should only read the customer's own records; <em>fail secure</em> says authentication failure denies access (never approves on error); <em>psychological acceptability</em> says the MFA flow must be brief enough that users complete it, not bypass it. Security economics confirms the controls are worth their cost.</p>
+<p>What you have just read is a complete, professional-quality security analysis of a small system, performed using only the concepts introduced in this chapter. Every later chapter in this textbook adds depth — cryptographic protocols, network defenses, secure-coding practices, organizational frameworks — but the structure of the analysis stays the same.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read a system description, identify the CIA and AAA properties at stake, run a STRIDE pass, sketch an attack tree, score the surfaced threats on a risk heat map, and reason about which Saltzer-Schroeder principles the design honors or violates. That is the foundation. The next chapter builds the threat-and-control vocabulary you will use to translate that analysis into specific mitigations.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>CIA + AAA</strong> form the property vocabulary: confidentiality, integrity, availability, authentication, authorization, accounting, plus non-repudiation when accountability matters.</li>
+<li><strong>Adversarial thinking</strong> asks "how would an attacker abuse this?"; <strong>systems thinking</strong> asks "what does this connection assume?" Both are required.</li>
+<li><strong>Threat modeling</strong> (STRIDE for fast component-by-component reviews, PASTA for high-stakes systems, attack trees for path comparison) makes adversarial thinking repeatable.</li>
+<li><strong>Risk = Likelihood × Impact</strong> is a thinking tool more than a calculation; risk assessment ranks threats so investment can be prioritized.</li>
+<li><strong>Saltzer-Schroeder principles</strong> — defense in depth, least privilege, separation of duties, fail-secure default, complete mediation, open design, economy of mechanism, psychological acceptability — describe what defensible designs have in common.</li>
+<li><strong>Security economics</strong> decides which controls actually get built: spend the next dollar where it reduces the most risk.</li>
+</ul>
+<p>Next chapter: the threat-and-control vocabulary that turns this foundation into specific engineering decisions.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
