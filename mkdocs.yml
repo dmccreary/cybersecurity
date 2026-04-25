@@ -72,6 +72,7 @@ markdown_extensions:
 # Custom CSS
 extra_css:
   - css/extra.css
+  - css/mascot.css
 
 # Extra
 extra:
@@ -86,7 +87,23 @@ nav:
   - About: about.md
   - Course Description: course-description.md
   - Chapters:
-      - Introduction: chapters/index.md
+      - List of Chapters: chapters/index.md
+      - 1. Security Foundations: chapters/01-security-foundations/index.md
+      - 2. Threats and Controls: chapters/02-threats-and-controls/index.md
+      - 3. Crypto Fundamentals: chapters/03-crypto-fundamentals/index.md
+      - 4. Crypto in Practice: chapters/04-crypto-in-practice/index.md
+      - 5. Software Vulnerabilities: chapters/05-software-vulnerabilities/index.md
+      - 6. Software Assurance: chapters/06-software-assurance/index.md
+      - 7. Component Security: chapters/07-component-security/index.md
+      - 8. Network Foundations: chapters/08-network-foundations/index.md
+      - 9. Advanced Network Defense: chapters/09-advanced-network-defense/index.md
+      - 10. System Security: chapters/10-system-security/index.md
+      - 11. Cloud and Ops Monitoring: chapters/11-cloud-and-ops-monitoring/index.md
+      - 12. Human Security: chapters/12-human-security/index.md
+      - 13. Organizational Security: chapters/13-organizational-security/index.md
+      - 14. Societal Security: chapters/14-societal-security/index.md
+      - 15. Security Operations: chapters/15-security-operations/index.md
+      - 16. Emerging and Capstone: chapters/16-emerging-and-capstone/index.md
   - Learning Graph:
     - Introduction: learning-graph/index.md
     - Course Description Assessment: learning-graph/course-description-assessment.md
@@ -94,6 +111,7 @@ nav:
     - Graph Quality Analysis: learning-graph/quality-metrics.md
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
+    - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
     - Learning Graph Viewer: sims/graph-viewer/index.md
   - Glossary: glossary.md

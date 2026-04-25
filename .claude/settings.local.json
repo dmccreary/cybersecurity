@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\(primary|accent|color|#[0-9a-fA-F]{3,6}\\)\" /Users/dan/Documents/ws/cybersecurity/docs/css/extra.css)"
+    ]
+  }
+}
