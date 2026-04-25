@@ -1,0 +1,391 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Cybersecurity,,FOUND
+2,Information Security,1,FOUND
+3,Confidentiality,2,FOUND
+4,Integrity,2,FOUND
+5,Availability,2,FOUND
+6,CIA Triad,3|4|5,FOUND
+7,Authentication,6,FOUND
+8,Authorization,7,FOUND
+9,Accounting,7,FOUND
+10,Non-Repudiation,7,FOUND
+11,AAA Framework,7|8|9,FOUND
+12,Adversarial Thinking,1,FOUND
+13,Systems Thinking,1,FOUND
+14,Threat Modeling,12|13,FOUND
+15,STRIDE,14,FOUND
+16,PASTA,14,FOUND
+17,Attack Trees,14,FOUND
+18,Risk,1,FOUND
+19,Likelihood,18,FOUND
+20,Impact,18,FOUND
+21,Risk Assessment,19|20,FOUND
+22,Defense in Depth,1,FOUND
+23,Least Privilege,1,FOUND
+24,Separation of Duties,23,FOUND
+25,Fail Secure Default,1,FOUND
+26,Complete Mediation,23,FOUND
+27,Open Design Principle,1,FOUND
+28,Economy of Mechanism,1,FOUND
+29,Psychological Acceptability,1,FOUND
+30,Security Economics,18,FOUND
+31,Threat,14,FOUND
+32,Vulnerability,14,FOUND
+33,Exploit,31|32,FOUND
+34,Threat Actor,31,FOUND
+35,Attack Surface,32,FOUND
+36,Blast Radius,33,FOUND
+37,Trust Boundary,22,FOUND
+38,Asset,21,FOUND
+39,Security Requirement,38,FOUND
+40,CVE,32,FOUND
+41,CVSS,40|21,FOUND
+42,TTP,31|34,FOUND
+43,Indicator of Compromise,33,FOUND
+44,Indicator of Attack,33,FOUND
+45,Zero Day,33,FOUND
+46,Kill Chain,42,FOUND
+47,Cyber Kill Chain,46,FOUND
+48,Diamond Model,14|42,FOUND
+49,Security Control,22,FOUND
+50,Preventive Control,49,FOUND
+51,Detective Control,49,FOUND
+52,Corrective Control,49,FOUND
+53,Compensating Control,49,FOUND
+54,Administrative Control,49,FOUND
+55,Technical Control,49,FOUND
+56,Physical Control,49,FOUND
+57,Cryptography,1|3,CRYPTO
+58,Plaintext,57,CRYPTO
+59,Ciphertext,57,CRYPTO
+60,Encryption,58|59,CRYPTO
+61,Decryption,60,CRYPTO
+62,Cryptographic Key,60,CRYPTO
+63,Symmetric Cryptography,60|62,CRYPTO
+64,Block Cipher,63,CRYPTO
+65,Stream Cipher,63,CRYPTO
+66,AES,64,CRYPTO
+67,DES,64,CRYPTO
+68,3DES,67,CRYPTO
+69,Block Cipher Modes,64,CRYPTO
+70,ECB Mode,69,CRYPTO
+71,CBC Mode,69,CRYPTO
+72,CTR Mode,69,CRYPTO
+73,GCM Mode,69,CRYPTO
+74,Initialization Vector,71,CRYPTO
+75,Padding Scheme,64,CRYPTO
+76,Asymmetric Cryptography,60|62,CRYPTO
+77,Public Key,76,CRYPTO
+78,Private Key,76,CRYPTO
+79,RSA,77|78,CRYPTO
+80,Elliptic Curve Cryptography,76,CRYPTO
+81,Diffie-Hellman,76,CRYPTO
+82,Key Exchange,81,CRYPTO
+83,Hash Function,4,CRYPTO
+84,SHA-2,83,CRYPTO
+85,SHA-3,83,CRYPTO
+86,MD5,83,CRYPTO
+87,Collision Resistance,83,CRYPTO
+88,Preimage Resistance,83,CRYPTO
+89,Message Authentication Code,83|62,CRYPTO
+90,HMAC,89|84,CRYPTO
+91,Digital Signature,76|83,CRYPTO
+92,Certificate Authority,91,CRYPTO
+93,PKI,92,CRYPTO
+94,X.509 Certificate,92,CRYPTO
+95,Certificate Chain,94,CRYPTO
+96,Certificate Revocation,94,CRYPTO
+97,OCSP,96,CRYPTO
+98,Key Management,62,CRYPTO
+99,Key Rotation,98,CRYPTO
+100,Key Derivation Function,62,CRYPTO
+101,Password Hashing,83,CRYPTO
+102,Bcrypt,101,CRYPTO
+103,Argon2,101,CRYPTO
+104,Salting,101,CRYPTO
+105,TLS,76|91|93,CRYPTO
+106,TLS Handshake,105|82,CRYPTO
+107,HTTPS,105,CRYPTO
+108,Perfect Forward Secrecy,82,CRYPTO
+109,Data at Rest,60,CRYPTO
+110,Data in Transit,60,CRYPTO
+111,Data in Use,60,CRYPTO
+112,Database Encryption,109,CRYPTO
+113,Data Loss Prevention,109|110,CRYPTO
+114,Homomorphic Encryption,76|111,CRYPTO
+115,Secure Computation,114,CRYPTO
+116,Differential Privacy,3,CRYPTO
+117,Zero-Knowledge Proof,76,CRYPTO
+118,Secure SDLC,1,SOFT
+119,Secure Design,22|118,SOFT
+120,Secure Coding,118,SOFT
+121,OWASP Top Ten,32|120,SOFT
+122,CWE Top 25,32|120,SOFT
+123,Buffer Overflow,121,SOFT
+124,Stack Overflow,123,SOFT
+125,Heap Overflow,123,SOFT
+126,Integer Overflow,121,SOFT
+127,Format String Bug,121,SOFT
+128,Injection Attack,121,SOFT
+129,SQL Injection,128,SOFT
+130,Command Injection,128,SOFT
+131,Cross-Site Scripting,128,SOFT
+132,Stored XSS,131,SOFT
+133,Reflected XSS,131,SOFT
+134,DOM-Based XSS,131,SOFT
+135,CSRF,121,SOFT
+136,SSRF,121,SOFT
+137,Insecure Deserialization,121,SOFT
+138,Race Condition,121,SOFT
+139,TOCTOU,138,SOFT
+140,Broken Access Control,121,SOFT
+141,Broken Authentication,121|7,SOFT
+142,Security Misconfiguration,121,SOFT
+143,Sensitive Data Exposure,121|3,SOFT
+144,Input Validation,120|128,SOFT
+145,Output Encoding,120|131,SOFT
+146,Parameterized Query,144|129,SOFT
+147,Static Analysis,120,SOFT
+148,Dynamic Analysis,120,SOFT
+149,Fuzzing,148,SOFT
+150,Software Composition Analysis,120,SOFT
+151,Dependency Scanning,150,SOFT
+152,Software Supply Chain,118,SOFT
+153,SBOM,152,SOFT
+154,Code Signing,91|120,SOFT
+155,Secure Code Review,120,SOFT
+156,Hardware Security,1,COMP
+157,Trusted Platform Module,156,COMP
+158,Hardware Security Module,156|98,COMP
+159,Secure Enclave,156,COMP
+160,Trusted Execution Env,159,COMP
+161,Firmware Security,156,COMP
+162,Secure Boot,161,COMP
+163,Measured Boot,162|157,COMP
+164,UEFI Security,161,COMP
+165,Side-Channel Attack,156,COMP
+166,Timing Attack,165,COMP
+167,Power Analysis Attack,165,COMP
+168,Cache Side-Channel,165,COMP
+169,Rowhammer,156,COMP
+170,Hardware Supply Chain,156|152,COMP
+171,Embedded Security,156,COMP
+172,IoT Security,171,COMP
+173,Device Attestation,157|162,COMP
+174,Hardware Root of Trust,157,COMP
+175,Network Security,1,NET
+176,OSI Model,175,NET
+177,TCP/IP Model,175,NET
+178,TCP,177,NET
+179,UDP,177,NET
+180,IP Protocol,177,NET
+181,ICMP,180,NET
+182,ARP Spoofing,175,NET
+183,DHCP Snooping,175,NET
+184,Man-in-the-Middle,175,NET
+185,Packet Sniffing,175,NET
+186,Firewall,175,NET
+187,Stateful Firewall,186|178,NET
+188,Next-Gen Firewall,187,NET
+189,Web Application Firewall,186|121,NET
+190,Intrusion Detection,175|51,NET
+191,Intrusion Prevention,190|50,NET
+192,Signature-Based Detection,190,NET
+193,Anomaly-Based Detection,190,NET
+194,Network Segmentation,175|22,NET
+195,VLAN,194,NET
+196,DMZ,194,NET
+197,VPN,175|76,NET
+198,IPsec,197,NET
+199,WireGuard,197,NET
+200,Wireless Security,175,NET
+201,WPA3,200,NET
+202,802.1X,200|7,NET
+203,Rogue Access Point,200,NET
+204,DNS Security,175,NET
+205,DNSSEC,204|91,NET
+206,DNS Tunneling,204,NET
+207,BGP Security,175,NET
+208,RPKI,207|93,NET
+209,DDoS Attack,5|175,NET
+210,Volumetric Attack,209,NET
+211,Application-Layer DDoS,209,NET
+212,DDoS Mitigation,209,NET
+213,Zero Trust Architecture,175|22,NET
+214,Micro-Segmentation,213|194,NET
+215,SSH,175|7,NET
+216,Port Scanning,175|35,NET
+217,Network Access Control,175|8,NET
+218,Proxy Server,175,NET
+219,Reverse Proxy,218,NET
+220,Packet Capture,185,NET
+221,NetFlow Analysis,175,NET
+222,Operating System Security,1,SYS
+223,Kernel Security,222,SYS
+224,Process Isolation,222,SYS
+225,Memory Protection,222,SYS
+226,ASLR,225|123,SYS
+227,Stack Canary,124,SYS
+228,DEP,225,SYS
+229,Access Control,8,SYS
+230,DAC,229,SYS
+231,MAC,229,SYS
+232,RBAC,229,SYS
+233,ABAC,229,SYS
+234,File Permissions,230,SYS
+235,SELinux,231,SYS
+236,AppArmor,231,SYS
+237,Virtualization Security,222,SYS
+238,Hypervisor Security,237,SYS
+239,Container Security,237,SYS
+240,Docker Security,239,SYS
+241,Kubernetes Security,239,SYS
+242,Cloud Security,1,SYS
+243,Shared Responsibility Model,242,SYS
+244,IaaS Security,243,SYS
+245,PaaS Security,243,SYS
+246,SaaS Security,243,SYS
+247,Cloud IAM,242|8,SYS
+248,Security Monitoring,51,SYS
+249,Log Management,248,SYS
+250,SIEM,249,SYS
+251,SOAR,250,SYS
+252,Security Operations Center,248,SYS
+253,EDR,248,SYS
+254,XDR,253,SYS
+255,Antivirus,248,SYS
+256,Host-Based IDS,190|222,SYS
+257,Patch Management,32,SYS
+258,Configuration Management,222,SYS
+259,System Hardening,222|257,SYS
+260,Baseline Configuration,258,SYS
+261,CIS Benchmarks,259,SYS
+262,Audit Logging,9|249,SYS
+263,Identity Management,7,HUMAN
+264,Access Management,8,HUMAN
+265,IAM System,263|264,HUMAN
+266,Single Sign-On,265,HUMAN
+267,Federated Identity,266,HUMAN
+268,Password Authentication,7,HUMAN
+269,Password Policy,268,HUMAN
+270,Multi-Factor Authentication,7,HUMAN
+271,Biometric Authentication,7,HUMAN
+272,FIDO2,270,HUMAN
+273,Passkey,272,HUMAN
+274,OAuth 2.0,265,HUMAN
+275,OIDC,274,HUMAN
+276,SAML,267,HUMAN
+277,Social Engineering,12,HUMAN
+278,Phishing,277,HUMAN
+279,Spear Phishing,278,HUMAN
+280,Pretexting,277,HUMAN
+281,Baiting,277,HUMAN
+282,Usable Security,29,HUMAN
+283,Security Awareness Training,277,HUMAN
+284,Insider Threat,34,HUMAN
+285,Privilege Creep,23,HUMAN
+286,Just-in-Time Access,23,HUMAN
+287,Privacy Engineering,3,HUMAN
+288,Privacy by Design,287|119,HUMAN
+289,Data Minimization,287,HUMAN
+290,User Behavior Analytics,248|193,HUMAN
+291,Governance Risk Compliance,21,ORG
+292,Security Policy,291,ORG
+293,Acceptable Use Policy,292,ORG
+294,Security Standard,292,ORG
+295,Security Procedure,292,ORG
+296,NIST CSF,291,ORG
+297,ISO 27001,291,ORG
+298,SOC 2,291,ORG
+299,PCI-DSS,291,ORG
+300,HIPAA Compliance,291,ORG
+301,Security Program Mgmt,291,ORG
+302,CISO Role,301,ORG
+303,Business Continuity,5,ORG
+304,Disaster Recovery,303,ORG
+305,Business Impact Analysis,303,ORG
+306,RTO,304,ORG
+307,RPO,304,ORG
+308,Vendor Risk Management,21,ORG
+309,Third-Party Risk,308,ORG
+310,Supply Chain Risk,308|152,ORG
+311,Security Metrics,301,ORG
+312,Risk Register,21,ORG
+313,Risk Mitigation,21,ORG
+314,Risk Transfer,21,ORG
+315,Risk Acceptance,21,ORG
+316,Risk Avoidance,21,ORG
+317,Security Audit,297,ORG
+318,Cyber Law,1,SOC
+319,CFAA,318,SOC
+320,ECPA,318,SOC
+321,GDPR,318|3,SOC
+322,CCPA,318|3,SOC
+323,HIPAA Law,318|3,SOC
+324,GLBA,318,SOC
+325,FERPA,318,SOC
+326,NIS2 Directive,318,SOC
+327,Cybercrime,318,SOC
+328,Digital Forensics,1,SOC
+329,Chain of Custody,328,SOC
+330,Forensic Imaging,328,SOC
+331,Memory Forensics,328,SOC
+332,Mobile Forensics,328,SOC
+333,Network Forensics,328|220,SOC
+334,Cyber Ethics,1,SOC
+335,Responsible Disclosure,334|32,SOC
+336,ACM Code of Ethics,334,SOC
+337,Cyber Policy,318,SOC
+338,Critical Infrastructure,1,SOC
+339,ICS Security,338,SOC
+340,SCADA Security,339,SOC
+341,Data Breach Notification,318|143,SOC
+342,Penetration Testing,32|33,OPS
+343,Red Team,342,OPS
+344,Blue Team,191,OPS
+345,Purple Team,343|344,OPS
+346,MITRE ATT&CK,42,OPS
+347,Threat Intelligence,31|42,OPS
+348,OSINT,347,OPS
+349,Threat Hunting,347|250,OPS
+350,Vulnerability Management,257|32,OPS
+351,Vulnerability Scanning,350|216,OPS
+352,Incident Response,1,OPS
+353,PICERL Lifecycle,352,OPS
+354,Incident Preparation,353,OPS
+355,Incident Identification,353,OPS
+356,Incident Containment,353,OPS
+357,Incident Eradication,353,OPS
+358,Incident Recovery,353|304,OPS
+359,Lessons Learned,353,OPS
+360,Malware Analysis,147|148,OPS
+361,Privilege Escalation,8,OPS
+362,Lateral Movement,175,OPS
+363,Command and Control,362,OPS
+364,Data Exfiltration,363|3,OPS
+365,Persistence Mechanism,363,OPS
+366,Bug Bounty Program,335,OPS
+367,Capture the Flag,1,OPS
+368,Incident Response Plan,354,OPS
+369,Runbook,368,OPS
+370,Tabletop Exercise,354,OPS
+371,Detection Engineering,250|346,OPS
+372,AI Security,1,EMERG
+373,Adversarial ML,372,EMERG
+374,Model Theft,372,EMERG
+375,Prompt Injection,372|128,EMERG
+376,Data Poisoning,372,EMERG
+377,Model Evasion,373,EMERG
+378,Quantum Threat,79|80,EMERG
+379,Post-Quantum Cryptography,378,EMERG
+380,Lattice-Based Crypto,379,EMERG
+381,Confidential Computing,160|111,EMERG
+382,Operational Technology,1,EMERG
+383,OT Security,382,EMERG
+384,Smart Grid Security,383|338,EMERG
+385,Blockchain Security,83|76,EMERG
+386,Capstone Secure System,119|352|150,CAP
+387,Capstone Security Program,296|301|303,CAP
+388,Capstone Applied Research,379|372|384,CAP
+389,Technical Communication,1,CAP
+390,Team Collaboration,1,CAP

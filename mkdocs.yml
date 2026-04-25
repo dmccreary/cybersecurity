@@ -87,7 +87,15 @@ nav:
   - Course Description: course-description.md
   - Chapters:
       - Introduction: chapters/index.md
-  - Learning Graph: learning-graph/index.md
+  - Learning Graph:
+    - Introduction: learning-graph/index.md
+    - Course Description Assessment: learning-graph/course-description-assessment.md
+    - Concept Enumeration: learning-graph/concept-list.md
+    - Graph Quality Analysis: learning-graph/quality-metrics.md
+    - Concept Taxonomy: learning-graph/concept-taxonomy.md
+    - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
+  - MicroSims:
+    - Learning Graph Viewer: sims/graph-viewer/index.md
   - Glossary: glossary.md
   - References: references.md
   - License: license.md
