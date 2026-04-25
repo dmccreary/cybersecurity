@@ -38,9 +38,12 @@ nav:
     - Graph Quality Analysis: learning-graph/quality-metrics.md
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
+    - FAQ Quality Report: learning-graph/faq-quality-report.md
+    - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
     - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
     - Learning Graph Viewer: sims/graph-viewer/index.md
+  - FAQ: faq.md
   - Glossary: glossary.md
   - References: references.md
   - License: license.md
