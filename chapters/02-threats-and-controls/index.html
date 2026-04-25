@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.">
+        <meta name="description" content="Introduces the threat-and-control vocabulary used throughout professional practice: threat actors, vulnerabilities, exploits, attack surface, CVE/CVSS, kill-chain models, and the preventive/detective/corrective control taxonomy.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>2. Threats and Controls - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
+        <title>Threats, Vulnerabilities, and Security Controls - Cybersecurity: Foundations, Practice, and Professional Responsibility</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. Threats and Controls
+              Threats, Vulnerabilities, and Security Controls
             
           </span>
         </div>
@@ -533,6 +533,180 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-core-triple-threat-vulnerability-and-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. The Core Triple — Threat, Vulnerability, and Exploit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-threat-actors-who-is-on-the-other-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Threat Actors — Who Is On The Other Side
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Threat Actors — Who Is On The Other Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-threat-actor-capability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Threat Actor Capability Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-where-attacks-happen-surface-boundaries-blast-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Where Attacks Happen — Surface, Boundaries, Blast Radius
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Where Attacks Happen — Surface, Boundaries, Blast Radius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-attack-surface-trust-boundary-and-blast-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Attack Surface, Trust Boundary, and Blast Radius
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-assets-and-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Assets and Security Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-public-vulnerability-vocabulary-cve-and-cvss" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Public Vulnerability Vocabulary — CVE and CVSS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-attackers-vocabulary-ttps-iocs-ioas-and-zero-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Attacker's Vocabulary — TTPs, IOCs, IOAs, and Zero Days
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-kill-chains-modeling-the-attackers-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Kill Chains — Modeling The Attacker's Journey
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Kill Chains — Modeling The Attacker's Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cyber-kill-chain-phases-with-defensive-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cyber Kill Chain Phases with Defensive Controls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-security-controls-the-defenders-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Security Controls — The Defender's Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Security Controls — The Defender's Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-by-function-what-the-control-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 By Function — What The Control Does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-by-type-how-the-control-is-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 By Type — How The Control Is Implemented
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 By Type — How The Control Is Implemented">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-security-control-3d-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Security Control 3D Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-putting-the-vocabulary-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Putting The Vocabulary Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
     </span>
   </a>
   
@@ -1083,6 +1257,180 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-the-core-triple-threat-vulnerability-and-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. The Core Triple — Threat, Vulnerability, and Exploit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-threat-actors-who-is-on-the-other-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Threat Actors — Who Is On The Other Side
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Threat Actors — Who Is On The Other Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-threat-actor-capability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Threat Actor Capability Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-where-attacks-happen-surface-boundaries-blast-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Where Attacks Happen — Surface, Boundaries, Blast Radius
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Where Attacks Happen — Surface, Boundaries, Blast Radius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-attack-surface-trust-boundary-and-blast-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Attack Surface, Trust Boundary, and Blast Radius
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-assets-and-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Assets and Security Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-public-vulnerability-vocabulary-cve-and-cvss" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Public Vulnerability Vocabulary — CVE and CVSS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-attackers-vocabulary-ttps-iocs-ioas-and-zero-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Attacker's Vocabulary — TTPs, IOCs, IOAs, and Zero Days
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-kill-chains-modeling-the-attackers-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Kill Chains — Modeling The Attacker's Journey
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Kill Chains — Modeling The Attacker's Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cyber-kill-chain-phases-with-defensive-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cyber Kill Chain Phases with Defensive Controls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-security-controls-the-defenders-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Security Controls — The Defender's Toolkit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Security Controls — The Defender's Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-by-function-what-the-control-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 By Function — What The Control Does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-by-type-how-the-control-is-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 By Type — How The Control Is Implemented
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 By Type — How The Control Is Implemented">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-security-control-3d-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Security Control 3D Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-putting-the-vocabulary-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Putting The Vocabulary Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1145,13 +1493,305 @@
 <li><a href="../01-security-foundations/">Chapter 1: Security Foundations: Properties, Mindset, and Risk</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — From Vocabulary to Practice</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Sentinel waving welcome">
+Welcome back. Chapter 1 gave us the <em>properties</em> (CIA, AAA) and the <em>mindset</em> (adversarial and systems thinking). This chapter gives us the <em>vocabulary of attack and defense</em> — the words security professionals use every day to describe what could go wrong, what is going wrong, and what we are doing about it. Master this language and the rest of the textbook becomes ten times easier to read.</p>
+</div>
+<h2 id="1-the-core-triple-threat-vulnerability-and-exploit">1. The Core Triple — Threat, Vulnerability, and Exploit<a class="headerlink" href="#1-the-core-triple-threat-vulnerability-and-exploit" title="Permanent link">&para;</a></h2>
+<p>Three words appear in every security report, vendor advisory, and incident postmortem you will ever read. They are often used loosely in casual writing, but professional practice depends on getting them right.</p>
+<p>A <strong>threat</strong> is a <em>potential</em> cause of harm — anyone or anything that could damage your assets, whether or not they ever do. Earthquakes are threats to a data center. Disgruntled former employees are threats. So are nation-state intelligence services, automated scanning bots, and lightning. A threat is a possibility, not an event.</p>
+<p>A <strong>vulnerability</strong> is a weakness in a system, process, or person that a threat could exploit to cause harm. Vulnerabilities are properties of <em>your</em> environment. A buffer overflow in a parser, a default password that was never changed, an employee who has not been trained to recognize phishing — all are vulnerabilities. A vulnerability that no threat ever finds is still a vulnerability; it is just one that has not yet mattered.</p>
+<p>An <strong>exploit</strong> is the <em>technique</em> or <em>artifact</em> — typically code, but sometimes a procedure or a social manipulation — that turns a vulnerability into actual harm. Exploits are how the abstract risk of a vulnerability becomes a concrete loss. The same vulnerability may have several exploits or none at all; an exploit may be public, semi-private (sold on a market), or held in secret.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Question it answers</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threat</td>
+<td>What <em>could</em> cause harm?</td>
+<td>"A nation-state actor targeting our research"</td>
+</tr>
+<tr>
+<td>Vulnerability</td>
+<td>Where am I weak?</td>
+<td>"Our login has no rate limit"</td>
+</tr>
+<tr>
+<td>Exploit</td>
+<td>How is the weakness actually used?</td>
+<td>"Credential-stuffing tool with 4M leaked passwords"</td>
+</tr>
+<tr>
+<td>Risk (from Ch. 1)</td>
+<td>How much should this worry me?</td>
+<td>Likelihood × impact, given the above</td>
+</tr>
+</tbody>
+</table>
+<p>The relationship is sequential: <strong>threats</strong> look for <strong>vulnerabilities</strong> that they can turn into harm using <strong>exploits</strong>, and the resulting expected harm is the <strong>risk</strong>.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why The Distinction Matters</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Reports that conflate threat, vulnerability, and exploit produce muddled mitigations. "We have a phishing threat" is not actionable. "We have employees who click links in unverified emails (vulnerability) and we are seeing credential-harvesting campaigns (threat) that use spoofed login pages (exploit)" tells you what to fix and where.</p>
+</div>
+<h2 id="2-threat-actors-who-is-on-the-other-side">2. Threat Actors — Who Is On The Other Side<a class="headerlink" href="#2-threat-actors-who-is-on-the-other-side" title="Permanent link">&para;</a></h2>
+<p>A <strong>threat actor</strong> (sometimes called <em>adversary</em>) is the human or organizational entity behind a threat. Threat actors differ enormously in skill, resources, motivation, and patience, and the right defensive posture depends on which actors you are designing against. A small online retailer faces fundamentally different actors than a defense contractor.</p>
+<p>Five broad categories cover most threat actors you will encounter. <em>Script kiddies</em> use existing tools opportunistically; their resources are low and their attention span is short, but their volume is high — most internet-facing systems get scanned by them within minutes of going online. <em>Cybercriminals</em> are profit-motivated, and they are increasingly professional: ransomware groups operate like businesses, complete with HR, customer support, and revenue sharing with affiliates. <em>Hacktivists</em> are motivated by ideology rather than profit; their targets are often chosen for symbolic value. <em>Insiders</em> are current or former employees, contractors, or partners with legitimate access; they are statistically rare but disproportionately damaging because they bypass perimeter defenses by definition. <em>Nation-state actors</em> (sometimes called <em>advanced persistent threats</em> or APTs) are government-aligned groups with the resources, patience, and skill to conduct multi-year campaigns; they are the apex predators of the threat landscape.</p>
+<h4 id="diagram-threat-actor-capability-matrix">Diagram: Threat Actor Capability Matrix<a class="headerlink" href="#diagram-threat-actor-capability-matrix" title="Permanent link">&para;</a></h4>
+<details>
+<summary>2D matrix of threat actors by skill versus resources, with typical motivations</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> threat-actor-matrix<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A 2D scatter plot:
+- X-axis: Resources (low → high)
+- Y-axis: Skill (low → high)</p>
+<p>Five labeled circles positioned in the appropriate quadrants:
+- <strong>Script kiddies</strong> (low skill, low resources, lower-left): blue #1565c0, small radius
+- <strong>Hacktivists</strong> (mixed skill, low-moderate resources, middle-left): green, medium radius
+- <strong>Cybercriminals</strong> (high skill, moderate-high resources, middle-right): orange #fb8c00, larger radius
+- <strong>Insiders</strong> (variable skill, low resources but unique access, special placement on a separate annotation): slate steel #455a64, with a callout arrow indicating "bypasses perimeter by design"
+- <strong>Nation-state actors / APTs</strong> (highest skill, highest resources, upper-right): red #c62828, largest radius</p>
+<p>Each circle has a hover tooltip listing typical motivations, time horizons, and example incidents. A legend at the bottom maps circle size to "typical campaign duration" (kiddies = minutes, APTs = years).</p>
+<p>Color background should be neutral white. Responsive design that reflows axes at narrow widths.</p>
+<p>Implementation: Static SVG with <code>&lt;title&gt;</code> elements; could be enhanced later as a clickable infographic.</p>
+</details>
+<p>The defender's job is not to stop every actor — it is to make the cost of a successful attack exceed the value the actor can extract. Script kiddies stop at the first lock; cybercriminals look for the cheapest path to revenue; nation-states will pay any price for a target they have decided matters. Knowing your likely actors shapes which controls are worth their cost.</p>
+<h2 id="3-where-attacks-happen-surface-boundaries-blast-radius">3. Where Attacks Happen — Surface, Boundaries, Blast Radius<a class="headerlink" href="#3-where-attacks-happen-surface-boundaries-blast-radius" title="Permanent link">&para;</a></h2>
+<p>Three spatial concepts let you reason about <em>where</em> attacks happen and <em>how far</em> they spread once they do.</p>
+<p>The <strong>attack surface</strong> is the sum of all points where an unauthorized actor could try to enter, extract data, or cause damage. For a web application, the attack surface includes every public endpoint, every form field, every cookie, every header, every dependency, and every interface to a backend service. For a physical building, the attack surface includes every door, window, vent, network jack, and security camera with a default password. Reducing attack surface — turning off unused services, closing unused ports, removing unused dependencies — is one of the highest-leverage activities in security, because you cannot be attacked through interfaces that do not exist.</p>
+<p>A <strong>trust boundary</strong> is a line in the system across which the <em>level of trust</em> changes. Inside the boundary, components implicitly trust each other; outside, they do not. The boundary between your application and the public internet is a trust boundary. The boundary between user-supplied input and your application's internal data is a trust boundary. The boundary between your application and your database is a trust boundary. Every trust boundary is a place where authorization, validation, and integrity checks must happen, because you are crossing from "trusted" to "untrusted" territory or vice versa. Most security bugs occur at trust boundaries that the designer forgot were boundaries.</p>
+<p>The <strong>blast radius</strong> is the scope of damage when a control fails. If an attacker compromises one user account, what can they reach? Can they read other users' data? Can they pivot to internal systems? Can they reach the database directly? Blast radius is what <em>least privilege</em> and <em>separation of duties</em> (Chapter 1) actually buy you: a smaller blast radius when something does go wrong. The phrase comes from explosives — the analogy is intentional.</p>
+<h4 id="diagram-attack-surface-trust-boundary-and-blast-radius">Diagram: Attack Surface, Trust Boundary, and Blast Radius<a class="headerlink" href="#diagram-attack-surface-trust-boundary-and-blast-radius" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Layered diagram showing attack surface, trust boundaries, and blast radius for a sample web app</summary>
+<p>Type: architecture-diagram
+<strong>sim-id:</strong> surface-boundary-blast-radius<br/>
+<strong>Library:</strong> Mermaid (or static SVG)<br/>
+<strong>Status:</strong> Specified</p>
+<p>A simplified 3-tier web application diagram with:</p>
+<ul>
+<li><strong>Outer layer</strong> (red, dashed): "Attack surface" — labeled with example points (HTTPS endpoint, login form, password reset, file upload, API tokens, third-party JavaScript)</li>
+<li><strong>First trust boundary</strong> (between internet and reverse proxy): solid blue line labeled "Untrusted → DMZ"</li>
+<li><strong>Second trust boundary</strong> (between application and database): solid blue line labeled "App → Data tier"</li>
+<li><strong>Internal components</strong>: reverse proxy → application server → database</li>
+<li>A red explosion icon centered on the application server, with a dashed circle around it labeled "Blast radius if app is compromised: read all users' records, no path to OS"</li>
+<li>A second smaller blast-radius dashed circle centered on the database labeled "Blast radius if DB credentials are stolen: read/write all customer data"</li>
+</ul>
+<p>Color palette: cybersecurity blue #1565c0 for trust boundaries, red #c62828 for attack-surface marks, slate steel #455a64 for component outlines, amber #ffa000 for the blast-radius dashed circles. Responsive layout.</p>
+<p>Implementation: Mermaid graph LR with subgraphs for each tier; styling applied via Mermaid theme.</p>
+</details>
+<p>These three concepts — surface, boundary, blast radius — give you a spatial vocabulary that complements the property vocabulary from Chapter 1. They are not independent: reducing attack surface reduces the chance of compromise; trust boundaries are where controls go; blast radius is what is left over after a successful attack.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Defender's Triple Question</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+For any system you review, ask three questions: <em>Where is the attack surface?</em> <em>Where are the trust boundaries?</em> <em>What is the blast radius if any single component is compromised?</em> You can fit a real architectural review on a single page if you keep the answers crisp.</p>
+</div>
+<h2 id="4-assets-and-security-requirements">4. Assets and Security Requirements<a class="headerlink" href="#4-assets-and-security-requirements" title="Permanent link">&para;</a></h2>
+<p>Two more terms anchor the analytical side of the work. An <strong>asset</strong> is anything of value the system protects: data, code, computational capacity, reputation, regulatory standing, even attention. Assets are what threat actors are <em>after</em> — they explain why anyone bothers to attack. A clear asset inventory is a precondition for sensible threat modeling, because a threat that does not endanger any asset is not worth defending against.</p>
+<p>A <strong>security requirement</strong> is a stated, testable property the system must provide to protect its assets. Security requirements should look like other engineering requirements — specific, measurable, and traceable to the business need they satisfy. <em>"The system shall log all authentication failures with timestamp, source IP, and claimed username, and retain logs for 90 days"</em> is a security requirement; <em>"the system shall be secure"</em> is a wish.</p>
+<p>Good security requirements connect three layers in a chain: a <em>business need</em> (we must comply with HIPAA Section 164.312) drives a <em>security property</em> (audit logs of access to PHI) which drives a <em>technical requirement</em> (the application logs every read of patient records with user, timestamp, and patient ID). Each link in the chain must be traceable for the audit conversation to go well later.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business need</td>
+<td>"Comply with HIPAA Security Rule, Section 164.312"</td>
+</tr>
+<tr>
+<td>Security property</td>
+<td>"Audit access to protected health information"</td>
+</tr>
+<tr>
+<td>Technical requirement</td>
+<td>"Log every PHI-record read with user, time, record-ID, retain 6 years"</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>"Unit test asserts log entry on each <code>getRecord()</code> call; quarterly retention review"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-public-vulnerability-vocabulary-cve-and-cvss">5. Public Vulnerability Vocabulary — CVE and CVSS<a class="headerlink" href="#5-public-vulnerability-vocabulary-cve-and-cvss" title="Permanent link">&para;</a></h2>
+<p>When a vulnerability is discovered in widely used software, the security community needs a way to refer to it without ambiguity. Two standards do that work, and they show up everywhere.</p>
+<p><strong>CVE</strong> stands for <em>Common Vulnerabilities and Exposures</em>, a public catalog of disclosed vulnerabilities maintained by MITRE. Each entry receives a unique identifier of the form <code>CVE-YYYY-NNNNN</code> — for example, <em>CVE-2021-44228</em> (the famous Log4Shell vulnerability in Apache Log4j). A CVE entry includes a brief description, the affected products and versions, and references to advisories or patches. CVE identifiers let security teams, vendors, and tools refer to the same vulnerability without confusion across thousands of products and millions of systems.</p>
+<p><strong>CVSS</strong> stands for <em>Common Vulnerability Scoring System</em>, a standardized way to express the severity of a vulnerability as a number from 0.0 (none) to 10.0 (catastrophic). A CVSS score is computed from a vector string that describes attack characteristics — attack vector (network, adjacent network, local, physical), attack complexity (low, high), privileges required, user interaction, scope, and the impact on confidentiality, integrity, and availability. The current standard is CVSS v3.1, and CVSS v4.0 is being adopted as of the mid-2020s.</p>
+<p>A CVSS score is a <em>base</em> score. Two additional layers — temporal (does an exploit exist? has a patch been released?) and environmental (is the affected system actually deployed in a critical role here?) — adjust the base score for the specific organization. A CVSS 9.8 vulnerability in software you do not run is not a 9.8 to <em>you</em>. This nuance is often lost in the rush to "patch all the criticals," which is why mature teams pair CVSS with their own asset inventory and exploit-availability data.</p>
+<p>Before we look at the example below, two parameters worth pinning down: <em>Attack Vector</em> describes how the attacker reaches the vulnerability (the most dangerous value is "Network", meaning over the public internet); <em>Privileges Required</em> describes whether the attacker needs an account, and at what level. These two together explain most of the variation in real-world CVSS scores.</p>
+<p>The CVSS v3.1 base score for the Log4Shell vulnerability looked roughly like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  AV:N  Attack Vector = Network (reachable over the internet)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  AC:L  Attack Complexity = Low (no special conditions)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  PR:N  Privileges Required = None (anonymous attacker)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  UI:N  User Interaction = None (no user click needed)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  S:C   Scope = Changed (compromise extends beyond the vulnerable component)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  C:H, I:H, A:H  All three impacts are High
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  Computed base score: 10.0  (Critical)
+</span></code></pre></div>
+<p>The vector string is what you should learn to read; the score is just a summary. A vulnerability that requires local access, user interaction, and special configuration may be CVSS 7.0 in the abstract but practically irrelevant in your environment, while a CVSS 8.0 with <code>AV:N/PR:N/UI:N</code> is the kind that gets you paged at 2 a.m.</p>
+<h2 id="6-the-attackers-vocabulary-ttps-iocs-ioas-and-zero-days">6. The Attacker's Vocabulary — TTPs, IOCs, IOAs, and Zero Days<a class="headerlink" href="#6-the-attackers-vocabulary-ttps-iocs-ioas-and-zero-days" title="Permanent link">&para;</a></h2>
+<p>When defenders study attackers, four terms do most of the work.</p>
+<p>A <strong>TTP</strong> stands for <em>Tactics, Techniques, and Procedures</em>: the <em>tactics</em> an attacker pursues (their goals — credential access, lateral movement, exfiltration), the <em>techniques</em> they use to achieve those tactics (e.g., "credential dumping from LSASS memory"), and the <em>procedures</em> they execute (the specific tool, command, or sequence of steps). TTPs describe the <em>how</em> of an attack at increasing levels of detail. The MITRE ATT&amp;CK framework, which we will see in detail in Chapter 15, is a public catalog of TTPs.</p>
+<p>An <strong>indicator of compromise</strong> (IOC) is a piece of forensic evidence that a system has <em>already been compromised</em>. IOCs are typically concrete artifacts: a file hash, a malicious IP address, a registry key, a specific filename, a process name. Detecting an IOC means the breach has already happened — IOCs are <em>historical</em>.</p>
+<p>An <strong>indicator of attack</strong> (IOA) is evidence that an attack is <em>currently in progress</em> — patterns of behavior that suggest an active intrusion regardless of whether any specific artifact is present. An IOA might be "a service account suddenly enumerating user accounts in Active Directory," "PowerShell launched by a Word document," or "outbound traffic to a country we never communicate with." IOAs are <em>behavioral</em> rather than artifact-based, and they are the foundation of modern detection engineering.</p>
+<p>A <strong>zero day</strong> is a vulnerability that is being actively exploited <em>before</em> the vendor has issued a patch — the defender has had "zero days" to prepare a fix. Zero-day exploits are valuable on both legitimate and illegitimate markets (responsible-disclosure bug bounties, intelligence agencies, criminal marketplaces) and are the most dangerous class of vulnerability because traditional patch-management processes provide no protection until the vendor responds.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it describes</th>
+<th>Time horizon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TTP</td>
+<td>The attacker's <em>behaviors</em></td>
+<td>Across an entire campaign</td>
+</tr>
+<tr>
+<td>IOC</td>
+<td>An <em>artifact</em> left by an attacker</td>
+<td>After the fact (forensic)</td>
+</tr>
+<tr>
+<td>IOA</td>
+<td>A <em>behavior pattern</em> of active attack</td>
+<td>During the attack</td>
+</tr>
+<tr>
+<td>Zero day</td>
+<td>A vulnerability with no patch yet</td>
+<td>The window before vendor response</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">IOC-Only Detection Is A Footgun</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Sentinel showing caution">
+A defense built only on IOCs catches yesterday's attacks. Once attackers know which file hashes you alert on, they recompile the malware and the hash changes — the IOC is dead. Behavioral detection (IOAs) is more expensive to build but vastly more durable. The pattern, not the artifact, is what survives.</p>
+</div>
+<h2 id="7-kill-chains-modeling-the-attackers-journey">7. Kill Chains — Modeling The Attacker's Journey<a class="headerlink" href="#7-kill-chains-modeling-the-attackers-journey" title="Permanent link">&para;</a></h2>
+<p>Real attacks are not single events; they are sequences. <strong>Kill chain</strong> is the general term for any model that describes the stages an attacker progresses through from initial reconnaissance to final objective. Two kill-chain models dominate.</p>
+<p>The <strong>Cyber Kill Chain</strong>, published by Lockheed Martin in 2011, breaks an intrusion into seven sequential phases: <em>Reconnaissance</em> (research the target), <em>Weaponization</em> (build the exploit + payload), <em>Delivery</em> (send it — phishing email, drive-by, USB), <em>Exploitation</em> (the vulnerability fires), <em>Installation</em> (persistent foothold installed), <em>Command and Control</em> (the attacker can now drive the foothold remotely), and <em>Actions on Objectives</em> (data exfiltration, lateral movement, ransomware deployment, whatever the actual goal was). The Cyber Kill Chain's value is that it gives defenders a vocabulary for <em>where</em> in the attack a particular control disrupts the attacker — a phishing-aware email gateway disrupts at <em>delivery</em>; an EDR agent disrupts at <em>exploitation</em> or <em>installation</em>; a network egress filter disrupts at <em>command and control</em>. Stop the chain at any phase and the attack fails.</p>
+<p>The <strong>Diamond Model</strong>, also published in 2013, takes a different angle: it describes a single intrusion event as a four-vertex diamond consisting of <em>Adversary</em>, <em>Capability</em> (the exploit/tool), <em>Infrastructure</em> (the C2 servers, dropper sites), and <em>Victim</em>. Each pair of vertices has a meaningful relationship — <em>Adversary uses Capability</em>, <em>Capability targets Victim</em>, <em>Adversary owns Infrastructure</em>, <em>Infrastructure communicates with Victim</em>. The Diamond Model is excellent for <em>correlating</em> events across time — different victims attacked by the same adversary using the same infrastructure form a campaign. Where the Cyber Kill Chain models the <em>flow</em> of one attack, the Diamond Model models the <em>relationships</em> across many.</p>
+<h4 id="diagram-cyber-kill-chain-phases-with-defensive-controls">Diagram: Cyber Kill Chain Phases with Defensive Controls<a class="headerlink" href="#diagram-cyber-kill-chain-phases-with-defensive-controls" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Seven-phase Cyber Kill Chain with control examples per phase</summary>
+<p>Type: workflow-diagram
+<strong>sim-id:</strong> cyber-kill-chain-controls<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal flow with 7 boxes representing the kill chain phases:</p>
+<ol>
+<li><strong>Reconnaissance</strong> → controls: external attack surface management, domain monitoring</li>
+<li><strong>Weaponization</strong> → controls: threat intelligence, sandboxing, anti-exploit</li>
+<li><strong>Delivery</strong> → controls: email security, URL filtering, attachment scanning</li>
+<li><strong>Exploitation</strong> → controls: patching, EDR, application allowlisting</li>
+<li><strong>Installation</strong> → controls: EDR, file integrity monitoring, persistence detection</li>
+<li><strong>Command and Control</strong> → controls: egress filtering, DNS filtering, network detection</li>
+<li><strong>Actions on Objectives</strong> → controls: DLP, segmentation, anomaly detection</li>
+</ol>
+<p>Each phase is a colored box (gradient from blue at left to red at right). Below each phase, a small list of 2-3 control examples appears. Arrows between phases imply progression. A "break the chain" callout sits above the flow, with a downward arrow into each phase, captioned: "Stop the chain at any phase and the attack fails."</p>
+<p>Color: cybersecurity blue (#1565c0) shading deeper through the chain. Responsive: stacks vertically below 800px viewport with phase titles and bullet lists.</p>
+<p>Implementation: Mermaid graph LR with styled subgraphs.</p>
+</details>
+<p>The two models are complementary — most mature security teams use both, the Cyber Kill Chain for individual-incident analysis and the Diamond Model for campaign tracking and threat-intel correlation.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">What 'Defense In Depth' Really Buys You</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Sentinel thinking">
+Each kill-chain phase is an opportunity to detect or block the attacker. A single perfect control at one phase is fragile; multiple imperfect controls at multiple phases force the attacker to defeat all of them in sequence. That is <em>defense in depth</em> applied to the time dimension, not just the space dimension.</p>
+</div>
+<h2 id="8-security-controls-the-defenders-toolkit">8. Security Controls — The Defender's Toolkit<a class="headerlink" href="#8-security-controls-the-defenders-toolkit" title="Permanent link">&para;</a></h2>
+<p>A <strong>security control</strong> is any safeguard or countermeasure deployed to reduce risk to an asset. Controls are the actual <em>things you build, buy, or write down</em> — they are the output of all the analysis we have built up so far. Every security program is, in effect, a portfolio of controls chosen and arranged against a threat model.</p>
+<p>Controls are categorized along two independent axes, and the two axes are often combined into compound labels in real-world inventories.</p>
+<h3 id="81-by-function-what-the-control-does">8.1 By Function — What The Control Does<a class="headerlink" href="#81-by-function-what-the-control-does" title="Permanent link">&para;</a></h3>
+<p><strong>Preventive controls</strong> stop a threat from succeeding in the first place. Encryption prevents eavesdropping; authentication prevents impersonation; firewalls prevent unauthorized network access; input validation prevents injection. Preventive controls are what most people picture when they hear "security."</p>
+<p><strong>Detective controls</strong> identify that a threat <em>has</em> succeeded (or is in progress) so that response can begin. Intrusion detection systems detect attacks; SIEM correlation rules detect anomalies; audit logs detect after-the-fact misuse; security cameras detect physical intrusion. Detective controls assume that prevention is imperfect — and they are correct to assume that.</p>
+<p><strong>Corrective controls</strong> restore the system after a successful attack and limit ongoing damage. Backups restore data; incident-response runbooks restore service; patches close the vulnerability that allowed the breach. Corrective controls are how you recover, not how you avoid.</p>
+<p><strong>Compensating controls</strong> are alternative measures that achieve the spirit of a required control when the required control cannot be implemented as specified. If a regulation requires encryption at rest but a legacy database cannot be encrypted in place, a compensating control might be strict network segmentation plus continuous monitoring of the database server. Auditors accept compensating controls when they are documented, justified, and produce roughly equivalent risk reduction.</p>
+<h3 id="82-by-type-how-the-control-is-implemented">8.2 By Type — How The Control Is Implemented<a class="headerlink" href="#82-by-type-how-the-control-is-implemented" title="Permanent link">&para;</a></h3>
+<p><strong>Administrative controls</strong> are policies, procedures, and training — controls that operate through human behavior and organizational structure. Acceptable-use policies, background checks, security-awareness training, and segregation-of-duties rules are administrative. They are typically the cheapest controls to deploy and the hardest to make effective, because they depend on people doing what they are told.</p>
+<p><strong>Technical controls</strong> (sometimes <em>logical</em> controls) are implemented in hardware or software: firewalls, encryption, access-control lists, intrusion-detection systems, multi-factor authentication. Technical controls are the bread and butter of computing security and the focus of most of this textbook.</p>
+<p><strong>Physical controls</strong> are tangible barriers and monitors: locks, fences, badge readers, security cameras, guards, environmental sensors. Physical security is often forgotten by software-focused teams, but a server in an unlocked room with a USB port is no more secure than the building's front door.</p>
+<h4 id="diagram-security-control-3d-taxonomy">Diagram: Security Control 3D Taxonomy<a class="headerlink" href="#diagram-security-control-3d-taxonomy" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Cube diagram showing the function × type taxonomy of security controls</summary>
+<p>Type: infographic-svg
+<strong>sim-id:</strong> control-taxonomy-cube<br/>
+<strong>Library:</strong> Static SVG with hover tooltips<br/>
+<strong>Status:</strong> Specified</p>
+<p>A 3×3 grid (or simplified 3D cube) where:
+- Rows = Function: Preventive / Detective / Corrective / Compensating (4 rows)
+- Columns = Type: Administrative / Technical / Physical (3 columns)</p>
+<p>Each of the 12 cells contains a 1-2 example controls. Examples:
+- Preventive × Administrative: "Acceptable use policy", "Security training"
+- Preventive × Technical: "Firewall", "Encryption at rest", "MFA"
+- Preventive × Physical: "Door locks", "Badge access"
+- Detective × Administrative: "Periodic audit", "User behavior reviews"
+- Detective × Technical: "IDS", "SIEM correlation rules", "Audit logs"
+- Detective × Physical: "Security cameras", "Motion sensors"
+- Corrective × Administrative: "Incident response plan", "Disaster recovery procedures"
+- Corrective × Technical: "Backups", "Patches", "Endpoint quarantine"
+- Corrective × Physical: "Replacement hardware", "Fire suppression"
+- Compensating × Administrative: "Manual review when automation is unavailable"
+- Compensating × Technical: "Strict segmentation when in-place encryption is impossible"
+- Compensating × Physical: "Locked cage when full datacenter access control is unavailable"</p>
+<p>Cell coloring: each function gets a color (preventive=blue, detective=green, corrective=amber, compensating=slate). Hover tooltips reveal more examples per cell. Legend below explains colors.</p>
+<p>Color: cybersecurity blue #1565c0 for preventive, green #4caf50 for detective, amber #ffa000 for corrective, slate #455a64 for compensating. Responsive: rows stack to vertical list below 700px.</p>
+<p>Implementation: Static SVG grid with <code>&lt;title&gt;</code> tooltips per cell.</p>
+</details>
+<p>Mature security teams maintain an inventory of every control they operate, tagged with both the function (preventive/detective/corrective/compensating) and the type (administrative/technical/physical). The inventory is what allows leadership to answer questions like "what is the ratio of preventive to detective spend?" or "are we over-invested in technical controls and under-invested in administrative ones?"</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Healthiest Programs Are Mixed</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Sentinel offering a tip">
+Programs that lean entirely on prevention discover too late that prevention sometimes fails. Programs that lean entirely on detection discover too late that nothing was preventing the attack. The healthiest portfolios mix prevention, detection, and correction — and balance technical controls with the administrative and physical ones that make them work in practice.</p>
+</div>
+<h2 id="9-putting-the-vocabulary-together">9. Putting The Vocabulary Together<a class="headerlink" href="#9-putting-the-vocabulary-together" title="Permanent link">&para;</a></h2>
+<p>To anchor everything in this chapter, consider a single sentence written in the professional vocabulary you have just learned, and notice how dense it now is:</p>
+<blockquote>
+<p><em>"The recently disclosed CVE-2024-XXXXX is a remote-code-execution vulnerability (CVSS 9.8, AV:N/AC:L/PR:N/UI:N) in the public-facing API of our customer portal — directly on the internet attack surface and across our outermost trust boundary. Threat intelligence indicates a financially motivated cybercriminal group is using a public exploit and the IOAs include outbound traffic to known C2 infrastructure. We are deploying a vendor patch (preventive technical control) within 24 hours, monitoring for the published IOCs (detective technical control), and updating our incident-response runbook (corrective administrative control) for any system that shows the IOAs before patching completes."</em></p>
+</blockquote>
+<p>A reader new to security would parse that paragraph as opaque jargon. You can now read it cleanly: vulnerability, severity (with vector breakdown), where it sits in the system (attack surface, trust boundary), who the threat actor is, what the indicators look like, and exactly which controls are being deployed — categorized by function and type. The whole chapter, expressed in three sentences.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">What You Can Now Do</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Sentinel celebrating">
+You can now read security advisories, incident reports, and vendor write-ups in their native language. You can describe a system's attack surface and trust boundaries, reason about blast radius, score and contextualize a CVSS finding, decompose an attack into kill-chain phases, and classify any proposed control along both function and type axes. The vocabulary is the foundation; cryptography is next, because you cannot reason about confidentiality and integrity controls until you understand the primitives that build them.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Threat → Vulnerability → Exploit → Risk</strong> is the core sequence. Get the words right and the analysis follows.</li>
+<li><strong>Threat actors</strong> range from script kiddies to nation-states; defenses must be sized to <em>likely</em> actors, not all possible actors.</li>
+<li><strong>Attack surface, trust boundary, blast radius</strong> are the spatial vocabulary of defense — <em>where</em> attacks happen and how far they spread.</li>
+<li><strong>CVE</strong> identifies a vulnerability; <strong>CVSS</strong> scores its severity. Read the vector, not just the number.</li>
+<li><strong>TTP / IOC / IOA / zero day</strong> describe attacker behavior at different time horizons; behavioral detection (IOAs) is more durable than artifact-based (IOCs).</li>
+<li><strong>Kill chains</strong> (Cyber Kill Chain, Diamond Model) model attacker progression and let defenders place controls at multiple phases.</li>
+<li><strong>Security controls</strong> are categorized by <em>function</em> (preventive / detective / corrective / compensating) and <em>type</em> (administrative / technical / physical). Healthy programs mix both axes.</li>
+</ul>
+<p>Next chapter: cryptographic primitives — the building blocks that make most of the technical preventive controls in this chapter actually work.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
