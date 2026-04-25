@@ -1,0 +1,14 @@
+{
+  "FOUND": "Foundation Concepts",
+  "CRYPTO": "Cryptography and Data Security",
+  "SOFT": "Software Security",
+  "COMP": "Component Security",
+  "NET": "Network Security",
+  "SYS": "System Security",
+  "HUMAN": "Human Security",
+  "ORG": "Organizational Security",
+  "SOC": "Societal Security",
+  "OPS": "Offensive and Defensive Operations",
+  "EMERG": "Emerging Topics",
+  "CAP": "Capstone and Professional Skills"
+}

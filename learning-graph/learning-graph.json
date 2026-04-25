@@ -1,0 +1,3957 @@
+{
+  "metadata": {
+    "title": "Cybersecurity: Foundations, Practice, and Professional Responsibility",
+    "description": "An ABET CAC-aligned intelligent textbook covering cybersecurity as both a computing-based discipline and a sociotechnical practice. Spans the eight CSEC2017 knowledge areas \u2014 Data, Software, Component, Connection, System, Human, Organizational, and Societal Security \u2014 with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.",
+    "creator": "Dan McCreary",
+    "date": "2026-04-24",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "LavenderBlush",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CRYPTO": {
+      "classifierName": "Cryptography and Data Security",
+      "color": "Honeydew",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SOFT": {
+      "classifierName": "Software Security",
+      "color": "Plum",
+      "font": {
+        "color": "black"
+      }
+    },
+    "COMP": {
+      "classifierName": "Component Security",
+      "color": "MistyRose",
+      "font": {
+        "color": "black"
+      }
+    },
+    "NET": {
+      "classifierName": "Network Security",
+      "color": "LightCoral",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SYS": {
+      "classifierName": "System Security",
+      "color": "LightYellow",
+      "font": {
+        "color": "black"
+      }
+    },
+    "HUMAN": {
+      "classifierName": "Human Security",
+      "color": "Lavender",
+      "font": {
+        "color": "black"
+      }
+    },
+    "ORG": {
+      "classifierName": "Organizational Security",
+      "color": "Thistle",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SOC": {
+      "classifierName": "Societal Security",
+      "color": "SteelBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "OPS": {
+      "classifierName": "Offensive and Defensive Operations",
+      "color": "PaleTurquoise",
+      "font": {
+        "color": "black"
+      }
+    },
+    "EMERG": {
+      "classifierName": "Emerging Topics",
+      "color": "PeachPuff",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CAP": {
+      "classifierName": "Capstone and Professional Skills",
+      "color": "MintCream",
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Cybersecurity",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Information Security",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Confidentiality",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "Integrity",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Availability",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "CIA Triad",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Authentication",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Authorization",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Accounting",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Non-Repudiation",
+      "group": "FOUND"
+    },
+    {
+      "id": 11,
+      "label": "AAA Framework",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Adversarial Thinking",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "Systems Thinking",
+      "group": "FOUND"
+    },
+    {
+      "id": 14,
+      "label": "Threat Modeling",
+      "group": "FOUND"
+    },
+    {
+      "id": 15,
+      "label": "STRIDE",
+      "group": "FOUND"
+    },
+    {
+      "id": 16,
+      "label": "PASTA",
+      "group": "FOUND"
+    },
+    {
+      "id": 17,
+      "label": "Attack Trees",
+      "group": "FOUND"
+    },
+    {
+      "id": 18,
+      "label": "Risk",
+      "group": "FOUND"
+    },
+    {
+      "id": 19,
+      "label": "Likelihood",
+      "group": "FOUND"
+    },
+    {
+      "id": 20,
+      "label": "Impact",
+      "group": "FOUND"
+    },
+    {
+      "id": 21,
+      "label": "Risk Assessment",
+      "group": "FOUND"
+    },
+    {
+      "id": 22,
+      "label": "Defense in Depth",
+      "group": "FOUND"
+    },
+    {
+      "id": 23,
+      "label": "Least Privilege",
+      "group": "FOUND"
+    },
+    {
+      "id": 24,
+      "label": "Separation of Duties",
+      "group": "FOUND"
+    },
+    {
+      "id": 25,
+      "label": "Fail Secure Default",
+      "group": "FOUND"
+    },
+    {
+      "id": 26,
+      "label": "Complete Mediation",
+      "group": "FOUND"
+    },
+    {
+      "id": 27,
+      "label": "Open Design Principle",
+      "group": "FOUND"
+    },
+    {
+      "id": 28,
+      "label": "Economy of Mechanism",
+      "group": "FOUND"
+    },
+    {
+      "id": 29,
+      "label": "Psychological Acceptability",
+      "group": "FOUND"
+    },
+    {
+      "id": 30,
+      "label": "Security Economics",
+      "group": "FOUND"
+    },
+    {
+      "id": 31,
+      "label": "Threat",
+      "group": "FOUND"
+    },
+    {
+      "id": 32,
+      "label": "Vulnerability",
+      "group": "FOUND"
+    },
+    {
+      "id": 33,
+      "label": "Exploit",
+      "group": "FOUND"
+    },
+    {
+      "id": 34,
+      "label": "Threat Actor",
+      "group": "FOUND"
+    },
+    {
+      "id": 35,
+      "label": "Attack Surface",
+      "group": "FOUND"
+    },
+    {
+      "id": 36,
+      "label": "Blast Radius",
+      "group": "FOUND"
+    },
+    {
+      "id": 37,
+      "label": "Trust Boundary",
+      "group": "FOUND"
+    },
+    {
+      "id": 38,
+      "label": "Asset",
+      "group": "FOUND"
+    },
+    {
+      "id": 39,
+      "label": "Security Requirement",
+      "group": "FOUND"
+    },
+    {
+      "id": 40,
+      "label": "CVE",
+      "group": "FOUND"
+    },
+    {
+      "id": 41,
+      "label": "CVSS",
+      "group": "FOUND"
+    },
+    {
+      "id": 42,
+      "label": "TTP",
+      "group": "FOUND"
+    },
+    {
+      "id": 43,
+      "label": "Indicator of Compromise",
+      "group": "FOUND"
+    },
+    {
+      "id": 44,
+      "label": "Indicator of Attack",
+      "group": "FOUND"
+    },
+    {
+      "id": 45,
+      "label": "Zero Day",
+      "group": "FOUND"
+    },
+    {
+      "id": 46,
+      "label": "Kill Chain",
+      "group": "FOUND"
+    },
+    {
+      "id": 47,
+      "label": "Cyber Kill Chain",
+      "group": "FOUND"
+    },
+    {
+      "id": 48,
+      "label": "Diamond Model",
+      "group": "FOUND"
+    },
+    {
+      "id": 49,
+      "label": "Security Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 50,
+      "label": "Preventive Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 51,
+      "label": "Detective Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 52,
+      "label": "Corrective Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 53,
+      "label": "Compensating Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 54,
+      "label": "Administrative Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 55,
+      "label": "Technical Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 56,
+      "label": "Physical Control",
+      "group": "FOUND"
+    },
+    {
+      "id": 57,
+      "label": "Cryptography",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 58,
+      "label": "Plaintext",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 59,
+      "label": "Ciphertext",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 60,
+      "label": "Encryption",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 61,
+      "label": "Decryption",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 62,
+      "label": "Cryptographic Key",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 63,
+      "label": "Symmetric Cryptography",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 64,
+      "label": "Block Cipher",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 65,
+      "label": "Stream Cipher",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 66,
+      "label": "AES",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 67,
+      "label": "DES",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 68,
+      "label": "3DES",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 69,
+      "label": "Block Cipher Modes",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 70,
+      "label": "ECB Mode",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 71,
+      "label": "CBC Mode",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 72,
+      "label": "CTR Mode",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 73,
+      "label": "GCM Mode",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 74,
+      "label": "Initialization Vector",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 75,
+      "label": "Padding Scheme",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 76,
+      "label": "Asymmetric Cryptography",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 77,
+      "label": "Public Key",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 78,
+      "label": "Private Key",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 79,
+      "label": "RSA",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 80,
+      "label": "Elliptic Curve Cryptography",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 81,
+      "label": "Diffie-Hellman",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 82,
+      "label": "Key Exchange",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 83,
+      "label": "Hash Function",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 84,
+      "label": "SHA-2",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 85,
+      "label": "SHA-3",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 86,
+      "label": "MD5",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 87,
+      "label": "Collision Resistance",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 88,
+      "label": "Preimage Resistance",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 89,
+      "label": "Message Authentication Code",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 90,
+      "label": "HMAC",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 91,
+      "label": "Digital Signature",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 92,
+      "label": "Certificate Authority",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 93,
+      "label": "PKI",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 94,
+      "label": "X.509 Certificate",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 95,
+      "label": "Certificate Chain",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 96,
+      "label": "Certificate Revocation",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 97,
+      "label": "OCSP",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 98,
+      "label": "Key Management",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 99,
+      "label": "Key Rotation",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 100,
+      "label": "Key Derivation Function",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 101,
+      "label": "Password Hashing",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 102,
+      "label": "Bcrypt",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 103,
+      "label": "Argon2",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 104,
+      "label": "Salting",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 105,
+      "label": "TLS",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 106,
+      "label": "TLS Handshake",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 107,
+      "label": "HTTPS",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 108,
+      "label": "Perfect Forward Secrecy",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 109,
+      "label": "Data at Rest",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 110,
+      "label": "Data in Transit",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 111,
+      "label": "Data in Use",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 112,
+      "label": "Database Encryption",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 113,
+      "label": "Data Loss Prevention",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 114,
+      "label": "Homomorphic Encryption",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 115,
+      "label": "Secure Computation",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 116,
+      "label": "Differential Privacy",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 117,
+      "label": "Zero-Knowledge Proof",
+      "group": "CRYPTO"
+    },
+    {
+      "id": 118,
+      "label": "Secure SDLC",
+      "group": "SOFT"
+    },
+    {
+      "id": 119,
+      "label": "Secure Design",
+      "group": "SOFT"
+    },
+    {
+      "id": 120,
+      "label": "Secure Coding",
+      "group": "SOFT"
+    },
+    {
+      "id": 121,
+      "label": "OWASP Top Ten",
+      "group": "SOFT"
+    },
+    {
+      "id": 122,
+      "label": "CWE Top 25",
+      "group": "SOFT"
+    },
+    {
+      "id": 123,
+      "label": "Buffer Overflow",
+      "group": "SOFT"
+    },
+    {
+      "id": 124,
+      "label": "Stack Overflow",
+      "group": "SOFT"
+    },
+    {
+      "id": 125,
+      "label": "Heap Overflow",
+      "group": "SOFT"
+    },
+    {
+      "id": 126,
+      "label": "Integer Overflow",
+      "group": "SOFT"
+    },
+    {
+      "id": 127,
+      "label": "Format String Bug",
+      "group": "SOFT"
+    },
+    {
+      "id": 128,
+      "label": "Injection Attack",
+      "group": "SOFT"
+    },
+    {
+      "id": 129,
+      "label": "SQL Injection",
+      "group": "SOFT"
+    },
+    {
+      "id": 130,
+      "label": "Command Injection",
+      "group": "SOFT"
+    },
+    {
+      "id": 131,
+      "label": "Cross-Site Scripting",
+      "group": "SOFT"
+    },
+    {
+      "id": 132,
+      "label": "Stored XSS",
+      "group": "SOFT"
+    },
+    {
+      "id": 133,
+      "label": "Reflected XSS",
+      "group": "SOFT"
+    },
+    {
+      "id": 134,
+      "label": "DOM-Based XSS",
+      "group": "SOFT"
+    },
+    {
+      "id": 135,
+      "label": "CSRF",
+      "group": "SOFT"
+    },
+    {
+      "id": 136,
+      "label": "SSRF",
+      "group": "SOFT"
+    },
+    {
+      "id": 137,
+      "label": "Insecure Deserialization",
+      "group": "SOFT"
+    },
+    {
+      "id": 138,
+      "label": "Race Condition",
+      "group": "SOFT"
+    },
+    {
+      "id": 139,
+      "label": "TOCTOU",
+      "group": "SOFT"
+    },
+    {
+      "id": 140,
+      "label": "Broken Access Control",
+      "group": "SOFT"
+    },
+    {
+      "id": 141,
+      "label": "Broken Authentication",
+      "group": "SOFT"
+    },
+    {
+      "id": 142,
+      "label": "Security Misconfiguration",
+      "group": "SOFT"
+    },
+    {
+      "id": 143,
+      "label": "Sensitive Data Exposure",
+      "group": "SOFT"
+    },
+    {
+      "id": 144,
+      "label": "Input Validation",
+      "group": "SOFT"
+    },
+    {
+      "id": 145,
+      "label": "Output Encoding",
+      "group": "SOFT"
+    },
+    {
+      "id": 146,
+      "label": "Parameterized Query",
+      "group": "SOFT"
+    },
+    {
+      "id": 147,
+      "label": "Static Analysis",
+      "group": "SOFT"
+    },
+    {
+      "id": 148,
+      "label": "Dynamic Analysis",
+      "group": "SOFT"
+    },
+    {
+      "id": 149,
+      "label": "Fuzzing",
+      "group": "SOFT"
+    },
+    {
+      "id": 150,
+      "label": "Software Composition Analysis",
+      "group": "SOFT"
+    },
+    {
+      "id": 151,
+      "label": "Dependency Scanning",
+      "group": "SOFT"
+    },
+    {
+      "id": 152,
+      "label": "Software Supply Chain",
+      "group": "SOFT"
+    },
+    {
+      "id": 153,
+      "label": "SBOM",
+      "group": "SOFT"
+    },
+    {
+      "id": 154,
+      "label": "Code Signing",
+      "group": "SOFT"
+    },
+    {
+      "id": 155,
+      "label": "Secure Code Review",
+      "group": "SOFT"
+    },
+    {
+      "id": 156,
+      "label": "Hardware Security",
+      "group": "COMP"
+    },
+    {
+      "id": 157,
+      "label": "Trusted Platform Module",
+      "group": "COMP"
+    },
+    {
+      "id": 158,
+      "label": "Hardware Security Module",
+      "group": "COMP"
+    },
+    {
+      "id": 159,
+      "label": "Secure Enclave",
+      "group": "COMP"
+    },
+    {
+      "id": 160,
+      "label": "Trusted Execution Env",
+      "group": "COMP"
+    },
+    {
+      "id": 161,
+      "label": "Firmware Security",
+      "group": "COMP"
+    },
+    {
+      "id": 162,
+      "label": "Secure Boot",
+      "group": "COMP"
+    },
+    {
+      "id": 163,
+      "label": "Measured Boot",
+      "group": "COMP"
+    },
+    {
+      "id": 164,
+      "label": "UEFI Security",
+      "group": "COMP"
+    },
+    {
+      "id": 165,
+      "label": "Side-Channel Attack",
+      "group": "COMP"
+    },
+    {
+      "id": 166,
+      "label": "Timing Attack",
+      "group": "COMP"
+    },
+    {
+      "id": 167,
+      "label": "Power Analysis Attack",
+      "group": "COMP"
+    },
+    {
+      "id": 168,
+      "label": "Cache Side-Channel",
+      "group": "COMP"
+    },
+    {
+      "id": 169,
+      "label": "Rowhammer",
+      "group": "COMP"
+    },
+    {
+      "id": 170,
+      "label": "Hardware Supply Chain",
+      "group": "COMP"
+    },
+    {
+      "id": 171,
+      "label": "Embedded Security",
+      "group": "COMP"
+    },
+    {
+      "id": 172,
+      "label": "IoT Security",
+      "group": "COMP"
+    },
+    {
+      "id": 173,
+      "label": "Device Attestation",
+      "group": "COMP"
+    },
+    {
+      "id": 174,
+      "label": "Hardware Root of Trust",
+      "group": "COMP"
+    },
+    {
+      "id": 175,
+      "label": "Network Security",
+      "group": "NET"
+    },
+    {
+      "id": 176,
+      "label": "OSI Model",
+      "group": "NET"
+    },
+    {
+      "id": 177,
+      "label": "TCP/IP Model",
+      "group": "NET"
+    },
+    {
+      "id": 178,
+      "label": "TCP",
+      "group": "NET"
+    },
+    {
+      "id": 179,
+      "label": "UDP",
+      "group": "NET"
+    },
+    {
+      "id": 180,
+      "label": "IP Protocol",
+      "group": "NET"
+    },
+    {
+      "id": 181,
+      "label": "ICMP",
+      "group": "NET"
+    },
+    {
+      "id": 182,
+      "label": "ARP Spoofing",
+      "group": "NET"
+    },
+    {
+      "id": 183,
+      "label": "DHCP Snooping",
+      "group": "NET"
+    },
+    {
+      "id": 184,
+      "label": "Man-in-the-Middle",
+      "group": "NET"
+    },
+    {
+      "id": 185,
+      "label": "Packet Sniffing",
+      "group": "NET"
+    },
+    {
+      "id": 186,
+      "label": "Firewall",
+      "group": "NET"
+    },
+    {
+      "id": 187,
+      "label": "Stateful Firewall",
+      "group": "NET"
+    },
+    {
+      "id": 188,
+      "label": "Next-Gen Firewall",
+      "group": "NET"
+    },
+    {
+      "id": 189,
+      "label": "Web Application Firewall",
+      "group": "NET"
+    },
+    {
+      "id": 190,
+      "label": "Intrusion Detection",
+      "group": "NET"
+    },
+    {
+      "id": 191,
+      "label": "Intrusion Prevention",
+      "group": "NET"
+    },
+    {
+      "id": 192,
+      "label": "Signature-Based Detection",
+      "group": "NET"
+    },
+    {
+      "id": 193,
+      "label": "Anomaly-Based Detection",
+      "group": "NET"
+    },
+    {
+      "id": 194,
+      "label": "Network Segmentation",
+      "group": "NET"
+    },
+    {
+      "id": 195,
+      "label": "VLAN",
+      "group": "NET"
+    },
+    {
+      "id": 196,
+      "label": "DMZ",
+      "group": "NET"
+    },
+    {
+      "id": 197,
+      "label": "VPN",
+      "group": "NET"
+    },
+    {
+      "id": 198,
+      "label": "IPsec",
+      "group": "NET"
+    },
+    {
+      "id": 199,
+      "label": "WireGuard",
+      "group": "NET"
+    },
+    {
+      "id": 200,
+      "label": "Wireless Security",
+      "group": "NET"
+    },
+    {
+      "id": 201,
+      "label": "WPA3",
+      "group": "NET"
+    },
+    {
+      "id": 202,
+      "label": "802.1X",
+      "group": "NET"
+    },
+    {
+      "id": 203,
+      "label": "Rogue Access Point",
+      "group": "NET"
+    },
+    {
+      "id": 204,
+      "label": "DNS Security",
+      "group": "NET"
+    },
+    {
+      "id": 205,
+      "label": "DNSSEC",
+      "group": "NET"
+    },
+    {
+      "id": 206,
+      "label": "DNS Tunneling",
+      "group": "NET"
+    },
+    {
+      "id": 207,
+      "label": "BGP Security",
+      "group": "NET"
+    },
+    {
+      "id": 208,
+      "label": "RPKI",
+      "group": "NET"
+    },
+    {
+      "id": 209,
+      "label": "DDoS Attack",
+      "group": "NET"
+    },
+    {
+      "id": 210,
+      "label": "Volumetric Attack",
+      "group": "NET"
+    },
+    {
+      "id": 211,
+      "label": "Application-Layer DDoS",
+      "group": "NET"
+    },
+    {
+      "id": 212,
+      "label": "DDoS Mitigation",
+      "group": "NET"
+    },
+    {
+      "id": 213,
+      "label": "Zero Trust Architecture",
+      "group": "NET"
+    },
+    {
+      "id": 214,
+      "label": "Micro-Segmentation",
+      "group": "NET"
+    },
+    {
+      "id": 215,
+      "label": "SSH",
+      "group": "NET"
+    },
+    {
+      "id": 216,
+      "label": "Port Scanning",
+      "group": "NET"
+    },
+    {
+      "id": 217,
+      "label": "Network Access Control",
+      "group": "NET"
+    },
+    {
+      "id": 218,
+      "label": "Proxy Server",
+      "group": "NET"
+    },
+    {
+      "id": 219,
+      "label": "Reverse Proxy",
+      "group": "NET"
+    },
+    {
+      "id": 220,
+      "label": "Packet Capture",
+      "group": "NET"
+    },
+    {
+      "id": 221,
+      "label": "NetFlow Analysis",
+      "group": "NET"
+    },
+    {
+      "id": 222,
+      "label": "Operating System Security",
+      "group": "SYS"
+    },
+    {
+      "id": 223,
+      "label": "Kernel Security",
+      "group": "SYS"
+    },
+    {
+      "id": 224,
+      "label": "Process Isolation",
+      "group": "SYS"
+    },
+    {
+      "id": 225,
+      "label": "Memory Protection",
+      "group": "SYS"
+    },
+    {
+      "id": 226,
+      "label": "ASLR",
+      "group": "SYS"
+    },
+    {
+      "id": 227,
+      "label": "Stack Canary",
+      "group": "SYS"
+    },
+    {
+      "id": 228,
+      "label": "DEP",
+      "group": "SYS"
+    },
+    {
+      "id": 229,
+      "label": "Access Control",
+      "group": "SYS"
+    },
+    {
+      "id": 230,
+      "label": "DAC",
+      "group": "SYS"
+    },
+    {
+      "id": 231,
+      "label": "MAC",
+      "group": "SYS"
+    },
+    {
+      "id": 232,
+      "label": "RBAC",
+      "group": "SYS"
+    },
+    {
+      "id": 233,
+      "label": "ABAC",
+      "group": "SYS"
+    },
+    {
+      "id": 234,
+      "label": "File Permissions",
+      "group": "SYS"
+    },
+    {
+      "id": 235,
+      "label": "SELinux",
+      "group": "SYS"
+    },
+    {
+      "id": 236,
+      "label": "AppArmor",
+      "group": "SYS"
+    },
+    {
+      "id": 237,
+      "label": "Virtualization Security",
+      "group": "SYS"
+    },
+    {
+      "id": 238,
+      "label": "Hypervisor Security",
+      "group": "SYS"
+    },
+    {
+      "id": 239,
+      "label": "Container Security",
+      "group": "SYS"
+    },
+    {
+      "id": 240,
+      "label": "Docker Security",
+      "group": "SYS"
+    },
+    {
+      "id": 241,
+      "label": "Kubernetes Security",
+      "group": "SYS"
+    },
+    {
+      "id": 242,
+      "label": "Cloud Security",
+      "group": "SYS"
+    },
+    {
+      "id": 243,
+      "label": "Shared Responsibility Model",
+      "group": "SYS"
+    },
+    {
+      "id": 244,
+      "label": "IaaS Security",
+      "group": "SYS"
+    },
+    {
+      "id": 245,
+      "label": "PaaS Security",
+      "group": "SYS"
+    },
+    {
+      "id": 246,
+      "label": "SaaS Security",
+      "group": "SYS"
+    },
+    {
+      "id": 247,
+      "label": "Cloud IAM",
+      "group": "SYS"
+    },
+    {
+      "id": 248,
+      "label": "Security Monitoring",
+      "group": "SYS"
+    },
+    {
+      "id": 249,
+      "label": "Log Management",
+      "group": "SYS"
+    },
+    {
+      "id": 250,
+      "label": "SIEM",
+      "group": "SYS"
+    },
+    {
+      "id": 251,
+      "label": "SOAR",
+      "group": "SYS"
+    },
+    {
+      "id": 252,
+      "label": "Security Operations Center",
+      "group": "SYS"
+    },
+    {
+      "id": 253,
+      "label": "EDR",
+      "group": "SYS"
+    },
+    {
+      "id": 254,
+      "label": "XDR",
+      "group": "SYS"
+    },
+    {
+      "id": 255,
+      "label": "Antivirus",
+      "group": "SYS"
+    },
+    {
+      "id": 256,
+      "label": "Host-Based IDS",
+      "group": "SYS"
+    },
+    {
+      "id": 257,
+      "label": "Patch Management",
+      "group": "SYS"
+    },
+    {
+      "id": 258,
+      "label": "Configuration Management",
+      "group": "SYS"
+    },
+    {
+      "id": 259,
+      "label": "System Hardening",
+      "group": "SYS"
+    },
+    {
+      "id": 260,
+      "label": "Baseline Configuration",
+      "group": "SYS"
+    },
+    {
+      "id": 261,
+      "label": "CIS Benchmarks",
+      "group": "SYS"
+    },
+    {
+      "id": 262,
+      "label": "Audit Logging",
+      "group": "SYS"
+    },
+    {
+      "id": 263,
+      "label": "Identity Management",
+      "group": "HUMAN"
+    },
+    {
+      "id": 264,
+      "label": "Access Management",
+      "group": "HUMAN"
+    },
+    {
+      "id": 265,
+      "label": "IAM System",
+      "group": "HUMAN"
+    },
+    {
+      "id": 266,
+      "label": "Single Sign-On",
+      "group": "HUMAN"
+    },
+    {
+      "id": 267,
+      "label": "Federated Identity",
+      "group": "HUMAN"
+    },
+    {
+      "id": 268,
+      "label": "Password Authentication",
+      "group": "HUMAN"
+    },
+    {
+      "id": 269,
+      "label": "Password Policy",
+      "group": "HUMAN"
+    },
+    {
+      "id": 270,
+      "label": "Multi-Factor Authentication",
+      "group": "HUMAN"
+    },
+    {
+      "id": 271,
+      "label": "Biometric Authentication",
+      "group": "HUMAN"
+    },
+    {
+      "id": 272,
+      "label": "FIDO2",
+      "group": "HUMAN"
+    },
+    {
+      "id": 273,
+      "label": "Passkey",
+      "group": "HUMAN"
+    },
+    {
+      "id": 274,
+      "label": "OAuth 2.0",
+      "group": "HUMAN"
+    },
+    {
+      "id": 275,
+      "label": "OIDC",
+      "group": "HUMAN"
+    },
+    {
+      "id": 276,
+      "label": "SAML",
+      "group": "HUMAN"
+    },
+    {
+      "id": 277,
+      "label": "Social Engineering",
+      "group": "HUMAN"
+    },
+    {
+      "id": 278,
+      "label": "Phishing",
+      "group": "HUMAN"
+    },
+    {
+      "id": 279,
+      "label": "Spear Phishing",
+      "group": "HUMAN"
+    },
+    {
+      "id": 280,
+      "label": "Pretexting",
+      "group": "HUMAN"
+    },
+    {
+      "id": 281,
+      "label": "Baiting",
+      "group": "HUMAN"
+    },
+    {
+      "id": 282,
+      "label": "Usable Security",
+      "group": "HUMAN"
+    },
+    {
+      "id": 283,
+      "label": "Security Awareness Training",
+      "group": "HUMAN"
+    },
+    {
+      "id": 284,
+      "label": "Insider Threat",
+      "group": "HUMAN"
+    },
+    {
+      "id": 285,
+      "label": "Privilege Creep",
+      "group": "HUMAN"
+    },
+    {
+      "id": 286,
+      "label": "Just-in-Time Access",
+      "group": "HUMAN"
+    },
+    {
+      "id": 287,
+      "label": "Privacy Engineering",
+      "group": "HUMAN"
+    },
+    {
+      "id": 288,
+      "label": "Privacy by Design",
+      "group": "HUMAN"
+    },
+    {
+      "id": 289,
+      "label": "Data Minimization",
+      "group": "HUMAN"
+    },
+    {
+      "id": 290,
+      "label": "User Behavior Analytics",
+      "group": "HUMAN"
+    },
+    {
+      "id": 291,
+      "label": "Governance Risk Compliance",
+      "group": "ORG"
+    },
+    {
+      "id": 292,
+      "label": "Security Policy",
+      "group": "ORG"
+    },
+    {
+      "id": 293,
+      "label": "Acceptable Use Policy",
+      "group": "ORG"
+    },
+    {
+      "id": 294,
+      "label": "Security Standard",
+      "group": "ORG"
+    },
+    {
+      "id": 295,
+      "label": "Security Procedure",
+      "group": "ORG"
+    },
+    {
+      "id": 296,
+      "label": "NIST CSF",
+      "group": "ORG"
+    },
+    {
+      "id": 297,
+      "label": "ISO 27001",
+      "group": "ORG"
+    },
+    {
+      "id": 298,
+      "label": "SOC 2",
+      "group": "ORG"
+    },
+    {
+      "id": 299,
+      "label": "PCI-DSS",
+      "group": "ORG"
+    },
+    {
+      "id": 300,
+      "label": "HIPAA Compliance",
+      "group": "ORG"
+    },
+    {
+      "id": 301,
+      "label": "Security Program Mgmt",
+      "group": "ORG"
+    },
+    {
+      "id": 302,
+      "label": "CISO Role",
+      "group": "ORG"
+    },
+    {
+      "id": 303,
+      "label": "Business Continuity",
+      "group": "ORG"
+    },
+    {
+      "id": 304,
+      "label": "Disaster Recovery",
+      "group": "ORG"
+    },
+    {
+      "id": 305,
+      "label": "Business Impact Analysis",
+      "group": "ORG"
+    },
+    {
+      "id": 306,
+      "label": "RTO",
+      "group": "ORG"
+    },
+    {
+      "id": 307,
+      "label": "RPO",
+      "group": "ORG"
+    },
+    {
+      "id": 308,
+      "label": "Vendor Risk Management",
+      "group": "ORG"
+    },
+    {
+      "id": 309,
+      "label": "Third-Party Risk",
+      "group": "ORG"
+    },
+    {
+      "id": 310,
+      "label": "Supply Chain Risk",
+      "group": "ORG"
+    },
+    {
+      "id": 311,
+      "label": "Security Metrics",
+      "group": "ORG"
+    },
+    {
+      "id": 312,
+      "label": "Risk Register",
+      "group": "ORG"
+    },
+    {
+      "id": 313,
+      "label": "Risk Mitigation",
+      "group": "ORG"
+    },
+    {
+      "id": 314,
+      "label": "Risk Transfer",
+      "group": "ORG"
+    },
+    {
+      "id": 315,
+      "label": "Risk Acceptance",
+      "group": "ORG"
+    },
+    {
+      "id": 316,
+      "label": "Risk Avoidance",
+      "group": "ORG"
+    },
+    {
+      "id": 317,
+      "label": "Security Audit",
+      "group": "ORG"
+    },
+    {
+      "id": 318,
+      "label": "Cyber Law",
+      "group": "SOC"
+    },
+    {
+      "id": 319,
+      "label": "CFAA",
+      "group": "SOC"
+    },
+    {
+      "id": 320,
+      "label": "ECPA",
+      "group": "SOC"
+    },
+    {
+      "id": 321,
+      "label": "GDPR",
+      "group": "SOC"
+    },
+    {
+      "id": 322,
+      "label": "CCPA",
+      "group": "SOC"
+    },
+    {
+      "id": 323,
+      "label": "HIPAA Law",
+      "group": "SOC"
+    },
+    {
+      "id": 324,
+      "label": "GLBA",
+      "group": "SOC"
+    },
+    {
+      "id": 325,
+      "label": "FERPA",
+      "group": "SOC"
+    },
+    {
+      "id": 326,
+      "label": "NIS2 Directive",
+      "group": "SOC"
+    },
+    {
+      "id": 327,
+      "label": "Cybercrime",
+      "group": "SOC"
+    },
+    {
+      "id": 328,
+      "label": "Digital Forensics",
+      "group": "SOC"
+    },
+    {
+      "id": 329,
+      "label": "Chain of Custody",
+      "group": "SOC"
+    },
+    {
+      "id": 330,
+      "label": "Forensic Imaging",
+      "group": "SOC"
+    },
+    {
+      "id": 331,
+      "label": "Memory Forensics",
+      "group": "SOC"
+    },
+    {
+      "id": 332,
+      "label": "Mobile Forensics",
+      "group": "SOC"
+    },
+    {
+      "id": 333,
+      "label": "Network Forensics",
+      "group": "SOC"
+    },
+    {
+      "id": 334,
+      "label": "Cyber Ethics",
+      "group": "SOC"
+    },
+    {
+      "id": 335,
+      "label": "Responsible Disclosure",
+      "group": "SOC"
+    },
+    {
+      "id": 336,
+      "label": "ACM Code of Ethics",
+      "group": "SOC"
+    },
+    {
+      "id": 337,
+      "label": "Cyber Policy",
+      "group": "SOC"
+    },
+    {
+      "id": 338,
+      "label": "Critical Infrastructure",
+      "group": "SOC"
+    },
+    {
+      "id": 339,
+      "label": "ICS Security",
+      "group": "SOC"
+    },
+    {
+      "id": 340,
+      "label": "SCADA Security",
+      "group": "SOC"
+    },
+    {
+      "id": 341,
+      "label": "Data Breach Notification",
+      "group": "SOC"
+    },
+    {
+      "id": 342,
+      "label": "Penetration Testing",
+      "group": "OPS"
+    },
+    {
+      "id": 343,
+      "label": "Red Team",
+      "group": "OPS"
+    },
+    {
+      "id": 344,
+      "label": "Blue Team",
+      "group": "OPS"
+    },
+    {
+      "id": 345,
+      "label": "Purple Team",
+      "group": "OPS"
+    },
+    {
+      "id": 346,
+      "label": "MITRE ATT&CK",
+      "group": "OPS"
+    },
+    {
+      "id": 347,
+      "label": "Threat Intelligence",
+      "group": "OPS"
+    },
+    {
+      "id": 348,
+      "label": "OSINT",
+      "group": "OPS"
+    },
+    {
+      "id": 349,
+      "label": "Threat Hunting",
+      "group": "OPS"
+    },
+    {
+      "id": 350,
+      "label": "Vulnerability Management",
+      "group": "OPS"
+    },
+    {
+      "id": 351,
+      "label": "Vulnerability Scanning",
+      "group": "OPS"
+    },
+    {
+      "id": 352,
+      "label": "Incident Response",
+      "group": "OPS"
+    },
+    {
+      "id": 353,
+      "label": "PICERL Lifecycle",
+      "group": "OPS"
+    },
+    {
+      "id": 354,
+      "label": "Incident Preparation",
+      "group": "OPS"
+    },
+    {
+      "id": 355,
+      "label": "Incident Identification",
+      "group": "OPS"
+    },
+    {
+      "id": 356,
+      "label": "Incident Containment",
+      "group": "OPS"
+    },
+    {
+      "id": 357,
+      "label": "Incident Eradication",
+      "group": "OPS"
+    },
+    {
+      "id": 358,
+      "label": "Incident Recovery",
+      "group": "OPS"
+    },
+    {
+      "id": 359,
+      "label": "Lessons Learned",
+      "group": "OPS"
+    },
+    {
+      "id": 360,
+      "label": "Malware Analysis",
+      "group": "OPS"
+    },
+    {
+      "id": 361,
+      "label": "Privilege Escalation",
+      "group": "OPS"
+    },
+    {
+      "id": 362,
+      "label": "Lateral Movement",
+      "group": "OPS"
+    },
+    {
+      "id": 363,
+      "label": "Command and Control",
+      "group": "OPS"
+    },
+    {
+      "id": 364,
+      "label": "Data Exfiltration",
+      "group": "OPS"
+    },
+    {
+      "id": 365,
+      "label": "Persistence Mechanism",
+      "group": "OPS"
+    },
+    {
+      "id": 366,
+      "label": "Bug Bounty Program",
+      "group": "OPS"
+    },
+    {
+      "id": 367,
+      "label": "Capture the Flag",
+      "group": "OPS"
+    },
+    {
+      "id": 368,
+      "label": "Incident Response Plan",
+      "group": "OPS"
+    },
+    {
+      "id": 369,
+      "label": "Runbook",
+      "group": "OPS"
+    },
+    {
+      "id": 370,
+      "label": "Tabletop Exercise",
+      "group": "OPS"
+    },
+    {
+      "id": 371,
+      "label": "Detection Engineering",
+      "group": "OPS"
+    },
+    {
+      "id": 372,
+      "label": "AI Security",
+      "group": "EMERG"
+    },
+    {
+      "id": 373,
+      "label": "Adversarial ML",
+      "group": "EMERG"
+    },
+    {
+      "id": 374,
+      "label": "Model Theft",
+      "group": "EMERG"
+    },
+    {
+      "id": 375,
+      "label": "Prompt Injection",
+      "group": "EMERG"
+    },
+    {
+      "id": 376,
+      "label": "Data Poisoning",
+      "group": "EMERG"
+    },
+    {
+      "id": 377,
+      "label": "Model Evasion",
+      "group": "EMERG"
+    },
+    {
+      "id": 378,
+      "label": "Quantum Threat",
+      "group": "EMERG"
+    },
+    {
+      "id": 379,
+      "label": "Post-Quantum Cryptography",
+      "group": "EMERG"
+    },
+    {
+      "id": 380,
+      "label": "Lattice-Based Crypto",
+      "group": "EMERG"
+    },
+    {
+      "id": 381,
+      "label": "Confidential Computing",
+      "group": "EMERG"
+    },
+    {
+      "id": 382,
+      "label": "Operational Technology",
+      "group": "EMERG"
+    },
+    {
+      "id": 383,
+      "label": "OT Security",
+      "group": "EMERG"
+    },
+    {
+      "id": 384,
+      "label": "Smart Grid Security",
+      "group": "EMERG"
+    },
+    {
+      "id": 385,
+      "label": "Blockchain Security",
+      "group": "EMERG"
+    },
+    {
+      "id": 386,
+      "label": "Capstone Secure System",
+      "group": "CAP"
+    },
+    {
+      "id": 387,
+      "label": "Capstone Security Program",
+      "group": "CAP"
+    },
+    {
+      "id": 388,
+      "label": "Capstone Applied Research",
+      "group": "CAP"
+    },
+    {
+      "id": 389,
+      "label": "Technical Communication",
+      "group": "CAP"
+    },
+    {
+      "id": 390,
+      "label": "Team Collaboration",
+      "group": "CAP"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 2
+    },
+    {
+      "from": 5,
+      "to": 2
+    },
+    {
+      "from": 6,
+      "to": 3
+    },
+    {
+      "from": 6,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 7
+    },
+    {
+      "from": 10,
+      "to": 7
+    },
+    {
+      "from": 11,
+      "to": 7
+    },
+    {
+      "from": 11,
+      "to": 8
+    },
+    {
+      "from": 11,
+      "to": 9
+    },
+    {
+      "from": 12,
+      "to": 1
+    },
+    {
+      "from": 13,
+      "to": 1
+    },
+    {
+      "from": 14,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 14
+    },
+    {
+      "from": 16,
+      "to": 14
+    },
+    {
+      "from": 17,
+      "to": 14
+    },
+    {
+      "from": 18,
+      "to": 1
+    },
+    {
+      "from": 19,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 18
+    },
+    {
+      "from": 21,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 1
+    },
+    {
+      "from": 23,
+      "to": 1
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 1
+    },
+    {
+      "from": 26,
+      "to": 23
+    },
+    {
+      "from": 27,
+      "to": 1
+    },
+    {
+      "from": 28,
+      "to": 1
+    },
+    {
+      "from": 29,
+      "to": 1
+    },
+    {
+      "from": 30,
+      "to": 18
+    },
+    {
+      "from": 31,
+      "to": 14
+    },
+    {
+      "from": 32,
+      "to": 14
+    },
+    {
+      "from": 33,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 32
+    },
+    {
+      "from": 34,
+      "to": 31
+    },
+    {
+      "from": 35,
+      "to": 32
+    },
+    {
+      "from": 36,
+      "to": 33
+    },
+    {
+      "from": 37,
+      "to": 22
+    },
+    {
+      "from": 38,
+      "to": 21
+    },
+    {
+      "from": 39,
+      "to": 38
+    },
+    {
+      "from": 40,
+      "to": 32
+    },
+    {
+      "from": 41,
+      "to": 40
+    },
+    {
+      "from": 41,
+      "to": 21
+    },
+    {
+      "from": 42,
+      "to": 31
+    },
+    {
+      "from": 42,
+      "to": 34
+    },
+    {
+      "from": 43,
+      "to": 33
+    },
+    {
+      "from": 44,
+      "to": 33
+    },
+    {
+      "from": 45,
+      "to": 33
+    },
+    {
+      "from": 46,
+      "to": 42
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 14
+    },
+    {
+      "from": 48,
+      "to": 42
+    },
+    {
+      "from": 49,
+      "to": 22
+    },
+    {
+      "from": 50,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 49
+    },
+    {
+      "from": 52,
+      "to": 49
+    },
+    {
+      "from": 53,
+      "to": 49
+    },
+    {
+      "from": 54,
+      "to": 49
+    },
+    {
+      "from": 55,
+      "to": 49
+    },
+    {
+      "from": 56,
+      "to": 49
+    },
+    {
+      "from": 57,
+      "to": 1
+    },
+    {
+      "from": 57,
+      "to": 3
+    },
+    {
+      "from": 58,
+      "to": 57
+    },
+    {
+      "from": 59,
+      "to": 57
+    },
+    {
+      "from": 60,
+      "to": 58
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 60
+    },
+    {
+      "from": 63,
+      "to": 60
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 65,
+      "to": 63
+    },
+    {
+      "from": 66,
+      "to": 64
+    },
+    {
+      "from": 67,
+      "to": 64
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 64
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 69
+    },
+    {
+      "from": 72,
+      "to": 69
+    },
+    {
+      "from": 73,
+      "to": 69
+    },
+    {
+      "from": 74,
+      "to": 71
+    },
+    {
+      "from": 75,
+      "to": 64
+    },
+    {
+      "from": 76,
+      "to": 60
+    },
+    {
+      "from": 76,
+      "to": 62
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 76
+    },
+    {
+      "from": 79,
+      "to": 77
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 76
+    },
+    {
+      "from": 81,
+      "to": 76
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 83,
+      "to": 4
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 83
+    },
+    {
+      "from": 86,
+      "to": 83
+    },
+    {
+      "from": 87,
+      "to": 83
+    },
+    {
+      "from": 88,
+      "to": 83
+    },
+    {
+      "from": 89,
+      "to": 83
+    },
+    {
+      "from": 89,
+      "to": 62
+    },
+    {
+      "from": 90,
+      "to": 89
+    },
+    {
+      "from": 90,
+      "to": 84
+    },
+    {
+      "from": 91,
+      "to": 76
+    },
+    {
+      "from": 91,
+      "to": 83
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 93,
+      "to": 92
+    },
+    {
+      "from": 94,
+      "to": 92
+    },
+    {
+      "from": 95,
+      "to": 94
+    },
+    {
+      "from": 96,
+      "to": 94
+    },
+    {
+      "from": 97,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 62
+    },
+    {
+      "from": 99,
+      "to": 98
+    },
+    {
+      "from": 100,
+      "to": 62
+    },
+    {
+      "from": 101,
+      "to": 83
+    },
+    {
+      "from": 102,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 101
+    },
+    {
+      "from": 104,
+      "to": 101
+    },
+    {
+      "from": 105,
+      "to": 76
+    },
+    {
+      "from": 105,
+      "to": 91
+    },
+    {
+      "from": 105,
+      "to": 93
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 106,
+      "to": 82
+    },
+    {
+      "from": 107,
+      "to": 105
+    },
+    {
+      "from": 108,
+      "to": 82
+    },
+    {
+      "from": 109,
+      "to": 60
+    },
+    {
+      "from": 110,
+      "to": 60
+    },
+    {
+      "from": 111,
+      "to": 60
+    },
+    {
+      "from": 112,
+      "to": 109
+    },
+    {
+      "from": 113,
+      "to": 109
+    },
+    {
+      "from": 113,
+      "to": 110
+    },
+    {
+      "from": 114,
+      "to": 76
+    },
+    {
+      "from": 114,
+      "to": 111
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 3
+    },
+    {
+      "from": 117,
+      "to": 76
+    },
+    {
+      "from": 118,
+      "to": 1
+    },
+    {
+      "from": 119,
+      "to": 22
+    },
+    {
+      "from": 119,
+      "to": 118
+    },
+    {
+      "from": 120,
+      "to": 118
+    },
+    {
+      "from": 121,
+      "to": 32
+    },
+    {
+      "from": 121,
+      "to": 120
+    },
+    {
+      "from": 122,
+      "to": 32
+    },
+    {
+      "from": 122,
+      "to": 120
+    },
+    {
+      "from": 123,
+      "to": 121
+    },
+    {
+      "from": 124,
+      "to": 123
+    },
+    {
+      "from": 125,
+      "to": 123
+    },
+    {
+      "from": 126,
+      "to": 121
+    },
+    {
+      "from": 127,
+      "to": 121
+    },
+    {
+      "from": 128,
+      "to": 121
+    },
+    {
+      "from": 129,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 128
+    },
+    {
+      "from": 131,
+      "to": 128
+    },
+    {
+      "from": 132,
+      "to": 131
+    },
+    {
+      "from": 133,
+      "to": 131
+    },
+    {
+      "from": 134,
+      "to": 131
+    },
+    {
+      "from": 135,
+      "to": 121
+    },
+    {
+      "from": 136,
+      "to": 121
+    },
+    {
+      "from": 137,
+      "to": 121
+    },
+    {
+      "from": 138,
+      "to": 121
+    },
+    {
+      "from": 139,
+      "to": 138
+    },
+    {
+      "from": 140,
+      "to": 121
+    },
+    {
+      "from": 141,
+      "to": 121
+    },
+    {
+      "from": 141,
+      "to": 7
+    },
+    {
+      "from": 142,
+      "to": 121
+    },
+    {
+      "from": 143,
+      "to": 121
+    },
+    {
+      "from": 143,
+      "to": 3
+    },
+    {
+      "from": 144,
+      "to": 120
+    },
+    {
+      "from": 144,
+      "to": 128
+    },
+    {
+      "from": 145,
+      "to": 120
+    },
+    {
+      "from": 145,
+      "to": 131
+    },
+    {
+      "from": 146,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 129
+    },
+    {
+      "from": 147,
+      "to": 120
+    },
+    {
+      "from": 148,
+      "to": 120
+    },
+    {
+      "from": 149,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 120
+    },
+    {
+      "from": 151,
+      "to": 150
+    },
+    {
+      "from": 152,
+      "to": 118
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 154,
+      "to": 91
+    },
+    {
+      "from": 154,
+      "to": 120
+    },
+    {
+      "from": 155,
+      "to": 120
+    },
+    {
+      "from": 156,
+      "to": 1
+    },
+    {
+      "from": 157,
+      "to": 156
+    },
+    {
+      "from": 158,
+      "to": 156
+    },
+    {
+      "from": 158,
+      "to": 98
+    },
+    {
+      "from": 159,
+      "to": 156
+    },
+    {
+      "from": 160,
+      "to": 159
+    },
+    {
+      "from": 161,
+      "to": 156
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 163,
+      "to": 157
+    },
+    {
+      "from": 164,
+      "to": 161
+    },
+    {
+      "from": 165,
+      "to": 156
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 168,
+      "to": 165
+    },
+    {
+      "from": 169,
+      "to": 156
+    },
+    {
+      "from": 170,
+      "to": 156
+    },
+    {
+      "from": 170,
+      "to": 152
+    },
+    {
+      "from": 171,
+      "to": 156
+    },
+    {
+      "from": 172,
+      "to": 171
+    },
+    {
+      "from": 173,
+      "to": 157
+    },
+    {
+      "from": 173,
+      "to": 162
+    },
+    {
+      "from": 174,
+      "to": 157
+    },
+    {
+      "from": 175,
+      "to": 1
+    },
+    {
+      "from": 176,
+      "to": 175
+    },
+    {
+      "from": 177,
+      "to": 175
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 179,
+      "to": 177
+    },
+    {
+      "from": 180,
+      "to": 177
+    },
+    {
+      "from": 181,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 175
+    },
+    {
+      "from": 183,
+      "to": 175
+    },
+    {
+      "from": 184,
+      "to": 175
+    },
+    {
+      "from": 185,
+      "to": 175
+    },
+    {
+      "from": 186,
+      "to": 175
+    },
+    {
+      "from": 187,
+      "to": 186
+    },
+    {
+      "from": 187,
+      "to": 178
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 186
+    },
+    {
+      "from": 189,
+      "to": 121
+    },
+    {
+      "from": 190,
+      "to": 175
+    },
+    {
+      "from": 190,
+      "to": 51
+    },
+    {
+      "from": 191,
+      "to": 190
+    },
+    {
+      "from": 191,
+      "to": 50
+    },
+    {
+      "from": 192,
+      "to": 190
+    },
+    {
+      "from": 193,
+      "to": 190
+    },
+    {
+      "from": 194,
+      "to": 175
+    },
+    {
+      "from": 194,
+      "to": 22
+    },
+    {
+      "from": 195,
+      "to": 194
+    },
+    {
+      "from": 196,
+      "to": 194
+    },
+    {
+      "from": 197,
+      "to": 175
+    },
+    {
+      "from": 197,
+      "to": 76
+    },
+    {
+      "from": 198,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 197
+    },
+    {
+      "from": 200,
+      "to": 175
+    },
+    {
+      "from": 201,
+      "to": 200
+    },
+    {
+      "from": 202,
+      "to": 200
+    },
+    {
+      "from": 202,
+      "to": 7
+    },
+    {
+      "from": 203,
+      "to": 200
+    },
+    {
+      "from": 204,
+      "to": 175
+    },
+    {
+      "from": 205,
+      "to": 204
+    },
+    {
+      "from": 205,
+      "to": 91
+    },
+    {
+      "from": 206,
+      "to": 204
+    },
+    {
+      "from": 207,
+      "to": 175
+    },
+    {
+      "from": 208,
+      "to": 207
+    },
+    {
+      "from": 208,
+      "to": 93
+    },
+    {
+      "from": 209,
+      "to": 5
+    },
+    {
+      "from": 209,
+      "to": 175
+    },
+    {
+      "from": 210,
+      "to": 209
+    },
+    {
+      "from": 211,
+      "to": 209
+    },
+    {
+      "from": 212,
+      "to": 209
+    },
+    {
+      "from": 213,
+      "to": 175
+    },
+    {
+      "from": 213,
+      "to": 22
+    },
+    {
+      "from": 214,
+      "to": 213
+    },
+    {
+      "from": 214,
+      "to": 194
+    },
+    {
+      "from": 215,
+      "to": 175
+    },
+    {
+      "from": 215,
+      "to": 7
+    },
+    {
+      "from": 216,
+      "to": 175
+    },
+    {
+      "from": 216,
+      "to": 35
+    },
+    {
+      "from": 217,
+      "to": 175
+    },
+    {
+      "from": 217,
+      "to": 8
+    },
+    {
+      "from": 218,
+      "to": 175
+    },
+    {
+      "from": 219,
+      "to": 218
+    },
+    {
+      "from": 220,
+      "to": 185
+    },
+    {
+      "from": 221,
+      "to": 175
+    },
+    {
+      "from": 222,
+      "to": 1
+    },
+    {
+      "from": 223,
+      "to": 222
+    },
+    {
+      "from": 224,
+      "to": 222
+    },
+    {
+      "from": 225,
+      "to": 222
+    },
+    {
+      "from": 226,
+      "to": 225
+    },
+    {
+      "from": 226,
+      "to": 123
+    },
+    {
+      "from": 227,
+      "to": 124
+    },
+    {
+      "from": 228,
+      "to": 225
+    },
+    {
+      "from": 229,
+      "to": 8
+    },
+    {
+      "from": 230,
+      "to": 229
+    },
+    {
+      "from": 231,
+      "to": 229
+    },
+    {
+      "from": 232,
+      "to": 229
+    },
+    {
+      "from": 233,
+      "to": 229
+    },
+    {
+      "from": 234,
+      "to": 230
+    },
+    {
+      "from": 235,
+      "to": 231
+    },
+    {
+      "from": 236,
+      "to": 231
+    },
+    {
+      "from": 237,
+      "to": 222
+    },
+    {
+      "from": 238,
+      "to": 237
+    },
+    {
+      "from": 239,
+      "to": 237
+    },
+    {
+      "from": 240,
+      "to": 239
+    },
+    {
+      "from": 241,
+      "to": 239
+    },
+    {
+      "from": 242,
+      "to": 1
+    },
+    {
+      "from": 243,
+      "to": 242
+    },
+    {
+      "from": 244,
+      "to": 243
+    },
+    {
+      "from": 245,
+      "to": 243
+    },
+    {
+      "from": 246,
+      "to": 243
+    },
+    {
+      "from": 247,
+      "to": 242
+    },
+    {
+      "from": 247,
+      "to": 8
+    },
+    {
+      "from": 248,
+      "to": 51
+    },
+    {
+      "from": 249,
+      "to": 248
+    },
+    {
+      "from": 250,
+      "to": 249
+    },
+    {
+      "from": 251,
+      "to": 250
+    },
+    {
+      "from": 252,
+      "to": 248
+    },
+    {
+      "from": 253,
+      "to": 248
+    },
+    {
+      "from": 254,
+      "to": 253
+    },
+    {
+      "from": 255,
+      "to": 248
+    },
+    {
+      "from": 256,
+      "to": 190
+    },
+    {
+      "from": 256,
+      "to": 222
+    },
+    {
+      "from": 257,
+      "to": 32
+    },
+    {
+      "from": 258,
+      "to": 222
+    },
+    {
+      "from": 259,
+      "to": 222
+    },
+    {
+      "from": 259,
+      "to": 257
+    },
+    {
+      "from": 260,
+      "to": 258
+    },
+    {
+      "from": 261,
+      "to": 259
+    },
+    {
+      "from": 262,
+      "to": 9
+    },
+    {
+      "from": 262,
+      "to": 249
+    },
+    {
+      "from": 263,
+      "to": 7
+    },
+    {
+      "from": 264,
+      "to": 8
+    },
+    {
+      "from": 265,
+      "to": 263
+    },
+    {
+      "from": 265,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 265
+    },
+    {
+      "from": 267,
+      "to": 266
+    },
+    {
+      "from": 268,
+      "to": 7
+    },
+    {
+      "from": 269,
+      "to": 268
+    },
+    {
+      "from": 270,
+      "to": 7
+    },
+    {
+      "from": 271,
+      "to": 7
+    },
+    {
+      "from": 272,
+      "to": 270
+    },
+    {
+      "from": 273,
+      "to": 272
+    },
+    {
+      "from": 274,
+      "to": 265
+    },
+    {
+      "from": 275,
+      "to": 274
+    },
+    {
+      "from": 276,
+      "to": 267
+    },
+    {
+      "from": 277,
+      "to": 12
+    },
+    {
+      "from": 278,
+      "to": 277
+    },
+    {
+      "from": 279,
+      "to": 278
+    },
+    {
+      "from": 280,
+      "to": 277
+    },
+    {
+      "from": 281,
+      "to": 277
+    },
+    {
+      "from": 282,
+      "to": 29
+    },
+    {
+      "from": 283,
+      "to": 277
+    },
+    {
+      "from": 284,
+      "to": 34
+    },
+    {
+      "from": 285,
+      "to": 23
+    },
+    {
+      "from": 286,
+      "to": 23
+    },
+    {
+      "from": 287,
+      "to": 3
+    },
+    {
+      "from": 288,
+      "to": 287
+    },
+    {
+      "from": 288,
+      "to": 119
+    },
+    {
+      "from": 289,
+      "to": 287
+    },
+    {
+      "from": 290,
+      "to": 248
+    },
+    {
+      "from": 290,
+      "to": 193
+    },
+    {
+      "from": 291,
+      "to": 21
+    },
+    {
+      "from": 292,
+      "to": 291
+    },
+    {
+      "from": 293,
+      "to": 292
+    },
+    {
+      "from": 294,
+      "to": 292
+    },
+    {
+      "from": 295,
+      "to": 292
+    },
+    {
+      "from": 296,
+      "to": 291
+    },
+    {
+      "from": 297,
+      "to": 291
+    },
+    {
+      "from": 298,
+      "to": 291
+    },
+    {
+      "from": 299,
+      "to": 291
+    },
+    {
+      "from": 300,
+      "to": 291
+    },
+    {
+      "from": 301,
+      "to": 291
+    },
+    {
+      "from": 302,
+      "to": 301
+    },
+    {
+      "from": 303,
+      "to": 5
+    },
+    {
+      "from": 304,
+      "to": 303
+    },
+    {
+      "from": 305,
+      "to": 303
+    },
+    {
+      "from": 306,
+      "to": 304
+    },
+    {
+      "from": 307,
+      "to": 304
+    },
+    {
+      "from": 308,
+      "to": 21
+    },
+    {
+      "from": 309,
+      "to": 308
+    },
+    {
+      "from": 310,
+      "to": 308
+    },
+    {
+      "from": 310,
+      "to": 152
+    },
+    {
+      "from": 311,
+      "to": 301
+    },
+    {
+      "from": 312,
+      "to": 21
+    },
+    {
+      "from": 313,
+      "to": 21
+    },
+    {
+      "from": 314,
+      "to": 21
+    },
+    {
+      "from": 315,
+      "to": 21
+    },
+    {
+      "from": 316,
+      "to": 21
+    },
+    {
+      "from": 317,
+      "to": 297
+    },
+    {
+      "from": 318,
+      "to": 1
+    },
+    {
+      "from": 319,
+      "to": 318
+    },
+    {
+      "from": 320,
+      "to": 318
+    },
+    {
+      "from": 321,
+      "to": 318
+    },
+    {
+      "from": 321,
+      "to": 3
+    },
+    {
+      "from": 322,
+      "to": 318
+    },
+    {
+      "from": 322,
+      "to": 3
+    },
+    {
+      "from": 323,
+      "to": 318
+    },
+    {
+      "from": 323,
+      "to": 3
+    },
+    {
+      "from": 324,
+      "to": 318
+    },
+    {
+      "from": 325,
+      "to": 318
+    },
+    {
+      "from": 326,
+      "to": 318
+    },
+    {
+      "from": 327,
+      "to": 318
+    },
+    {
+      "from": 328,
+      "to": 1
+    },
+    {
+      "from": 329,
+      "to": 328
+    },
+    {
+      "from": 330,
+      "to": 328
+    },
+    {
+      "from": 331,
+      "to": 328
+    },
+    {
+      "from": 332,
+      "to": 328
+    },
+    {
+      "from": 333,
+      "to": 328
+    },
+    {
+      "from": 333,
+      "to": 220
+    },
+    {
+      "from": 334,
+      "to": 1
+    },
+    {
+      "from": 335,
+      "to": 334
+    },
+    {
+      "from": 335,
+      "to": 32
+    },
+    {
+      "from": 336,
+      "to": 334
+    },
+    {
+      "from": 337,
+      "to": 318
+    },
+    {
+      "from": 338,
+      "to": 1
+    },
+    {
+      "from": 339,
+      "to": 338
+    },
+    {
+      "from": 340,
+      "to": 339
+    },
+    {
+      "from": 341,
+      "to": 318
+    },
+    {
+      "from": 341,
+      "to": 143
+    },
+    {
+      "from": 342,
+      "to": 32
+    },
+    {
+      "from": 342,
+      "to": 33
+    },
+    {
+      "from": 343,
+      "to": 342
+    },
+    {
+      "from": 344,
+      "to": 191
+    },
+    {
+      "from": 345,
+      "to": 343
+    },
+    {
+      "from": 345,
+      "to": 344
+    },
+    {
+      "from": 346,
+      "to": 42
+    },
+    {
+      "from": 347,
+      "to": 31
+    },
+    {
+      "from": 347,
+      "to": 42
+    },
+    {
+      "from": 348,
+      "to": 347
+    },
+    {
+      "from": 349,
+      "to": 347
+    },
+    {
+      "from": 349,
+      "to": 250
+    },
+    {
+      "from": 350,
+      "to": 257
+    },
+    {
+      "from": 350,
+      "to": 32
+    },
+    {
+      "from": 351,
+      "to": 350
+    },
+    {
+      "from": 351,
+      "to": 216
+    },
+    {
+      "from": 352,
+      "to": 1
+    },
+    {
+      "from": 353,
+      "to": 352
+    },
+    {
+      "from": 354,
+      "to": 353
+    },
+    {
+      "from": 355,
+      "to": 353
+    },
+    {
+      "from": 356,
+      "to": 353
+    },
+    {
+      "from": 357,
+      "to": 353
+    },
+    {
+      "from": 358,
+      "to": 353
+    },
+    {
+      "from": 358,
+      "to": 304
+    },
+    {
+      "from": 359,
+      "to": 353
+    },
+    {
+      "from": 360,
+      "to": 147
+    },
+    {
+      "from": 360,
+      "to": 148
+    },
+    {
+      "from": 361,
+      "to": 8
+    },
+    {
+      "from": 362,
+      "to": 175
+    },
+    {
+      "from": 363,
+      "to": 362
+    },
+    {
+      "from": 364,
+      "to": 363
+    },
+    {
+      "from": 364,
+      "to": 3
+    },
+    {
+      "from": 365,
+      "to": 363
+    },
+    {
+      "from": 366,
+      "to": 335
+    },
+    {
+      "from": 367,
+      "to": 1
+    },
+    {
+      "from": 368,
+      "to": 354
+    },
+    {
+      "from": 369,
+      "to": 368
+    },
+    {
+      "from": 370,
+      "to": 354
+    },
+    {
+      "from": 371,
+      "to": 250
+    },
+    {
+      "from": 371,
+      "to": 346
+    },
+    {
+      "from": 372,
+      "to": 1
+    },
+    {
+      "from": 373,
+      "to": 372
+    },
+    {
+      "from": 374,
+      "to": 372
+    },
+    {
+      "from": 375,
+      "to": 372
+    },
+    {
+      "from": 375,
+      "to": 128
+    },
+    {
+      "from": 376,
+      "to": 372
+    },
+    {
+      "from": 377,
+      "to": 373
+    },
+    {
+      "from": 378,
+      "to": 79
+    },
+    {
+      "from": 378,
+      "to": 80
+    },
+    {
+      "from": 379,
+      "to": 378
+    },
+    {
+      "from": 380,
+      "to": 379
+    },
+    {
+      "from": 381,
+      "to": 160
+    },
+    {
+      "from": 381,
+      "to": 111
+    },
+    {
+      "from": 382,
+      "to": 1
+    },
+    {
+      "from": 383,
+      "to": 382
+    },
+    {
+      "from": 384,
+      "to": 383
+    },
+    {
+      "from": 384,
+      "to": 338
+    },
+    {
+      "from": 385,
+      "to": 83
+    },
+    {
+      "from": 385,
+      "to": 76
+    },
+    {
+      "from": 386,
+      "to": 119
+    },
+    {
+      "from": 386,
+      "to": 352
+    },
+    {
+      "from": 386,
+      "to": 150
+    },
+    {
+      "from": 387,
+      "to": 296
+    },
+    {
+      "from": 387,
+      "to": 301
+    },
+    {
+      "from": 387,
+      "to": 303
+    },
+    {
+      "from": 388,
+      "to": 379
+    },
+    {
+      "from": 388,
+      "to": 372
+    },
+    {
+      "from": 388,
+      "to": 384
+    },
+    {
+      "from": 389,
+      "to": 1
+    },
+    {
+      "from": 390,
+      "to": 1
+    }
+  ]
+}

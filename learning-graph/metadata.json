@@ -1,0 +1,10 @@
+{
+  "title": "Cybersecurity: Foundations, Practice, and Professional Responsibility",
+  "description": "An ABET CAC-aligned intelligent textbook covering cybersecurity as both a computing-based discipline and a sociotechnical practice. Spans the eight CSEC2017 knowledge areas — Data, Software, Component, Connection, System, Human, Organizational, and Societal Security — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.",
+  "creator": "Dan McCreary",
+  "date": "2026-04-24",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}
