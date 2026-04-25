@@ -87,7 +87,25 @@ theme:
 # Plugins
 plugins:
   - search
-  # - social
+  - social   # requires `pip install "mkdocs-material[imaging]"` plus the system cairo lib
+
+# Exclude image prompt files, TODOs, and other non-publishable markdown
+# from the search index, sitemap, and build. Uses MkDocs' built-in
+# `exclude_docs` config (gitignore-style patterns) — preferred over the
+# third-party `mkdocs-exclude` plugin, which is broken on current mkdocs.
+exclude_docs: |
+  **/image-prompt*.md
+  **/image-prompts*.md
+  **/TODO.md
+  img/cover-image-prompt.md
+
+# Hooks — loaded as raw Python modules, not plugins (avoids name collisions).
+# `plugins/social_override.py` rewrites the og:image / twitter:image tags
+# emitted by the `social` plugin above so that pages with an `image:`
+# frontmatter field use the declared cover image instead of the
+# auto-generated social card under /assets/images/social/.
+hooks:
+  - plugins/social_override.py
 
 # Markdown extensions
 markdown_extensions:
