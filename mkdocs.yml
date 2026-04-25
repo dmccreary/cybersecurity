@@ -1,5 +1,6 @@
-site_name: 'Cybersecurity: Foundations, Practice, and Professional Responsibility'
-site_description: 'An ABET CAC-aligned intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, and ethics — with adversarial thinking, risk reasoning, and defensible design as cross-cutting themes.'
+site_name: 'Cybersecurity'
+# Foundations, Practice, and Professional Responsibility is the in the subtitle
+site_description: 'An interactive intelligent textbook covering the foundations of cybersecurity — cryptography, software security, network defense, system hardening, governance, risk reasoning, and defensible design as cross-cutting themes.'
 site_author: 'Dan McCreary'
 site_url: 'https://dmccreary.github.io/cybersecurity/'
 
@@ -14,7 +15,7 @@ copyright: 'Copyright &copy; 2026 Dan McCreary'
 # Theme configuration
 theme:
   name: material
-  logo: img/logo.png
+  logo: img/mascot/neutral.png
   favicon: img/favicon.ico
   palette:
     # Light mode
@@ -50,6 +51,7 @@ theme:
 # Plugins
 plugins:
   - search
+  # - social
 
 # Markdown extensions
 markdown_extensions:
@@ -73,6 +75,10 @@ markdown_extensions:
 extra_css:
   - css/extra.css
   - css/mascot.css
+
+# Custom JavaScript
+extra_javascript:
+  - js/extra.js
 
 # Extra
 extra:
