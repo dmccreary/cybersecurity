@@ -1,0 +1,47 @@
+{
+  "title": "The Operations Monitoring Pipeline",
+  "description": "A Mermaid pipeline diagram of a security operations data flow: telemetry sources to a collection layer to the SIEM to SOAR to the SOC analyst, with an analyst-to-SIEM feedback loop and a log-retention tiering note.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ops-monitoring-pipeline",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Security Operations", "Cloud and Ops Monitoring"],
+    "topic": ["SIEM", "SOAR", "Log Collection", "Detection Engineering", "SOC Workflow", "Log Retention"],
+    "learningObjectives": [
+      "Describe the stages telemetry passes through from source to SOC analyst.",
+      "Explain the analyst-to-SIEM feedback loop and the purpose of tiered log retention."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic idea of logs, alerts, and an incident-response workflow"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Trace one log event from a source through to an analyst decision, hovering each stage.",
+      "Discuss why the feedback edge from the analyst back to the SIEM exists."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does the collection layer normalize and enrich events before they reach the SIEM?", "level": "Understand"},
+      {"question": "Why does data move to cheaper, slower storage tiers as it ages rather than being deleted?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "5",
+  "edge_count": "5",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring"
+}
