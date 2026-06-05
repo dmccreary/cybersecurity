@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Choosing a Capstone Track</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #fff8e1; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 980px; margin: 0 auto; padding: 8px; }
+        h1.title {
+            text-align: center; font-size: 22px; color: #212529;
+            margin: 8px 0 4px;
+        }
+        p.sub { text-align: center; font-size: 14px; color: #455a64; margin-bottom: 8px; }
+        .deliv { cursor: pointer; transition: fill 0.15s; }
+        .deliv:hover rect { fill: #fff3cd; }
+        .deliv-text { pointer-events: none; }
+        #tooltip {
+            position: absolute; background: #455a64; color: #fff;
+            padding: 6px 10px; border-radius: 6px; font-size: 13px;
+            max-width: 240px; pointer-events: none; opacity: 0;
+            transition: opacity 0.15s; z-index: 50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        #tooltip.show { opacity: 1; }
+        svg { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">Choosing a Capstone Track</h1>
+    <p class="sub">Hover any deliverable to see the estimated weeks of effort.</p>
+    <svg id="tree" viewBox="0 0 960 640" role="img"
+         aria-label="A three-branch decision tree for choosing a cybersecurity capstone track. The root question 'What kind of security work draws you in?' branches to three cards: Capstone A Secure System (blue), Capstone B Security Program (slate), and Capstone C Applied Research (amber). Hover a deliverable for estimated weeks of effort.">
+
+      <!-- Root question -->
+      <rect x="280" y="14" width="400" height="56" rx="10" fill="#ffffff" stroke="#455a64" stroke-width="2"/>
+      <text x="480" y="38" text-anchor="middle" font-size="17" font-weight="bold" fill="#212529">What kind of security work</text>
+      <text x="480" y="60" text-anchor="middle" font-size="17" font-weight="bold" fill="#212529">draws you in?</text>
+
+      <!-- Connector lines from root to each branch label -->
+      <path d="M480 70 L160 110" stroke="#1565c0" stroke-width="3" fill="none"/>
+      <path d="M480 70 L480 110" stroke="#455a64" stroke-width="3" fill="none"/>
+      <path d="M480 70 L800 110" stroke="#ffa000" stroke-width="3" fill="none"/>
+
+      <!-- Branch A choice label -->
+      <rect x="20" y="110" width="280" height="64" rx="8" fill="#e3f0fb" stroke="#1565c0" stroke-width="2"/>
+      <text x="160" y="135" text-anchor="middle" font-size="13" fill="#0d47a1">"I want to build and</text>
+      <text x="160" y="153" text-anchor="middle" font-size="13" fill="#0d47a1">defend a real system."</text>
+
+      <!-- Branch B choice label -->
+      <rect x="340" y="110" width="280" height="64" rx="8" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+      <text x="480" y="135" text-anchor="middle" font-size="13" fill="#263238">"I want to design how an</text>
+      <text x="480" y="153" text-anchor="middle" font-size="13" fill="#263238">organization manages risk."</text>
+
+      <!-- Branch C choice label -->
+      <rect x="660" y="110" width="280" height="64" rx="8" fill="#fff3d6" stroke="#ffa000" stroke-width="2"/>
+      <text x="800" y="135" text-anchor="middle" font-size="13" fill="#8a5a00">"I want to investigate an</text>
+      <text x="800" y="153" text-anchor="middle" font-size="13" fill="#8a5a00">emerging question rigorously."</text>
+
+      <!-- connectors label -> card -->
+      <path d="M160 174 L160 196" stroke="#1565c0" stroke-width="3" fill="none"/>
+      <path d="M480 174 L480 196" stroke="#455a64" stroke-width="3" fill="none"/>
+      <path d="M800 174 L800 196" stroke="#ffa000" stroke-width="3" fill="none"/>
+
+      <!-- ===== Card A: Secure System ===== -->
+      <rect x="20" y="196" width="280" height="356" rx="12" fill="#ffffff" stroke="#d84315" stroke-width="3"/>
+      <rect x="20" y="196" width="280" height="44" rx="12" fill="#1565c0"/>
+      <text x="160" y="224" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">Capstone A: Secure System</text>
+      <text x="36" y="262" font-size="13" font-weight="bold" fill="#455a64">Deliverables:</text>
+      <g class="deliv" data-tip="Threat model — about 2 weeks: enumerate assets, trust boundaries, and attacker goals.">
+        <rect x="32" y="272" width="256" height="40" rx="6" fill="#f5f8fc" stroke="#1565c0"/>
+        <text class="deliv-text" x="44" y="296" font-size="13" fill="#212529">Threat model</text>
+      </g>
+      <g class="deliv" data-tip="Design — about 3 weeks: architecture, controls, and how they mitigate the threat model.">
+        <rect x="32" y="318" width="256" height="40" rx="6" fill="#f5f8fc" stroke="#1565c0"/>
+        <text class="deliv-text" x="44" y="342" font-size="13" fill="#212529">Design</text>
+      </g>
+      <g class="deliv" data-tip="Prototype — about 5 weeks: a working implementation of the secured system.">
+        <rect x="32" y="364" width="256" height="40" rx="6" fill="#f5f8fc" stroke="#1565c0"/>
+        <text class="deliv-text" x="44" y="388" font-size="13" fill="#212529">Prototype</text>
+      </g>
+      <g class="deliv" data-tip="Red-team report — about 3 weeks: attempt to break your own system and document findings.">
+        <rect x="32" y="410" width="256" height="40" rx="6" fill="#f5f8fc" stroke="#1565c0"/>
+        <text class="deliv-text" x="44" y="434" font-size="13" fill="#212529">Red-team report</text>
+      </g>
+      <g class="deliv" data-tip="Oral defense — about 1 week: present and defend your design decisions to a panel.">
+        <rect x="32" y="456" width="256" height="40" rx="6" fill="#f5f8fc" stroke="#1565c0"/>
+        <text class="deliv-text" x="44" y="480" font-size="13" fill="#212529">Oral defense</text>
+      </g>
+
+      <!-- ===== Card B: Security Program ===== -->
+      <rect x="340" y="196" width="280" height="356" rx="12" fill="#ffffff" stroke="#d84315" stroke-width="3"/>
+      <rect x="340" y="196" width="280" height="44" rx="12" fill="#455a64"/>
+      <text x="480" y="224" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">Capstone B: Security Program</text>
+      <text x="356" y="262" font-size="13" font-weight="bold" fill="#455a64">Deliverables:</text>
+      <g class="deliv" data-tip="Policy set — about 3 weeks: acceptable-use, access, incident-response, and data policies.">
+        <rect x="352" y="272" width="256" height="40" rx="6" fill="#f4f5f6" stroke="#455a64"/>
+        <text class="deliv-text" x="364" y="296" font-size="13" fill="#212529">Policy set</text>
+      </g>
+      <g class="deliv" data-tip="Risk register — about 3 weeks: catalog risks with likelihood, impact, and treatment.">
+        <rect x="352" y="318" width="256" height="40" rx="6" fill="#f4f5f6" stroke="#455a64"/>
+        <text class="deliv-text" x="364" y="342" font-size="13" fill="#212529">Risk register</text>
+      </g>
+      <g class="deliv" data-tip="Control catalog — about 3 weeks: map controls to a framework such as NIST 800-53.">
+        <rect x="352" y="364" width="256" height="40" rx="6" fill="#f4f5f6" stroke="#455a64"/>
+        <text class="deliv-text" x="364" y="388" font-size="13" fill="#212529">Control catalog</text>
+      </g>
+      <g class="deliv" data-tip="Tabletop exercise — about 2 weeks: run a simulated incident and capture lessons learned.">
+        <rect x="352" y="410" width="256" height="40" rx="6" fill="#f4f5f6" stroke="#455a64"/>
+        <text class="deliv-text" x="364" y="434" font-size="13" fill="#212529">Tabletop</text>
+      </g>
+      <g class="deliv" data-tip="Board summary — about 1 week: translate program status into business risk for executives.">
+        <rect x="352" y="456" width="256" height="40" rx="6" fill="#f4f5f6" stroke="#455a64"/>
+        <text class="deliv-text" x="364" y="480" font-size="13" fill="#212529">Board summary</text>
+      </g>
+
+      <!-- ===== Card C: Applied Research ===== -->
+      <rect x="660" y="196" width="280" height="356" rx="12" fill="#ffffff" stroke="#d84315" stroke-width="3"/>
+      <rect x="660" y="196" width="280" height="44" rx="12" fill="#ffa000"/>
+      <text x="800" y="224" text-anchor="middle" font-size="16" font-weight="bold" fill="#212529">Capstone C: Applied Research</text>
+      <text x="676" y="262" font-size="13" font-weight="bold" fill="#455a64">Deliverables:</text>
+      <g class="deliv" data-tip="Literature review — about 3 weeks: survey prior work and frame the open question.">
+        <rect x="672" y="272" width="256" height="40" rx="6" fill="#fffaf0" stroke="#ffa000"/>
+        <text class="deliv-text" x="684" y="296" font-size="13" fill="#212529">Literature review</text>
+      </g>
+      <g class="deliv" data-tip="Proof-of-concept — about 5 weeks: build the experiment or tool that tests your hypothesis.">
+        <rect x="672" y="318" width="256" height="40" rx="6" fill="#fffaf0" stroke="#ffa000"/>
+        <text class="deliv-text" x="684" y="342" font-size="13" fill="#212529">Proof-of-concept</text>
+      </g>
+      <g class="deliv" data-tip="Reproducible report — about 4 weeks: methods and data anyone can rerun to confirm results.">
+        <rect x="672" y="364" width="256" height="40" rx="6" fill="#fffaf0" stroke="#ffa000"/>
+        <text class="deliv-text" x="684" y="388" font-size="13" fill="#212529">Reproducible report</text>
+      </g>
+      <g class="deliv" data-tip="Presentation — about 1 week: communicate findings and their security implications.">
+        <rect x="672" y="410" width="256" height="40" rx="6" fill="#fffaf0" stroke="#ffa000"/>
+        <text class="deliv-text" x="684" y="434" font-size="13" fill="#212529">Presentation</text>
+      </g>
+
+      <!-- ===== Banner ===== -->
+      <rect x="20" y="572" width="920" height="52" rx="10" fill="#1565c0"/>
+      <text x="480" y="596" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">All three tracks satisfy ABET Student Outcomes 1-6.</text>
+      <text x="480" y="616" text-anchor="middle" font-size="14" fill="#e3f0fb">Pick the one whose deliverables match the work you want to spend a semester doing.</text>
+    </svg>
+  </div>
+  <div id="tooltip"></div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="capstone-track-chooser.js"></script>
+</body>
+</html>
