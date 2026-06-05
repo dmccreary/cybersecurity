@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Network Defense in Depth — Layered Zones</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    .stage { display: flex; gap: 12px; align-items: flex-start; }
+    svg.rings { display: block; width: 100%; max-width: 560px; height: auto; flex: 1 1 auto; }
+    .zone { cursor: help; }
+    .zone rect { transition: filter .1s; }
+    .zone:hover rect { filter: brightness(1.08); }
+    .legend { flex: 0 0 200px; font-size: 12px; border: 1px solid #cfd8dc; border-radius: 8px; padding: 10px; background: #fafcff; }
+    .legend h2 { font-size: 13px; margin: 0 0 8px; color: #455a64; }
+    .legend .item { display: flex; align-items: center; gap: 8px; margin: 7px 0; line-height: 1.3; }
+    .legend .swatch { flex: 0 0 34px; height: 0; border-top-width: 3px; border-top-style: solid; }
+    .legend .ingress { border-top-color: #1565c0; }
+    .legend .egress { border-top-color: #455a64; }
+    .legend .lateral { border-top-color: #ffa000; border-top-style: dashed; }
+    @media (max-width: 700px) {
+      .stage { flex-direction: column; }
+      .legend { flex: 1 1 auto; width: 100%; }
+    }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238; color: #fff;
+      font-size: 12px; line-height: 1.4; padding: 7px 10px; border-radius: 6px; max-width: 280px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+  </style>
+  <script src="network-defense-layers.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Network Defense in Depth</h1>
+      <p class="sub">Nested trust zones from the untrusted internet (outer) to the crown jewels (inner). Hover a zone for the controls at that boundary.</p>
+      <div class="stage">
+        <svg class="rings" viewBox="0 0 560 560" preserveAspectRatio="xMidYMid meet" role="img"
+             aria-label="Six nested defensive zones from Internet on the outside to Crown Jewels at the center, with trust-boundary controls between them">
+
+          <!-- Zone 1: Internet / Untrusted -->
+          <g class="zone" data-tip="Internet / Untrusted: the open network. Adversaries, mass scanning traffic, and DDoS sources live here. Nothing inside should trust traffic from this zone by default.">
+            <rect x="10" y="10" width="540" height="540" rx="14" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+            <text x="280" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#546e7a">Internet / Untrusted</text>
+          </g>
+          <!-- Boundary 1 -->
+          <text x="280" y="56" text-anchor="middle" font-size="10.5" fill="#455a64" font-style="italic">— DDoS scrubbing / edge filtering —</text>
+
+          <!-- Zone 2: Edge perimeter -->
+          <g class="zone" data-tip="Edge perimeter: the first owned controls a packet meets. Edge firewall, DDoS mitigation, and an IPS inspect and filter inbound traffic before it reaches any host.">
+            <rect x="58" y="64" width="444" height="432" rx="12" fill="#cfd8dc" stroke="#455a64" stroke-width="2"/>
+            <text x="280" y="84" text-anchor="middle" font-size="12.5" font-weight="700" fill="#37474f">Edge Perimeter</text>
+            <text x="280" y="100" text-anchor="middle" font-size="10.5" fill="#455a64">edge firewall · DDoS mitigation · IPS</text>
+          </g>
+          <!-- Boundary 2 -->
+          <text x="280" y="120" text-anchor="middle" font-size="10.5" fill="#455a64" font-style="italic">— TLS termination / WAF —</text>
+
+          <!-- Zone 3: DMZ -->
+          <g class="zone" data-tip="DMZ (demilitarized zone): hosts that must be reachable from the internet but are kept apart from the internal network — web and reverse proxies, public DNS, and the email gateway.">
+            <rect x="104" y="128" width="352" height="320" rx="12" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+            <text x="280" y="148" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0d3a73">DMZ</text>
+            <text x="280" y="164" text-anchor="middle" font-size="10.5" fill="#0d47a1">reverse proxy · public DNS · email gateway</text>
+          </g>
+          <!-- Boundary 3 -->
+          <text x="280" y="184" text-anchor="middle" font-size="10.5" fill="#455a64" font-style="italic">— stateful firewall —</text>
+
+          <!-- Zone 4: Internal network -->
+          <g class="zone" data-tip="Internal network, VLAN-segmented: the corporate LAN, split into segments so a foothold in one does not reach the others. Controls: stateful firewall, network access control (NAC), and IDS sensors.">
+            <rect x="148" y="192" width="264" height="208" rx="12" fill="#64b5f6" stroke="#0d47a1" stroke-width="2"/>
+            <text x="280" y="212" text-anchor="middle" font-size="12.5" font-weight="700" fill="#06214a">Internal Network — VLAN-segmented</text>
+            <text x="280" y="228" text-anchor="middle" font-size="10.5" fill="#06214a">stateful firewall · NAC · IDS sensors</text>
+          </g>
+          <!-- Boundary 4 -->
+          <text x="280" y="248" text-anchor="middle" font-size="10.5" fill="#37474f" font-style="italic">— micro-segmentation —</text>
+
+          <!-- Zone 5: Sensitive zone -->
+          <g class="zone" data-tip="Sensitive zone: the segment holding application servers and internal services. Reaching it requires crossing micro-segmentation rules, not just being on the corporate LAN.">
+            <rect x="186" y="256" width="188" height="116" rx="10" fill="#ff8a65" stroke="#d84315" stroke-width="2"/>
+            <text x="280" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="#5d1a05">Sensitive Zone</text>
+            <text x="280" y="291" text-anchor="middle" font-size="10.5" fill="#5d1a05">app servers · internal services</text>
+          </g>
+
+          <!-- Zone 6: Crown jewels -->
+          <g class="zone" data-tip="Crown jewels: the highest-value assets — database servers, key vaults, and payment data. Every outer layer exists to keep an attacker from reaching this innermost zone.">
+            <rect x="214" y="304" width="132" height="52" rx="8" fill="#fff8e1" stroke="#455a64" stroke-width="2.5"/>
+            <text x="280" y="326" text-anchor="middle" font-size="11.5" font-weight="700" fill="#37474f">Crown Jewels</text>
+            <text x="280" y="341" text-anchor="middle" font-size="9.5" fill="#5d4037">DB · key vault · payment data</text>
+          </g>
+
+          <!-- Ingress arrow (blue, inward, left) -->
+          <defs>
+            <marker id="blue" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1565c0"/></marker>
+            <marker id="slate" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#455a64"/></marker>
+            <marker id="amber" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffa000"/></marker>
+          </defs>
+          <line x1="28" y1="470" x2="232" y2="356" stroke="#1565c0" stroke-width="2.5" marker-end="url(#blue)"/>
+          <text x="46" y="488" font-size="10.5" fill="#1565c0" font-weight="700">ingress</text>
+          <!-- Egress arrow (slate, outward, right) -->
+          <line x1="328" y1="356" x2="532" y2="470" stroke="#455a64" stroke-width="2.5" marker-end="url(#slate)"/>
+          <text x="492" y="488" font-size="10.5" fill="#455a64" font-weight="700">egress</text>
+          <!-- Lateral movement (amber dashed, across the sensitive-zone band) -->
+          <line x1="196" y1="284" x2="362" y2="284" stroke="#ffa000" stroke-width="3" stroke-dasharray="7 4" marker-end="url(#amber)"/>
+          <text x="280" y="520" text-anchor="middle" font-size="10.5" fill="#b26a00" font-weight="700">lateral movement (what segmentation is meant to stop)</text>
+        </svg>
+
+        <div class="legend">
+          <h2>Arrow legend</h2>
+          <div class="item"><span class="swatch ingress"></span><span><b>Ingress traffic</b> — inbound, crossing each control on the way in.</span></div>
+          <div class="item"><span class="swatch egress"></span><span><b>Egress traffic</b> — outbound; controlled too, to limit data exfiltration.</span></div>
+          <div class="item"><span class="swatch lateral"></span><span><b>Lateral movement</b> — an attacker pivoting between internal hosts. Segmentation exists to stop this.</span></div>
+          <h2 style="margin-top:12px">How to read it</h2>
+          <div style="line-height:1.45">Each ring crosses a <b>trust boundary</b> with its own control (italic labels). Trust increases inward; the crown jewels are the most protected. Hover any zone for the controls that live at that boundary.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>
