@@ -1,0 +1,54 @@
+{
+  "title": "The Three Layers of Software Assurance",
+  "description": "Interactive p5.js concentric-circle infographic of the three layers of software assurance: In-Code Defenses at the center, Analysis Tooling in the middle ring, and Supply Chain controls in the outer ring. Hover any chip for its definition; hover a ring for what that layer protects against.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "software-assurance-layers",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Software assurance: in-code defenses, analysis tooling, and supply-chain controls",
+    "learningObjectives": [
+      "Explain how in-code defenses, analysis tooling, and supply-chain controls compose to defend a software system.",
+      "Match a specific control (e.g., parameterized queries, SAST, SBOM) to its assurance layer.",
+      "Articulate which layer fails when a particular incident occurs."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness that software has vulnerabilities and uses third-party dependencies."
+  },
+  "pedagogical": {
+    "modelType": "static concentric-layer infographic with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "ring hover caption",
+      "checkbox to pin definitions"
+    ],
+    "controls": [
+      "Hover a chip: show its one-line definition",
+      "Hover a ring: update the 'what this layer protects against' caption",
+      "Checkbox: Pin all definitions"
+    ],
+    "assessment": "Given an incident (SQL injection succeeded, a vulnerable dependency was shipped, a build server was compromised), students name which layer should have caught it.",
+    "misconceptionsAddressed": [
+      "Believing one layer (e.g., a scanner) is sufficient on its own.",
+      "Treating supply-chain risk as separate from software assurance rather than its outermost layer."
+    ]
+  }
+}
