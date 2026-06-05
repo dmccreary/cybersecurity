@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Device Attestation Flow</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontSize: '15px',
+        actorBkg: '#1565c0',
+        actorBorder: '#0d3a73',
+        actorTextColor: '#ffffff',
+        actorLineColor: '#90a4ae',
+        signalColor: '#37474f',
+        signalTextColor: '#1a3a5c',
+        noteBkgColor: '#fff3e0',
+        noteBorderColor: '#ffa000',
+        noteTextColor: '#5d3d00',
+        sequenceNumberColor: '#ffffff'
+      },
+      sequence: { useMaxWidth: true, showSequenceNumbers: true, mirrorActors: false, wrap: true }
+    });
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #263238; }
+    .wrap { padding: 8px 10px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 4px 0 8px; }
+    .mermaid { width: 100%; display: flex; justify-content: center; background: #f4f7fb; }
+    .mermaid svg { max-width: 100%; height: auto; }
+    .note {
+      max-width: 760px; margin: 8px auto 0; background: #fff3e0; border: 2px solid #ffa000;
+      border-radius: 8px; padding: 8px 12px; font-size: 13px; color: #6d4c00;
+    }
+    .note strong { color: #5d3d00; }
+  </style>
+  <script src="device-attestation-flow.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Device Attestation Flow (TPM Remote Attestation)</h1>
+      <div class="mermaid">
+sequenceDiagram
+    autonumber
+    participant V as Verifier<br/>(VPN / cloud service)
+    participant D as Device<br/>(laptop or VM)
+    participant T as TPM / HW Root of Trust
+
+    V->>D: Attestation request (nonce N)
+    D->>T: Quote PCRs with nonce N, sign with AIK
+    T-->>D: Quote = sign_AIK(PCR0..23 plus N)
+    D->>V: Quote + AIK cert + EK cert chain
+    Note over V,D: Verifier checks all four:<br/>1. cert chains to known manufacturer<br/>2. signature is valid<br/>3. nonce matches (no replay)<br/>4. PCRs match acceptable-boot policy
+    V-->>D: Attestation token (or denial)
+      </div>
+      <div class="note">
+        <strong>Trust depends on two things:</strong> the manufacturer's EK certificate
+        (proves the TPM is genuine) AND the verifier's policy of acceptable PCR values
+        (defines a "good" boot state). Both must be current — a stale policy accepts a
+        boot state that should now be rejected, and that is the operational footgun.
+      </div>
+    </div>
+  </main>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

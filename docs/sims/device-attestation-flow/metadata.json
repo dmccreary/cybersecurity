@@ -1,0 +1,47 @@
+{
+  "title": "Device Attestation Flow",
+  "description": "A Mermaid sequence diagram of TPM-based remote device attestation, showing the nonce challenge, the AIK-signed PCR quote, the verifier's certificate and policy checks, and the resulting attestation token.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "device-attestation-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "trace",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Hardware Security"],
+    "topic": ["Remote Attestation", "TPM", "Root of Trust", "PCR", "Attestation Identity Key"],
+    "learningObjectives": [
+      "Trace the message exchange in TPM-based remote attestation among verifier, device, and hardware root of trust.",
+      "Explain why attestation trust depends on both the manufacturer's EK certificate and a current PCR policy."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["What a TPM is", "Basic public-key signatures and certificates"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference"],
+    "instructionalStrategies": [
+      "Read the numbered steps top to bottom and identify what each message proves.",
+      "Discuss what the nonce defends against and why the verifier's PCR policy must be kept current."
+    ],
+    "assessmentQuestions": [
+      {"question": "What attack does the nonce N defend against in this exchange?", "level": "Understand"},
+      {"question": "How could a stale PCR policy allow a compromised device to pass attestation?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "sequenceDiagram",
+  "direction": "TB",
+  "node_count": "3",
+  "edge_count": "5",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security"
+}
