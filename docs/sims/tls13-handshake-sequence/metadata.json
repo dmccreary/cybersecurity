@@ -1,0 +1,44 @@
+{
+  "title": "TLS 1.3 Handshake",
+  "description": "A Mermaid sequence diagram of the 1-RTT TLS 1.3 handshake between client and server, with notes explaining ephemeral Diffie-Hellman, the point where traffic becomes encrypted, CertificateVerify, AEAD application data, and forward secrecy.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "tls13-handshake-sequence",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "trace",
+  "educational": {
+    "subjectArea": ["Cryptography", "PKI and TLS"],
+    "topic": ["TLS 1.3", "Handshake", "Ephemeral Diffie-Hellman", "Forward Secrecy", "CertificateVerify", "AEAD", "1-RTT"],
+    "learningObjectives": [
+      "Trace the TLS 1.3 handshake message by message and name what each defends against.",
+      "Explain how ephemeral DH provides forward secrecy.",
+      "Identify where the connection transitions from plaintext to encrypted."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Diffie-Hellman key exchange", "Digital signatures", "Public-key certificates"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "review"],
+    "instructionalStrategies": [
+      "Read top to bottom, pausing at each note to name the defensive purpose of the step.",
+      "Compare the 1-RTT flow with the TLS 1.2 summary to motivate why fewer options is more secure."
+    ],
+    "assessmentQuestions": [
+      {"question": "What does CertificateVerify prove, and why is it necessary in addition to sending the certificate?", "level": "Understand"},
+      {"question": "An attacker records a TLS 1.3 session and later steals the server's long-term key. Can they decrypt the recording? Why or why not?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice"
+}

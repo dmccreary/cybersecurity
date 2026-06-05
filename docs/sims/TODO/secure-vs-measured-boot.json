@@ -1,0 +1,14 @@
+{
+  "sim_id": "secure-vs-measured-boot",
+  "diagram_name": "Secure Boot vs. Measured Boot",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** secure-vs-measured-boot<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nTwo parallel vertical flows side by side, both starting from \"Power On\" at the top.\n\n**Left column: Secure Boot (enforcement)**\n\n1. Power On → CPU Reset Vector\n2. Boot ROM (immutable, the silicon root of trust)\n3. Verifies signature of UEFI firmware → if FAIL, halt (red diamond)\n4. UEFI verifies signature of bootloader → if FAIL, halt (red diamond)\n5. Bootloader verifies kernel signature → if FAIL, halt (red diamond)\n6. Kernel runs\n\nEach step is colored cybersecurity blue with a green \"verify\" annotation; failure paths show a red halt diamond.\n\n**Right column: Measured Boot (recording)**\n\n1. Power On → CPU Reset Vector\n2. Boot ROM hashes UEFI firmware → extends PCR[0]\n3. UEFI hashes bootloader → extends PCR[4]\n4. Bootloader hashes kernel/initrd → extends PCR[8/9]\n5. Kernel runs (unconditionally)\n6. After boot: TPM holds PCR values that fingerprint the boot\n\nEach step shows a small \"PCR\" register box on the right that accumulates hash values; the final state can be read by a remote attester.\n\nBelow both columns: a caption \"Real systems use BOTH — Secure Boot prevents bad boots; Measured Boot proves what booted.\"\n\nColor: cybersecurity blue for trusted stages, slate steel for hardware/firmware boundaries, amber for the warning that PCRs are extend-only.\n\nResponsive: two columns collapse to stacked sequence below 700px.\n\nImplementation: Mermaid two flowcharts side by side via `flowchart TB` with subgraphs."
+}

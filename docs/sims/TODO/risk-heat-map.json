@@ -1,0 +1,14 @@
+{
+  "sim_id": "risk-heat-map",
+  "diagram_name": "Risk Heat Map",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: microsim\n**sim-id:** risk-heat-map<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nA 920x720 canvas implementing an interactive risk heat map.\n\n**Learning objective (Bloom: Analyzing):** Given a brief risk description, students place it on a 5x5 likelihood-by-impact grid and observe how the recommended treatment changes with placement.\n\n**Visual layout:**\n- Left side (700x700): a 5x5 grid. X-axis: Likelihood (1=Rare to 5=Almost Certain). Y-axis: Impact (1=Negligible to 5=Catastrophic). Cells colored on a green-yellow-amber-red gradient: 1-4 green, 5-9 yellow, 10-14 amber, 15-25 red. Axis labels and per-cell scores rendered.\n- Right side (220x700): control panel.\n  - Dropdown \"Sample risk\" with options: \"Phishing email reaches employee\", \"Hard-coded DB credential\", \"Vendor SaaS outage\", \"Lost employee laptop\", \"Quantum-broken legacy crypto\", \"Custom (drag your own)\".\n  - Two sliders: Likelihood (1–5), Impact (1–5).\n  - Reset button.\n  - Output panel showing: chosen risk, score, recommended treatment per the decision tree above (Mitigate / Transfer / Accept / Avoid), and a one-sentence rationale.\n\n**Behavior:**\n- Selecting a sample risk auto-positions a marker on the grid based on a default likelihood/impact for that risk.\n- Dragging the marker (or moving the sliders) updates score and recommendation in real time.\n- The recommendation logic: score ≥ 15 → Mitigate or Avoid; 10–14 → Mitigate or Transfer; 5–9 → Mitigate (controls feasible) or Accept; ≤ 4 → Accept (within appetite).\n- Hovering a grid cell shows that cell's interpretation (\"High likelihood, moderate impact — mitigate with preventive control\").\n\n**Controls:** All controls are p5.js builtins (createSelect, createSlider, createButton). On setup, call `updateCanvasSize()` first; parent canvas with `canvas.parent(document.querySelector('main'))`.\n\n**Responsive:** updateCanvasSize() listens for window-resize and re-flows the grid + control panel. Below 700px container width, the panel stacks below the grid.\n\n**Color:** Use the textbook palette: green #4caf50 (1–4), yellow #fbc02d (5–9), amber #ffa000 (10–14), red-orange #d84315 (15–25). Marker is cybersecurity blue #1565c0 with a thin slate-steel border.\n\nImplementation: p5.js sketch.js with HTML page that includes p5.min.js from CDN."
+}

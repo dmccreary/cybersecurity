@@ -1,0 +1,14 @@
+{
+  "sim_id": "x509-anatomy",
+  "diagram_name": "Anatomy of an X.509 Certificate",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** x509-anatomy<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA vertical document layout styled like a physical credential, with hover tooltips on each field explaining its meaning.\n\nHeader band (cybersecurity blue #1565c0, white text): \"X.509 Certificate v3\"\n\nBody fields (each with hover tooltip):\n\n1. **Subject:** CN=www.example.com, O=Example Corp, C=US\n   - Tooltip: \"Identity this certificate authenticates. Browsers match the URL hostname against this field.\"\n2. **Subject Alternative Names:** DNS:www.example.com, DNS:example.com\n   - Tooltip: \"Additional hostnames the certificate covers. Modern browsers require this; CN alone is ignored.\"\n3. **Subject Public Key:** ECDSA P-256 (compressed point shown)\n   - Tooltip: \"The public key being bound to the subject. The corresponding private key lives on the server.\"\n4. **Issuer:** CN=Example Intermediate CA, O=Example Trust Services\n   - Tooltip: \"The CA that signed this certificate. Look up the issuer's certificate to verify the chain.\"\n5. **Validity:** 2026-04-25 to 2027-04-25 (one year)\n   - Tooltip: \"Certificates expire. Short validity reduces the window during which a compromised certificate can be misused.\"\n6. **Serial Number:** 0x4d3e:f2a1:88c0:1234\n   - Tooltip: \"Unique identifier within the issuer. Used in revocation lists to point at a specific certificate.\"\n7. **Key Usage:** Digital Signature, Key Encipherment\n   - Tooltip: \"Restricts what the key may be used for. A TLS server certificate cannot be used as a code-signing certificate.\"\n8. **Extended Key Usage:** TLS Server Authentication\n   - Tooltip: \"Further narrows the role. Browsers reject certificates without this EKU for HTTPS.\"\n\nFooter band (slate steel #455a64, white text): \"Issuer's signature: 30:45:02:21:00... (ECDSA over all fields above)\"\n\nA small key-icon graphic on the right side links the \"Subject Public Key\" field to a \"Server's private key (kept on the server, never transmitted)\" callout.\n\nColor: cybersecurity blue, slate steel, white, with rust orange accent on the signature footer. Responsive: scales to viewport width; tooltips collapse to expand-on-tap on mobile.\n\nImplementation: Static SVG with embedded CSS hover styles and accessible tooltips."
+}

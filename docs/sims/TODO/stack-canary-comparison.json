@@ -1,0 +1,14 @@
+{
+  "sim_id": "stack-canary-comparison",
+  "diagram_name": "Stack Frame With and Without a Canary Under Overflow",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic\n**sim-id:** stack-canary-comparison<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nTwo stack frames shown side by side, drawn vertically with high-address at top and low-address at bottom (the standard stack layout).\n\n**Left frame — \"Without Canary\":**\n- Top to bottom: \"Saved return address\" (dark gray), \"Saved frame pointer\" (gray), \"Local variable: char buf[16]\" (yellow)\n- Below the left frame, a red arrow labeled \"strcpy(buf, attacker_input)\" pointing upward into the buffer\n- Annotation: \"Long input overruns buf, overwrites saved return address\"\n- Result label at top: \"Return → attacker-controlled address. Exploit succeeds silently.\"\n\n**Right frame — \"With Canary\":**\n- Top to bottom: \"Saved return address\" (dark gray), \"Saved frame pointer\" (gray), \"Stack canary: 0xA3F2B7C1\" (green), \"Local variable: char buf[16]\" (yellow)\n- Below the right frame, the same red overflow arrow\n- Annotation: \"Overflow path crosses canary first\"\n- Result label at top: \"Canary check fails on return → process aborts before return\"\n\nA small legend below explains the colors: yellow = attacker-writable buffer, green = canary, gray = saved frame pointer, dark gray = saved return address.\n\nHover tooltips:\n- Hovering on the canary box shows: \"A random per-process value. Compiler inserts; prologue checks.\"\n- Hovering on the saved return address shows: \"Where the function returns to. Hijacking this is the classic exploit goal.\"\n\nColor: amber `#ffa000` accent on the \"exploit succeeds\" label (warning), green `#4caf50` on the canary, slate steel for return address, light yellow for buffer. Responsive: side-by-side at >800px, stacked vertically below.\n\nImplementation: Static SVG."
+}

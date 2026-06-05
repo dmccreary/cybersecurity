@@ -1,0 +1,14 @@
+{
+  "sim_id": "security-program-layers",
+  "diagram_name": "The Security Program at a Glance",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** security-program-layers<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA four-layer stacked diagram on a 900x640 canvas, top to bottom:\n\n1. **Top layer — Board and CEO** (slate steel, narrowest band): \"Risk appetite, executive accountability, public disclosures.\" Tooltip: \"Sets the appetite; receives the metrics; signs off on top risks.\"\n2. **Second layer — CISO and Security Leadership** (cybersecurity blue): \"Strategy, policy, risk register, compliance roadmap.\" Tooltip: \"Owns the program; translates risk into board-readable decisions.\"\n3. **Third layer — Security Functions** (lighter blue, wider band): four side-by-side boxes labeled \"Risk & Compliance\", \"Security Engineering\", \"Security Operations (SOC)\", \"GRC & Audit\". Each has a small tooltip with one-sentence scope.\n4. **Fourth layer — Foundations** (cream, widest band): \"Asset inventory · Access management · Logging · Vendor inventory · Training\". Tooltip: \"Without these, the layers above cannot operate.\"\n\nA vertical arrow on the left labeled \"Metrics flow up\" runs from the foundations to the board layer.\nA vertical arrow on the right labeled \"Strategy & policy flow down\" runs from the board layer to the foundations.\n\nCaption beneath: \"The security program is a system, not a checklist. Every layer depends on the one below it being honest.\"\n\nResponsive: SVG scales with container; below 600px, the third layer's four boxes stack vertically. Window-resize listener re-renders.\n\nImplementation: Inline SVG with `<title>` tooltips and a small resize handler."
+}

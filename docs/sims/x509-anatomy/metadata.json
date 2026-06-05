@@ -1,0 +1,21 @@
+{
+  "title": "Anatomy of an X.509 Certificate",
+  "description": "Anatomy of an X.509 Certificate",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-05",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "x509-anatomy",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice"
+}

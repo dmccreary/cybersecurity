@@ -1,0 +1,14 @@
+{
+  "sim_id": "hypervisor-architecture",
+  "diagram_name": "Hypervisor Architecture and the Trust Boundary",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "library": "Static SVG",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: drawing\n**sim-id:** hypervisor-architecture<br/>\n**Library:** Static SVG<br/>\n**Status:** Specified\n\nTwo stacks shown side by side.\n\n**Left stack — Type 1 (Bare Metal):**\n- Top: 3 VM boxes side-by-side, each labeled \"Guest OS + Apps\" with light-blue fill\n- Below: a single wide cybersecurity-blue band labeled \"Hypervisor (ESXi / KVM / Hyper-V)\"\n- Bottom: a gray hardware band labeled \"CPU / RAM / NIC / Disk\"\n- A red dashed arrow labeled \"VM escape\" going from one VM down through the hypervisor to the hardware band, with a \"?\" mark — the threat to mitigate\n\n**Right stack — Type 2 (Hosted):**\n- Top: 2 VM boxes labeled \"Guest OS\"\n- Below: a slate band labeled \"Hypervisor (VirtualBox / VMware Workstation)\"\n- Below that: a wider band labeled \"Host OS (Windows / macOS / Linux)\"\n- Bottom: gray hardware band\n- Annotation: \"Larger attack surface — host OS bugs can affect all guests.\"\n\nCaptions:\n- Above the left stack: \"Type 1: hypervisor on hardware. Cloud providers use this.\"\n- Above the right stack: \"Type 2: hypervisor as application. Developers use this.\"\n\nColor: cybersecurity blue `#1565c0` for Type 1 hypervisor band, slate steel for Type 2 hypervisor band, light blue for VMs, gray for hardware, red dashed for the escape arrow.\n\nResponsive: stacks render side-by-side at >800px and stack vertically below.\n\nImplementation: Static SVG."
+}

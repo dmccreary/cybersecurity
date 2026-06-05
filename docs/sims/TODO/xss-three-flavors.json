@@ -1,0 +1,14 @@
+{
+  "sim_id": "xss-three-flavors",
+  "diagram_name": "Three Flavors of XSS",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** xss-three-flavors<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA three-column infographic, one column per XSS subtype, each showing the data flow as a sequence of actors and arrows.\n\n**Column 1: Stored XSS**\n\nActors top-to-bottom: Attacker → Server (with database icon) → Victim browser\n\nArrows:\n1. Attacker → Server: \"POST /comment payload=`<script>...</script>`\"\n2. Server stores payload in database\n3. Victim → Server: \"GET /comments\"\n4. Server → Victim: \"page contains `<script>...</script>`\"\n5. Victim browser executes script\n\nCaption: \"One injection compromises every visitor.\"\n\n**Column 2: Reflected XSS**\n\nActors: Attacker → Victim → Server → Victim browser\n\nArrows:\n1. Attacker → Victim: \"Phishing email with crafted link `?q=<script>...</script>`\"\n2. Victim → Server: \"GET /search?q=`<script>...</script>`\"\n3. Server → Victim: \"Search results page reflects `q` into HTML without escaping\"\n4. Victim browser executes script\n\nCaption: \"Requires the victim to click the crafted URL.\"\n\n**Column 3: DOM-based XSS**\n\nActors: Attacker → Victim → Browser only (no server interaction)\n\nArrows:\n1. Attacker → Victim: \"Crafted URL `https://site/#payload=<script>...</script>`\"\n2. Victim browser fetches static page\n3. Page's JavaScript reads `location.hash`\n4. Page's JavaScript writes hash into `innerHTML` → script executes\n\nCaption: \"Server never sees the payload — invisible to server logs.\"\n\nColor: cybersecurity blue for legitimate flows, alert amber `#ffa000` for attacker-controlled data, red outline on the \"executes script\" box.\n\nResponsive: columns stack vertically below 900px.\n\nImplementation: Static SVG with consistent layout, `<title>` tooltips on each step."
+}

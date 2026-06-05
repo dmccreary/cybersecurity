@@ -1,0 +1,14 @@
+{
+  "sim_id": "adversarial-example-explorer",
+  "diagram_name": "Adversarial Example Explorer (MicroSim)",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: microsim\n**sim-id:** adversarial-example-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective (Bloom — Analyzing):** Students can explain why a model's decision boundary admits adversarial examples by manipulating an input and watching the classifier's confidence change.\n\n**Canvas:** 800×500, responsive (uses `updateCanvasSize()` in setup, parents to `<main>`).\n\n**Visual:**\n\n- Left panel (400×400): a 28×28 grayscale \"digit\" canvas with a hand-drawn-looking 3.\n- Right panel: a horizontal bar chart of 10 confidence scores (one per digit class), updated live.\n- Below the digit: two p5.js sliders — **Perturbation magnitude** (0.0 to 0.3, step 0.01) and **Target class** (0–9 select dropdown).\n- A p5.js button: **\"Apply adversarial perturbation\"** that runs a one-step gradient-sign attack and overlays the noise on the digit.\n- A p5.js checkbox: **\"Show perturbation only\"** that displays only the noise pattern, with a 10× magnification, so students can see how visually small the change is.\n\n**Behavior:**\n\n- Default state: digit is correctly classified as \"3\" with ~95% confidence.\n- When the user selects target class \"8\" and increases perturbation magnitude, the perturbation is recomputed each frame.\n- At low magnitude the bars barely move; past a threshold the \"8\" bar overtakes the \"3\" bar — even though the displayed digit still looks like a 3 to a human.\n- A small annotation appears: \"Perturbation L∞ norm: 0.08. Human-visible: barely. Classifier: confident '8'.\"\n\n**Pedagogical hook:** A reset button restores the original digit. A \"Why?\" link below the canvas reveals two sentences about the gradient direction of the loss with respect to the input.\n\nColor: cybersecurity blue #1565c0 for confident-and-correct bars, alert accent #ffa000 for the adversarial-target bar, slate steel #455a64 for non-target bars.\n\nResponsive: below 700px the panels stack vertically, controls remain reachable.\n\nImplementation: p5.js with a small precomputed gradient matrix (no live model training needed). The gradient sign vector is hardcoded for two demonstration target classes."
+}

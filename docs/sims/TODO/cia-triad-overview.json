@@ -1,0 +1,14 @@
+{
+  "sim_id": "cia-triad-overview",
+  "diagram_name": "CIA Triad with Example Threats and Controls",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations",
+  "library": "Mermaid (or static SVG)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** cia-triad-overview<br/>\n**Library:** Mermaid (or static SVG)<br/>\n**Status:** Specified\n\nA triangle with the three letters C, I, A at the vertices. Each vertex is labeled with the property name (Confidentiality, Integrity, Availability) and shows two columns beneath the label:\n\n- **Threats column** (red): one threat that violates this property\n  - C: \"Eavesdropping on unencrypted traffic\"\n  - I: \"Tampering with a database row\"\n  - A: \"DDoS flooding a public service\"\n- **Controls column** (green): one control that supports this property\n  - C: \"AES-GCM encryption + access control\"\n  - I: \"Digital signatures + write-protected logs\"\n  - A: \"Load balancing + rate limiting\"\n\nCenter of the triangle: the words \"Information Asset\". Hover/click on each vertex reveals a short definition tooltip. Color: cybersecurity blue (#1565c0) for the triangle, white background, slate-steel text. Responsive design that reflows to a vertical stacked list below 600px viewport width.\n\nImplementation: Static SVG generated at build time, or a small Mermaid graph. No interactivity needed beyond hover tooltips."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "mitm-arp-spoofing",
+  "diagram_name": "MITM Attack Topology",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** mitm-arp-spoofing<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA sequence diagram with four actors arranged horizontally: Client (left), Attacker (left-center), Gateway (right-center), Internet (right).\n\nSteps top to bottom:\n\n1. **Normal flow (top half, in slate):**\n    - Client → Gateway: ARP request \"Who has 10.0.0.1?\"\n    - Gateway → Client: ARP reply \"10.0.0.1 is at MAC AA:BB:CC...\"\n    - Client → Gateway: HTTP request\n    - Gateway → Internet: forwarded request\n\n2. **Attack begins (separator line in amber #ffa000):** \"Attacker sends gratuitous ARP replies\"\n\n3. **After ARP poisoning (bottom half, in red):**\n    - Attacker → Client: forged ARP \"10.0.0.1 is at MAC ATTACKER...\"\n    - Attacker → Gateway: forged ARP \"Client IP is at MAC ATTACKER...\"\n    - Client → Attacker (thinking it is the Gateway): HTTP request\n    - Attacker → Gateway: relayed HTTP request (after reading/modifying)\n    - Gateway → Attacker: HTTP response\n    - Attacker → Client: relayed HTTP response\n\nTo the right, a callout: \"If the client uses HTTPS with proper certificate validation, the attacker cannot impersonate the server — the relayed traffic is opaque ciphertext.\"\n\nColor: cybersecurity blue (#1565c0) for the client, slate (#455a64) for the gateway, fur orange (#d84315) for the attacker, amber (#ffa000) for the attack-begins separator. Responsive: simplifies to a vertical sequence below 700px viewport.\n\nImplementation: Mermaid sequenceDiagram with custom theming."
+}

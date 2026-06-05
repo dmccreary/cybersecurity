@@ -1,0 +1,14 @@
+{
+  "sim_id": "iot-security-stack",
+  "diagram_name": "IoT Device Security Stack",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** iot-security-stack<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical layered diagram of a representative IoT device, with each layer annotated for its security role.\n\nFrom bottom to top:\n\n1. **Silicon (immutable boot ROM, fuses, PUF)** — slate steel — caption: \"Hardware root of trust. Cannot be re-flashed.\"\n2. **Secure Boot Loader (signed)** — cybersecurity blue — caption: \"Verifies next stage signature.\"\n3. **Firmware (signed, version-anti-rolled-back)** — cybersecurity blue — caption: \"Application logic. OTA-updatable.\"\n4. **OS / RTOS (FreeRTOS, Zephyr, embedded Linux)** — cybersecurity blue — caption: \"Process isolation, if any.\"\n5. **Application code** — cybersecurity blue\n6. **TLS-based communication channel** — drawn as an arrow leaving the device upward — caption: \"Mutual TLS to backend, device-bound key from secure element.\"\n7. **Cloud backend / Device management plane** — drawn at the top as a separate box — caption: \"Identity registry, OTA orchestration, attestation verifier.\"\n\nOn the right side, a vertical bar shows \"trust diminishes upward — most attacks target firmware and application.\" On the left side, a vertical bar shows \"blast radius grows upward — a backend compromise hits the whole fleet.\"\n\nColor: cybersecurity blue for layers, slate steel for the immutable silicon, amber for the OTA channel (because that is the most common attack surface).\n\nResponsive: vertical stack on all viewports; annotations move below boxes on narrow screens.\n\nImplementation: Mermaid `flowchart TB` with subgraphs for the device and backend."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "purdue-model-layers",
+  "diagram_name": "The Purdue Model — IT/OT Network Layers",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** purdue-model-layers<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nMermaid `flowchart TB` with seven horizontal layers stacked top to bottom, each a colored band:\n\n- **Level 5 — Enterprise Network** (slate steel #455a64) — \"Email, ERP, Internet\"\n- **Level 4 — Business Logistics** (slate steel) — \"Plant scheduling, inventory\"\n- **(IT/OT DMZ)** (alert accent #ffa000, dashed border) — \"Data historian replica, jump host, security monitoring\"\n- **Level 3 — Operations Management** (cybersecurity blue #1565c0) — \"Engineering workstations, historians, MES\"\n- **Level 2 — Supervisory Control** (cybersecurity blue) — \"HMIs, SCADA servers\"\n- **Level 1 — Basic Control** (cybersecurity blue, darker) — \"PLCs, DCS controllers\"\n- **Level 0 — Physical Process** (cream #fff8e1 with slate border) — \"Sensors, actuators, pumps, valves\"\n\nVertical arrows between levels are bidirectional, but the arrow crossing the IT/OT DMZ is annotated **\"Brokered, inspected, monotone — no direct sessions\"** to emphasize the firewalled boundary.\n\nA right-side legend explains the **CIA priority inversion**: IT (Confidentiality > Integrity > Availability) versus OT (Availability > Integrity > Confidentiality).\n\nImplementation: Mermaid `flowchart TB` with subgraph layers and color classes; legend rendered alongside."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "toctou-race",
+  "diagram_name": "A TOCTOU Race Condition",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** toctou-race<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA sequence diagram with three actors: Privileged Process (left), Filesystem (center), Attacker (right).\n\nTime flows top-to-bottom. Steps:\n\n1. Privileged Process → Filesystem: `access(\"/tmp/x\", R_OK)` (T1: check)\n2. Filesystem → Privileged Process: returns OK (file is a normal user-owned file)\n3. **CRITICAL WINDOW** (annotated with a red dashed box around steps 4-5):\n4. Attacker → Filesystem: `unlink(\"/tmp/x\")`\n5. Attacker → Filesystem: `symlink(\"/etc/shadow\", \"/tmp/x\")`\n6. Privileged Process → Filesystem: `open(\"/tmp/x\", O_RDONLY)` (T2: use)\n7. Filesystem → Privileged Process: returns file descriptor for /etc/shadow (because the privileged process followed the symlink)\n8. Privileged Process reads /etc/shadow\n\nA side note labels the window between T1 and T2 as \"TOCTOU window\".\n\nBelow the sequence diagram, a small box shows the structural fix: \"Use openat() with O_NOFOLLOW, or open the file once and operate on the file descriptor — eliminates the window.\"\n\nColor: cybersecurity blue for legitimate actors, rust orange (`#d84315`) for attacker actions, alert amber for the critical window box.\n\nResponsive: simplifies to vertical sequence below 600px.\n\nImplementation: Mermaid sequenceDiagram with rect-bordered critical window."
+}

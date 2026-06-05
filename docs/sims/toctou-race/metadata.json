@@ -1,0 +1,21 @@
+{
+  "title": "A TOCTOU Race Condition",
+  "description": "A TOCTOU Race Condition",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-05",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "toctou-race",
+  "library": "Mermaid",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "grc-relationship",
+  "diagram_name": "GRC Relationship",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** grc-relationship<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA three-circle Venn diagram occupying a 900x520 canvas:\n\n- **Top-left circle (Governance)** — cybersecurity blue (#1565c0), 50% opacity. Label: \"GOVERNANCE — Who decides; who is accountable.\"\n- **Top-right circle (Risk)** — slate steel (#455a64), 50% opacity. Label: \"RISK — What could go wrong; what we do about it.\"\n- **Bottom circle (Compliance)** — amber (#ffa000), 50% opacity. Label: \"COMPLIANCE — Evidence we meet external standards.\"\n\nOverlap labels:\n- Governance ∩ Risk: \"Risk appetite, board reporting\"\n- Governance ∩ Compliance: \"Policy ownership, audit response\"\n- Risk ∩ Compliance: \"Control mapping, gap analysis\"\n- All three (center): \"Security Program\"\n\nBelow the Venn, a one-line caption: \"An organization can be compliant and still insecure. Compliance is evidence; risk is reality; governance is who decides between them.\"\n\nHover tooltips on each region give a 1-sentence definition consistent with the glossary.\n\nResponsive: SVG scales to container width; below 600px, circles arrange vertically with labels beside them. Includes window-resize listener that re-renders on container width change.\n\nImplementation: Inline SVG with `<title>` elements for hover tooltips; minimal JS for resize handling."
+}

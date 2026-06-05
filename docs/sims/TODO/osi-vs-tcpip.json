@@ -1,0 +1,14 @@
+{
+  "sim_id": "osi-vs-tcpip",
+  "diagram_name": "OSI vs. TCP/IP Model Comparison",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** osi-vs-tcpip<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA two-column visual:\n\n**Left column: OSI (7 layers, bottom to top):**\n\n1. Physical — copper, fiber, radio\n2. Data Link — Ethernet, Wi-Fi, ARP\n3. Network — IP, ICMP, routing\n4. Transport — TCP, UDP\n5. Session — RPC session state (largely absorbed elsewhere in practice)\n6. Presentation — encoding, encryption framing (TLS in some readings)\n7. Application — HTTP, DNS, SMTP, SSH\n\n**Right column: TCP/IP (4 layers):**\n\n1. Link (≈ OSI 1+2)\n2. Internet (≈ OSI 3) — IP, ICMP\n3. Transport (= OSI 4) — TCP, UDP\n4. Application (≈ OSI 5+6+7) — HTTP, DNS, TLS, SSH\n\nDraw horizontal dashed lines between the two columns showing which OSI layer maps to which TCP/IP layer. Place a small icon in each cell hinting at the protocol's role (e.g., a globe for IP, a chain for TCP, a lock for TLS).\n\nTo the right of the table, a vertical \"where attacks live\" annotation:\n\n- L2: ARP spoofing, rogue DHCP, MAC flooding\n- L3: IP spoofing, ICMP abuse\n- L4: TCP RST injection, SYN floods, port scanning\n- L7: SQL injection, XSS, request smuggling, prompt injection\n\nColor: cybersecurity blue (#1565c0) for the OSI column, slate (#455a64) for the TCP/IP column, amber (#ffa000) for the attack-location callouts.\n\nResponsive: stacks vertically below 800px; the attack annotations move below both columns. The diagram must respond to window resize events.\n\nImplementation: Static SVG with `<title>` tooltips per layer that show example protocols and example controls (e.g., L4 tooltip: \"Stateful firewalls operate here\")."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "fuzzer-coverage-loop",
+  "diagram_name": "Coverage-Guided Fuzzer Loop",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: microsim\n**sim-id:** fuzzer-coverage-loop<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nA p5.js MicroSim that visualizes how a coverage-guided fuzzer explores a target program's code paths over time.\n\nLayout (responsive canvas, default 720x520, resizes via `updateCanvasSize()`):\n\n- **Left panel (40%)** — a stylized control-flow graph of a target function: ~25 basic blocks arranged in a tree with a few rare-path branches. Blocks start gray (uncovered). As inputs reach them, they fade to cybersecurity blue #1565c0. A handful of \"deep\" blocks are colored amber #ffa000 and represent rare paths where the bug lives.\n- **Right panel (40%)** — a vertical \"input corpus\" stack. New inputs added by the fuzzer appear as small bars, with bar length representing input size. Bars that increased coverage are highlighted (cybersecurity blue); bars that did not are dim (gray).\n- **Top bar** — a coverage gauge: percentage of basic blocks reached. Updates in real time.\n- **Bottom controls** (p5.js builtins — `createSlider`, `createButton`, `createCheckbox`):\n  - Slider: \"Mutation aggressiveness\" (1–10)\n  - Slider: \"Inputs per second\" (1–50)\n  - Checkbox: \"Coverage-guided\" — when off, the fuzzer reverts to pure random fuzzing for comparison\n  - Button: \"Reset\"\n\nBehavior:\n\n- Each tick, the fuzzer picks a parent input from its corpus and mutates it.\n- The mutated input \"executes\" through the graph (animation of a token traversing blocks).\n- If the input reaches a previously uncovered block, it is added to the corpus and that block lights up.\n- After ~30s in coverage-guided mode, the fuzzer should reach the amber block and a small \"CRASH\" animation plays.\n- In pure-random mode, the amber block almost never gets reached — illustrating why coverage guidance matters.\n\nLearning objective (Bloom — Analyze): compare the exploration behavior of coverage-guided versus random fuzzing and explain why coverage guidance dramatically reduces time-to-bug for deep code paths.\n\nResponsive: panels stack vertically below 700px viewport.\n\nImplementation: p5.js sketch, `canvas.parent(document.querySelector('main'))`, no external libraries. Use builtin p5 controls only."
+}

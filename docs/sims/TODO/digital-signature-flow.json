@@ -1,0 +1,14 @@
+{
+  "sim_id": "digital-signature-flow",
+  "diagram_name": "Sign and Verify Flow",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** digital-signature-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nTwo parallel vertical flows drawn left-to-right, separated by a vertical dashed line labeled \"Trust boundary — signer's machine | verifier's machine\".\n\n**Left flow (Signer):**\n1. Box: \"Message M\" (white)\n2. Down arrow into \"Hash function (SHA-256)\" (cybersecurity blue #1565c0)\n3. Down arrow into \"Digest H(M)\" (slate steel #455a64)\n4. Down arrow into \"Sign with PRIVATE key\" (cybersecurity blue, with small lock icon)\n5. Down arrow into \"Signature S\" (rust orange #d84315)\n6. Box \"Send (M, S)\" connects to right flow with horizontal arrow.\n\n**Right flow (Verifier):**\n1. Box: \"Receive (M, S)\" (white)\n2. Splits into two arrows:\n   - Down to \"Hash function (SHA-256)\" → \"Digest H(M)\"\n   - Down to \"Verify with PUBLIC key\" with input from S → \"Expected digest\"\n3. Both digests feed into a comparison diamond \"Equal?\"\n4. Two outputs: \"Valid signature ✓\" (green) or \"Tampered or wrong key ✗\" (red)\n\nA small inset shows the asymmetry: \"PRIVATE key — only signer holds. PUBLIC key — anyone can hold.\"\n\nColor: cybersecurity blue, slate steel, rust orange. Responsive: stacks vertically below 800px viewport.\n\nImplementation: Mermaid graph LR with two subgraphs and styled nodes."
+}

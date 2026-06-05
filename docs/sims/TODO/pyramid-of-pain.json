@@ -1,0 +1,14 @@
+{
+  "sim_id": "pyramid-of-pain",
+  "diagram_name": "The Pyramid of Pain",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic\n**sim-id:** pyramid-of-pain<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic showing David Bianco's Pyramid of Pain.\n\n**Learning objective (Bloom's: Understanding):** Students will explain why detecting attackers at higher levels of the pyramid imposes more cost on the adversary than detecting them at lower levels.\n\n**Layout:**\n\n- Canvas: 700 × 520, responsive.\n- A 6-level pyramid, narrowest at top, widest at bottom:\n  1. **Top — TTPs (cybersecurity blue #1565c0):** \"Tough!\" Adversary must change methodology\n  2. **Tools (slate steel #455a64):** \"Challenging\" Adversary must rebuild capability\n  3. **Network/Host Artifacts (medium blue):** \"Annoying\" Adversary must change tradecraft\n  4. **Domain Names (light slate):** \"Simple\" Adversary must register new domains\n  5. **IP Addresses (light gray):** \"Easy\" Attacker rotates infrastructure\n  6. **Bottom — Hash Values (palest gray):** \"Trivial\" Attacker rebuilds with one byte changed\n\n**Behavior:**\n\n- Hovering each level expands a tooltip in cream (#fff8e1) explaining what an indicator at that level is, what detecting it forces the adversary to do, and one example.\n- Clicking each level reveals a sample SIEM detection rule for that level (e.g., for TTPs: a behavioral rule, \"process spawning powershell.exe with -enc base64 flag\").\n- A radio control toggles between \"Defender view\" (shows detection ideas) and \"Attacker view\" (shows what evading detection at that level costs the adversary).\n\n**Responsive design:** Canvas reflows; on narrow screens the labels move below the pyramid layers as a stacked legend.\n\nImplementation: p5.js with hover detection on layer regions. `canvas.parent(document.querySelector('main'));`"
+}

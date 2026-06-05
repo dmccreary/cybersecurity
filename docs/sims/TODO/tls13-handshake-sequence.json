@@ -1,0 +1,14 @@
+{
+  "sim_id": "tls13-handshake-sequence",
+  "diagram_name": "TLS 1.3 Handshake",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** tls13-handshake-sequence<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical sequence diagram with two actors: **Client** (left) and **Server** (right). Time flows downward.\n\nMessages, in order:\n\n1. **Client → Server: ClientHello** — labeled \"supported versions, cipher suites, ephemeral DH public key (key_share)\"\n2. **Server → Client: ServerHello** — \"selected version + cipher, server's ephemeral DH public key\"\n3. **Server → Client: {EncryptedExtensions, Certificate, CertificateVerify, Finished}** — drawn in a colored box (cybersecurity blue #1565c0) labeled \"Encrypted from this point — handshake keys derived\"\n4. **Client → Server: {Finished}** — also in the encrypted box\n5. **Both directions: Application Data** — colored rust orange (#d84315), labeled \"AEAD-encrypted (AES-GCM or ChaCha20-Poly1305)\"\n\nSide annotations on the right:\n\n- Next to step 1: \"Client's DH private key kept secret\"\n- Next to step 2: \"Server's DH private key kept secret. Both sides now compute shared_secret = ECDH(client_pub, server_priv) = ECDH(server_pub, client_priv)\"\n- Next to step 3: \"CertificateVerify: server signs handshake transcript with cert's private key. Proves cert holder.\"\n- Next to step 5: \"Forward secrecy: ephemeral DH keys discarded after handshake. Long-term key compromise does NOT decrypt past sessions.\"\n\nA small inset shows TLS 1.2 (greyed out) for comparison: two round-trips, more messages, more options, more footguns.\n\nColor: cybersecurity blue (encrypted), rust orange (application data), slate steel for plain text. Responsive: scales vertically; annotations move below messages on narrow screens.\n\nImplementation: Mermaid sequenceDiagram with notes on the right."
+}

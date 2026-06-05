@@ -1,0 +1,14 @@
+{
+  "sim_id": "ops-monitoring-pipeline",
+  "diagram_name": "The Operations Monitoring Pipeline",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: drawing\n**sim-id:** ops-monitoring-pipeline<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA left-to-right pipeline diagram with five stages.\n\n**Stage 1 — Sources (left column, stacked vertically):**\n\n- Endpoints (workstations, servers) with EDR agents\n- Cloud control-plane logs (CloudTrail, Activity Log, Audit Log)\n- Network devices (firewalls, IDS/IPS)\n- Identity provider (Okta, Entra ID, AD)\n- SaaS applications (M365, Salesforce, GitHub)\n\n**Stage 2 — Collection layer (single rounded box):**\n\n- \"Log shipper / agent / API pull\" (e.g., Fluent Bit, Splunk forwarder, cloud-native collector)\n- Annotation: \"normalize, timestamp, enrich\"\n\n**Stage 3 — Log management & SIEM (large central box, cybersecurity blue):**\n\n- Sub-boxes inside: \"Index & store\", \"Correlation rules\", \"Detection logic\", \"Dashboards\"\n\n**Stage 4 — SOAR (parallel right-hand box):**\n\n- Sub-boxes: \"Playbooks\", \"Case management\", \"Automated containment\"\n\n**Stage 5 — Analyst / SOC (rightmost, with a small Sentinel-fox-like silhouette icon):**\n\n- Annotation: \"Triage, investigate, escalate\"\n\nArrows from sources → collection → SIEM. Arrow from SIEM → SOAR → Analyst. A back-arrow from Analyst → SIEM (\"tune rules, suppress noise\") shows the feedback loop.\n\nA retention-policy strip runs underneath the SIEM box: \"Hot: 30 days, Warm: 90 days, Cold: 1 year, Archive: 7 years (compliance)\".\n\nColor: cybersecurity blue for the SIEM core, slate steel for collection and sources, accent amber on SOAR. Responsive: pipeline stacks vertically below 900px.\n\nImplementation: Mermaid graph LR with subgraphs."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "ssdlc-cost-curve",
+  "diagram_name": "Cost of Fixing a Bug Across SDLC Phases",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "library": "Chart.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: chart\n**sim-id:** ssdlc-cost-curve<br/>\n**Library:** Chart.js<br/>\n**Status:** Specified\n\nA horizontal bar chart with phases on the y-axis and relative cost on the x-axis (logarithmic scale).\n\nBars (top to bottom):\n\n- **Requirements**: 1x (lightest blue)\n- **Design**: 2x\n- **Implementation**: 5x\n- **Testing**: 10x\n- **Deployment**: 30x\n- **Production (post-incident)**: 100x (darkest blue, with red border)\n\nTitle: \"Relative cost of remediating a security defect by phase discovered.\"\n\nSubtitle: \"Catching bugs early is roughly 100x cheaper than catching them after a breach.\"\n\nColor palette: cybersecurity blue gradient (`#bbdefb` to `#0d47a1`), with the production bar bordered in alert amber (`#ffa000`).\n\nHovering on each bar shows: phase name, typical activities (\"threat modeling\", \"code review\", \"fuzzing\", \"incident response\"), and an example cost driver.\n\nResponsive: rotates to vertical layout below 600px viewport. Title remains visible.\n\nImplementation: Chart.js horizontal bar chart with logarithmic x-axis and custom tooltip callbacks."
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Threat Modeling Methodology Comparison",
+  "description": "Threat Modeling Methodology Comparison",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-05",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "threat-modeling-methods",
+  "library": "Static SVG or Mermaid",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations"
+}

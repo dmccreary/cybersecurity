@@ -1,0 +1,14 @@
+{
+  "sim_id": "forensic-workflow",
+  "diagram_name": "The Forensic Investigation Workflow",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** forensic-workflow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical Mermaid flowchart with the following ordered nodes (each a rounded rectangle):\n\n1. **Identify and Isolate** (slate steel #455a64) — \"Photograph in place; document state; isolate from network\"\n2. **Capture Volatile Data** (cybersecurity blue #1565c0) — \"RAM image, running processes, open connections\"\n3. **Power Decision** (decision diamond) — \"Live image first, then power off, OR pull plug per policy\"\n4. **Forensic Imaging** (cybersecurity blue) — \"Write-blocker; bit-for-bit copy; SHA-256 hash\"\n5. **Verify Hashes Match** (decision diamond) — Yes → continue; No → re-image\n6. **Examination Copy** (slate steel) — \"Work on a copy of the image, never the source\"\n7. **Analysis** (cybersecurity blue) — \"Filesystem, registry, logs, memory, network artifacts\"\n8. **Reporting** (slate steel) — \"Findings tied to evidence with hashes; reproducible\"\n9. **Court / Disclosure** (cream #fff8e1 with slate-steel border) — \"Testimony; produce chain-of-custody log\"\n\nA parallel rail on the right shows **Chain of Custody Log** as a continuous record alongside steps 1–9, indicating that every step writes to the log.\n\nImplementation: Mermaid `flowchart TD` with subgraphs and color classes matching the textbook palette."
+}

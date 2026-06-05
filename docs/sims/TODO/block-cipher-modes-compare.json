@@ -1,0 +1,14 @@
+{
+  "sim_id": "block-cipher-modes-compare",
+  "diagram_name": "Block Cipher Modes Comparison",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** block-cipher-modes-compare<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA 2×2 grid of small mode diagrams:\n\n**Top-left: ECB**\n- 4 plaintext blocks (with two identical blocks shown in red to highlight pattern leakage)\n- Each block fed independently into a \"AES Encrypt\" box with the same key\n- 4 ciphertext blocks output, with the two corresponding ciphertext blocks ALSO identical (red)\n- Caption: \"Identical plaintext → identical ciphertext. Pattern leaks. AVOID.\"\n\n**Top-right: CBC**\n- 4 plaintext blocks\n- An IV box at the start, XOR with first block before AES Encrypt\n- Each ciphertext block is XOR'd into the next plaintext before encryption\n- Caption: \"Chained. IV must be unpredictable. Sequential.\"\n\n**Bottom-left: CTR**\n- IV / counter sequence (nonce, nonce+1, nonce+2, …)\n- Each counter encrypted with AES under key, producing keystream blocks\n- Plaintext XOR keystream → ciphertext\n- Caption: \"Parallelizable. Nonce must be unique. No padding needed.\"\n\n**Bottom-right: GCM**\n- Same CTR-mode structure as bottom-left\n- Plus a parallel \"GHASH\" computation over ciphertext blocks\n- Output: ciphertext + 128-bit authentication tag\n- Caption: \"AEAD: encrypts AND authenticates. Modern default.\"\n\nColor: amber (#ffa000) outline on the ECB tile (warning), green (#4caf50) outline on the GCM tile (recommended), neutral slate on CBC and CTR.\n\nResponsive: 2x2 grid collapses to vertical stack below 800px.\n\nImplementation: Static SVG with `<title>` tooltips per mode."
+}

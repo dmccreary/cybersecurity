@@ -1,0 +1,14 @@
+{
+  "sim_id": "cyber-kill-chain-controls",
+  "diagram_name": "Cyber Kill Chain Phases with Defensive Controls",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** cyber-kill-chain-controls<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal flow with 7 boxes representing the kill chain phases:\n\n1. **Reconnaissance** → controls: external attack surface management, domain monitoring\n2. **Weaponization** → controls: threat intelligence, sandboxing, anti-exploit\n3. **Delivery** → controls: email security, URL filtering, attachment scanning\n4. **Exploitation** → controls: patching, EDR, application allowlisting\n5. **Installation** → controls: EDR, file integrity monitoring, persistence detection\n6. **Command and Control** → controls: egress filtering, DNS filtering, network detection\n7. **Actions on Objectives** → controls: DLP, segmentation, anomaly detection\n\nEach phase is a colored box (gradient from blue at left to red at right). Below each phase, a small list of 2-3 control examples appears. Arrows between phases imply progression. A \"break the chain\" callout sits above the flow, with a downward arrow into each phase, captioned: \"Stop the chain at any phase and the attack fails.\"\n\nColor: cybersecurity blue (#1565c0) shading deeper through the chain. Responsive: stacks vertically below 800px viewport with phase titles and bullet lists.\n\nImplementation: Mermaid graph LR with styled subgraphs."
+}

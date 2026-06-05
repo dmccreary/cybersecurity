@@ -1,0 +1,14 @@
+{
+  "sim_id": "ics-attack-path-explorer",
+  "diagram_name": "ICS Attack Path Explorer (MicroSim)",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: microsim\n**sim-id:** ics-attack-path-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nLearning objective (Bloom: Apply → Analyze): Given a Purdue-model network with an attacker at Level 5, the student places segmentation controls (firewall, DMZ broker, allowlisting, MFA jump host) and observes the resulting attack path length and blast radius.\n\nCanvas: 900 × 600 px, responsive via `updateCanvasSize()` in setup. Layout has:\n\n- A vertical six-band Purdue stack on the left half (Levels 0–5), with colored nodes representing devices at each level\n- A control panel on the right with **createCheckbox** toggles for each defense (DMZ Broker, Allowlist on Engineering Workstation, MFA Jump Host, Read-Only Historian, Disable RDP at Level 2)\n- A **createButton** \"Run Attack\" that animates a red attacker token attempting to traverse from Level 5 to Level 1 (PLCs)\n- A **createSlider** for \"Attacker Skill\" (0–10) that affects probability of bypassing weaker controls\n- A live readout: **Path length**, **Time to compromise**, **Blast radius** (how many Level-1 devices the attacker can reach)\n\nBehavior: With no defenses, the attacker reaches PLCs in ~3 hops. Each toggled defense adds hops, time, or blocks the path entirely; the simulator narrates *why* in a small log panel (\"DMZ broker forced session termination — attacker must re-authenticate\"). At maximum defenses, the attacker is contained in the IT layer.\n\nVisual style matches textbook palette: cybersecurity blue for OT, slate steel for IT, alert orange for the DMZ, red token for attacker.\n\nImplementation: p5.js with a small node-graph data model; canvas parented to `<main>` per project conventions."
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy of an X.509 Certificate</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Anatomy of an X.509 Certificate</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> x509-anatomy</p>
+            <p><strong>Library:</strong> Static SVG with hover tooltips</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: infographic-svg
+    **sim-id:** x509-anatomy<br/>
+    **Library:** Static SVG with hover tooltips<br/>
+    **Status:** Specified
+    
+    A vertical document layout styled like a physical credential, with hover tooltips on each field explaining its meaning.
+    
+    Header band (cybersecurity blue #1565c0, white text): "X.509 Certificate v3"
+    
+    Body fields (each with hover tooltip):
+    
+    1. **Subject:** CN=www.example.com, O=Example Corp, C=US
+       - Tooltip: "Identity this certificate authenticates. Browsers match the URL hostname against this field."
+    2. **Subject Alternative Names:** DNS:www.example.com, DNS:example.com
+       - Tooltip: "Additional hostnames the certificate covers. Modern browsers require this; CN alone is ignored."
+    3. **Subject Public Key:** ECDSA P-256 (compressed point shown)
+       - Tooltip: "The public key being bound to the subject. The corresponding private key lives on the server."
+    4. **Issuer:** CN=Example Intermediate CA, O=Example Trust Services
+       - Tooltip: "The CA that signed this certificate. Look up the issuer's certificate to verify the chain."
+    5. **Validity:** 2026-04-25 to 2027-04-25 (one year)
+       - Tooltip: "Certificates expire. Short validity reduces the window during which a compromised certificate can be misused."
+    6. **Serial Number:** 0x4d3e:f2a1:88c0:1234
+       - Tooltip: "Unique identifier within the issuer. Used in revocation lists to point at a specific certificate."
+    7. **Key Usage:** Digital Signature, Key Encipherment
+       - Tooltip: "Restricts what the key may be used for. A TLS server certificate cannot be used as a code-signing certificate."
+    8. **Extended Key Usage:** TLS Server Authentication
+       - Tooltip: "Further narrows the role. Browsers reject certificates without this EKU for HTTPS."
+    
+    Footer band (slate steel #455a64, white text): "Issuer's signature: 30:45:02:21:00... (ECDSA over all fields above)"
+    
+    A small key-icon graphic on the right side links the "Subject Public Key" field to a "Server's private key (kept on the server, never transmitted)" callout.
+    
+    Color: cybersecurity blue, slate steel, white, with rust orange accent on the signature footer. Responsive: scales to viewport width; tooltips collapse to expand-on-tap on mobile.
+    
+    Implementation: Static SVG with embedded CSS hover styles and accessible tooltips.
+    -->
+</body>
+</html>

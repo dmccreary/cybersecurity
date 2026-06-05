@@ -1,0 +1,14 @@
+{
+  "sim_id": "rto-rpo-timeline",
+  "diagram_name": "RTO and RPO Timeline",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** rto-rpo-timeline<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA horizontal timeline 900px wide:\n\n- Center marker labeled \"INCIDENT\" (red vertical bar) — time 0.\n- Left of incident: a clock icon and label \"RPO — last recoverable backup\". A bracketed segment from \"RPO point\" to \"INCIDENT\" colored amber. Tooltip: \"Data written between the RPO point and the incident is potentially lost.\"\n- Right of incident: a clock icon and label \"RTO — system back online\". A bracketed segment from \"INCIDENT\" to \"RTO point\" colored slate steel. Tooltip: \"The business is degraded or down throughout this window.\"\n- Above the timeline, two callout boxes:\n  - \"RPO answers: How much data can we afford to lose?\"\n  - \"RTO answers: How long can we be down?\"\n- Below the timeline, a small example legend: \"Tier-1 transactional system: RPO 5 min, RTO 1 hr. Internal HR portal: RPO 24 hr, RTO 72 hr.\"\n\nColor: incident bar #d84315; RPO segment #ffa000; RTO segment #455a64; callouts #1565c0 with white text.\n\nResponsive: SVG scales with container; below 600px, the timeline rotates to vertical with labels on the right. Window-resize listener re-renders.\n\nImplementation: Inline SVG with `<title>` tooltips and a small resize handler."
+}

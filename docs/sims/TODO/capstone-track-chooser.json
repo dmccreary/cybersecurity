@@ -1,0 +1,14 @@
+{
+  "sim_id": "capstone-track-chooser",
+  "diagram_name": "Choosing a Capstone Track",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic\n**sim-id:** capstone-track-chooser<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA clean three-branch decision tree starting at the top with the question:\n\n**\"What kind of security work draws you in?\"**\n\nThree branches descend:\n\n- **Branch A (left, cybersecurity blue):** \"I want to build and defend a real system.\" → leads to a card titled **Capstone A: Secure System** with deliverables listed (threat model, design, prototype, red-team report, oral defense). Hover tooltip on each deliverable shows estimated weeks of effort.\n- **Branch B (center, slate steel):** \"I want to design how an organization manages risk.\" → leads to a card titled **Capstone B: Security Program** with deliverables (policy set, risk register, control catalog, tabletop, board summary).\n- **Branch C (right, alert accent):** \"I want to investigate an emerging question rigorously.\" → leads to a card titled **Capstone C: Applied Research** with deliverables (literature review, proof-of-concept, reproducible report, presentation).\n\nBelow all three branches a horizontal banner reads: \"All three tracks satisfy ABET Student Outcomes 1–6. Pick the one whose deliverables match the work you want to spend a semester doing.\"\n\nColor: cybersecurity blue, slate steel, alert accent for the three branches respectively. Cards have rust-orange #d84315 accent borders.\n\nResponsive: branches reflow vertically below 700px viewport.\n\nImplementation: Static SVG with CSS hover effects and a small JS tooltip layer."
+}

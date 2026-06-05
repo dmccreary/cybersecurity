@@ -1,0 +1,14 @@
+{
+  "sim_id": "practitioner-decision-flow",
+  "diagram_name": "The Practitioner's Decision Flow",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** practitioner-decision-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nMermaid `flowchart TD` with five sequential decision diamonds:\n\n1. **Legal?** — \"Do I have written authorization in this jurisdiction, for these systems, for this window?\"  → No: STOP, get authorization. Yes → continue.\n2. **Ethical?** — \"Even if legal, does this harm someone the ACM Code obligates me to consider?\" → No: revise plan. Yes → continue.\n3. **Forensic?** — \"If this becomes evidence, will my chain of custody hold?\" → No: capture before acting. Yes → continue.\n4. **Notification?** — \"Does this trigger HIPAA/GLBA/GDPR/NIS2/state breach notice?\" → Yes: alert Legal/Privacy, start clock. → continue.\n5. **Public Good?** — \"Should I coordinate disclosure or notify CISA/CERT?\" → Yes: open coordination channel.\n\nEach diamond links to the section in the chapter where its concepts were introduced.\n\nImplementation: Mermaid `flowchart TD` with class definitions for STOP (red), CONTINUE (cybersecurity blue), and reference links."
+}

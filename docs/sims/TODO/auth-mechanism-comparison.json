@@ -1,0 +1,14 @@
+{
+  "sim_id": "auth-mechanism-comparison",
+  "diagram_name": "Authentication Mechanism Strength Comparison",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: interactive-infographic\n**sim-id:** auth-mechanism-comparison<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nA horizontal bar-chart-style infographic with seven authentication mechanisms (rows): Password only, Password + SMS, Password + TOTP, Password + Push MFA, Password + Push MFA with number match, FIDO2 hardware key, Passkey (synced).\n\nFor each row, three colored bars (segments) show: phishing resistance (red→green), usability (red→green), and account-recovery cost (green→red, where green means easy recovery and red means hard).\n\nHovering on a row reveals a tooltip with a one-paragraph summary of the mechanism's strengths, weaknesses, and a representative deployment story (e.g., \"TOTP defeats SMS-swap attacks but is still phishable — the user types the code into whatever site asks\").\n\nControls:\n- Toggle: \"Threat model\" — switches between *opportunistic credential stuffing* and *targeted spear-phishing* views; bar values update.\n- Toggle: \"Show recommended for: consumers / enterprise / high-value accounts.\"\n\nLearning objective (Bloom level: Evaluating): Students judge the appropriate authentication mechanism for a given threat model and user population, and justify the choice with criteria from the diagram.\n\nCanvas: 800×500 default, responsive. Color palette uses cybersecurity blue (#1565c0) for primary, slate (#455a64) for borders, traffic-light red/yellow/green for the strength bars.\n\nImplementation: p5.js with hover-detection on row regions; data driven by a small JS object so values can be updated without redrawing logic. updateCanvasSize() called first in setup()."
+}

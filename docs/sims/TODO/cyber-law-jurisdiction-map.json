@@ -1,0 +1,14 @@
+{
+  "sim_id": "cyber-law-jurisdiction-map",
+  "diagram_name": "Cyber Law Jurisdictional Map",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: interactive-infographic\n**sim-id:** cyber-law-jurisdiction-map<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nLearning objective (Bloom: Understand → Analyze): Given a hypothetical scenario (e.g., \"A U.S. healthcare company stores European patient data on California servers\"), the student identifies which laws apply and why.\n\nLayout: A 900x600 canvas divided into three vertical bands labeled **U.S. Federal**, **U.S. State**, and **International**. Within each band, rounded rectangles represent statutes:\n\n- U.S. Federal: CFAA (cybercrime), ECPA (communications), HIPAA (health), GLBA (finance), FERPA (education)\n- U.S. State: CCPA (California), plus a \"+ 19 other state laws\" stacked card\n- International: GDPR (EU privacy), NIS2 (EU critical infrastructure)\n\nHovering over any statute reveals a tooltip with: scope, who is regulated, key obligation, and breach-notification window.\n\nBelow the bands sits a **Scenario Selector** dropdown with five preset scenarios (e.g., \"EU resident, U.S. SaaS, financial data\"). Selecting one highlights all applicable statutes in cybersecurity blue (#1565c0) and dims the others. A side panel explains why each highlighted law applies.\n\nImplementation: p5.js with hand-rolled card components and tooltip overlays. Responsive to window resize via `updateCanvasSize()` in setup()."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "stack-overflow-anatomy",
+  "diagram_name": "Stack Layout During a Buffer Overflow",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** stack-overflow-anatomy<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA side-by-side comparison of two stack frames, drawn vertically with high addresses at the top and low addresses at the bottom (the conventional stack-grows-down orientation).\n\n**Left panel: \"Normal call\"**\n\nFrom top to bottom of the stack frame:\n- Caller's stack (greyed out)\n- Return address (slate `#455a64`, labeled \"Return address: 0x4011d3\")\n- Saved frame pointer (slate)\n- `buffer[16]` (16 cells, white, contents: \"Hello\\0...\")\n- Stack pointer arrow at bottom\n\n**Right panel: \"Overflow\"**\n\nSame layout, but:\n- `buffer[16]` is fully filled with \"AAAA...\" in red (`#d84315`)\n- Saved frame pointer is overwritten with \"AAAA\" in red\n- Return address is overwritten with attacker-chosen address \"0xdeadbeef\" in red\n- An annotation arrow points from the return address to \"→ now jumps to attacker code (shellcode or ROP chain)\"\n\nA caption below: \"When the function returns, the CPU pops the (corrupted) return address and jumps to attacker-controlled memory.\"\n\nHovering on each cell shows the byte address and what defenses (stack canary, ASLR, DEP) would have stopped it.\n\nColor palette: slate steel for normal stack contents, rust orange/red for attacker-controlled bytes, cybersecurity blue for annotations.\n\nResponsive: panels stack vertically below 700px.\n\nImplementation: Static SVG with `<title>` tooltips on each labeled region."
+}

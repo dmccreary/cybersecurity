@@ -1,0 +1,14 @@
+{
+  "sim_id": "linux-ac-layers",
+  "diagram_name": "Layers of Access Control on a Modern Linux Box",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: drawing\n**sim-id:** linux-ac-layers<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical flow showing a single `read(/etc/shadow)` syscall traveling through each access-control gate.\n\nTop to bottom:\n1. **Process** (white box, top): \"httpd, UID=apache, current AppArmor profile: usr.sbin.apache2\"\n2. Arrow labeled `read(\"/etc/shadow\")` going down\n3. **DAC check** (light blue box): \"Is UID `apache` in shadow's owner/group, or does it have read for other? `/etc/shadow` is `0640 root:shadow` — DAC: DENY for non-root non-shadow.\"\n4. **Capability check** (cyan box): \"Does process hold `CAP_DAC_READ_SEARCH`? No. Skip.\"\n5. **MAC check** (cybersecurity blue box): \"Is `httpd_t` allowed to read `shadow_t`? Policy: NO. MAC: DENY.\"\n6. **Result** (red box): \"EACCES — read denied. Logged in audit.log.\"\n\nA side note in slate steel: \"Even one DENY is enough; checks are AND-composed. If DAC permits but MAC denies, MAC wins.\"\n\nAlongside the diagram, a small alternate path shown to the right where DAC permits a `read(\"/var/www/html/index.html\")` and the process does hold the right MAC label, leading to a green ALLOW result.\n\nColor: cybersecurity blue `#1565c0` for MAC layer, slate steel `#455a64` for capability layer, light blue `#e3f2fd` for DAC layer, red `#d32f2f` for DENY, green `#4caf50` for ALLOW. Responsive: vertical orientation on narrow screens.\n\nImplementation: Mermaid flowchart TD with custom node styling."
+}

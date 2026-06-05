@@ -1,0 +1,14 @@
+{
+  "sim_id": "ml-attack-surface",
+  "diagram_name": "The ML Attack Surface",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** ml-attack-surface<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal flow diagram with two pipelines and labeled attack arrows pointing in:\n\n**Training pipeline (left half):**\n\n1. **Data collection** (cylinder, slate steel #455a64) — labeled \"Web scrape, user uploads, partner feed\"\n2. → **Data cleaning** (rectangle) — \"Filter, label, deduplicate\"\n3. → **Training** (rectangle, cybersecurity blue #1565c0) — \"Optimization adjusts model weights\"\n4. → **Trained model** (rectangle) — \"Frozen weights, ready to deploy\"\n\n**Inference pipeline (right half):**\n\n5. → **Production model** (rectangle, cybersecurity blue) — \"Receives user input, returns prediction\"\n6. → **Output** (oval) — \"Score, label, generated text\"\n\n**Attack arrows pointing INTO the pipeline:**\n\n- Red arrow at step 1 → labeled \"**Data Poisoning** — attacker contributes corrupted training examples\"\n- Red arrow at step 5, from an \"input\" box → labeled \"**Adversarial ML / Model Evasion** — crafted input causes wrong output\"\n- Red arrow at step 5, from a \"query\" box → labeled \"**Model Theft** — many queries reconstruct the model\"\n- Red arrow at step 5, from a \"prompt\" box → labeled \"**Prompt Injection** — instructions hidden in input override the system prompt\"\n\nColor: cybersecurity blue for legitimate pipeline, alert accent #ffa000 for attack arrows, slate steel for data stores. Responsive: stacks vertically below 800px viewport with attack arrows still visually anchored to the correct stage.\n\nImplementation: Mermaid graph LR with custom classDefs for legitimate vs. attack edges."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "encryption-decryption-flow",
+  "diagram_name": "Encryption and Decryption Flow",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** encryption-decryption-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal flow:\n\n1. **Plaintext** (input box, white) — \"The original message: 'Attack at dawn.'\"\n2. → arrow into **Encryption** (process box, cybersecurity blue #1565c0) — \"Algorithm + Key\"\n3. → arrow into **Ciphertext** (intermediate box, slate steel #455a64) — \"8a4f...d12b (looks random)\"\n4. → arrow into **Decryption** (process box, cybersecurity blue) — \"Algorithm + same Key\"\n5. → arrow into **Plaintext** (output box, white) — \"Recovered: 'Attack at dawn.'\"\n\nAbove the encryption and decryption boxes, a small key icon connects both, labeled \"Shared cryptographic key (kept secret)\". The diagram emphasizes that the same key must be used in both directions for symmetric crypto.\n\nA small inset to the right shows the Kerckhoffs principle: \"Algorithm: PUBLIC. Key: SECRET.\"\n\nColor: cybersecurity blue, white, slate steel. Responsive: stacks vertically below 700px viewport.\n\nImplementation: Mermaid graph LR with custom node styling."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "threat-actor-matrix",
+  "diagram_name": "Threat Actor Capability Matrix",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** threat-actor-matrix<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA 2D scatter plot:\n- X-axis: Resources (low → high)\n- Y-axis: Skill (low → high)\n\nFive labeled circles positioned in the appropriate quadrants:\n- **Script kiddies** (low skill, low resources, lower-left): blue #1565c0, small radius\n- **Hacktivists** (mixed skill, low-moderate resources, middle-left): green, medium radius\n- **Cybercriminals** (high skill, moderate-high resources, middle-right): orange #fb8c00, larger radius\n- **Insiders** (variable skill, low resources but unique access, special placement on a separate annotation): slate steel #455a64, with a callout arrow indicating \"bypasses perimeter by design\"\n- **Nation-state actors / APTs** (highest skill, highest resources, upper-right): red #c62828, largest radius\n\nEach circle has a hover tooltip listing typical motivations, time horizons, and example incidents. A legend at the bottom maps circle size to \"typical campaign duration\" (kiddies = minutes, APTs = years).\n\nColor background should be neutral white. Responsive design that reflows axes at narrow widths.\n\nImplementation: Static SVG with `<title>` elements; could be enhanced later as a clickable infographic."
+}

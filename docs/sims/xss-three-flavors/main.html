@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Flavors of XSS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Three Flavors of XSS</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> xss-three-flavors</p>
+            <p><strong>Library:</strong> Static SVG with hover tooltips</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: infographic-svg
+    **sim-id:** xss-three-flavors<br/>
+    **Library:** Static SVG with hover tooltips<br/>
+    **Status:** Specified
+    
+    A three-column infographic, one column per XSS subtype, each showing the data flow as a sequence of actors and arrows.
+    
+    **Column 1: Stored XSS**
+    
+    Actors top-to-bottom: Attacker → Server (with database icon) → Victim browser
+    
+    Arrows:
+    1. Attacker → Server: "POST /comment payload=`<script>...</script>`"
+    2. Server stores payload in database
+    3. Victim → Server: "GET /comments"
+    4. Server → Victim: "page contains `<script>...</script>`"
+    5. Victim browser executes script
+    
+    Caption: "One injection compromises every visitor."
+    
+    **Column 2: Reflected XSS**
+    
+    Actors: Attacker → Victim → Server → Victim browser
+    
+    Arrows:
+    1. Attacker → Victim: "Phishing email with crafted link `?q=<script>...</script>`"
+    2. Victim → Server: "GET /search?q=`<script>...</script>`"
+    3. Server → Victim: "Search results page reflects `q` into HTML without escaping"
+    4. Victim browser executes script
+    
+    Caption: "Requires the victim to click the crafted URL."
+    
+    **Column 3: DOM-based XSS**
+    
+    Actors: Attacker → Victim → Browser only (no server interaction)
+    
+    Arrows:
+    1. Attacker → Victim: "Crafted URL `https://site/#payload=<script>...</script>`"
+    2. Victim browser fetches static page
+    3. Page's JavaScript reads `location.hash`
+    4. Page's JavaScript writes hash into `innerHTML` → script executes
+    
+    Caption: "Server never sees the payload — invisible to server logs."
+    
+    Color: cybersecurity blue for legitimate flows, alert amber `#ffa000` for attacker-controlled data, red outline on the "executes script" box.
+    
+    Responsive: columns stack vertically below 900px.
+    
+    Implementation: Static SVG with consistent layout, `<title>` tooltips on each step.
+    -->
+</body>
+</html>

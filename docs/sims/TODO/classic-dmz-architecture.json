@@ -1,0 +1,14 @@
+{
+  "sim_id": "classic-dmz-architecture",
+  "diagram_name": "Classic DMZ Architecture",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** classic-dmz-architecture<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal flow with three zones drawn as boxed regions:\n\n**Left zone (gray):** \"Internet\" — represented by a cloud icon and \"Untrusted clients, scanners, attackers\".\n\n**Middle zone (slate):** \"DMZ\" — drawn as a clearly bordered box. Inside: three labeled hosts (web reverse proxy, public DNS, SMTP relay).\n\n**Right zone (cybersecurity blue):** \"Internal network\" — drawn as a clearly bordered box. Inside: labeled hosts (application servers, database, domain controller, file servers).\n\nBetween the Internet and the DMZ: a firewall icon labeled \"Edge firewall — permits ports 80, 443, 25, 53 inbound to specific DMZ hosts\".\n\nBetween the DMZ and the Internal network: a second firewall icon labeled \"Inner firewall — DMZ may initiate connections only to specific internal endpoints (database replica, auth service) on specific ports; no internal-initiated traffic to DMZ\".\n\nAnnotation arrows showing typical legitimate flows:\n\n- Internet → DMZ web server: solid blue\n- DMZ web server → internal application server: solid blue (narrow, specific port)\n- Internal users → internet: dashed blue (egress through edge firewall, not via DMZ)\n\nA red dashed arrow showing an *attempted* attacker pivot from a compromised DMZ host into the internal network, blocked by the inner firewall — labeled \"blocked by deny-by-default policy\".\n\nColor: cybersecurity blue (#1565c0) for trusted flows, slate (#455a64) for the DMZ, fur orange (#d84315)/red for the blocked attack arrow. Responsive: stacks vertically below 800px viewport. The diagram must respond to window resize events.\n\nImplementation: Mermaid flowchart LR with subgraphs for each zone."
+}
