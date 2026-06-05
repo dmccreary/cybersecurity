@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Diffie-Hellman Key Exchange</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                fontSize: '15px',
+                primaryColor: '#e3f0fb',
+                primaryBorderColor: '#1565c0',
+                primaryTextColor: '#0d2c54',
+                actorBkg: '#1565c0',
+                actorBorder: '#0d47a1',
+                actorTextColor: '#ffffff',
+                signalColor: '#455a64',
+                signalTextColor: '#263238',
+                noteBkgColor: '#fff3d6',
+                noteBorderColor: '#ffa000',
+                noteTextColor: '#5a3d00'
+            },
+            sequence: {
+                useMaxWidth: true,
+                wrap: true,
+                width: 165
+            }
+        });
+        window.addEventListener('resize', () => {
+            const svg = document.querySelector('.mermaid svg');
+            if (svg) svg.style.maxWidth = '100%';
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #fff8e1; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 820px; margin: 0 auto; padding: 10px; }
+        h1.title { text-align: center; font-size: 22px; color: #212529; margin: 6px 0 2px; }
+        p.sub { text-align: center; font-size: 14px; color: #455a64; margin-bottom: 6px; }
+        .params {
+            text-align: center; font-size: 14px; color: #5a3d00;
+            background: #fff3d6; border: 2px solid #ffa000; border-radius: 8px;
+            padding: 6px 10px; max-width: 420px; margin: 0 auto 8px;
+        }
+        .mermaid { width: 100%; display: flex; justify-content: center; background: #fff8e1; }
+        .mermaid svg { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">Diffie-Hellman Key Exchange</h1>
+    <p class="sub">Alice and Bob agree on a shared secret over a public wire that Eve can read.</p>
+    <div class="params"><strong>Public:</strong> large prime <em>p</em>, generator <em>g</em></div>
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    participant A as Alice
+    participant E as Network / Eve
+    participant B as Bob
+    Note over A: Generates secret a<br/>(kept secret)
+    Note over B: Generates secret b<br/>(kept secret)
+    A->>B: Sends A = g^a mod p
+    Note over E: Eve sees A on the wire
+    B->>A: Sends B = g^b mod p
+    Note over E: Eve sees B on the wire
+    Note over A: Computes s = B^a mod p
+    Note over B: Computes s = A^b mod p
+    Note over A,B: Shared secret s = g^(ab) mod p
+    Note over E: Eve has p, g, A, B<br/>but cannot find s<br/>(discrete log problem)  ?
+    </div>
+  </div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="diffie-hellman-exchange.js"></script>
+</body>
+</html>
