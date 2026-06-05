@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Practitioner Decision Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Practitioner Decision Flow: Before You Act on a Live System</h2>
+            <div class="mermaid">
+flowchart TD
+    Start(["Considering an action<br/>on a system"]):::startNode
+    Legal{"1. Legal?<br/>Written authorization,<br/>this jurisdiction,<br/>these systems,<br/>this window?"}:::decisionNode
+    StopLegal["STOP<br/>Get authorization<br/>before proceeding"]:::stopNode
+    Ethical{"2. Ethical?<br/>Even if legal, does this<br/>harm someone the ACM<br/>Code obligates me<br/>to consider?"}:::decisionNode
+    Revise["Revise the plan<br/>reduce harm"]:::stopNode
+    Forensic{"3. Forensic?<br/>If this becomes evidence,<br/>will my chain of<br/>custody hold?"}:::decisionNode
+    Capture["Capture / image<br/>before acting"]:::warnNode
+    Notify{"4. Notification?<br/>Does this trigger HIPAA,<br/>GLBA, GDPR, NIS2, or<br/>state breach notice?"}:::decisionNode
+    Alert["Alert Legal / Privacy,<br/>start the clock"]:::warnNode
+    Public{"5. Public Good?<br/>Should I coordinate<br/>disclosure or notify<br/>CISA / CERT?"}:::decisionNode
+    Coord["Open a coordination<br/>channel"]:::contNode
+    Proceed(["Proceed with the action"]):::contNode
+
+    Start --> Legal
+    Legal -->|No| StopLegal
+    Legal -->|Yes| Ethical
+    Ethical -->|No| Revise
+    Revise --> Ethical
+    Ethical -->|Yes| Forensic
+    Forensic -->|No| Capture
+    Capture --> Notify
+    Forensic -->|Yes| Notify
+    Notify -->|Yes| Alert
+    Alert --> Public
+    Notify -->|No| Public
+    Public -->|Yes| Coord
+    Coord --> Proceed
+    Public -->|No| Proceed
+
+    classDef startNode fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#212529,font-size:14px
+    classDef decisionNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef stopNode fill:#c62828,stroke:#7f0000,stroke-width:2px,color:#fff,font-size:14px
+    classDef warnNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:14px
+    classDef contNode fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Decision gate</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#c62828"></span>STOP / revise</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Act before continuing</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#2e7d32"></span>Cleared to proceed</div>
+            </div>
+            <h3>Gate Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any gate to see what it checks and where the chapter introduced it. Each gate must be cleared in order before acting on a live system.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="practitioner-decision-flow.js"></script>
+</body>
+</html>

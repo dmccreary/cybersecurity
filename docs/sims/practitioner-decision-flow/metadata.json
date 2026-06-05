@@ -1,0 +1,42 @@
+{
+  "title": "Practitioner Decision Flow",
+  "description": "Interactive Mermaid decision tree of the five gates a security practitioner clears before acting on a live system: Legal, Ethical, Forensic, Notification, and Public Good. Hover any gate for what it checks.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "practitioner-decision-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Apply",
+  "bloomVerb": "Apply",
+  "completion_status": "validated",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Ethics, and Privacy\"",
+  "chapter_dir": "14-societal-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Legal, ethical, forensic, and disclosure obligations of practitioners",
+    "learningObjectives": [
+      "Apply a five-gate checklist (Legal, Ethical, Forensic, Notification, Public Good) before acting on a system.",
+      "Explain why a legal action may still be unethical or forensically unsound.",
+      "Recognize when an event triggers a breach-notification duty or coordinated disclosure."
+    ],
+    "bloomLevels": ["Apply"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Familiarity with the chapter sections on law, professional ethics, forensics, and breach notification."
+  },
+  "pedagogical": {
+    "modelType": "interactive decision tree",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan walk a scenario through all five gates.",
+    "misconceptionsAddressed": [
+      "Assuming 'legal' is sufficient grounds to act.",
+      "Acting before preserving forensic evidence.",
+      "Overlooking that notification clocks start at discovery, not at remediation."
+    ]
+  }
+}
