@@ -1,0 +1,47 @@
+{
+  "title": "Hardening, Baselines, and Drift",
+  "description": "A Mermaid causal-loop diagram of the configuration-hardening feedback cycle — CIS benchmarks seed a baseline, configuration management enforces it, drift detection finds gaps, and findings revise the baseline — with new vulnerabilities and auditors as outside influences.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hardening-baselines-loop",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Security Operations", "Configuration Management"],
+    "topic": ["System Hardening", "Security Baselines", "Configuration Drift", "CIS Benchmarks", "Compliance"],
+    "learningObjectives": [
+      "Explain the continuous loop among baselines, configuration management, and drift detection.",
+      "Identify how outside influences (new vulnerabilities, auditors) force the baseline to evolve."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["What system hardening and a configuration baseline are"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Trace the clockwise cycle, then add each outside influence and ask what it changes.",
+      "Discuss why Drift Detection is highlighted as the focus of ongoing operational attention."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why can a hardening baseline never be considered finished?", "level": "Understand"},
+      {"question": "When drift is detected, what three responses are possible, and how do you choose among them?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "6",
+  "edge_count": "6",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring"
+}
