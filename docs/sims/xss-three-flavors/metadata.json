@@ -1,20 +1,43 @@
 {
   "title": "Three Flavors of XSS",
-  "description": "Three Flavors of XSS",
-  "creator": "Dementia Education Project",
+  "description": "A three-column SVG infographic comparing the data flow of stored, reflected, and DOM-based cross-site scripting, with hover tooltips on every step and color coding for legitimate flow, attacker-controlled data, and the point where the script executes.",
+  "creator": "Dan McCreary",
   "date": "2026-06-05",
   "subject": [
-    "dementia"
+    "cybersecurity"
   ],
-  "type": "Interactive Simulation",
+  "type": "Interactive Diagram",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "xss-three-flavors",
   "library": "Static SVG with hover tooltips",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "Understand",
+  "bloomVerb": "compare",
+  "educational": {
+    "subjectArea": ["Software Vulnerabilities", "Web Application Security"],
+    "topic": ["Cross-site scripting", "Stored XSS", "Reflected XSS", "DOM-based XSS", "Injection", "Output encoding"],
+    "learningObjectives": [
+      "Compare the data flow of stored, reflected, and DOM-based XSS.",
+      "Identify where the payload lives in each subtype and whether the server ever sees it.",
+      "Recognize that DOM-based XSS can be invisible to server-side logging."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["HTTP request/response basics", "HTML and the DOM", "Injection vulnerabilities"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "comparison"],
+    "instructionalStrategies": [
+      "Read the three columns side by side; hover each step to reveal what makes it dangerous.",
+      "Contrast where the payload persists (stored), travels (reflected), and stays client-side (DOM-based)."
+    ],
+    "assessmentQuestions": [
+      {"question": "Which XSS subtype can be invisible to server-side logs, and why?", "level": "Understand"},
+      {"question": "Why does reflected XSS require the victim to take an action while stored XSS does not?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
   "chapter_number": 5,
   "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
   "chapter_dir": "05-software-vulnerabilities"
