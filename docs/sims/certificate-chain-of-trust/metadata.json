@@ -1,0 +1,41 @@
+{
+  "title": "Certificate Chain of Trust",
+  "description": "Interactive Mermaid hierarchy showing a PKI certificate chain from a self-signed Root CA down through intermediate CAs to end-entity certificates, with a reverse verification-path callout. Hover or tap each node for its role.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "certificate-chain-of-trust",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Public-key infrastructure (PKI) and certificate validation",
+    "learningObjectives": [
+      "Explain how a certificate chain links an end-entity certificate to a trusted root.",
+      "Describe why intermediate CAs exist and how they limit blast radius.",
+      "Trace the reverse verification path a browser walks to establish trust."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of public/private key pairs and digital signatures."
+  },
+  "pedagogical": {
+    "modelType": "interactive hierarchy diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions ask students to trace a chain and reason about revocation.",
+    "misconceptionsAddressed": [
+      "Believing the root key signs every leaf certificate directly.",
+      "Assuming the server sends the root certificate (it sends the chain up to but not including the root)."
+    ]
+  }
+}

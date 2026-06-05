@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Certificate Chain of Trust</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Certificate Chain of Trust</h2>
+            <div class="mermaid">
+flowchart TB
+    subgraph root ["Root CA — trust anchor"]
+        Root["Root CA: Example Trust Root<br/>Self-signed<br/>Lives in browser trust store<br/>Offline HSM"]:::rootNode
+    end
+    subgraph mid ["Intermediate CAs"]
+        IntA["Intermediate CA A"]:::caNode
+        IntB["Intermediate CA B"]:::caNode
+    end
+    subgraph leaf ["End-entity certificates"]
+        WWW["www.example.com"]:::leafNode
+        API["api.example.com"]:::leafNode
+        MAIL["mail.example.com"]:::leafNode
+    end
+
+    Root -- signs --> IntA
+    Root -- signs --> IntB
+    IntA -- signs --> WWW
+    IntA -- signs --> API
+    IntB -- signs --> MAIL
+
+    classDef rootNode fill:#1565c0,stroke:#d4af37,stroke-width:4px,color:#ffffff,font-size:14px
+    classDef caNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef leafNode fill:#ffffff,stroke:#d84315,stroke-width:2px,color:#212529,font-size:14px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Legend</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0;border-color:#d4af37;border-width:2px"></span>Gold border = trust anchor</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Blue = CA certificate</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Slate = intermediate CA</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffffff;border-color:#d84315"></span>White / orange = end entity</div>
+            </div>
+            <div class="callout">
+                <div class="callout-title">Verification path (reverse direction)</div>
+                <ol>
+                    <li>Browser receives <b>www.example.com</b> certificate</li>
+                    <li>&uarr; verifies its signature using <b>Intermediate CA A</b> public key</li>
+                    <li>&uarr; verifies that signature using <b>Root CA</b> public key</li>
+                    <li>&uarr; Root CA in the trust store? &rarr; <b>trust established</b></li>
+                </ol>
+            </div>
+            <h3>Node Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a certificate to see its role.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="certificate-chain-of-trust.js"></script>
+</body>
+</html>
