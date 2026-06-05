@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Security Operations Activity Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Security Operations: Three Functions, One Feedback Loop</h2>
+            <div class="mermaid">
+flowchart TD
+    TI["Threat Intelligence<br/>feeds all three functions"]:::tiNode
+
+    Off["OFFENSIVE<br/>Penetration Testing · Red Team<br/>Bug Bounty · Capture the Flag<br/>Threat Modeling"]:::offNode
+    Def["DEFENSIVE<br/>Blue Team · SOC Monitoring<br/>Threat Hunting · Vuln Management<br/>Detection Engineering"]:::defNode
+    Resp["RESPONSE<br/>Incident Response · PICERL<br/>Forensics · Malware Analysis<br/>Lessons Learned"]:::respNode
+    Purple["PURPLE TEAM<br/>integrative practice"]:::purpleNode
+
+    TI -.->|intel| Off
+    TI -.->|intel| Def
+    TI -.->|intel| Resp
+
+    Off -->|Findings improve detections| Def
+    Def -->|Alerts trigger investigations| Resp
+    Resp -->|Lessons drive next exercise| Off
+
+    Off --- Purple
+    Def --- Purple
+    Resp --- Purple
+
+    classDef tiNode fill:#fff8e1,stroke:#ffa000,stroke-width:2px,color:#5d4037,font-size:14px
+    classDef offNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef defNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:14px
+    classDef respNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:14px
+    classDef purpleNode fill:#6a1b9a,stroke:#4a148c,stroke-width:2px,color:#fff,font-size:14px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Offensive (find weaknesses)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Defensive (detect &amp; resist)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Response (contain &amp; learn)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#6a1b9a"></span>Purple Team (integrate)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#fff8e1;border-color:#ffa000"></span>Threat Intel (feeds all)</div>
+            </div>
+            <h3>Function Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any box or flow label to see what that security-operations function does. Notice the three functions form a continuous loop, fed by threat intelligence.</div>
+            </div>
+            <div class="caption">
+                Offense, defense, and response are not three separate teams — they
+                are one feedback loop. Purple Team makes the loop turn faster.
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="secops-activity-map.js"></script>
+</body>
+</html>
