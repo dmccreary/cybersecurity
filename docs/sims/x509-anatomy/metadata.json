@@ -1,20 +1,43 @@
 {
   "title": "Anatomy of an X.509 Certificate",
-  "description": "Anatomy of an X.509 Certificate",
-  "creator": "Dementia Education Project",
+  "description": "An interactive SVG infographic of a TLS server certificate drawn as a credential, with hover tooltips on all eight fields and a key icon linking the public key to the server's private key.",
+  "creator": "Dan McCreary",
   "date": "2026-06-05",
   "subject": [
-    "dementia"
+    "cybersecurity"
   ],
-  "type": "Interactive Simulation",
+  "type": "Interactive Infographic",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "x509-anatomy",
   "library": "Static SVG with hover tooltips",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "Understand",
+  "bloomVerb": "identify",
+  "educational": {
+    "subjectArea": ["Cryptography", "PKI", "TLS"],
+    "topic": ["X.509 Certificate", "Public Key Infrastructure", "Subject Alternative Name", "Key Usage", "Extended Key Usage", "Certificate Chain"],
+    "learningObjectives": [
+      "Identify the eight core fields of an X.509 v3 TLS server certificate.",
+      "Explain what each field is for and why a browser checks it.",
+      "Distinguish the public key in the certificate from the server's private key."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Public-key cryptography basics", "Digital signatures"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Hover each field and have students state what would go wrong if a browser ignored it.",
+      "Use the key-icon callout to discuss why the private key is never in the certificate."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why do modern browsers ignore the Common Name and require a Subject Alternative Name?", "level": "Understand"},
+      {"question": "A certificate has EKU = Code Signing but is presented for HTTPS. What happens, and which field caused it?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
   "chapter_number": 4,
   "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
   "chapter_dir": "04-crypto-in-practice"

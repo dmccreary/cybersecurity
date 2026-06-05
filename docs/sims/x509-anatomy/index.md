@@ -1,18 +1,71 @@
 ---
 title: Anatomy of an X.509 Certificate
-description: Anatomy of an X.509 Certificate
-status: scaffold
+description: An interactive SVG infographic of a TLS server certificate drawn as a credential, with hover tooltips on all eight fields and a key icon linking the public key to the server's private key.
+image: /sims/x509-anatomy/x509-anatomy.png
+og:image: /sims/x509-anatomy/x509-anatomy.png
+twitter:image: /sims/x509-anatomy/x509-anatomy.png
+social:
+   cards: false
+status: review
 library: Static SVG with hover tooltips
-bloom_level: TBD
+bloom_level: Understand
 ---
 
 # Anatomy of an X.509 Certificate
 
+![Anatomy of an X.509 Certificate](./x509-anatomy.png)
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="687" scrolling="no"
+  style="border: 1px solid #ccc; border-radius: 8px;"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+You can include this MicroSim on your own website with the following `iframe`:
+
+```html
+<iframe src="https://dmccreary.github.io/cybersecurity/sims/x509-anatomy/main.html" height="687" width="100%" scrolling="no"></iframe>
+```
+
+## About this MicroSim
+
+This infographic takes the X.509 certificate your browser checks on every HTTPS
+connection and lays it out like a physical credential you can read top to bottom.
+A blue header band names the format (X.509 v3), and eight fields follow:
+**Subject** (the identity being authenticated), **Subject Alternative Names**
+(the hostnames the certificate actually covers), **Subject Public Key** (the key
+being bound to that identity), **Issuer** (the CA that signed it), **Validity**
+(the expiry window), **Serial Number** (the handle used in revocation),
+**Key Usage**, and **Extended Key Usage** (which together restrict what the key
+may do). A slate-steel footer band shows the issuer's signature over everything
+above it. On the right, a rust-orange key icon links the Subject Public Key
+field to a callout for the **server's private key** — the half of the pair that
+never appears in the certificate and is never transmitted. Hover (or tap) any
+field for a plain-language explanation of what it means and why a browser checks
+it. The MicroSim is a static SVG with hover reveals, so you set the pace.
+
+## Lesson Plan
+
+**Learning objective:** Students can *identify* the eight core fields of an
+X.509 v3 TLS server certificate, explain what each field is for and why a browser
+checks it, and distinguish the certificate's public key from the server's
+private key.
+
+**Suggested classroom use:** Display the certificate and, before revealing any
+tooltips, ask students to guess what each field name means. Reveal the tooltips
+to check. Then run a "what breaks?" round: for each field, ask what attack or
+failure becomes possible if a browser ignores it (skip SAN → wrong-host
+acceptance; skip Validity → no expiry; skip EKU → a code-signing cert used for
+HTTPS). Finish with the key-icon callout to make the public/private split
+concrete.
+
+**Discussion questions:**
+
+1. Why do modern browsers ignore the Common Name and require a Subject
+   Alternative Name?
+2. The certificate is sent in the clear to every visitor. Why is that safe, and
+   what is the one piece that must stay secret?
+3. How do the Issuer field and the footer signature work together to let a
+   browser verify the chain back to a trusted root?
 
 ## Specification
 
@@ -56,6 +109,13 @@ Color: cybersecurity blue, slate steel, white, with rust orange accent on the si
 
 Implementation: Static SVG with embedded CSS hover styles and accessible tooltips.
 ```
+
+## References
+
+- [X.509 — Wikipedia](https://en.wikipedia.org/wiki/X.509)
+- [Public key certificate — Wikipedia](https://en.wikipedia.org/wiki/Public_key_certificate)
+- [Subject Alternative Name — Wikipedia](https://en.wikipedia.org/wiki/Subject_Alternative_Name)
+- [Public key infrastructure — Wikipedia](https://en.wikipedia.org/wiki/Public_key_infrastructure)
 
 ## Related Resources
 
