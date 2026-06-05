@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Risk Treatment Decision Tree</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">One Risk, One Treatment: Avoid, Mitigate, Transfer, or Accept</h2>
+            <div class="mermaid">
+flowchart TD
+    Risk["Identified Risk<br/>likelihood × impact rating"]:::startNode
+    D1{"Can the activity be<br/>eliminated without<br/>unacceptable business loss?"}:::decisionNode
+    Avoid["AVOID<br/>Stop the activity.<br/>Document the decision."]:::avoidNode
+    D2{"Is residual risk after<br/>available controls below<br/>the risk appetite?"}:::decisionNode
+    Mitigate["MITIGATE<br/>Implement control(s).<br/>Track residual risk."]:::mitigateNode
+    D3{"Can the financial impact<br/>be transferred to another<br/>party (insurance, contract)?"}:::decisionNode
+    Transfer["TRANSFER<br/>Procure insurance / vendor<br/>contract. Track coverage limits."]:::transferNode
+    Accept["ACCEPT<br/>Document, sign at the right<br/>executive level, time-bound it<br/>(~12 months), reassess on schedule."]:::acceptNode
+
+    Risk --> D1
+    D1 -->|Yes| Avoid
+    D1 -->|No| D2
+    D2 -->|"Yes (control feasible)"| Mitigate
+    D2 -->|No| D3
+    D3 -->|Yes| Transfer
+    D3 -->|No| Accept
+
+    classDef startNode fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#263238,font-size:15px
+    classDef decisionNode fill:#cfd8dc,stroke:#455a64,stroke-width:2px,color:#263238,font-size:15px
+    classDef avoidNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:15px
+    classDef mitigateNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef transferNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:15px
+    classDef acceptNode fill:#d84315,stroke:#bf360c,stroke-width:2px,color:#fff,font-size:15px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key — Four Treatments</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Avoid (eliminate the activity)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Mitigate (add controls)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Transfer (insure / contract)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#d84315"></span>Accept (sign off, date it)</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any box to see what that step means. The tree asks a fixed sequence of questions; the first "yes" assigns the treatment.</div>
+            </div>
+            <div class="caption">
+                Implicit acceptance is the failure mode. Every risk gets exactly
+                one of these four labels — with an owner and a date.
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="risk-treatment-decision-tree.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "title": "Risk Treatment Decision Tree",
+  "description": "Interactive Mermaid decision tree that routes a single identified risk through the four ISO-style treatment options: avoid, mitigate, transfer, or accept.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "risk-treatment-decision-tree",
+  "library": "Mermaid",
+  "bloomLevel": "Apply",
+  "bloomVerb": "Apply",
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Risk treatment and governance",
+    "learningObjectives": [
+      "Apply the four-option risk-treatment model to select avoid, mitigate, transfer, or accept for a given risk.",
+      "Explain why transfer moves financial impact but not operational responsibility.",
+      "Justify that risk acceptance must be deliberate, signed, and time-bound."
+    ],
+    "bloomLevels": ["Apply"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Familiarity with likelihood-by-impact risk rating and the idea of residual risk."
+  },
+  "pedagogical": {
+    "modelType": "interactive decision tree",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to choose and justify a treatment for described risk scenarios.",
+    "misconceptionsAddressed": [
+      "Treating acceptance as a default rather than a deliberate, dated decision.",
+      "Believing transfer (insurance) removes the operational impact of an event."
+    ]
+  }
+}
