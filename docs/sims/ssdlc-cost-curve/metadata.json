@@ -1,0 +1,44 @@
+{
+  "title": "Cost of Fixing a Bug Across SDLC Phases",
+  "description": "An interactive Chart.js horizontal bar chart on a logarithmic scale showing the relative cost of remediating a security defect by the phase it is discovered, from 1x in requirements to 100x in production after a breach, with hover tooltips naming activities and cost drivers.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Chart",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ssdlc-cost-curve",
+  "library": "Chart.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "interpret",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Secure Software Development"],
+    "topic": ["SDLC", "Shift Left", "Secure Coding", "Cost of Defects", "Threat Modeling", "Incident Response"],
+    "learningObjectives": [
+      "Interpret a logarithmic cost curve across the software development lifecycle.",
+      "Explain why remediation cost grows geometrically with the phase of discovery.",
+      "Argue for shifting security activities earlier (shift left)."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Familiarity with the software development lifecycle"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "demonstration", "reference"],
+    "instructionalStrategies": [
+      "Hover each bar to connect a phase to its typical activities and the driver of its cost.",
+      "Have students estimate the cost ratio between two phases before revealing the multipliers."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is the x-axis logarithmic rather than linear here?", "level": "Understand"},
+      {"question": "Your team has budget for one new security activity. Where on the curve should you spend it, and why?", "level": "Evaluate"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities"
+}
