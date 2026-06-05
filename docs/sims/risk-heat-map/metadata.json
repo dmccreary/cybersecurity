@@ -1,0 +1,51 @@
+{
+  "title": "Risk Heat Map",
+  "description": "Interactive p5.js 5x5 likelihood-by-impact risk heat map. Choose a sample risk, move the sliders, or drag the marker to see the score and the recommended treatment (Mitigate, Transfer, Accept, or Avoid) change in real time.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "risk-heat-map",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security\"",
+  "chapter_dir": "13-organizational-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Risk assessment, scoring, and treatment selection",
+    "learningObjectives": [
+      "Place a risk on a 5x5 likelihood-by-impact grid and compute its score.",
+      "Analyze how the recommended treatment changes as likelihood or impact changes.",
+      "Distinguish Mitigate, Transfer, Accept, and Avoid as treatment options by risk band."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic idea that risk combines likelihood and impact."
+  },
+  "pedagogical": {
+    "modelType": "interactive 2D grid placement tool",
+    "interactionModes": ["dropdown-select", "slider", "drag", "hover-reveal", "button-reset"],
+    "assessment": "Discussion questions in the lesson plan ask students to justify a treatment choice and reason about appetite.",
+    "misconceptionsAddressed": [
+      "Treating every high-impact risk as requiring mitigation regardless of likelihood.",
+      "Believing 'accept' means 'ignore' rather than a deliberate, monitored choice within appetite."
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Sample risk", "options": ["Phishing email reaches employee", "Hard-coded DB credential", "Vendor SaaS outage", "Lost employee laptop", "Quantum-broken legacy crypto", "Custom (drag your own)"] },
+    { "type": "slider", "label": "Likelihood", "range": "1-5" },
+    { "type": "slider", "label": "Impact", "range": "1-5" },
+    { "type": "button", "label": "Reset" }
+  ],
+  "model": {
+    "equations": "score = likelihood x impact; bands: 1-4 Low, 5-9 Medium, 10-14 High, 15-25 Critical.",
+    "assumptions": "Treatment recommendation is a teaching heuristic mapped from the score band; real treatment also depends on control feasibility, cost, and organizational risk appetite."
+  }
+}
