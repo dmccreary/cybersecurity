@@ -1,0 +1,43 @@
+{
+  "title": "Adversarial Example Explorer",
+  "description": "Interactive p5.js MicroSim that lets students add an imperceptible Fast Gradient Sign Method (FGSM) perturbation to a hand-drawn digit and watch a classifier's confidence flip from the correct class to an attacker-chosen target class.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "adversarial-example-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "explain",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Machine Learning Security"],
+    "topic": ["Adversarial Examples", "Evasion Attacks", "FGSM", "Decision Boundaries"],
+    "learningObjectives": [
+      "Explain why a model's decision boundary admits adversarial examples by manipulating an input and watching classifier confidence change.",
+      "Relate the perturbation's L-infinity norm to its human visibility and its effect on the classifier."
+    ],
+    "bloomsTaxonomy": ["Analyze"],
+    "prerequisites": ["Basic idea of a classifier and confidence scores"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["exploration", "guided-discovery", "demonstration"],
+    "instructionalStrategies": [
+      "Have students predict the magnitude at which the prediction flips, then test.",
+      "Use 'Show perturbation only' to discuss imperceptibility versus model sensitivity."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does the digit still look like a 3 to you while the classifier reads it as an 8?", "level": "Analyze"},
+      {"question": "What does the L-infinity norm bound guarantee about the attack?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone"
+}
