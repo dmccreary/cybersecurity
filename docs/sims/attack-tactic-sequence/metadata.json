@@ -1,0 +1,40 @@
+{
+  "title": "MITRE ATT&CK Tactic Sequence Explorer",
+  "description": "Step through preset attack campaigns and watch each technique appear as a circle in the column of its MITRE ATT&CK tactic, analyzing how techniques chain into a full campaign and where a SOC could first detect it.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "attack-tactic-sequence",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Offensive and Defensive Security Operations",
+    "learningObjectives": [
+      "Identify which MITRE ATT&CK tactic a given technique belongs to.",
+      "Analyze how individual techniques chain into a complete attack campaign.",
+      "Reason about the earliest point at which a SOC could detect an intrusion."
+    ],
+    "bloomLevels": ["Understand", "Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Familiarity with the cyber kill chain and basic SOC concepts."
+  },
+  "pedagogical": {
+    "modelType": "step-through scenario explorer",
+    "interaction": "Scenario dropdown, step forward/back, play-all with speed control, click-to-inspect technique tooltips.",
+    "assessment": "Discussion prompts in the lesson plan ask students to name the tactic and earliest detection point for each step.",
+    "misconceptions": "Counters the idea that attacks are single events by showing them as multi-tactic sequences."
+  },
+  "completion_status": "validated",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations"
+}
