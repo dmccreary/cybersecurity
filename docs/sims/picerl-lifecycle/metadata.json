@@ -1,0 +1,54 @@
+{
+  "title": "PICERL Incident Response Lifecycle",
+  "description": "Mermaid flowchart of the six PICERL incident-response phases as a closed loop, with a dashed feedback arrow from Lessons Learned back to Preparation and typical time labels per phase.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "picerl-lifecycle",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "completion_status": "validated",
+  "chapter_number": 15,
+  "chapter_title": "Offensive and Defensive Security Operations",
+  "chapter_dir": "15-security-operations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "The PICERL incident-response lifecycle",
+    "learningObjectives": [
+      "Name the six PICERL phases in order and explain what happens in each.",
+      "Identify Containment as the most time-critical phase.",
+      "Describe how the Lessons Learned to Preparation feedback loop improves future response."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with what a security incident is."
+  },
+  "pedagogical": {
+    "modelType": "static workflow / lifecycle diagram",
+    "interactionModes": [
+      "ordered phase walkthrough",
+      "color-coded phase roles",
+      "time annotations"
+    ],
+    "controls": [
+      "Read the six phases left to right",
+      "Follow the dashed feedback arrow from Lessons Learned back to Preparation",
+      "Read each phase's typical time/effort label"
+    ],
+    "assessment": "Students walk a tabletop scenario through all six phases, naming the action and rough duration for each.",
+    "misconceptionsAddressed": [
+      "Treating incident response as a one-time checklist rather than a repeating lifecycle.",
+      "Starting Recovery before Eradication is complete."
+    ]
+  }
+}
