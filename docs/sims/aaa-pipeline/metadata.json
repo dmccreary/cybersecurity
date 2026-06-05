@@ -1,0 +1,41 @@
+{
+  "title": "AAA Pipeline with Non-Repudiation Sidebar",
+  "description": "Interactive Mermaid flow diagram of the Authentication, Authorization, and Accounting pipeline, with a non-repudiation sidebar fed by cryptographic evidence. Hover or tap each stage for a concrete definition.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "aaa-pipeline",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Identity, access control, and accountability (AAA)",
+    "learningObjectives": [
+      "Distinguish authentication from authorization from accounting.",
+      "Explain how each stage of the AAA pipeline governs access to a protected resource.",
+      "Describe how non-repudiation depends on cryptographic evidence drawn from authentication and accounting."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with the idea of user accounts and logins."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to map a real login event onto the five stages.",
+    "misconceptionsAddressed": [
+      "Treating authentication and authorization as the same step.",
+      "Assuming logging is optional rather than the basis for accountability and non-repudiation."
+    ]
+  }
+}
