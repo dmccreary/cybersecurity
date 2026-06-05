@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Symmetric Encryption and Decryption Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Symmetric Encryption &amp; Decryption</h2>
+            <div class="mermaid">
+flowchart LR
+    PT1["Plaintext<br/>'Attack at dawn.'"]:::plainNode
+    ENC["Encryption<br/>Algorithm + Key"]:::procNode
+    CT["Ciphertext<br/>8a4f...d12b<br/>(looks random)"]:::cipherNode
+    DEC["Decryption<br/>Algorithm + same Key"]:::procNode
+    PT2["Plaintext<br/>Recovered:<br/>'Attack at dawn.'"]:::plainNode
+    KEY["Shared cryptographic key<br/>(kept secret)"]:::keyNode
+
+    PT1 --> ENC --> CT --> DEC --> PT2
+    KEY -. same key .-> ENC
+    KEY -. same key .-> DEC
+
+    classDef plainNode fill:#ffffff,stroke:#455a64,stroke-width:2px,color:#212529,font-size:15px
+    classDef procNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef cipherNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef keyNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:14px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffffff"></span>Plaintext (readable)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Process (algorithm + key)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Ciphertext (scrambled)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Shared secret key</div>
+            </div>
+            <div class="callout">
+                <div class="callout-title">Kerckhoffs's principle</div>
+                <b>Algorithm: PUBLIC.</b> The cipher's design is openly known and reviewed.<br>
+                <b>Key: SECRET.</b> All the security rests on keeping the key secret — not the algorithm.
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a box to see what happens at each step. Notice the same key is used in both directions.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="encryption-decryption-flow.js"></script>
+</body>
+</html>
