@@ -15,14 +15,14 @@ bloom_level: Understand
 
 ![TLS 1.3 Handshake](./tls13-handshake-sequence.png)
 
-<iframe src="main.html" width="100%" height="762" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="1092" scrolling="no"></iframe>
 
 [Run the TLS 1.3 Handshake MicroSim Fullscreen](main.html){ .md-button .md-button--primary }
 
 You can include this MicroSim on your own website with the following `iframe`:
 
 ```html
-<iframe src="https://dmccreary.github.io/cybersecurity/sims/tls13-handshake-sequence/main.html" height="762" width="100%" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/cybersecurity/sims/tls13-handshake-sequence/main.html" height="1092" width="100%" scrolling="no"></iframe>
 ```
 
 ## About this MicroSim

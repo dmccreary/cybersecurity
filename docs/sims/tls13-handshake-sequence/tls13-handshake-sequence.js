@@ -1,4 +1,4 @@
-// CANVAS_HEIGHT: 760
+// CANVAS_HEIGHT: 1090
 // TLS 1.3 Handshake — Mermaid sequenceDiagram between Client and Server.
 // Bloom: Understand. A static sequence diagram (no animation): the 1-RTT TLS 1.3
 // handshake, with right-side / over notes explaining ephemeral DH, the point
