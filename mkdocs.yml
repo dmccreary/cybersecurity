@@ -42,7 +42,81 @@ nav:
     - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
     - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
+    - List of MicroSims: sims/index.md
+    - 802.1X / EAP-TLS Authentication Flow: sims/dot1x-eap-tls-flow/index.md
+    - A Modern Software Supply Chain: sims/software-supply-chain-flow/index.md
+    - A TOCTOU Race Condition: sims/toctou-race/index.md
+    - AAA Pipeline with Non-Repudiation Sidebar: sims/aaa-pipeline/index.md
+    - Adversarial Example Explorer: sims/adversarial-example-explorer/index.md
+    - Anatomy of an X.509 Certificate: sims/x509-anatomy/index.md
+    - Attack Surface, Trust Boundary, and Blast Radius: sims/surface-boundary-blast-radius/index.md
+    - Authentication Mechanism Strength Comparison: sims/auth-mechanism-comparison/index.md
+    - Block Cipher Modes Comparison: sims/block-cipher-modes-compare/index.md
+    - Certificate Chain of Trust: sims/certificate-chain-of-trust/index.md
+    - Choosing a Capstone Track: sims/capstone-track-chooser/index.md
+    - CIA Triad with Example Threats and Controls: sims/cia-triad-overview/index.md
+    - Classic DMZ Architecture: sims/classic-dmz-architecture/index.md
+    - Cost of Fixing a Bug Across SDLC Phases: sims/ssdlc-cost-curve/index.md
+    - Coverage-Guided Fuzzer Loop: sims/fuzzer-coverage-loop/index.md
+    - Cyber Kill Chain Phases with Defensive Controls: sims/cyber-kill-chain-controls/index.md
+    - Cyber Law Jurisdictional Map: sims/cyber-law-jurisdiction-map/index.md
+    - DDoS Mitigation Explorer: sims/ddos-mitigation-explorer/index.md
+    - Device Attestation Flow: sims/device-attestation-flow/index.md
+    - Diffie-Hellman Key Exchange: sims/diffie-hellman-exchange/index.md
+    - Digital Signature - Sign and Verify Flow: sims/digital-signature-flow/index.md
+    - DNSSEC Validation Chain: sims/dnssec-chain-of-trust/index.md
+    - GRC Relationship: sims/grc-relationship/index.md
+    - Hardening, Baselines, and Drift: sims/hardening-baselines-loop/index.md
+    - Hardware Trust Anchors on a Modern System: sims/trust-anchors-overview/index.md
+    - Hypervisor Architecture and the Trust Boundary: sims/hypervisor-architecture/index.md
+    - IAM Request Flow: sims/iam-request-flow/index.md
+    - ICS Attack Path Explorer: sims/ics-attack-path-explorer/index.md
+    - IDS/IPS Decision Flow: sims/ids-ips-decision-flow/index.md
+    - IoT Device Security Stack: sims/iot-security-stack/index.md
+    - Kernel / User Mode Boundary: sims/kernel-user-boundary/index.md
+    - Layered Network Defense Reference: sims/layered-network-defense-reference/index.md
+    - Layers of Access Control on a Modern Linux Box: sims/linux-ac-layers/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
+    - MITM via ARP Spoofing: sims/mitm-arp-spoofing/index.md
+    - MITRE ATT&CK Tactic Sequence Explorer: sims/attack-tactic-sequence/index.md
+    - ML Attack Surface: sims/ml-attack-surface/index.md
+    - Network Security as Layered Defense: sims/network-defense-layers/index.md
+    - Network Telemetry Stack: sims/network-telemetry-stack/index.md
+    - NIST CSF 2.0 Functions: sims/nist-csf-functions/index.md
+    - OSI vs. TCP/IP Models: sims/osi-vs-tcpip/index.md
+    - Password Cracking Cost: sims/password-cracking-cost/index.md
+    - Phishing Email Anatomy: sims/phishing-email-anatomy/index.md
+    - PICERL Incident Response Lifecycle: sims/picerl-lifecycle/index.md
+    - Practitioner Decision Flow: sims/practitioner-decision-flow/index.md
+    - Privacy Engineering Decision Tree: sims/privacy-decision-tree/index.md
+    - Privacy-Enhancing Technologies Compared: sims/privacy-tech-compare/index.md
+    - Purdue Model Attack Paths: sims/purdue-model-attack-paths/index.md
+    - Pyramid of Pain: sims/pyramid-of-pain/index.md
+    - Risk Heat Map: sims/risk-heat-map/index.md
+    - Risk Treatment Decision Tree: sims/risk-treatment-decision-tree/index.md
+    - RTO and RPO Timeline: sims/rto-rpo-timeline/index.md
+    - SBOM as a Dependency Tree Explorer: sims/sbom-dependency-explorer/index.md
+    - Secure Boot vs. Measured Boot: sims/secure-vs-measured-boot/index.md
+    - Security Control 3D Taxonomy: sims/control-taxonomy-cube/index.md
+    - Security Operations Activity Map: sims/secops-activity-map/index.md
+    - Shared Responsibility Across IaaS, PaaS, and SaaS: sims/shared-responsibility-stack/index.md
+    - Side-Channel Attack Surface: sims/side-channel-overview/index.md
+    - Stack Frame With and Without a Canary Under Overflow: sims/stack-canary-comparison/index.md
+    - Stack Layout During a Buffer Overflow: sims/stack-overflow-anatomy/index.md
+    - Symmetric Encryption and Decryption Flow: sims/encryption-decryption-flow/index.md
+    - The Forensic Investigation Workflow: sims/forensic-workflow/index.md
+    - The Operations Monitoring Pipeline: sims/ops-monitoring-pipeline/index.md
+    - The Purdue Model — IT/OT Network Layers: sims/purdue-model-layers/index.md
+    - The Security Program at a Glance: sims/security-program-layers/index.md
+    - The Three Layers of Software Assurance: sims/software-assurance-layers/index.md
+    - Threat Actor Capability Matrix: sims/threat-actor-matrix/index.md
+    - Threat Modeling Methodology Comparison: sims/threat-modeling-methods/index.md
+    - Three Flavors of XSS: sims/xss-three-flavors/index.md
+    - TLS 1.3 Handshake: sims/tls13-handshake-sequence/index.md
+    - Vendor Risk Tiers: sims/vendor-risk-tiers/index.md
+    - Vulnerability Sandbox MicroSim: sims/vuln-sandbox/index.md
+
+
   - FAQ: faq.md
   - Glossary: glossary.md
   - References: references.md
