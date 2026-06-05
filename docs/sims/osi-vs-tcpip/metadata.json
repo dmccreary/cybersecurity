@@ -1,0 +1,55 @@
+{
+  "title": "OSI vs. TCP/IP Models",
+  "description": "Interactive SVG comparison of the 7-layer OSI model and the 4-layer TCP/IP model, with dashed layer-mapping lines, per-layer hover tooltips (protocols and example controls), and a 'where attacks live' annotation column.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "osi-vs-tcpip",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 8,
+  "chapter_title": "Network Security Foundations: Protocols, Firewalls, and Detection",
+  "chapter_dir": "08-network-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "The OSI and TCP/IP network models and the layers where attacks occur",
+    "learningObjectives": [
+      "Map each of the seven OSI layers to its corresponding TCP/IP layer.",
+      "Identify example protocols at each layer of both models.",
+      "Associate common attacks (ARP spoofing, IP spoofing, SYN floods, SQL injection) with the layer they target."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with IP, TCP, and the idea of network protocols."
+  },
+  "pedagogical": {
+    "modelType": "static two-column comparison with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "tap tooltips",
+      "layer-mapping lines"
+    ],
+    "controls": [
+      "Hover/tap any OSI layer for protocols and an example control",
+      "Hover/tap any TCP/IP layer for the OSI layers it spans and a control",
+      "Read the dashed lines mapping OSI layers to TCP/IP layers",
+      "Read the 'where attacks live' callouts (L2, L3, L4, L7)"
+    ],
+    "assessment": "Students place a given protocol or attack at the correct layer in both models and explain why TCP/IP collapses OSI 5-7 into one application layer.",
+    "misconceptionsAddressed": [
+      "Believing OSI and TCP/IP layers map one-to-one.",
+      "Assuming TLS lives at exactly one fixed OSI layer."
+    ]
+  }
+}
