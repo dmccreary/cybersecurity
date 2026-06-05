@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Attack Surface, Trust Boundary, and Blast Radius</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 21px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    svg.diagram { display: block; width: 100%; height: auto; margin: 0 auto; }
+    .hot { cursor: help; }
+    .legend {
+      margin: 8px auto 0; max-width: 860px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px;
+      font-size: 12px; color: #455a64;
+    }
+    .legend span { display: inline-flex; align-items: center; }
+    .legend .sw { display: inline-block; width: 14px; height: 0; margin-right: 5px;
+      border-top-width: 3px; border-top-style: solid; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238;
+      color: #fff; font-size: 12px; line-height: 1.35; padding: 6px 9px; border-radius: 6px;
+      max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+  </style>
+  <script src="surface-boundary-blast-radius.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Attack Surface, Trust Boundary, and Blast Radius</h1>
+      <p class="sub">Three ideas on one 3-tier web app. Hover (or tap) the attack-surface points, the trust boundaries, and the blast-radius circles.</p>
+      <div id="diagram"></div>
+      <div class="legend">
+        <span><span class="sw" style="border-top-color:#c62828;border-top-style:dashed"></span>Attack surface (red, dashed)</span>
+        <span><span class="sw" style="border-top-color:#1565c0"></span>Trust boundary (blue, solid)</span>
+        <span><span class="sw" style="border-top-color:#ffa000;border-top-style:dashed"></span>Blast radius (amber, dashed)</span>
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

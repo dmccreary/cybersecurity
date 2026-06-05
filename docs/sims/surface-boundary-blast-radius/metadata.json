@@ -1,0 +1,44 @@
+{
+  "title": "Attack Surface, Trust Boundary, and Blast Radius",
+  "description": "An interactive SVG of a 3-tier web app that distinguishes three security ideas on one picture: the red dashed attack surface, two solid blue trust boundaries, and two amber dashed blast-radius circles, with hover tooltips explaining each.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "surface-boundary-blast-radius",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "distinguish",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Threats, Vulnerabilities, and Security Controls"],
+    "topic": ["Attack Surface", "Trust Boundary", "Blast Radius", "Defense in Depth", "Least Privilege", "Three-Tier Architecture"],
+    "learningObjectives": [
+      "Distinguish attack surface, trust boundary, and blast radius as three different questions about one system.",
+      "Trace what a compromise of the app tier versus the data tier can reach.",
+      "Explain how trust boundaries and least privilege shrink the blast radius."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic web application architecture"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "demonstration", "reference"],
+    "instructionalStrategies": [
+      "Hover the attack-surface points first, then the boundaries, then the blast circles, keeping the three concepts separate.",
+      "Ask students how each control (WAF, least-privilege DB creds, segmentation) changes one of the three."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is the blast radius of stolen DB credentials larger than the blast radius of an app-server compromise here?", "level": "Understand"},
+      {"question": "Which control most reduces attack surface, and which most reduces blast radius?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls"
+}
