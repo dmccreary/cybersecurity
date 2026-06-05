@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Cyber Kill Chain Phases with Defensive Controls</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+    });
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #263238; }
+    .wrap { padding: 8px 10px 4px 10px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 4px 0 2px; }
+    .callout {
+      max-width: 760px; margin: 4px auto 8px auto; text-align: center;
+      background: #fff3e0; border: 2px solid #ffa000; border-radius: 8px;
+      padding: 6px 10px; font-size: 14px; color: #6d4c00; font-weight: 600;
+    }
+    .mermaid { width: 100%; display: flex; justify-content: center; background: #f4f7fb; }
+    .mermaid svg { max-width: 100%; height: auto; }
+    .legend { text-align: center; font-size: 12px; color: #455a64; margin: 6px 0 2px; }
+    .legend span { display: inline-block; margin: 0 8px; }
+    .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px;
+          vertical-align: middle; margin-right: 3px; border: 1px solid #90a4ae; }
+    #tooltip {
+      position: fixed; background: #263238; color: #fff; padding: 8px 12px; border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4;
+      max-width: 300px; pointer-events: none; opacity: 0; transition: opacity .15s;
+      z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    #tooltip.visible { opacity: 1; }
+    .node { cursor: pointer; }
+    .hint { text-align: center; font-size: 12px; color: #78909c; margin: 2px 0 4px; }
+  </style>
+  <script src="cyber-kill-chain-controls.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Cyber Kill Chain — Phases and Defensive Controls</h1>
+      <div class="callout">Break the chain at any phase and the attack fails. Defenders only need to win once.</div>
+      <div class="hint">Hover any phase for the controls that disrupt it.</div>
+      <div class="mermaid">
+flowchart LR
+    Break["BREAK THE CHAIN — stop the attack at any phase below"]:::breakNode
+    P1["1. Reconnaissance<br/>attack surface mgmt<br/>domain monitoring"]:::p1
+    P2["2. Weaponization<br/>threat intel<br/>sandboxing"]:::p2
+    P3["3. Delivery<br/>email security<br/>URL filtering"]:::p3
+    P4["4. Exploitation<br/>patching, EDR<br/>app allowlisting"]:::p4
+    P5["5. Installation<br/>EDR, file integrity<br/>persistence detection"]:::p5
+    P6["6. Command and Control<br/>egress and DNS filtering<br/>network detection"]:::p6
+    P7["7. Actions on Objectives<br/>DLP, segmentation<br/>anomaly detection"]:::p7
+
+    Break -.-> P1
+    P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7
+    Break -.-> P4
+    Break -.-> P7
+
+    classDef breakNode fill:#fff3e0,stroke:#ffa000,stroke-width:3px,color:#6d4c00,font-size:15px
+    classDef p1 fill:#1565c0,stroke:#0d3a73,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p2 fill:#3f6fb5,stroke:#0d3a73,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p3 fill:#6a72a5,stroke:#3a2a5a,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p4 fill:#995f7f,stroke:#5a2a3a,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p5 fill:#bf5563,stroke:#7a2030,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p6 fill:#d84a4a,stroke:#8a1a1a,stroke-width:2px,color:#ffffff,font-size:15px
+    classDef p7 fill:#e53935,stroke:#8a1010,stroke-width:2px,color:#ffffff,font-size:15px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:14px
+      </div>
+      <div class="legend">
+        <span><span class="sw" style="background:#1565c0"></span>Early phases (cheaper to stop)</span>
+        <span><span class="sw" style="background:#e53935"></span>Late phases (higher impact)</span>
+      </div>
+    </div>
+  </main>
+  <div id="tooltip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>
