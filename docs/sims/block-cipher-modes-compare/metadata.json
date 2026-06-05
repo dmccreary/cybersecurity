@@ -1,0 +1,43 @@
+{
+  "title": "Block Cipher Modes Comparison",
+  "description": "A static, hover-annotated SVG infographic comparing four AES block cipher modes of operation — ECB, CBC, CTR, and GCM — highlighting why ECB leaks structure and why GCM (AEAD) is the modern default.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "block-cipher-modes-compare",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "compare",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Cryptography"],
+    "topic": ["Block Cipher Modes", "ECB", "CBC", "CTR", "GCM", "AEAD"],
+    "learningObjectives": [
+      "Compare the data flow of ECB, CBC, CTR, and GCM block cipher modes.",
+      "Explain why ECB leaks plaintext structure and why GCM provides both confidentiality and integrity."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["What a block cipher and a symmetric key are", "The XOR operation"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Have students hover each AES box and XOR node to trace how a block is processed.",
+      "Ask which modes can encrypt blocks in parallel and which cannot, and why."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why do identical plaintext blocks produce identical ciphertext blocks in ECB?", "level": "Understand"},
+      {"question": "What does GCM add on top of CTR mode, and what attack does it defend against?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals"
+}

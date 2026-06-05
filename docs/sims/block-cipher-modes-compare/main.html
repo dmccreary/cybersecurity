@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Block Cipher Modes Comparison</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff8e1;
+      color: #212121;
+    }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 10px; }
+    h1 { font-size: 22px; text-align: center; margin: 6px 0 2px 0; color: #1565c0; }
+    .sub { text-align: center; font-size: 14px; color: #455a64; margin: 0 0 8px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    .tile {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 3px solid #455a64;
+      padding: 8px 10px 10px 10px;
+      box-sizing: border-box;
+    }
+    .tile.ecb { border-color: #ffa000; }
+    .tile.gcm { border-color: #4caf50; }
+    .tile h2 { font-size: 17px; margin: 2px 0 2px 0; color: #1a3a5c; }
+    .tile .badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 1px 7px; border-radius: 9px; vertical-align: middle; margin-left: 6px;
+    }
+    .badge.avoid { background: #ffa000; color: #3e2723; }
+    .badge.ok    { background: #4caf50; color: #ffffff; }
+    .badge.neutral { background: #cfd8dc; color: #263238; }
+    .cap { font-size: 13px; color: #37474f; margin: 4px 0 0 0; min-height: 34px; }
+    svg { display: block; width: 100%; height: auto; }
+    .tooltip {
+      position: fixed; pointer-events: none; z-index: 50;
+      background: #263238; color: #fff; font-size: 12px; line-height: 1.35;
+      padding: 6px 9px; border-radius: 6px; max-width: 260px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s;
+    }
+    .legend { text-align: center; font-size: 12px; color: #455a64; margin-top: 10px; }
+    .legend span { display: inline-block; margin: 0 8px; }
+    .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px;
+          vertical-align: middle; margin-right: 3px; border: 1px solid #90a4ae; }
+    text { font-family: Arial, Helvetica, sans-serif; }
+  </style>
+  <script src="block-cipher-modes-compare.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Block Cipher Modes of Operation</h1>
+      <p class="sub">Hover (or tap) any element to see what it does. ECB leaks structure; GCM is the modern default.</p>
+      <div class="grid" id="grid"></div>
+      <div class="legend">
+        <span><span class="sw" style="background:#ffa000"></span>Avoid (ECB)</span>
+        <span><span class="sw" style="background:#cfd8dc"></span>Acceptable with care (CBC, CTR)</span>
+        <span><span class="sw" style="background:#4caf50"></span>Recommended (GCM / AEAD)</span>
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>
