@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>RTO and RPO Timeline</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 22px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    svg.timeline { display: block; width: 100%; height: auto; margin: 0 auto; }
+    .hot { cursor: help; }
+    .legend {
+      margin: 10px auto 0; max-width: 760px;
+      border: 1px solid #cfd8dc; border-radius: 8px; padding: 8px 12px;
+      font-size: 13px; color: #455a64; background: #fafcff;
+    }
+    .legend b { color: #1565c0; }
+    .legend .ex { display: block; margin-top: 4px; }
+    .legend .swatch { display: inline-block; width: 12px; height: 12px;
+      border-radius: 2px; vertical-align: middle; margin: 0 4px 0 10px; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238;
+      color: #fff; font-size: 12px; line-height: 1.35; padding: 6px 9px; border-radius: 6px;
+      max-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+  </style>
+  <script src="rto-rpo-timeline.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>RTO and RPO: The Recovery Timeline</h1>
+      <p class="sub">Two objectives anchored to a single incident. Hover (or tap) any band to see what it costs the business.</p>
+      <div id="diagram"></div>
+      <div class="legend">
+        <span><span class="swatch" style="background:#ffa000"></span><b>RPO</b> &mdash; data-loss window (look back)</span>
+        <span><span class="swatch" style="background:#455a64"></span><b>RTO</b> &mdash; downtime window (look forward)</span>
+        <span class="ex"><b>Worked examples:</b> Tier-1 transactional system &rarr; RPO 5&nbsp;min, RTO 1&nbsp;hr. &nbsp;&bull;&nbsp; Internal HR portal &rarr; RPO 24&nbsp;hr, RTO 72&nbsp;hr.</span>
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>
