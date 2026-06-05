@@ -1,118 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware Trust Anchors on a Modern System</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Hardware Trust Anchors on a Modern System</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 940px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    svg.board { display: block; width: 100%; max-width: 900px; height: auto; margin: 0 auto; }
+    .anchor { cursor: help; }
+    .anchor rect, .anchor path { transition: filter .1s; }
+    .anchor:hover rect, .anchor:hover path { filter: brightness(1.07); }
+    table.legend { border-collapse: collapse; width: 100%; max-width: 900px; margin: 10px auto 0; font-size: 12.5px; }
+    table.legend th, table.legend td { border: 1px solid #cfd8dc; padding: 6px 9px; text-align: left; vertical-align: top; }
+    table.legend th { background: #455a64; color: #fff; }
+    table.legend td:first-child { font-weight: 700; background: #eceff1; white-space: nowrap; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238; color: #fff;
+      font-size: 12px; line-height: 1.45; padding: 8px 11px; border-radius: 6px; max-width: 320px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+    .tooltip b { color: #ffd54f; }
+  </style>
+  <script src="trust-anchors-overview.js" defer></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Hardware Trust Anchors on a Modern System</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> trust-anchors-overview</p>
-            <p><strong>Library:</strong> Static SVG with hover tooltips</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
+  <main>
+    <div class="wrap">
+      <h1>Hardware Trust Anchors on a Modern System</h1>
+      <p class="sub">Four places a system can "stand on solid ground." Hover any anchor for its capabilities and threat model.</p>
+      <svg class="board" viewBox="0 0 900 470" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="A circuit board showing four hardware trust anchors. A Hardware Root of Trust badge at top points into the main CPU package, which contains application cores, an amber-outlined TEE region, and a blue Secure Enclave coprocessor. A discrete TPM chip connects to the CPU over the LPC or SPI bus. An external HSM appliance sits off-board, connected by network. A legend table compares each anchor's capability and threat model.">
+
+        <!-- Hardware Root of Trust badge + arrow into the enclave -->
+        <g class="anchor" data-tip="<b>Hardware Root of Trust (RoT)</b><br>The one component you trust without proof — its identity and first-stage code are fixed in silicon at fabrication. Every other layer is verified against it. If the RoT is broken, no software check above it can be believed.">
+          <rect x="300" y="14" width="300" height="34" rx="17" fill="#1565c0"/>
+          <text x="450" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Hardware Root of Trust</text>
+        </g>
+        <line x1="450" y1="48" x2="450" y2="92" stroke="#1565c0" stroke-width="2"/>
+        <path d="M444,84 L450,96 L456,84 Z" fill="#1565c0"/>
+        <text x="462" y="74" font-size="10.5" fill="#1565c0" font-style="italic">Anchored in silicon, set at fabrication</text>
+
+        <!-- The board -->
+        <rect x="14" y="100" width="640" height="300" rx="10" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+        <text x="26" y="120" font-size="11.5" font-weight="700" fill="#455a64">System Board</text>
+
+        <!-- Main CPU package -->
+        <g class="anchor" data-tip="<b>Main CPU package</b><br>Holds the application cores plus on-die security blocks. The package is the trust boundary the root of trust extends into: secure boot measures each stage before handing off control.">
+          <rect x="40" y="135" width="370" height="245" rx="8" fill="#ffffff" stroke="#455a64" stroke-width="2"/>
+          <text x="52" y="155" font-size="12.5" font-weight="700" fill="#455a64">Main CPU Package</text>
+        </g>
+
+        <!-- Application cores -->
+        <g class="anchor" data-tip="<b>Application cores</b><br>Where your OS and apps run — the LARGE, untrusted attack surface. Trust anchors exist precisely because this code can be compromised; secrets must live somewhere the application cores cannot reach.">
+          <rect x="58" y="170" width="334" height="62" rx="6" fill="#1565c0"/>
+          <text x="225" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Application Cores</text>
+          <text x="225" y="214" text-anchor="middle" font-size="10.5" fill="#bbdefb">OS &amp; apps — large, untrusted surface</text>
+        </g>
+
+        <!-- TEE region (amber outline = depends on microcode/firmware) -->
+        <g class="anchor" data-tip="<b>TEE region (Anchor 1)</b><br><b>What:</b> isolates developer code from the OS at runtime.<br><b>Examples:</b> Intel SGX / TDX, AMD SEV, ARM TrustZone.<br><b>Threat model:</b> trusts CPU microcode &amp; firmware — broken by some side-channel and microarchitectural attacks (amber = depends on microcode).">
+          <rect x="58" y="244" width="200" height="120" rx="6" fill="#fff8e1" stroke="#ffa000" stroke-width="3" stroke-dasharray="6 4"/>
+          <text x="158" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b26a00">TEE Region</text>
+          <text x="158" y="285" text-anchor="middle" font-size="10" fill="#7a5800">Intel SGX/TDX, AMD SEV,</text>
+          <text x="158" y="299" text-anchor="middle" font-size="10" fill="#7a5800">ARM TrustZone</text>
+          <text x="158" y="320" text-anchor="middle" font-size="9.5" fill="#7a5800" font-style="italic">runs developer code</text>
+          <text x="158" y="334" text-anchor="middle" font-size="9.5" fill="#7a5800" font-style="italic">in isolation</text>
+          <text x="158" y="354" text-anchor="middle" font-size="9" fill="#b26a00">⚠ depends on microcode/firmware</text>
+        </g>
+
+        <!-- Secure Enclave / Security coprocessor -->
+        <g class="anchor" data-tip="<b>Secure Enclave / Security coprocessor (Anchor 2)</b><br><b>What:</b> a separate processor on the package that runs ONLY signed firmware.<br><b>Examples:</b> Apple SEP, Google Titan M, Samsung Knox.<br><b>Threat model:</b> isolated from the main OS; protects keys &amp; biometrics even if the OS is fully compromised.">
+          <rect x="272" y="244" width="120" height="120" rx="6" fill="#1565c0"/>
+          <text x="332" y="266" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Secure</text>
+          <text x="332" y="282" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Enclave</text>
+          <text x="332" y="304" text-anchor="middle" font-size="9" fill="#bbdefb">Apple SEP,</text>
+          <text x="332" y="316" text-anchor="middle" font-size="9" fill="#bbdefb">Titan M, Knox</text>
+          <text x="332" y="338" text-anchor="middle" font-size="9" fill="#bbdefb" font-style="italic">runs only</text>
+          <text x="332" y="350" text-anchor="middle" font-size="9" fill="#bbdefb" font-style="italic">signed firmware</text>
+        </g>
+        <!-- the root-of-trust arrow lands here visually -->
+        <line x1="450" y1="96" x2="450" y2="135" stroke="#1565c0" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <line x1="450" y1="135" x2="392" y2="244" stroke="#1565c0" stroke-width="1.4" stroke-dasharray="3 3"/>
+
+        <!-- Discrete TPM chip on the board -->
+        <g class="anchor" data-tip="<b>Discrete TPM chip (Anchor 3)</b><br><b>What:</b> a standalone chip that stores boot measurements and seals keys to system state.<br><b>Standard:</b> TCG TPM 2.0 — same command set across vendors.<br><b>Threat model:</b> separate from the CPU, so a compromised OS cannot extract sealed keys; vulnerable to physical bus interposition.">
+          <rect x="450" y="200" width="180" height="100" rx="6" fill="#cfd8dc" stroke="#455a64" stroke-width="2"/>
+          <text x="540" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#37474f">Discrete TPM</text>
+          <text x="540" y="248" text-anchor="middle" font-size="9.5" fill="#455a64">Stores measurements</text>
+          <text x="540" y="262" text-anchor="middle" font-size="9.5" fill="#455a64">&amp; sealed keys</text>
+          <text x="540" y="282" text-anchor="middle" font-size="9.5" fill="#455a64" font-style="italic">TCG TPM 2.0 standard</text>
+        </g>
+        <!-- LPC / SPI bus between CPU and TPM -->
+        <line x1="410" y1="250" x2="450" y2="250" stroke="#455a64" stroke-width="2.5"/>
+        <text x="430" y="242" text-anchor="middle" font-size="9.5" fill="#455a64">LPC / SPI bus</text>
+
+        <!-- External HSM appliance off-board -->
+        <g class="anchor" data-tip="<b>External HSM (Anchor 4)</b><br><b>What:</b> a dedicated appliance for enterprise key custody and bulk crypto operations.<br><b>Assurance:</b> FIPS 140-3 Level 3+, tamper-responsive (zeroizes keys if opened).<br><b>Threat model:</b> keys never leave the device; physically separate from any one server.">
+          <rect x="690" y="200" width="190" height="100" rx="6" fill="#ffffff" stroke="#455a64" stroke-width="2"/>
+          <rect x="690" y="200" width="190" height="20" rx="6" fill="#455a64"/>
+          <text x="785" y="214" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">External HSM (1U appliance)</text>
+          <circle cx="704" cy="238" r="4" fill="#ffa000"/>
+          <circle cx="718" cy="238" r="4" fill="#43a047"/>
+          <text x="785" y="245" text-anchor="middle" font-size="9.5" fill="#455a64">Enterprise key custody</text>
+          <text x="785" y="262" text-anchor="middle" font-size="9.5" fill="#455a64">FIPS 140-3 Level 3+</text>
+          <text x="785" y="282" text-anchor="middle" font-size="9.5" fill="#455a64" font-style="italic">tamper-responsive</text>
+        </g>
+        <!-- network / PCIe link from board to HSM -->
+        <line x1="654" y1="250" x2="690" y2="250" stroke="#455a64" stroke-width="2.5" stroke-dasharray="5 3"/>
+        <text x="672" y="242" text-anchor="middle" font-size="9" fill="#455a64">network / PCIe</text>
+
+        <!-- trust-strength legend -->
+        <rect x="14" y="418" width="866" height="40" rx="6" fill="#fafafa" stroke="#cfd8dc"/>
+        <text x="26" y="435" font-size="10.5" font-weight="700" fill="#455a64">Color key:</text>
+        <rect x="92" y="427" width="14" height="14" rx="2" fill="#1565c0"/>
+        <text x="112" y="438" font-size="10.5" fill="#37474f">trusted region (silicon-isolated)</text>
+        <rect x="320" y="427" width="14" height="14" rx="2" fill="#fff8e1" stroke="#ffa000" stroke-width="2.5"/>
+        <text x="340" y="438" font-size="10.5" fill="#37474f">depends on microcode / firmware</text>
+        <rect x="560" y="427" width="14" height="14" rx="2" fill="#cfd8dc" stroke="#455a64" stroke-width="2"/>
+        <text x="580" y="438" font-size="10.5" fill="#37474f">packaging, buses &amp; off-board hardware</text>
+      </svg>
+
+      <table class="legend">
+        <caption style="text-align:left;font-size:12px;color:#607d8b;padding-bottom:4px;">The four anchors &mdash; stronger isolation toward the bottom, but harder to deploy</caption>
+        <tr><th>Trust anchor</th><th>Main capability</th><th>Threat model / what it assumes</th></tr>
+        <tr><td>TEE region</td><td>Isolates app code from the OS at runtime (SGX/TDX, SEV, TrustZone)</td><td>Trusts CPU microcode &amp; firmware; some side-channels break it</td></tr>
+        <tr><td>Secure Enclave</td><td>Separate coprocessor running only signed firmware (SEP, Titan&nbsp;M, Knox)</td><td>Protects keys even if the OS is fully compromised</td></tr>
+        <tr><td>Discrete TPM</td><td>Stores boot measurements &amp; seals keys to system state (TPM&nbsp;2.0)</td><td>Off-CPU, so software can't extract keys; bus interposition is the risk</td></tr>
+        <tr><td>External HSM</td><td>Enterprise key custody &amp; bulk crypto, FIPS 140-3 L3+</td><td>Tamper-responsive; keys never leave the appliance</td></tr>
+      </table>
     </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: infographic-svg
-    **sim-id:** trust-anchors-overview<br/>
-    **Library:** Static SVG with hover tooltips<br/>
-    **Status:** Specified
-    
-    A horizontal layered diagram showing a modern computing system with four trust anchors highlighted.
-    
-    Layout (left to right, on a single board):
-    
-    1. **Main CPU package** (large central box, slate-steel border)
-       - Inside: a smaller box labeled **Application cores** (cybersecurity blue)
-       - Inside: a smaller box labeled **TEE region** (amber outline) with caption "Intel SGX / TDX / AMD SEV / ARM TrustZone — runs developer code in isolation"
-       - On the same package: a small box labeled **Secure Enclave / Security coprocessor** (cybersecurity blue) with caption "Apple SEP, Google Titan M, Samsung Knox — runs only signed firmware"
-    
-    2. **Discrete TPM chip** (smaller box on the board, slate-steel) connected by a thin line labeled "LPC / SPI bus" to the main CPU. Caption: "Stores measurements and sealed keys. Standardized command set."
-    
-    3. **External HSM** (separate box outside the main board, drawn as a 1U appliance) connected via a network or PCIe icon. Caption: "Enterprise key custody. FIPS 140-3 Level 3+. Tamper-responsive."
-    
-    Above the main CPU package, a "Hardware Root of Trust" badge points down into the secure enclave / TEE region with an arrow labeled "Anchored in silicon, set at fabrication."
-    
-    Color: cybersecurity blue (#1565c0) for trusted regions, amber (#ffa000) outline on TEE to indicate "depends on microcode/firmware," slate steel (#455a64) for buses and packaging.
-    
-    Hover tooltips on each anchor display its main capabilities and threat model from the table above.
-    
-    Responsive: 4-column desktop layout collapses to vertical stack below 800px viewport.
-    
-    Implementation: Static SVG with `<title>` tooltips per element.
-    -->
+  </main>
+  <div class="tooltip" id="tip"></div>
 </body>
 </html>
