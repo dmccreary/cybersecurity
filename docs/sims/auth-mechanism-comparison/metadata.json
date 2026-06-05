@@ -1,0 +1,45 @@
+{
+  "title": "Authentication Mechanism Strength Comparison",
+  "description": "Interactive p5.js infographic comparing seven authentication mechanisms across phishing resistance, usability, and account-recovery ease, with dropdowns to switch threat model and highlight recommendations for consumers, enterprise, or high-value accounts.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "auth-mechanism-comparison",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "Judge",
+  "completion_status": "validated",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Multi-factor authentication and phishing resistance",
+    "learningObjectives": [
+      "Judge which authentication mechanism is appropriate for a given threat model and user population.",
+      "Justify the choice using phishing resistance, usability, and recovery cost as criteria.",
+      "Explain why origin-bound credentials (FIDO2, passkeys) resist phishing that codes and push prompts do not."
+    ],
+    "bloomLevels": ["Evaluate"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Familiarity with passwords and the idea of a second factor."
+  },
+  "pedagogical": {
+    "modelType": "interactive comparison infographic",
+    "interactionModes": ["hover-reveal", "dropdown-toggle"],
+    "controls": [
+      "Select: threat model (opportunistic credential stuffing vs targeted spear-phishing)",
+      "Select: highlight mechanisms recommended for consumers / enterprise / high-value accounts"
+    ],
+    "assessment": "Students pick a mechanism for a scenario and defend it against both threat models.",
+    "misconceptionsAddressed": [
+      "Believing any second factor is equally phishing-resistant.",
+      "Treating usability and security as always in conflict (passkeys score high on both)."
+    ]
+  }
+}
