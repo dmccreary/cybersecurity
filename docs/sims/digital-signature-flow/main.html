@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Digital Signature: Sign and Verify Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Digital Signature: Sign &amp; Verify</h2>
+            <div class="mermaid">
+flowchart LR
+    subgraph signer ["Signer's machine"]
+        direction TB
+        M["Message M"]:::plainNode
+        SH["Hash function<br/>SHA-256"]:::hashNode
+        HM["Digest H(M)"]:::digestNode
+        SK["Sign with PRIVATE key"]:::keyNode
+        S["Signature S"]:::sigNode
+        SEND["Send (M, S)"]:::plainNode
+        M --> SH --> HM --> SK --> S --> SEND
+    end
+
+    subgraph verifier ["Verifier's machine"]
+        direction TB
+        RECV["Receive (M, S)"]:::plainNode
+        VH["Hash function<br/>SHA-256"]:::hashNode
+        VHM["Computed digest H(M)"]:::digestNode
+        VP["Verify S with PUBLIC key"]:::keyNode
+        VEX["Expected digest"]:::digestNode
+        EQ{"Equal?"}:::decisionNode
+        OK["Valid signature ✓"]:::okNode
+        BAD["Tampered or wrong key ✗"]:::badNode
+        RECV --> VH --> VHM --> EQ
+        RECV --> VP --> VEX --> EQ
+        EQ -- yes --> OK
+        EQ -- no --> BAD
+    end
+
+    SEND == across trust boundary ==> RECV
+
+    classDef plainNode fill:#ffffff,stroke:#455a64,stroke-width:2px,color:#212529,font-size:14px
+    classDef hashNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef digestNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef keyNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef sigNode fill:#d84315,stroke:#bf360c,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef decisionNode fill:#fff8e1,stroke:#ffa000,stroke-width:2px,color:#212529,font-size:14px
+    classDef okNode fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef badNode fill:#c62828,stroke:#8e0000,stroke-width:2px,color:#ffffff,font-size:14px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Hash / key operation</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Message digest</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#d84315"></span>Signature</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#2e7d32"></span>Valid &nbsp;/&nbsp; <span class="legend-dot" style="background:#c62828;margin:0 4px"></span>Invalid</div>
+            </div>
+            <div class="callout">
+                <div class="callout-title">Key asymmetry</div>
+                <b>PRIVATE key</b> — only the signer holds it; it produces the signature.<br>
+                <b>PUBLIC key</b> — anyone can hold it; it only verifies the signature.
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a box to see what happens at each step of signing and verifying.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="digital-signature-flow.js"></script>
+</body>
+</html>
