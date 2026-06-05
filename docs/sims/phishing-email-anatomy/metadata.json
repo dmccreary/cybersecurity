@@ -1,0 +1,46 @@
+{
+  "title": "Phishing Email Anatomy",
+  "description": "An interactive p5.js infographic of a realistic spear-phishing email. Six manipulation techniques are hotspots; a Spot-the-indicators mode scores the learner's clicks, and an Annotated mode reveals and explains every indicator.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "phishing-email-anatomy",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Human Security", "Social Engineering"],
+    "topic": ["Phishing", "Spear Phishing", "Display-name Spoofing", "Lookalike Domains", "Credential Harvesting", "Social Engineering"],
+    "learningObjectives": [
+      "Decompose a realistic spear-phishing message into its component manipulation techniques.",
+      "Identify the specific signals in an email that should trigger suspicion."
+    ],
+    "bloomsTaxonomy": ["Analyze"],
+    "prerequisites": ["Basic familiarity with email and web links"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["guided-discovery", "self-assessment", "demonstration"],
+    "instructionalStrategies": [
+      "Start in Spot mode and try to find all six indicators before switching to Annotated.",
+      "Discuss how spear phishing differs from bulk phishing at each hotspot."
+    ],
+    "assessmentQuestions": [
+      {"question": "The display name reads 'Finance Department.' Why is the actual address the part that matters?", "level": "Analyze"},
+      {"question": "Why does manufactured urgency make an attack more effective?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "framework": "p5.js",
+  "canvasDimensions": "900x620",
+  "responsive": "Width-responsive",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security"
+}
