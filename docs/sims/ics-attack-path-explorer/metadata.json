@@ -1,0 +1,60 @@
+{
+  "title": "ICS Attack Path Explorer",
+  "description": "Interactive p5.js MicroSim of a Purdue-model industrial network. Toggle segmentation controls (DMZ broker, allowlisting, MFA jump host, read-only historian, disable RDP) and run an attack from Level 5 to the Level 1 PLCs to see how path length, time to compromise, and blast radius change.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ics-attack-path-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "validated",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Industrial control system segmentation and the Purdue model",
+    "learningObjectives": [
+      "Apply segmentation controls to a Purdue-model network with an attacker at Level 5.",
+      "Analyze how each control changes attack path length, time to compromise, and blast radius.",
+      "Reason about which IT/OT chokepoints contain an attacker and why layering matters against a skilled adversary."
+    ],
+    "bloomLevels": [
+      "Apply",
+      "Analyze"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic networking and the idea of lateral movement; familiarity with the Purdue model is helpful but not required."
+  },
+  "pedagogical": {
+    "modelType": "node-graph attack-path simulation",
+    "interactionModes": [
+      "checkboxes",
+      "slider",
+      "buttons"
+    ],
+    "controls": [
+      "Checkbox: DMZ Broker (Level 3.5)",
+      "Checkbox: Allowlist on Engineering Workstation",
+      "Checkbox: MFA Jump Host",
+      "Checkbox: Read-Only Historian",
+      "Checkbox: Disable RDP at Level 2",
+      "Slider: Attacker Skill (0-10)",
+      "Button: Run Attack",
+      "Button: Reset"
+    ],
+    "assessment": "Students find the minimal set of controls that fully contains the attacker at Attacker Skill 5 and again at Skill 10, then explain why the answer differs.",
+    "misconceptionsAddressed": [
+      "Believing a single segmentation control is sufficient to protect OT.",
+      "Assuming a read-only control that does not fully block the attacker provides no value."
+    ]
+  }
+}
