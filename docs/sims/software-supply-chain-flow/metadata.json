@@ -1,0 +1,43 @@
+{
+  "title": "A Modern Software Supply Chain",
+  "description": "Interactive Mermaid flow of the nine stages of a software supply chain, each marked with a real-world attack-injection incident, plus the defenses (SBOM, signing, reproducible builds, provenance) mapped to each stage.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "software-supply-chain-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "validated",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Software supply chain security",
+    "learningObjectives": [
+      "Given a real-world supply-chain incident, identify which stage of the chain was compromised.",
+      "Determine which defenses (SBOM, code signing, reproducible builds, provenance attestations) would have detected or prevented an attack at a given stage.",
+      "Explain why a single compromised build stage poisons every downstream consumer."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Familiarity with version control, package dependencies, and CI/CD build pipelines."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram with attack-injection annotations",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to map named incidents (SolarWinds, event-stream, NotPetya) to a stage and to the defense that would have caught it.",
+    "misconceptionsAddressed": [
+      "Believing a valid code signature proves an artifact is safe (it only proves it was signed; signing keys can be stolen).",
+      "Thinking dependency risk is limited to code you wrote, rather than the much larger transitive dependency tree."
+    ]
+  }
+}
