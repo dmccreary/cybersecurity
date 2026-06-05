@@ -1,0 +1,47 @@
+{
+  "title": "IoT Device Security Stack",
+  "description": "A Mermaid flowchart of a representative IoT device drawn from the immutable silicon root of trust up through boot loader, firmware, OS, and application code, with a mutual-TLS channel to the cloud management plane.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "iot-security-stack",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Identify",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Component Security", "IoT Security"],
+    "topic": ["Hardware Root of Trust", "Secure Boot", "Firmware Signing", "OTA Updates", "Device Attestation", "Mutual TLS"],
+    "learningObjectives": [
+      "Identify the layers of an IoT device security stack from the hardware root of trust to the cloud management plane.",
+      "Explain why trust diminishes and blast radius grows as you move up the stack."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic idea of firmware, operating systems, and TLS"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Read the stack bottom-up, hovering each layer to see its security role.",
+      "Discuss why the OTA / firmware layer is the most common attack surface."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why can the silicon root of trust not be re-flashed, and why does that matter?", "level": "Understand"},
+      {"question": "A backend compromise and a single-device firmware compromise differ in blast radius. Explain the difference.", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TB",
+  "node_count": "6",
+  "edge_count": "5",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security"
+}
