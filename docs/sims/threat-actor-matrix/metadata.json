@@ -1,21 +1,54 @@
 {
   "title": "Threat Actor Capability Matrix",
-  "description": "Threat Actor Capability Matrix",
-  "creator": "Dementia Education Project",
+  "description": "Interactive SVG scatter plot placing five threat actor types (script kiddies, hacktivists, cybercriminals, insiders, and nation-state/APTs) on a Skill vs. Resources matrix, with circle size encoding typical campaign duration and hover tooltips for motivation, time horizon, and example incidents.",
+  "creator": "Dan McCreary",
   "date": "2026-06-05",
   "subject": [
-    "dementia"
+    "cybersecurity"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "threat-actor-matrix",
   "library": "Static SVG with hover tooltips",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
   "chapter_number": 2,
   "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
-  "chapter_dir": "02-threats-and-controls"
+  "chapter_dir": "02-threats-and-controls",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Threat actor taxonomy: skill, resources, motivation, and campaign duration",
+    "learningObjectives": [
+      "Place common threat actor types on a Skill vs. Resources matrix.",
+      "Compare actors by motivation, time horizon, and example incidents.",
+      "Explain why insiders are an off-axis threat that bypasses the perimeter by design."
+    ],
+    "bloomLevels": [
+      "Analyze"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic definitions of threat, vulnerability, and attacker motivation."
+  },
+  "pedagogical": {
+    "modelType": "two-dimensional comparison scatter plot with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "tap tooltips"
+    ],
+    "controls": [
+      "Hover/tap any actor circle to read motivation, time horizon, and examples",
+      "Compare positions across the Skill and Resources axes",
+      "Read the size legend mapping circle radius to campaign duration"
+    ],
+    "assessment": "Students predict where a described attacker belongs on the matrix and justify the placement using skill, resources, and duration.",
+    "misconceptionsAddressed": [
+      "Assuming all attackers are highly skilled and well-resourced.",
+      "Treating insiders as just another skill/resource point rather than an access-based threat.",
+      "Equating attack severity with attacker skill rather than persistence and resources."
+    ]
+  }
 }
