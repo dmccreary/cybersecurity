@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Side-Channel Attack Surface</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 22px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 6px; }
+    svg.diagram { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
+    .hot { cursor: help; }
+    .badge {
+      margin: 8px auto 0; max-width: 820px; text-align: center;
+      border: 2px solid #2e7d32; background: #e8f5e9; border-radius: 8px;
+      padding: 8px 12px; font-size: 13px; color: #1b5e20;
+    }
+    .badge b { color: #1b5e20; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238;
+      color: #fff; font-size: 12px; line-height: 1.35; padding: 6px 9px; border-radius: 6px;
+      max-width: 270px; box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+  </style>
+  <script src="side-channel-overview.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>The Side-Channel Attack Surface</h1>
+      <p class="sub">A secret never leaves the chip directly &mdash; it leaks through physical side effects. Hover (or tap) a channel.</p>
+      <div id="diagram"></div>
+      <div class="badge">
+        <b>Defenses:</b> constant-time code &bull; masking / blinding &bull; EM &amp; power shielding &bull;
+        no co-tenancy for sensitive workloads &bull; ECC RAM &bull; Target Row Refresh (TRR)
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

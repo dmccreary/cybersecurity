@@ -1,0 +1,44 @@
+{
+  "title": "Side-Channel Attack Surface",
+  "description": "An interactive SVG infographic of a CPU performing a crypto operation while leaking its secret key through four physical side channels — timing, power/EM, cache, and rowhammer — each reaching an attacker, with hover tooltips giving real-world examples and a defenses badge.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "side-channel-overview",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "identify",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Component and Hardware Security"],
+    "topic": ["Side-Channel Attacks", "Timing Attack", "Power Analysis", "Cache Attack", "Spectre", "Rowhammer", "Constant-Time Code"],
+    "learningObjectives": [
+      "Identify the four major classes of hardware side channel.",
+      "Explain that a secret leaks through physical side effects, not the logical interface.",
+      "Match a defense to each side-channel class."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic computer architecture", "Symmetric cryptography"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Hover each channel to read its real-world example, then connect it to the matching defense in the badge.",
+      "Ask students why a logically correct, bug-free implementation can still leak the key."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does constant-time code defend the timing channel but not the power channel?", "level": "Understand"},
+      {"question": "A cloud tenant shares a physical host with an attacker VM. Which channel is most relevant and why?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security"
+}
