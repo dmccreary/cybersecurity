@@ -1,0 +1,40 @@
+{
+  "title": "Hypervisor Architecture and the Trust Boundary",
+  "description": "Two side-by-side stacks contrast a Type 1 bare-metal hypervisor with a Type 2 hosted hypervisor, showing where the trust boundary sits, the VM-escape threat, and why the added host OS layer enlarges the attack surface.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hypervisor-architecture",
+  "library": "Static SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "System Security: OS, Memory, and Access Control",
+    "learningObjectives": [
+      "Distinguish Type 1 (bare-metal) from Type 2 (hosted) hypervisor architectures.",
+      "Identify the VM-escape threat that crosses the hypervisor trust boundary.",
+      "Explain why the Type 2 host OS layer creates a larger attack surface."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of operating systems and virtual machines."
+  },
+  "pedagogical": {
+    "modelType": "comparative architecture diagram",
+    "interaction": "Two static SVG stacks with hover/tap band tooltips; reflows to a single column on narrow screens.",
+    "assessment": "Lesson plan asks students to compare trust boundaries and explain why cloud uses Type 1.",
+    "misconceptions": "Counters the idea that the two hypervisor types have the same attack surface."
+  },
+  "completion_status": "validated",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security"
+}
