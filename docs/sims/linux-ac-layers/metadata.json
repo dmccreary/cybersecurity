@@ -1,0 +1,47 @@
+{
+  "title": "Layers of Access Control on a Modern Linux Box",
+  "description": "A Mermaid flowchart following one read() syscall through three AND-composed Linux access-control gates — DAC, capabilities, and MAC — showing a denied read of /etc/shadow beside an allowed read of a web file.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "linux-ac-layers",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Trace",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "System Security", "Operating Systems"],
+    "topic": ["Discretionary Access Control", "Linux Capabilities", "Mandatory Access Control", "AppArmor", "SELinux", "File Permissions"],
+    "learningObjectives": [
+      "Trace a single read() syscall through the DAC, capability, and MAC gates.",
+      "Explain why the gates are AND-composed and why a single DENY is decisive."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Unix file permissions (owner/group/other), processes and UIDs"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Trace the left (denied) and right (allowed) chains side by side, hovering each gate.",
+      "Discuss why MAC can deny even when the file owner has granted DAC permission."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does the shadow read fail at the very first gate?", "level": "Understand"},
+      {"question": "If DAC permits but MAC denies, which wins, and why is that the safer composition order?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "9",
+  "edge_count": "9",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security"
+}
