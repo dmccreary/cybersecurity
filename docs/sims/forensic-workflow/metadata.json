@@ -1,0 +1,47 @@
+{
+  "title": "The Forensic Investigation Workflow",
+  "description": "A Mermaid flowchart of the digital forensic investigation process from identification and isolation through court disclosure, with two decision points and a parallel chain-of-custody log that every step writes to.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "forensic-workflow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "sequence",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Digital Forensics", "Incident Response"],
+    "topic": ["Digital Forensics", "Chain of Custody", "Forensic Imaging", "Evidence Integrity", "Volatile Data"],
+    "learningObjectives": [
+      "Sequence the steps of a digital forensic investigation from identification through court disclosure.",
+      "Explain why each step writes to the chain-of-custody log and why analysis is performed on a verified copy."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic idea of digital evidence and hashing"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Walk the flow top-down and hover each step; identify which steps are irreversible.",
+      "Discuss the two decision diamonds: the power decision and the hash-verification gate."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is volatile data captured before forensic imaging of the disk?", "level": "Understand"},
+      {"question": "What is the consequence at trial if the chain-of-custody log has a gap?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "10",
+  "edge_count": "13",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security"
+}
