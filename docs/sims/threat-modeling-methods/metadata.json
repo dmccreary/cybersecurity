@@ -1,20 +1,43 @@
 {
   "title": "Threat Modeling Methodology Comparison",
-  "description": "Threat Modeling Methodology Comparison",
-  "creator": "Dementia Education Project",
+  "description": "A side-by-side infographic comparing three threat-modeling methods — STRIDE, PASTA, and Attack Trees — with hover tooltips and a summary table of effort, output, and best fit.",
+  "creator": "Dan McCreary",
   "date": "2026-06-05",
   "subject": [
-    "dementia"
+    "cybersecurity"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "threat-modeling-methods",
-  "library": "Static SVG or Mermaid",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "library": "Static SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Security Foundations"],
+    "topic": ["Threat Modeling", "STRIDE", "PASTA", "Attack Trees", "Risk Analysis"],
+    "learningObjectives": [
+      "Compare STRIDE, PASTA, and Attack Trees by their core question and output.",
+      "Map each STRIDE category to the security property it violates.",
+      "Select a threat-modeling method that fits a given system and time budget."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["The CIA triad and core security properties"],
+    "difficulty": "Introductory"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "comparison"],
+    "instructionalStrategies": [
+      "Have students predict which property each STRIDE letter violates before revealing the tooltip.",
+      "Give a short system description and ask which method students would reach for first and why."
+    ],
+    "assessmentQuestions": [
+      {"question": "PASTA takes days to weeks while STRIDE takes hours. What does the extra effort buy you?", "level": "Understand"},
+      {"question": "For a customer-data API behind a login, which method would you start with and why?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
   "chapter_number": 1,
   "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
   "chapter_dir": "01-security-foundations"

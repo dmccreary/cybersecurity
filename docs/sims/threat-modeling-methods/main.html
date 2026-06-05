@@ -113,33 +113,38 @@
     <text x="326" y="378" font-size="12.5" font-weight="600" fill="#263238">Simulate Attacks</text>
   </g>
   <g class="cell" data-tip="Attack-tree ROOT goal. The attacker's objective; children are alternative ways (OR) to achieve it.">
-    <rect x="595" y="51" width="200" height="38" rx="5" fill="#ffe082" stroke="#e65100"/>
-    <text x="695" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#3e2723">Steal Customer Data</text>
+    <rect x="585" y="56" width="220" height="34" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="695" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3e2723">Steal Customer Data</text>
   </g>
-  <line x1="695" y1="89" x2="625" y2="129" stroke="#e65100" stroke-width="1.6"/>
-  <line x1="695" y1="89" x2="695" y2="129" stroke="#e65100" stroke-width="1.6"/>
-  <line x1="695" y1="89" x2="765" y2="129" stroke="#e65100" stroke-width="1.6"/>
+  <text x="567" y="105" font-size="9.5" fill="#8d6e00">OR &mdash; any path reaches the goal</text>
+  <!-- connector spine: root down to the three OR children -->
+  <line x1="600" y1="90" x2="600" y2="296" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="125" x2="630" y2="125" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="174" x2="630" y2="174" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="296" x2="630" y2="296" stroke="#e65100" stroke-width="1.4"/>
   <g class="cell" data-tip="Child path: directly breach the database — SQL injection, stolen DB creds, or a backup left exposed.">
-    <rect x="567" y="128" width="116" height="34" rx="5" fill="#ffe082" stroke="#e65100"/>
-    <text x="625" y="149" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Compromise database</text>
+    <rect x="630" y="109" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="129" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Compromise database</text>
   </g>
   <g class="cell" data-tip="Child path: trick an administrator into giving up credentials or running malware.">
-    <rect x="650" y="128" width="90" height="34" rx="5" fill="#ffe082" stroke="#e65100"/>
-    <text x="695" y="149" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Phish admin</text>
+    <rect x="630" y="158" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Phish admin</text>
   </g>
-  <g class="cell" data-tip="Child path: abuse a flaw in an exposed API to read customer data without authorization.">
-    <rect x="720" y="128" width="90" height="34" rx="5" fill="#ffe082" stroke="#e65100"/>
-    <text x="765" y="149" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Exploit API</text>
-  </g>
-  <line x1="695" y1="162" x2="651" y2="194" stroke="#e65100" stroke-width="1.6"/>
-  <line x1="695" y1="162" x2="739" y2="194" stroke="#e65100" stroke-width="1.6"/>
+  <!-- Phish admin expands into two grandchildren (OR) -->
+  <line x1="650" y1="190" x2="650" y2="262" stroke="#e65100" stroke-width="1.2"/>
+  <line x1="650" y1="216" x2="678" y2="216" stroke="#e65100" stroke-width="1.2"/>
+  <line x1="650" y1="262" x2="678" y2="262" stroke="#e65100" stroke-width="1.2"/>
   <g class="cell" data-tip="Grandchild: a targeted phishing email crafted for that specific admin.">
-    <rect x="610" y="194" width="82" height="32" rx="5" fill="#fff3cd" stroke="#e65100"/>
-    <text x="651" y="214" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3e2723">Spear-phish email</text>
+    <rect x="678" y="202" width="132" height="28" rx="5" fill="#fff3cd" stroke="#e65100"/>
+    <text x="744" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Spear-phish email</text>
   </g>
   <g class="cell" data-tip="Grandchild: a look-alike portal that captures the admin's password.">
-    <rect x="698" y="194" width="82" height="32" rx="5" fill="#fff3cd" stroke="#e65100"/>
-    <text x="739" y="214" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3e2723">Fake login page</text>
+    <rect x="678" y="248" width="132" height="28" rx="5" fill="#fff3cd" stroke="#e65100"/>
+    <text x="744" y="266" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Fake login page</text>
+  </g>
+  <g class="cell" data-tip="Child path: abuse a flaw in an exposed API to read customer data without authorization.">
+    <rect x="630" y="280" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="300" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Exploit API</text>
   </g>
   <rect x="15" y="415" width="260" height="42" rx="4" fill="#fafafa" stroke="#cfd8dc"/>
     <text x="145" y="433" text-anchor="middle" font-size="11" font-weight="700" fill="#1565c0">Use for: design reviews,</text>
