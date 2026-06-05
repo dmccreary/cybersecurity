@@ -1,0 +1,56 @@
+{
+  "title": "SBOM as a Dependency Tree Explorer",
+  "description": "Interactive vis-network graph of a realistic CycloneDX SBOM for a small web application. Click any component to highlight its path from the root, filter to vulnerable-only or direct-only dependencies, and inspect version, license, hash, and listed CVEs in a side panel.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "sbom-dependency-explorer",
+  "library": "vis-network",
+  "bloomLevel": "Apply",
+  "bloomVerb": "Locate",
+  "completion_status": "validated",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Software Bill of Materials (SBOM) and dependency-tree vulnerability tracing",
+    "learningObjectives": [
+      "Locate a vulnerable component in a dependency tree given a published CVE.",
+      "Identify the dependency path from the root application to a transitive dependency.",
+      "Distinguish direct from transitive dependencies and explain why transitive risk is easy to miss."
+    ],
+    "bloomLevels": [
+      "Apply"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic understanding of software packages and that applications reuse third-party libraries."
+  },
+  "pedagogical": {
+    "modelType": "interactive dependency graph with filters and detail panel",
+    "interactionModes": [
+      "click to highlight path",
+      "filter buttons",
+      "search box"
+    ],
+    "controls": [
+      "Button: Show vulnerable only",
+      "Button: Show direct only",
+      "Button: Show all",
+      "Search box: find component by name",
+      "Click a node: highlight path from root and show details"
+    ],
+    "assessment": "Given a CVE published against a transitive dependency (e.g., log4js@2.4.0 or follow-redirects), students locate the component and trace its path back to my-web-app.",
+    "misconceptionsAddressed": [
+      "Believing only direct dependencies introduce risk.",
+      "Assuming a vulnerable component is always one the team chose to install."
+    ]
+  }
+}
