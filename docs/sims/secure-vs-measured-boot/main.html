@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Secure Boot vs. Measured Boot</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                nodeSpacing: 28,
+                rankSpacing: 30,
+                subGraphTitleMargin: { top: 8, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Secure Boot vs. Measured Boot</h2>
+            <div class="mermaid">
+flowchart TB
+    subgraph SB ["Secure Boot — ENFORCE"]
+        direction TB
+        SB0["Power On / CPU Reset Vector"]:::hw
+        SB1["Boot ROM<br/>silicon root of trust"]:::hw
+        SB2["Verify UEFI signature"]:::verify
+        SBh1{{"FAIL → HALT"}}:::halt
+        SB3["Verify bootloader signature"]:::verify
+        SBh2{{"FAIL → HALT"}}:::halt
+        SB4["Verify kernel signature"]:::verify
+        SBh3{{"FAIL → HALT"}}:::halt
+        SB5["Kernel runs"]:::run
+        SB0 --> SB1 --> SB2
+        SB2 -- bad sig --> SBh1
+        SB2 -- ok --> SB3
+        SB3 -- bad sig --> SBh2
+        SB3 -- ok --> SB4
+        SB4 -- bad sig --> SBh3
+        SB4 -- ok --> SB5
+    end
+    subgraph MB ["Measured Boot — RECORD"]
+        direction TB
+        MB0["Power On / CPU Reset Vector"]:::hw
+        MB1["Boot ROM hashes UEFI<br/>extend PCR 0"]:::measure
+        MB2["UEFI hashes bootloader<br/>extend PCR 4"]:::measure
+        MB3["Bootloader hashes kernel<br/>extend PCR 8 and 9"]:::measure
+        MB4["Kernel runs<br/>unconditionally"]:::run
+        MB5["TPM holds PCR values<br/>remote attester can read"]:::tpm
+        MB0 --> MB1 --> MB2 --> MB3 --> MB4 --> MB5
+    end
+
+    classDef hw fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef verify fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef measure fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef run fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef tpm fill:#fff3d6,stroke:#ffa000,stroke-width:2px,color:#5a3d00,font-size:13px
+    classDef halt fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#b71c1c,font-size:12px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Legend</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Hardware / firmware boundary</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Verify (Secure) / hash &amp; extend (Measured)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#2e7d32"></span>Code allowed to run</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffebee;border-color:#c62828"></span>Halt on signature failure</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#fff3d6;border-color:#ffa000"></span>TPM PCR state</div>
+            </div>
+            <div class="callout">
+                <div class="callout-title">PCRs are extend-only</div>
+                A measurement never overwrites a register: <code>PCR = hash(PCR ‖ new)</code>.
+                Each stage <b>extends</b> the value, so one tampered component permanently
+                changes the final PCRs. Nothing rewinds a PCR except a reboot.
+            </div>
+            <div class="callout caption">
+                <div class="callout-title">Real systems use BOTH</div>
+                Secure Boot <b>prevents</b> bad boots; Measured Boot <b>proves</b> what booted.
+                Enforcement stops an unsigned bootloader; attestation lets a remote verifier
+                decide whether to trust the machine.
+            </div>
+            <h3>Stage Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a stage to see what it does.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="secure-vs-measured-boot.js"></script>
+</body>
+</html>

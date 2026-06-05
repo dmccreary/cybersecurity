@@ -1,0 +1,44 @@
+{
+  "title": "Secure Boot vs. Measured Boot",
+  "description": "A two-column Mermaid flowchart contrasting Secure Boot (enforcement — verify each stage's signature and halt on failure) with Measured Boot (recording — hash each stage and extend a TPM PCR, then run unconditionally), with hover details on each stage.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "secure-vs-measured-boot",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "compare",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Component and Hardware Security"],
+    "topic": ["Secure Boot", "Measured Boot", "Root of Trust", "TPM", "PCR", "Remote Attestation", "UEFI"],
+    "learningObjectives": [
+      "Compare Secure Boot (enforcement) with Measured Boot (recording).",
+      "Explain why a PCR is extend-only and what that guarantees.",
+      "Describe why production systems use both mechanisms together."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Hashing", "Digital signatures"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "demonstration", "reference"],
+    "instructionalStrategies": [
+      "Walk the left column and ask what happens at each FAIL diamond, then walk the right column and contrast it.",
+      "Have students articulate the difference between preventing a bad boot and proving what booted."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does Measured Boot let an unsigned kernel run, and how is that still useful?", "level": "Understand"},
+      {"question": "An attacker swaps the bootloader. How does each mechanism respond?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security"
+}
