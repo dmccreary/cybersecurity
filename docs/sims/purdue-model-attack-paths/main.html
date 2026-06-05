@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Purdue Model Attack Paths</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <div id="wrap">
+        <h2 id="title">Purdue Model: Attack Paths Through the IT/OT Boundary</h2>
+        <div id="controls">
+            <span class="ctl-label">Show attack path:</span>
+            <button class="pathbtn active" data-path="all">All three</button>
+            <button class="pathbtn" data-path="stuxnet">Stuxnet (2010)</button>
+            <button class="pathbtn" data-path="colonial">Colonial Pipeline (2021)</button>
+            <button class="pathbtn" data-path="oldsmar">Oldsmar water (2021)</button>
+        </div>
+        <div id="diagram"><!-- SVG injected by JS --></div>
+        <div id="tip" role="status">Hover or tap a colored level for its role, or hover an attack arrow to see the control that failed. Toggle a single attack path with the buttons above.</div>
+    </div>
+    </main>
+    <script src="purdue-model-attack-paths.js"></script>
+</body>
+</html>
