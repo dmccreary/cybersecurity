@@ -1,0 +1,47 @@
+{
+  "title": "The Purdue Model — IT/OT Network Layers",
+  "description": "A Mermaid diagram of the Purdue Enterprise Reference Architecture: seven stacked ICS/OT layers from the enterprise network down to the physical process, with the firewalled IT/OT DMZ and the IT-vs-OT CIA priority inversion.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "purdue-model-layers",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Identify",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Industrial Control Systems", "OT Security"],
+    "topic": ["Purdue Model", "ICS", "SCADA", "PLC", "IT/OT Segmentation", "CIA Triad", "Network Zoning"],
+    "learningObjectives": [
+      "Identify the seven layers of the Purdue model from the enterprise network to the physical process.",
+      "Explain the IT/OT DMZ boundary and why the CIA priority order inverts between IT and OT."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["The CIA triad; basic networking and the idea of a DMZ"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Read the stack top-down, hovering each layer; stop at the DMZ to discuss the firewalled boundary.",
+      "Contrast the IT and OT CIA priority orders using the legend table."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does the IT/OT DMZ forbid direct sessions from the enterprise into control systems?", "level": "Understand"},
+      {"question": "Why does availability outrank confidentiality on the plant floor when the opposite holds in enterprise IT?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TB",
+  "node_count": "7",
+  "edge_count": "6",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security"
+}
