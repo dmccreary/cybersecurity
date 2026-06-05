@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Shared Responsibility Across IaaS, PaaS, and SaaS</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #fff8e1; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    .legend { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; font-size: 13px; margin: 4px 0 8px; }
+    .legend .item { display: flex; align-items: center; gap: 7px; }
+    .legend .sw { width: 18px; height: 14px; border-radius: 3px; border: 1px solid #90a4ae; }
+    svg.stack { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto; }
+    .layer { cursor: help; }
+    .layer rect { transition: filter .1s; }
+    .layer:hover rect { filter: brightness(1.12); }
+    .caption { max-width: 740px; margin: 8px auto 0; text-align: center; font-size: 14px;
+      background: #ffffff; border: 1px solid #ffcc80; border-left: 4px solid #ffa000;
+      border-radius: 6px; padding: 9px 12px; color: #5d4037; line-height: 1.45; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238; color: #fff;
+      font-size: 12px; line-height: 1.4; padding: 7px 10px; border-radius: 6px; max-width: 290px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+    @media (max-width: 700px) {
+      svg.stack { max-width: 100%; }
+    }
+  </style>
+  <script src="shared-responsibility-stack.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Shared Responsibility: On-Prem, IaaS, PaaS, SaaS</h1>
+      <p class="sub">Who patches and secures each layer? As you move right, the provider absorbs more of the stack &mdash; but the top never moves. Hover any layer for who owns it and an example.</p>
+      <div class="legend">
+        <div class="item"><span class="sw" style="background:#455a64"></span> Provider responsibility</div>
+        <div class="item"><span class="sw" style="background:#1565c0"></span> Customer responsibility</div>
+      </div>
+      <svg class="stack" viewBox="0 0 740 470" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="Four columns (On-Prem, IaaS, PaaS, SaaS), each a nine-layer stack colored by who is responsible. Moving from On-Prem to SaaS, the provider takes over more lower layers, but data, identities, and configuration always stay with the customer.">
+          <text x="101" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#263238">On-Prem</text>
+          <text x="277" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#263238">IaaS</text>
+          <text x="453" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#263238">PaaS</text>
+          <text x="629" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#263238">SaaS</text>
+          <!-- On-Prem column -->
+          <g class="layer" data-tip="Physical facilities — On-Prem: Customer responsibility. Example: your own building, power, and physical access (on-prem only).">
+            <rect x="22" y="382" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="404" text-anchor="middle" font-size="12" fill="#ffffff">Physical facilities</text>
+          </g>
+          <g class="layer" data-tip="Network hardware — On-Prem: Customer responsibility. Example: your own switches and firewalls (on-prem only).">
+            <rect x="22" y="344" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="366" text-anchor="middle" font-size="12" fill="#ffffff">Network hardware</text>
+          </g>
+          <g class="layer" data-tip="Hypervisor — On-Prem: Customer responsibility. Example: your own hypervisor (on-prem only).">
+            <rect x="22" y="306" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="328" text-anchor="middle" font-size="12" fill="#ffffff">Hypervisor</text>
+          </g>
+          <g class="layer" data-tip="Host OS — On-Prem: Customer responsibility. Example: patching the host OS on bare metal (on-prem only).">
+            <rect x="22" y="268" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="290" text-anchor="middle" font-size="12" fill="#ffffff">Host OS</text>
+          </g>
+          <g class="layer" data-tip="Guest OS / VM — On-Prem: Customer responsibility. Example: patching the guest OS / VM, e.g., applying Linux security updates on a cloud instance.">
+            <rect x="22" y="230" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="252" text-anchor="middle" font-size="12" fill="#ffffff">Guest OS / VM</text>
+          </g>
+          <g class="layer" data-tip="Runtime / middleware — On-Prem: Customer responsibility. Example: the runtime and middleware you install, e.g., the Java version on your VM.">
+            <rect x="22" y="192" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="214" text-anchor="middle" font-size="12" fill="#ffffff">Runtime / middleware</text>
+          </g>
+          <g class="layer" data-tip="Application — On-Prem: Customer responsibility. Example: the application you deploy, e.g., your web app's code and dependencies.">
+            <rect x="22" y="154" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="176" text-anchor="middle" font-size="12" fill="#ffffff">Application</text>
+          </g>
+          <g class="layer" data-tip="Configuration — On-Prem: Customer responsibility. Example: secure configuration, e.g., enabling MFA in the Microsoft 365 admin center.">
+            <rect x="22" y="116" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="138" text-anchor="middle" font-size="12" fill="#ffffff">Configuration</text>
+          </g>
+          <g class="layer" data-tip="Data &amp; identities — On-Prem: Customer responsibility. Example: your data and identities, e.g., classifying records and managing user accounts.">
+            <rect x="22" y="78" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="101" y="100" text-anchor="middle" font-size="12" fill="#ffffff">Data &amp; identities</text>
+          </g>
+          <!-- IaaS column -->
+          <g class="layer" data-tip="Physical facilities — IaaS: Provider responsibility. Example: racks, power, cooling, and physical access control in the provider's datacenter.">
+            <rect x="198" y="382" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="404" text-anchor="middle" font-size="12" fill="#ffffff">Physical facilities</text>
+          </g>
+          <g class="layer" data-tip="Network hardware — IaaS: Provider responsibility. Example: switches, routers, and cabling the provider owns and patches.">
+            <rect x="198" y="344" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="366" text-anchor="middle" font-size="12" fill="#ffffff">Network hardware</text>
+          </g>
+          <g class="layer" data-tip="Hypervisor — IaaS: Provider responsibility. Example: the virtualization layer (e.g., KVM or Xen) the provider runs and hardens.">
+            <rect x="198" y="306" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="328" text-anchor="middle" font-size="12" fill="#ffffff">Hypervisor</text>
+          </g>
+          <g class="layer" data-tip="Host OS — IaaS: Provider responsibility. Example: the host operating system under the hypervisor, patched by the provider.">
+            <rect x="198" y="268" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="290" text-anchor="middle" font-size="12" fill="#ffffff">Host OS</text>
+          </g>
+          <g class="layer" data-tip="Guest OS / VM — IaaS: Customer responsibility. Example: patching the guest OS / VM, e.g., applying Linux security updates on a cloud instance.">
+            <rect x="198" y="230" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="252" text-anchor="middle" font-size="12" fill="#ffffff">Guest OS / VM</text>
+          </g>
+          <g class="layer" data-tip="Runtime / middleware — IaaS: Customer responsibility. Example: the runtime and middleware you install, e.g., the Java version on your VM.">
+            <rect x="198" y="192" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="214" text-anchor="middle" font-size="12" fill="#ffffff">Runtime / middleware</text>
+          </g>
+          <g class="layer" data-tip="Application — IaaS: Customer responsibility. Example: the application you deploy, e.g., your web app's code and dependencies.">
+            <rect x="198" y="154" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="176" text-anchor="middle" font-size="12" fill="#ffffff">Application</text>
+          </g>
+          <g class="layer" data-tip="Configuration — IaaS: Customer responsibility. Example: secure configuration, e.g., enabling MFA in the Microsoft 365 admin center.">
+            <rect x="198" y="116" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="138" text-anchor="middle" font-size="12" fill="#ffffff">Configuration</text>
+          </g>
+          <g class="layer" data-tip="Data &amp; identities — IaaS: Customer responsibility. Example: your data and identities, e.g., classifying records and managing user accounts.">
+            <rect x="198" y="78" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="277" y="100" text-anchor="middle" font-size="12" fill="#ffffff">Data &amp; identities</text>
+          </g>
+          <!-- PaaS column -->
+          <g class="layer" data-tip="Physical facilities — PaaS: Provider responsibility. Example: racks, power, cooling, and physical access control in the provider's datacenter.">
+            <rect x="374" y="382" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="404" text-anchor="middle" font-size="12" fill="#ffffff">Physical facilities</text>
+          </g>
+          <g class="layer" data-tip="Network hardware — PaaS: Provider responsibility. Example: switches, routers, and cabling the provider owns and patches.">
+            <rect x="374" y="344" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="366" text-anchor="middle" font-size="12" fill="#ffffff">Network hardware</text>
+          </g>
+          <g class="layer" data-tip="Hypervisor — PaaS: Provider responsibility. Example: the virtualization layer (e.g., KVM or Xen) the provider runs and hardens.">
+            <rect x="374" y="306" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="328" text-anchor="middle" font-size="12" fill="#ffffff">Hypervisor</text>
+          </g>
+          <g class="layer" data-tip="Host OS — PaaS: Provider responsibility. Example: the host operating system under the hypervisor, patched by the provider.">
+            <rect x="374" y="268" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="290" text-anchor="middle" font-size="12" fill="#ffffff">Host OS</text>
+          </g>
+          <g class="layer" data-tip="Guest OS / VM — PaaS: Provider responsibility. Example: the base guest-OS image the provider maintains for you.">
+            <rect x="374" y="230" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="252" text-anchor="middle" font-size="12" fill="#ffffff">Guest OS / VM</text>
+          </g>
+          <g class="layer" data-tip="Runtime / middleware — PaaS: Provider responsibility. Example: language runtimes and middleware the provider keeps current.">
+            <rect x="374" y="192" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="214" text-anchor="middle" font-size="12" fill="#ffffff">Runtime / middleware</text>
+          </g>
+          <g class="layer" data-tip="Application — PaaS: Customer responsibility. Example: the application you deploy, e.g., your web app's code and dependencies.">
+            <rect x="374" y="154" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="176" text-anchor="middle" font-size="12" fill="#ffffff">Application</text>
+          </g>
+          <g class="layer" data-tip="Configuration — PaaS: Customer responsibility. Example: secure configuration, e.g., enabling MFA in the Microsoft 365 admin center.">
+            <rect x="374" y="116" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="138" text-anchor="middle" font-size="12" fill="#ffffff">Configuration</text>
+          </g>
+          <g class="layer" data-tip="Data &amp; identities — PaaS: Customer responsibility. Example: your data and identities, e.g., classifying records and managing user accounts.">
+            <rect x="374" y="78" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="453" y="100" text-anchor="middle" font-size="12" fill="#ffffff">Data &amp; identities</text>
+          </g>
+          <!-- SaaS column -->
+          <g class="layer" data-tip="Physical facilities — SaaS: Provider responsibility. Example: racks, power, cooling, and physical access control in the provider's datacenter.">
+            <rect x="550" y="382" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="404" text-anchor="middle" font-size="12" fill="#ffffff">Physical facilities</text>
+          </g>
+          <g class="layer" data-tip="Network hardware — SaaS: Provider responsibility. Example: switches, routers, and cabling the provider owns and patches.">
+            <rect x="550" y="344" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="366" text-anchor="middle" font-size="12" fill="#ffffff">Network hardware</text>
+          </g>
+          <g class="layer" data-tip="Hypervisor — SaaS: Provider responsibility. Example: the virtualization layer (e.g., KVM or Xen) the provider runs and hardens.">
+            <rect x="550" y="306" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="328" text-anchor="middle" font-size="12" fill="#ffffff">Hypervisor</text>
+          </g>
+          <g class="layer" data-tip="Host OS — SaaS: Provider responsibility. Example: the host operating system under the hypervisor, patched by the provider.">
+            <rect x="550" y="268" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="290" text-anchor="middle" font-size="12" fill="#ffffff">Host OS</text>
+          </g>
+          <g class="layer" data-tip="Guest OS / VM — SaaS: Provider responsibility. Example: the base guest-OS image the provider maintains for you.">
+            <rect x="550" y="230" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="252" text-anchor="middle" font-size="12" fill="#ffffff">Guest OS / VM</text>
+          </g>
+          <g class="layer" data-tip="Runtime / middleware — SaaS: Provider responsibility. Example: language runtimes and middleware the provider keeps current.">
+            <rect x="550" y="192" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="214" text-anchor="middle" font-size="12" fill="#ffffff">Runtime / middleware</text>
+          </g>
+          <g class="layer" data-tip="Application — SaaS: Provider responsibility. Example: the application code the provider builds and operates.">
+            <rect x="550" y="154" width="158" height="36" rx="4" fill="#455a64" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="176" text-anchor="middle" font-size="12" fill="#ffffff">Application</text>
+          </g>
+          <g class="layer" data-tip="Configuration — SaaS: Customer responsibility. Example: secure configuration, e.g., enabling MFA in the Microsoft 365 admin center.">
+            <rect x="550" y="116" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="138" text-anchor="middle" font-size="12" fill="#ffffff">Configuration</text>
+          </g>
+          <g class="layer" data-tip="Data &amp; identities — SaaS: Customer responsibility. Example: your data and identities, e.g., classifying records and managing user accounts.">
+            <rect x="550" y="78" width="158" height="36" rx="4" fill="#1565c0" stroke="#ffffff" stroke-width="1.5"/>
+            <text x="629" y="100" text-anchor="middle" font-size="12" fill="#ffffff">Data &amp; identities</text>
+          </g>
+      </svg>
+      <div class="caption">In every model, <b>data, identity, and configuration are always the customer's job.</b></div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+</body>
+</html>
