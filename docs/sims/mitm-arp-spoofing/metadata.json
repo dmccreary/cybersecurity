@@ -1,0 +1,52 @@
+{
+  "title": "MITM via ARP Spoofing",
+  "description": "Mermaid sequence diagram of a man-in-the-middle attack via ARP cache poisoning: the normal ARP and HTTP flow, the attacker's gratuitous ARP replies, the resulting relayed flow, and the HTTPS defense that defeats it.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "mitm-arp-spoofing",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "completion_status": "validated",
+  "chapter_number": 8,
+  "chapter_title": "Network Security Foundations: Protocols, Firewalls, and Detection",
+  "chapter_dir": "08-network-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "ARP cache poisoning and man-in-the-middle attacks",
+    "learningObjectives": [
+      "Describe how an attacker uses gratuitous ARP replies to poison the client and gateway ARP caches.",
+      "Trace how poisoned caches place the attacker on the path between client and gateway.",
+      "Explain why HTTPS with proper certificate validation defeats the impersonation."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of IP/MAC addressing and how ARP resolves an IP to a MAC."
+  },
+  "pedagogical": {
+    "modelType": "static sequence diagram",
+    "interactionModes": [
+      "numbered message walkthrough",
+      "phase separators"
+    ],
+    "controls": [
+      "Read the autonumbered messages top to bottom",
+      "Phase notes mark normal flow, attack begins, and after-poisoning flow"
+    ],
+    "assessment": "Students identify which two ARP replies poison which caches, and explain why the gateway also needs to be poisoned (not just the client).",
+    "misconceptionsAddressed": [
+      "Believing ARP spoofing alone lets an attacker read HTTPS content.",
+      "Assuming only the client's cache needs to be poisoned for a full MITM."
+    ]
+  }
+}
