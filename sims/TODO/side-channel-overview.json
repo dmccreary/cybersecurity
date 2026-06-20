@@ -1,0 +1,14 @@
+{
+  "sim_id": "side-channel-overview",
+  "diagram_name": "Side-Channel Attack Surface",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** side-channel-overview<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA central illustration of a CPU chip on a board, with four labeled channels radiating outward.\n\nCenter: a stylized CPU package (cybersecurity blue, slate-steel border) labeled \"Cryptographic operation in progress.\" Inside, a small lock icon labeled \"Secret key K.\"\n\nFour arrows leaving the chip, each in amber (#ffa000), each terminating at an attacker icon:\n\n1. **Up — Timing channel.** Arrow labeled \"execution time (cycles, ms)\"; attacker shown with a stopwatch.\n2. **Right — Power / EM channel.** Arrow labeled \"current draw, EM field\"; attacker shown with an oscilloscope and probe.\n3. **Down — Cache channel.** Arrow labeled \"shared cache state\"; attacker shown as a co-tenant VM with a measuring icon.\n4. **Left — Rowhammer (fault).** A two-way arrow labeled \"induced bit flips in DRAM\"; attacker shown writing to adjacent rows.\n\nBelow the central chip: a green badge labeled \"Defenses: constant-time code, masking, shielding, no co-tenancy, ECC RAM, TRR.\"\n\nHover tooltips on each channel show a one-line description and a real-world example (Spectre for cache, faulTPM for power, etc.).\n\nColor: cybersecurity blue for the chip, amber for leak channels, slate steel for the board, green for the defenses badge.\n\nResponsive: 4-arrow radial layout collapses to vertical list with icons below 700px.\n\nImplementation: Static SVG with `<title>` tooltips and a small JS handler to scale the radial pattern responsively."
+}

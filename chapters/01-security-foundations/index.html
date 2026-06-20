@@ -1099,6 +1099,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1112,7 +1400,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1499,6 +1787,9 @@ Welcome. This chapter trades the comfortable assumption that "the system is beni
 <p>Three properties have anchored security thinking for fifty years. <strong>Confidentiality</strong> is the property that information is disclosed only to authorized parties — a stolen laptop with an encrypted disk preserves confidentiality even when the hardware is in adversary hands. <strong>Integrity</strong> is the property that information and systems are not modified without authorization — a banking transaction that arrives with the amount changed in transit has lost integrity. <strong>Availability</strong> is the property that authorized users can access the system when they need to — a denial-of-service attack does not steal anything, but it destroys availability all the same.</p>
 <p>Together these three properties form the <strong>CIA triad</strong>, and they are the first lens you will reach for when you analyze any system. Every control, every attack, and every requirement in this textbook can be traced back to one or more of these three letters.</p>
 <h4 id="diagram-cia-triad-with-example-threats-and-controls">Diagram: CIA Triad with Example Threats and Controls<a class="headerlink" href="#diagram-cia-triad-with-example-threats-and-controls" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/cia-triad-overview/main.html" width="100%" height="602" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/cia-triad-overview/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>CIA Triad with example threats and controls per leg</summary>
 <p>Type: infographic-svg
@@ -1526,6 +1817,9 @@ Welcome. This chapter trades the comfortable assumption that "the system is beni
 <p>A fourth property is often added when legal or contractual disputes are possible. <strong>Non-repudiation</strong> is the property that an actor cannot credibly deny having performed an action — typically achieved with digital signatures or tamper-evident logs. Non-repudiation is what lets a court conclude that the message really was sent by the claimed sender, or that the transaction really was authorized by the named party.</p>
 <p>Before we examine the AAA pipeline visually, let us establish two terms the diagram uses: a <em>principal</em> is the entity (user, service, or device) being authenticated, and a <em>resource</em> is the asset the principal is trying to access.</p>
 <h4 id="diagram-aaa-pipeline-with-non-repudiation-sidebar">Diagram: AAA Pipeline with Non-Repudiation Sidebar<a class="headerlink" href="#diagram-aaa-pipeline-with-non-repudiation-sidebar" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/aaa-pipeline/main.html" width="100%" height="352" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/aaa-pipeline/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>AAA pipeline showing authentication, authorization, accounting, and non-repudiation</summary>
 <p>Type: workflow-diagram
@@ -1607,6 +1901,9 @@ When you read a feature spec, write three lines of adversarial questions in the 
 <p><strong>PASTA</strong> (Process for Attack Simulation and Threat Analysis) is a heavier, seven-stage methodology that begins with business objectives and ends with concrete attack simulations. PASTA forces the analyst to define what the business is trying to do, what assets support those objectives, who would target those assets, and what attack scenarios would actually achieve the attacker's goals. PASTA produces richer threat models than STRIDE but takes substantially more time, so it is reserved for high-stakes systems and compliance-driven analyses.</p>
 <p><strong>Attack trees</strong>, formalized by Bruce Schneier in the late 1990s, are a hierarchical decomposition of an attacker's goal. The root of the tree is the attacker's objective (for example, "read patient X's medical record"); the children are the different ways to achieve that objective; their children are the steps that would be required for each path. Attack trees make trade-offs between attacker paths visible and let you compare the cost or feasibility of each branch.</p>
 <h4 id="diagram-threat-modeling-methodology-comparison">Diagram: Threat Modeling Methodology Comparison<a class="headerlink" href="#diagram-threat-modeling-methodology-comparison" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/threat-modeling-methods/main.html" width="100%" height="702" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/threat-modeling-methods/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side comparison of STRIDE, PASTA, and attack trees</summary>
 <p>Type: infographic-svg
@@ -1642,6 +1939,9 @@ First-time threat models are awkward. You will second-guess your asset list, mis
 <p>A <strong>risk assessment</strong> is a structured exercise that catalogs threats, estimates their likelihood and impact, and ranks them. The output is typically a risk register — a prioritized list that drives the security program's investment decisions for the next planning cycle.</p>
 <p>Before we look at the risk-assessment matrix below, two terms worth pinning down. <em>Likelihood</em> is normally rated on a coarse ordinal scale (rare / unlikely / possible / likely / almost certain) rather than a precise probability, because real threat data rarely supports more precision. <em>Impact</em> is similarly rated on an ordinal scale (negligible / minor / moderate / major / catastrophic) tied to concrete dollar ranges or harm categories defined by the organization.</p>
 <h4 id="diagram-5x5-risk-heat-map-with-treatment-bands">Diagram: 5x5 Risk Heat Map with Treatment Bands<a class="headerlink" href="#diagram-5x5-risk-heat-map-with-treatment-bands" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/risk-heat-map/main.html" width="100%" height="702" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/risk-heat-map/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>5x5 risk matrix with treatment recommendations per cell</summary>
 <p>Type: infographic-svg

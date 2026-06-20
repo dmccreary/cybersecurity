@@ -1,0 +1,52 @@
+{
+  "title": "Password Cracking Cost",
+  "description": "Interactive p5.js calculator showing how the choice of password hash (raw SHA-256, salt, bcrypt, Argon2id), attacker hardware, and database size change the time and dollar cost to crack a stolen password database.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "password-cracking-cost",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "validated",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Password storage, salting, and slow/memory-hard hashing",
+    "learningObjectives": [
+      "Analyze how each password-protection technique changes the attacker's effective guess rate.",
+      "Compare the time and dollar cost to crack a stolen database across hardware tiers and hash functions.",
+      "Recognize raw SHA-256 (with or without salt) as an insecure choice for password storage."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Knowledge that passwords are stored as hashes; basic idea of a hash function."
+  },
+  "pedagogical": {
+    "modelType": "interactive calculator with animated readout",
+    "interactionModes": ["dropdown-select", "slider", "checkbox-toggle"],
+    "assessment": "Discussion questions in the lesson plan ask students to find the cheapest secure configuration and reason about rainbow tables.",
+    "misconceptionsAddressed": [
+      "Believing a strong hash like SHA-256 is appropriate for password storage.",
+      "Thinking salt alone makes passwords safe (it stops rainbow tables but not fast brute force).",
+      "Underestimating how memory-hardness neutralizes GPU/ASIC parallelism."
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Hash function", "options": ["SHA-256 (raw)", "SHA-256 + salt", "bcrypt (cost 10)", "bcrypt (cost 12)", "Argon2id (64MB, t=3)"] },
+    { "type": "slider", "label": "Attacker hardware", "range": "1 CPU / 1 GPU / 100-GPU farm / ASIC cluster" },
+    { "type": "slider", "label": "Database size", "range": "10K / 100K / 1M / 10M users" },
+    { "type": "checkbox", "label": "Show common-password rainbow attack" }
+  ],
+  "model": {
+    "assumptions": "Hardware guess rates and hash work-factors are hard-coded order-of-magnitude figures calibrated against published 2025 GPU benchmarks; about 25% of accounts assumed crackable within a ~1e9-guess budget.",
+    "limitations": "A teaching model, not a precise cracking simulator. Real costs depend on password-policy strength, wordlist quality, GPU spot pricing, and hash parameters."
+  }
+}

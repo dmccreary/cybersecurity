@@ -1,0 +1,55 @@
+{
+  "title": "The Security Program at a Glance",
+  "description": "Interactive four-layer SVG diagram of an organizational security program: Board & CEO, CISO & Security Leadership, the four Security Functions, and the Foundations. Hover any layer for its role; arrows show metrics flowing up and strategy flowing down.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "security-program-layers",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Organizational security program structure and governance",
+    "learningObjectives": [
+      "Identify the four layers of an organizational security program and who owns each.",
+      "Explain how metrics flow up to the board and strategy and policy flow down to the foundations.",
+      "Reason about why every layer depends on the foundations below it operating honestly."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic awareness that organizations have executives, security teams, and supporting processes."
+  },
+  "pedagogical": {
+    "modelType": "static layered diagram with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "tap tooltips"
+    ],
+    "controls": [
+      "Hover/tap the Board & CEO layer",
+      "Hover/tap the CISO & Security Leadership layer",
+      "Hover/tap each of the four Security Functions",
+      "Hover/tap the Foundations layer",
+      "Hover/tap the metrics-up and strategy-down arrows"
+    ],
+    "assessment": "Students place a given activity (e.g., 'maintain the risk register', 'run the SOC') in the correct layer and explain whether it flows up or down.",
+    "misconceptionsAddressed": [
+      "Believing a security program is a checklist rather than an interdependent system.",
+      "Assuming the board does security work rather than setting appetite and receiving metrics."
+    ]
+  }
+}

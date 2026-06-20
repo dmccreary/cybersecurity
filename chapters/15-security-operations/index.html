@@ -1261,6 +1261,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1274,7 +1562,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1833,6 +2121,9 @@ Welcome. Earlier chapters built the controls; this chapter is where they meet a 
 <p>This chapter is heavier on practice than theory. The frameworks here — MITRE ATT&amp;CK, the PICERL lifecycle, the cyber kill chain — are useful precisely because they let practitioners speak a common language across organizations. A junior analyst at a regional bank and a senior responder at a cloud provider can both say "we observed T1059 followed by T1078 and we contained at the lateral-movement stage" and mean the same thing. Frameworks are scaffolding for operational reasoning.</p>
 <p>The diagram below previews the major activities we will cover, grouped by their place in the offensive/defensive/response triangle.</p>
 <h4 id="diagram-security-operations-activity-map">Diagram: Security Operations Activity Map<a class="headerlink" href="#diagram-security-operations-activity-map" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/secops-activity-map/main.html" width="100%" height="722" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/secops-activity-map/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Triangle showing offensive, defensive, and response activities and how they feed each other</summary>
 <p>Type: diagram
@@ -1944,6 +2235,9 @@ Notice the asymmetry: the defender must cover every path; the attacker only need
 </ol>
 <p>A real attack campaign is rarely a single technique; it is a <em>sequence</em> of techniques across several tactics, and the value of ATT&amp;CK is that defenders can describe an attack as "T1566 → T1059 → T1078 → T1003 → T1021" and other defenders will understand exactly what happened and where to look in their own logs.</p>
 <h4 id="diagram-mitre-attck-tactic-sequence-explorer">Diagram: MITRE ATT&amp;CK Tactic Sequence Explorer<a class="headerlink" href="#diagram-mitre-attck-tactic-sequence-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/attack-tactic-sequence/main.html" width="100%" height="542" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/attack-tactic-sequence/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive sequence showing how attacker techniques chain across tactics</summary>
 <p>Type: microsim
@@ -1991,6 +2285,9 @@ Notice the asymmetry: the defender must cover every path; the attacker only need
 </ul>
 <p>The value of an indicator decays quickly. A malicious IP address used in an attack last month may be reused, but is more often discarded; a malware hash will match only one specific build. The TTP-level intelligence above the IOCs ages much more slowly — adversaries change infrastructure frequently but change their <em>methods</em> slowly. This is the basis of David Bianco's <strong>Pyramid of Pain</strong>: detecting an attacker by their TTPs causes them more difficulty than detecting them by their hash.</p>
 <h4 id="diagram-the-pyramid-of-pain">Diagram: The Pyramid of Pain<a class="headerlink" href="#diagram-the-pyramid-of-pain" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/pyramid-of-pain/main.html" width="100%" height="542" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/pyramid-of-pain/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Pyramid showing increasing attacker pain from hash detection to TTP detection</summary>
 <p>Type: infographic
@@ -2124,6 +2421,9 @@ A detection that passes its unit test against synthetic events but never fires o
 </ul>
 <p>The phases are pedagogically sequential but operationally overlapping — a complex incident may have one team eradicating on host A while another is still identifying scope on host B. The discipline is in not skipping phases, especially the unglamorous bookends (Preparation and Lessons Learned) that pay back across every future incident.</p>
 <h4 id="diagram-the-picerl-lifecycle">Diagram: The PICERL Lifecycle<a class="headerlink" href="#diagram-the-picerl-lifecycle" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/picerl-lifecycle/main.html" width="100%" height="252" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/picerl-lifecycle/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Cyclical diagram of the six-phase incident response lifecycle</summary>
 <p>Type: workflow-diagram

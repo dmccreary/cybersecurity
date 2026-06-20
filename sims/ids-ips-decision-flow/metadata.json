@@ -1,0 +1,41 @@
+{
+  "title": "IDS/IPS Decision Flow",
+  "description": "Interactive Mermaid flowchart contrasting an out-of-band Intrusion Detection System (alert only) with an in-line Intrusion Prevention System (drop, log, terminate), plus a pros/cons comparison panel.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ids-ips-decision-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Distinguish",
+  "completion_status": "validated",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Network intrusion detection and prevention",
+    "learningObjectives": [
+      "Distinguish out-of-band detection (IDS) from in-line prevention (IPS).",
+      "Explain why an IDS cannot block traffic while an IPS can.",
+      "Weigh the availability and false-positive trade-offs of placing a sensor in the live data path."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with packets, switches, and firewalls."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to choose IDS vs IPS for a given availability requirement.",
+    "misconceptionsAddressed": [
+      "Believing an IDS blocks attacks (it only alerts).",
+      "Ignoring that an in-line IPS is a single point of failure and a source of false-positive outages."
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "A TOCTOU Race Condition",
+  "description": "A Mermaid sequence diagram of a Time-Of-Check to Time-Of-Use (TOCTOU) race condition: a privileged process checks /tmp/x, an attacker swaps it for a symlink to /etc/shadow inside the critical window, and the process then follows the symlink. Includes the structural fix.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "toctou-race",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "educational": {
+    "subjectArea": ["Software Vulnerabilities", "Secure Coding"],
+    "topic": ["TOCTOU", "Race condition", "Time-of-check to time-of-use", "Symlink attack", "Privilege escalation", "openat", "O_NOFOLLOW"],
+    "learningObjectives": [
+      "Explain how the gap between a check (T1) and a use (T2) creates an exploitable window.",
+      "Trace a symlink-swap TOCTOU attack against a privileged process.",
+      "Identify the structural fix that eliminates the window rather than shrinking it."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["File system permissions", "Symbolic links", "Concurrency basics"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "review"],
+    "instructionalStrategies": [
+      "Read top to bottom; pause at the red critical window to ask what the attacker changed.",
+      "Connect the failure to the fix: check and use must refer to the same object (a file descriptor)."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does narrowing the time between access() and open() reduce but not eliminate the TOCTOU risk?", "level": "Analyze"},
+      {"question": "How does operating on a file descriptor (instead of re-resolving the path) close the window?", "level": "Understand"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities"
+}

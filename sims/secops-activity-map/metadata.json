@@ -1,0 +1,43 @@
+{
+  "title": "Security Operations Activity Map",
+  "description": "Interactive Mermaid map of security operations as one feedback loop: offensive, defensive, and response functions fed by threat intelligence and integrated by a purple team.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "secops-activity-map",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Relate",
+  "completion_status": "validated",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Security operations functions and their feedback loop",
+    "learningObjectives": [
+      "Relate the offensive, defensive, and response functions of security operations and the activities under each.",
+      "Explain how findings, alerts, and lessons cycle between the three functions.",
+      "Describe the integrative role of the purple team and the cross-cutting role of threat intelligence."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness that organizations both attack their own systems (testing) and defend them."
+  },
+  "pedagogical": {
+    "modelType": "interactive relationship map",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to trace a finding around the loop and to place specific job roles into the three functions.",
+    "misconceptionsAddressed": [
+      "Seeing offense, defense, and response as three unrelated teams rather than one feedback loop.",
+      "Treating threat intelligence as a single team's resource rather than a shared input to all functions."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "phishing-email-anatomy",
+  "diagram_name": "Phishing Email Anatomy",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: interactive-infographic\n**sim-id:** phishing-email-anatomy<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nA rendered mock-up of a phishing email shown in a stylized email-client window. The email impersonates a finance team request to review an invoice. Several hotspots are highlighted with subtle red glow:\n\n1. **Sender display name** — \"Finance Department\" but the actual address is `finance-dept@finance-securemail.co`. Tooltip explains display-name spoofing.\n2. **Greeting** — generic \"Dear Colleague\" instead of the recipient's name. Tooltip notes that bulk phishing skips personalization while spear phishing nails it.\n3. **Urgency trigger** — \"Please review by end of business today to avoid late fee.\" Tooltip explains how urgency suppresses careful thinking.\n4. **Hyperlink** — visible text reads `https://intranet.example.com/invoices/1042` but on hover the actual URL is `https://intranet-example.invoice-portal.ru/login`. Tooltip explains the lookalike-domain pattern.\n5. **Attachment** — `Invoice_Q3.html` (an HTML file that opens a credential prompt). Tooltip explains why HTML attachments are a common credential-harvesting vector.\n6. **Footer** — corporate-looking signature copied from a real company website. Tooltip explains how attackers source these.\n\nA toggle at the top switches between \"Spot the indicators\" mode (hotspots invisible, user must click to find them; score shown) and \"Annotated\" mode (all hotspots and explanations visible).\n\nLearning objective (Bloom level: Analyzing): Students decompose a realistic spear-phishing message into its component manipulation techniques and identify the specific signals that should trigger suspicion.\n\nCanvas: 900×600 default, responsive. Soft drop-shadow window styling; cream background for the email body.\n\nImplementation: p5.js with rectangular hit-region detection and a small data file mapping hotspot coordinates to explanation text."
+}

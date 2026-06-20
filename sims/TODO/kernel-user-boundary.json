@@ -1,0 +1,14 @@
+{
+  "sim_id": "kernel-user-boundary",
+  "diagram_name": "Kernel Mode vs. User Mode and the System Call Boundary",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: drawing\n**sim-id:** kernel-user-boundary<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA horizontal stack diagram with three layers, top to bottom:\n\n**Top layer (user mode, ring 3) — light blue background `#e3f2fd`:**\n- Three application boxes: \"Browser\", \"Database\", \"Editor\"\n- Each has a small lock icon in the corner labeled \"unprivileged\"\n\n**Middle layer (kernel boundary) — slate steel `#455a64` line, 4px thick:**\n- A single labeled gateway: \"System Call Interface (open, read, write, mmap, ...)\"\n- Two arrows shown crossing it: one labeled \"syscall\" going down, one labeled \"return\" going up\n\n**Bottom layer (kernel mode, ring 0) — cybersecurity blue background `#1565c0` with white text:**\n- Subdivided into: \"Process Scheduler\", \"Memory Manager\", \"VFS / File Systems\", \"Network Stack\", \"Device Drivers\"\n- A small label at the bottom: \"Direct hardware access\"\n\n**Below the kernel layer, a thinner hardware layer (gray `#cfd8dc`):**\n- Labeled \"CPU / RAM / Disk / NIC\"\n\nHover tooltips:\n- Hovering on a user-mode app shows: \"Cannot directly touch hardware. Must ask the kernel via syscalls.\"\n- Hovering on the system call line shows: \"The only legal way for user code to enter kernel mode.\"\n- Hovering on the kernel layer shows: \"Trusted code. A bug here = total compromise.\"\n\nColor: cybersecurity blue `#1565c0` (kernel), slate steel `#455a64` (boundary), light blue `#e3f2fd` (user mode), gray `#cfd8dc` (hardware). Responsive: stacks layers tightly below 700px viewport but preserves the horizontal arrows.\n\nImplementation: Static SVG with `<title>` tooltips per layer."
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Vendor Risk Tiers",
+  "description": "An interactive concentric-ring infographic that tiers a vendor portfolio (Tier-1 critical, Tier-2 important, Tier-3 standard) around the organization, with hover tooltips for the controls that fit each tier and a fourth-party (subprocessor) cluster showing inherited risk.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "vendor-risk-tiers",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "educational": {
+    "subjectArea": ["Governance, Risk, and Compliance", "Third-Party Risk Management"],
+    "topic": ["Vendor risk tiering", "Third-party risk", "Fourth-party / subprocessor risk", "SOC 2", "Security questionnaires", "DPA"],
+    "learningObjectives": [
+      "Classify vendors into risk tiers based on the impact of their failure or breach.",
+      "Match the depth of due-diligence controls to each tier rather than applying one questionnaire to all.",
+      "Explain fourth-party (subprocessor) risk and why it is inherited."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Risk assessment basics", "Third-party / supply-chain risk concepts"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "discussion"],
+    "instructionalStrategies": [
+      "Hover each ring and example vendor to reveal the typical controls for that tier.",
+      "Discuss why a single questionnaire for all vendors over-burdens low-risk suppliers and under-scrutinizes critical ones."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why does applying the same due-diligence questionnaire to every vendor produce a worse outcome than tiering?", "level": "Understand"},
+      {"question": "A vendor's CDN suffers a breach that exposes your data. You never signed a contract with the CDN. How is that risk classified, and where would you have found it disclosed?", "level": "Apply"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security"
+}

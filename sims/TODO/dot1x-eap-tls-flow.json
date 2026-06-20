@@ -1,0 +1,14 @@
+{
+  "sim_id": "dot1x-eap-tls-flow",
+  "diagram_name": "802.1X Authentication Flow",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** dot1x-eap-tls-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA sequence diagram with three actors from left to right: **Supplicant** (laptop icon), **Authenticator** (Wi-Fi AP / switch icon), **RADIUS Server** (server icon).\n\nSteps from top to bottom:\n\n1. Supplicant → Authenticator: \"EAPOL-Start (I would like to join)\"\n2. Authenticator → Supplicant: \"EAP-Request: Identity?\"\n3. Supplicant → Authenticator: \"EAP-Response: alice@corp.example\"\n4. Authenticator → RADIUS: \"Access-Request (relays identity)\"\n5. RADIUS → Authenticator → Supplicant: \"EAP-Request: Begin TLS handshake\"\n6. (TLS mutual handshake — client cert + server cert exchanged, validated against corporate CA)\n7. RADIUS → Authenticator: \"Access-Accept + session keys\"\n8. Authenticator: \"Open the port; install per-session keys\"\n9. Supplicant: \"Now on the network\"\n\nSide annotations:\n\n- A note on the supplicant: \"Holds private key + corporate-issued client certificate\"\n- A note on the authenticator: \"Sees encrypted EAP, relays only — never sees secrets\"\n- A note on the RADIUS server: \"Validates client cert against corporate CA. Logs the auth event.\"\n\nColor: cybersecurity blue (`#1565c0`) for the actors; slate steel (`#455a64`) for relay arrows; cream background. Highlight the TLS handshake step in a callout box.\n\nResponsive: actors collapse to top labels, sequence runs vertically below 700px viewport.\n\nImplementation: Mermaid sequenceDiagram with custom theming."
+}

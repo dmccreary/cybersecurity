@@ -1,0 +1,14 @@
+{
+  "sim_id": "iam-request-flow",
+  "diagram_name": "IAM Request Flow",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** iam-request-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal sequence diagram with four lanes: User, Browser/Client, Identity Provider (IdP), Service Provider (SP).\n\n1. User → Browser: Visits SP application URL.\n2. Browser → SP: GET /protected-resource (no session).\n3. SP → Browser: 302 redirect to IdP with an authentication request.\n4. Browser → IdP: Authentication request.\n5. IdP ↔ User: Prompts for credentials (password + MFA).\n6. IdP → Browser: Issues signed identity token; redirects back to SP.\n7. Browser → SP: Presents identity token.\n8. SP: Verifies token signature, extracts claims (user id, groups, expiry).\n9. SP → Browser: Returns the protected resource.\n\nAnnotations on the side: \"IdP authenticates. SP authorizes. The token is the only thing the SP trusts about who the user is — so its signature, expiry, and audience all matter.\"\n\nColor: cybersecurity blue (#1565c0) for IdP lane, slate (#455a64) for SP lane, white for user/browser. Responsive: vertical stacking under 700px viewport.\n\nImplementation: Mermaid sequenceDiagram with custom theme colors."
+}

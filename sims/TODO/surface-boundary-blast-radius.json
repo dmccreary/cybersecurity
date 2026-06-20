@@ -1,0 +1,14 @@
+{
+  "sim_id": "surface-boundary-blast-radius",
+  "diagram_name": "Attack Surface, Trust Boundary, and Blast Radius",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls",
+  "library": "Mermaid (or static SVG)",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: architecture-diagram\n**sim-id:** surface-boundary-blast-radius<br/>\n**Library:** Mermaid (or static SVG)<br/>\n**Status:** Specified\n\nA simplified 3-tier web application diagram with:\n\n- **Outer layer** (red, dashed): \"Attack surface\" — labeled with example points (HTTPS endpoint, login form, password reset, file upload, API tokens, third-party JavaScript)\n- **First trust boundary** (between internet and reverse proxy): solid blue line labeled \"Untrusted → DMZ\"\n- **Second trust boundary** (between application and database): solid blue line labeled \"App → Data tier\"\n- **Internal components**: reverse proxy → application server → database\n- A red explosion icon centered on the application server, with a dashed circle around it labeled \"Blast radius if app is compromised: read all users' records, no path to OS\"\n- A second smaller blast-radius dashed circle centered on the database labeled \"Blast radius if DB credentials are stolen: read/write all customer data\"\n\nColor palette: cybersecurity blue #1565c0 for trust boundaries, red #c62828 for attack-surface marks, slate steel #455a64 for component outlines, amber #ffa000 for the blast-radius dashed circles. Responsive layout.\n\nImplementation: Mermaid graph LR with subgraphs for each tier; styling applied via Mermaid theme."
+}

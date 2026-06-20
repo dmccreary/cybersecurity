@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Classic DMZ Architecture</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                fontSize: '16px'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+        // Re-render-safe resize: Mermaid uses useMaxWidth so the SVG scales
+        // with the container automatically on window resize.
+        window.addEventListener('resize', () => {
+            const svg = document.querySelector('.mermaid svg');
+            if (svg) svg.style.maxWidth = '100%';
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #fff8e1; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding: 10px; }
+        h1.title { text-align: center; font-size: 22px; color: #212529; margin: 6px 0 2px; }
+        p.sub { text-align: center; font-size: 14px; color: #455a64; margin-bottom: 8px; }
+        .mermaid { width: 100%; display: flex; justify-content: center; background: #fff8e1; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .legend {
+            display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center;
+            margin: 10px auto 4px; max-width: 1000px; font-size: 13px; color: #263238;
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .swatch { width: 26px; height: 0; border-top-width: 3px; border-top-style: solid; }
+        .swatch.dashed { border-top-style: dashed; }
+        .box { width: 18px; height: 14px; border: 1px solid #777; border-radius: 3px; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">Classic DMZ Architecture</h1>
+    <p class="sub">Two firewalls separate the untrusted internet, the DMZ, and the internal network.</p>
+    <div class="mermaid">
+flowchart LR
+    subgraph INET["Internet (untrusted)"]
+        direction TB
+        clients["Untrusted clients,<br/>scanners, attackers"]:::inetNode
+    end
+
+    fw1{{"Edge firewall<br/>permits 80, 443, 25, 53<br/>inbound to specific DMZ hosts"}}:::fwNode
+
+    subgraph DMZ["DMZ (semi-trusted)"]
+        direction TB
+        proxy["Web reverse proxy"]:::dmzNode
+        dns["Public DNS"]:::dmzNode
+        smtp["SMTP relay"]:::dmzNode
+    end
+
+    fw2{{"Inner firewall<br/>DMZ to specific internal<br/>endpoints and ports only;<br/>no internal-initiated traffic to DMZ"}}:::fwNode
+
+    subgraph INTERNAL["Internal network (trusted)"]
+        direction TB
+        app["Application servers"]:::intNode
+        db["Database"]:::intNode
+        dc["Domain controller"]:::intNode
+        files["File servers"]:::intNode
+    end
+
+    %% legitimate flows (solid blue)
+    clients -->|"HTTP / HTTPS"| fw1
+    fw1 ==> proxy
+    proxy -->|"app port only"| fw2
+    fw2 ==> app
+    app -.->|"users egress to internet"| fw1
+
+    %% blocked attacker pivot (red dashed)
+    proxy -. "pivot attempt — blocked by deny-by-default" .-> fw2
+
+    classDef inetNode fill:#eceff1,stroke:#455a64,stroke-width:1.5px,color:#263238,font-size:14px
+    classDef dmzNode fill:#cfd8dc,stroke:#455a64,stroke-width:1.5px,color:#1a2327,font-size:14px
+    classDef intNode fill:#e3f0fb,stroke:#1565c0,stroke-width:1.5px,color:#0d2c54,font-size:14px
+    classDef fwNode fill:#fff3d6,stroke:#ffa000,stroke-width:2px,color:#5a3d00,font-size:13px
+
+    style INET fill:#f5f6f7,stroke:#90a4ae,stroke-width:2px,color:#455a64
+    style DMZ fill:#eceff1,stroke:#455a64,stroke-width:3px,color:#455a64
+    style INTERNAL fill:#f3f8fe,stroke:#1565c0,stroke-width:3px,color:#1565c0
+
+    linkStyle 0 stroke:#1565c0,stroke-width:2.5px,color:#1565c0
+    linkStyle 1 stroke:#1565c0,stroke-width:3px,color:#1565c0
+    linkStyle 2 stroke:#1565c0,stroke-width:2.5px,color:#1565c0
+    linkStyle 3 stroke:#1565c0,stroke-width:3px,color:#1565c0
+    linkStyle 4 stroke:#1565c0,stroke-width:2px,color:#1565c0
+    linkStyle 5 stroke:#d84315,stroke-width:2.5px,color:#d84315
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="border-top-color:#1565c0;"></span>Legitimate flow (allowed)</div>
+      <div class="legend-item"><span class="swatch dashed" style="border-top-color:#1565c0;"></span>Internal users egress to internet</div>
+      <div class="legend-item"><span class="swatch dashed" style="border-top-color:#d84315;"></span>Attacker pivot — blocked</div>
+      <div class="legend-item"><span class="box" style="background:#eceff1;border-color:#455a64;"></span>DMZ (slate)</div>
+      <div class="legend-item"><span class="box" style="background:#e3f0fb;border-color:#1565c0;"></span>Internal (trusted)</div>
+      <div class="legend-item"><span class="box" style="background:#fff3d6;border-color:#ffa000;"></span>Firewall</div>
+    </div>
+  </div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="classic-dmz-architecture.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "title": "IAM Request Flow",
+  "description": "A Mermaid sequence diagram of a federated login (SAML / OIDC) across four lanes — User, Browser, Identity Provider, and Service Provider — showing how the IdP authenticates and the SP authorizes via a signed identity token.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "iam-request-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Identity and Access Management", "Authentication"],
+    "topic": ["Federated Identity", "SAML", "OpenID Connect", "Identity Provider", "Service Provider", "Identity Tokens"],
+    "learningObjectives": [
+      "Describe the sequence of messages in a federated authentication flow.",
+      "Explain why the Service Provider trusts a signed identity token rather than handling credentials itself."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic idea of authentication, HTTP redirects, and digital signatures"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Walk the numbered messages top-down, hovering each to see why it exists.",
+      "Pause at the redirect step and ask why the SP never sees the password."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is it safer for the SP to never see the user's password?", "level": "Understand"},
+      {"question": "What attack does checking the token's audience prevent that a signature check alone would miss?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "sequenceDiagram",
+  "direction": "TD",
+  "node_count": "4",
+  "edge_count": "9",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security"
+}

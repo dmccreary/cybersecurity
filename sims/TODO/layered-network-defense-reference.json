@@ -1,0 +1,14 @@
+{
+  "sim_id": "layered-network-defense-reference",
+  "diagram_name": "Layered Network Defense Reference Architecture",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** layered-network-defense-reference<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical layered architecture diagram (top to bottom):\n\n1. **Internet client** (external) — cloud/laptop icon\n2. **DDoS scrubbing / CDN** layer — labeled with its responsibility (volumetric absorption, geo filtering)\n3. **Edge stateful firewall** — permits 443 only\n4. **WAF** — blocks L7 attacks (SQLi, XSS, request smuggling)\n5. **Load balancer / TLS termination**\n6. **Application tier (DMZ/public subnet)** — N replicas, internal IPs\n7. **Inner firewall / micro-segmentation** — deny by default\n8. **Internal services tier (private subnet)** — database, cache, auth service\n\nTo the right of the stack, three vertical bars annotate cross-cutting concerns:\n\n- \"IDS/IPS sensors\" — taps spanning every boundary\n- \"Encryption in transit\" — TLS or mTLS labels at every hop\n- \"Logging and SIEM\" — every component emits events\n\nFor each layer, a small badge shows the *attack class* it primarily addresses (e.g., \"DDoS\" on layer 2, \"OWASP Top 10\" on layer 4, \"lateral movement\" on layer 7).\n\nColor: cybersecurity blue (#1565c0) for control layers, cream (#fff8e1) for data tiers, slate (#455a64) for boundaries, amber (#ffa000) accent for cross-cutting observability bars. Responsive: stacks horizontally on wide viewports, vertically below 900px. The diagram must respond to window resize events.\n\nImplementation: Mermaid flowchart TD with subgraphs for each layer; the cross-cutting annotations are separate subgraphs aligned along the right margin."
+}

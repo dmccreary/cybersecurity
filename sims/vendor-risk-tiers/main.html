@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Vendor Risk Tiers</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 22px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 6px; }
+    svg.diagram { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto; }
+    [data-tip] { cursor: help; }
+    .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px;
+      font-size: 12px; color: #455a64; margin: 4px 0 6px; }
+    .legend span { display: inline-flex; align-items: center; }
+    .legend .dot { width: 13px; height: 13px; border-radius: 50%; margin-right: 5px;
+      border: 1px solid #90a4ae; }
+    .caption {
+      margin: 8px auto 0; max-width: 820px; text-align: center;
+      border: 2px solid #1565c0; background: #e3f0fb; border-radius: 8px;
+      padding: 8px 12px; font-size: 13px; color: #0d2c54;
+    }
+    .caption b { color: #1565c0; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238;
+      color: #fff; font-size: 12px; line-height: 1.4; padding: 7px 10px; border-radius: 6px;
+      max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+    .tooltip b { color: #ffd180; }
+  </style>
+  <script src="vendor-risk-tiers.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Vendor Risk Tiers</h1>
+      <p class="sub">Not every vendor earns the same scrutiny. Hover (or tap) a ring or vendor to see the controls that fit its risk.</p>
+      <div class="legend">
+        <span><span class="dot" style="background:#455a64"></span>Tier&nbsp;1 &mdash; Critical</span>
+        <span><span class="dot" style="background:#78909c"></span>Tier&nbsp;2 &mdash; Important</span>
+        <span><span class="dot" style="background:#fff3d6;border-color:#d6b656"></span>Tier&nbsp;3 &mdash; Standard</span>
+        <span><span class="dot" style="background:#fff;border:2px dotted #90a4ae"></span>Fourth party</span>
+      </div>
+      <div id="diagram"></div>
+      <div class="caption">
+        <b>Tier the vendor portfolio.</b> The same questionnaire for every vendor is the wrong default &mdash;
+        it over-burdens low-risk suppliers and under-scrutinizes the ones that could take you down.
+      </div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

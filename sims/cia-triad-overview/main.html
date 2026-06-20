@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>CIA Triad Overview</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 22px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 6px; }
+    svg.triangle { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+    .vertex { cursor: help; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 6px; }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+    .card { border: 2px solid #1565c0; border-radius: 10px; padding: 8px 10px; background: #fafcff; }
+    .card h2 { font-size: 16px; margin: 0 0 2px; color: #1565c0; }
+    .card .def { font-size: 12px; color: #455a64; margin: 0 0 8px; min-height: 48px; }
+    .row { font-size: 12px; margin: 4px 0; padding: 6px 8px; border-radius: 6px; }
+    .threat { background: #ffebee; border-left: 4px solid #e53935; }
+    .control { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+    .row .tag { display: block; font-weight: 700; font-size: 10px; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: 2px; }
+    .threat .tag { color: #c62828; }
+    .control .tag { color: #2e7d32; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238;
+      color: #fff; font-size: 12px; line-height: 1.35; padding: 6px 9px; border-radius: 6px;
+      max-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+  </style>
+  <script src="cia-triad-overview.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>The CIA Triad</h1>
+      <p class="sub">Three core security properties of an information asset. Hover a vertex for its definition.</p>
+      <svg class="triangle" viewBox="0 0 520 300" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="Triangle with Confidentiality, Integrity, and Availability at the vertices and Information Asset at the center">
+        <polygon points="260,28 36,272 484,272" fill="#e3f2fd" stroke="#1565c0" stroke-width="3"/>
+        <!-- center -->
+        <text x="260" y="190" text-anchor="middle" font-size="17" font-weight="700" fill="#455a64">Information</text>
+        <text x="260" y="210" text-anchor="middle" font-size="17" font-weight="700" fill="#455a64">Asset</text>
+        <!-- vertices -->
+        <g class="vertex" data-tip="Confidentiality: only authorized parties can read the data. Defeated by disclosure or eavesdropping.">
+          <circle cx="260" cy="40" r="26" fill="#1565c0"/>
+          <text x="260" y="47" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">C</text>
+          <text x="260" y="84" text-anchor="middle" font-size="13" fill="#1565c0" font-weight="700">Confidentiality</text>
+        </g>
+        <g class="vertex" data-tip="Integrity: data is accurate and unaltered except by authorized changes. Defeated by tampering.">
+          <circle cx="46" cy="266" r="26" fill="#1565c0"/>
+          <text x="46" y="273" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">I</text>
+          <text x="46" y="232" text-anchor="middle" font-size="13" fill="#1565c0" font-weight="700">Integrity</text>
+        </g>
+        <g class="vertex" data-tip="Availability: authorized users can reach the data and service when needed. Defeated by denial of service.">
+          <circle cx="474" cy="266" r="26" fill="#1565c0"/>
+          <text x="474" y="273" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">A</text>
+          <text x="474" y="232" text-anchor="middle" font-size="13" fill="#1565c0" font-weight="700">Availability</text>
+        </g>
+      </svg>
+      <div class="cards" id="cards"></div>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

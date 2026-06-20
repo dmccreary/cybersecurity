@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>ML Attack Surface</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Machine Learning Attack Surface: Training and Inference Pipelines</h2>
+            <div class="mermaid">
+flowchart LR
+    Collect[("Data collection<br/>web scrape, uploads,<br/>partner feed")]:::storeNode
+    Clean["Data cleaning<br/>filter, label,<br/>deduplicate"]:::pipeNode
+    Train["Training<br/>optimization adjusts<br/>model weights"]:::modelNode
+    Trained["Trained model<br/>frozen weights,<br/>ready to deploy"]:::pipeNode
+    Prod["Production model<br/>receives input,<br/>returns prediction"]:::modelNode
+    Output(["Output<br/>score, label,<br/>generated text"]):::pipeNode
+
+    Collect --> Clean --> Train --> Trained --> Prod --> Output
+
+    Poison["Data Poisoning<br/>attacker contributes<br/>corrupted examples"]:::attackNode
+    Evasion["Adversarial ML / Evasion<br/>crafted input causes<br/>wrong output"]:::attackNode
+    Theft["Model Theft<br/>many queries<br/>reconstruct the model"]:::attackNode
+    Inject["Prompt Injection<br/>hidden instructions<br/>override system prompt"]:::attackNode
+
+    Poison -. attack .-> Collect
+    Evasion -. attack .-> Prod
+    Theft -. attack .-> Prod
+    Inject -. attack .-> Prod
+
+    classDef storeNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:14px
+    classDef pipeNode fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d2b4a,font-size:14px
+    classDef modelNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef attackNode fill:#ffa000,stroke:#c62828,stroke-width:3px,color:#5a1500,font-size:14px
+
+    linkStyle 0,1,2,3,4 stroke:#1565c0,stroke-width:2px,font-size:13px
+    linkStyle 5,6,7,8 stroke:#c62828,stroke-width:3px,font-size:13px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Data store</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Model / training stage</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#e3f2fd;border-color:#1565c0"></span>Pipeline step</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000;border-color:#c62828"></span>Attack (red edge)</div>
+            </div>
+            <h3>Stage / Attack Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any blue stage to see what it does, or any amber attack box to see how an adversary abuses that point. The legitimate pipeline flows left to right; attacks point in.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="ml-attack-surface.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "network-defense-layers",
+  "diagram_name": "Network Security as Layered Defense",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** network-defense-layers<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA series of concentric ring shapes (or nested rectangles) representing defensive layers, drawn from outer (internet) to inner (crown-jewel data store):\n\n- **Outermost ring (gray):** \"Internet / Untrusted\" — adversaries, scanning traffic, DDoS sources\n- **Ring 2 (slate):** \"Edge perimeter\" — labeled controls: edge firewall, DDoS mitigation, IPS\n- **Ring 3 (cybersecurity blue):** \"DMZ\" — labeled hosts: web/reverse proxy, public DNS, email gateway\n- **Ring 4 (deeper blue):** \"Internal network / VLAN-segmented\" — labeled controls: stateful firewall, NAC, IDS sensors\n- **Ring 5 (warm orange):** \"Sensitive zone\" — labeled hosts: application servers, internal services\n- **Innermost (cream):** \"Crown jewels\" — database servers, key vaults, payment data\n\nBetween each ring, draw a small \"trust boundary\" indicator (dashed line) labeled with the typical control crossing that boundary (e.g., \"TLS termination\", \"WAF\", \"stateful firewall\", \"micro-segmentation\").\n\nTo the right of the rings, a small legend distinguishes:\n\n- Solid arrow inward = \"ingress traffic\"\n- Solid arrow outward = \"egress traffic\"\n- Red dashed arrow = \"lateral movement (what segmentation is meant to stop)\"\n\nColor palette: cybersecurity blue (#1565c0) for trusted controls, slate steel (#455a64) for boundaries, amber (#ffa000) for the lateral-movement warning arrow, fur orange (#d84315) for the sensitive zone callout.\n\nInteraction: hover on each ring shows a tooltip listing the controls that typically live at that boundary. Responsive: collapses to a vertical stack of labeled tiles below 700px viewport. The diagram must respond to window resize events.\n\nImplementation: Static SVG with `<title>` tooltips per ring; alternatively a small p5.js sketch if simple animations (highlighting one boundary on click) are desired."
+}

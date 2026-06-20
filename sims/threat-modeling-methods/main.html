@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Threat Modeling Methodology Comparison</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #37474f; }
+    main { display: block; width: 100%; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 10px 12px; }
+    h1 { font-size: 20px; text-align: center; color: #1565c0; margin: 6px 0 2px; }
+    .sub { text-align: center; font-size: 13px; color: #607d8b; margin: 0 0 8px; }
+    svg.cmp { display: block; width: 100%; max-width: 880px; height: auto; margin: 0 auto; }
+    .cell { cursor: help; }
+    .cell rect, .cell circle { transition: filter .1s; }
+    .cell:hover rect, .cell:hover circle { filter: brightness(1.06); }
+    table.summary { border-collapse: collapse; width: 100%; max-width: 880px; margin: 10px auto 0; font-size: 12.5px; }
+    table.summary th, table.summary td { border: 1px solid #cfd8dc; padding: 6px 9px; text-align: left; vertical-align: top; }
+    table.summary th { background: #455a64; color: #fff; }
+    table.summary td:first-child { font-weight: 700; background: #eceff1; }
+    table.summary caption { font-size: 12px; color: #607d8b; text-align: left; padding-bottom: 4px; }
+    .tooltip { position: fixed; pointer-events: none; z-index: 50; background: #263238; color: #fff;
+      font-size: 12px; line-height: 1.4; padding: 7px 10px; border-radius: 6px; max-width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); opacity: 0; transition: opacity .08s; }
+    @media (max-width: 800px) { svg.cmp { max-width: 100%; } }
+  </style>
+  <script src="threat-modeling-methods.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <h1>Three Ways to Threat Model: STRIDE, PASTA, Attack Trees</h1>
+      <p class="sub">Each method answers a different question. Hover any cell for detail; the table below compares effort, output, and best fit.</p>
+      <svg class="cmp" viewBox="0 0 840 466" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="Three threat-modeling methods side by side. STRIDE: six threat categories each violating one security property. PASTA: a seven-stage business-driven process. Attack Trees: a goal of Steal Customer Data branching into three attack paths, with one expanded into two sub-paths. A summary table compares time, output, and best fit.">
+  <rect x="15" y="14" width="260" height="34" rx="5" fill="#1565c0"/>
+  <text x="145" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">STRIDE</text>
+  <rect x="290" y="14" width="260" height="34" rx="5" fill="#455a64"/>
+  <text x="420" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">PASTA</text>
+  <rect x="565" y="14" width="260" height="34" rx="5" fill="#ffa000"/>
+  <text x="695" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Attack Trees</text>
+  <g class="cell" data-tip="S — Spoofing: Pretending to be someone or something you are not — forged identity, stolen credentials. (violates Authentication.)">
+    <rect x="15" y="58" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="80" font-size="14" font-weight="700" fill="#1565c0">S · Spoofing</text>
+    <text x="25" y="98" font-size="11.5" fill="#37474f">violates Authentication</text>
+  </g>
+  <g class="cell" data-tip="T — Tampering: Unauthorized modification of data or code in transit or at rest. (violates Integrity.)">
+    <rect x="15" y="116" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="138" font-size="14" font-weight="700" fill="#1565c0">T · Tampering</text>
+    <text x="25" y="156" font-size="11.5" fill="#37474f">violates Integrity</text>
+  </g>
+  <g class="cell" data-tip="R — Repudiation: Denying an action with no proof it happened — missing or forgeable logs. (violates Non-repudiation.)">
+    <rect x="15" y="174" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="196" font-size="14" font-weight="700" fill="#1565c0">R · Repudiation</text>
+    <text x="25" y="214" font-size="11.5" fill="#37474f">violates Non-repudiation</text>
+  </g>
+  <g class="cell" data-tip="I — Info Disclosure: Exposing information to someone not authorized to see it. (violates Confidentiality.)">
+    <rect x="15" y="232" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="254" font-size="14" font-weight="700" fill="#1565c0">I · Info Disclosure</text>
+    <text x="25" y="272" font-size="11.5" fill="#37474f">violates Confidentiality</text>
+  </g>
+  <g class="cell" data-tip="D — Denial of Service: Making a system or resource unavailable to legitimate users. (violates Availability.)">
+    <rect x="15" y="290" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="312" font-size="14" font-weight="700" fill="#1565c0">D · Denial of Service</text>
+    <text x="25" y="330" font-size="11.5" fill="#37474f">violates Availability</text>
+  </g>
+  <g class="cell" data-tip="E — Elevation of Priv.: Gaining capabilities you should not have — user becomes admin. (violates Authorization.)">
+    <rect x="15" y="348" width="260" height="52" rx="4" fill="#e3f2fd" stroke="#90caf9"/>
+    <text x="25" y="370" font-size="14" font-weight="700" fill="#1565c0">E · Elevation of Priv.</text>
+    <text x="25" y="388" font-size="11.5" fill="#37474f">violates Authorization</text>
+  </g>
+  <g class="cell" data-tip="Stage 1 — Define Objectives: Business and security objectives for the system.">
+    <rect x="290" y="58" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="80" r="11" fill="#455a64"/>
+    <text x="308" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+    <text x="326" y="84" font-size="12.5" font-weight="600" fill="#263238">Define Objectives</text>
+  </g>
+  <g class="cell" data-tip="Stage 2 — Define Technical Scope: Inventory the application, infrastructure, and dependencies.">
+    <rect x="290" y="107" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="129" r="11" fill="#455a64"/>
+    <text x="308" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+    <text x="326" y="133" font-size="12.5" font-weight="600" fill="#263238">Define Technical Scope</text>
+  </g>
+  <g class="cell" data-tip="Stage 3 — Decompose Application: Map data flows, trust boundaries, and entry points.">
+    <rect x="290" y="156" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="178" r="11" fill="#455a64"/>
+    <text x="308" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
+    <text x="326" y="182" font-size="12.5" font-weight="600" fill="#263238">Decompose Application</text>
+  </g>
+  <g class="cell" data-tip="Stage 4 — Analyze Threats: Identify relevant threats from intel and the threat landscape.">
+    <rect x="290" y="205" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="227" r="11" fill="#455a64"/>
+    <text x="308" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">4</text>
+    <text x="326" y="231" font-size="12.5" font-weight="600" fill="#263238">Analyze Threats</text>
+  </g>
+  <g class="cell" data-tip="Stage 5 — Analyze Vulnerabilities: Correlate threats with weaknesses in the actual system.">
+    <rect x="290" y="254" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="276" r="11" fill="#455a64"/>
+    <text x="308" y="280" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">5</text>
+    <text x="326" y="280" font-size="12.5" font-weight="600" fill="#263238">Analyze Vulnerabilities</text>
+  </g>
+  <g class="cell" data-tip="Stage 6 — Model Attacks: Build attack scenarios against the identified weaknesses.">
+    <rect x="290" y="303" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="325" r="11" fill="#455a64"/>
+    <text x="308" y="329" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">6</text>
+    <text x="326" y="329" font-size="12.5" font-weight="600" fill="#263238">Model Attacks</text>
+  </g>
+  <g class="cell" data-tip="Stage 7 — Simulate Attacks: Test and quantify the business impact of those attacks.">
+    <rect x="290" y="352" width="260" height="43" rx="4" fill="#eceff1" stroke="#b0bec5"/>
+    <circle cx="308" cy="374" r="11" fill="#455a64"/>
+    <text x="308" y="378" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">7</text>
+    <text x="326" y="378" font-size="12.5" font-weight="600" fill="#263238">Simulate Attacks</text>
+  </g>
+  <g class="cell" data-tip="Attack-tree ROOT goal. The attacker's objective; children are alternative ways (OR) to achieve it.">
+    <rect x="585" y="56" width="220" height="34" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="695" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3e2723">Steal Customer Data</text>
+  </g>
+  <text x="567" y="105" font-size="9.5" fill="#8d6e00">OR &mdash; any path reaches the goal</text>
+  <!-- connector spine: root down to the three OR children -->
+  <line x1="600" y1="90" x2="600" y2="296" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="125" x2="630" y2="125" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="174" x2="630" y2="174" stroke="#e65100" stroke-width="1.4"/>
+  <line x1="600" y1="296" x2="630" y2="296" stroke="#e65100" stroke-width="1.4"/>
+  <g class="cell" data-tip="Child path: directly breach the database — SQL injection, stolen DB creds, or a backup left exposed.">
+    <rect x="630" y="109" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="129" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Compromise database</text>
+  </g>
+  <g class="cell" data-tip="Child path: trick an administrator into giving up credentials or running malware.">
+    <rect x="630" y="158" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Phish admin</text>
+  </g>
+  <!-- Phish admin expands into two grandchildren (OR) -->
+  <line x1="650" y1="190" x2="650" y2="262" stroke="#e65100" stroke-width="1.2"/>
+  <line x1="650" y1="216" x2="678" y2="216" stroke="#e65100" stroke-width="1.2"/>
+  <line x1="650" y1="262" x2="678" y2="262" stroke="#e65100" stroke-width="1.2"/>
+  <g class="cell" data-tip="Grandchild: a targeted phishing email crafted for that specific admin.">
+    <rect x="678" y="202" width="132" height="28" rx="5" fill="#fff3cd" stroke="#e65100"/>
+    <text x="744" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Spear-phish email</text>
+  </g>
+  <g class="cell" data-tip="Grandchild: a look-alike portal that captures the admin's password.">
+    <rect x="678" y="248" width="132" height="28" rx="5" fill="#fff3cd" stroke="#e65100"/>
+    <text x="744" y="266" text-anchor="middle" font-size="10" font-weight="600" fill="#3e2723">Fake login page</text>
+  </g>
+  <g class="cell" data-tip="Child path: abuse a flaw in an exposed API to read customer data without authorization.">
+    <rect x="630" y="280" width="180" height="32" rx="5" fill="#ffe082" stroke="#e65100"/>
+    <text x="720" y="300" text-anchor="middle" font-size="11" font-weight="600" fill="#3e2723">Exploit API</text>
+  </g>
+  <rect x="15" y="415" width="260" height="42" rx="4" fill="#fafafa" stroke="#cfd8dc"/>
+    <text x="145" y="433" text-anchor="middle" font-size="11" font-weight="700" fill="#1565c0">Use for: design reviews,</text>
+    <text x="145" y="448" text-anchor="middle" font-size="11" fill="#1565c0">fast component-by-component analysis</text>
+  <rect x="290" y="415" width="260" height="42" rx="4" fill="#fafafa" stroke="#cfd8dc"/>
+    <text x="420" y="433" text-anchor="middle" font-size="11" font-weight="700" fill="#455a64">Use for: high-stakes systems,</text>
+    <text x="420" y="448" text-anchor="middle" font-size="11" fill="#455a64">business-aligned analysis</text>
+  <rect x="565" y="415" width="260" height="42" rx="4" fill="#fafafa" stroke="#cfd8dc"/>
+    <text x="695" y="433" text-anchor="middle" font-size="11" font-weight="700" fill="#b26a00">Use for: comparing attacker paths,</text>
+    <text x="695" y="448" text-anchor="middle" font-size="11" fill="#b26a00">cost / feasibility analysis</text>
+      </svg>
+      <table class="summary">
+        <caption>Summary &mdash; pick the method that fits your time budget and question</caption>
+        <tr><th>Method</th><th>Time to complete</th><th>Output type</th><th>Best fit</th></tr>
+        <tr><td>STRIDE</td><td>Hours</td><td>Per-component list of threats by category</td><td>Design reviews; quick, systematic coverage</td></tr>
+        <tr><td>PASTA</td><td>Days&ndash;weeks</td><td>Business-impact-ranked, evidence-backed report</td><td>High-stakes systems needing business alignment</td></tr>
+        <tr><td>Attack Trees</td><td>Hours&ndash;days</td><td>Tree of attacker paths with cost/feasibility</td><td>Comparing attacker paths and prioritizing defenses</td></tr>
+      </table>
+    </div>
+  </main>
+  <div class="tooltip" id="tip"></div>
+</body>
+</html>

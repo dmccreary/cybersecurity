@@ -1,0 +1,53 @@
+{
+  "title": "Stack Frame With and Without a Canary Under Overflow",
+  "description": "Interactive SVG comparison of two stack frames under a strcpy buffer overflow — one without a stack canary (exploit succeeds silently) and one with a canary (process aborts on the canary check). Hover the canary or saved return address for details.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "stack-canary-comparison",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Stack buffer overflows and stack canary protection",
+    "learningObjectives": [
+      "Explain how a stack buffer overflow overwrites the saved return address.",
+      "Compare a stack frame with and without a canary under the same overflow.",
+      "Articulate why the canary turns a silent compromise into a safe abort."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic idea of the call stack, return addresses, and fixed-size buffers."
+  },
+  "pedagogical": {
+    "modelType": "side-by-side static comparison diagram with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "tap tooltips"
+    ],
+    "controls": [
+      "Hover/tap the stack canary box",
+      "Hover/tap the saved return address (either frame)",
+      "Hover/tap the buffer (either frame)"
+    ],
+    "assessment": "Students point to where the overflow stops in each frame and explain why the canary is checked before the function returns.",
+    "misconceptionsAddressed": [
+      "Believing a canary prevents the overflow (it detects corruption, it does not stop the write).",
+      "Assuming an overflow always crashes — without a canary it can succeed silently."
+    ]
+  }
+}

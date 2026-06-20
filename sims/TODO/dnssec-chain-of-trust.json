@@ -1,0 +1,14 @@
+{
+  "sim_id": "dnssec-chain-of-trust",
+  "diagram_name": "DNSSEC Validation Chain",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: tree-diagram\n**sim-id:** dnssec-chain-of-trust<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical tree diagram showing the chain of signatures from the root zone to a leaf record:\n\n1. **Root zone (`.`)** — labeled with \"Root KSK (stored in trust anchor)\". A green checkmark denotes the trust anchor that all DNSSEC validators ship with.\n2. ↓ \"signs\" → **TLD zone (`.example`)** — labeled with \"DS record in root zone points to TLD KSK\"\n3. ↓ \"signs\" → **`bank.example` zone** — labeled with \"DS record in TLD points to bank's KSK\"\n4. ↓ \"signs\" → **`www.bank.example` A record** — labeled with \"Returned to resolver: A record + RRSIG\"\n\nA side panel on the right shows what a resolver does on lookup:\n\n- \"Step 1: Receive A record + signature for `www.bank.example`\"\n- \"Step 2: Fetch and verify ZSK signature using bank's KSK\"\n- \"Step 3: Verify bank's KSK using DS record in `.example`\"\n- \"Step 4: Verify `.example` keys using DS record in root\"\n- \"Step 5: Compare root KSK to trust anchor — if match, ACCEPT\"\n- \"Any failure → REJECT (resolver returns SERVFAIL)\"\n\nColor the trust path in cybersecurity blue (`#1565c0`); use a green checkmark on the root anchor; use red X annotations on what happens if any link fails.\n\nResponsive: collapses to a vertical list with indented chain on viewport widths below 700px.\n\nImplementation: Mermaid graph TD with custom node styling and side annotations."
+}

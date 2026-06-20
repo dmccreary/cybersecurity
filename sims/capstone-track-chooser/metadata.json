@@ -1,0 +1,40 @@
+{
+  "title": "Choosing a Capstone Track",
+  "description": "A three-branch decision tree that helps students choose among a Secure System, Security Program, or Applied Research capstone, with hover tooltips showing the estimated weeks of effort for each deliverable.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "capstone-track-chooser",
+  "library": "Static SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Identify",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Emerging Topics and Capstone Pathways",
+    "learningObjectives": [
+      "Distinguish the three capstone tracks by their guiding question and deliverables.",
+      "Estimate the effort each track requires from its deliverable timeline.",
+      "Match a personal interest in security work to an appropriate capstone track."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "None; intended as an orientation aid for capstone planning."
+  },
+  "pedagogical": {
+    "modelType": "decision tree infographic",
+    "interaction": "Hover or tap each deliverable to reveal its estimated weeks of effort.",
+    "assessment": "Lesson plan asks students to justify a track choice from the deliverables.",
+    "misconceptions": "Counters the idea that one track is 'easier' by showing all satisfy ABET Outcomes 1-6."
+  },
+  "completion_status": "validated",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone"
+}

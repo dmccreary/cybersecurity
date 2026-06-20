@@ -1,0 +1,14 @@
+{
+  "sim_id": "nist-csf-functions",
+  "diagram_name": "NIST CSF 2.0 Functions",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** nist-csf-functions<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA wheel diagram on a 900x600 canvas:\n\n- Center hub: **GOVERN** (cybersecurity blue #1565c0, white text). Subtitle: \"Strategy, expectations, policy.\"\n- Five spokes radiating outward, each a colored arc segment forming a ring around the hub:\n  - **IDENTIFY** (slate steel #455a64) — Subtitle: \"Assets, risks, roles.\"\n  - **PROTECT** (cybersecurity blue, lighter shade) — Subtitle: \"Safeguards, training, access control.\"\n  - **DETECT** (amber #ffa000) — Subtitle: \"Monitoring, anomalies, IDS.\"\n  - **RESPOND** (rust orange #d84315) — Subtitle: \"Containment, communications, analysis.\"\n  - **RECOVER** (cream #fff8e1, dark text) — Subtitle: \"Restore, lessons learned, plans.\"\n- A thin clockwise arrow on the outside of the ring suggests the cyclical flow Identify → Protect → Detect → Respond → Recover → (back to Identify), with Govern overseeing all five.\n\nEach segment has a hover tooltip: a one-sentence description of what the function actually does, e.g., \"DETECT — Continuous monitoring identifies anomalies and signals incidents within the time-to-detect target.\"\n\nCaption beneath: \"NIST CSF 2.0 added GOVERN as a sixth function in 2024 to elevate governance to a peer of the technical functions.\"\n\nResponsive: SVG scales to container width. Below 600px, the wheel becomes a vertical numbered list of the six functions. Window-resize listener re-renders.\n\nImplementation: Inline SVG with `<title>` tooltips and a small resize handler."
+}

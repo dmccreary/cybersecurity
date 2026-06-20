@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Linux Access-Control Layers</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis',
+        subGraphTitleMargin: { top: 10, bottom: 14 }
+      }
+    });
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #263238; }
+    h1 { font-size: 19px; text-align: center; color: #1565c0; padding: 8px 8px 2px; }
+    .hint { text-align: center; font-size: 12px; color: #78909c; margin-bottom: 4px; }
+    .mermaid { width: 100%; display: flex; justify-content: center; padding: 4px 8px 8px; background: #f4f7fb; }
+    .mermaid svg { max-width: 100%; height: auto; }
+    .note {
+      max-width: 760px; margin: 0 auto 10px; padding: 8px 14px; font-size: 13px; line-height: 1.5;
+      background: #fff; border: 1px solid #cfd8dc; border-left: 5px solid #455a64; border-radius: 6px; color: #37474f;
+    }
+    .note b { color: #455a64; }
+    #tooltip {
+      position: fixed; background: #263238; color: #fff; padding: 8px 12px; border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4;
+      max-width: 320px; pointer-events: none; opacity: 0; transition: opacity .15s;
+      z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    #tooltip.visible { opacity: 1; }
+    .node { cursor: pointer; }
+  </style>
+  <script src="linux-ac-layers.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Linux Access-Control Layers</h1>
+    <div class="hint">One syscall, three AND-composed gates. Left: a denied read. Right: an allowed read. Hover any box for detail.</div>
+    <div class="mermaid">
+flowchart TD
+    PROC["Process: httpd, UID=apache<br/>AppArmor / SELinux label: httpd_t"]:::proc
+
+    PROC -- "read /etc/shadow" --> DAC1
+    PROC -- "read /var/www/html/index.html" --> DAC2
+
+    DAC1["DAC check<br/>/etc/shadow is 0640 root:shadow<br/>apache is not owner/group, no other read"]:::dac
+    CAP1["Capability check<br/>holds CAP_DAC_READ_SEARCH? No"]:::cap
+    MAC1["MAC check<br/>may httpd_t read shadow_t? Policy: NO"]:::mac
+    DENY["Result: EACCES<br/>read denied, logged in audit.log"]:::deny
+
+    DAC2["DAC check<br/>index.html is 0644, world-readable<br/>DAC: ALLOW"]:::dac
+    CAP2["Capability check<br/>not needed, DAC already permits"]:::cap
+    MAC2["MAC check<br/>may httpd_t read httpd_sys_content_t? Yes"]:::mac
+    ALLOW["Result: file contents returned<br/>read succeeds"]:::allow
+
+    DAC1 -- "DENY" --> DENY
+    DAC1 -. "if it had passed" .-> CAP1 -.-> MAC1
+    DAC2 --> CAP2 --> MAC2 -- "ALLOW" --> ALLOW
+
+    classDef proc fill:#ffffff,stroke:#455a64,stroke-width:2px,color:#263238,font-size:14px
+    classDef dac fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d3a73,font-size:13px
+    classDef cap fill:#00acc1,stroke:#00707d,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef mac fill:#1565c0,stroke:#0d3a73,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef deny fill:#d32f2f,stroke:#8e0000,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef allow fill:#4caf50,stroke:#2e7031,stroke-width:2px,color:#ffffff,font-size:14px
+
+    linkStyle default stroke:#607d8b,stroke-width:2px,font-size:12px
+    </div>
+    <div class="note">
+      <b>Even one DENY is enough; the checks are AND-composed.</b>
+      DAC (file permissions), Linux capabilities, and MAC (AppArmor/SELinux) are
+      each consulted in turn. If DAC permits but MAC denies, MAC wins. The shadow
+      read fails at the very first gate; the index.html read clears all three.
+    </div>
+  </main>
+  <div id="tooltip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

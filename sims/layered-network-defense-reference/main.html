@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Layered Network Defense Reference</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Layered Network Defense: Defense in Depth from Internet to Datastore</h2>
+            <div class="mermaid">
+flowchart TD
+    Client["Internet client<br/>(external, untrusted)"]:::extNode
+    DDoS["DDoS scrubbing / CDN<br/>volumetric absorption, geo filtering<br/>[ addresses: DDoS ]"]:::ctrlNode
+    Edge["Edge stateful firewall<br/>permits 443 only<br/>[ addresses: port and protocol abuse ]"]:::ctrlNode
+    WAF["Web Application Firewall<br/>blocks L7 attacks: SQLi, XSS, smuggling<br/>[ addresses: OWASP Top 10 ]"]:::ctrlNode
+    LB["Load balancer / TLS termination<br/>[ addresses: transport integrity ]"]:::ctrlNode
+    App["Application tier — DMZ subnet<br/>N replicas, internal IPs"]:::dataNode
+    Inner["Inner firewall / micro-segmentation<br/>deny by default<br/>[ addresses: lateral movement ]"]:::boundNode
+    Internal["Internal services — private subnet<br/>database, cache, auth service"]:::dataNode
+
+    Client --> DDoS --> Edge --> WAF --> LB --> App --> Inner --> Internal
+
+    subgraph cross ["Cross-cutting concerns — span every layer"]
+        IDS["IDS/IPS sensors<br/>taps at every boundary"]:::xIds
+        Crypto["Encryption in transit<br/>TLS / mTLS at every hop"]:::xCrypto
+        Logging["Logging and SIEM<br/>every component emits events"]:::xLog
+    end
+
+    classDef extNode fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#212529,font-size:14px
+    classDef ctrlNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:14px
+    classDef dataNode fill:#fff8e1,stroke:#bfa14a,stroke-width:2px,color:#212529,font-size:14px
+    classDef boundNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:14px
+    classDef xIds fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:13px
+    classDef xCrypto fill:#ffb74d,stroke:#e65100,stroke-width:2px,color:#212529,font-size:13px
+    classDef xLog fill:#ffe082,stroke:#e65100,stroke-width:2px,color:#212529,font-size:13px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Control layers</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#fff8e1"></span>Data tiers</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Boundaries</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Cross-cutting observability</div>
+            </div>
+            <h3>Layer Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any layer to see what it defends and the attack class it primarily addresses. Read top to bottom: untrusted Internet at the top, your most sensitive data at the bottom.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="layered-network-defense-reference.js"></script>
+</body>
+</html>

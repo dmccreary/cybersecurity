@@ -1354,6 +1354,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1367,7 +1655,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2010,6 +2298,9 @@ Welcome. In this chapter we trade the comfortable assumption that "the network i
 <p>Second, the network is the <em>first</em> place an attacker reaches. If they cannot get a packet to your service, they cannot exploit a vulnerability in your service. Network controls are therefore a leverage point: a single firewall rule, a single segmentation boundary, a single VPN gateway can eliminate huge classes of attacks before they even reach the application layer.</p>
 <p>Third, the network is also the last place an attacker leaves. Stolen data must travel out of the environment, and command-and-control traffic must travel in. A network that is well-instrumented for detection turns an attacker's required exfiltration step into a <em>signal</em> that defenders can find and act on.</p>
 <h4 id="diagram-network-security-as-layered-defense">Diagram: Network Security as Layered Defense<a class="headerlink" href="#diagram-network-security-as-layered-defense" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/network-defense-layers/main.html" width="100%" height="622" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/network-defense-layers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Concentric defensive layers from internet to crown-jewel data, with named controls at each boundary</summary>
 <p>Type: infographic-svg
@@ -2042,6 +2333,9 @@ Welcome. In this chapter we trade the comfortable assumption that "the network i
 <p>The <strong>TCP/IP model</strong> (also called the Internet model) is the four- or five-layer model that actually describes the internet as it was built. Its layers, from bottom to top, are: Link, Internet, Transport, and Application — sometimes with the Physical layer broken out separately. TCP/IP is descriptive rather than prescriptive: it documents the protocols that grew up around ARPANET and were standardized in the late 1970s and early 1980s.</p>
 <p>The two models differ in number of layers and in some terminology, but they share the central insight: <strong>each layer offers services to the layer above and uses services of the layer below</strong>, and a security property at one layer does not automatically extend to the others. TLS at L7 does not protect L3 metadata. A VPN at L3 does not authenticate L7 application identities. Knowing where in the stack a control operates tells you what it can and cannot defend.</p>
 <h4 id="diagram-osi-vs-tcpip-model-comparison">Diagram: OSI vs. TCP/IP Model Comparison<a class="headerlink" href="#diagram-osi-vs-tcpip-model-comparison" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/osi-vs-tcpip/main.html" width="100%" height="502" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/osi-vs-tcpip/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side comparison of OSI seven-layer model and TCP/IP four-layer model with example protocols</summary>
 <p>Type: infographic-svg
@@ -2156,6 +2450,9 @@ Notice the recurring shape: every one of these protocols was designed without au
 <p>The starting positions we have already named: ARP spoofing on a LAN, rogue DHCP handing out a malicious gateway, a compromised Wi-Fi access point, BGP hijacking that redirects entire prefixes, DNS cache poisoning that returns a malicious IP for a legitimate hostname, or simple cable tapping with physical access. From any of these positions, the attacker can run a full MITM if the traffic itself is unauthenticated or unencrypted.</p>
 <p>The defense against MITM at the protocol level is <em>mutual authentication</em> combined with <em>encryption</em>: the client verifies the server's identity (typically via a TLS certificate signed by a trusted CA), the server optionally verifies the client's identity, and both sides establish session keys that an interposed attacker cannot derive. This is exactly the structure that Chapter 4 built up — TLS provides server authentication via PKI and forward-secret session keys via ECDHE — and it is why "use TLS, validate the certificate, do not click through warnings" is the simplest summary of MITM defense at the application layer.</p>
 <h4 id="diagram-mitm-attack-topology">Diagram: MITM Attack Topology<a class="headerlink" href="#diagram-mitm-attack-topology" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/mitm-arp-spoofing/main.html" width="100%" height="847" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/mitm-arp-spoofing/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing how ARP spoofing places an attacker between a client and a gateway</summary>
 <p>Type: workflow-diagram
@@ -2293,6 +2590,9 @@ A stateful firewall in front of a web application will not stop SQL injection �
 </tbody>
 </table>
 <h4 id="diagram-idsips-decision-flow">Diagram: IDS/IPS Decision Flow<a class="headerlink" href="#diagram-idsips-decision-flow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ids-ips-decision-flow/main.html" width="100%" height="702" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/ids-ips-decision-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Workflow showing how a packet flows through a detection engine and whether it is allowed, alerted, or dropped</summary>
 <p>Type: workflow-diagram
@@ -2378,6 +2678,9 @@ A stateful firewall in front of a web application will not stop SQL injection �
 <p>The classic design uses two firewalls (or one firewall with three interfaces): one between the internet and the DMZ, and one between the DMZ and the internal network. Hosts in the DMZ accept connections from the internet for the specific services they expose, and the internal-side firewall is configured <em>deny by default</em> so that even a fully compromised DMZ host cannot freely reach internal systems. Ideally the DMZ host can only reach a small set of named internal endpoints (a database replica, a queue, an authentication service) on specific ports. This composes the <em>defense in depth</em> and <em>least privilege</em> principles into a structural pattern.</p>
 <p>Modern segmentation extends the DMZ idea inward: <strong>micro-segmentation</strong> treats every workload as a potential trust boundary, applies firewall-like rules per workload (often via host agents or service-mesh policy), and aspires to a network where an attacker who lands on one host cannot reach any other host without permission. This is the structural foundation of Zero Trust networking, which Chapter 9 treats in depth.</p>
 <h4 id="diagram-classic-dmz-architecture">Diagram: Classic DMZ Architecture<a class="headerlink" href="#diagram-classic-dmz-architecture" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/classic-dmz-architecture/main.html" width="100%" height="482" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/classic-dmz-architecture/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Three-zone DMZ topology with internet, DMZ tier, and internal network separated by firewalls</summary>
 <p>Type: diagram
@@ -2475,6 +2778,9 @@ The pile of acronyms in this section — IKEv2, ESP, AH, AEAD, ChaCha20-Poly1305
 </ol>
 <p>No single one of these layers is sufficient, and removing any one of them measurably increases the attacker's options. The mental discipline the chapter is teaching — <em>for every attack class, name the layer that defends it; for every layer, name what it cannot defend</em> — is the heart of a defensible network architecture.</p>
 <h4 id="diagram-layered-network-defense-reference-architecture">Diagram: Layered Network Defense Reference Architecture<a class="headerlink" href="#diagram-layered-network-defense-reference-architecture" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/layered-network-defense-reference/main.html" width="100%" height="1362" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/layered-network-defense-reference/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>End-to-end reference architecture showing how the seven defensive layers compose</summary>
 <p>Type: diagram

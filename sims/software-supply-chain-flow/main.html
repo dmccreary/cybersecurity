@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>A Modern Software Supply Chain</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">Software Supply Chain: Nine Stages, Nine Places to Inject</h2>
+            <div class="mermaid">
+flowchart TD
+    S1["1 · Developer Workstation<br/>local source code"]:::stage
+    A1["⚡ compromised<br/>IDE plugin"]:::attack
+    S2["2 · Source Repository · Git<br/>version control"]:::stage
+    A2["⚡ stolen credentials,<br/>malicious PR"]:::attack
+    S3["3 · Dependency Registry<br/>npm · PyPI · Maven"]:::stage
+    A3["⚡ typosquatting;<br/>event-stream 2018"]:::attack
+    S4["4 · Build Server · CI/CD<br/>source + deps to artifact"]:::stage
+    A4["⚡ SolarWinds 2020"]:::attack
+    S5["5 · Artifact Repository<br/>binaries / container images"]:::stage
+    A5["⚡ registry account<br/>takeover"]:::attack
+    S6["6 · Code Signing<br/>signature applied"]:::stage
+    A6["⚡ stolen signing key"]:::attack
+    S7["7 · Distribution<br/>registry · app store · CDN"]:::stage
+    A7["⚡ in-transit replacement"]:::attack
+    S8["8 · Deploy / Update<br/>on user infrastructure"]:::stage
+    A8["⚡ malicious update;<br/>NotPetya 2017"]:::attack
+    S9["9 · End User<br/>executes the code"]:::stage
+    A9["⚡ skipped verification<br/>at run time"]:::attack
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+    S1 -.-> A1
+    S2 -.-> A2
+    S3 -.-> A3
+    S4 -.-> A4
+    S5 -.-> A5
+    S6 -.-> A6
+    S7 -.-> A7
+    S8 -.-> A8
+    S9 -.-> A9
+
+    classDef stage fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:13px
+    classDef attack fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:12px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:12px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Supply-chain stage</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>⚡ Attack injection point</div>
+            </div>
+            <h3>Stage &amp; Incident Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap any blue stage or amber ⚡ attack point. Each attack names a real-world incident. Then ask: which defense below would have caught it?</div>
+            </div>
+            <div class="defenses">
+                <div class="defenses-title">Defenses (mapped to stages)</div>
+                <div class="def" data-info="DSBOM"><b>SBOM</b> — inventory of components. Covers stages 3, 5, 9.</div>
+                <div class="def" data-info="DSIGN"><b>Code signing</b> — applied at 6, <i>verified</i> at 9.</div>
+                <div class="def" data-info="DREPRO"><b>Reproducible builds</b> — stage 4.</div>
+                <div class="def" data-info="DPROV"><b>Provenance attestations</b> — stages 4&ndash;8 (SLSA).</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="software-supply-chain-flow.js"></script>
+    <script>
+      // Wire the defenses rows to the same info panel as the diagram nodes.
+      document.querySelectorAll('.def').forEach(function (el) {
+        var id = el.getAttribute('data-info');
+        function reveal() {
+          if (typeof nodeInfo !== 'undefined' && nodeInfo[id]) {
+            document.getElementById('panel').textContent = nodeInfo[id];
+          }
+        }
+        el.addEventListener('mouseenter', reveal);
+        el.addEventListener('click', reveal);
+      });
+    </script>
+</body>
+</html>

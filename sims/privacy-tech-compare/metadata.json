@@ -1,0 +1,55 @@
+{
+  "title": "Privacy-Enhancing Technologies Compared",
+  "description": "Interactive SVG 2x2 comparison of four privacy-enhancing technologies (FHE, MPC, Differential Privacy, Zero-Knowledge Proofs) across definition, input/output visibility, computational cost, and maturity, with a real-world example tooltip per card.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "privacy-tech-compare",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 4,
+  "chapter_title": "Cryptography in Practice: PKI, TLS, and Data Protection",
+  "chapter_dir": "04-crypto-in-practice",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Privacy-enhancing technologies (FHE, MPC, differential privacy, zero-knowledge proofs)",
+    "learningObjectives": [
+      "Compare four privacy-enhancing technologies across the same six fields.",
+      "Reason about who can see inputs and outputs under each technique.",
+      "Match each technique to the kind of privacy question it answers and its maturity."
+    ],
+    "bloomLevels": [
+      "Analyze"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic cryptography (encryption, the idea of a ciphertext) and the notion of a trusted party."
+  },
+  "pedagogical": {
+    "modelType": "static comparison cards with hover reveals",
+    "interactionModes": [
+      "side-by-side comparison",
+      "hover tooltips",
+      "tap tooltips"
+    ],
+    "controls": [
+      "Read the 2x2 grid of cards (FHE, MPC, DP, ZKP)",
+      "Compare the six fields across cards",
+      "Hover/tap a card for its real-world deployment example",
+      "Read the footer band on when to reach for which technique"
+    ],
+    "assessment": "Given a privacy requirement, students pick the appropriate technique and justify the choice using the input/output visibility and cost fields.",
+    "misconceptionsAddressed": [
+      "Treating all privacy-enhancing technologies as interchangeable.",
+      "Assuming the most expensive technique (FHE) is always the most appropriate."
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "GRC Relationship",
+  "description": "Interactive three-circle Venn diagram (Governance, Risk, Compliance) rendered as inline SVG with hover tooltips on every region and overlap, including the central Security Program. Stacks vertically on narrow screens.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "grc-relationship",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Distinguish",
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Governance, risk, and compliance (GRC)",
+    "learningObjectives": [
+      "Distinguish governance, risk, and compliance as three related but distinct functions.",
+      "Explain what each pairwise overlap (and the central Security Program) represents.",
+      "Articulate why an organization can be compliant yet still insecure."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness that organizations face regulations and must manage risk."
+  },
+  "pedagogical": {
+    "modelType": "interactive Venn diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions ask students to place real activities in the correct region and to defend the caption.",
+    "misconceptionsAddressed": [
+      "Treating compliance as equivalent to security.",
+      "Conflating governance (who decides) with risk management (what could go wrong)."
+    ]
+  }
+}

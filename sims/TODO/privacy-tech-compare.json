@@ -1,0 +1,14 @@
+{
+  "sim_id": "privacy-tech-compare",
+  "diagram_name": "Comparing Privacy-Preserving Computation Techniques",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** privacy-tech-compare<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA 2x2 grid of cards, each describing one technique with the same six fields for direct comparison. Each card has a hover tooltip with a real-world deployment example.\n\nCard structure (consistent across all four):\n\n- **Header:** Technique name (cybersecurity blue #1565c0)\n- **One-line definition**\n- **Inputs visible to whom?**\n- **Outputs visible to whom?**\n- **Computational cost** (1–5 scale visualized as bars)\n- **Maturity** (Research / Niche / Production)\n- **Real-world example** (in tooltip)\n\nCard 1 — Homomorphic Encryption (FHE)\n- Definition: \"Compute directly on ciphertext.\"\n- Inputs visible to: client only\n- Outputs visible to: client only\n- Cost: 5/5\n- Maturity: Niche → Production\n- Example tooltip: \"Privacy-preserving ML inference; Microsoft SEAL, OpenFHE.\"\n\nCard 2 — Secure Multi-Party Computation (MPC)\n- Definition: \"Multiple parties compute jointly without sharing inputs.\"\n- Inputs visible to: each party sees only their own\n- Outputs visible to: all participating parties\n- Cost: 3/5\n- Maturity: Production\n- Example tooltip: \"Threshold signatures, joint medical research, ad measurement.\"\n\nCard 3 — Differential Privacy (DP)\n- Definition: \"Add calibrated noise to bound any single record's influence.\"\n- Inputs visible to: data curator\n- Outputs visible to: anyone (with bounded leakage)\n- Cost: 1/5\n- Maturity: Production\n- Example tooltip: \"U.S. 2020 Census, Apple iOS telemetry, Google Chrome diagnostics.\"\n\nCard 4 — Zero-Knowledge Proofs (ZKP)\n- Definition: \"Prove a statement is true without revealing why.\"\n- Inputs visible to: prover only\n- Outputs visible to: verifier (just true/false + proof)\n- Cost: 4/5\n- Maturity: Production (growing)\n- Example tooltip: \"Zcash transactions, anonymous credentials, blockchain rollups.\"\n\nA footer band lists \"When to reach for which\": one short sentence per technique linking the technique to the question it answers.\n\nColor: cybersecurity blue, slate steel for headers, rust orange and gold for cost-bar gradient. Responsive: cards stack vertically below 700px viewport.\n\nImplementation: Static SVG with embedded CSS hover tooltips, accessible labels."
+}

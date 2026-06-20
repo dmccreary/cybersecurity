@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>A TOCTOU Race Condition</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                fontSize: '15px',
+                primaryColor: '#e3f0fb',
+                primaryBorderColor: '#1565c0',
+                primaryTextColor: '#0d2c54',
+                actorBkg: '#1565c0',
+                actorBorder: '#0d47a1',
+                actorTextColor: '#ffffff',
+                signalColor: '#455a64',
+                signalTextColor: '#263238',
+                noteBkgColor: '#fff3d6',
+                noteBorderColor: '#ffa000',
+                noteTextColor: '#5a3d00'
+            },
+            sequence: {
+                useMaxWidth: true,
+                wrap: true,
+                width: 220,
+                noteAlign: 'left'
+            }
+        });
+        window.addEventListener('resize', () => {
+            const svg = document.querySelector('.mermaid svg');
+            if (svg) svg.style.maxWidth = '100%';
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #fff8e1; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 900px; margin: 0 auto; padding: 10px; }
+        h1.title { text-align: center; font-size: 22px; color: #1565c0; margin: 6px 0 2px; }
+        p.sub { text-align: center; font-size: 13.5px; color: #455a64; margin-bottom: 6px; }
+        .key {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px;
+            font-size: 12px; color: #455a64; margin-bottom: 8px;
+        }
+        .key span { display: inline-flex; align-items: center; }
+        .key .dot { width: 12px; height: 12px; border-radius: 3px; margin-right: 5px;
+            border: 1px solid #90a4ae; }
+        .mermaid { width: 100%; display: flex; justify-content: center; background: #fff8e1; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .fix {
+            max-width: 800px; margin: 10px auto 0; border: 2px solid #2e7d32;
+            border-radius: 8px; padding: 8px 12px; font-size: 13px; color: #1b5e20;
+            background: #e8f5e9;
+        }
+        .fix b { color: #1b5e20; }
+        .fix code { background: #c8e6c9; padding: 0 4px; border-radius: 3px;
+            font-family: Consolas, Menlo, monospace; font-size: 12.5px; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">A TOCTOU Race Condition</h1>
+    <p class="sub">Time-Of-Check to Time-Of-Use. Between the check (T1) and the use (T2), an attacker swaps the file out from under a privileged process.</p>
+    <div class="key">
+      <span><span class="dot" style="background:#1565c0"></span>Legitimate actor / call</span>
+      <span><span class="dot" style="background:#d84315"></span>Attacker action</span>
+      <span><span class="dot" style="background:#ffcdd2;border-color:#c62828"></span>Critical window (the race)</span>
+    </div>
+    <div class="mermaid">
+sequenceDiagram
+    autonumber
+    participant P as Privileged Process
+    participant F as Filesystem
+    participant A as Attacker
+    Note over P: T1 — TIME OF CHECK
+    P->>F: access("/tmp/x", R_OK)
+    F->>P: OK — normal user-owned file
+    rect rgb(255, 205, 210)
+    Note over P,A: TOCTOU window — the file is no longer what was checked
+    A->>F: unlink("/tmp/x")
+    A->>F: symlink("/etc/shadow", "/tmp/x")
+    end
+    Note over P: T2 — TIME OF USE
+    P->>F: open("/tmp/x", O_RDONLY)
+    F->>P: fd for /etc/shadow (symlink followed)
+    Note over P: Privileged process reads /etc/shadow
+    </div>
+    <div class="fix">
+      <b>Structural fix:</b> close the window instead of trying to shrink it. Use
+      <code>openat()</code> with <code>O_NOFOLLOW</code>, or open the file <em>once</em> and
+      operate on the file descriptor (<code>fstat</code>, not <code>stat</code>) &mdash; then the
+      thing you checked and the thing you use are guaranteed to be the same object.
+    </div>
+  </div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="toctou-race.js"></script>
+</body>
+</html>

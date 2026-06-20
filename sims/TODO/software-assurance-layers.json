@@ -1,0 +1,14 @@
+{
+  "sim_id": "software-assurance-layers",
+  "diagram_name": "The Three Layers of Software Assurance",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic\n**sim-id:** software-assurance-layers<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nThree concentric circles on a 720x480 responsive canvas (resizes to container width).\n\n- **Inner circle** (cybersecurity blue #1565c0, label \"In-Code Defenses\"): contains three rotating chips: \"Input Validation\", \"Output Encoding\", \"Parameterized Queries\"\n- **Middle ring** (slate steel #455a64, label \"Analysis Tooling\"): contains three chips: \"Static Analysis (SAST)\", \"Dynamic Analysis (DAST)\", \"Fuzzing\"\n- **Outer ring** (amber alert accent #ffa000, label \"Supply Chain\"): contains four chips: \"SCA / Dependency Scanning\", \"SBOM\", \"Code Signing\", \"Secure Build\"\n\nHovering on any chip shows a 1-line tooltip with the definition (matching the glossary). A small \"What this layer protects against\" caption updates as the user hovers a ring (e.g., \"In-code defenses prevent injection at the trust boundary.\").\n\nLearning objective (Bloom — Understand): explain how the three layers compose to defend a software system, and articulate which layer fails when a particular incident occurs.\n\nResponsive: collapses to vertical stack of three labeled bands below 600px viewport.\n\nImplementation: p5.js sketch with `updateCanvasSize()` first in setup(), `canvas.parent(document.querySelector('main'))`, mouse-hover tooltips drawn on top."
+}

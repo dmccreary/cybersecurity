@@ -1,0 +1,43 @@
+{
+  "title": "Stack Layout During a Buffer Overflow",
+  "description": "Interactive SVG infographic comparing a normal stack frame with an overflowed one, showing how writing past buffer[16] overwrites the saved frame pointer and return address, with hover tooltips naming the defenses that stop it.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "stack-overflow-anatomy",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Stack-based buffer overflow",
+    "learningObjectives": [
+      "Explain how an unbounded write to a fixed-size stack buffer overwrites the saved frame pointer and return address.",
+      "Describe why a corrupted return address redirects execution to attacker-controlled memory on function return.",
+      "Identify which mitigations (stack canary, ASLR, DEP/NX) would detect or prevent the overflow."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of the call stack, local variables, and function return."
+  },
+  "pedagogical": {
+    "modelType": "interactive comparison infographic",
+    "interactionModes": ["hover-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to trace the overflow cell-by-cell and to match each mitigation to the moment it would act.",
+    "misconceptionsAddressed": [
+      "Thinking the overflow corrupts only the buffer rather than adjacent saved registers and the return address.",
+      "Assuming DEP/NX alone defeats all overflow exploitation, ignoring ROP."
+    ]
+  }
+}

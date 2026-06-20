@@ -1,0 +1,14 @@
+{
+  "sim_id": "sbom-dependency-explorer",
+  "diagram_name": "SBOM as a Dependency Tree Explorer",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: graph-data-model\n**sim-id:** sbom-dependency-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\nAn interactive graph visualization of a small-but-realistic application SBOM, rendered with vis-network in a responsive container (default 800x500, resizes on window resize).\n\nNodes (about 35 total):\n\n- **Root application** (cybersecurity blue #1565c0, large): `my-web-app v1.4.2`\n- **Direct dependencies** (slate steel #455a64, medium): ~8 nodes (e.g., `express`, `jsonwebtoken`, `lodash`, `axios`, `pg`, `winston`, `react`, `react-dom`)\n- **Transitive dependencies** (light gray, small): ~25 nodes including a deliberately included `log4js@2.4.0` as a known-vulnerable example\n- **Vulnerable nodes** (amber #ffa000 with red border): 2–3 nodes, each tagged with a CVE label visible on hover\n- **Edges**: directed, from dependent to dependency, slightly y-offset on horizontal edges so labels render correctly (per the project's vis-network rendering note)\n\nControls (using p5-style buttons rendered as HTML buttons next to the canvas):\n\n- **Filter:** \"Show vulnerable only\" — hides any node not reachable from the root through a vulnerable node\n- **Filter:** \"Show direct only\" — hides transitive dependencies\n- **Highlight path:** click any node to highlight the full transitive path from root\n- **Search box:** find a component by name (allow-list filtered to alphanumerics)\n\nSide panel (right side, 30% width on desktop, below canvas on mobile):\n\n- Selected component name, version, license, hash (truncated)\n- \"Listed CVEs\" with severity badge\n- \"Path from root\" as an arrow-separated breadcrumb\n\nLearning objective (Bloom — Apply): given a published CVE in a transitive dependency, locate the affected component in an SBOM and identify the path from the root application to the vulnerable component.\n\nResponsive: side panel collapses below the network below 700px viewport.\n\nImplementation: vis-network for the graph, vanilla JS for the side panel, fetch from a local `data.json` containing the SBOM in CycloneDX format. Note: apply the project's edge y-offset workaround for horizontal edges to avoid the label-rendering bug."
+}

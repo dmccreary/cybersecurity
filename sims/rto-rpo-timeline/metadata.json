@@ -1,0 +1,44 @@
+{
+  "title": "RTO and RPO Timeline",
+  "description": "An interactive SVG timeline anchoring RPO (the data-loss window before an incident) and RTO (the downtime window after it) to a single incident marker, with hover tooltips and worked tier examples.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "rto-rpo-timeline",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "distinguish",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Governance, Risk, and Compliance"],
+    "topic": ["Business Continuity", "Disaster Recovery", "RPO", "RTO", "Incident Response"],
+    "learningObjectives": [
+      "Distinguish the Recovery Point Objective from the Recovery Time Objective.",
+      "State which direction in time each objective measures relative to the incident.",
+      "Read an example RPO/RTO pair for a given system tier."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["None"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Have students point to which side of the incident is RPO and which is RTO before revealing tooltips.",
+      "Give a system and have students propose and justify an RPO/RTO pair from the cost of data loss versus downtime."
+    ],
+    "assessmentQuestions": [
+      {"question": "A team sets RPO to 5 minutes but RTO to 24 hours. What does that imply about backups versus failover?", "level": "Understand"},
+      {"question": "Why is RPO = 0 effectively impossible, and what does chasing it cost?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security"
+}

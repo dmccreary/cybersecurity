@@ -1279,6 +1279,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1292,7 +1580,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1882,6 +2170,9 @@ Welcome. Chapter 8 gave us protocols, firewalls, and the perimeter. This chapter
 </ul>
 <p>The supplicant and authentication server speak <strong>EAP</strong> (Extensible Authentication Protocol). The most common production EAP method is <strong>EAP-TLS</strong>, which uses a TLS handshake with mutual certificates — the client has its own certificate and the server has its own, just as in HTTPS but in both directions. EAP-TLS is the gold standard because it is phishing-resistant: there is no password to capture, and an attacker who clones the SSID cannot forge a valid server certificate.</p>
 <h4 id="diagram-8021x-authentication-flow">Diagram: 802.1X Authentication Flow<a class="headerlink" href="#diagram-8021x-authentication-flow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/dot1x-eap-tls-flow/main.html" width="100%" height="902" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/dot1x-eap-tls-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing supplicant, authenticator, and RADIUS server in an EAP-TLS exchange</summary>
 <p>Type: workflow-diagram
@@ -1980,6 +2271,9 @@ Most operating systems remember every Wi-Fi network you have ever joined and pro
 <li>Looking for unusual <em>patterns</em> — a single workstation generating thousands of TXT-record lookups per minute is suspicious regardless of which domain it targets.</li>
 </ul>
 <h4 id="diagram-dnssec-validation-chain">Diagram: DNSSEC Validation Chain<a class="headerlink" href="#diagram-dnssec-validation-chain" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/dnssec-chain-of-trust/main.html" width="100%" height="672" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/dnssec-chain-of-trust/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Tree diagram showing chain of trust from root key down to a signed record</summary>
 <p>Type: tree-diagram
@@ -2072,6 +2366,9 @@ DNSSEC and RPKI are the same architectural pattern applied to two different prob
 <li><strong>Rate limiting and adaptive shaping</strong> at the application tier, especially for L7 attacks.</li>
 </ul>
 <h4 id="diagram-ddos-mitigation-architecture-microsim">Diagram: DDoS Mitigation Architecture (MicroSim)<a class="headerlink" href="#diagram-ddos-mitigation-architecture-microsim" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ddos-mitigation-explorer/main.html" width="100%" height="527" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/ddos-mitigation-explorer/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive simulation comparing volumetric and L7 DDoS, with toggleable defenses</summary>
 <p>Type: microsim
@@ -2308,6 +2605,9 @@ The same tool used to attack a network can be used to defend it — <code>nmap</
 </tbody>
 </table>
 <h4 id="diagram-network-telemetry-stack">Diagram: Network Telemetry Stack<a class="headerlink" href="#diagram-network-telemetry-stack" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/network-telemetry-stack/main.html" width="100%" height="502" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/network-telemetry-stack/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing where packet capture, NetFlow, DNS logs, firewall logs, and SIEM each fit</summary>
 <p>Type: diagram

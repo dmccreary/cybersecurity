@@ -1,0 +1,49 @@
+{
+  "title": "DDoS Mitigation Explorer",
+  "description": "Interactive p5.js simulation of DDoS attack and defense. Adjust botnet size, attack rate, attack type, and amplification reflector, then toggle BCP38 ingress filtering, anycast, scrubbing, and rate limiting to see how much traffic still reaches the origin server's bandwidth and CPU.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ddos-mitigation-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "validated",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "DDoS attacks and mitigation architecture",
+    "learningObjectives": [
+      "Analyze how ingress filtering, anycast, scrubbing, and rate limiting each reduce attack traffic.",
+      "Distinguish how volumetric attacks load bandwidth while application-layer attacks load CPU.",
+      "Reason about why a defense effective against one attack type may be useless against another."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-20 minutes",
+    "prerequisites": "Basic networking (IP, requests per second) and the idea of a botnet."
+  },
+  "pedagogical": {
+    "modelType": "agent-based traffic simulation",
+    "interactionModes": ["sliders", "dropdowns", "checkboxes", "reset"],
+    "controls": [
+      "Slider: number of bots (10-10,000)",
+      "Slider: attack rate per bot (1-100 req/s)",
+      "Select: attack type (Volumetric, L7-CPU, L7-DB)",
+      "Select: amplification reflector (None, DNS 50x, NTP 500x, Memcached 50,000x) - volumetric only",
+      "Checkboxes: BCP38 ingress filter, anycast (3 PoPs), scrubbing center, rate limiting",
+      "Button: reset"
+    ],
+    "assessment": "Students find a configuration that keeps legitimate-requests-served above 50% for each attack type and explain why.",
+    "misconceptionsAddressed": [
+      "Believing a single defense stops all DDoS.",
+      "Assuming rate limiting works equally well against highly distributed botnets."
+    ]
+  }
+}

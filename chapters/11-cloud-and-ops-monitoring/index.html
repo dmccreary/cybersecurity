@@ -1195,6 +1195,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1208,7 +1496,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1692,6 +1980,9 @@ Welcome. So far we have built secure primitives, defended networks, and hardened
 <p>Three service models dominate, traditionally drawn as a stack with the customer's responsibility shrinking at each level. <strong>IaaS (Infrastructure as a Service)</strong> rents virtual machines, virtual networks, and storage; the customer manages the operating system upward. <strong>PaaS (Platform as a Service)</strong> rents a managed runtime — a database, a container platform, a serverless function service — where the customer manages only the application and its data. <strong>SaaS (Software as a Service)</strong> rents a complete application, like Microsoft 365 or Salesforce, where the customer manages only their data, identities, and the configuration of the application's features.</p>
 <p>Before we examine the diagram, note the rule it encodes: each step "up" the stack hands more components to the provider but never relieves the customer of <em>data, identity, and configuration</em> responsibilities. Those three remain the customer's job at every level.</p>
 <h4 id="diagram-shared-responsibility-across-iaas-paas-and-saas">Diagram: Shared Responsibility Across IaaS, PaaS, and SaaS<a class="headerlink" href="#diagram-shared-responsibility-across-iaas-paas-and-saas" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/shared-responsibility-stack/main.html" width="100%" height="662" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/shared-responsibility-stack/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Stacked-bar comparison of customer vs provider responsibilities at each cloud service tier</summary>
 <p>Type: infographic-svg
@@ -1740,6 +2031,9 @@ The single most common cloud-IAM footgun is the wildcard. A policy with <code>"A
 <p><strong>Security monitoring</strong> is the continuous collection and analysis of evidence about what a system is doing, with the goal of detecting deviations from the policy or expected baseline. Where prevention fails, monitoring gives you the chance to detect, respond, and limit damage. Most modern frameworks (NIST CSF, MITRE ATT&amp;CK) treat <em>Detect</em> and <em>Respond</em> as first-class functions on equal footing with <em>Protect</em>.</p>
 <p>A useful mental model is the <strong>defender's loop</strong> — collect evidence, derive signals, alert on signals that matter, respond to alerts, and feed lessons back into prevention. The chapter's remaining sections roughly follow that loop. Sections 4 and 5 cover the <em>collect-and-derive</em> part: log management, SIEM, and SOAR. Section 6 covers the human-and-process layer: the security operations center. Section 7 covers endpoint-specific evidence: antivirus, host-based IDS, EDR, XDR. Sections 8 and 9 close the loop with the <em>prevention-side</em> operational disciplines that reduce alert volume in the first place: patching, hardening, baselines, and audit logging.</p>
 <h4 id="diagram-the-operations-monitoring-pipeline">Diagram: The Operations Monitoring Pipeline<a class="headerlink" href="#diagram-the-operations-monitoring-pipeline" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ops-monitoring-pipeline/main.html" width="100%" height="892" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/ops-monitoring-pipeline/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Architecture diagram showing how raw events flow from sources through collection, SIEM, SOAR, and analyst</summary>
 <p>Type: drawing
@@ -1902,6 +2196,9 @@ Treat your detection rules like code. Version-control them, code-review them, wr
 <p>The widely used reference standard for hardening is the <strong>CIS Benchmarks</strong> — a freely available set of consensus-based, prescriptive guides published by the Center for Internet Security covering operating systems, cloud providers, container platforms, databases, browsers, and many other technologies. A CIS Benchmark for, say, Ubuntu 22.04 might contain 200+ specific recommendations, each with a rationale, an audit procedure, and a remediation step. CIS also distinguishes a <em>Level 1</em> profile (recommended for most environments) from a <em>Level 2</em> profile (more restrictive, for higher-sensitivity environments).</p>
 <p>The relationship among the four concepts is best summarized as a small workflow. <em>Hardening</em> is the activity. <em>Baselines</em> are its output, written down. <em>Configuration management</em> applies them. <em>CIS Benchmarks</em> are an excellent place to start the baseline rather than inventing one from scratch.</p>
 <h4 id="diagram-hardening-baselines-and-drift">Diagram: Hardening, Baselines, and Drift<a class="headerlink" href="#diagram-hardening-baselines-and-drift" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/hardening-baselines-loop/main.html" width="100%" height="722" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/hardening-baselines-loop/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Causal-loop diagram showing how hardening, baselines, configuration enforcement, and detection of drift form a cycle</summary>
 <p>Type: causal-loop-diagram

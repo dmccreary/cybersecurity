@@ -1,0 +1,53 @@
+{
+  "title": "Network Telemetry Stack",
+  "description": "Mermaid layered diagram of five network telemetry sources (full PCAP, application logs, firewall/proxy logs, NetFlow/IPFIX, DNS logs) ordered by fidelity and coverage, all feeding a SIEM / data lake, with a cost trade-off note.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "network-telemetry-stack",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 9,
+  "chapter_title": "Advanced Network Defense: Wireless, DNS, and Zero Trust",
+  "chapter_dir": "09-advanced-network-defense",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Network security monitoring data sources and the fidelity/coverage/cost trade-off",
+    "learningObjectives": [
+      "Identify the five common network telemetry sources and the question each one answers.",
+      "Compare the sources along the fidelity, coverage, and storage-cost dimensions.",
+      "Explain why teams keep cheap broad telemetry always-on and high-fidelity capture on-demand."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic networking and the idea of logging and a SIEM."
+  },
+  "pedagogical": {
+    "modelType": "static layered diagram",
+    "interactionModes": [
+      "labeled layer comparison",
+      "fidelity/coverage axis annotations"
+    ],
+    "controls": [
+      "Read the five layers top (high fidelity) to bottom (broad coverage)",
+      "Each layer shows data type, example tool, and the question it answers",
+      "Fidelity axis (up) and Coverage axis (down) flank the diagram"
+    ],
+    "assessment": "Students place a given investigative question (e.g., 'what bytes were sent?') at the correct telemetry layer and justify the storage trade-off.",
+    "misconceptionsAddressed": [
+      "Believing full packet capture should be retained for everything.",
+      "Assuming high-fidelity data also has the broadest coverage."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "device-attestation-flow",
+  "diagram_name": "Device Attestation Flow",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** device-attestation-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA sequence diagram with three actors:\n\n- **Verifier** (left) — e.g., corporate VPN server or cloud attestation service\n- **Device** (middle) — e.g., laptop or VM\n- **TPM / Hardware Root of Trust** (right) — on the device but conceptually distinct\n\nSteps from top to bottom:\n\n1. Verifier → Device: \"Attestation request (nonce N)\"\n2. Device → TPM: \"Quote PCRs with nonce N, sign with AIK\"\n3. TPM → Device: \"Quote = sign_AIK(PCR0..23 || N)\"\n4. Device → Verifier: \"Quote + AIK certificate + EK certificate chain\"\n5. Verifier checks: (a) certificate chains to known manufacturer, (b) signature is valid, (c) nonce matches, (d) PCRs match policy of acceptable boot states\n6. Verifier → Device: \"Attestation token (or denial)\"\n\nA side-note box at the bottom: \"Trust depends on the manufacturer's EK certificate AND the verifier's policy of acceptable PCR values. Both must be current.\"\n\nColor: cybersecurity blue for verifier and device, slate steel for the TPM/HW root, amber for the policy-check step (because policy currency is the operational footgun).\n\nResponsive: actor lanes simplify to single column below 600px.\n\nImplementation: Mermaid sequenceDiagram."
+}

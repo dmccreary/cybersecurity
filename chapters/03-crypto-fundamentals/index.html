@@ -1183,6 +1183,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1196,7 +1484,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1683,6 +1971,9 @@ Welcome. Cryptography is the toolbox that the rest of the technical security sta
 <p>Every cryptographic discussion uses the same five words. <strong>Plaintext</strong> is the original, readable message — the data you are trying to protect. <strong>Ciphertext</strong> is the scrambled output of encryption; without the key, ciphertext should be indistinguishable from random data. <strong>Encryption</strong> is the process of transforming plaintext into ciphertext using a key, and <strong>decryption</strong> is the inverse operation that recovers the plaintext given the correct key. The <strong>cryptographic key</strong> is the secret parameter that controls both transformations. Anyone with the key can encrypt or decrypt; anyone without the key cannot — at least, not in any time scale that matters.</p>
 <p>A core principle, articulated by Auguste Kerckhoffs in 1883 and now universally accepted, is that <strong>the security of a cryptosystem must depend only on the secrecy of the key, not on the secrecy of the algorithm</strong>. This is the <em>open design</em> principle from Chapter 1, applied to cryptography. Modern cryptographic algorithms are public, peer-reviewed, and standardized exactly so that thousands of cryptographers can attempt to break them; the keys are what stay secret. Any vendor who tells you they have a "proprietary encryption algorithm" is selling something nobody serious has reviewed.</p>
 <h4 id="diagram-encryption-and-decryption-flow">Diagram: Encryption and Decryption Flow<a class="headerlink" href="#diagram-encryption-and-decryption-flow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/encryption-decryption-flow/main.html" width="100%" height="402" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/encryption-decryption-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Block diagram showing plaintext, encryption, ciphertext, and decryption with shared key</summary>
 <p>Type: workflow-diagram
@@ -1781,6 +2072,9 @@ ECB looks like encryption, accepts the same arguments as encryption, and decrypt
 <p><strong>GCM (Galois/Counter Mode)</strong> combines CTR-mode encryption with an integrity check (a Galois-field MAC) in a single primitive. GCM produces ciphertext <em>and</em> an authentication tag; on decryption, the tag is verified before the plaintext is returned. If an attacker tampers with even one bit of the ciphertext, the tag verification fails and the decryption operation refuses to return any plaintext at all. This property — <em>authenticated encryption with associated data</em>, AEAD — is what modern cryptographic engineering has converged on. It eliminates the entire class of malleability and padding-oracle attacks.</p>
 <p>GCM has one nasty footgun: nonce reuse is catastrophic. If the same key is used with the same nonce (12-byte IV) for two different messages, an attacker can recover the authentication key and forge messages at will. In practice, nonces are either random (with low collision probability if generated with a good RNG) or counter-based with strict bookkeeping. Many libraries handle this for you; some do not.</p>
 <h4 id="diagram-block-cipher-modes-comparison">Diagram: Block Cipher Modes Comparison<a class="headerlink" href="#diagram-block-cipher-modes-comparison" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/block-cipher-modes-compare/main.html" width="100%" height="762" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/block-cipher-modes-compare/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side visual showing ECB, CBC, CTR, and GCM mode behavior</summary>
 <p>Type: infographic-svg
@@ -1829,6 +2123,9 @@ ECB looks like encryption, accepts the same arguments as encryption, and decrypt
 <p>The math, briefly: both parties agree on public parameters (a large prime <em>p</em> and a generator <em>g</em>). Alice picks a private value <em>a</em> and sends ( g^a \mod p ); Bob picks a private value <em>b</em> and sends ( g^b \mod p ). Each computes the shared secret ( g^{ab} \mod p ) using their own private value and the other party's public value. The eavesdropper has ( g^a ) and ( g^b ) but, without knowing <em>a</em> or <em>b</em>, cannot compute ( g^{ab} ) — this is the <em>Diffie-Hellman problem</em>, which is at least as hard as the discrete logarithm problem.</p>
 <p>Modern DH is almost always implemented in the elliptic-curve variant, ECDHE (Elliptic Curve Diffie-Hellman Ephemeral), with fresh values for every session — that "ephemeral" property is what gives modern TLS its <em>forward secrecy</em> (Chapter 4 will revisit forward secrecy in detail).</p>
 <h4 id="diagram-diffie-hellman-key-exchange">Diagram: Diffie-Hellman Key Exchange<a class="headerlink" href="#diagram-diffie-hellman-key-exchange" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/diffie-hellman-exchange/main.html" width="100%" height="902" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/diffie-hellman-exchange/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing Alice and Bob deriving a shared secret over an untrusted channel</summary>
 <p>Type: workflow-diagram

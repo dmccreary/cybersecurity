@@ -1,0 +1,14 @@
+{
+  "sim_id": "control-taxonomy-cube",
+  "diagram_name": "Security Control 3D Taxonomy",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** control-taxonomy-cube<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA 3×3 grid (or simplified 3D cube) where:\n- Rows = Function: Preventive / Detective / Corrective / Compensating (4 rows)\n- Columns = Type: Administrative / Technical / Physical (3 columns)\n\nEach of the 12 cells contains a 1-2 example controls. Examples:\n- Preventive × Administrative: \"Acceptable use policy\", \"Security training\"\n- Preventive × Technical: \"Firewall\", \"Encryption at rest\", \"MFA\"\n- Preventive × Physical: \"Door locks\", \"Badge access\"\n- Detective × Administrative: \"Periodic audit\", \"User behavior reviews\"\n- Detective × Technical: \"IDS\", \"SIEM correlation rules\", \"Audit logs\"\n- Detective × Physical: \"Security cameras\", \"Motion sensors\"\n- Corrective × Administrative: \"Incident response plan\", \"Disaster recovery procedures\"\n- Corrective × Technical: \"Backups\", \"Patches\", \"Endpoint quarantine\"\n- Corrective × Physical: \"Replacement hardware\", \"Fire suppression\"\n- Compensating × Administrative: \"Manual review when automation is unavailable\"\n- Compensating × Technical: \"Strict segmentation when in-place encryption is impossible\"\n- Compensating × Physical: \"Locked cage when full datacenter access control is unavailable\"\n\nCell coloring: each function gets a color (preventive=blue, detective=green, corrective=amber, compensating=slate). Hover tooltips reveal more examples per cell. Legend below explains colors.\n\nColor: cybersecurity blue #1565c0 for preventive, green #4caf50 for detective, amber #ffa000 for corrective, slate #455a64 for compensating. Responsive: rows stack to vertical list below 700px.\n\nImplementation: Static SVG grid with `<title>` tooltips per cell."
+}

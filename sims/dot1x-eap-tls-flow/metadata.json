@@ -1,0 +1,40 @@
+{
+  "title": "802.1X / EAP-TLS Authentication Flow",
+  "description": "A sequence diagram of 802.1X port-based network access control using EAP-TLS, showing how a supplicant authenticates through an authenticator that only relays traffic to a RADIUS server, with the mutual TLS handshake highlighted.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dot1x-eap-tls-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Advanced Network Defense: Wireless, DNS, and Zero Trust",
+    "learningObjectives": [
+      "Trace the 802.1X / EAP-TLS message flow from EAPOL-Start to an opened port.",
+      "Explain the distinct role of the supplicant, authenticator, and RADIUS server.",
+      "Explain why the authenticator can relay EAP without ever seeing the secrets."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Familiarity with certificates, TLS handshakes, and basic LAN/Wi-Fi access."
+  },
+  "pedagogical": {
+    "modelType": "protocol sequence diagram",
+    "interaction": "Static, color-coded, responsive sequence diagram with the TLS handshake step highlighted.",
+    "assessment": "Lesson plan asks students to identify which party validates the client certificate and why.",
+    "misconceptions": "Counters the idea that the access point itself authenticates the user."
+  },
+  "completion_status": "validated",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense"
+}

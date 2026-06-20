@@ -1,0 +1,14 @@
+{
+  "sim_id": "certificate-chain-of-trust",
+  "diagram_name": "Certificate Chain of Trust",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** certificate-chain-of-trust<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical hierarchy with three tiers:\n\n**Top tier — Root CA**\n- Single node: \"Root CA: Example Trust Root\" (cybersecurity blue #1565c0, gold border indicating trust anchor)\n- Tag: \"Self-signed. Lives in browser trust store. Offline HSM.\"\n\n**Middle tier — Intermediates**\n- Two sibling nodes: \"Intermediate CA A\" and \"Intermediate CA B\" (slate steel #455a64)\n- Both connected upward to Root CA via arrows labeled \"signs\"\n\n**Bottom tier — End-entity certificates**\n- Three leaf nodes: \"www.example.com\", \"api.example.com\", \"mail.example.com\" (white with rust orange #d84315 border)\n- Each connected upward to one of the intermediates via arrows labeled \"signs\"\n\nA vertical \"Verification path\" callout on the right shows the reverse direction:\n- \"Browser receives www.example.com cert\"\n- \"↑ verifies signature using Intermediate CA A public key\"\n- \"↑ verifies signature using Root CA public key\"\n- \"↑ Root CA in trust store? → trust established\"\n\nA small inset legend explains the colors: gold border = trust anchor, blue = CA cert, white = end entity.\n\nColor: cybersecurity blue, slate steel, rust orange, gold accent. Responsive: stacks at narrow widths.\n\nImplementation: Mermaid graph TB with subgraphs for each tier."
+}

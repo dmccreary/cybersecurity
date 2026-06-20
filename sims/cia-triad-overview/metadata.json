@@ -1,0 +1,43 @@
+{
+  "title": "CIA Triad with Example Threats and Controls",
+  "description": "An interactive SVG infographic of the CIA triad — Confidentiality, Integrity, and Availability — pairing each property with a concrete example threat (red) and supporting control (green), with hover definitions on each vertex.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cia-triad-overview",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "describe",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Security Foundations"],
+    "topic": ["CIA Triad", "Confidentiality", "Integrity", "Availability", "Threats", "Controls"],
+    "learningObjectives": [
+      "Describe the three properties of the CIA triad and what each protects.",
+      "Match an example threat and an example control to the property each affects."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["None"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Hover each vertex to read the property definition, then study its threat/control pair.",
+      "Ask students to add a second threat and control for each property from their own experience."
+    ],
+    "assessmentQuestions": [
+      {"question": "Which CIA property does a DDoS attack violate, and which controls defend it?", "level": "Understand"},
+      {"question": "Can a single incident violate more than one property at once? Give an example.", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations"
+}

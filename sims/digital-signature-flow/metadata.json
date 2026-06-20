@@ -1,0 +1,41 @@
+{
+  "title": "Digital Signature: Sign and Verify Flow",
+  "description": "Interactive Mermaid workflow of digital signing and verification across a trust boundary: the signer hashes and signs a message with a private key; the verifier re-hashes and checks the signature with the public key, then compares digests.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "digital-signature-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 4,
+  "chapter_title": "\"Cryptography in Practice: PKI, TLS, and Data Protection\"",
+  "chapter_dir": "04-crypto-in-practice",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cryptography",
+    "topic": "Digital signatures: hashing and asymmetric keys",
+    "learningObjectives": [
+      "Explain the signing path: hash the message, then sign the digest with the private key.",
+      "Explain the verification path: re-hash, recover the expected digest with the public key, and compare.",
+      "Distinguish the role of the private key (signs) from the public key (verifies)."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Familiarity with hash functions and the idea of a public/private key pair."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions ask students to trace what changes if the message is altered or the wrong key is used.",
+    "misconceptionsAddressed": [
+      "Believing a signature encrypts (hides) the message rather than authenticating it.",
+      "Swapping the roles of the public and private keys."
+    ]
+  }
+}

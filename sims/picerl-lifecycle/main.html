@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>PICERL Incident Response Lifecycle</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                fontFamily: 'Arial, Helvetica, sans-serif',
+                fontSize: '15px'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                nodeSpacing: 45,
+                rankSpacing: 55
+            }
+        });
+        window.addEventListener('resize', () => {
+            const svg = document.querySelector('.mermaid svg');
+            if (svg) svg.style.maxWidth = '100%';
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #212529; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 10px; }
+        h1.title { text-align: center; font-size: 21px; color: #1565c0; margin: 6px 0 2px; }
+        p.sub { text-align: center; font-size: 13px; color: #455a64; margin-bottom: 6px; }
+        .mermaid { width: 100%; display: flex; justify-content: center; background: #ffffff; }
+        .mermaid svg { max-width: 100%; height: auto; }
+        .legend {
+            display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center;
+            margin: 8px auto 2px; max-width: 980px; font-size: 12.5px; color: #263238;
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .box { width: 16px; height: 13px; border: 1px solid #777; border-radius: 3px; }
+        .note { max-width: 960px; margin: 6px auto 0; font-size: 12.5px; color: #455a64; text-align: center; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">PICERL Incident Response Lifecycle</h1>
+    <p class="sub">Six phases in a closed loop — Lessons Learned feeds back into Preparation. Time labels show typical effort per phase.</p>
+    <div class="mermaid">
+flowchart LR
+    P["<b>Preparation</b><br/>Plans, runbooks, training, tooling<br/><i>ongoing — before any incident</i>"]:::blue
+    I["<b>Identification</b><br/>Detect, triage, declare<br/><i>hours</i>"]:::slate
+    C["<b>Containment</b><br/>Short-term and long-term<br/><i>minutes to hours</i>"]:::amber
+    E["<b>Eradication</b><br/>Remove attacker access and artifacts<br/><i>days</i>"]:::slate
+    R["<b>Recovery</b><br/>Restore services, monitor closely<br/><i>weeks</i>"]:::slate
+    L["<b>Lessons Learned</b><br/>Post-incident review, durable improvements<br/><i>weeks after</i>"]:::blue
+
+    P --> I --> C --> E --> R --> L
+    L -. "feedback: improve preparation" .-> P
+
+    classDef blue fill:#1565c0,stroke:#0d3a73,stroke-width:1.5px,color:#ffffff
+    classDef slate fill:#455a64,stroke:#2b383d,stroke-width:1.5px,color:#ffffff
+    classDef amber fill:#ffa000,stroke:#c77700,stroke-width:1.5px,color:#3a2a00
+
+    linkStyle 5 stroke:#1565c0,stroke-width:2px,color:#1565c0
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="box" style="background:#1565c0;"></span>Preparation &amp; Lessons Learned (the durable, between-incident phases)</div>
+      <div class="legend-item"><span class="box" style="background:#ffa000;"></span>Containment (most time-critical)</div>
+      <div class="legend-item"><span class="box" style="background:#455a64;"></span>Active-incident phases</div>
+    </div>
+    <p class="note">
+      The dashed blue arrow is the loop that makes PICERL a lifecycle: what you learn from one
+      incident hardens your preparation for the next.
+    </p>
+  </div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="picerl-lifecycle.js"></script>
+</body>
+</html>

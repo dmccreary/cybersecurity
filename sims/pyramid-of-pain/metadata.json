@@ -1,0 +1,54 @@
+{
+  "title": "Pyramid of Pain",
+  "description": "Interactive p5.js infographic of David Bianco's Pyramid of Pain. Hover each of the six indicator levels for an explanation, click for a sample SIEM detection rule, and toggle between Defender and Attacker views to see why detecting attackers higher up costs them more.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pyramid-of-pain",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 15,
+  "chapter_title": "Offensive and Defensive Security Operations",
+  "chapter_dir": "15-security-operations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "David Bianco's Pyramid of Pain and indicator-based detection",
+    "learningObjectives": [
+      "Explain why detecting attackers at higher pyramid levels imposes more cost on the adversary.",
+      "Identify what kind of indicator lives at each of the six levels.",
+      "Match a sample SIEM detection rule to the pyramid level it targets."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic idea of indicators of compromise and a SIEM."
+  },
+  "pedagogical": {
+    "modelType": "interactive infographic with hover/click reveals",
+    "interactionModes": [
+      "hover reveals",
+      "click reveals",
+      "view toggle"
+    ],
+    "controls": [
+      "Hover a pyramid level for what the indicator is and what detecting it forces the adversary to do",
+      "Click a level to reveal a sample SIEM detection rule",
+      "Select: Defender view (detection ideas) vs Attacker view (evasion cost)"
+    ],
+    "assessment": "Students place a given indicator (a file hash, a C2 domain, a PowerShell-encode behavior) at the correct pyramid level and explain the cost of detecting it.",
+    "misconceptionsAddressed": [
+      "Treating all indicators of compromise as equally valuable.",
+      "Believing blocking file hashes meaningfully slows a capable adversary."
+    ]
+  }
+}

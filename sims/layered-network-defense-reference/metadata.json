@@ -1,0 +1,41 @@
+{
+  "title": "Layered Network Defense Reference",
+  "description": "Interactive Mermaid layered architecture diagram showing defense in depth from the untrusted Internet down to internal datastores, with each layer labeled by the attack class it addresses and three cross-cutting concerns (IDS/IPS, encryption in transit, logging/SIEM).",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "layered-network-defense-reference",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "completion_status": "validated",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Defense in depth and layered network architecture",
+    "learningObjectives": [
+      "Describe the ordered layers of a defense-in-depth network architecture.",
+      "Match each defensive layer to the attack class it primarily addresses.",
+      "Explain why IDS/IPS, encryption in transit, and logging are cross-cutting concerns rather than single appliances."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with firewalls, subnets, and HTTP."
+  },
+  "pedagogical": {
+    "modelType": "interactive layered architecture diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to reason about which layer stops which attack and what survives a single-layer failure.",
+    "misconceptionsAddressed": [
+      "Believing a single firewall is sufficient ('perimeter is enough').",
+      "Treating monitoring and encryption as one box rather than concerns that span every layer."
+    ]
+  }
+}

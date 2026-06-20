@@ -1255,6 +1255,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1268,7 +1556,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1808,6 +2096,9 @@ Welcome. So far we have looked at the network on the wire and at the application
 <p><strong>Kernel security</strong> is the practice of keeping that privileged code trustworthy. It includes hardening the kernel itself against bugs (memory-safe kernel modules, fuzzing the system-call interface, reducing the attack surface by removing unused features), protecting the kernel from user-mode exploitation (KASLR — kernel address space layout randomization, SMEP/SMAP — supervisor mode execute and access prevention, kernel-page-table isolation that defends against Meltdown), and signing kernel modules so that an attacker with root cannot quietly load a rootkit driver. Modern operating systems also support <strong>secure boot</strong>, where firmware verifies the kernel's signature before transferring control to it, anchoring the trust chain at the hardware (a topic we revisit in component security).</p>
 <p>The kernel attack surface is larger than newcomers expect. A typical Linux kernel exposes several hundred system calls, each accepting structured arguments that the kernel must validate. A bug in any one of them — a missing bounds check, an integer overflow in a length field, a race condition between two threads — can become a <em>local privilege escalation</em> (LPE) that turns a user-level shell into a root shell. The CVE database is full of such bugs; treat each one as a reminder that "we are user-only, so kernel bugs do not affect us" is rarely the right model.</p>
 <h4 id="diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary">Diagram: Kernel Mode vs. User Mode and the System Call Boundary<a class="headerlink" href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/kernel-user-boundary/main.html" width="100%" height="477" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/kernel-user-boundary/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Cross-section diagram of user/kernel separation and the system call gateway</summary>
 <p>Type: drawing
@@ -1887,6 +2178,9 @@ Welcome. So far we have looked at the network on the wire and at the application
 <p>A <strong>stack canary</strong> is a random value the compiler inserts into a function's stack frame, between the local variables and the saved return address. On function exit, the prologue checks that the canary still holds its original value. A linear stack-buffer overflow that overwrites the return address must, in passing, also overwrite the canary; the mismatch is detected, and the process aborts before the corrupted return address is used. Canaries do not stop overflows; they catch the most common consequence of one before it does damage.</p>
 <p>Canary values are typically randomized per-process and include a leading null byte (so that string-copy bugs cannot easily preserve the canary while overflowing past it). Sophisticated exploits sometimes leak the canary through a separate information-disclosure bug and then craft an overflow that re-writes it to its correct value — at which point the canary check passes. As with all individual mitigations, canaries raise the bar without being a complete defense.</p>
 <h4 id="diagram-stack-frame-with-and-without-a-canary-under-overflow">Diagram: Stack Frame With and Without a Canary Under Overflow<a class="headerlink" href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/stack-canary-comparison/main.html" width="100%" height="394" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/stack-canary-comparison/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side stack frame visualizations during a buffer overflow attack</summary>
 <p>Type: infographic
@@ -2065,6 +2359,9 @@ A <code>chmod 777</code> on a script that root will later run is the classic loc
 </table>
 <p>Both systems support <em>enforcing</em>, <em>permissive</em> (logs denials but does not block — useful for debugging), and <em>disabled</em> modes. The presence of MAC is a strong defense-in-depth control: even if an attacker exploits a service to gain its UID, MAC bounds what that UID can do to a small subset of the filesystem. The most common MAC failure in practice is not bypass — it is administrators putting the system in permissive mode "to fix something" and forgetting to re-enable it.</p>
 <h4 id="diagram-layers-of-access-control-on-a-modern-linux-box">Diagram: Layers of Access Control on a Modern Linux Box<a class="headerlink" href="#diagram-layers-of-access-control-on-a-modern-linux-box" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/linux-ac-layers/main.html" width="100%" height="832" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/linux-ac-layers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Stacked-layer diagram showing how DAC, capabilities, and MAC compose for one access decision</summary>
 <p>Type: drawing
@@ -2090,6 +2387,9 @@ A <code>chmod 777</code> on a script that root will later run is the classic loc
 <p><strong>Hypervisor security</strong> centers on a single threat: <em>VM escape</em>, where code inside a guest exploits a bug in the hypervisor or in emulated hardware to execute on the host or in another guest. VM escape is rare but devastating — a single such bug in a public cloud lets one tenant read another tenant's data. Notable historical examples include CVE-2015-3456 (the "VENOM" floppy-controller bug in QEMU/KVM), various Xen privilege-escalation issues, and a long tail of bugs in emulated USB and network controllers. The mitigations are: minimize the hypervisor's attack surface (disable unused emulated devices), patch promptly, use hardware-assisted virtualization (Intel VT-x, AMD-V) which moves much of the isolation into silicon, and consider tenant isolation strategies (dedicated hosts, single-tenant clusters) for the most sensitive workloads.</p>
 <p>A second concern is <strong>side-channel attacks across VMs sharing a CPU</strong>. The same Spectre/Meltdown family of issues that crosses process boundaries also crosses VM boundaries, because the cache and branch predictor are shared at the silicon level. Cloud providers mitigate with microcode updates, scheduler awareness (avoid co-tenanting hostile workloads on the same physical core), and — for the highest-assurance workloads — confidential computing technologies (Intel SGX, AMD SEV, Intel TDX) that encrypt VM memory in a way the hypervisor itself cannot read.</p>
 <h4 id="diagram-hypervisor-architecture-and-the-trust-boundary">Diagram: Hypervisor Architecture and the Trust Boundary<a class="headerlink" href="#diagram-hypervisor-architecture-and-the-trust-boundary" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/hypervisor-architecture/main.html" width="100%" height="522" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/hypervisor-architecture/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Stacked architecture showing Type 1 vs. Type 2 hypervisors and the VM-escape threat model</summary>
 <p>Type: drawing

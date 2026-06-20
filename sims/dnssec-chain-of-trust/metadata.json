@@ -1,0 +1,47 @@
+{
+  "title": "DNSSEC Validation Chain",
+  "description": "A Mermaid tree diagram of the DNSSEC chain of trust from the root zone trust anchor down to a leaf A record, paired with the bottom-up steps a resolver performs to validate the chain.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dnssec-chain-of-trust",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "trace",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Network Security", "DNS"],
+    "topic": ["DNSSEC", "Chain of Trust", "Trust Anchor", "DS Record", "KSK", "RRSIG"],
+    "learningObjectives": [
+      "Trace the DNSSEC chain of trust from the root zone trust anchor to a leaf record.",
+      "Explain how DS records link each zone to its parent and why any broken link causes a resolver to return SERVFAIL."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["How recursive DNS resolution works", "Basic digital signatures and hashing"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Hover each zone top-down, then read the resolver steps to see validation runs bottom-up.",
+      "Trace where a single missing DS record would break the chain."
+    ],
+    "assessmentQuestions": [
+      {"question": "Where does the chain of trust ultimately terminate, and how does the resolver know it can trust that point?", "level": "Understand"},
+      {"question": "If bank.example rotates its KSK but the .example DS record is not updated, what does the resolver return and why?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "4",
+  "edge_count": "3",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense"
+}

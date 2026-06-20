@@ -1,0 +1,14 @@
+{
+  "sim_id": "ids-ips-decision-flow",
+  "diagram_name": "IDS/IPS Decision Flow",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** ids-ips-decision-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA flowchart starting at the top with \"Inbound packet\" entering the network boundary.\n\nBranch 1: **IDS path (out-of-band)**\n\n- Packet → Switch SPAN port → IDS engine (signature engine + anomaly engine in parallel)\n- If match → emit alert to SIEM (orange annotation: \"alert only — packet is not blocked\")\n- Original packet continues to destination unchanged\n\nBranch 2: **IPS path (in-line)**\n\n- Packet enters IPS engine in the data path\n- Signature check: if known-bad → drop, log, terminate connection\n- Anomaly check: if score above threshold → drop or quarantine\n- Otherwise → forward packet to destination\n\nBelow the two branches, a comparison panel:\n\n- IDS pros: no availability risk, can run aggressive rules\n- IDS cons: no real-time blocking\n- IPS pros: real-time blocking, automatic response\n- IPS cons: false positives drop legitimate traffic; single point of failure\n\nColor: cybersecurity blue (#1565c0) for permitted-traffic flow, amber (#ffa000) for alerts, red for drops, slate (#455a64) for the comparison panel. Responsive: stacks vertically below 700px viewport. The diagram must respond to window resize events.\n\nImplementation: Mermaid flowchart TD with custom node styling and subgraphs for the two branches."
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Shared Responsibility Across IaaS, PaaS, and SaaS",
+  "description": "Interactive SVG infographic comparing On-Prem, IaaS, PaaS, and SaaS as nine-layer stacks colored by who is responsible, showing that data, identity, and configuration always stay with the customer.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "shared-responsibility-stack",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Cloud shared responsibility model",
+    "learningObjectives": [
+      "Compare how responsibility for each layer of the stack shifts across On-Prem, IaaS, PaaS, and SaaS.",
+      "Identify which layers the provider takes over as the service model moves up the stack.",
+      "Explain why data, identity, and configuration always remain the customer's responsibility."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness of the difference between on-premises infrastructure and cloud services."
+  },
+  "pedagogical": {
+    "modelType": "interactive comparison infographic",
+    "interactionModes": ["hover-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to place a real responsibility (e.g., guest-OS patching) in the correct column and to reason about the always-customer layers.",
+    "misconceptionsAddressed": [
+      "Assuming SaaS means the customer has no security responsibilities.",
+      "Believing the cloud provider configures security or protects customer data by default."
+    ]
+  }
+}

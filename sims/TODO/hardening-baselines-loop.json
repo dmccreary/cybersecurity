@@ -1,0 +1,14 @@
+{
+  "sim_id": "hardening-baselines-loop",
+  "diagram_name": "Hardening, Baselines, and Drift",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** hardening-baselines-loop<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA cyclic diagram with four primary nodes and two outside influences.\n\n**Primary cycle (clockwise, with arrows):**\n\n1. **CIS Benchmarks** (top) — external reference of recommendations\n2. → **Baseline Configuration** (right) — codified, named \"this is what hardened looks like for us\"\n3. → **Configuration Management** (bottom) — enforces baseline on every host\n4. → **Drift Detection** (left) — measures gap between actual and baseline; reports findings\n5. → back into **Baseline Configuration** (the cycle: findings revise baseline)\n\n**Outside influences:**\n\n- **New vulnerabilities / patches** → arrow into **Baseline Configuration** (\"baseline must evolve\")\n- **Auditors / compliance frameworks** → arrow into **Baseline Configuration** (\"regulatory requirements feed in\")\n\n**Annotations on arrows:**\n\n- Baseline → Config Mgmt: \"applied via Ansible/Puppet/IaC\"\n- Config Mgmt → Drift: \"scanners verify (e.g., InSpec, OpenSCAP)\"\n- Drift → Baseline: \"exceptions approved, baseline updated, or host remediated\"\n\nColor: cybersecurity blue for the four primary nodes, slate steel for influences, amber #ffa000 highlight on Drift Detection (the place where ops attention concentrates). Responsive: cycle reflows to a vertical sequence below 700px.\n\nImplementation: Mermaid graph TD with curved arrows."
+}

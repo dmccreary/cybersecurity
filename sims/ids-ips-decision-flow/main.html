@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>IDS/IPS Decision Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">IDS vs IPS: Out-of-Band Detection vs In-Line Prevention</h2>
+            <div class="mermaid">
+flowchart TD
+    Packet["Inbound packet<br/>arrives at network boundary"]:::permitNode
+
+    subgraph ids ["IDS path — out of band"]
+        Span["Switch SPAN port<br/>copies the packet"]:::permitNode
+        IDSeng["IDS engine<br/>signature plus anomaly<br/>analysis in parallel"]:::permitNode
+        IDSmatch{"Match or<br/>anomaly?"}:::decisionNode
+        Alert["Emit alert to SIEM<br/>alert only — packet<br/>is NOT blocked"]:::alertNode
+        Continue["Original packet reaches<br/>destination unchanged"]:::permitNode
+    end
+
+    subgraph ips ["IPS path — in line"]
+        IPSeng["IPS engine<br/>sits in the data path"]:::ipsNode
+        Sig{"Signature:<br/>known bad?"}:::decisionNode
+        Anom{"Anomaly score<br/>over threshold?"}:::decisionNode
+        Drop["Drop, log, and<br/>terminate connection"]:::dropNode
+        Quar["Drop or quarantine"]:::dropNode
+        Forward["Forward packet<br/>to destination"]:::ipsNode
+
+        IPSeng --> Sig
+        Sig -->|Yes| Drop
+        Sig -->|No| Anom
+        Anom -->|Yes| Quar
+        Anom -->|No| Forward
+    end
+
+    Packet -->|mirror copy| Span
+    Span --> IDSeng --> IDSmatch
+    IDSmatch -->|Yes| Alert
+    IDSmatch -->|No| Continue
+    Alert --> Continue
+    Packet -->|live traffic| IPSeng
+
+    classDef permitNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef ipsNode fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef alertNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:15px
+    classDef dropNode fill:#c62828,stroke:#7f0000,stroke-width:2px,color:#fff,font-size:15px
+    classDef decisionNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:15px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Permitted traffic flow</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Alert (no block)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#c62828"></span>Drop / block</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Decision point</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a box to see what each step does. Notice the IDS only watches a copy; the IPS sits in the live path and can drop traffic.</div>
+            </div>
+            <div class="compare">
+                <div class="compare-title">IDS vs IPS at a glance</div>
+                <table>
+                    <tr><th></th><th>IDS (out of band)</th><th>IPS (in line)</th></tr>
+                    <tr><td>Pros</td><td>No availability risk; can run aggressive rules</td><td>Real-time blocking; automatic response</td></tr>
+                    <tr><td>Cons</td><td>No real-time blocking</td><td>False positives drop legit traffic; single point of failure</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="ids-ips-decision-flow.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "title": "Cyber Kill Chain Phases with Defensive Controls",
+  "description": "An interactive Mermaid flow of the seven Cyber Kill Chain phases, each paired with the defensive controls that disrupt it, illustrating that breaking the chain at any single phase defeats the attack.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cyber-kill-chain-controls",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "map",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Threats and Controls"],
+    "topic": ["Cyber Kill Chain", "Defensive Controls", "Defense in Depth"],
+    "learningObjectives": [
+      "Map each Cyber Kill Chain phase to the defensive controls that disrupt it.",
+      "Explain why breaking the chain at any single phase defeats the overall attack."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic idea of an attack lifecycle and security controls"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["reference", "demonstration", "guided-discovery"],
+    "instructionalStrategies": [
+      "Hover each phase and have students name which control they would prioritize and why.",
+      "Discuss why stopping early phases is cheaper than stopping late ones."
+    ],
+    "assessmentQuestions": [
+      {"question": "Which controls disrupt the Delivery phase, and what attacker action are they blocking?", "level": "Understand"},
+      {"question": "If you could only fund controls for two phases, which would you pick and why?", "level": "Evaluate"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "LR",
+  "node_count": "8",
+  "edge_count": "13",
+  "chapter_number": 2,
+  "chapter_title": "\"Threats, Vulnerabilities, and Security Controls\"",
+  "chapter_dir": "02-threats-and-controls"
+}

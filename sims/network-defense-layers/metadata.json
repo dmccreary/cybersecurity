@@ -1,0 +1,44 @@
+{
+  "title": "Network Security as Layered Defense",
+  "description": "A static SVG of six nested network trust zones from the untrusted internet to the crown jewels, with the control crossing each trust boundary and an arrow legend distinguishing ingress, egress, and lateral movement.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "network-defense-layers",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Identify",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Network Security", "Defense in Depth"],
+    "topic": ["Defense in Depth", "Network Segmentation", "DMZ", "Trust Boundaries", "Lateral Movement", "Firewalls"],
+    "learningObjectives": [
+      "Identify the nested network trust zones from the untrusted internet to the crown-jewel data store.",
+      "Name the control that typically crosses each trust boundary and explain what segmentation defends against."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic networking: firewalls, the idea of a DMZ, and VLANs"],
+    "difficulty": "Beginner"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["demonstration", "reference", "guided-discovery"],
+    "instructionalStrategies": [
+      "Hover each ring from outer to inner, naming the control at each boundary.",
+      "Trace the lateral-movement arrow and discuss why segmentation limits blast radius."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is the DMZ kept separate from the internal network even though both are owned by the organization?", "level": "Understand"},
+      {"question": "An attacker has a foothold on one internal host. What does VLAN micro-segmentation cost them?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "infographic-svg",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations"
+}

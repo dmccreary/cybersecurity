@@ -1,0 +1,14 @@
+{
+  "sim_id": "secops-activity-map",
+  "diagram_name": "Security Operations Activity Map",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** secops-activity-map<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA triangle layout with three major nodes at each vertex:\n\n- **Offensive (top, cybersecurity blue #1565c0):** Penetration Testing, Red Team, Bug Bounty, Capture the Flag, Threat Modeling\n- **Defensive (bottom-left, slate steel #455a64):** Blue Team, SOC Monitoring, Threat Hunting, Vulnerability Management, Detection Engineering\n- **Response (bottom-right, alert accent #ffa000):** Incident Response, PICERL, Forensics, Malware Analysis, Lessons Learned\n\nThree connecting flows:\n\n1. Offensive → Defensive: \"Findings improve detections\"\n2. Defensive → Response: \"Alerts trigger investigations\"\n3. Response → Offensive: \"Lessons drive next exercise\"\n\nA central node labeled **Purple Team** sits in the middle, connected to all three vertices, representing the integrative practice.\n\nAround the outside, a thin arc labeled **Threat Intelligence** feeds all three vertices, indicating intel is consumed by all functions.\n\nColor palette: cybersecurity blue (#1565c0), slate steel (#455a64), alert accent (#ffa000). Background: white. Responsive: stacks vertically below 700px viewport.\n\nImplementation: Mermaid graph TD with custom node styling and color coding."
+}

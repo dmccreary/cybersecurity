@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>Security Operations Monitoring Pipeline</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis',
+        subGraphTitleMargin: { top: 10, bottom: 14 }
+      }
+    });
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #263238; }
+    h1 { font-size: 19px; text-align: center; color: #1565c0; padding: 8px 8px 2px; }
+    .hint { text-align: center; font-size: 12px; color: #78909c; margin-bottom: 4px; }
+    .mermaid { width: 100%; display: flex; justify-content: center; padding: 4px 8px 8px; background: #f4f7fb; }
+    .mermaid svg { max-width: 100%; height: auto; }
+    .strip {
+      max-width: 820px; margin: 0 auto 10px; padding: 8px 14px; font-size: 12.5px; line-height: 1.5;
+      background: #fff; border: 1px solid #cfd8dc; border-left: 5px solid #1565c0; border-radius: 6px; color: #37474f;
+    }
+    .strip b { color: #1565c0; }
+    #tooltip {
+      position: fixed; background: #263238; color: #fff; padding: 8px 12px; border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4;
+      max-width: 300px; pointer-events: none; opacity: 0; transition: opacity .15s;
+      z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    #tooltip.visible { opacity: 1; }
+    .node { cursor: pointer; }
+  </style>
+  <script src="ops-monitoring-pipeline.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Security Operations Monitoring Pipeline</h1>
+    <div class="hint">Telemetry flows top to bottom: sources to collection to SIEM to SOAR to analyst, with a feedback loop. Hover any box for detail.</div>
+    <div class="mermaid">
+flowchart TD
+    SRC["<b>Stage 1 — Sources</b><br/>Endpoints + EDR · Cloud control-plane logs<br/>Network devices, IDS/IPS · Identity provider · SaaS apps"]:::slate
+
+    COLL["<b>Stage 2 — Collection layer</b><br/>log shipper / agent / API pull<br/>normalize, timestamp, enrich"]:::collect
+
+    SIEM["<b>Stage 3 — Log Management and SIEM</b><br/>Index and store · Correlation rules<br/>Detection logic · Dashboards"]:::blue
+
+    SOAR["<b>Stage 4 — SOAR</b><br/>Playbooks · Case management<br/>Automated containment"]:::amber
+
+    SOC["<b>Stage 5 — Analyst / SOC</b><br/>triage, investigate, escalate"]:::soc
+
+    SRC --> COLL --> SIEM --> SOAR --> SOC
+    SOC -- "tune rules, suppress noise" --> SIEM
+
+    classDef slate fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef collect fill:#cfd8dc,stroke:#455a64,stroke-width:2px,color:#263238,font-size:13px
+    classDef blue fill:#1565c0,stroke:#0d3a73,stroke-width:2px,color:#ffffff,font-size:13px
+    classDef amber fill:#ffa000,stroke:#b26a00,stroke-width:2px,color:#3e2723,font-size:13px
+    classDef soc fill:#fff8e1,stroke:#455a64,stroke-width:2.5px,color:#37474f,font-size:13px
+
+    linkStyle default stroke:#607d8b,stroke-width:2px,font-size:12px
+    </div>
+    <div class="strip">
+      <b>Retention policy under the SIEM:</b>
+      Hot 30 days (fast search) · Warm 90 days · Cold 1 year · Archive 7 years
+      (compliance). Older data is cheaper to store but slower to query — tiering
+      balances cost against how far back an investigation may need to reach.
+    </div>
+  </main>
+  <div id="tooltip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

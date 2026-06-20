@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <title>The Forensic Investigation Workflow</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+    });
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #263238; }
+    h1 { font-size: 19px; text-align: center; color: #1565c0; padding: 8px 8px 2px; }
+    .hint { text-align: center; font-size: 12px; color: #78909c; margin-bottom: 4px; }
+    .mermaid { width: 100%; display: flex; justify-content: center; padding: 4px 8px 8px;
+      background: #f4f7fb; }
+    .mermaid svg { max-width: 100%; height: auto; }
+    #tooltip {
+      position: fixed; background: #263238; color: #fff; padding: 8px 12px; border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4;
+      max-width: 300px; pointer-events: none; opacity: 0; transition: opacity .15s;
+      z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    #tooltip.visible { opacity: 1; }
+    .node { cursor: pointer; }
+  </style>
+  <script src="forensic-workflow.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>The Forensic Investigation Workflow</h1>
+    <div class="hint">Hover any step for details. Every step writes to the Chain of Custody log (right rail).</div>
+    <div class="mermaid">
+flowchart TD
+    S1["1. Identify and Isolate<br/>photograph, document, isolate"]:::slate
+    S2["2. Capture Volatile Data<br/>RAM, processes, connections"]:::blue
+    D1{"3. Power Decision"}:::decision
+    S4["4. Forensic Imaging<br/>write-blocker, bit-for-bit, SHA-256"]:::blue
+    D2{"5. Verify Hashes Match?"}:::decision
+    S6["6. Examination Copy<br/>work on a copy, never the source"]:::slate
+    S7["7. Analysis<br/>filesystem, registry, logs, memory"]:::blue
+    S8["8. Reporting<br/>findings tied to evidence + hashes"]:::slate
+    S9["9. Court / Disclosure<br/>testimony, chain-of-custody log"]:::court
+    LOG["Chain of Custody Log<br/>continuous record<br/>every step writes here"]:::log
+
+    S1 --> S2 --> D1
+    D1 --> S4
+    S4 --> D2
+    D2 -->|Yes| S6
+    D2 -->|No: re-image| S4
+    S6 --> S7 --> S8 --> S9
+
+    S1 -.-> LOG
+    D1 -.-> LOG
+    S4 -.-> LOG
+    S7 -.-> LOG
+    S9 -.-> LOG
+
+    classDef slate fill:#455a64,stroke:#263238,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef blue fill:#1565c0,stroke:#0d3a73,stroke-width:2px,color:#ffffff,font-size:14px
+    classDef decision fill:#ffa000,stroke:#b26a00,stroke-width:2px,color:#3e2723,font-size:14px
+    classDef court fill:#fff8e1,stroke:#455a64,stroke-width:2.5px,color:#37474f,font-size:14px
+    classDef log fill:#e8eef5,stroke:#1565c0,stroke-width:2px,color:#1a3a5c,font-size:14px
+
+    linkStyle default stroke:#607d8b,stroke-width:2px,font-size:13px
+    </div>
+  </main>
+  <div id="tooltip"></div>
+  <br/>
+  <a href=".">Back to Documentation</a>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "title": "Vulnerability Sandbox MicroSim",
+  "description": "Interactive p5.js sandbox that sends the same attacker payload to a vulnerable and a fixed implementation of the same web endpoint, side by side, so students can see why concatenating data into code is exploited while keeping the payload as data contains the attack. Covers SQL injection, command injection, reflected XSS, path traversal, and IDOR.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "vuln-sandbox",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Compare",
+  "completion_status": "validated",
+  "chapter_number": 5,
+  "chapter_title": "\"Software Vulnerabilities and Secure Coding\"",
+  "chapter_dir": "05-software-vulnerabilities",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Injection and access-control vulnerabilities and their structural fixes",
+    "learningObjectives": [
+      "Compare a vulnerable and a fixed implementation of the same endpoint under the same payload.",
+      "Identify the structural difference: data concatenated into code vs. data kept separate from code.",
+      "Explain why parameterization, argument arrays, contextual escaping, path confinement, and authorization make the bad outcome impossible."
+    ],
+    "bloomLevels": [
+      "Analyze"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic understanding of web requests, SQL queries, and shell commands."
+  },
+  "pedagogical": {
+    "modelType": "side-by-side comparative sandbox with event-driven payload submission",
+    "interactionModes": [
+      "select vulnerability class",
+      "edit attacker payload",
+      "send request",
+      "toggle internals overlay"
+    ],
+    "controls": [
+      "createSelect() — Vulnerability class (SQLi, Command Injection, Reflected XSS, Path Traversal, IDOR)",
+      "createInput() — Attacker payload (auto-fills per class, editable)",
+      "createButton('Send request') — submit the payload to both panels",
+      "createCheckbox('Show internals') — toggle the constructed query/command/output overlay"
+    ],
+    "assessment": "Students predict the outcome for each panel before sending, then explain the structural reason the fixed panel contains the attack.",
+    "misconceptionsAddressed": [
+      "Believing input validation/blocklists are the fix, rather than separating data from code.",
+      "Assuming the same payload must succeed everywhere — the fix changes the structure, not the payload.",
+      "Treating XSS, SQLi, and command injection as unrelated, rather than instances of one data-as-code flaw."
+    ]
+  }
+}

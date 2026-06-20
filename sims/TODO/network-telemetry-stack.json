@@ -1,0 +1,14 @@
+{
+  "sim_id": "network-telemetry-stack",
+  "diagram_name": "Network Telemetry Stack",
+  "chapter_number": 9,
+  "chapter_title": "\"Advanced Network Defense: Wireless, DNS, and Zero Trust\"",
+  "chapter_dir": "09-advanced-network-defense",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: diagram\n**sim-id:** network-telemetry-stack<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA vertical layered diagram with five layers (top = most expensive / highest fidelity, bottom = cheapest / broadest coverage). Each layer shows the data type, an example tool, and the kind of question it can answer:\n\n1. **Full packet capture (PCAP)** — `tcpdump`, Wireshark, Moloch — \"What were the exact bytes of this conversation?\"\n2. **Application logs** — Web server, application audit logs — \"What did the application do with this request?\"\n3. **Firewall / proxy logs** — pfSense, Squid — \"Was this connection allowed, denied, or filtered?\"\n4. **NetFlow / IPFIX / sFlow** — `nfdump`, Elastiflow — \"Who talked to whom, when, and how much?\"\n5. **DNS query logs** — Resolver logs — \"What names did this host look up?\"\n\nTo the right, an \"aggregator\" layer feeds all five into a **SIEM / data lake** (e.g., Splunk, Elastic, Chronicle), where correlation rules run.\n\nAnnotations:\n\n- \"Coverage\" arrow on the left, increasing from top to bottom (full PCAP covers little, DNS logs cover everything cheaply)\n- \"Fidelity\" arrow on the right, increasing from bottom to top (full PCAP is the gold standard for content)\n- Cost note: \"Storage cost roughly tracks fidelity. Most teams keep PCAP only on-demand and NetFlow always-on.\"\n\nColor: cybersecurity blue for the layers; slate steel arrows; cream for the SIEM box. Responsive: layers stack vertically; SIEM moves below them on viewport widths under 700 px.\n\nImplementation: Mermaid graph TD with subgraphs."
+}

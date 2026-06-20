@@ -1,0 +1,41 @@
+{
+  "title": "Symmetric Encryption and Decryption Flow",
+  "description": "Interactive Mermaid workflow of symmetric encryption: plaintext is encrypted to ciphertext and back, with one shared secret key feeding both the encryption and decryption steps. Includes a Kerckhoffs's-principle callout.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "encryption-decryption-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cryptography",
+    "topic": "Symmetric encryption and Kerckhoffs's principle",
+    "learningObjectives": [
+      "Explain how plaintext becomes ciphertext and back using an algorithm plus a key.",
+      "Recognize that symmetric encryption uses the same secret key in both directions.",
+      "State Kerckhoffs's principle: the algorithm is public, the key is secret."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "None beyond the intuition that a message can be scrambled and unscrambled."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions ask students why the same key must appear on both sides and what Kerckhoffs's principle implies.",
+    "misconceptionsAddressed": [
+      "Believing security comes from keeping the algorithm secret rather than the key.",
+      "Assuming encryption and decryption use different keys in symmetric crypto."
+    ]
+  }
+}

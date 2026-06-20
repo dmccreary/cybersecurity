@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>AAA Pipeline with Non-Repudiation Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis',
+                subGraphTitleMargin: { top: 10, bottom: 14 }
+            }
+        });
+    </script>
+</head>
+<body>
+    <main>
+    <div class="layout">
+        <div class="diagram-panel">
+            <h2 class="diagram-title">AAA Pipeline: Authentication, Authorization, Accounting</h2>
+            <div class="mermaid">
+flowchart LR
+    Principal["Principal<br/>Claims an identity<br/>e.g. user at example.com"]:::principalNode
+    AuthN["Authentication<br/>Is the claim genuine?<br/>password, MFA, certificate"]:::authnNode
+    AuthZ["Authorization<br/>Allowed this action<br/>on this resource?"]:::authzNode
+    Acct["Accounting<br/>Record what happened<br/>logs, audit trail"]:::acctNode
+    Resource["Resource<br/>Protected asset"]:::resourceNode
+
+    Principal --> AuthN --> AuthZ --> Acct --> Resource
+
+    subgraph nr ["Non-Repudiation"]
+        NonRep["Cryptographic evidence<br/>actor cannot deny the action"]:::nrNode
+    end
+
+    AuthN -. evidence .-> NonRep
+    Acct -. evidence .-> NonRep
+
+    classDef principalNode fill:#fff8e1,stroke:#455a64,stroke-width:2px,color:#212529,font-size:15px
+    classDef authnNode fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff,font-size:15px
+    classDef authzNode fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff,font-size:15px
+    classDef acctNode fill:#455a64,stroke:#263238,stroke-width:2px,color:#fff,font-size:15px
+    classDef resourceNode fill:#ffffff,stroke:#455a64,stroke-width:2px,color:#212529,font-size:15px
+    classDef nrNode fill:#ffa000,stroke:#e65100,stroke-width:2px,color:#212529,font-size:15px
+
+    linkStyle default stroke:#90a4ae,stroke-width:2px,font-size:14px
+            </div>
+        </div>
+        <div class="info-panel">
+            <div class="legend">
+                <div class="legend-title">Color Key</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#1565c0"></span>Authentication</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#2e7d32"></span>Authorization</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#455a64"></span>Accounting</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffa000"></span>Non-Repudiation</div>
+            </div>
+            <h3>Step Details</h3>
+            <div id="panelWrap">
+                <div id="panel">Hover or tap a box to see what each stage of the AAA pipeline does.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="aaa-pipeline.js"></script>
+</body>
+</html>

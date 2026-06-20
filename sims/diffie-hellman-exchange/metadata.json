@@ -1,0 +1,40 @@
+{
+  "title": "Diffie-Hellman Key Exchange",
+  "description": "A sequence diagram of the Diffie-Hellman key exchange: Alice and Bob each keep a private exponent, send public values over a wire Eve can read, and arrive at the same shared secret that Eve cannot recover without solving the discrete logarithm problem.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "diffie-hellman-exchange",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Cryptography Fundamentals",
+    "learningObjectives": [
+      "Trace the steps by which Alice and Bob derive a shared secret over a public channel.",
+      "Distinguish which values are public (p, g, A, B) from which are kept secret (a, b, s).",
+      "Explain why an eavesdropper cannot recover the shared secret without solving the discrete logarithm problem."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Modular arithmetic basics and the idea of a public vs. private value."
+  },
+  "pedagogical": {
+    "modelType": "protocol sequence diagram",
+    "interaction": "Static, color-coded, responsive sequence diagram with a public-parameters callout.",
+    "assessment": "Lesson plan asks students to list what Eve knows vs. what she still cannot compute.",
+    "misconceptions": "Counters the idea that anything sent on the wire is enough to reconstruct the secret."
+  },
+  "completion_status": "validated",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "vendor-risk-tiers",
+  "diagram_name": "Vendor Risk Tiers",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** vendor-risk-tiers<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA concentric-ring diagram on a 900x600 canvas, with the organization at the center.\n\nCenter: \"Our Organization\" — cybersecurity blue circle.\n\nRing 1 (Tier-1 Critical Vendors) — closest ring, slate steel:\n- Examples: cloud platform, identity provider, payment processor.\n- Tooltip: \"Annual SOC 2 review, executive escalation path, contractual SLAs, joint incident response runbook.\"\n\nRing 2 (Tier-2 Important Vendors) — middle ring, lighter slate:\n- Examples: HR SaaS, monitoring tools, analytics platforms.\n- Tooltip: \"Annual security questionnaire, quarterly review of public incidents, contract review.\"\n\nRing 3 (Tier-3 Standard Vendors) — outer ring, cream:\n- Examples: office supplies, marketing tools without sensitive data.\n- Tooltip: \"Self-attestation, lightweight onboarding.\"\n\nBeyond Ring 3 — small \"Fourth-party\" cluster, drawn as small circles outside the rings, connected by dotted lines to the Tier-1 vendors:\n- Tooltip: \"Subprocessors of our vendors. Inherited risk; usually disclosed in DPAs.\"\n\nEach ring has hover tooltips listing typical controls. Caption beneath: \"Tier the vendor portfolio. The same questionnaire for every vendor is the wrong default.\"\n\nResponsive: SVG scales with container; below 600px, rings flatten to a vertical stacked list with controls beside each tier. Window-resize listener re-renders.\n\nImplementation: Inline SVG with `<title>` tooltips and a small resize handler."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "picerl-lifecycle",
+  "diagram_name": "The PICERL Lifecycle",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** picerl-lifecycle<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA circular workflow diagram showing the six PICERL phases as a closed loop, with Lessons Learned feeding back into Preparation.\n\n**Layout:**\n\nSix rounded boxes arranged in a clockwise circle:\n\n1. **Preparation** (top, cybersecurity blue #1565c0) — \"Plans, runbooks, training, tooling\"\n2. **Identification** (top-right, slate steel #455a64) — \"Detect, triage, declare\"\n3. **Containment** (bottom-right, alert accent #ffa000) — \"Short-term and long-term containment\"\n4. **Eradication** (bottom, slate steel) — \"Remove attacker access and artifacts\"\n5. **Recovery** (bottom-left, slate steel) — \"Restore services, monitor closely\"\n6. **Lessons Learned** (top-left, cybersecurity blue) — \"Post-incident review, durable improvements\"\n\nArrows form a clockwise cycle. A dashed arrow returns from Lessons Learned to Preparation, emphasizing the feedback loop.\n\nA clock-face annotation around the outside indicates relative time on each phase (\"hours\" for Identification, \"minutes-hours\" for Containment, \"days\" for Eradication, \"weeks\" for Recovery, \"weeks after\" for Lessons Learned).\n\nColor: cybersecurity blue (#1565c0), slate steel (#455a64), alert accent (#ffa000) used for the time-critical phase. Background white. Responsive: stacks vertically below 700px.\n\nImplementation: Mermaid graph LR or custom SVG with circular layout."
+}

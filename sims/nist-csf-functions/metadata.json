@@ -1,0 +1,41 @@
+{
+  "title": "NIST CSF 2.0 Functions",
+  "description": "Interactive SVG wheel of the six NIST Cybersecurity Framework 2.0 functions - GOVERN at the hub overseeing IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER - with hover tooltips and a responsive vertical-list fallback on narrow screens.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "nist-csf-functions",
+  "library": "SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Describe",
+  "completion_status": "validated",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security\"",
+  "chapter_dir": "13-organizational-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "NIST Cybersecurity Framework 2.0",
+    "learningObjectives": [
+      "Name the six functions of NIST CSF 2.0 and the role of each.",
+      "Explain why GOVERN was added in 2024 and how it relates to the five operational functions.",
+      "Describe the cyclical Identify -> Protect -> Detect -> Respond -> Recover flow."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness that organizations manage cybersecurity as an ongoing program."
+  },
+  "pedagogical": {
+    "modelType": "interactive infographic wheel",
+    "interactionModes": ["hover-reveal", "click-reveal", "responsive-reflow"],
+    "assessment": "Discussion questions in the lesson plan ask students to place activities under the correct function and reason about GOVERN's oversight role.",
+    "misconceptionsAddressed": [
+      "Thinking the framework is a linear checklist rather than a continuous cycle.",
+      "Treating governance as separate from, rather than overseeing, the technical functions."
+    ]
+  }
+}

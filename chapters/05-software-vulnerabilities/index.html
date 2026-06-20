@@ -1252,6 +1252,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1265,7 +1553,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1815,6 +2103,9 @@ Welcome. The previous chapters armed you with cryptographic primitives that, use
 </ul>
 <p>The cost economics of SSDLC are well-studied and consistent across decades of research: a vulnerability caught in design costs perhaps an hour to fix; the same vulnerability caught in production after exploitation can cost months of incident response, regulatory penalties, and lost customer trust. Industry studies (notably IBM's annual <em>Cost of a Data Breach</em> report) have repeatedly placed the cost ratio at roughly 100x between "fix in design" and "fix after breach."</p>
 <h4 id="diagram-cost-of-fixing-a-bug-across-sdlc-phases">Diagram: Cost of Fixing a Bug Across SDLC Phases<a class="headerlink" href="#diagram-cost-of-fixing-a-bug-across-sdlc-phases" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ssdlc-cost-curve/main.html" width="100%" height="472" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/ssdlc-cost-curve/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Bar chart showing the relative cost of fixing a vulnerability at each phase of the SDLC</summary>
 <p>Type: chart
@@ -1940,6 +2231,9 @@ Notice that the OWASP and CWE lists are organized by <em>pattern</em>, not by in
 <p>A <strong>heap overflow</strong> is a buffer overflow that occurs in a buffer allocated from the <em>heap</em> via <code>malloc()</code> or <code>new</code>. Heap overflows do not directly overwrite a return address, but they can corrupt heap metadata (the data structures the allocator uses to track free blocks) or adjacent objects (whose function pointers can later be invoked). Modern heap allocators include hardening to make pure metadata-corruption attacks harder, but heap overflows remain regularly exploitable.</p>
 <p>The defenses against both are the same general pattern: bounds-checking input, using safer string functions (<code>strncpy</code>, <code>strlcpy</code>, <code>snprintf</code>), enabling compiler protections (stack canaries, ASLR, DEP/NX), and — most decisively — moving to memory-safe languages where the bug class does not exist.</p>
 <h4 id="diagram-stack-layout-during-a-buffer-overflow">Diagram: Stack Layout During a Buffer Overflow<a class="headerlink" href="#diagram-stack-layout-during-a-buffer-overflow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/stack-overflow-anatomy/main.html" width="100%" height="522" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/stack-overflow-anatomy/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Annotated diagram showing stack memory before and after a buffer overflow corrupts the return address</summary>
 <p>Type: infographic-svg
@@ -2013,6 +2307,9 @@ Buffer, stack, heap, integer, and format-string bugs share one root cause: a lan
 <p><strong>Reflected XSS</strong> occurs when the attacker's payload is included in a request (typically a URL parameter) and <em>reflected</em> back into the response page without escaping. The attacker tricks the victim into clicking a crafted URL — by phishing, by posting it in a forum, by embedding it in an ad — and the victim's browser receives a page with the script in it. Reflected XSS requires social engineering to deliver the payload, but works against any visitor who clicks the link.</p>
 <p><strong>DOM-based XSS</strong> occurs entirely in the browser, with no server-side involvement. The vulnerable site has client-side JavaScript that reads from a <em>source</em> (the URL fragment, <code>document.location</code>, <code>window.name</code>) and writes it into a <em>sink</em> (<code>innerHTML</code>, <code>eval</code>, <code>document.write</code>) without sanitizing. The server never sees the payload — it lives in the URL fragment after the <code>#</code>, which browsers do not send to the server. This makes DOM XSS invisible to traditional server-side scanning and logging.</p>
 <h4 id="diagram-three-flavors-of-xss">Diagram: Three Flavors of XSS<a class="headerlink" href="#diagram-three-flavors-of-xss" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/xss-three-flavors/main.html" width="100%" height="542" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/xss-three-flavors/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Comparison diagram showing stored, reflected, and DOM-based XSS data flow</summary>
 <p>Type: infographic-svg
@@ -2091,6 +2388,9 @@ SQL injection, command injection, XSS, and SSRF look different but share one cur
 </span></code></pre></div>
 <p>The structural fix for filesystem TOCTOU is to perform the check and the use <em>atomically</em>, on a <em>handle to the resource</em> rather than a path that can be redirected. On POSIX, that means using <code>openat</code>, file descriptors, and <code>O_NOFOLLOW</code>; on Windows, file handles and <code>FILE_FLAG_OPEN_REPARSE_POINT</code>. For higher-level race conditions (database state, application state), the fix is transactions, locks, or compare-and-swap operations that make the check and the action a single atomic unit.</p>
 <h4 id="diagram-a-toctou-race-condition">Diagram: A TOCTOU Race Condition<a class="headerlink" href="#diagram-a-toctou-race-condition" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/toctou-race/main.html" width="100%" height="820" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/toctou-race/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing how an attacker can race between a permission check and a file operation</summary>
 <p>Type: workflow-diagram
@@ -2174,6 +2474,9 @@ Authorization is one of the hardest problems in software security because every 
 <h2 id="10-a-case-study-drawn-from-the-cwe-top-25">10. A Case Study Drawn From The CWE Top 25<a class="headerlink" href="#10-a-case-study-drawn-from-the-cwe-top-25" title="Permanent link">&para;</a></h2>
 <p>To make the abstractions concrete, consider a small, simulated application that combines several of the issues above — and how each is structurally fixed. We build a vulnerability sandbox that lets you flip between the vulnerable and the fixed implementation of a single endpoint and observe the difference.</p>
 <h4 id="diagram-vulnerability-sandbox-microsim">Diagram: Vulnerability Sandbox MicroSim<a class="headerlink" href="#diagram-vulnerability-sandbox-microsim" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/vuln-sandbox/main.html" width="100%" height="562" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/vuln-sandbox/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive p5.js simulation that visualizes how a vulnerability is exploited and how the fix prevents it</summary>
 <p>Type: microsim

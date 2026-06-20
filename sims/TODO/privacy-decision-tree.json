@@ -1,0 +1,14 @@
+{
+  "sim_id": "privacy-decision-tree",
+  "diagram_name": "Privacy Engineering Decision Tree",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** privacy-decision-tree<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA top-down decision tree that an engineer or privacy reviewer walks through for each proposed data field.\n\nRoot: \"Do we need this data for a specific stated purpose?\"\n\n- No → \"Do not collect.\"\n- Yes → \"Can we satisfy the purpose with less identifying data (aggregated, hashed, derived)?\"\n  - Yes → \"Use the less-identifying form.\"\n  - No → \"What is the minimum retention period to satisfy the purpose?\"\n    - Define retention window → \"Is the data shared with third parties?\"\n      - No → \"Document purpose, retention, and access controls. Approve.\"\n      - Yes → \"Is there a data-processing agreement and a lawful basis for sharing?\"\n        - No → \"Stop. Do not share.\"\n        - Yes → \"Document third-party scope, purpose, and DPA. Approve with annual review.\"\n\nEach leaf node has a small annotation linking to the relevant GDPR/CCPA principle (data minimization, purpose limitation, lawful basis, retention limits).\n\nColor: cybersecurity blue for decision nodes, slate for outcome leaves, alert orange for \"Do not collect\" / \"Stop\" leaves. Responsive: collapses to a sequential checklist on narrow viewports.\n\nImplementation: Mermaid graph TD with custom node classes."
+}

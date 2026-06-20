@@ -1237,6 +1237,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1250,7 +1538,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1790,6 +2078,9 @@ Welcome. So far we have built security as engineers. In this chapter we put on a
 </ul>
 <p>These three are different, and conflating them is one of the field's classic mistakes. Compliance is the most visible of the three because it generates audit reports and certifications. Risk is the most useful because it is what actually drives prioritization. Governance is the most load-bearing because, without it, neither risk nor compliance has a place to land.</p>
 <h4 id="diagram-grc-relationship">Diagram: GRC Relationship<a class="headerlink" href="#diagram-grc-relationship" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/grc-relationship/main.html" width="100%" height="522" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/grc-relationship/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Three overlapping circles showing how Governance, Risk, and Compliance relate</summary>
 <p>Type: infographic-svg
@@ -1882,6 +2173,9 @@ On your first day at any job, you will be asked to sign the Acceptable Use Polic
 </ol>
 <p>You can read NIST CSF as a verb-by-verb description of what a security program does over the lifecycle of a threat: govern the program, identify what you have, protect it, detect when protection fails, respond when something goes wrong, and recover to a known-good state. The diagram below makes the cyclical nature explicit.</p>
 <h4 id="diagram-nist-csf-20-functions">Diagram: NIST CSF 2.0 Functions<a class="headerlink" href="#diagram-nist-csf-20-functions" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/nist-csf-functions/main.html" width="100%" height="622" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/nist-csf-functions/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Wheel diagram showing the six NIST CSF 2.0 functions with Govern at the center</summary>
 <p>Type: infographic-svg
@@ -2001,6 +2295,9 @@ Notice that none of these frameworks asks "are you actually secure?" They ask "d
 </ul>
 <p>The choice among these four is rarely obvious. A useful sanity check: if you find yourself "mitigating" a risk that nobody actually has the authority or budget to fix, what you are really doing is <em>implicitly</em> accepting it — and implicit acceptance is where breaches come from. Make the acceptance explicit, or commit to the mitigation.</p>
 <h4 id="diagram-risk-treatment-decision-tree">Diagram: Risk Treatment Decision Tree<a class="headerlink" href="#diagram-risk-treatment-decision-tree" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/risk-treatment-decision-tree/main.html" width="100%" height="882" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/risk-treatment-decision-tree/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Decision tree showing how to choose among mitigate, transfer, accept, and avoid</summary>
 <p>Type: workflow-diagram
@@ -2057,6 +2354,9 @@ Notice that none of these frameworks asks "are you actually secure?" They ask "d
 </ul>
 <p>A sample row, in narrative form: <em>Risk R-042. A privileged service account in the production database has its credential hard-coded in a CI/CD pipeline configuration file. Likelihood 4 (the file is in a repository accessible to all developers); Impact 5 (full database read/write access). Inherent score 20. Existing controls: none. Residual: 20. Treatment: mitigate. Owner: VP of Engineering. Target: rotate to a managed secret store within 60 days.</em></p>
 <h4 id="diagram-risk-heat-map">Diagram: Risk Heat Map<a class="headerlink" href="#diagram-risk-heat-map" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/risk-heat-map/main.html" width="100%" height="702" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/risk-heat-map/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive 5x5 risk matrix where users place sample risks and see treatment recommendations</summary>
 <p>Type: microsim
@@ -2102,6 +2402,9 @@ The first time you build a risk register, your scores will feel arbitrary. That 
 </ul>
 <p>These two numbers are not preferences — they are constraints that drive technical architecture and budget. An RTO of 1 hour and an RPO of 5 minutes for a transaction-processing system imply hot-standby replication and automated failover. An RTO of 72 hours and an RPO of 24 hours for an internal HR portal imply nightly backups and a documented manual restore procedure. Mismatching the RTO/RPO to the architecture is a common and expensive mistake — either you overspend on infrastructure for a non-critical system, or you discover during an outage that the system you thought had a 1-hour RTO actually has a 12-hour one.</p>
 <h4 id="diagram-rto-and-rpo-timeline">Diagram: RTO and RPO Timeline<a class="headerlink" href="#diagram-rto-and-rpo-timeline" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/rto-rpo-timeline/main.html" width="100%" height="472" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/rto-rpo-timeline/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Annotated timeline showing RTO and RPO relative to an incident</summary>
 <p>Type: infographic-svg
@@ -2132,6 +2435,9 @@ The first time you build a risk register, your scores will feel arbitrary. That 
 <li><strong>Supply Chain Risk</strong> is the broader category that includes third parties <em>and the third parties of those third parties</em> — the so-called fourth-party and Nth-party risk. SolarWinds (2020) and the MOVEit cascade (2023) are textbook supply chain incidents: a single upstream compromise propagates to thousands of downstream organizations.</li>
 </ul>
 <h4 id="diagram-vendor-risk-tiers">Diagram: Vendor Risk Tiers<a class="headerlink" href="#diagram-vendor-risk-tiers" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/vendor-risk-tiers/main.html" width="100%" height="772" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/vendor-risk-tiers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Concentric ring diagram showing vendor risk tiers and the controls applied at each tier</summary>
 <p>Type: infographic-svg
@@ -2187,6 +2493,9 @@ The most dangerous vendor is the one you onboarded three years ago, that nobody 
 <p>The CISO sits at the intersection of three constituencies that have different incentives: <strong>engineering</strong> (wants to ship), <strong>legal/compliance</strong> (wants to attest), and <strong>executives/board</strong> (want defensible, communicable risk decisions). Doing the role well requires fluency in the technical, the legal, and the financial dialects of risk — which is why CISOs usually emerge from a decade or more of security engineering combined with deliberate exposure to audit, finance, and executive communication.</p>
 <p>The closing piece of the program is the <strong>security audit</strong> — a structured, evidence-based examination by either an internal audit function or an external auditor. Internal audits run continuously and report to the audit committee of the board. External audits (SOC 2, ISO 27001 surveillance, PCI QSA) run on a regulated cadence and produce reports that the organization shares with customers and regulators. A useful mental model: internal audit is <em>for the board</em>; external audit is <em>for the market</em>.</p>
 <h4 id="diagram-the-security-program-at-a-glance">Diagram: The Security Program at a Glance<a class="headerlink" href="#diagram-the-security-program-at-a-glance" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/security-program-layers/main.html" width="100%" height="537" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/security-program-layers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing how governance, risk, compliance, operations, and metrics fit together</summary>
 <p>Type: infographic-svg

@@ -1,0 +1,40 @@
+{
+  "title": "Classic DMZ Architecture",
+  "description": "A Mermaid flowchart showing the classic two-firewall DMZ design: an untrusted internet zone, a semi-trusted DMZ with public-facing hosts, and a trusted internal network, with legitimate flows in blue and a blocked attacker pivot in red.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "classic-dmz-architecture",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Network Security Foundations",
+    "learningObjectives": [
+      "Identify the three zones of a classic DMZ design and the trust level of each.",
+      "Explain why two firewalls with deny-by-default policies contain a compromised DMZ host.",
+      "Trace which traffic flows are permitted and which are blocked."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic understanding of firewalls, ports, and IP networking."
+  },
+  "pedagogical": {
+    "modelType": "architecture reference diagram",
+    "interaction": "Static color-coded diagram with a legend; scales responsively to container width.",
+    "assessment": "Lesson plan asks students to reason about blast radius if a DMZ host is compromised.",
+    "misconceptions": "Counters the idea that one perimeter firewall is enough by showing the inner firewall's role."
+  },
+  "completion_status": "validated",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations"
+}

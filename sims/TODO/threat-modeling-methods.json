@@ -1,0 +1,14 @@
+{
+  "sim_id": "threat-modeling-methods",
+  "diagram_name": "Threat Modeling Methodology Comparison",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations",
+  "library": "Static SVG or Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** threat-modeling-methods<br/>\n**Library:** Static SVG or Mermaid<br/>\n**Status:** Specified\n\nThree vertical columns of equal width:\n\n**Column 1 — STRIDE** (header in cybersecurity blue #1565c0)\n- Six rows, one per letter, each showing: letter, name, property violated\n- Footer: \"Use for: design reviews, fast component-by-component analysis\"\n\n**Column 2 — PASTA** (header in slate steel #455a64)\n- Seven numbered stages from \"Define Objectives\" to \"Simulate Attacks\"\n- Footer: \"Use for: high-stakes systems, business-aligned analysis\"\n\n**Column 3 — Attack Trees** (header in amber #ffa000)\n- A small attack tree showing root \"Steal Customer Data\" branching to three children: \"Compromise database\", \"Phish admin\", \"Exploit API\"; one child further expanded to two grandchildren\n- Footer: \"Use for: comparing attacker paths, cost/feasibility analysis\"\n\nBelow all three columns: a single-line summary table showing time-to-complete (STRIDE: hours, PASTA: days–weeks, attack trees: hours–days), output type, and best fit. Responsive: columns stack vertically below 800px.\n\nImplementation: Static SVG built once, or three small Mermaid diagrams in a CSS grid."
+}

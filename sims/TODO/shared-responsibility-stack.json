@@ -1,0 +1,14 @@
+{
+  "sim_id": "shared-responsibility-stack",
+  "diagram_name": "Shared Responsibility Across IaaS, PaaS, and SaaS",
+  "chapter_number": 11,
+  "chapter_title": "\"Cloud Security and Operations Monitoring\"",
+  "chapter_dir": "11-cloud-and-ops-monitoring",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic-svg\n**sim-id:** shared-responsibility-stack<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA four-column comparison. The leftmost column is \"On-Prem\" (legacy baseline). The next three are \"IaaS\", \"PaaS\", \"SaaS\". Each column is a vertical stack of nine layers, from bottom to top:\n\n1. Physical facilities\n2. Network hardware\n3. Hypervisor\n4. Host OS\n5. Guest OS / VM\n6. Runtime / middleware\n7. Application\n8. Configuration\n9. Data and identities\n\nEach layer is colored either **slate-steel (#455a64)** for \"Provider responsibility\" or **cybersecurity-blue (#1565c0)** for \"Customer responsibility\".\n\n- **On-Prem:** all 9 layers customer-blue.\n- **IaaS:** layers 1–4 provider-slate; layers 5–9 customer-blue.\n- **PaaS:** layers 1–6 provider-slate; layers 7–9 customer-blue.\n- **SaaS:** layers 1–7 provider-slate; layers 8–9 customer-blue.\n\nA persistent caption at the bottom reads: \"In every model, **data, identity, and configuration are always the customer's job.**\"\n\nHover tooltips on each layer briefly state who is responsible and give one concrete example (e.g. on the \"Configuration\" layer for SaaS: \"Customer — e.g., enabling MFA in Microsoft 365 admin center\").\n\nColor: #1565c0 for customer layers, #455a64 for provider layers, #fff8e1 background. Responsive: columns reflow to two per row below 700px.\n\nImplementation: Static SVG with `<title>` tooltip per layer."
+}

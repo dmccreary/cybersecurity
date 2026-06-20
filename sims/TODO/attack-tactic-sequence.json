@@ -1,0 +1,14 @@
+{
+  "sim_id": "attack-tactic-sequence",
+  "diagram_name": "MITRE ATT&CK Tactic Sequence Explorer",
+  "chapter_number": 15,
+  "chapter_title": "\"Offensive and Defensive Security Operations\"",
+  "chapter_dir": "15-security-operations",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: microsim\n**sim-id:** attack-tactic-sequence<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that visualizes how an attack progresses across MITRE ATT&CK tactics.\n\n**Learning objective (Bloom's: Analyzing):** Students will analyze how individual techniques chain into a complete campaign by stepping through preset scenarios and identifying which tactic each technique belongs to.\n\n**Layout:**\n\n- Canvas: 900 × 520, responsive (uses `updateCanvasSize()` first in setup).\n- Top: 14 tactic columns rendered as labeled vertical bars (Reconnaissance through Impact). Each column header shows the tactic name in slate steel #455a64.\n- Center: animated timeline with attacker techniques represented as cybersecurity-blue (#1565c0) circles; each circle is positioned in the column of its tactic.\n- Bottom: scenario selector dropdown and step controls.\n\n**Controls:**\n\n- `createSelect()` for \"Scenario\": options are \"Phishing → Ransomware\", \"Supply Chain Compromise (SolarWinds-style)\", \"Web App SQLi → Data Theft\", \"Insider Credential Abuse\"\n- `createButton(\"Step Forward\")` advances one technique\n- `createButton(\"Step Back\")` rewinds one technique\n- `createButton(\"Play All\")` auto-advances at 1.5s/step\n- `createButton(\"Reset\")` returns to start\n- `createSlider(0.5, 3.0, 1.5, 0.1)` for play speed (label: \"Speed (s/step)\")\n\n**Behavior:**\n\n- Each step adds the next technique circle in its appropriate tactic column with an animated arrow from the previous one.\n- Clicking a technique circle pops up a tooltip with the technique ID, name (e.g., \"T1566 — Phishing\"), short description, and one defender-side detection idea.\n- An \"alert accent\" #ffa000 highlight pulses on the *first* technique that a typical SOC would have detected, prompting students to reason about earliest detection point.\n- Below the timeline: a running text strip showing \"Cumulative attacker progress: <% of campaign>\".\n\n**Default scenario:** \"Phishing → Ransomware\" pre-loaded.\n\n**Responsive design:** Canvas reflows to container width. On widths below 700px, tactic column labels rotate 45° to fit.\n\nImplementation: p5.js with a JSON data file containing each scenario's technique sequence and metadata. `canvas.parent(document.querySelector('main'));`"
+}

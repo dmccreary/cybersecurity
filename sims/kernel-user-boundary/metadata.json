@@ -1,0 +1,54 @@
+{
+  "title": "Kernel / User Mode Boundary",
+  "description": "Interactive SVG stack diagram of the user-mode (ring 3) / kernel-mode (ring 0) boundary, showing applications, the system-call interface, kernel subsystems, and hardware. Hover any layer for an explanation of why the privilege boundary matters.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "kernel-user-boundary",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Explain",
+  "completion_status": "validated",
+  "chapter_number": 10,
+  "chapter_title": "System Security",
+  "chapter_dir": "10-system-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Operating system privilege rings and the system call boundary",
+    "learningObjectives": [
+      "Explain why user-mode processes cannot touch hardware directly.",
+      "Identify the system call interface as the only legal path from ring 3 to ring 0.",
+      "Reason about why a kernel bug is a total compromise while a user-process bug is contained."
+    ],
+    "bloomLevels": [
+      "Understand"
+    ],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic idea of an operating system and processes."
+  },
+  "pedagogical": {
+    "modelType": "static layered diagram with hover reveals",
+    "interactionModes": [
+      "hover tooltips",
+      "tap tooltips"
+    ],
+    "controls": [
+      "Hover/tap user-mode applications (Browser, Database, Editor)",
+      "Hover/tap the system call interface line",
+      "Hover/tap the kernel-mode layer",
+      "Hover/tap the hardware bar"
+    ],
+    "assessment": "Students trace a file read from a user application down through the syscall boundary to hardware and explain each privilege transition.",
+    "misconceptionsAddressed": [
+      "Believing applications access hardware directly.",
+      "Assuming a sandboxed user process can compromise the whole system without crossing the kernel boundary."
+    ]
+  }
+}

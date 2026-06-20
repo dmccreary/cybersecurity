@@ -1,0 +1,14 @@
+{
+  "sim_id": "diffie-hellman-exchange",
+  "diagram_name": "Diffie-Hellman Key Exchange",
+  "chapter_number": 3,
+  "chapter_title": "\"Cryptography Fundamentals: Symmetric Ciphers and Hashing\"",
+  "chapter_dir": "03-crypto-fundamentals",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** diffie-hellman-exchange<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA sequence diagram with three actors: Alice (left), Network/Eve (center), Bob (right).\n\nSteps from top to bottom:\n\n1. Both Alice and Bob: agree on public parameters (large prime p, generator g) — shown above the diagram in a box: \"Public: p, g\"\n2. Alice generates secret `a` (locally, in a side note: \"kept secret\")\n3. Bob generates secret `b` (locally, side note: \"kept secret\")\n4. Alice → Bob: sends `A = g^a mod p`\n5. Bob → Alice: sends `B = g^b mod p`\n6. Alice computes `s = B^a mod p`\n7. Bob computes `s = A^b mod p`\n8. Both arrive at the same shared secret `s = g^(ab) mod p`\n\nEve (center, sees the wire) observes A and B but cannot derive `s` without solving the discrete log problem. Show Eve with a \"?\" thought bubble at the bottom.\n\nColor: cybersecurity blue for Alice/Bob private states (kept secret), slate steel for the wire transmissions, red for Eve's \"cannot recover\" annotation. Responsive: simplifies to a vertical sequence below 600px viewport.\n\nImplementation: Mermaid sequenceDiagram."
+}

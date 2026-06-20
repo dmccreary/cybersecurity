@@ -1,0 +1,47 @@
+{
+  "title": "Privacy Engineering Decision Tree",
+  "description": "A Mermaid decision tree an engineer or privacy reviewer walks for each proposed data field — need it, minimize it, retain how long, shared, lawful basis — mapping each branch to a GDPR/CCPA principle.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "privacy-decision-tree",
+  "library": "Mermaid",
+  "bloomLevel": "Apply",
+  "bloomVerb": "Apply",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Privacy Engineering", "Data Governance"],
+    "topic": ["Data Minimization", "Purpose Limitation", "Storage Limitation", "Lawful Basis", "GDPR", "CCPA", "Data-Processing Agreements"],
+    "learningObjectives": [
+      "Apply a structured decision process to decide whether and how to collect a proposed data field.",
+      "Map each decision branch to the GDPR/CCPA privacy principle it enforces."
+    ],
+    "bloomsTaxonomy": ["Apply"],
+    "prerequisites": ["Basic idea of personal data and why privacy regulation exists"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["guided-discovery", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Walk the tree for a concrete field (e.g., a customer's date of birth) and reach a leaf.",
+      "Hover each decision node to connect the branch to its privacy principle."
+    ],
+    "assessmentQuestions": [
+      {"question": "A field is useful but not strictly needed for the stated purpose. Where does the tree send it, and which principle is that?", "level": "Apply"},
+      {"question": "Why does sharing data with a third party require both a DPA and a lawful basis rather than either one alone?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "diagram_type": "flowchart",
+  "direction": "TD",
+  "node_count": "10",
+  "edge_count": "9",
+  "chapter_number": 12,
+  "chapter_title": "\"Human Security: Identity, Authentication, and Social Engineering\"",
+  "chapter_dir": "12-human-security"
+}

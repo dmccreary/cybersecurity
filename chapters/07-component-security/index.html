@@ -1198,6 +1198,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1211,7 +1499,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1744,6 +2032,9 @@ Welcome. Until now we have assumed that the CPU runs the instructions we wrote, 
 </tbody>
 </table>
 <h4 id="diagram-hardware-trust-anchors-on-a-modern-system">Diagram: Hardware Trust Anchors on a Modern System<a class="headerlink" href="#diagram-hardware-trust-anchors-on-a-modern-system" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/trust-anchors-overview/main.html" width="100%" height="692" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/trust-anchors-overview/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing the relationship between TPM, HSM, secure enclave, and TEE on a typical system</summary>
 <p>Type: infographic-svg
@@ -1792,6 +2083,9 @@ Welcome. Until now we have assumed that the CPU runs the instructions we wrote, 
 <p><strong>Measured Boot</strong> is a <em>recording</em> mechanism: at each stage, the firmware computes a hash of the next stage <em>before</em> running it and <em>extends</em> that hash into a TPM PCR. The result is a tamper-evident log of every piece of code that ran during boot. Measured boot does not, by itself, refuse to boot anything — it only records what happened. The recording becomes useful when paired with two things: TPM key sealing (the disk encryption key only unlocks if the PCRs match a trusted state) and attestation (a remote verifier reads the PCRs and decides whether to trust the system).</p>
 <p>The two technologies are complementary. Secure Boot gives you a binary "boot-or-don't" guarantee at the moment of boot. Measured Boot gives you an evidentiary trail that survives the boot and lets a remote party — a corporate VPN, a cloud orchestrator, a remote-attestation service — make a trust decision <em>after</em> boot. Real systems use both.</p>
 <h4 id="diagram-secure-boot-vs-measured-boot">Diagram: Secure Boot vs. Measured Boot<a class="headerlink" href="#diagram-secure-boot-vs-measured-boot" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/secure-vs-measured-boot/main.html" width="100%" height="542" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/secure-vs-measured-boot/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side flow diagram showing how secure boot enforces trust while measured boot records it</summary>
 <p>Type: workflow-diagram
@@ -1879,6 +2173,9 @@ Notice the asymmetry. Secure Boot answers <em>"should I run this?"</em> at boot 
 </tbody>
 </table>
 <h4 id="diagram-side-channel-attack-surface">Diagram: Side-Channel Attack Surface<a class="headerlink" href="#diagram-side-channel-attack-surface" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/side-channel-overview/main.html" width="100%" height="582" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/side-channel-overview/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Infographic showing how data leaks from a chip through timing, power, EM, cache, and fault channels</summary>
 <p>Type: infographic-svg
@@ -1921,6 +2218,9 @@ Code like <code>if (mac == expected_mac)</code> looks correct and is. Code like 
 </ul>
 <p>The result is an ecosystem with extraordinarily uneven security. Industry standards are emerging — the U.S. <em>Cyber Trust Mark</em> labeling program (2024+), the EU <em>Cyber Resilience Act</em> (2024), ETSI EN 303 645 for consumer IoT, IEC 62443 for industrial systems — but the installed base will take a generation to replace. The high-leverage controls a designer of an embedded device should focus on are: a hardware root of trust (section 9), authenticated and signed firmware updates, no default passwords, encrypted communications, and a <em>defined end-of-support date</em> communicated to buyers.</p>
 <h4 id="diagram-iot-device-security-stack">Diagram: IoT Device Security Stack<a class="headerlink" href="#diagram-iot-device-security-stack" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/iot-security-stack/main.html" width="100%" height="1217" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/iot-security-stack/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing the security stack of a representative IoT device from silicon root of trust to cloud backend</summary>
 <p>Type: diagram
@@ -1962,6 +2262,9 @@ For any connected device you ship, target this minimum: hardware root of trust, 
 <p>Attestation is the cryptographic backbone of many things you may already have used: BitLocker recovery, FIDO2 device authentication (the "attestation statement" in WebAuthn), Apple's iCloud Keychain trust, Google Play Integrity, and confidential-computing workloads in the cloud. Whenever a service distinguishes "real device" from "anything claiming to be a device," attestation is what is doing the work behind the scenes.</p>
 <p>A subtle but important note: attestation proves <em>what</em> is running, not that <em>what is running is good</em>. The verifier's policy database — the list of acceptable PCR values, acceptable enclave hashes, acceptable firmware versions — is the human judgment that turns "I am a Lenovo laptop with kernel 6.7" into "I am acceptable to my employer's VPN." That policy is what gets out of date when bootloaders are revoked, when CVEs are disclosed, when fleet inventories drift. Attestation moves the trust problem from "can I trust this device?" to "is my policy current?" — which is a problem with the same shape but much better tooling.</p>
 <h4 id="diagram-device-attestation-flow">Diagram: Device Attestation Flow<a class="headerlink" href="#diagram-device-attestation-flow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/device-attestation-flow/main.html" width="100%" height="662" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/device-attestation-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing a device proving its boot state to a remote verifier using a TPM quote</summary>
 <p>Type: workflow-diagram

@@ -1,0 +1,41 @@
+{
+  "title": "Purdue Model Attack Paths",
+  "description": "Interactive SVG of the Purdue model levels (5 down to 0) with the IT/OT boundary highlighted and three historical ICS attack paths overlaid - Stuxnet, Colonial Pipeline, and Oldsmar - each annotated with the control that failed.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "purdue-model-attack-paths",
+  "library": "SVG",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Trace",
+  "completion_status": "validated",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Industrial control systems, the Purdue model, and the IT/OT boundary",
+    "learningObjectives": [
+      "Identify the six Purdue levels and locate the IT/OT boundary.",
+      "Trace three real ICS attacks through the Purdue levels.",
+      "Name the specific control that failed in each historical attack."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Awareness that operational technology controls physical processes."
+  },
+  "pedagogical": {
+    "modelType": "interactive layered infographic with attack overlays",
+    "interactionModes": ["hover-reveal", "click-reveal", "path-toggle"],
+    "assessment": "Discussion questions in the lesson plan ask students to map a new intrusion onto the levels and propose the missing control.",
+    "misconceptionsAddressed": [
+      "Believing an air gap is sufficient to protect OT (Stuxnet crossed via USB).",
+      "Assuming an attacker must reach Level 0 to cause operational impact (Colonial caused a shutdown from IT)."
+    ]
+  }
+}

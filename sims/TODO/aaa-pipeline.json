@@ -1,0 +1,14 @@
+{
+  "sim_id": "aaa-pipeline",
+  "diagram_name": "AAA Pipeline with Non-Repudiation Sidebar",
+  "chapter_number": 1,
+  "chapter_title": "\"Security Foundations: Properties, Mindset, and Risk\"",
+  "chapter_dir": "01-security-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** aaa-pipeline<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal flow diagram with four boxes connected by arrows:\n\n1. **Principal** (left) - \"Claims an identity (e.g., user@example.com)\"\n2. **Authentication** - \"Is the claim genuine? (password, MFA, certificate)\"\n3. **Authorization** - \"Is this principal allowed this action on this resource?\"\n4. **Accounting** - \"Record what happened (logs, audit trail)\"\n5. **Resource** (right) - \"Protected asset\"\n\nBelow the main flow, a side-box labeled **Non-Repudiation** with arrows from \"Authentication\" and \"Accounting\" feeding into it, with the caption \"Cryptographic evidence — actor cannot deny the action.\"\n\nEach step is color-coded: authentication = blue (#1565c0), authorization = green, accounting = slate-steel (#455a64), non-repudiation = amber (#ffa000). Clicking each step expands a definition tooltip. Responsive: stacks vertically on screens under 700px wide.\n\nImplementation: Mermaid graph LR with subgraph for non-repudiation sidebar."
+}

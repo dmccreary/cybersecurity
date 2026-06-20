@@ -1,0 +1,14 @@
+{
+  "sim_id": "purdue-model-attack-paths",
+  "diagram_name": "Purdue Reference Model with Attack-Path Overlay",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "library": "Static SVG with hover tooltips",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: infographic\n**sim-id:** purdue-model-attack-paths<br/>\n**Library:** Static SVG with hover tooltips<br/>\n**Status:** Specified\n\nA vertical stack of horizontal bands, each representing a Purdue level. From bottom to top:\n\n- **Level 0** (rust orange #d84315) — \"Physical Process: sensors, actuators, valves, breakers\"\n- **Level 1** (slate steel #455a64) — \"Basic Control: PLCs, RTUs\"\n- **Level 2** — \"Supervisory Control: HMIs, SCADA servers\"\n- **Level 3** (boundary highlighted with thick border) — \"Operations Management: historian, engineering workstations\"\n- **--- IT/OT BOUNDARY (thick dashed line, alert accent #ffa000) ---**\n- **Level 4** — \"Site Business Planning: MES, file servers\"\n- **Level 5** (cybersecurity blue #1565c0) — \"Enterprise: ERP, email, internet\"\n\nOverlaid on the diagram are three labeled attack paths drawn as red arrows starting at Level 5 and descending through the levels, with hover tooltips:\n\n- **Stuxnet (2010):** USB → Level 3 engineering workstation → Level 1 PLC → Level 0 centrifuge.\n- **Colonial Pipeline (2021):** VPN credential → Level 4 IT → operational impact via shutdown of Level 3 billing systems.\n- **Oldsmar water plant (2021):** TeamViewer → HMI at Level 2 → setpoint change at Level 1 → Level 0 chemical dosing.\n\nEach arrow is annotated with the control that failed (e.g., \"Air gap assumed but USB allowed\", \"MFA missing on VPN\", \"Remote-access tool with shared password\").\n\nColor: cybersecurity blue, alert accent for boundary, slate steel and rust orange for OT levels.\n\nResponsive: stacks remain readable; tooltips are tap-targets on touch screens.\n\nImplementation: Static SVG with CSS hover and a small JavaScript tooltip layer."
+}

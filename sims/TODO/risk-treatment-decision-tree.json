@@ -1,0 +1,14 @@
+{
+  "sim_id": "risk-treatment-decision-tree",
+  "diagram_name": "Risk Treatment Decision Tree",
+  "chapter_number": 13,
+  "chapter_title": "\"Organizational Security: Governance, Risk, and Compliance\"",
+  "chapter_dir": "13-organizational-security",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-05",
+  "specification": "Type: workflow-diagram\n**sim-id:** risk-treatment-decision-tree<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA flowchart starting from a single root box: \"Identified Risk: likelihood × impact rating\".\n\nBranches:\n\n1. First decision diamond: \"Can the activity be eliminated without unacceptable business loss?\"\n   - Yes → terminal node \"AVOID — Stop the activity. Document the decision.\"\n   - No → continue to next decision.\n\n2. Second decision diamond: \"Is residual risk after available controls below the organization's risk appetite?\"\n   - Yes (and a control is feasible) → terminal node \"MITIGATE — Implement control(s). Track residual risk.\"\n   - No → continue.\n\n3. Third decision diamond: \"Can the financial impact be transferred to another party (insurance, contract)?\"\n   - Yes → terminal node \"TRANSFER — Procure insurance / vendor contract. Track coverage limits.\"\n   - No → continue.\n\n4. Final terminal: \"ACCEPT — Document, sign at appropriate executive level, time-bound (typically 12 months), reassess on schedule.\"\n\nColor: each terminal node colored distinctly — Avoid (slate steel), Mitigate (cybersecurity blue), Transfer (amber), Accept (rust orange).\n\nCaption beneath: \"Implicit acceptance is the failure mode. Every risk gets exactly one of these four labels, with an owner and a date.\"\n\nResponsive: Mermaid graph TD; renders to container width. Caption wraps below 500px.\n\nImplementation: Mermaid flowchart with classDef styling for the four terminal types."
+}

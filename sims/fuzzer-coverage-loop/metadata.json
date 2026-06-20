@@ -1,0 +1,40 @@
+{
+  "title": "Coverage-Guided Fuzzer Loop",
+  "description": "An animated simulation of how a coverage-guided fuzzer explores a target program's basic blocks over time, reaching the deep bug block far faster than pure random fuzzing.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "fuzzer-coverage-loop",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Compare",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Software Assurance and Supply Chain Security",
+    "learningObjectives": [
+      "Describe the coverage-guided fuzzing loop: mutate, execute, keep inputs that reach new code.",
+      "Compare the exploration behavior of coverage-guided versus random fuzzing.",
+      "Explain why coverage guidance dramatically reduces time-to-bug for deep code paths."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "Basic understanding of control flow, branches, and software testing."
+  },
+  "pedagogical": {
+    "modelType": "agent-based exploration simulation",
+    "interaction": "Mutation-aggressiveness and inputs-per-second sliders, a Coverage-guided toggle for A/B comparison, and a Reset button.",
+    "assessment": "Lesson plan asks students to run both modes and compare time-to-crash.",
+    "misconceptions": "Counters the idea that random fuzzing is as effective as coverage-guided fuzzing for deep bugs."
+  },
+  "completion_status": "validated",
+  "chapter_number": 6,
+  "chapter_title": "\"Software Assurance and Supply Chain Security\"",
+  "chapter_dir": "06-software-assurance"
+}

@@ -1144,6 +1144,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1157,7 +1445,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1574,6 +1862,9 @@ Welcome. Chapter 5 named the bugs; this chapter equips you to find, prevent, and
 <p>This chapter organizes those defenses into three concentric layers. The innermost layer is the code itself: defensive patterns at the boundaries of an application — validating input, encoding output, parameterizing database queries — that eliminate entire vulnerability classes if used consistently. The middle layer is the analysis tooling that runs over the code: static analysis, dynamic analysis, and fuzzing find bugs the developer did not. The outermost layer is the supply chain: the libraries, base images, build systems, and signing infrastructure your code depends on, all of which an attacker can target instead of your code. A modern security program needs all three layers, and they reinforce one another rather than substituting for one another.</p>
 <p>The "defense in depth" principle from Chapter 1 shows up here in operational form. Input validation alone is not enough — a single missed validation point exposes the application. Static analysis alone is not enough — it has false positives and misses runtime-only bugs. SBOMs alone do not stop an attacker — they only tell you what was in the box. The strength of the program is in the <em>composition</em> of layers, each catching what the others miss.</p>
 <h4 id="diagram-the-three-layers-of-software-assurance">Diagram: The Three Layers of Software Assurance<a class="headerlink" href="#diagram-the-three-layers-of-software-assurance" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/software-assurance-layers/main.html" width="100%" height="562" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/software-assurance-layers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Concentric circles showing in-code defenses, analysis tooling, and supply chain layers</summary>
 <p>Type: infographic
@@ -1771,6 +2062,9 @@ If you ever find yourself building a SQL string with <code>+</code> or <code>f".
 <p><strong>Fuzzing</strong> is a class of dynamic testing in which a tool generates large quantities of malformed, random, or mutated inputs and feeds them to a target program, looking for inputs that cause crashes, hangs, or other observable misbehavior. Fuzzing is one of the most productive security-testing techniques ever invented: it has found tens of thousands of bugs in widely deployed software, including security-critical bugs in OpenSSL, the Linux kernel, browsers, and image-parsing libraries.</p>
 <p>The classical fuzzer feeds random bytes to a program and watches for crashes. Modern fuzzers — AFL++, libFuzzer, Honggfuzz, Jazzer — are dramatically more effective because they are <strong>coverage-guided</strong>: they instrument the target binary, observe which code paths each input exercises, and prioritize inputs that reach new code. Over hours or days, this evolutionary loop drives the fuzzer toward inputs that exercise rarely-traversed paths, where bugs hide.</p>
 <h4 id="diagram-coverage-guided-fuzzer-loop">Diagram: Coverage-Guided Fuzzer Loop<a class="headerlink" href="#diagram-coverage-guided-fuzzer-loop" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/fuzzer-coverage-loop/main.html" width="100%" height="592" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/fuzzer-coverage-loop/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive p5.js MicroSim of a coverage-guided fuzzer</summary>
 <p>Type: microsim
@@ -1824,6 +2118,9 @@ Notice the asymmetry. A unit test asks "does the code work for the inputs <em>I<
 <p>The <strong>software supply chain</strong> is the chain of people, processes, and infrastructure that sits between <em>the code on a developer's screen</em> and <em>the binary running on a user's machine</em>. It includes source repositories, build servers, package registries, container registries, deployment pipelines, signing keys, and the maintainer accounts that hold privileges over each. Every link in this chain is a target.</p>
 <p>Supply-chain attacks succeed because they exploit <em>transitive trust</em>. You trust your developers; your developers trust the build server; the build server trusts the package registry; the package registry trusts the maintainers of every package on it. An attacker who compromises any link earlier in the chain inherits the trust of every link downstream — often without any direct interaction with the target organization.</p>
 <h4 id="diagram-a-modern-software-supply-chain">Diagram: A Modern Software Supply Chain<a class="headerlink" href="#diagram-a-modern-software-supply-chain" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/software-supply-chain-flow/main.html" width="100%" height="702" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/software-supply-chain-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Workflow diagram of the supply chain from developer keyboard to production user, with attack injection points</summary>
 <p>Type: workflow-diagram
@@ -1901,6 +2198,9 @@ The hard mental shift in supply-chain security is recognizing that <em>the code 
 </tbody>
 </table>
 <h4 id="diagram-sbom-as-a-dependency-tree-explorer">Diagram: SBOM as a Dependency Tree Explorer<a class="headerlink" href="#diagram-sbom-as-a-dependency-tree-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/sbom-dependency-explorer/main.html" width="100%" height="602" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/sbom-dependency-explorer/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive vis-network MicroSim that lets students explore an SBOM's transitive dependencies</summary>
 <p>Type: graph-data-model

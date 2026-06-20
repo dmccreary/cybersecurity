@@ -1,0 +1,40 @@
+{
+  "title": "Cyber Law Jurisdictional Map",
+  "description": "Statutes grouped into U.S. Federal, U.S. State, and International bands. Hover any law for its scope, who it regulates, its key obligation, and its breach-notification window; pick a scenario to highlight the laws that apply and read why.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "cyber-law-jurisdiction-map",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Identify",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Societal Security: Law, Forensics, and Ethics",
+    "learningObjectives": [
+      "Identify which cyber and privacy laws apply to a given data-handling scenario.",
+      "Explain why a law's jurisdiction reaches a particular scenario (data subject, data location, or regulated entity).",
+      "Compare breach-notification windows across federal, state, and international regimes."
+    ],
+    "bloomLevels": ["Understand", "Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "General awareness that privacy and cybercrime laws exist; no legal background required."
+  },
+  "pedagogical": {
+    "modelType": "scenario-driven interactive infographic",
+    "interaction": "Hover statute cards for details; scenario dropdown highlights applicable laws and explains each in a side panel.",
+    "assessment": "Lesson plan asks students to predict applicable laws before selecting a scenario.",
+    "misconceptions": "Counters the idea that location alone decides jurisdiction by showing data-subject and entity-based reach (e.g., GDPR)."
+  },
+  "completion_status": "validated",
+  "chapter_number": 14,
+  "chapter_title": "\"Societal Security: Law, Forensics, and Ethics\"",
+  "chapter_dir": "14-societal-security"
+}

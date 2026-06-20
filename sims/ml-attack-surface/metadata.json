@@ -1,0 +1,42 @@
+{
+  "title": "ML Attack Surface",
+  "description": "Interactive Mermaid diagram of the machine-learning training and inference pipelines with four attack vectors pointing in: data poisoning, adversarial evasion, model theft, and prompt injection. Hover any stage or attack for details.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ml-attack-surface",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "Identify",
+  "completion_status": "validated",
+  "chapter_number": 16,
+  "chapter_title": "\"Emerging Topics and Capstone\"",
+  "chapter_dir": "16-emerging-and-capstone",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Machine-learning security and the ML attack surface",
+    "learningObjectives": [
+      "Identify the stages of the ML training and inference pipelines.",
+      "Match each ML-specific attack (poisoning, evasion, theft, prompt injection) to the pipeline stage it targets.",
+      "Explain why training-time and inference-time attacks require different defenses."
+    ],
+    "bloomLevels": ["Understand"],
+    "duration": "5-10 minutes",
+    "prerequisites": "Basic familiarity with how a model is trained and queried."
+  },
+  "pedagogical": {
+    "modelType": "interactive workflow diagram with overlaid attack vectors",
+    "interactionModes": ["hover-reveal", "click-reveal"],
+    "assessment": "Discussion questions in the lesson plan ask students to place a given attack at the correct stage and propose a defense.",
+    "misconceptionsAddressed": [
+      "Assuming all ML attacks happen at inference time.",
+      "Believing data cleaning alone defeats data poisoning.",
+      "Treating prompt injection as a model bug rather than a trust-boundary failure."
+    ]
+  }
+}

@@ -1132,6 +1132,294 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1145,7 +1433,7 @@
         
   
   
-    <a href="../../sims/graph-viewer/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1604,6 +1892,9 @@ Reports that conflate threat, vulnerability, and exploit produce muddled mitigat
 <p>A <strong>threat actor</strong> (sometimes called <em>adversary</em>) is the human or organizational entity behind a threat. Threat actors differ enormously in skill, resources, motivation, and patience, and the right defensive posture depends on which actors you are designing against. A small online retailer faces fundamentally different actors than a defense contractor.</p>
 <p>Five broad categories cover most threat actors you will encounter. <em>Script kiddies</em> use existing tools opportunistically; their resources are low and their attention span is short, but their volume is high — most internet-facing systems get scanned by them within minutes of going online. <em>Cybercriminals</em> are profit-motivated, and they are increasingly professional: ransomware groups operate like businesses, complete with HR, customer support, and revenue sharing with affiliates. <em>Hacktivists</em> are motivated by ideology rather than profit; their targets are often chosen for symbolic value. <em>Insiders</em> are current or former employees, contractors, or partners with legitimate access; they are statistically rare but disproportionately damaging because they bypass perimeter defenses by definition. <em>Nation-state actors</em> (sometimes called <em>advanced persistent threats</em> or APTs) are government-aligned groups with the resources, patience, and skill to conduct multi-year campaigns; they are the apex predators of the threat landscape.</p>
 <h4 id="diagram-threat-actor-capability-matrix">Diagram: Threat Actor Capability Matrix<a class="headerlink" href="#diagram-threat-actor-capability-matrix" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/threat-actor-matrix/main.html" width="100%" height="542" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/threat-actor-matrix/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>2D matrix of threat actors by skill versus resources, with typical motivations</summary>
 <p>Type: infographic-svg
@@ -1630,6 +1921,9 @@ Reports that conflate threat, vulnerability, and exploit produce muddled mitigat
 <p>A <strong>trust boundary</strong> is a line in the system across which the <em>level of trust</em> changes. Inside the boundary, components implicitly trust each other; outside, they do not. The boundary between your application and the public internet is a trust boundary. The boundary between user-supplied input and your application's internal data is a trust boundary. The boundary between your application and your database is a trust boundary. Every trust boundary is a place where authorization, validation, and integrity checks must happen, because you are crossing from "trusted" to "untrusted" territory or vice versa. Most security bugs occur at trust boundaries that the designer forgot were boundaries.</p>
 <p>The <strong>blast radius</strong> is the scope of damage when a control fails. If an attacker compromises one user account, what can they reach? Can they read other users' data? Can they pivot to internal systems? Can they reach the database directly? Blast radius is what <em>least privilege</em> and <em>separation of duties</em> (Chapter 1) actually buy you: a smaller blast radius when something does go wrong. The phrase comes from explosives — the analogy is intentional.</p>
 <h4 id="diagram-attack-surface-trust-boundary-and-blast-radius">Diagram: Attack Surface, Trust Boundary, and Blast Radius<a class="headerlink" href="#diagram-attack-surface-trust-boundary-and-blast-radius" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/surface-boundary-blast-radius/main.html" width="100%" height="522" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/surface-boundary-blast-radius/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing attack surface, trust boundaries, and blast radius for a sample web app</summary>
 <p>Type: architecture-diagram
@@ -1750,6 +2044,9 @@ A defense built only on IOCs catches yesterday's attacks. Once attackers know wh
 <p>The <strong>Cyber Kill Chain</strong>, published by Lockheed Martin in 2011, breaks an intrusion into seven sequential phases: <em>Reconnaissance</em> (research the target), <em>Weaponization</em> (build the exploit + payload), <em>Delivery</em> (send it — phishing email, drive-by, USB), <em>Exploitation</em> (the vulnerability fires), <em>Installation</em> (persistent foothold installed), <em>Command and Control</em> (the attacker can now drive the foothold remotely), and <em>Actions on Objectives</em> (data exfiltration, lateral movement, ransomware deployment, whatever the actual goal was). The Cyber Kill Chain's value is that it gives defenders a vocabulary for <em>where</em> in the attack a particular control disrupts the attacker — a phishing-aware email gateway disrupts at <em>delivery</em>; an EDR agent disrupts at <em>exploitation</em> or <em>installation</em>; a network egress filter disrupts at <em>command and control</em>. Stop the chain at any phase and the attack fails.</p>
 <p>The <strong>Diamond Model</strong>, also published in 2013, takes a different angle: it describes a single intrusion event as a four-vertex diamond consisting of <em>Adversary</em>, <em>Capability</em> (the exploit/tool), <em>Infrastructure</em> (the C2 servers, dropper sites), and <em>Victim</em>. Each pair of vertices has a meaningful relationship — <em>Adversary uses Capability</em>, <em>Capability targets Victim</em>, <em>Adversary owns Infrastructure</em>, <em>Infrastructure communicates with Victim</em>. The Diamond Model is excellent for <em>correlating</em> events across time — different victims attacked by the same adversary using the same infrastructure form a campaign. Where the Cyber Kill Chain models the <em>flow</em> of one attack, the Diamond Model models the <em>relationships</em> across many.</p>
 <h4 id="diagram-cyber-kill-chain-phases-with-defensive-controls">Diagram: Cyber Kill Chain Phases with Defensive Controls<a class="headerlink" href="#diagram-cyber-kill-chain-phases-with-defensive-controls" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/cyber-kill-chain-controls/main.html" width="100%" height="252" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/cyber-kill-chain-controls/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Seven-phase Cyber Kill Chain with control examples per phase</summary>
 <p>Type: workflow-diagram
@@ -1789,6 +2086,9 @@ Each kill-chain phase is an opportunity to detect or block the attacker. A singl
 <p><strong>Technical controls</strong> (sometimes <em>logical</em> controls) are implemented in hardware or software: firewalls, encryption, access-control lists, intrusion-detection systems, multi-factor authentication. Technical controls are the bread and butter of computing security and the focus of most of this textbook.</p>
 <p><strong>Physical controls</strong> are tangible barriers and monitors: locks, fences, badge readers, security cameras, guards, environmental sensors. Physical security is often forgotten by software-focused teams, but a server in an unlocked room with a USB port is no more secure than the building's front door.</p>
 <h4 id="diagram-security-control-3d-taxonomy">Diagram: Security Control 3D Taxonomy<a class="headerlink" href="#diagram-security-control-3d-taxonomy" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/control-taxonomy-cube/main.html" width="100%" height="412" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/control-taxonomy-cube/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Cube diagram showing the function × type taxonomy of security controls</summary>
 <p>Type: infographic-svg

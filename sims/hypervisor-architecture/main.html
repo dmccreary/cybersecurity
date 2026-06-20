@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Hypervisor Architecture and the Trust Boundary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #fff8e1; }
+        main { width: 100%; }
+        #wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 10px; }
+        h1.title { text-align: center; font-size: 21px; color: #212529; margin: 6px 0 2px; }
+        p.sub { text-align: center; font-size: 13px; color: #455a64; margin-bottom: 10px; }
+        .stacks { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+        .stack { flex: 1 1 360px; max-width: 460px; }
+        .cap { text-align: center; font-size: 13px; color: #263238; margin-bottom: 6px; min-height: 34px; }
+        svg { width: 100%; height: auto; display: block; }
+        .band { cursor: pointer; }
+        #tooltip {
+            position: absolute; background: #455a64; color: #fff;
+            padding: 6px 10px; border-radius: 6px; font-size: 13px;
+            max-width: 250px; pointer-events: none; opacity: 0;
+            transition: opacity 0.15s; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        #tooltip.show { opacity: 1; }
+    </style>
+</head>
+<body>
+<main>
+  <div id="wrap">
+    <h1 class="title">Hypervisor Architecture and the Trust Boundary</h1>
+    <p class="sub">Both designs virtualize hardware, but the trust boundary and attack surface differ. Hover a band for detail.</p>
+    <div class="stacks">
+
+      <!-- ===== Type 1: Bare Metal ===== -->
+      <div class="stack">
+        <div class="cap"><strong>Type 1: hypervisor on hardware.</strong><br/>Cloud providers use this.</div>
+        <svg viewBox="0 0 400 360" role="img"
+             aria-label="Type 1 bare-metal hypervisor stack: three guest VMs on top of a hypervisor band that runs directly on the hardware band. A red dashed VM-escape arrow runs from a VM down through the hypervisor to the hardware.">
+          <!-- VMs -->
+          <g class="band" data-tip="Each VM runs its own guest OS and applications, isolated by the hypervisor.">
+            <rect x="14" y="14" width="116" height="64" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="72" y="40" text-anchor="middle" font-size="12" fill="#0d2c54">Guest OS</text>
+            <text x="72" y="56" text-anchor="middle" font-size="12" fill="#0d2c54">+ Apps</text>
+          </g>
+          <g class="band" data-tip="Each VM runs its own guest OS and applications, isolated by the hypervisor.">
+            <rect x="142" y="14" width="116" height="64" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="200" y="40" text-anchor="middle" font-size="12" fill="#0d2c54">Guest OS</text>
+            <text x="200" y="56" text-anchor="middle" font-size="12" fill="#0d2c54">+ Apps</text>
+          </g>
+          <g class="band" data-tip="Each VM runs its own guest OS and applications, isolated by the hypervisor.">
+            <rect x="270" y="14" width="116" height="64" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="328" y="40" text-anchor="middle" font-size="12" fill="#0d2c54">Guest OS</text>
+            <text x="328" y="56" text-anchor="middle" font-size="12" fill="#0d2c54">+ Apps</text>
+          </g>
+          <!-- Hypervisor band (cybersecurity blue) -->
+          <g class="band" data-tip="The Type 1 hypervisor is the only layer between guests and hardware - a small, hardened trusted computing base.">
+            <rect x="14" y="120" width="372" height="56" rx="8" fill="#1565c0" stroke="#0d47a1" stroke-width="2"/>
+            <text x="200" y="144" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Hypervisor</text>
+            <text x="200" y="162" text-anchor="middle" font-size="12" fill="#e3f0fb">ESXi / KVM / Hyper-V</text>
+          </g>
+          <!-- Hardware band (gray) -->
+          <g class="band" data-tip="Physical hardware: CPU, memory, network, and storage shared among the VMs.">
+            <rect x="14" y="210" width="372" height="48" rx="8" fill="#cfd4d8" stroke="#90a4ae" stroke-width="2"/>
+            <text x="200" y="238" text-anchor="middle" font-size="13" font-weight="bold" fill="#263238">CPU / RAM / NIC / Disk</text>
+          </g>
+          <!-- VM escape arrow (red dashed) -->
+          <defs>
+            <marker id="redArrow1" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+              <path d="M0,0 L9,4.5 L0,9 Z" fill="#d84315"/>
+            </marker>
+          </defs>
+          <path d="M72 78 L72 234" fill="none" stroke="#d84315" stroke-width="2.5"
+                stroke-dasharray="7 5" marker-end="url(#redArrow1)"/>
+          <g class="band" data-tip="VM escape: a compromised guest breaks the hypervisor's isolation to reach the hypervisor or hardware. This is the central threat to mitigate.">
+            <rect x="84" y="86" width="96" height="24" rx="5" fill="#fff3d6" stroke="#d84315" stroke-width="1.5"/>
+            <text x="132" y="102" text-anchor="middle" font-size="12" fill="#a32f0e">VM escape ?</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- ===== Type 2: Hosted ===== -->
+      <div class="stack">
+        <div class="cap"><strong>Type 2: hypervisor as application.</strong><br/>Developers use this.</div>
+        <svg viewBox="0 0 400 360" role="img"
+             aria-label="Type 2 hosted hypervisor stack: two guest VMs on top of a hypervisor application band, which sits on a host OS band, which sits on the hardware band. The added host OS layer enlarges the attack surface.">
+          <!-- VMs -->
+          <g class="band" data-tip="Each VM runs its own guest OS, isolated by the hosted hypervisor.">
+            <rect x="40" y="14" width="140" height="56" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="110" y="46" text-anchor="middle" font-size="12" fill="#0d2c54">Guest OS</text>
+          </g>
+          <g class="band" data-tip="Each VM runs its own guest OS, isolated by the hosted hypervisor.">
+            <rect x="220" y="14" width="140" height="56" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+            <text x="290" y="46" text-anchor="middle" font-size="12" fill="#0d2c54">Guest OS</text>
+          </g>
+          <!-- Hypervisor band (slate) -->
+          <g class="band" data-tip="The Type 2 hypervisor runs as an ordinary application on top of a full host OS.">
+            <rect x="14" y="96" width="372" height="50" rx="8" fill="#455a64" stroke="#263238" stroke-width="2"/>
+            <text x="200" y="116" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Hypervisor</text>
+            <text x="200" y="134" text-anchor="middle" font-size="12" fill="#eceff1">VirtualBox / VMware Workstation</text>
+          </g>
+          <!-- Host OS band (wider) -->
+          <g class="band" data-tip="A full host OS sits beneath the hypervisor. Any host OS bug can affect all guests - a larger attack surface.">
+            <rect x="14" y="160" width="372" height="50" rx="8" fill="#90a4ae" stroke="#607d8b" stroke-width="2"/>
+            <text x="200" y="182" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2327">Host OS</text>
+            <text x="200" y="199" text-anchor="middle" font-size="11" fill="#1a2327">Windows / macOS / Linux</text>
+          </g>
+          <!-- Hardware band (gray) -->
+          <g class="band" data-tip="Physical hardware shared by the host OS and, through it, all guests.">
+            <rect x="14" y="224" width="372" height="44" rx="8" fill="#cfd4d8" stroke="#90a4ae" stroke-width="2"/>
+            <text x="200" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#263238">CPU / RAM / NIC / Disk</text>
+          </g>
+          <!-- annotation -->
+          <text x="200" y="292" text-anchor="middle" font-size="12" fill="#a32f0e" font-weight="bold">Larger attack surface -</text>
+          <text x="200" y="310" text-anchor="middle" font-size="12" fill="#a32f0e">host OS bugs can affect all guests.</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+  <div id="tooltip"></div>
+</main>
+<br/>
+<a href=".">Back to Documentation</a>
+<script src="hypervisor-architecture.js"></script>
+</body>
+</html>

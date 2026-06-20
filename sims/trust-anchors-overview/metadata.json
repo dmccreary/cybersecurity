@@ -1,0 +1,44 @@
+{
+  "title": "Hardware Trust Anchors on a Modern System",
+  "description": "An interactive SVG board diagram of four hardware trust anchors — TEE region, Secure Enclave coprocessor, discrete TPM, and external HSM — with a Hardware Root of Trust badge and hover tooltips giving each anchor's capability and threat model.",
+  "creator": "Dan McCreary",
+  "date": "2026-06-05",
+  "subject": [
+    "cybersecurity"
+  ],
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "trust-anchors-overview",
+  "library": "Static SVG with hover tooltips",
+  "bloomLevel": "Understand",
+  "bloomVerb": "identify",
+  "educational": {
+    "subjectArea": ["Cybersecurity", "Component and Hardware Security"],
+    "topic": ["Hardware Root of Trust", "Trusted Execution Environment", "Secure Enclave", "TPM", "HSM", "Secure Boot"],
+    "learningObjectives": [
+      "Identify the four hardware trust anchors on a modern system and where each lives.",
+      "Explain why a root of trust must be anchored in silicon, not software.",
+      "Compare the threat model and assurance level of TEE, Secure Enclave, TPM, and HSM."
+    ],
+    "bloomsTaxonomy": ["Understand"],
+    "prerequisites": ["Basic computer architecture", "Public-key cryptography basics"],
+    "difficulty": "Intermediate"
+  },
+  "pedagogical": {
+    "recommendedUsage": ["introduction", "reference", "demonstration"],
+    "instructionalStrategies": [
+      "Hover each anchor and have students place it on a spectrum from on-die to off-board.",
+      "Ask students which anchor still protects a key when the OS is fully compromised, and why."
+    ],
+    "assessmentQuestions": [
+      {"question": "Why is the TEE region drawn with an amber outline instead of solid blue?", "level": "Understand"},
+      {"question": "A laptop's OS is compromised by malware. Which trust anchors can still protect a sealed key, and which cannot?", "level": "Analyze"}
+    ]
+  },
+  "completion_status": "validated",
+  "chapter_number": 7,
+  "chapter_title": "\"Component and Hardware Security\"",
+  "chapter_dir": "07-component-security"
+}
