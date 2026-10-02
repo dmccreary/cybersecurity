@@ -1,0 +1,55 @@
+{
+  "title": "Access Control Decision Explorer",
+  "description": "Interactive p5.js simulator that takes a subject, an action, and an object and shows how the DAC, MAC, RBAC, and ABAC access-control models each decide the same request, with the relevant policy, an ALLOW or DENY badge, and a rationale for each model.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "access-control-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Compare",
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Access control models: DAC, MAC, RBAC, and ABAC",
+    "learningObjectives": [
+      "Predict whether DAC, MAC, RBAC, and ABAC each allow or deny a given subject-action-object request.",
+      "Compare the four decisions and explain why the models can disagree on the same request.",
+      "Identify which models forbid an apparently reasonable request and which permit an unreasonable one.",
+      "Explain how layering MAC over DAC contains an over-broad discretionary permission."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "15 minutes",
+    "prerequisites": "Unix owner/group/other permission bits; the definitions of DAC, MAC, RBAC, and ABAC from the chapter."
+  },
+  "pedagogical": {
+    "modelType": "predict-then-reveal comparison tool driven by a small policy engine",
+    "interactionModes": ["dropdown-select", "button", "checkbox-toggle"],
+    "assessment": "Students record four predictions per randomized request before revealing the decisions, then find and classify the seven requests on which the models disagree.",
+    "misconceptionsAddressed": [
+      "Believing root is all-powerful under every access-control model.",
+      "Treating the four models as interchangeable ways of writing the same policy.",
+      "Assuming a more expressive model (ABAC) is automatically more permissive or more correct."
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Subject", "options": ["Alice (HR analyst)", "Bob (engineer)", "Charlie (intern)", "root"] },
+    { "type": "select", "label": "Action", "options": ["read", "write", "execute"] },
+    { "type": "select", "label": "Object", "options": ["payroll.csv (HR-owned, sensitive)", "build.sh (engineering, executable)", "public.txt (world-readable)"] },
+    { "type": "button", "label": "Request", "action": "evaluates the request under all four models and reveals the badges" },
+    { "type": "button", "label": "Randomize scenario", "action": "picks a new subject, action, and object to predict" },
+    { "type": "checkbox", "label": "Show policy", "action": "shows each model's full rule set with the deciding rule highlighted" }
+  ],
+  "model": {
+    "assumptions": "Policies are read from data.json: Unix permission bits with a root override for DAC, SELinux-style type-enforcement allow rules for MAC, role-to-permission lists for RBAC, and attribute permit rules with default deny for ABAC.",
+    "limitations": "A teaching model with four subjects and three objects. Real systems combine these models, and real SELinux, cloud IAM, and XACML policies have many more rule types, deny rules, and environment conditions."
+  }
+}

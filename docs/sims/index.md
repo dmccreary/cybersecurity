@@ -37,6 +37,12 @@ Interactive MicroSims to help students learn cybersecurity fundamentals.
 
     Interactive Mermaid flow diagram of the Authentication, Authorization, and Accounting pipeline, with a non-repudiation sidebar fed by cryptographic evidence.
 
+-   **[Access Control Decision Explorer](./access-control-explorer/index.md)**
+
+    ![Access Control Decision Explorer](./access-control-explorer/access-control-explorer.png)
+
+    Pick a subject, an action, and an object, predict the outcome, and then see how DAC, MAC, RBAC, and ABAC each decide the same request, with the policy and rationale behind every ALLOW or DENY.
+
 -   **[Adversarial Example Explorer](./adversarial-example-explorer/index.md)**
 
     ![Adversarial Example Explorer](./adversarial-example-explorer/adversarial-example-explorer.png)
@@ -91,6 +97,12 @@ Interactive MicroSims to help students learn cybersecurity fundamentals.
 
     A Mermaid flowchart showing the classic two-firewall DMZ design with an untrusted internet zone, a semi-trusted DMZ, and a trusted internal network, plus a blocked attacker pivot.
 
+-   **[Container Isolation Strength Comparator](./container-isolation-comparator/index.md)**
+
+    ![Container Isolation Strength Comparator](./container-isolation-comparator/container-isolation-comparator.png)
+
+    Run five threat scenarios against chroot, default Docker, hardened Docker, a VM, and a confidential VM, then read a verdict on whether that isolation level suits a trusted, semi-trusted, or hostile multi-tenant workload.
+
 -   **[Cost of Fixing a Bug Across SDLC Phases](./ssdlc-cost-curve/index.md)**
 
     ![Cost of Fixing a Bug Across SDLC Phases](./ssdlc-cost-curve/ssdlc-cost-curve.png)
@@ -120,6 +132,12 @@ Interactive MicroSims to help students learn cybersecurity fundamentals.
     ![DDoS Mitigation Explorer](./ddos-mitigation-explorer/ddos-mitigation-explorer.png)
 
     Interactive p5.js simulation of DDoS attack and defense. Adjust the botnet and attack type, toggle ingress filtering, anycast, scrubbing, and rate limiting, and watch how much traffic reaches the origin.
+
+-   **[Detection Tuning Trade-Off Explorer](./detection-threshold-explorer/index.md)**
+
+    ![Detection Tuning Trade-Off Explorer](./detection-threshold-explorer/detection-threshold-explorer.png)
+
+    Drag a detection threshold across overlapping benign and malicious score curves and watch true positives, false positives, missed attacks, daily alert volume, and the ROC operating point change in real time.
 
 -   **[Device Attestation Flow](./device-attestation-flow/index.md)**
 

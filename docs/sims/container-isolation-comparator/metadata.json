@@ -1,0 +1,53 @@
+{
+  "title": "Container Isolation Strength Comparator",
+  "description": "Interactive p5.js simulator that runs five threat scenarios against chroot, default Docker, hardened Docker, a KVM virtual machine, and a confidential VM, badges each as blocked, mitigated with caveats, or feasible, and gives a verdict on whether the isolation level suits the chosen workload.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "container-isolation-comparator",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "Evaluate",
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "\"System Security: OS, Memory, and Access Control\"",
+  "chapter_dir": "10-system-security",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Container and virtual machine isolation strength",
+    "learningObjectives": [
+      "Evaluate whether a chosen isolation level mitigates host filesystem access, kernel exploitation, cache side channels, metadata-service access, and orchestrator API abuse.",
+      "Judge whether an isolation level is too weak, appropriate, or more than needed for a trusted, semi-trusted, or hostile multi-tenant workload.",
+      "Justify each mitigation using namespaces, capabilities, seccomp, MAC profiles, or hardware-assisted virtualization.",
+      "Recognize threats that isolation alone cannot stop and name the control layer that does."
+    ],
+    "bloomLevels": ["Evaluate"],
+    "duration": "15 minutes",
+    "prerequisites": "Namespaces, cgroups, capabilities, seccomp, MAC profiles, and the hypervisor trust boundary from the chapter."
+  },
+  "pedagogical": {
+    "modelType": "judge-then-reveal evaluation tool driven by a threat-mitigation matrix",
+    "interactionModes": ["dropdown-select", "button", "hover", "tap"],
+    "assessment": "Students find the lightest isolation level that earns an Appropriate verdict for each workload and justify it from the rationale text.",
+    "misconceptionsAddressed": [
+      "Believing a container is a security boundary equivalent to a virtual machine.",
+      "Assuming stronger isolation mitigates every threat, including network and API-authorization threats.",
+      "Assuming confidential computing protects the host from a hostile workload."
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Isolation level", "options": ["chroot", "Docker (default)", "Docker (hardened: non-root, drop-caps, seccomp, MAC)", "VM (KVM)", "VM + confidential computing"] },
+    { "type": "select", "label": "Workload trust", "options": ["fully trusted", "semi-trusted", "hostile multi-tenant"] },
+    { "type": "button", "label": "Run threat suite", "action": "evaluates the five threats and reveals the badges and verdict" },
+    { "type": "button", "label": "Reset", "action": "restores Docker (default) with a fully trusted workload" }
+  ],
+  "model": {
+    "assumptions": "Each isolation level maps to a fixed status for each of five threats, stored in data.json. Each workload states the minimum status it requires per threat; the verdict compares the two and finds the lightest level that satisfies the workload.",
+    "limitations": "A qualitative teaching matrix, not a measurement. Real outcomes depend on kernel version, runtime configuration, cloud settings such as the metadata hop limit, and controls outside the isolation boundary."
+  }
+}

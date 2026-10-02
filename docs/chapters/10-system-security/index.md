@@ -231,6 +231,9 @@ The table compares the four models along three axes that this section explained 
 
 #### MicroSim: Access Control Decision Explorer
 
+<iframe src="../../sims/access-control-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
+[Run Access Control Decision Explorer Fullscreen](../../sims/access-control-explorer/main.html)
+
 <details markdown="1">
 <summary>Interactive simulator that takes a (subject, action, object) and shows how each access-control model decides</summary>
 Type: microsim
@@ -432,6 +435,9 @@ The five most consequential Kubernetes security controls in practice are:
 The Kubernetes failure modes that lead to real incidents tend to cluster: an exposed dashboard with no authentication, a service account binding that grants `cluster-admin` to a workload that did not need it, a network policy that does not exist so a compromised pod can reach the cloud metadata service and steal IAM credentials, and secrets stored in environment variables (visible in `kubectl describe`) rather than mounted with restricted permissions. None of these are exotic; all are routine findings.
 
 #### MicroSim: Container Isolation Strength Comparator
+
+<iframe src="../../sims/container-isolation-comparator/main.html" width="100%" height="552px" scrolling="no"></iframe>
+[Run Container Isolation Strength Comparator Fullscreen](../../sims/container-isolation-comparator/main.html)
 
 <details markdown="1">
 <summary>Interactive simulator comparing the isolation strength of chroot, Docker, hardened Docker, and a VM</summary>

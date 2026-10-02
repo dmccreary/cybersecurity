@@ -1,0 +1,55 @@
+{
+  "title": "Detection Tuning Trade-Off Explorer",
+  "description": "Interactive p5.js simulation showing how moving a detection threshold across overlapping benign and malicious anomaly-score distributions trades true positives against false positives, false negatives, and daily alert volume, with a live ROC operating point.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": ["cybersecurity"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "detection-threshold-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Analyze",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "\"Network Security Foundations: Protocols, Firewalls, and Detection\"",
+  "chapter_dir": "08-network-foundations",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Cybersecurity",
+    "topic": "Intrusion detection tuning, false positives, false negatives, and alert fatigue",
+    "learningObjectives": [
+      "Analyze how moving a detection threshold trades true-positive rate against false-positive rate.",
+      "Relate false-positive rate and traffic volume to the daily alert workload of an operations team.",
+      "Explain why a low base rate of attacks makes most alerts false even for a good detector.",
+      "Distinguish tuning a threshold from improving the detector's ability to separate benign and malicious activity."
+    ],
+    "bloomLevels": ["Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": "The difference between an IDS and an IPS; the definitions of true positive, false positive, and false negative."
+  },
+  "pedagogical": {
+    "modelType": "parameter-exploration simulation with real-time readouts",
+    "interactionModes": ["slider", "drag", "button-preset"],
+    "assessment": "Discussion questions in the lesson plan ask students to find the threshold a three-analyst team can sustain and to explain the base-rate effect in the alert-volume readout.",
+    "misconceptionsAddressed": [
+      "Believing a detector can be tuned to catch every attack with no false alarms.",
+      "Assuming a low false-positive rate means few false alerts, ignoring traffic volume and the base rate of attacks.",
+      "Treating threshold tuning and detector quality as the same lever."
+    ]
+  },
+  "controls": [
+    { "type": "slider", "label": "Threshold", "range": "0.00 to 1.00, step 0.01, default 0.50; also draggable on the plot" },
+    { "type": "slider", "label": "Curve overlap (std dev)", "range": "0.10 to 0.50, step 0.01, default 0.20" },
+    { "type": "slider", "label": "Daily traffic", "range": "1,000 to 1,000,000 events, log-scaled, default 100,000" },
+    { "type": "button", "label": "Preset: signature-style (high threshold)", "action": "sets threshold to 0.85" },
+    { "type": "button", "label": "Preset: anomaly-style (lower threshold)", "action": "sets threshold to 0.55" },
+    { "type": "button", "label": "Reset", "action": "restores threshold 0.50, overlap 0.20, traffic 100,000" }
+  ],
+  "model": {
+    "assumptions": "Benign and malicious anomaly scores follow normal distributions with means 0.3 and 0.7 and a shared standard deviation, truncated to the 0-1 score axis; 1% of events are malicious.",
+    "limitations": "A two-Gaussian teaching model, not a measured detector. Real score distributions are rarely normal, attack base rates are usually far below 1%, and alerts are deduplicated and correlated before an analyst sees them."
+  }
+}

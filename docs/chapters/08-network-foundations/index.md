@@ -370,6 +370,9 @@ Implementation: Mermaid flowchart TD with custom node styling and subgraphs for 
 
 #### MicroSim: Detection Tuning Trade-Off Explorer
 
+<iframe src="../../sims/detection-threshold-explorer/main.html" width="100%" height="602px" scrolling="no"></iframe>
+[Run Detection Tuning Trade-Off Explorer Fullscreen](../../sims/detection-threshold-explorer/main.html)
+
 <details markdown="1">
 <summary>Interactive simulation showing how detection threshold affects true positives, false positives, and alert volume</summary>
 Type: microsim

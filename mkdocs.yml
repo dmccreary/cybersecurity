@@ -47,6 +47,7 @@ nav:
     - A Modern Software Supply Chain: sims/software-supply-chain-flow/index.md
     - A TOCTOU Race Condition: sims/toctou-race/index.md
     - AAA Pipeline with Non-Repudiation Sidebar: sims/aaa-pipeline/index.md
+    - Access Control Decision Explorer: sims/access-control-explorer/index.md
     - Adversarial Example Explorer: sims/adversarial-example-explorer/index.md
     - Anatomy of an X.509 Certificate: sims/x509-anatomy/index.md
     - Attack Surface, Trust Boundary, and Blast Radius: sims/surface-boundary-blast-radius/index.md
@@ -56,11 +57,13 @@ nav:
     - Choosing a Capstone Track: sims/capstone-track-chooser/index.md
     - CIA Triad with Example Threats and Controls: sims/cia-triad-overview/index.md
     - Classic DMZ Architecture: sims/classic-dmz-architecture/index.md
+    - Container Isolation Strength Comparator: sims/container-isolation-comparator/index.md
     - Cost of Fixing a Bug Across SDLC Phases: sims/ssdlc-cost-curve/index.md
     - Coverage-Guided Fuzzer Loop: sims/fuzzer-coverage-loop/index.md
     - Cyber Kill Chain Phases with Defensive Controls: sims/cyber-kill-chain-controls/index.md
     - Cyber Law Jurisdictional Map: sims/cyber-law-jurisdiction-map/index.md
     - DDoS Mitigation Explorer: sims/ddos-mitigation-explorer/index.md
+    - Detection Tuning Trade-Off Explorer: sims/detection-threshold-explorer/index.md
     - Device Attestation Flow: sims/device-attestation-flow/index.md
     - Diffie-Hellman Key Exchange: sims/diffie-hellman-exchange/index.md
     - Digital Signature - Sign and Verify Flow: sims/digital-signature-flow/index.md

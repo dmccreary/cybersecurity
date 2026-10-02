@@ -1,0 +1,175 @@
+{
+  "title": "Access Control Decision Explorer",
+  "comment": "Edit this file to change subjects, objects, and policies. The sketch re-reads it on load; no JavaScript changes are needed.",
+  "subjects": [
+    {
+      "id": "alice",
+      "label": "Alice (HR analyst)",
+      "name": "Alice",
+      "uid": "alice",
+      "groups": ["hr"],
+      "domain": "analyst_t",
+      "roles": ["hr-analyst"],
+      "attributes": { "department": "HR", "employment": "employee" }
+    },
+    {
+      "id": "bob",
+      "label": "Bob (engineer)",
+      "name": "Bob",
+      "uid": "bob",
+      "groups": ["eng"],
+      "domain": "engineer_t",
+      "roles": ["engineer"],
+      "attributes": { "department": "Engineering", "employment": "employee" }
+    },
+    {
+      "id": "charlie",
+      "label": "Charlie (intern)",
+      "name": "Charlie",
+      "uid": "charlie",
+      "groups": ["eng"],
+      "domain": "intern_t",
+      "roles": ["intern"],
+      "attributes": { "department": "Engineering", "employment": "intern" }
+    },
+    {
+      "id": "root",
+      "label": "root",
+      "name": "root",
+      "uid": "root",
+      "superuser": true,
+      "groups": ["root"],
+      "domain": "sysadm_t",
+      "roles": ["sysadmin"],
+      "attributes": { "department": "IT", "employment": "employee" }
+    }
+  ],
+  "actions": ["read", "write", "execute"],
+  "objects": [
+    {
+      "id": "payroll.csv",
+      "label": "payroll.csv (HR-owned, sensitive)",
+      "owner": "dana",
+      "group": "hr",
+      "mode": "rw-r-----",
+      "type": "payroll_finance_t",
+      "attributes": { "department": "HR", "sensitivity": "sensitive", "kind": "data" }
+    },
+    {
+      "id": "build.sh",
+      "label": "build.sh (engineering, executable)",
+      "owner": "bob",
+      "group": "eng",
+      "mode": "rwxr-x---",
+      "type": "build_exec_t",
+      "attributes": { "department": "Engineering", "sensitivity": "internal", "kind": "executable" }
+    },
+    {
+      "id": "public.txt",
+      "label": "public.txt (world-readable)",
+      "owner": "root",
+      "group": "root",
+      "mode": "rw-r--r--",
+      "type": "public_content_t",
+      "attributes": { "department": "IT", "sensitivity": "public", "kind": "document" }
+    }
+  ],
+  "default": { "subject": "alice", "action": "read", "object": "payroll.csv" },
+  "mac": {
+    "allow": [
+      { "domain": "payroll_app_t", "type": "payroll_finance_t", "perms": ["read", "write"] },
+      { "domain": "analyst_t", "type": "public_content_t", "perms": ["read"] },
+      { "domain": "engineer_t", "type": "build_exec_t", "perms": ["read", "write", "execute"] },
+      { "domain": "engineer_t", "type": "public_content_t", "perms": ["read"] },
+      { "domain": "intern_t", "type": "build_exec_t", "perms": ["read"] },
+      { "domain": "intern_t", "type": "public_content_t", "perms": ["read"] },
+      { "domain": "sysadm_t", "type": "build_exec_t", "perms": ["read", "execute"] },
+      { "domain": "sysadm_t", "type": "public_content_t", "perms": ["read", "write"] }
+    ]
+  },
+  "rbac": {
+    "roles": {
+      "hr-analyst": ["payroll.csv:read", "public.txt:read"],
+      "engineer": ["build.sh:read", "build.sh:write", "build.sh:execute", "public.txt:read"],
+      "intern": ["build.sh:read", "public.txt:read"],
+      "sysadmin": ["build.sh:read", "build.sh:execute", "public.txt:read", "public.txt:write"]
+    }
+  },
+  "abac": {
+    "rules": [
+      {
+        "id": "R1",
+        "action": "read",
+        "text": "permit read: sensitivity = public",
+        "when": [
+          { "attr": "resource.sensitivity", "equals": "public" }
+        ]
+      },
+      {
+        "id": "R2",
+        "action": "read",
+        "text": "permit read: same dept, sensitivity = internal",
+        "when": [
+          { "attr": "subject.department", "equals_attr": "resource.department" },
+          { "attr": "resource.sensitivity", "equals": "internal" }
+        ]
+      },
+      {
+        "id": "R3",
+        "action": "read",
+        "text": "permit read: same dept, sensitive, employee",
+        "when": [
+          { "attr": "subject.department", "equals_attr": "resource.department" },
+          { "attr": "resource.sensitivity", "equals": "sensitive" },
+          { "attr": "subject.employment", "equals": "employee" }
+        ]
+      },
+      {
+        "id": "R4",
+        "action": "write",
+        "text": "permit write: same dept, employee, not sensitive",
+        "when": [
+          { "attr": "subject.department", "equals_attr": "resource.department" },
+          { "attr": "subject.employment", "equals": "employee" },
+          { "attr": "resource.sensitivity", "not_equals": "sensitive" }
+        ]
+      },
+      {
+        "id": "R5",
+        "action": "execute",
+        "text": "permit execute: same dept, employee, executable",
+        "when": [
+          { "attr": "subject.department", "equals_attr": "resource.department" },
+          { "attr": "subject.employment", "equals": "employee" },
+          { "attr": "resource.kind", "equals": "executable" }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    {
+      "subject": "alice", "action": "read", "object": "payroll.csv",
+      "text": "DAC permits, but SELinux-style MAC denies because analyst_t cannot read payroll_finance_t. Layering MAC over DAC is how hardened Linux contains an over-broad group permission."
+    },
+    {
+      "subject": "root", "action": "read", "object": "payroll.csv",
+      "text": "root sails through DAC, but every centrally managed model stops it. Under MAC, RBAC, and ABAC, being the superuser is not a reason to read payroll."
+    },
+    {
+      "subject": "root", "action": "write", "object": "payroll.csv",
+      "text": "root sails through DAC, but every centrally managed model stops it. Under MAC, RBAC, and ABAC, being the superuser is not a reason to change payroll."
+    },
+    {
+      "subject": "charlie", "action": "execute", "object": "build.sh",
+      "text": "The group execute bit lets every member of eng run the build script. MAC, RBAC, and ABAC can each say \"interns may look but not run\" — a rule DAC has no way to state."
+    },
+    {
+      "subject": "root", "action": "read", "object": "build.sh",
+      "text": "A sysadmin reading a build script looks reasonable, and three models agree. ABAC's same-department condition forbids it: attribute policies are expressive, and easy to over-tighten."
+    },
+    {
+      "subject": "root", "action": "execute", "object": "build.sh",
+      "text": "A sysadmin running a build script looks reasonable, and three models agree. ABAC's same-department condition forbids it: attribute policies are expressive, and easy to over-tighten."
+    }
+  ]
+}
