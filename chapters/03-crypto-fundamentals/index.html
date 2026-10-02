@@ -21,8 +21,11 @@
         <link rel="next" href="../04-crypto-in-practice/">
       
       
+        
+      
+      
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -72,34 +75,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Cryptography Fundamentals: Symmetric Ciphers and Hashing - Cybersecurity" >
-      
-        <meta  property="og:description"  content="Builds the cryptographic foundation: plaintext, ciphertext, symmetric ciphers, block-cipher modes, key exchange, hashing, MACs, and HMAC." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/03-crypto-fundamentals/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/cybersecurity/chapters/03-crypto-fundamentals/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Cryptography Fundamentals: Symmetric Ciphers and Hashing - Cybersecurity" >
-      
-        <meta  name="twitter:description"  content="Builds the cryptographic foundation: plaintext, ciphertext, symmetric ciphers, block-cipher modes, key exchange, hashing, MACs, and HMAC." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/03-crypto-fundamentals/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cryptography Fundamentals: Symmetric Ciphers and Hashing - Cybersecurity" />
+<meta property="og:description" content="Builds the cryptographic foundation: plaintext, ciphertext, symmetric ciphers, block-cipher modes, key exchange, hashing, MACs, and HMAC." />
+<meta property="og:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/03-crypto-fundamentals/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/cybersecurity/chapters/03-crypto-fundamentals/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cryptography Fundamentals: Symmetric Ciphers and Hashing - Cybersecurity" />
+<meta property="twitter:description" content="Builds the cryptographic foundation: plaintext, ciphertext, symmetric ciphers, block-cipher modes, key exchange, hashing, MACs, and HMAC." />
+<meta property="twitter:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/03-crypto-fundamentals/index.png" />
+</head>
   
   
     
@@ -191,11 +180,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -234,13 +225,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -285,7 +277,7 @@
       <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -305,9 +297,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -325,9 +324,16 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -345,9 +351,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -371,69 +384,38 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -446,14 +428,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -468,7 +456,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -484,9 +476,16 @@
       <a href="../01-security-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Security Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -505,9 +504,16 @@
       <a href="../02-threats-and-controls/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Threats and Controls
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -535,9 +541,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Crypto Fundamentals
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -546,9 +559,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Crypto Fundamentals
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -571,7 +591,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -580,7 +602,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -589,7 +613,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -598,7 +624,9 @@
         <li class="md-nav__item">
   <a href="#1-what-cryptography-is-for" class="md-nav__link">
     <span class="md-ellipsis">
-      1. What Cryptography Is For
+      
+        1. What Cryptography Is For
+      
     </span>
   </a>
   
@@ -607,7 +635,9 @@
         <li class="md-nav__item">
   <a href="#2-the-core-vocabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Core Vocabulary
+      
+        2. The Core Vocabulary
+      
     </span>
   </a>
   
@@ -617,7 +647,9 @@
           <li class="md-nav__item">
   <a href="#diagram-encryption-and-decryption-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Encryption and Decryption Flow
+      
+        Diagram: Encryption and Decryption Flow
+      
     </span>
   </a>
   
@@ -631,7 +663,9 @@
         <li class="md-nav__item">
   <a href="#3-symmetric-cryptography-one-shared-key" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Symmetric Cryptography — One Shared Key
+      
+        3. Symmetric Cryptography — One Shared Key
+      
     </span>
   </a>
   
@@ -641,7 +675,9 @@
           <li class="md-nav__item">
   <a href="#31-block-ciphers-aes-des-and-3des" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 Block Ciphers — AES, DES, and 3DES
+      
+        3.1 Block Ciphers — AES, DES, and 3DES
+      
     </span>
   </a>
   
@@ -650,7 +686,9 @@
           <li class="md-nav__item">
   <a href="#32-stream-ciphers" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 Stream Ciphers
+      
+        3.2 Stream Ciphers
+      
     </span>
   </a>
   
@@ -664,7 +702,9 @@
         <li class="md-nav__item">
   <a href="#4-block-cipher-modes-where-most-crypto-bugs-live" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Block Cipher Modes — Where Most Crypto Bugs Live
+      
+        4. Block Cipher Modes — Where Most Crypto Bugs Live
+      
     </span>
   </a>
   
@@ -674,7 +714,9 @@
           <li class="md-nav__item">
   <a href="#41-ecb-the-mode-that-looks-like-encryption-but-isnt" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 ECB — The Mode That Looks Like Encryption But Isn't
+      
+        4.1 ECB — The Mode That Looks Like Encryption But Isn't
+      
     </span>
   </a>
   
@@ -683,7 +725,9 @@
           <li class="md-nav__item">
   <a href="#42-cbc-chained-but-fragile" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 CBC — Chained, But Fragile
+      
+        4.2 CBC — Chained, But Fragile
+      
     </span>
   </a>
   
@@ -692,7 +736,9 @@
           <li class="md-nav__item">
   <a href="#43-ctr-turning-a-block-cipher-into-a-stream-cipher" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+      
+        4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+      
     </span>
   </a>
   
@@ -701,7 +747,9 @@
           <li class="md-nav__item">
   <a href="#44-gcm-authenticated-encryption-done-right" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 GCM — Authenticated Encryption Done Right
+      
+        4.4 GCM — Authenticated Encryption Done Right
+      
     </span>
   </a>
   
@@ -711,7 +759,9 @@
           <li class="md-nav__item">
   <a href="#diagram-block-cipher-modes-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Block Cipher Modes Comparison
+      
+        Diagram: Block Cipher Modes Comparison
+      
     </span>
   </a>
   
@@ -730,7 +780,9 @@
         <li class="md-nav__item">
   <a href="#5-from-symmetric-to-asymmetric-why-we-need-both" class="md-nav__link">
     <span class="md-ellipsis">
-      5. From Symmetric to Asymmetric — Why We Need Both
+      
+        5. From Symmetric to Asymmetric — Why We Need Both
+      
     </span>
   </a>
   
@@ -740,7 +792,9 @@
           <li class="md-nav__item">
   <a href="#51-rsa-the-original" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 RSA — The Original
+      
+        5.1 RSA — The Original
+      
     </span>
   </a>
   
@@ -749,7 +803,9 @@
           <li class="md-nav__item">
   <a href="#52-elliptic-curve-cryptography" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Elliptic Curve Cryptography
+      
+        5.2 Elliptic Curve Cryptography
+      
     </span>
   </a>
   
@@ -758,7 +814,9 @@
           <li class="md-nav__item">
   <a href="#53-diffie-hellman-key-exchange" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Diffie-Hellman Key Exchange
+      
+        5.3 Diffie-Hellman Key Exchange
+      
     </span>
   </a>
   
@@ -768,7 +826,9 @@
           <li class="md-nav__item">
   <a href="#diagram-diffie-hellman-key-exchange" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Diffie-Hellman Key Exchange
+      
+        Diagram: Diffie-Hellman Key Exchange
+      
     </span>
   </a>
   
@@ -787,7 +847,9 @@
         <li class="md-nav__item">
   <a href="#6-hash-functions-fingerprints-for-data" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Hash Functions — Fingerprints For Data
+      
+        6. Hash Functions — Fingerprints For Data
+      
     </span>
   </a>
   
@@ -796,7 +858,9 @@
         <li class="md-nav__item">
   <a href="#7-message-authentication-codes-keyed-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Message Authentication Codes — Keyed Integrity
+      
+        7. Message Authentication Codes — Keyed Integrity
+      
     </span>
   </a>
   
@@ -805,7 +869,9 @@
         <li class="md-nav__item">
   <a href="#8-putting-the-primitives-together" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Putting The Primitives Together
+      
+        8. Putting The Primitives Together
+      
     </span>
   </a>
   
@@ -814,7 +880,9 @@
         <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Takeaways
+      
+        Key Takeaways
+      
     </span>
   </a>
   
@@ -839,9 +907,16 @@
       <a href="../04-crypto-in-practice/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Crypto in Practice
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -860,9 +935,16 @@
       <a href="../05-software-vulnerabilities/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Software Vulnerabilities
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -881,9 +963,16 @@
       <a href="../06-software-assurance/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Software Assurance
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -902,9 +991,16 @@
       <a href="../07-component-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Component Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -923,9 +1019,16 @@
       <a href="../08-network-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     8. Network Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -944,9 +1047,16 @@
       <a href="../09-advanced-network-defense/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     9. Advanced Network Defense
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -965,9 +1075,16 @@
       <a href="../10-system-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     10. System Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -986,9 +1103,16 @@
       <a href="../11-cloud-and-ops-monitoring/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     11. Cloud and Ops Monitoring
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1007,9 +1131,16 @@
       <a href="../12-human-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     12. Human Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1028,9 +1159,16 @@
       <a href="../13-organizational-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     13. Organizational Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1049,9 +1187,16 @@
       <a href="../14-societal-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     14. Societal Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1070,9 +1215,16 @@
       <a href="../15-security-operations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     15. Security Operations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1091,9 +1243,16 @@
       <a href="../16-emerging-and-capstone/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     16. Emerging and Capstone
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1141,6 +1300,7 @@
     
     
     
+    
       
         
         
@@ -1151,12 +1311,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1184,293 +1352,156 @@
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
+    
     
     
     
@@ -1484,12 +1515,20 @@
         
   
   
+  
     <a href="../../sims/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1513,9 +1552,16 @@
       <a href="../../faq/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     FAQ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1533,9 +1579,16 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1553,9 +1606,16 @@
       <a href="../../references.md" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     References
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1573,9 +1633,16 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1593,9 +1660,16 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1632,7 +1706,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1641,7 +1717,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1650,7 +1728,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1659,7 +1739,9 @@
         <li class="md-nav__item">
   <a href="#1-what-cryptography-is-for" class="md-nav__link">
     <span class="md-ellipsis">
-      1. What Cryptography Is For
+      
+        1. What Cryptography Is For
+      
     </span>
   </a>
   
@@ -1668,7 +1750,9 @@
         <li class="md-nav__item">
   <a href="#2-the-core-vocabulary" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Core Vocabulary
+      
+        2. The Core Vocabulary
+      
     </span>
   </a>
   
@@ -1678,7 +1762,9 @@
           <li class="md-nav__item">
   <a href="#diagram-encryption-and-decryption-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Encryption and Decryption Flow
+      
+        Diagram: Encryption and Decryption Flow
+      
     </span>
   </a>
   
@@ -1692,7 +1778,9 @@
         <li class="md-nav__item">
   <a href="#3-symmetric-cryptography-one-shared-key" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Symmetric Cryptography — One Shared Key
+      
+        3. Symmetric Cryptography — One Shared Key
+      
     </span>
   </a>
   
@@ -1702,7 +1790,9 @@
           <li class="md-nav__item">
   <a href="#31-block-ciphers-aes-des-and-3des" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 Block Ciphers — AES, DES, and 3DES
+      
+        3.1 Block Ciphers — AES, DES, and 3DES
+      
     </span>
   </a>
   
@@ -1711,7 +1801,9 @@
           <li class="md-nav__item">
   <a href="#32-stream-ciphers" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 Stream Ciphers
+      
+        3.2 Stream Ciphers
+      
     </span>
   </a>
   
@@ -1725,7 +1817,9 @@
         <li class="md-nav__item">
   <a href="#4-block-cipher-modes-where-most-crypto-bugs-live" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Block Cipher Modes — Where Most Crypto Bugs Live
+      
+        4. Block Cipher Modes — Where Most Crypto Bugs Live
+      
     </span>
   </a>
   
@@ -1735,7 +1829,9 @@
           <li class="md-nav__item">
   <a href="#41-ecb-the-mode-that-looks-like-encryption-but-isnt" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 ECB — The Mode That Looks Like Encryption But Isn't
+      
+        4.1 ECB — The Mode That Looks Like Encryption But Isn't
+      
     </span>
   </a>
   
@@ -1744,7 +1840,9 @@
           <li class="md-nav__item">
   <a href="#42-cbc-chained-but-fragile" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 CBC — Chained, But Fragile
+      
+        4.2 CBC — Chained, But Fragile
+      
     </span>
   </a>
   
@@ -1753,7 +1851,9 @@
           <li class="md-nav__item">
   <a href="#43-ctr-turning-a-block-cipher-into-a-stream-cipher" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+      
+        4.3 CTR — Turning A Block Cipher Into A Stream Cipher
+      
     </span>
   </a>
   
@@ -1762,7 +1862,9 @@
           <li class="md-nav__item">
   <a href="#44-gcm-authenticated-encryption-done-right" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 GCM — Authenticated Encryption Done Right
+      
+        4.4 GCM — Authenticated Encryption Done Right
+      
     </span>
   </a>
   
@@ -1772,7 +1874,9 @@
           <li class="md-nav__item">
   <a href="#diagram-block-cipher-modes-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Block Cipher Modes Comparison
+      
+        Diagram: Block Cipher Modes Comparison
+      
     </span>
   </a>
   
@@ -1791,7 +1895,9 @@
         <li class="md-nav__item">
   <a href="#5-from-symmetric-to-asymmetric-why-we-need-both" class="md-nav__link">
     <span class="md-ellipsis">
-      5. From Symmetric to Asymmetric — Why We Need Both
+      
+        5. From Symmetric to Asymmetric — Why We Need Both
+      
     </span>
   </a>
   
@@ -1801,7 +1907,9 @@
           <li class="md-nav__item">
   <a href="#51-rsa-the-original" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 RSA — The Original
+      
+        5.1 RSA — The Original
+      
     </span>
   </a>
   
@@ -1810,7 +1918,9 @@
           <li class="md-nav__item">
   <a href="#52-elliptic-curve-cryptography" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Elliptic Curve Cryptography
+      
+        5.2 Elliptic Curve Cryptography
+      
     </span>
   </a>
   
@@ -1819,7 +1929,9 @@
           <li class="md-nav__item">
   <a href="#53-diffie-hellman-key-exchange" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Diffie-Hellman Key Exchange
+      
+        5.3 Diffie-Hellman Key Exchange
+      
     </span>
   </a>
   
@@ -1829,7 +1941,9 @@
           <li class="md-nav__item">
   <a href="#diagram-diffie-hellman-key-exchange" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Diffie-Hellman Key Exchange
+      
+        Diagram: Diffie-Hellman Key Exchange
+      
     </span>
   </a>
   
@@ -1848,7 +1962,9 @@
         <li class="md-nav__item">
   <a href="#6-hash-functions-fingerprints-for-data" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Hash Functions — Fingerprints For Data
+      
+        6. Hash Functions — Fingerprints For Data
+      
     </span>
   </a>
   
@@ -1857,7 +1973,9 @@
         <li class="md-nav__item">
   <a href="#7-message-authentication-codes-keyed-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Message Authentication Codes — Keyed Integrity
+      
+        7. Message Authentication Codes — Keyed Integrity
+      
     </span>
   </a>
   
@@ -1866,7 +1984,9 @@
         <li class="md-nav__item">
   <a href="#8-putting-the-primitives-together" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Putting The Primitives Together
+      
+        8. Putting The Primitives Together
+      
     </span>
   </a>
   
@@ -1875,7 +1995,9 @@
         <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Takeaways
+      
+        Key Takeaways
+      
     </span>
   </a>
   
@@ -1891,12 +2013,62 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/03-crypto-fundamentals/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/03-crypto-fundamentals/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1971,9 +2143,6 @@ Welcome. Cryptography is the toolbox that the rest of the technical security sta
 <p>Every cryptographic discussion uses the same five words. <strong>Plaintext</strong> is the original, readable message — the data you are trying to protect. <strong>Ciphertext</strong> is the scrambled output of encryption; without the key, ciphertext should be indistinguishable from random data. <strong>Encryption</strong> is the process of transforming plaintext into ciphertext using a key, and <strong>decryption</strong> is the inverse operation that recovers the plaintext given the correct key. The <strong>cryptographic key</strong> is the secret parameter that controls both transformations. Anyone with the key can encrypt or decrypt; anyone without the key cannot — at least, not in any time scale that matters.</p>
 <p>A core principle, articulated by Auguste Kerckhoffs in 1883 and now universally accepted, is that <strong>the security of a cryptosystem must depend only on the secrecy of the key, not on the secrecy of the algorithm</strong>. This is the <em>open design</em> principle from Chapter 1, applied to cryptography. Modern cryptographic algorithms are public, peer-reviewed, and standardized exactly so that thousands of cryptographers can attempt to break them; the keys are what stay secret. Any vendor who tells you they have a "proprietary encryption algorithm" is selling something nobody serious has reviewed.</p>
 <h4 id="diagram-encryption-and-decryption-flow">Diagram: Encryption and Decryption Flow<a class="headerlink" href="#diagram-encryption-and-decryption-flow" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/encryption-decryption-flow/main.html" width="100%" height="402" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/encryption-decryption-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Block diagram showing plaintext, encryption, ciphertext, and decryption with shared key</summary>
 <p>Type: workflow-diagram
@@ -2072,9 +2241,6 @@ ECB looks like encryption, accepts the same arguments as encryption, and decrypt
 <p><strong>GCM (Galois/Counter Mode)</strong> combines CTR-mode encryption with an integrity check (a Galois-field MAC) in a single primitive. GCM produces ciphertext <em>and</em> an authentication tag; on decryption, the tag is verified before the plaintext is returned. If an attacker tampers with even one bit of the ciphertext, the tag verification fails and the decryption operation refuses to return any plaintext at all. This property — <em>authenticated encryption with associated data</em>, AEAD — is what modern cryptographic engineering has converged on. It eliminates the entire class of malleability and padding-oracle attacks.</p>
 <p>GCM has one nasty footgun: nonce reuse is catastrophic. If the same key is used with the same nonce (12-byte IV) for two different messages, an attacker can recover the authentication key and forge messages at will. In practice, nonces are either random (with low collision probability if generated with a good RNG) or counter-based with strict bookkeeping. Many libraries handle this for you; some do not.</p>
 <h4 id="diagram-block-cipher-modes-comparison">Diagram: Block Cipher Modes Comparison<a class="headerlink" href="#diagram-block-cipher-modes-comparison" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/block-cipher-modes-compare/main.html" width="100%" height="762" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/block-cipher-modes-compare/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side visual showing ECB, CBC, CTR, and GCM mode behavior</summary>
 <p>Type: infographic-svg
@@ -2123,9 +2289,6 @@ ECB looks like encryption, accepts the same arguments as encryption, and decrypt
 <p>The math, briefly: both parties agree on public parameters (a large prime <em>p</em> and a generator <em>g</em>). Alice picks a private value <em>a</em> and sends ( g^a \mod p ); Bob picks a private value <em>b</em> and sends ( g^b \mod p ). Each computes the shared secret ( g^{ab} \mod p ) using their own private value and the other party's public value. The eavesdropper has ( g^a ) and ( g^b ) but, without knowing <em>a</em> or <em>b</em>, cannot compute ( g^{ab} ) — this is the <em>Diffie-Hellman problem</em>, which is at least as hard as the discrete logarithm problem.</p>
 <p>Modern DH is almost always implemented in the elliptic-curve variant, ECDHE (Elliptic Curve Diffie-Hellman Ephemeral), with fresh values for every session — that "ephemeral" property is what gives modern TLS its <em>forward secrecy</em> (Chapter 4 will revisit forward secrecy in detail).</p>
 <h4 id="diagram-diffie-hellman-key-exchange">Diagram: Diffie-Hellman Key Exchange<a class="headerlink" href="#diagram-diffie-hellman-key-exchange" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/diffie-hellman-exchange/main.html" width="100%" height="902" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/diffie-hellman-exchange/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing Alice and Bob deriving a shared secret over an untrusted channel</summary>
 <p>Type: workflow-diagram
@@ -2384,10 +2547,13 @@ You can now read a security-protocol description and recognize every primitive i
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

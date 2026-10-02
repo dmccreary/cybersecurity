@@ -39,5 +39,8 @@
   "completion_status": "validated",
   "chapter_number": 16,
   "chapter_title": "\"Emerging Topics and Capstone Pathways\"",
-  "chapter_dir": "16-emerging-and-capstone"
+  "chapter_dir": "16-emerging-and-capstone",
+  "search": {
+    "showcase": true
+  }
 }

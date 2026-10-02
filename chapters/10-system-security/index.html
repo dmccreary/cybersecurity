@@ -21,8 +21,11 @@
         <link rel="next" href="../11-cloud-and-ops-monitoring/">
       
       
+        
+      
+      
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -72,34 +75,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="System Security: OS, Memory, and Access Control - Cybersecurity" >
-      
-        <meta  property="og:description"  content="Inside the operating system and runtime: kernel security, process isolation, memory protections (ASLR, DEP, stack canaries), access-control models (DAC, MAC, RBAC, ABAC), file permissions, MAC implementations (SELinux, AppArmor), and virtualization, hypervisor, container, Docker, and Kubernetes security." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/10-system-security/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/cybersecurity/chapters/10-system-security/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="System Security: OS, Memory, and Access Control - Cybersecurity" >
-      
-        <meta  name="twitter:description"  content="Inside the operating system and runtime: kernel security, process isolation, memory protections (ASLR, DEP, stack canaries), access-control models (DAC, MAC, RBAC, ABAC), file permissions, MAC implementations (SELinux, AppArmor), and virtualization, hypervisor, container, Docker, and Kubernetes security." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/10-system-security/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="System Security: OS, Memory, and Access Control - Cybersecurity" />
+<meta property="og:description" content="Inside the operating system and runtime: kernel security, process isolation, memory protections (ASLR, DEP, stack canaries), access-control models (DAC, MAC, RBAC, ABAC), file permissions, MAC implementations (SELinux, AppArmor), and virtualization, hypervisor, container, Docker, and Kubernetes security." />
+<meta property="og:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/10-system-security/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/cybersecurity/chapters/10-system-security/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="System Security: OS, Memory, and Access Control - Cybersecurity" />
+<meta property="twitter:description" content="Inside the operating system and runtime: kernel security, process isolation, memory protections (ASLR, DEP, stack canaries), access-control models (DAC, MAC, RBAC, ABAC), file permissions, MAC implementations (SELinux, AppArmor), and virtualization, hypervisor, container, Docker, and Kubernetes security." />
+<meta property="twitter:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/10-system-security/index.png" />
+</head>
   
   
     
@@ -191,11 +180,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -234,13 +225,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -285,7 +277,7 @@
       <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -305,9 +297,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -325,9 +324,16 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -345,9 +351,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -371,69 +384,38 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -446,14 +428,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -468,7 +456,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -484,9 +476,16 @@
       <a href="../01-security-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Security Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -505,9 +504,16 @@
       <a href="../02-threats-and-controls/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Threats and Controls
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -526,9 +532,16 @@
       <a href="../03-crypto-fundamentals/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Crypto Fundamentals
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -547,9 +560,16 @@
       <a href="../04-crypto-in-practice/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Crypto in Practice
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -568,9 +588,16 @@
       <a href="../05-software-vulnerabilities/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Software Vulnerabilities
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -589,9 +616,16 @@
       <a href="../06-software-assurance/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Software Assurance
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -610,9 +644,16 @@
       <a href="../07-component-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Component Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -631,9 +672,16 @@
       <a href="../08-network-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     8. Network Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -652,9 +700,16 @@
       <a href="../09-advanced-network-defense/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     9. Advanced Network Defense
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -682,9 +737,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     10. System Security
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -693,9 +755,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     10. System Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -718,7 +787,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -727,7 +798,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -736,7 +809,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -745,7 +820,9 @@
         <li class="md-nav__item">
   <a href="#1-what-system-security-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      1. What "System Security" Covers
+      
+        1. What "System Security" Covers
+      
     </span>
   </a>
   
@@ -754,7 +831,9 @@
         <li class="md-nav__item">
   <a href="#2-the-kernel-and-why-it-is-special" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Kernel and Why It Is Special
+      
+        2. The Kernel and Why It Is Special
+      
     </span>
   </a>
   
@@ -764,7 +843,9 @@
           <li class="md-nav__item">
   <a href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+      
+        Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+      
     </span>
   </a>
   
@@ -778,7 +859,9 @@
         <li class="md-nav__item">
   <a href="#3-process-isolation-one-program-one-world" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Process Isolation — One Program, One World
+      
+        3. Process Isolation — One Program, One World
+      
     </span>
   </a>
   
@@ -787,7 +870,9 @@
         <li class="md-nav__item">
   <a href="#4-memory-protection-defending-the-address-space" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Memory Protection — Defending The Address Space
+      
+        4. Memory Protection — Defending The Address Space
+      
     </span>
   </a>
   
@@ -797,7 +882,9 @@
           <li class="md-nav__item">
   <a href="#41-dep-make-data-unexecutable" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 DEP — Make Data Unexecutable
+      
+        4.1 DEP — Make Data Unexecutable
+      
     </span>
   </a>
   
@@ -806,7 +893,9 @@
           <li class="md-nav__item">
   <a href="#42-aslr-make-memory-unpredictable" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 ASLR — Make Memory Unpredictable
+      
+        4.2 ASLR — Make Memory Unpredictable
+      
     </span>
   </a>
   
@@ -815,7 +904,9 @@
           <li class="md-nav__item">
   <a href="#43-stack-canaries-detect-the-tampering" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Stack Canaries — Detect The Tampering
+      
+        4.3 Stack Canaries — Detect The Tampering
+      
     </span>
   </a>
   
@@ -825,7 +916,9 @@
           <li class="md-nav__item">
   <a href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Stack Frame With and Without a Canary Under Overflow
+      
+        Diagram: Stack Frame With and Without a Canary Under Overflow
+      
     </span>
   </a>
   
@@ -839,7 +932,9 @@
           <li class="md-nav__item">
   <a href="#44-where-the-hierarchy-comes-from" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 Where The Hierarchy Comes From
+      
+        4.4 Where The Hierarchy Comes From
+      
     </span>
   </a>
   
@@ -853,7 +948,9 @@
         <li class="md-nav__item">
   <a href="#5-access-control-who-can-do-what" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Access Control — Who Can Do What
+      
+        5. Access Control — Who Can Do What
+      
     </span>
   </a>
   
@@ -863,7 +960,9 @@
           <li class="md-nav__item">
   <a href="#51-dac-discretionary-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 DAC — Discretionary Access Control
+      
+        5.1 DAC — Discretionary Access Control
+      
     </span>
   </a>
   
@@ -872,7 +971,9 @@
           <li class="md-nav__item">
   <a href="#52-mac-mandatory-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 MAC — Mandatory Access Control
+      
+        5.2 MAC — Mandatory Access Control
+      
     </span>
   </a>
   
@@ -881,7 +982,9 @@
           <li class="md-nav__item">
   <a href="#53-rbac-role-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 RBAC — Role-Based Access Control
+      
+        5.3 RBAC — Role-Based Access Control
+      
     </span>
   </a>
   
@@ -890,7 +993,9 @@
           <li class="md-nav__item">
   <a href="#54-abac-attribute-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4 ABAC — Attribute-Based Access Control
+      
+        5.4 ABAC — Attribute-Based Access Control
+      
     </span>
   </a>
   
@@ -900,7 +1005,9 @@
           <li class="md-nav__item">
   <a href="#microsim-access-control-decision-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSim: Access Control Decision Explorer
+      
+        MicroSim: Access Control Decision Explorer
+      
     </span>
   </a>
   
@@ -919,7 +1026,9 @@
         <li class="md-nav__item">
   <a href="#6-file-permissions-in-practice" class="md-nav__link">
     <span class="md-ellipsis">
-      6. File Permissions In Practice
+      
+        6. File Permissions In Practice
+      
     </span>
   </a>
   
@@ -928,7 +1037,9 @@
         <li class="md-nav__item">
   <a href="#7-selinux-and-apparmor-mac-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      7. SELinux and AppArmor — MAC On Linux
+      
+        7. SELinux and AppArmor — MAC On Linux
+      
     </span>
   </a>
   
@@ -938,7 +1049,9 @@
           <li class="md-nav__item">
   <a href="#diagram-layers-of-access-control-on-a-modern-linux-box" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Layers of Access Control on a Modern Linux Box
+      
+        Diagram: Layers of Access Control on a Modern Linux Box
+      
     </span>
   </a>
   
@@ -952,7 +1065,9 @@
         <li class="md-nav__item">
   <a href="#8-virtualization-and-hypervisor-security" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Virtualization and Hypervisor Security
+      
+        8. Virtualization and Hypervisor Security
+      
     </span>
   </a>
   
@@ -962,7 +1077,9 @@
           <li class="md-nav__item">
   <a href="#diagram-hypervisor-architecture-and-the-trust-boundary" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Hypervisor Architecture and the Trust Boundary
+      
+        Diagram: Hypervisor Architecture and the Trust Boundary
+      
     </span>
   </a>
   
@@ -976,7 +1093,9 @@
         <li class="md-nav__item">
   <a href="#9-containers-lighter-isolation-different-tradeoffs" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Containers — Lighter Isolation, Different Tradeoffs
+      
+        9. Containers — Lighter Isolation, Different Tradeoffs
+      
     </span>
   </a>
   
@@ -986,7 +1105,9 @@
           <li class="md-nav__item">
   <a href="#91-docker-security" class="md-nav__link">
     <span class="md-ellipsis">
-      9.1 Docker Security
+      
+        9.1 Docker Security
+      
     </span>
   </a>
   
@@ -995,7 +1116,9 @@
           <li class="md-nav__item">
   <a href="#92-kubernetes-security" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2 Kubernetes Security
+      
+        9.2 Kubernetes Security
+      
     </span>
   </a>
   
@@ -1005,7 +1128,9 @@
           <li class="md-nav__item">
   <a href="#microsim-container-isolation-strength-comparator" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSim: Container Isolation Strength Comparator
+      
+        MicroSim: Container Isolation Strength Comparator
+      
     </span>
   </a>
   
@@ -1024,7 +1149,9 @@
         <li class="md-nav__item">
   <a href="#10-putting-it-together-a-defensible-system" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Putting It Together — A Defensible System
+      
+        10. Putting It Together — A Defensible System
+      
     </span>
   </a>
   
@@ -1033,7 +1160,9 @@
         <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Takeaways
+      
+        Key Takeaways
+      
     </span>
   </a>
   
@@ -1058,9 +1187,16 @@
       <a href="../11-cloud-and-ops-monitoring/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     11. Cloud and Ops Monitoring
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1079,9 +1215,16 @@
       <a href="../12-human-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     12. Human Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1100,9 +1243,16 @@
       <a href="../13-organizational-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     13. Organizational Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1121,9 +1271,16 @@
       <a href="../14-societal-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     14. Societal Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1142,9 +1299,16 @@
       <a href="../15-security-operations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     15. Security Operations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1163,9 +1327,16 @@
       <a href="../16-emerging-and-capstone/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     16. Emerging and Capstone
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1213,6 +1384,7 @@
     
     
     
+    
       
         
         
@@ -1223,12 +1395,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1256,293 +1436,156 @@
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
+    
     
     
     
@@ -1556,12 +1599,20 @@
         
   
   
+  
     <a href="../../sims/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1585,9 +1636,16 @@
       <a href="../../faq/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     FAQ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1605,9 +1663,16 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1625,9 +1690,16 @@
       <a href="../../references.md" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     References
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1645,9 +1717,16 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1665,9 +1744,16 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1704,7 +1790,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1713,7 +1801,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1722,7 +1812,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1731,7 +1823,9 @@
         <li class="md-nav__item">
   <a href="#1-what-system-security-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      1. What "System Security" Covers
+      
+        1. What "System Security" Covers
+      
     </span>
   </a>
   
@@ -1740,7 +1834,9 @@
         <li class="md-nav__item">
   <a href="#2-the-kernel-and-why-it-is-special" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Kernel and Why It Is Special
+      
+        2. The Kernel and Why It Is Special
+      
     </span>
   </a>
   
@@ -1750,7 +1846,9 @@
           <li class="md-nav__item">
   <a href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+      
+        Diagram: Kernel Mode vs. User Mode and the System Call Boundary
+      
     </span>
   </a>
   
@@ -1764,7 +1862,9 @@
         <li class="md-nav__item">
   <a href="#3-process-isolation-one-program-one-world" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Process Isolation — One Program, One World
+      
+        3. Process Isolation — One Program, One World
+      
     </span>
   </a>
   
@@ -1773,7 +1873,9 @@
         <li class="md-nav__item">
   <a href="#4-memory-protection-defending-the-address-space" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Memory Protection — Defending The Address Space
+      
+        4. Memory Protection — Defending The Address Space
+      
     </span>
   </a>
   
@@ -1783,7 +1885,9 @@
           <li class="md-nav__item">
   <a href="#41-dep-make-data-unexecutable" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 DEP — Make Data Unexecutable
+      
+        4.1 DEP — Make Data Unexecutable
+      
     </span>
   </a>
   
@@ -1792,7 +1896,9 @@
           <li class="md-nav__item">
   <a href="#42-aslr-make-memory-unpredictable" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 ASLR — Make Memory Unpredictable
+      
+        4.2 ASLR — Make Memory Unpredictable
+      
     </span>
   </a>
   
@@ -1801,7 +1907,9 @@
           <li class="md-nav__item">
   <a href="#43-stack-canaries-detect-the-tampering" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Stack Canaries — Detect The Tampering
+      
+        4.3 Stack Canaries — Detect The Tampering
+      
     </span>
   </a>
   
@@ -1811,7 +1919,9 @@
           <li class="md-nav__item">
   <a href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Stack Frame With and Without a Canary Under Overflow
+      
+        Diagram: Stack Frame With and Without a Canary Under Overflow
+      
     </span>
   </a>
   
@@ -1825,7 +1935,9 @@
           <li class="md-nav__item">
   <a href="#44-where-the-hierarchy-comes-from" class="md-nav__link">
     <span class="md-ellipsis">
-      4.4 Where The Hierarchy Comes From
+      
+        4.4 Where The Hierarchy Comes From
+      
     </span>
   </a>
   
@@ -1839,7 +1951,9 @@
         <li class="md-nav__item">
   <a href="#5-access-control-who-can-do-what" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Access Control — Who Can Do What
+      
+        5. Access Control — Who Can Do What
+      
     </span>
   </a>
   
@@ -1849,7 +1963,9 @@
           <li class="md-nav__item">
   <a href="#51-dac-discretionary-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 DAC — Discretionary Access Control
+      
+        5.1 DAC — Discretionary Access Control
+      
     </span>
   </a>
   
@@ -1858,7 +1974,9 @@
           <li class="md-nav__item">
   <a href="#52-mac-mandatory-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 MAC — Mandatory Access Control
+      
+        5.2 MAC — Mandatory Access Control
+      
     </span>
   </a>
   
@@ -1867,7 +1985,9 @@
           <li class="md-nav__item">
   <a href="#53-rbac-role-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 RBAC — Role-Based Access Control
+      
+        5.3 RBAC — Role-Based Access Control
+      
     </span>
   </a>
   
@@ -1876,7 +1996,9 @@
           <li class="md-nav__item">
   <a href="#54-abac-attribute-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4 ABAC — Attribute-Based Access Control
+      
+        5.4 ABAC — Attribute-Based Access Control
+      
     </span>
   </a>
   
@@ -1886,7 +2008,9 @@
           <li class="md-nav__item">
   <a href="#microsim-access-control-decision-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSim: Access Control Decision Explorer
+      
+        MicroSim: Access Control Decision Explorer
+      
     </span>
   </a>
   
@@ -1905,7 +2029,9 @@
         <li class="md-nav__item">
   <a href="#6-file-permissions-in-practice" class="md-nav__link">
     <span class="md-ellipsis">
-      6. File Permissions In Practice
+      
+        6. File Permissions In Practice
+      
     </span>
   </a>
   
@@ -1914,7 +2040,9 @@
         <li class="md-nav__item">
   <a href="#7-selinux-and-apparmor-mac-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      7. SELinux and AppArmor — MAC On Linux
+      
+        7. SELinux and AppArmor — MAC On Linux
+      
     </span>
   </a>
   
@@ -1924,7 +2052,9 @@
           <li class="md-nav__item">
   <a href="#diagram-layers-of-access-control-on-a-modern-linux-box" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Layers of Access Control on a Modern Linux Box
+      
+        Diagram: Layers of Access Control on a Modern Linux Box
+      
     </span>
   </a>
   
@@ -1938,7 +2068,9 @@
         <li class="md-nav__item">
   <a href="#8-virtualization-and-hypervisor-security" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Virtualization and Hypervisor Security
+      
+        8. Virtualization and Hypervisor Security
+      
     </span>
   </a>
   
@@ -1948,7 +2080,9 @@
           <li class="md-nav__item">
   <a href="#diagram-hypervisor-architecture-and-the-trust-boundary" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Hypervisor Architecture and the Trust Boundary
+      
+        Diagram: Hypervisor Architecture and the Trust Boundary
+      
     </span>
   </a>
   
@@ -1962,7 +2096,9 @@
         <li class="md-nav__item">
   <a href="#9-containers-lighter-isolation-different-tradeoffs" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Containers — Lighter Isolation, Different Tradeoffs
+      
+        9. Containers — Lighter Isolation, Different Tradeoffs
+      
     </span>
   </a>
   
@@ -1972,7 +2108,9 @@
           <li class="md-nav__item">
   <a href="#91-docker-security" class="md-nav__link">
     <span class="md-ellipsis">
-      9.1 Docker Security
+      
+        9.1 Docker Security
+      
     </span>
   </a>
   
@@ -1981,7 +2119,9 @@
           <li class="md-nav__item">
   <a href="#92-kubernetes-security" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2 Kubernetes Security
+      
+        9.2 Kubernetes Security
+      
     </span>
   </a>
   
@@ -1991,7 +2131,9 @@
           <li class="md-nav__item">
   <a href="#microsim-container-isolation-strength-comparator" class="md-nav__link">
     <span class="md-ellipsis">
-      MicroSim: Container Isolation Strength Comparator
+      
+        MicroSim: Container Isolation Strength Comparator
+      
     </span>
   </a>
   
@@ -2010,7 +2152,9 @@
         <li class="md-nav__item">
   <a href="#10-putting-it-together-a-defensible-system" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Putting It Together — A Defensible System
+      
+        10. Putting It Together — A Defensible System
+      
     </span>
   </a>
   
@@ -2019,7 +2163,9 @@
         <li class="md-nav__item">
   <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Takeaways
+      
+        Key Takeaways
+      
     </span>
   </a>
   
@@ -2035,12 +2181,62 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/10-system-security/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/10-system-security/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2096,9 +2292,6 @@ Welcome. So far we have looked at the network on the wire and at the application
 <p><strong>Kernel security</strong> is the practice of keeping that privileged code trustworthy. It includes hardening the kernel itself against bugs (memory-safe kernel modules, fuzzing the system-call interface, reducing the attack surface by removing unused features), protecting the kernel from user-mode exploitation (KASLR — kernel address space layout randomization, SMEP/SMAP — supervisor mode execute and access prevention, kernel-page-table isolation that defends against Meltdown), and signing kernel modules so that an attacker with root cannot quietly load a rootkit driver. Modern operating systems also support <strong>secure boot</strong>, where firmware verifies the kernel's signature before transferring control to it, anchoring the trust chain at the hardware (a topic we revisit in component security).</p>
 <p>The kernel attack surface is larger than newcomers expect. A typical Linux kernel exposes several hundred system calls, each accepting structured arguments that the kernel must validate. A bug in any one of them — a missing bounds check, an integer overflow in a length field, a race condition between two threads — can become a <em>local privilege escalation</em> (LPE) that turns a user-level shell into a root shell. The CVE database is full of such bugs; treat each one as a reminder that "we are user-only, so kernel bugs do not affect us" is rarely the right model.</p>
 <h4 id="diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary">Diagram: Kernel Mode vs. User Mode and the System Call Boundary<a class="headerlink" href="#diagram-kernel-mode-vs-user-mode-and-the-system-call-boundary" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/kernel-user-boundary/main.html" width="100%" height="477" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/kernel-user-boundary/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Cross-section diagram of user/kernel separation and the system call gateway</summary>
 <p>Type: drawing
@@ -2178,9 +2371,6 @@ Welcome. So far we have looked at the network on the wire and at the application
 <p>A <strong>stack canary</strong> is a random value the compiler inserts into a function's stack frame, between the local variables and the saved return address. On function exit, the prologue checks that the canary still holds its original value. A linear stack-buffer overflow that overwrites the return address must, in passing, also overwrite the canary; the mismatch is detected, and the process aborts before the corrupted return address is used. Canaries do not stop overflows; they catch the most common consequence of one before it does damage.</p>
 <p>Canary values are typically randomized per-process and include a leading null byte (so that string-copy bugs cannot easily preserve the canary while overflowing past it). Sophisticated exploits sometimes leak the canary through a separate information-disclosure bug and then craft an overflow that re-writes it to its correct value — at which point the canary check passes. As with all individual mitigations, canaries raise the bar without being a complete defense.</p>
 <h4 id="diagram-stack-frame-with-and-without-a-canary-under-overflow">Diagram: Stack Frame With and Without a Canary Under Overflow<a class="headerlink" href="#diagram-stack-frame-with-and-without-a-canary-under-overflow" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/stack-canary-comparison/main.html" width="100%" height="394" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/stack-canary-comparison/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side stack frame visualizations during a buffer overflow attack</summary>
 <p>Type: infographic
@@ -2267,6 +2457,8 @@ No single memory protection stops exploitation; together they make the path long
 </table>
 <p>The table compares the four models along three axes that this section explained in prose. Most real systems mix at least two of these — Linux uses DAC by default with MAC layered on top via SELinux/AppArmor, while cloud platforms typically use RBAC for human users and ABAC for fine-grained service-to-service authorization.</p>
 <h4 id="microsim-access-control-decision-explorer">MicroSim: Access Control Decision Explorer<a class="headerlink" href="#microsim-access-control-decision-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/access-control-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
+<p><a href="../../sims/access-control-explorer/main.html">Run Access Control Decision Explorer Fullscreen</a></p>
 <details>
 <summary>Interactive simulator that takes a (subject, action, object) and shows how each access-control model decides</summary>
 <p>Type: microsim
@@ -2359,9 +2551,6 @@ A <code>chmod 777</code> on a script that root will later run is the classic loc
 </table>
 <p>Both systems support <em>enforcing</em>, <em>permissive</em> (logs denials but does not block — useful for debugging), and <em>disabled</em> modes. The presence of MAC is a strong defense-in-depth control: even if an attacker exploits a service to gain its UID, MAC bounds what that UID can do to a small subset of the filesystem. The most common MAC failure in practice is not bypass — it is administrators putting the system in permissive mode "to fix something" and forgetting to re-enable it.</p>
 <h4 id="diagram-layers-of-access-control-on-a-modern-linux-box">Diagram: Layers of Access Control on a Modern Linux Box<a class="headerlink" href="#diagram-layers-of-access-control-on-a-modern-linux-box" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/linux-ac-layers/main.html" width="100%" height="832" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/linux-ac-layers/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Stacked-layer diagram showing how DAC, capabilities, and MAC compose for one access decision</summary>
 <p>Type: drawing
@@ -2387,9 +2576,6 @@ A <code>chmod 777</code> on a script that root will later run is the classic loc
 <p><strong>Hypervisor security</strong> centers on a single threat: <em>VM escape</em>, where code inside a guest exploits a bug in the hypervisor or in emulated hardware to execute on the host or in another guest. VM escape is rare but devastating — a single such bug in a public cloud lets one tenant read another tenant's data. Notable historical examples include CVE-2015-3456 (the "VENOM" floppy-controller bug in QEMU/KVM), various Xen privilege-escalation issues, and a long tail of bugs in emulated USB and network controllers. The mitigations are: minimize the hypervisor's attack surface (disable unused emulated devices), patch promptly, use hardware-assisted virtualization (Intel VT-x, AMD-V) which moves much of the isolation into silicon, and consider tenant isolation strategies (dedicated hosts, single-tenant clusters) for the most sensitive workloads.</p>
 <p>A second concern is <strong>side-channel attacks across VMs sharing a CPU</strong>. The same Spectre/Meltdown family of issues that crosses process boundaries also crosses VM boundaries, because the cache and branch predictor are shared at the silicon level. Cloud providers mitigate with microcode updates, scheduler awareness (avoid co-tenanting hostile workloads on the same physical core), and — for the highest-assurance workloads — confidential computing technologies (Intel SGX, AMD SEV, Intel TDX) that encrypt VM memory in a way the hypervisor itself cannot read.</p>
 <h4 id="diagram-hypervisor-architecture-and-the-trust-boundary">Diagram: Hypervisor Architecture and the Trust Boundary<a class="headerlink" href="#diagram-hypervisor-architecture-and-the-trust-boundary" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/hypervisor-architecture/main.html" width="100%" height="522" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/hypervisor-architecture/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Stacked architecture showing Type 1 vs. Type 2 hypervisors and the VM-escape threat model</summary>
 <p>Type: drawing
@@ -2451,6 +2637,8 @@ Two Docker patterns look fine and aren't. (1) Mounting <code>/var/run/docker.soc
 </ul>
 <p>The Kubernetes failure modes that lead to real incidents tend to cluster: an exposed dashboard with no authentication, a service account binding that grants <code>cluster-admin</code> to a workload that did not need it, a network policy that does not exist so a compromised pod can reach the cloud metadata service and steal IAM credentials, and secrets stored in environment variables (visible in <code>kubectl describe</code>) rather than mounted with restricted permissions. None of these are exotic; all are routine findings.</p>
 <h4 id="microsim-container-isolation-strength-comparator">MicroSim: Container Isolation Strength Comparator<a class="headerlink" href="#microsim-container-isolation-strength-comparator" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/container-isolation-comparator/main.html" width="100%" height="552px" scrolling="no"></iframe>
+<p><a href="../../sims/container-isolation-comparator/main.html">Run Container Isolation Strength Comparator Fullscreen</a></p>
 <details>
 <summary>Interactive simulator comparing the isolation strength of chroot, Docker, hardened Docker, and a VM</summary>
 <p>Type: microsim
@@ -2619,10 +2807,13 @@ You can now read the security posture of a Linux system end-to-end: kernel harde
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

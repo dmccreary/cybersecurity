@@ -21,8 +21,11 @@
         <link rel="next" href="../05-software-vulnerabilities/">
       
       
+        
+      
+      
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -72,34 +75,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Cryptography in Practice: PKI, TLS, and Data Protection - Cybersecurity" >
-      
-        <meta  property="og:description"  content="Composes primitives into real-world security: digital signatures, X.509 PKI, certificate authorities, revocation, key management, password hashing, TLS, and data-at-rest/in-transit/in-use protections." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/04-crypto-in-practice/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/cybersecurity/chapters/04-crypto-in-practice/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Cryptography in Practice: PKI, TLS, and Data Protection - Cybersecurity" >
-      
-        <meta  name="twitter:description"  content="Composes primitives into real-world security: digital signatures, X.509 PKI, certificate authorities, revocation, key management, password hashing, TLS, and data-at-rest/in-transit/in-use protections." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/04-crypto-in-practice/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cryptography in Practice: PKI, TLS, and Data Protection - Cybersecurity" />
+<meta property="og:description" content="Composes primitives into real-world security: digital signatures, X.509 PKI, certificate authorities, revocation, key management, password hashing, TLS, and data-at-rest/in-transit/in-use protections." />
+<meta property="og:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/04-crypto-in-practice/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/cybersecurity/chapters/04-crypto-in-practice/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cryptography in Practice: PKI, TLS, and Data Protection - Cybersecurity" />
+<meta property="twitter:description" content="Composes primitives into real-world security: digital signatures, X.509 PKI, certificate authorities, revocation, key management, password hashing, TLS, and data-at-rest/in-transit/in-use protections." />
+<meta property="twitter:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/04-crypto-in-practice/index.png" />
+</head>
   
   
     
@@ -191,11 +180,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -234,13 +225,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -285,7 +277,7 @@
       <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -305,9 +297,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -325,9 +324,16 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -345,9 +351,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -371,69 +384,38 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -446,14 +428,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -468,7 +456,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -484,9 +476,16 @@
       <a href="../01-security-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Security Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -505,9 +504,16 @@
       <a href="../02-threats-and-controls/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Threats and Controls
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -526,9 +532,16 @@
       <a href="../03-crypto-fundamentals/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Crypto Fundamentals
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -556,9 +569,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Crypto in Practice
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -567,9 +587,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Crypto in Practice
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -592,7 +619,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -601,7 +630,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -610,7 +641,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -619,7 +652,9 @@
         <li class="md-nav__item">
   <a href="#1-from-primitives-to-protocols" class="md-nav__link">
     <span class="md-ellipsis">
-      1. From Primitives to Protocols
+      
+        1. From Primitives to Protocols
+      
     </span>
   </a>
   
@@ -628,7 +663,9 @@
         <li class="md-nav__item">
   <a href="#2-digital-signatures-asymmetric-authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Digital Signatures — Asymmetric Authentication
+      
+        2. Digital Signatures — Asymmetric Authentication
+      
     </span>
   </a>
   
@@ -638,7 +675,9 @@
           <li class="md-nav__item">
   <a href="#diagram-sign-and-verify-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Sign and Verify Flow
+      
+        Diagram: Sign and Verify Flow
+      
     </span>
   </a>
   
@@ -647,7 +686,9 @@
           <li class="md-nav__item">
   <a href="#21-what-signatures-dont-do" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 What Signatures Don't Do
+      
+        2.1 What Signatures Don't Do
+      
     </span>
   </a>
   
@@ -661,7 +702,9 @@
         <li class="md-nav__item">
   <a href="#3-certificates-and-the-public-key-infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Certificates and the Public Key Infrastructure
+      
+        3. Certificates and the Public Key Infrastructure
+      
     </span>
   </a>
   
@@ -671,7 +714,9 @@
           <li class="md-nav__item">
   <a href="#31-x509-the-certificate-format" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 X.509 — The Certificate Format
+      
+        3.1 X.509 — The Certificate Format
+      
     </span>
   </a>
   
@@ -681,7 +726,9 @@
           <li class="md-nav__item">
   <a href="#diagram-anatomy-of-an-x509-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Anatomy of an X.509 Certificate
+      
+        Diagram: Anatomy of an X.509 Certificate
+      
     </span>
   </a>
   
@@ -695,7 +742,9 @@
           <li class="md-nav__item">
   <a href="#32-the-certificate-chain" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 The Certificate Chain
+      
+        3.2 The Certificate Chain
+      
     </span>
   </a>
   
@@ -705,7 +754,9 @@
           <li class="md-nav__item">
   <a href="#diagram-certificate-chain-of-trust" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Certificate Chain of Trust
+      
+        Diagram: Certificate Chain of Trust
+      
     </span>
   </a>
   
@@ -719,7 +770,9 @@
           <li class="md-nav__item">
   <a href="#33-certificate-revocation-crls-and-ocsp" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 Certificate Revocation, CRLs, and OCSP
+      
+        3.3 Certificate Revocation, CRLs, and OCSP
+      
     </span>
   </a>
   
@@ -733,7 +786,9 @@
         <li class="md-nav__item">
   <a href="#4-key-management-the-operational-heart" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Key Management — The Operational Heart
+      
+        4. Key Management — The Operational Heart
+      
     </span>
   </a>
   
@@ -743,7 +798,9 @@
           <li class="md-nav__item">
   <a href="#41-key-rotation" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Key Rotation
+      
+        4.1 Key Rotation
+      
     </span>
   </a>
   
@@ -752,7 +809,9 @@
           <li class="md-nav__item">
   <a href="#42-key-derivation-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Key Derivation Functions
+      
+        4.2 Key Derivation Functions
+      
     </span>
   </a>
   
@@ -766,7 +825,9 @@
         <li class="md-nav__item">
   <a href="#5-password-hashing-a-special-case" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Password Hashing — A Special Case
+      
+        5. Password Hashing — A Special Case
+      
     </span>
   </a>
   
@@ -776,7 +837,9 @@
           <li class="md-nav__item">
   <a href="#51-salting" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Salting
+      
+        5.1 Salting
+      
     </span>
   </a>
   
@@ -785,7 +848,9 @@
           <li class="md-nav__item">
   <a href="#52-bcrypt" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Bcrypt
+      
+        5.2 Bcrypt
+      
     </span>
   </a>
   
@@ -794,7 +859,9 @@
           <li class="md-nav__item">
   <a href="#53-argon2" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Argon2
+      
+        5.3 Argon2
+      
     </span>
   </a>
   
@@ -804,7 +871,9 @@
           <li class="md-nav__item">
   <a href="#diagram-password-hashing-cracking-cost-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Password Hashing — Cracking Cost Comparison
+      
+        Diagram: Password Hashing — Cracking Cost Comparison
+      
     </span>
   </a>
   
@@ -823,7 +892,9 @@
         <li class="md-nav__item">
   <a href="#6-tls-how-https-actually-works" class="md-nav__link">
     <span class="md-ellipsis">
-      6. TLS — How HTTPS Actually Works
+      
+        6. TLS — How HTTPS Actually Works
+      
     </span>
   </a>
   
@@ -833,7 +904,9 @@
           <li class="md-nav__item">
   <a href="#61-the-tls-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 The TLS Handshake
+      
+        6.1 The TLS Handshake
+      
     </span>
   </a>
   
@@ -843,7 +916,9 @@
           <li class="md-nav__item">
   <a href="#diagram-tls-13-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: TLS 1.3 Handshake
+      
+        Diagram: TLS 1.3 Handshake
+      
     </span>
   </a>
   
@@ -857,7 +932,9 @@
           <li class="md-nav__item">
   <a href="#62-https-tls-plus-http" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2 HTTPS — TLS Plus HTTP
+      
+        6.2 HTTPS — TLS Plus HTTP
+      
     </span>
   </a>
   
@@ -866,7 +943,9 @@
           <li class="md-nav__item">
   <a href="#63-perfect-forward-secrecy" class="md-nav__link">
     <span class="md-ellipsis">
-      6.3 Perfect Forward Secrecy
+      
+        6.3 Perfect Forward Secrecy
+      
     </span>
   </a>
   
@@ -880,7 +959,9 @@
         <li class="md-nav__item">
   <a href="#7-data-states-at-rest-in-transit-in-use" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Data States — At Rest, In Transit, In Use
+      
+        7. Data States — At Rest, In Transit, In Use
+      
     </span>
   </a>
   
@@ -890,7 +971,9 @@
           <li class="md-nav__item">
   <a href="#71-database-encryption" class="md-nav__link">
     <span class="md-ellipsis">
-      7.1 Database Encryption
+      
+        7.1 Database Encryption
+      
     </span>
   </a>
   
@@ -899,7 +982,9 @@
           <li class="md-nav__item">
   <a href="#72-data-loss-prevention" class="md-nav__link">
     <span class="md-ellipsis">
-      7.2 Data Loss Prevention
+      
+        7.2 Data Loss Prevention
+      
     </span>
   </a>
   
@@ -913,7 +998,9 @@
         <li class="md-nav__item">
   <a href="#8-privacy-preserving-computation-crypto-on-plaintext-you-cannot-see" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Privacy-Preserving Computation — Crypto on Plaintext You Cannot See
+      
+        8. Privacy-Preserving Computation — Crypto on Plaintext You Cannot See
+      
     </span>
   </a>
   
@@ -923,7 +1010,9 @@
           <li class="md-nav__item">
   <a href="#81-homomorphic-encryption" class="md-nav__link">
     <span class="md-ellipsis">
-      8.1 Homomorphic Encryption
+      
+        8.1 Homomorphic Encryption
+      
     </span>
   </a>
   
@@ -932,7 +1021,9 @@
           <li class="md-nav__item">
   <a href="#82-secure-multi-party-computation" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2 Secure Multi-Party Computation
+      
+        8.2 Secure Multi-Party Computation
+      
     </span>
   </a>
   
@@ -941,7 +1032,9 @@
           <li class="md-nav__item">
   <a href="#83-differential-privacy" class="md-nav__link">
     <span class="md-ellipsis">
-      8.3 Differential Privacy
+      
+        8.3 Differential Privacy
+      
     </span>
   </a>
   
@@ -950,7 +1043,9 @@
           <li class="md-nav__item">
   <a href="#84-zero-knowledge-proofs" class="md-nav__link">
     <span class="md-ellipsis">
-      8.4 Zero-Knowledge Proofs
+      
+        8.4 Zero-Knowledge Proofs
+      
     </span>
   </a>
   
@@ -960,7 +1055,9 @@
           <li class="md-nav__item">
   <a href="#diagram-comparing-privacy-preserving-computation-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Comparing Privacy-Preserving Computation Techniques
+      
+        Diagram: Comparing Privacy-Preserving Computation Techniques
+      
     </span>
   </a>
   
@@ -979,7 +1076,9 @@
         <li class="md-nav__item">
   <a href="#9-putting-it-together-a-day-in-the-life-of-a-banking-session" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Putting It Together — A Day In The Life Of A Banking Session
+      
+        9. Putting It Together — A Day In The Life Of A Banking Session
+      
     </span>
   </a>
   
@@ -988,7 +1087,9 @@
         <li class="md-nav__item">
   <a href="#10-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Key Takeaways
+      
+        10. Key Takeaways
+      
     </span>
   </a>
   
@@ -1013,9 +1114,16 @@
       <a href="../05-software-vulnerabilities/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Software Vulnerabilities
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1034,9 +1142,16 @@
       <a href="../06-software-assurance/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Software Assurance
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1055,9 +1170,16 @@
       <a href="../07-component-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Component Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1076,9 +1198,16 @@
       <a href="../08-network-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     8. Network Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1097,9 +1226,16 @@
       <a href="../09-advanced-network-defense/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     9. Advanced Network Defense
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1118,9 +1254,16 @@
       <a href="../10-system-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     10. System Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1139,9 +1282,16 @@
       <a href="../11-cloud-and-ops-monitoring/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     11. Cloud and Ops Monitoring
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1160,9 +1310,16 @@
       <a href="../12-human-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     12. Human Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1181,9 +1338,16 @@
       <a href="../13-organizational-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     13. Organizational Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1202,9 +1366,16 @@
       <a href="../14-societal-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     14. Societal Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1223,9 +1394,16 @@
       <a href="../15-security-operations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     15. Security Operations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1244,9 +1422,16 @@
       <a href="../16-emerging-and-capstone/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     16. Emerging and Capstone
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1294,6 +1479,7 @@
     
     
     
+    
       
         
         
@@ -1304,12 +1490,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1337,293 +1531,156 @@
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
+    
     
     
     
@@ -1637,12 +1694,20 @@
         
   
   
+  
     <a href="../../sims/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1666,9 +1731,16 @@
       <a href="../../faq/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     FAQ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1686,9 +1758,16 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1706,9 +1785,16 @@
       <a href="../../references.md" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     References
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1726,9 +1812,16 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1746,9 +1839,16 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1785,7 +1885,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1794,7 +1896,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1803,7 +1907,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1812,7 +1918,9 @@
         <li class="md-nav__item">
   <a href="#1-from-primitives-to-protocols" class="md-nav__link">
     <span class="md-ellipsis">
-      1. From Primitives to Protocols
+      
+        1. From Primitives to Protocols
+      
     </span>
   </a>
   
@@ -1821,7 +1929,9 @@
         <li class="md-nav__item">
   <a href="#2-digital-signatures-asymmetric-authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Digital Signatures — Asymmetric Authentication
+      
+        2. Digital Signatures — Asymmetric Authentication
+      
     </span>
   </a>
   
@@ -1831,7 +1941,9 @@
           <li class="md-nav__item">
   <a href="#diagram-sign-and-verify-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Sign and Verify Flow
+      
+        Diagram: Sign and Verify Flow
+      
     </span>
   </a>
   
@@ -1840,7 +1952,9 @@
           <li class="md-nav__item">
   <a href="#21-what-signatures-dont-do" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 What Signatures Don't Do
+      
+        2.1 What Signatures Don't Do
+      
     </span>
   </a>
   
@@ -1854,7 +1968,9 @@
         <li class="md-nav__item">
   <a href="#3-certificates-and-the-public-key-infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Certificates and the Public Key Infrastructure
+      
+        3. Certificates and the Public Key Infrastructure
+      
     </span>
   </a>
   
@@ -1864,7 +1980,9 @@
           <li class="md-nav__item">
   <a href="#31-x509-the-certificate-format" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 X.509 — The Certificate Format
+      
+        3.1 X.509 — The Certificate Format
+      
     </span>
   </a>
   
@@ -1874,7 +1992,9 @@
           <li class="md-nav__item">
   <a href="#diagram-anatomy-of-an-x509-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Anatomy of an X.509 Certificate
+      
+        Diagram: Anatomy of an X.509 Certificate
+      
     </span>
   </a>
   
@@ -1888,7 +2008,9 @@
           <li class="md-nav__item">
   <a href="#32-the-certificate-chain" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 The Certificate Chain
+      
+        3.2 The Certificate Chain
+      
     </span>
   </a>
   
@@ -1898,7 +2020,9 @@
           <li class="md-nav__item">
   <a href="#diagram-certificate-chain-of-trust" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Certificate Chain of Trust
+      
+        Diagram: Certificate Chain of Trust
+      
     </span>
   </a>
   
@@ -1912,7 +2036,9 @@
           <li class="md-nav__item">
   <a href="#33-certificate-revocation-crls-and-ocsp" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 Certificate Revocation, CRLs, and OCSP
+      
+        3.3 Certificate Revocation, CRLs, and OCSP
+      
     </span>
   </a>
   
@@ -1926,7 +2052,9 @@
         <li class="md-nav__item">
   <a href="#4-key-management-the-operational-heart" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Key Management — The Operational Heart
+      
+        4. Key Management — The Operational Heart
+      
     </span>
   </a>
   
@@ -1936,7 +2064,9 @@
           <li class="md-nav__item">
   <a href="#41-key-rotation" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Key Rotation
+      
+        4.1 Key Rotation
+      
     </span>
   </a>
   
@@ -1945,7 +2075,9 @@
           <li class="md-nav__item">
   <a href="#42-key-derivation-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Key Derivation Functions
+      
+        4.2 Key Derivation Functions
+      
     </span>
   </a>
   
@@ -1959,7 +2091,9 @@
         <li class="md-nav__item">
   <a href="#5-password-hashing-a-special-case" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Password Hashing — A Special Case
+      
+        5. Password Hashing — A Special Case
+      
     </span>
   </a>
   
@@ -1969,7 +2103,9 @@
           <li class="md-nav__item">
   <a href="#51-salting" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Salting
+      
+        5.1 Salting
+      
     </span>
   </a>
   
@@ -1978,7 +2114,9 @@
           <li class="md-nav__item">
   <a href="#52-bcrypt" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Bcrypt
+      
+        5.2 Bcrypt
+      
     </span>
   </a>
   
@@ -1987,7 +2125,9 @@
           <li class="md-nav__item">
   <a href="#53-argon2" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Argon2
+      
+        5.3 Argon2
+      
     </span>
   </a>
   
@@ -1997,7 +2137,9 @@
           <li class="md-nav__item">
   <a href="#diagram-password-hashing-cracking-cost-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Password Hashing — Cracking Cost Comparison
+      
+        Diagram: Password Hashing — Cracking Cost Comparison
+      
     </span>
   </a>
   
@@ -2016,7 +2158,9 @@
         <li class="md-nav__item">
   <a href="#6-tls-how-https-actually-works" class="md-nav__link">
     <span class="md-ellipsis">
-      6. TLS — How HTTPS Actually Works
+      
+        6. TLS — How HTTPS Actually Works
+      
     </span>
   </a>
   
@@ -2026,7 +2170,9 @@
           <li class="md-nav__item">
   <a href="#61-the-tls-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 The TLS Handshake
+      
+        6.1 The TLS Handshake
+      
     </span>
   </a>
   
@@ -2036,7 +2182,9 @@
           <li class="md-nav__item">
   <a href="#diagram-tls-13-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: TLS 1.3 Handshake
+      
+        Diagram: TLS 1.3 Handshake
+      
     </span>
   </a>
   
@@ -2050,7 +2198,9 @@
           <li class="md-nav__item">
   <a href="#62-https-tls-plus-http" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2 HTTPS — TLS Plus HTTP
+      
+        6.2 HTTPS — TLS Plus HTTP
+      
     </span>
   </a>
   
@@ -2059,7 +2209,9 @@
           <li class="md-nav__item">
   <a href="#63-perfect-forward-secrecy" class="md-nav__link">
     <span class="md-ellipsis">
-      6.3 Perfect Forward Secrecy
+      
+        6.3 Perfect Forward Secrecy
+      
     </span>
   </a>
   
@@ -2073,7 +2225,9 @@
         <li class="md-nav__item">
   <a href="#7-data-states-at-rest-in-transit-in-use" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Data States — At Rest, In Transit, In Use
+      
+        7. Data States — At Rest, In Transit, In Use
+      
     </span>
   </a>
   
@@ -2083,7 +2237,9 @@
           <li class="md-nav__item">
   <a href="#71-database-encryption" class="md-nav__link">
     <span class="md-ellipsis">
-      7.1 Database Encryption
+      
+        7.1 Database Encryption
+      
     </span>
   </a>
   
@@ -2092,7 +2248,9 @@
           <li class="md-nav__item">
   <a href="#72-data-loss-prevention" class="md-nav__link">
     <span class="md-ellipsis">
-      7.2 Data Loss Prevention
+      
+        7.2 Data Loss Prevention
+      
     </span>
   </a>
   
@@ -2106,7 +2264,9 @@
         <li class="md-nav__item">
   <a href="#8-privacy-preserving-computation-crypto-on-plaintext-you-cannot-see" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Privacy-Preserving Computation — Crypto on Plaintext You Cannot See
+      
+        8. Privacy-Preserving Computation — Crypto on Plaintext You Cannot See
+      
     </span>
   </a>
   
@@ -2116,7 +2276,9 @@
           <li class="md-nav__item">
   <a href="#81-homomorphic-encryption" class="md-nav__link">
     <span class="md-ellipsis">
-      8.1 Homomorphic Encryption
+      
+        8.1 Homomorphic Encryption
+      
     </span>
   </a>
   
@@ -2125,7 +2287,9 @@
           <li class="md-nav__item">
   <a href="#82-secure-multi-party-computation" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2 Secure Multi-Party Computation
+      
+        8.2 Secure Multi-Party Computation
+      
     </span>
   </a>
   
@@ -2134,7 +2298,9 @@
           <li class="md-nav__item">
   <a href="#83-differential-privacy" class="md-nav__link">
     <span class="md-ellipsis">
-      8.3 Differential Privacy
+      
+        8.3 Differential Privacy
+      
     </span>
   </a>
   
@@ -2143,7 +2309,9 @@
           <li class="md-nav__item">
   <a href="#84-zero-knowledge-proofs" class="md-nav__link">
     <span class="md-ellipsis">
-      8.4 Zero-Knowledge Proofs
+      
+        8.4 Zero-Knowledge Proofs
+      
     </span>
   </a>
   
@@ -2153,7 +2321,9 @@
           <li class="md-nav__item">
   <a href="#diagram-comparing-privacy-preserving-computation-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Comparing Privacy-Preserving Computation Techniques
+      
+        Diagram: Comparing Privacy-Preserving Computation Techniques
+      
     </span>
   </a>
   
@@ -2172,7 +2342,9 @@
         <li class="md-nav__item">
   <a href="#9-putting-it-together-a-day-in-the-life-of-a-banking-session" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Putting It Together — A Day In The Life Of A Banking Session
+      
+        9. Putting It Together — A Day In The Life Of A Banking Session
+      
     </span>
   </a>
   
@@ -2181,7 +2353,9 @@
         <li class="md-nav__item">
   <a href="#10-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Key Takeaways
+      
+        10. Key Takeaways
+      
     </span>
   </a>
   
@@ -2197,12 +2371,62 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/04-crypto-in-practice/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/04-crypto-in-practice/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2270,9 +2494,6 @@ Welcome. Chapter 3 gave you the primitives. This chapter shows how the world act
 <li><strong>ECDSA and EdDSA</strong> (Ed25519, Ed448), based on elliptic-curve discrete logarithms. These produce smaller signatures and faster verification at equivalent security. Ed25519 is the modern default for new designs.</li>
 </ul>
 <h4 id="diagram-sign-and-verify-flow">Diagram: Sign and Verify Flow<a class="headerlink" href="#diagram-sign-and-verify-flow" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/digital-signature-flow/main.html" width="100%" height="432" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/digital-signature-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side flow diagram showing signature generation and verification</summary>
 <p>Type: workflow-diagram
@@ -2322,9 +2543,6 @@ Notice the shift. Public-key crypto eliminated the need to share <em>secrets</em
 </ul>
 <p>In a TLS server certificate, the Subject's Common Name or — preferably — the Subject Alternative Name fields list the domain names the certificate is valid for. Modern browsers ignore the Common Name entirely and require SAN entries. A certificate for <code>bank.example.com</code> will not be accepted by a browser visiting <code>www.bank.example.com</code> unless <code>www.bank.example.com</code> is listed as a SAN.</p>
 <h4 id="diagram-anatomy-of-an-x509-certificate">Diagram: Anatomy of an X.509 Certificate<a class="headerlink" href="#diagram-anatomy-of-an-x509-certificate" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/x509-anatomy/main.html" width="100%" height="687" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/x509-anatomy/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Annotated visual breakdown of a sample X.509 certificate</summary>
 <p>Type: infographic-svg
@@ -2398,9 +2616,6 @@ Notice the shift. Public-key crypto eliminated the need to share <em>secrets</em
 </tbody>
 </table>
 <h4 id="diagram-certificate-chain-of-trust">Diagram: Certificate Chain of Trust<a class="headerlink" href="#diagram-certificate-chain-of-trust" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/certificate-chain-of-trust/main.html" width="100%" height="542" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/certificate-chain-of-trust/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Hierarchical diagram showing root CA, intermediate CA, and end-entity certificates with verification arrows</summary>
 <p>Type: diagram
@@ -2527,9 +2742,6 @@ Most browsers, when an OCSP query fails or times out, accept the certificate any
 For any new system: store passwords with Argon2id, with parameters tuned to take roughly 250ms per hash on your production hardware, with a unique 16-byte random salt per password. Never use plain SHA-256, MD5, or any unsalted hash. If your framework's default is bcrypt, that is fine — both Argon2id and bcrypt are defensible. Plain hashes are not.</p>
 </div>
 <h4 id="diagram-password-hashing-cracking-cost-comparison">Diagram: Password Hashing — Cracking Cost Comparison<a class="headerlink" href="#diagram-password-hashing-cracking-cost-comparison" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/password-cracking-cost/main.html" width="100%" height="562" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/password-cracking-cost/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive simulator showing how salt, slow hashing, and memory-hardness affect attacker cost</summary>
 <p>Type: microsim
@@ -2574,9 +2786,6 @@ For any new system: store passwords with Argon2id, with parameters tuned to take
 </ul>
 <p>The protocol packs an impressive amount of cryptography into that exchange: an ephemeral key exchange (Elliptic Curve Diffie-Hellman in practice), a long-term signature for server authentication, a certificate chain verification, key derivation, transcript hashing for integrity, and a switch to AEAD encryption (AES-GCM or ChaCha20-Poly1305) for the application data.</p>
 <h4 id="diagram-tls-13-handshake">Diagram: TLS 1.3 Handshake<a class="headerlink" href="#diagram-tls-13-handshake" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/tls13-handshake-sequence/main.html" width="100%" height="1092" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/tls13-handshake-sequence/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing client, server, and the messages exchanged during a TLS 1.3 handshake</summary>
 <p>Type: workflow-diagram
@@ -2712,9 +2921,6 @@ The four techniques in this section break the intuition that "to use data you mu
 </ul>
 <p>ZKPs power privacy-preserving cryptocurrencies (Zcash uses zk-SNARKs to prove transaction validity without revealing sender, receiver, or amount), anonymous credentials, scalable blockchain rollups, and increasingly login systems where users prove they meet some criterion (age, residency, employment) without revealing the underlying document.</p>
 <h4 id="diagram-comparing-privacy-preserving-computation-techniques">Diagram: Comparing Privacy-Preserving Computation Techniques<a class="headerlink" href="#diagram-comparing-privacy-preserving-computation-techniques" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/privacy-tech-compare/main.html" width="100%" height="527" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/privacy-tech-compare/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Interactive infographic comparing FHE, MPC, DP, and ZKP across input visibility, output visibility, and use case</summary>
 <p>Type: infographic-svg
@@ -2884,10 +3090,13 @@ You can now read a TLS handshake and name what each step is defending against. Y
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

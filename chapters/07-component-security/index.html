@@ -21,8 +21,11 @@
         <link rel="next" href="../08-network-foundations/">
       
       
+        
+      
+      
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -72,34 +75,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Component and Hardware Security - Cybersecurity" >
-      
-        <meta  property="og:description"  content="Explores the trust foundation beneath software: TPM, HSM, secure enclaves, TEEs, secure and measured boot, side-channel attacks, hardware supply chain, embedded and IoT security, attestation, and hardware roots of trust." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/07-component-security/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/cybersecurity/chapters/07-component-security/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Component and Hardware Security - Cybersecurity" >
-      
-        <meta  name="twitter:description"  content="Explores the trust foundation beneath software: TPM, HSM, secure enclaves, TEEs, secure and measured boot, side-channel attacks, hardware supply chain, embedded and IoT security, attestation, and hardware roots of trust." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/07-component-security/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Component and Hardware Security - Cybersecurity" />
+<meta property="og:description" content="Explores the trust foundation beneath software: TPM, HSM, secure enclaves, TEEs, secure and measured boot, side-channel attacks, hardware supply chain, embedded and IoT security, attestation, and hardware roots of trust." />
+<meta property="og:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/07-component-security/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/cybersecurity/chapters/07-component-security/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Component and Hardware Security - Cybersecurity" />
+<meta property="twitter:description" content="Explores the trust foundation beneath software: TPM, HSM, secure enclaves, TEEs, secure and measured boot, side-channel attacks, hardware supply chain, embedded and IoT security, attestation, and hardware roots of trust." />
+<meta property="twitter:image" content="https://dmccreary.github.io/cybersecurity/assets/images/social/chapters/07-component-security/index.png" />
+</head>
   
   
     
@@ -191,11 +180,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -234,13 +225,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -285,7 +277,7 @@
       <a href="https://github.com/dmccreary/cybersecurity" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -305,9 +297,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -325,9 +324,16 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -345,9 +351,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -371,69 +384,38 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -446,14 +428,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -468,7 +456,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -484,9 +476,16 @@
       <a href="../01-security-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     1. Security Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -505,9 +504,16 @@
       <a href="../02-threats-and-controls/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     2. Threats and Controls
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -526,9 +532,16 @@
       <a href="../03-crypto-fundamentals/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     3. Crypto Fundamentals
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -547,9 +560,16 @@
       <a href="../04-crypto-in-practice/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     4. Crypto in Practice
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -568,9 +588,16 @@
       <a href="../05-software-vulnerabilities/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     5. Software Vulnerabilities
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -589,9 +616,16 @@
       <a href="../06-software-assurance/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     6. Software Assurance
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -619,9 +653,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Component Security
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -630,9 +671,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     7. Component Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -655,7 +703,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -664,7 +714,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -673,7 +725,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -682,7 +736,9 @@
         <li class="md-nav__item">
   <a href="#1-why-hardware-security-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Why Hardware Security Matters
+      
+        1. Why Hardware Security Matters
+      
     </span>
   </a>
   
@@ -691,7 +747,9 @@
         <li class="md-nav__item">
   <a href="#2-the-cast-of-trust-anchors" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Cast of Trust Anchors
+      
+        2. The Cast of Trust Anchors
+      
     </span>
   </a>
   
@@ -701,7 +759,9 @@
           <li class="md-nav__item">
   <a href="#diagram-hardware-trust-anchors-on-a-modern-system" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Hardware Trust Anchors on a Modern System
+      
+        Diagram: Hardware Trust Anchors on a Modern System
+      
     </span>
   </a>
   
@@ -715,7 +775,9 @@
         <li class="md-nav__item">
   <a href="#3-the-trusted-platform-module-in-depth" class="md-nav__link">
     <span class="md-ellipsis">
-      3. The Trusted Platform Module in Depth
+      
+        3. The Trusted Platform Module in Depth
+      
     </span>
   </a>
   
@@ -724,7 +786,9 @@
         <li class="md-nav__item">
   <a href="#4-the-boot-chain-where-trust-actually-starts" class="md-nav__link">
     <span class="md-ellipsis">
-      4. The Boot Chain — Where Trust Actually Starts
+      
+        4. The Boot Chain — Where Trust Actually Starts
+      
     </span>
   </a>
   
@@ -734,7 +798,9 @@
           <li class="md-nav__item">
   <a href="#41-secure-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Secure Boot
+      
+        4.1 Secure Boot
+      
     </span>
   </a>
   
@@ -743,7 +809,9 @@
           <li class="md-nav__item">
   <a href="#42-measured-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Measured Boot
+      
+        4.2 Measured Boot
+      
     </span>
   </a>
   
@@ -753,7 +821,9 @@
           <li class="md-nav__item">
   <a href="#diagram-secure-boot-vs-measured-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Secure Boot vs. Measured Boot
+      
+        Diagram: Secure Boot vs. Measured Boot
+      
     </span>
   </a>
   
@@ -772,7 +842,9 @@
         <li class="md-nav__item">
   <a href="#5-side-channel-attacks-information-leaks-through-physics" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Side-Channel Attacks — Information Leaks Through Physics
+      
+        5. Side-Channel Attacks — Information Leaks Through Physics
+      
     </span>
   </a>
   
@@ -782,7 +854,9 @@
           <li class="md-nav__item">
   <a href="#51-timing-attacks" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Timing Attacks
+      
+        5.1 Timing Attacks
+      
     </span>
   </a>
   
@@ -791,7 +865,9 @@
           <li class="md-nav__item">
   <a href="#52-power-analysis-attacks" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Power Analysis Attacks
+      
+        5.2 Power Analysis Attacks
+      
     </span>
   </a>
   
@@ -800,7 +876,9 @@
           <li class="md-nav__item">
   <a href="#53-cache-side-channels" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Cache Side-Channels
+      
+        5.3 Cache Side-Channels
+      
     </span>
   </a>
   
@@ -809,7 +887,9 @@
           <li class="md-nav__item">
   <a href="#54-rowhammer" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4 Rowhammer
+      
+        5.4 Rowhammer
+      
     </span>
   </a>
   
@@ -819,7 +899,9 @@
           <li class="md-nav__item">
   <a href="#diagram-side-channel-attack-surface" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Side-Channel Attack Surface
+      
+        Diagram: Side-Channel Attack Surface
+      
     </span>
   </a>
   
@@ -838,7 +920,9 @@
         <li class="md-nav__item">
   <a href="#6-the-hardware-supply-chain" class="md-nav__link">
     <span class="md-ellipsis">
-      6. The Hardware Supply Chain
+      
+        6. The Hardware Supply Chain
+      
     </span>
   </a>
   
@@ -847,7 +931,9 @@
         <li class="md-nav__item">
   <a href="#7-embedded-and-iot-security" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Embedded and IoT Security
+      
+        7. Embedded and IoT Security
+      
     </span>
   </a>
   
@@ -857,7 +943,9 @@
           <li class="md-nav__item">
   <a href="#diagram-iot-device-security-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: IoT Device Security Stack
+      
+        Diagram: IoT Device Security Stack
+      
     </span>
   </a>
   
@@ -871,7 +959,9 @@
         <li class="md-nav__item">
   <a href="#8-device-attestation-proving-what-you-are" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Device Attestation — Proving What You Are
+      
+        8. Device Attestation — Proving What You Are
+      
     </span>
   </a>
   
@@ -881,7 +971,9 @@
           <li class="md-nav__item">
   <a href="#diagram-device-attestation-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Device Attestation Flow
+      
+        Diagram: Device Attestation Flow
+      
     </span>
   </a>
   
@@ -895,7 +987,9 @@
         <li class="md-nav__item">
   <a href="#9-the-hardware-root-of-trust" class="md-nav__link">
     <span class="md-ellipsis">
-      9. The Hardware Root of Trust
+      
+        9. The Hardware Root of Trust
+      
     </span>
   </a>
   
@@ -904,7 +998,9 @@
         <li class="md-nav__item">
   <a href="#10-putting-it-together-a-day-in-the-life-of-a-booting-laptop" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Putting It Together — A Day in the Life of a Booting Laptop
+      
+        10. Putting It Together — A Day in the Life of a Booting Laptop
+      
     </span>
   </a>
   
@@ -913,7 +1009,9 @@
         <li class="md-nav__item">
   <a href="#11-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Key Takeaways
+      
+        11. Key Takeaways
+      
     </span>
   </a>
   
@@ -938,9 +1036,16 @@
       <a href="../08-network-foundations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     8. Network Foundations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -959,9 +1064,16 @@
       <a href="../09-advanced-network-defense/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     9. Advanced Network Defense
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -980,9 +1092,16 @@
       <a href="../10-system-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     10. System Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1001,9 +1120,16 @@
       <a href="../11-cloud-and-ops-monitoring/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     11. Cloud and Ops Monitoring
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1022,9 +1148,16 @@
       <a href="../12-human-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     12. Human Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1043,9 +1176,16 @@
       <a href="../13-organizational-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     13. Organizational Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1064,9 +1204,16 @@
       <a href="../14-societal-security/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     14. Societal Security
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1085,9 +1232,16 @@
       <a href="../15-security-operations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     15. Security Operations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1106,9 +1260,16 @@
       <a href="../16-emerging-and-capstone/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     16. Emerging and Capstone
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1156,6 +1317,7 @@
     
     
     
+    
       
         
         
@@ -1166,12 +1328,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1199,293 +1369,156 @@
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
-        
       
-        
-          
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
+    
     
     
     
@@ -1499,12 +1532,20 @@
         
   
   
+  
     <a href="../../sims/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1528,9 +1569,16 @@
       <a href="../../faq/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     FAQ
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1548,9 +1596,16 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1568,9 +1623,16 @@
       <a href="../../references.md" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     References
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1588,9 +1650,16 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1608,9 +1677,16 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1647,7 +1723,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1656,7 +1734,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1665,7 +1745,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1674,7 +1756,9 @@
         <li class="md-nav__item">
   <a href="#1-why-hardware-security-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Why Hardware Security Matters
+      
+        1. Why Hardware Security Matters
+      
     </span>
   </a>
   
@@ -1683,7 +1767,9 @@
         <li class="md-nav__item">
   <a href="#2-the-cast-of-trust-anchors" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Cast of Trust Anchors
+      
+        2. The Cast of Trust Anchors
+      
     </span>
   </a>
   
@@ -1693,7 +1779,9 @@
           <li class="md-nav__item">
   <a href="#diagram-hardware-trust-anchors-on-a-modern-system" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Hardware Trust Anchors on a Modern System
+      
+        Diagram: Hardware Trust Anchors on a Modern System
+      
     </span>
   </a>
   
@@ -1707,7 +1795,9 @@
         <li class="md-nav__item">
   <a href="#3-the-trusted-platform-module-in-depth" class="md-nav__link">
     <span class="md-ellipsis">
-      3. The Trusted Platform Module in Depth
+      
+        3. The Trusted Platform Module in Depth
+      
     </span>
   </a>
   
@@ -1716,7 +1806,9 @@
         <li class="md-nav__item">
   <a href="#4-the-boot-chain-where-trust-actually-starts" class="md-nav__link">
     <span class="md-ellipsis">
-      4. The Boot Chain — Where Trust Actually Starts
+      
+        4. The Boot Chain — Where Trust Actually Starts
+      
     </span>
   </a>
   
@@ -1726,7 +1818,9 @@
           <li class="md-nav__item">
   <a href="#41-secure-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Secure Boot
+      
+        4.1 Secure Boot
+      
     </span>
   </a>
   
@@ -1735,7 +1829,9 @@
           <li class="md-nav__item">
   <a href="#42-measured-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Measured Boot
+      
+        4.2 Measured Boot
+      
     </span>
   </a>
   
@@ -1745,7 +1841,9 @@
           <li class="md-nav__item">
   <a href="#diagram-secure-boot-vs-measured-boot" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Secure Boot vs. Measured Boot
+      
+        Diagram: Secure Boot vs. Measured Boot
+      
     </span>
   </a>
   
@@ -1764,7 +1862,9 @@
         <li class="md-nav__item">
   <a href="#5-side-channel-attacks-information-leaks-through-physics" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Side-Channel Attacks — Information Leaks Through Physics
+      
+        5. Side-Channel Attacks — Information Leaks Through Physics
+      
     </span>
   </a>
   
@@ -1774,7 +1874,9 @@
           <li class="md-nav__item">
   <a href="#51-timing-attacks" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Timing Attacks
+      
+        5.1 Timing Attacks
+      
     </span>
   </a>
   
@@ -1783,7 +1885,9 @@
           <li class="md-nav__item">
   <a href="#52-power-analysis-attacks" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Power Analysis Attacks
+      
+        5.2 Power Analysis Attacks
+      
     </span>
   </a>
   
@@ -1792,7 +1896,9 @@
           <li class="md-nav__item">
   <a href="#53-cache-side-channels" class="md-nav__link">
     <span class="md-ellipsis">
-      5.3 Cache Side-Channels
+      
+        5.3 Cache Side-Channels
+      
     </span>
   </a>
   
@@ -1801,7 +1907,9 @@
           <li class="md-nav__item">
   <a href="#54-rowhammer" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4 Rowhammer
+      
+        5.4 Rowhammer
+      
     </span>
   </a>
   
@@ -1811,7 +1919,9 @@
           <li class="md-nav__item">
   <a href="#diagram-side-channel-attack-surface" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Side-Channel Attack Surface
+      
+        Diagram: Side-Channel Attack Surface
+      
     </span>
   </a>
   
@@ -1830,7 +1940,9 @@
         <li class="md-nav__item">
   <a href="#6-the-hardware-supply-chain" class="md-nav__link">
     <span class="md-ellipsis">
-      6. The Hardware Supply Chain
+      
+        6. The Hardware Supply Chain
+      
     </span>
   </a>
   
@@ -1839,7 +1951,9 @@
         <li class="md-nav__item">
   <a href="#7-embedded-and-iot-security" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Embedded and IoT Security
+      
+        7. Embedded and IoT Security
+      
     </span>
   </a>
   
@@ -1849,7 +1963,9 @@
           <li class="md-nav__item">
   <a href="#diagram-iot-device-security-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: IoT Device Security Stack
+      
+        Diagram: IoT Device Security Stack
+      
     </span>
   </a>
   
@@ -1863,7 +1979,9 @@
         <li class="md-nav__item">
   <a href="#8-device-attestation-proving-what-you-are" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Device Attestation — Proving What You Are
+      
+        8. Device Attestation — Proving What You Are
+      
     </span>
   </a>
   
@@ -1873,7 +1991,9 @@
           <li class="md-nav__item">
   <a href="#diagram-device-attestation-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Device Attestation Flow
+      
+        Diagram: Device Attestation Flow
+      
     </span>
   </a>
   
@@ -1887,7 +2007,9 @@
         <li class="md-nav__item">
   <a href="#9-the-hardware-root-of-trust" class="md-nav__link">
     <span class="md-ellipsis">
-      9. The Hardware Root of Trust
+      
+        9. The Hardware Root of Trust
+      
     </span>
   </a>
   
@@ -1896,7 +2018,9 @@
         <li class="md-nav__item">
   <a href="#10-putting-it-together-a-day-in-the-life-of-a-booting-laptop" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Putting It Together — A Day in the Life of a Booting Laptop
+      
+        10. Putting It Together — A Day in the Life of a Booting Laptop
+      
     </span>
   </a>
   
@@ -1905,7 +2029,9 @@
         <li class="md-nav__item">
   <a href="#11-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Key Takeaways
+      
+        11. Key Takeaways
+      
     </span>
   </a>
   
@@ -1921,12 +2047,62 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/07-component-security/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/cybersecurity/blob/main/docs/chapters/07-component-security/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2032,9 +2208,6 @@ Welcome. Until now we have assumed that the CPU runs the instructions we wrote, 
 </tbody>
 </table>
 <h4 id="diagram-hardware-trust-anchors-on-a-modern-system">Diagram: Hardware Trust Anchors on a Modern System<a class="headerlink" href="#diagram-hardware-trust-anchors-on-a-modern-system" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/trust-anchors-overview/main.html" width="100%" height="692" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/trust-anchors-overview/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing the relationship between TPM, HSM, secure enclave, and TEE on a typical system</summary>
 <p>Type: infographic-svg
@@ -2083,9 +2256,6 @@ Welcome. Until now we have assumed that the CPU runs the instructions we wrote, 
 <p><strong>Measured Boot</strong> is a <em>recording</em> mechanism: at each stage, the firmware computes a hash of the next stage <em>before</em> running it and <em>extends</em> that hash into a TPM PCR. The result is a tamper-evident log of every piece of code that ran during boot. Measured boot does not, by itself, refuse to boot anything — it only records what happened. The recording becomes useful when paired with two things: TPM key sealing (the disk encryption key only unlocks if the PCRs match a trusted state) and attestation (a remote verifier reads the PCRs and decides whether to trust the system).</p>
 <p>The two technologies are complementary. Secure Boot gives you a binary "boot-or-don't" guarantee at the moment of boot. Measured Boot gives you an evidentiary trail that survives the boot and lets a remote party — a corporate VPN, a cloud orchestrator, a remote-attestation service — make a trust decision <em>after</em> boot. Real systems use both.</p>
 <h4 id="diagram-secure-boot-vs-measured-boot">Diagram: Secure Boot vs. Measured Boot<a class="headerlink" href="#diagram-secure-boot-vs-measured-boot" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/secure-vs-measured-boot/main.html" width="100%" height="542" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/secure-vs-measured-boot/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Side-by-side flow diagram showing how secure boot enforces trust while measured boot records it</summary>
 <p>Type: workflow-diagram
@@ -2173,9 +2343,6 @@ Notice the asymmetry. Secure Boot answers <em>"should I run this?"</em> at boot 
 </tbody>
 </table>
 <h4 id="diagram-side-channel-attack-surface">Diagram: Side-Channel Attack Surface<a class="headerlink" href="#diagram-side-channel-attack-surface" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/side-channel-overview/main.html" width="100%" height="582" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/side-channel-overview/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Infographic showing how data leaks from a chip through timing, power, EM, cache, and fault channels</summary>
 <p>Type: infographic-svg
@@ -2218,9 +2385,6 @@ Code like <code>if (mac == expected_mac)</code> looks correct and is. Code like 
 </ul>
 <p>The result is an ecosystem with extraordinarily uneven security. Industry standards are emerging — the U.S. <em>Cyber Trust Mark</em> labeling program (2024+), the EU <em>Cyber Resilience Act</em> (2024), ETSI EN 303 645 for consumer IoT, IEC 62443 for industrial systems — but the installed base will take a generation to replace. The high-leverage controls a designer of an embedded device should focus on are: a hardware root of trust (section 9), authenticated and signed firmware updates, no default passwords, encrypted communications, and a <em>defined end-of-support date</em> communicated to buyers.</p>
 <h4 id="diagram-iot-device-security-stack">Diagram: IoT Device Security Stack<a class="headerlink" href="#diagram-iot-device-security-stack" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/iot-security-stack/main.html" width="100%" height="1217" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/iot-security-stack/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Layered diagram showing the security stack of a representative IoT device from silicon root of trust to cloud backend</summary>
 <p>Type: diagram
@@ -2262,9 +2426,6 @@ For any connected device you ship, target this minimum: hardware root of trust, 
 <p>Attestation is the cryptographic backbone of many things you may already have used: BitLocker recovery, FIDO2 device authentication (the "attestation statement" in WebAuthn), Apple's iCloud Keychain trust, Google Play Integrity, and confidential-computing workloads in the cloud. Whenever a service distinguishes "real device" from "anything claiming to be a device," attestation is what is doing the work behind the scenes.</p>
 <p>A subtle but important note: attestation proves <em>what</em> is running, not that <em>what is running is good</em>. The verifier's policy database — the list of acceptable PCR values, acceptable enclave hashes, acceptable firmware versions — is the human judgment that turns "I am a Lenovo laptop with kernel 6.7" into "I am acceptable to my employer's VPN." That policy is what gets out of date when bootloaders are revoked, when CVEs are disclosed, when fleet inventories drift. Attestation moves the trust problem from "can I trust this device?" to "is my policy current?" — which is a problem with the same shape but much better tooling.</p>
 <h4 id="diagram-device-attestation-flow">Diagram: Device Attestation Flow<a class="headerlink" href="#diagram-device-attestation-flow" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/device-attestation-flow/main.html" width="100%" height="662" scrolling="no"></iframe>
-
-<p><a class="md-button md-button--primary" href="../../sims/device-attestation-flow/main.html">Run the MicroSim Fullscreen</a></p>
 <details>
 <summary>Sequence diagram showing a device proving its boot state to a remote verifier using a TPM quote</summary>
 <p>Type: workflow-diagram
@@ -2437,10 +2598,13 @@ You can now name the trust anchors of a modern system, distinguish secure boot f
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

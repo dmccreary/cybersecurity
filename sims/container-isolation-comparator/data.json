@@ -1,0 +1,132 @@
+{
+  "title": "Container Isolation Strength Comparator",
+  "comment": "Edit this file to add or change isolation levels, workloads, and threat scenarios. Each isolation level needs one entry per threat id in its 'threats' object. Status is one of: blocked, caveats, feasible.",
+  "defaults": { "isolation": "docker-default", "workload": "trusted" },
+  "statuses": {
+    "blocked":  { "label": "blocked", "rank": 2 },
+    "caveats":  { "label": "mitigated with caveats", "short": "caveats", "rank": 1 },
+    "feasible": { "label": "feasible", "rank": 0 }
+  },
+  "threats": [
+    {
+      "id": "host-fs",
+      "text": "Container reads /etc/shadow on host",
+      "short": "host file access",
+      "layer": "isolation"
+    },
+    {
+      "id": "kernel-lpe",
+      "text": "Container exploits a kernel CVE for LPE",
+      "short": "kernel exploit",
+      "layer": "isolation"
+    },
+    {
+      "id": "side-channel",
+      "text": "Container A reads memory of Container B (cache side channel)",
+      "short": "cache side channel",
+      "layer": "isolation"
+    },
+    {
+      "id": "metadata",
+      "text": "Container reaches AWS metadata service at 169.254.169.254",
+      "short": "metadata service access",
+      "layer": "network policy"
+    },
+    {
+      "id": "orchestrator",
+      "text": "Compromised container modifies the orchestrator API",
+      "short": "orchestrator API abuse",
+      "layer": "least-privilege RBAC"
+    }
+  ],
+  "workloads": [
+    {
+      "id": "trusted",
+      "label": "fully trusted",
+      "description": "your own reviewed code, one tenant",
+      "requires": { "host-fs": "caveats", "kernel-lpe": "feasible", "side-channel": "feasible", "metadata": "feasible", "orchestrator": "caveats" }
+    },
+    {
+      "id": "semi-trusted",
+      "label": "semi-trusted",
+      "description": "third-party images and dependencies",
+      "requires": { "host-fs": "blocked", "kernel-lpe": "caveats", "side-channel": "feasible", "metadata": "feasible", "orchestrator": "caveats" }
+    },
+    {
+      "id": "hostile",
+      "label": "hostile multi-tenant",
+      "description": "arbitrary code from strangers",
+      "requires": { "host-fs": "blocked", "kernel-lpe": "blocked", "side-channel": "caveats", "metadata": "caveats", "orchestrator": "caveats" }
+    }
+  ],
+  "isolationLevels": [
+    {
+      "id": "chroot",
+      "label": "chroot",
+      "name": "chroot",
+      "cost": "almost no overhead",
+      "threats": {
+        "host-fs": { "status": "feasible", "why": "chroot only changes the apparent root directory; with no mount or user namespace, a root process can break out of the jail and read any host file." },
+        "kernel-lpe": { "status": "feasible", "why": "A chroot process shares the host kernel with every system call available: no seccomp filter and no dropped capabilities stand between it and a kernel bug." },
+        "side-channel": { "status": "feasible", "why": "Both processes share one kernel, one page cache, and the same CPU caches, so cache-timing attacks work as they would between any two host processes." },
+        "metadata": { "status": "feasible", "why": "chroot does not create a network namespace, so the process uses the host's network stack and reaches the metadata address directly." },
+        "orchestrator": { "status": "feasible", "why": "With no network or credential isolation, the process can reach any API socket and read any credential file the host exposes." }
+      }
+    },
+    {
+      "id": "docker-default",
+      "label": "Docker (default)",
+      "name": "Docker (default)",
+      "cost": "low overhead, fast start",
+      "threats": {
+        "host-fs": { "status": "caveats", "why": "The mount namespace hides the host filesystem, but the container runs as root by default, so one host-path mount, a mounted Docker socket, or --privileged hands it back." },
+        "kernel-lpe": { "status": "feasible", "why": "The default seccomp profile and capability set trim the attack surface, but the container still calls the shared host kernel, and kernel bugs such as Dirty Pipe have escaped default containers." },
+        "side-channel": { "status": "feasible", "why": "Namespaces separate what containers can name, not the hardware they run on: both containers share a kernel, a page cache, and CPU caches." },
+        "metadata": { "status": "feasible", "why": "The default bridge network routes outbound traffic through the host, and no namespace or seccomp rule filters the link-local metadata address." },
+        "orchestrator": { "status": "caveats", "why": "The network namespace keeps host-only sockets out of reach, but a mounted Docker socket or an over-privileged service-account token gives a root container full control of the API." }
+      }
+    },
+    {
+      "id": "docker-hardened",
+      "label": "Docker (hardened: non-root, drop-caps, seccomp, MAC)",
+      "name": "Docker (hardened)",
+      "cost": "low overhead, some tuning effort",
+      "threats": {
+        "host-fs": { "status": "blocked", "why": "A non-root user, dropped capabilities, and an SELinux or AppArmor profile each independently deny the read, so no single mistake exposes host files." },
+        "kernel-lpe": { "status": "caveats", "why": "A tight seccomp filter and zero capabilities remove most reachable kernel code, but the kernel is still shared, so a bug in an allowed system call remains a path to the host." },
+        "side-channel": { "status": "feasible", "why": "Capabilities, seccomp, and MAC govern system calls and files; none of them changes the fact that both containers share CPU caches." },
+        "metadata": { "status": "feasible", "why": "Runtime hardening does not filter outbound packets, so reaching 169.254.169.254 still works until a network policy or metadata hop limit blocks it." },
+        "orchestrator": { "status": "caveats", "why": "Non-root plus a MAC profile blocks the Docker socket, but any service-account token in the container still carries whatever RBAC permissions it was granted." }
+      }
+    },
+    {
+      "id": "vm",
+      "label": "VM (KVM)",
+      "name": "a VM (KVM)",
+      "cost": "more memory and slower start per workload",
+      "threats": {
+        "host-fs": { "status": "blocked", "why": "The guest sees only its own virtual disk; the host filesystem is on the far side of the hypervisor and is never mounted into the guest." },
+        "kernel-lpe": { "status": "blocked", "why": "A kernel exploit yields root in the guest kernel only; hardware-assisted virtualization keeps the host kernel behind a much narrower hypervisor interface." },
+        "side-channel": { "status": "caveats", "why": "Separate kernels and no shared page cache remove the easy channels, but tenants on the same physical cores can still leak through CPU caches unless cores are pinned or SMT is off." },
+        "metadata": { "status": "caveats", "why": "Each VM has its own virtual NIC and instance identity, so the metadata service returns only this VM's credentials, which is safe only if that role is least-privilege." },
+        "orchestrator": { "status": "caveats", "why": "The hypervisor boundary keeps the host's control sockets out of reach, leaving only the API credentials placed inside the guest and the RBAC permissions bound to them." }
+      }
+    },
+    {
+      "id": "vm-confidential",
+      "label": "VM + confidential computing",
+      "name": "a confidential VM",
+      "cost": "VM overhead plus special hardware and attestation",
+      "threats": {
+        "host-fs": { "status": "blocked", "why": "As with any VM, the guest sees only its own virtual disk, and the host filesystem stays behind the hypervisor." },
+        "kernel-lpe": { "status": "blocked", "why": "A guest kernel exploit stays in the guest; hardware-assisted virtualization still separates it from the host kernel." },
+        "side-channel": { "status": "caveats", "why": "Per-VM memory encryption (SEV-SNP, TDX) stops the host or a neighbor from reading memory directly, but cache-timing channels are outside the threat model of these technologies." },
+        "metadata": { "status": "caveats", "why": "Confidential computing protects memory, not network paths: the VM still reaches its own metadata service, so its role must be least-privilege." },
+        "orchestrator": { "status": "caveats", "why": "Attestation can gate which workload receives API credentials, but once issued, those credentials carry whatever RBAC permissions they were bound to." }
+      }
+    }
+  ],
+  "notes": {
+    "vm-confidential": "Confidential computing mainly protects the workload from the host operator, which is the opposite direction from these five threats."
+  }
+}
